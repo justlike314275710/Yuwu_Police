@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)GDTadvertising;
 /**加载刷新控件*/
 -(void)initializeRefresh;
+-(void)rightBarItemPress;
+    
 
 
 @end

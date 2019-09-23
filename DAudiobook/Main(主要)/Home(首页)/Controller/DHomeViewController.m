@@ -10,7 +10,7 @@
 #import "DRadioListCell.h"
 #import "DRadioModel.h"
 #import "DAlbumViewController.h"
-
+#import "DMessageViewController.h"
 
 
 
@@ -22,13 +22,19 @@
     [super viewDidLoad];
     
     [self onHeaderRefreshing];
-    [self GDTadvertising];
+   // [self GDTadvertising];
     [self SearchBar];
     
 
 }
 - (BOOL)prefersStatusBarHidden{
     return NO;
+}
+
+
+- (void)rightItemClick{
+    DMessageViewController*vc=[[DMessageViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)SearchBar{
@@ -90,7 +96,7 @@
     DAlbumViewController *VC = [[DAlbumViewController alloc] init];
     VC.model=model;
     //[self presentViewController:VC animated:YES completion:nil];
-    [self.navigationController pushViewController:VC animated:YES];
+   // [self.navigationController pushViewController:VC animated:YES];
     
 }
 

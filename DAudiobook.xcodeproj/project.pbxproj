@@ -322,6 +322,8 @@
 		3CDB10C52291696A00AEDE9E /* 性感.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CDB10BF2291696A00AEDE9E /* 性感.json */; };
 		EA94570423385ABA003C1C97 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94570223385AB9003C1C97 /* UITextView+Placeholder.m */; };
 		EA94570723386021003C1C97 /* DWriteSucessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94570623386021003C1C97 /* DWriteSucessViewController.m */; };
+		EA94570B23389D63003C1C97 /* DMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94570A23389D63003C1C97 /* DMessageViewController.m */; };
+		EA94571123389E21003C1C97 /* DMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94571023389E21003C1C97 /* DMessageTableViewCell.m */; };
 		EA960945232F294C00D81A25 /* LawUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EA96093D232F294A00D81A25 /* LawUserInfo.m */; };
 		EA960946232F294C00D81A25 /* OauthInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EA96093F232F294B00D81A25 /* OauthInfo.m */; };
 		EA960947232F294C00D81A25 /* GameInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EA960941232F294B00D81A25 /* GameInfo.m */; };
@@ -1294,6 +1296,10 @@
 		EA94570323385AB9003C1C97 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
 		EA94570523386021003C1C97 /* DWriteSucessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWriteSucessViewController.h; sourceTree = "<group>"; };
 		EA94570623386021003C1C97 /* DWriteSucessViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWriteSucessViewController.m; sourceTree = "<group>"; };
+		EA94570923389D63003C1C97 /* DMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMessageViewController.h; sourceTree = "<group>"; };
+		EA94570A23389D63003C1C97 /* DMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMessageViewController.m; sourceTree = "<group>"; };
+		EA94570F23389E21003C1C97 /* DMessageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMessageTableViewCell.h; sourceTree = "<group>"; };
+		EA94571023389E21003C1C97 /* DMessageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMessageTableViewCell.m; sourceTree = "<group>"; };
 		EA96093D232F294A00D81A25 /* LawUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LawUserInfo.m; sourceTree = "<group>"; };
 		EA96093E232F294A00D81A25 /* LawUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LawUserInfo.h; sourceTree = "<group>"; };
 		EA96093F232F294B00D81A25 /* OauthInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OauthInfo.m; sourceTree = "<group>"; };
@@ -2884,6 +2890,7 @@
 		3C4A39A822681A0E00882244 /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
+				EA94570823389D45003C1C97 /* Message */,
 				EA960BB2232F36A100D81A25 /* Other */,
 				EA96093A232F1EBD00D81A25 /* Login(登录) */,
 				3C4A3A1422681A0E00882244 /* AppDelegate(入口) */,
@@ -3485,6 +3492,41 @@
 			);
 			name = UITextViewTool;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		EA94570823389D45003C1C97 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				EA94570E23389D82003C1C97 /* Model */,
+				EA94570D23389D77003C1C97 /* View */,
+				EA94570C23389D6A003C1C97 /* Controller */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		EA94570C23389D6A003C1C97 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EA94570923389D63003C1C97 /* DMessageViewController.h */,
+				EA94570A23389D63003C1C97 /* DMessageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EA94570D23389D77003C1C97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EA94570F23389E21003C1C97 /* DMessageTableViewCell.h */,
+				EA94571023389E21003C1C97 /* DMessageTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EA94570E23389D82003C1C97 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		EA96093A232F1EBD00D81A25 /* Login(登录) */ = {
@@ -5668,6 +5710,7 @@
 				EA960DB1232F5BA000D81A25 /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */,
 				3C0DB68F22D7320B0029730E /* MJRefreshBackFooter.m in Sources */,
 				EA960C94232F3B1C00D81A25 /* YYClassInfo.m in Sources */,
+				EA94570B23389D63003C1C97 /* DMessageViewController.m in Sources */,
 				EA960ACC232F29FB00D81A25 /* NIMAudioContentConfig.m in Sources */,
 				3C0DB68422D7320B0029730E /* MJRefreshBackGifFooter.m in Sources */,
 				EAA3102123346163004DE08F /* DFeedBackLogic.m in Sources */,
@@ -5826,6 +5869,7 @@
 				EAA310342334657D004DE08F /* FeedloadImgView.m in Sources */,
 				EA960E60233075BE00D81A25 /* IQBarButtonItem.m in Sources */,
 				EA960C9F232F3B1C00D81A25 /* YYLabel.m in Sources */,
+				EA94571123389E21003C1C97 /* DMessageTableViewCell.m in Sources */,
 				3C8F3E28226B4F09006CF059 /* MMDrawerVisualState.m in Sources */,
 				3C8F3E37226B5324006CF059 /* DView.m in Sources */,
 				EA960CB3232F3B1C00D81A25 /* UIGestureRecognizer+YYAdd.m in Sources */,

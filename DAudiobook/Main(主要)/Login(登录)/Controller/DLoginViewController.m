@@ -195,12 +195,14 @@ typedef NS_ENUM(NSInteger, PSLoginModeType) {
     }];
 }
 -(void)loginTypeChange{
+    self.loginMiddleView.codeTextField.text=@"";
     if (self.loginModeType==PSLoginModePassword) {
         self.loginModeType=PSLoginModeCode;
         self.mode=@"sms_verification_code";
         self.loginMiddleView.codeButton.hidden=NO;
         self.loginMiddleView.codeTextField.placeholder=@"请输入验证码";
         self.loginMiddleView.codeLable.text=@"验证码";
+        self.loginMiddleView.codeTextField.secureTextEntry=NO;
         [self.loginTypeButton setTitle:@"使用密码登录" forState:0];
     }
     else if (self.loginModeType==PSLoginModeCode){
@@ -208,6 +210,7 @@ typedef NS_ENUM(NSInteger, PSLoginModeType) {
         self.mode=@"account_password";
         self.loginMiddleView.codeButton.hidden=YES;
         self.loginMiddleView.codeTextField.placeholder=@"请输入密码";
+        self.loginMiddleView.codeTextField.secureTextEntry=YES;
         self.loginMiddleView.codeLable.text=@"密码";
         [self.loginTypeButton setTitle:@"使用验证码登录" forState:0];
     }
