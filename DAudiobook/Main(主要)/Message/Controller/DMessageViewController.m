@@ -18,10 +18,24 @@
     [super viewDidLoad];
     self.title=@"消息";
     [self addBackItem];
+    [self renderContents];
+    self.view.backgroundColor=AppColor(255, 255, 255);
     // Do any additional setup after loading the view.
 }
 
 - (void)renderContents {
+    
+    UIView *view = [[UIView alloc] init];
+    [self.view addSubview:view];
+    view.frame = CGRectMake(15,88,SCREEN_WIDTH-30,SCREEN_HEIGHT-88-40);
+    view.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];
+    view.layer.shadowColor = [UIColor colorWithRed:0/255.0 green:41/255.0 blue:108/255.0 alpha:0.18].CGColor;
+    view.layer.shadowOffset = CGSizeMake(0,4);
+    view.layer.shadowOpacity = 1;
+    view.layer.shadowRadius = 12;
+    view.layer.cornerRadius = 4;
+    
+    
     self.messageTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     self.messageTableView.dataSource = self;
     self.messageTableView.delegate = self;
@@ -33,8 +47,12 @@
        // [self refreshData];
     }];
     [self.messageTableView registerClass:[DMessageTableViewCell class] forCellReuseIdentifier:@"DMessageTableViewCell"];
-    [self.view addSubview:self.messageTableView];
+    [view addSubview:self.messageTableView];
     [self.messageTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(64);
+//        make.left.mas_equalTo(15);
+//        make.right.mas_equalTo(-15);
+//        make.bottom.mas_equalTo(0);
         make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
 }
@@ -54,7 +72,7 @@
 //    return [tableView fd_heightForCellWithIdentifier:@"PSMessageCell" cacheByIndexPath:indexPath configuration:^(id cell) {
 //        [self configureCell:cell atIndexPath:indexPath];
 //    }];
-    return 44;
+    return 64;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

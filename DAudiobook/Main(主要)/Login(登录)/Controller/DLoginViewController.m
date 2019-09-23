@@ -88,7 +88,7 @@ typedef NS_ENUM(NSInteger, PSLoginModeType) {
     [self.loginMiddleView.loginButton addTarget:self action:@selector(LoginAction) forControlEvents:UIControlEventTouchUpInside];
     self.protocolLabel = [YYLabel new];
     self.protocolLabel.textAlignment=NSTextAlignmentCenter;
-    NSString*usageProtocol=@"我已阅读并同意《狱务通使用协议》";
+    NSString*usageProtocol=@"我已阅读并同意《狱务通软件使用协议》";
     [self.protocolLabel setTextTapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
 //        @strongify(self)
         NSString *tapString = [text plainTextForRange:range];
@@ -105,7 +105,7 @@ typedef NS_ENUM(NSInteger, PSLoginModeType) {
     [self.protocolLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.view);
         make.bottom.mas_equalTo(self.view.mas_bottom).offset(-15);
-        make.size.mas_equalTo(CGSizeMake(220, 30));
+        make.size.mas_equalTo(CGSizeMake(240, 30));
     }];
     [self updateProtocolText];
     
@@ -248,7 +248,7 @@ typedef NS_ENUM(NSInteger, PSLoginModeType) {
 
 - (void)updateProtocolText {
     NSString*read_agree=@"我已阅读并同意";
-    NSString*usageProtocol=@"《狱务通使用协议》";
+    NSString*usageProtocol=@"《狱务通软件使用协议》";
     NSMutableAttributedString *protocolText = [NSMutableAttributedString new];
     UIFont *textFont = FontOfSize(12);
     [protocolText appendAttributedString:[[NSAttributedString alloc] initWithString:read_agree attributes:@{NSFontAttributeName:textFont,NSForegroundColorAttributeName:AppBaseTextColor2}]];

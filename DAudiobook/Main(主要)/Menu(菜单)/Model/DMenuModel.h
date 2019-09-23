@@ -10,7 +10,6 @@
 NS_ASSUME_NONNULL_BEGIN
 //Collection Article Opinion Password Phone number version logout
 typedef NS_ENUM(NSUInteger, DMenuBusinessType) {
-    
     KCollectionType=0,
     KArticleType=1,
     KOpinionType=2,

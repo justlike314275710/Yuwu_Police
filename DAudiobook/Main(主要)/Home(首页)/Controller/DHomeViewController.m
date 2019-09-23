@@ -27,15 +27,17 @@
     
 
 }
+
 - (BOOL)prefersStatusBarHidden{
     return NO;
 }
 
-
-- (void)rightItemClick{
+- (void)rightBarItemPress{
     DMessageViewController*vc=[[DMessageViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+
 
 -(void)SearchBar{
 //    UISearchBar*searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0,30,SCREEN_WIDTH-6*15,15)];
