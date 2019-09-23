@@ -1,4 +1,4 @@
-# 小熊有声书
+# 狱务通(狱警端)
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![GitHub last commit](https://img.shields.io/github/last-commit/kevindcw/DAudiobook.svg)](https://github.com/kevindcw/DAudiobook/commits/master)
@@ -6,20 +6,7 @@
 
 
 
-## 效果图：
-目前主要是有菜单页面，音乐播放，视频播放，文字段子，论坛讨论和图片美图这几个大的板块：
 
-<p align="center">
-  <img width="200" src="Screenshots/1.png" hspace="30px" />
-  <img width="200" src="Screenshots/2.png" hspace="30px" />
-  <img width="200" src="Screenshots/3.png" hspace="30px" />
-</p>
-
-<p align="center">
-  <img width="200" src="Screenshots/4.png" hspace="30px" />
-  <img width="200" src="Screenshots/5.png" hspace="30px" />
-  <img width="200" src="Screenshots/6.png" hspace="30px" />
-</p>
 
 ## 用到的第三方SDK：
 Bmob后端云       （主要用于，用户的登录注册和论坛的发布）
