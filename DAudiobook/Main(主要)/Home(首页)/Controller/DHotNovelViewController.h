@@ -12,31 +12,31 @@
 NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - 热门小说
-@interface DHotNovelViewController : DTableViewController
+@interface DHomePageViewController : DTableViewController
 @end
 
 #pragma mark - 相声评书
-@interface DCrosstalkViewController : DHotNovelViewController
+@interface DCrosstalkViewController : DHomePageViewController
 @end
 
 #pragma mark - 玄幻小说
-@interface DFantasyViewController : DHotNovelViewController
+@interface DFantasyViewController : DHomePageViewController
 @end
 
 #pragma mark - 都市小说
-@interface DCityViewController : DHotNovelViewController
+@interface DCityViewController : DHomePageViewController
 @end
 
 #pragma mark - 恐怖灵异小说
-@interface DTerroristViewController : DHotNovelViewController
+@interface DTerroristViewController : DHomePageViewController
 @end
 
 #pragma mark - 历史小说
-@interface DHistoryViewController : DHotNovelViewController
+@interface DHistoryViewController : DHomePageViewController
 @end
 
 #pragma mark - 武侠小说
-@interface DMartialViewController : DHotNovelViewController
+@interface DMartialViewController : DHomePageViewController
 @end
 
 

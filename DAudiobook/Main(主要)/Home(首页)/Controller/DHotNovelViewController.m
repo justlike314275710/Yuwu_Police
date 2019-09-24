@@ -6,36 +6,56 @@
 //  Copyright © 2019年 liujiliu. All rights reserved.
 //
 
-#import "DHomeViewController.h"
+#import "DHomePageViewController.h"
 #import "DRadioListCell.h"
 #import "DRadioModel.h"
 #import "DAlbumViewController.h"
 #import "DMessageViewController.h"
 
+@interface DHomePageViewController() {
+    
+}
+@property (nonatomic,strong) UIButton *publishBtn;
 
-
+@end
 
 #pragma mark - 热门小说
-@implementation DHotNovelViewController
-
+@implementation DHomePageViewController
+#pragma mark - LifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self onHeaderRefreshing];
    // [self GDTadvertising];
     [self SearchBar];
     
-
+    [self setupUI];
+    
+    [self initializeRefresh];
+    
+    [self onHeaderRefreshing];
+    
 }
+
 - (BOOL)prefersStatusBarHidden{
     return NO;
 }
 
-
-- (void)rightItemClick{
+- (void)rightBarItemPress{
     DMessageViewController*vc=[[DMessageViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+#pragma - PrivateMethods
+-(void)setupUI{
+    [self.view addSubview:self.publishBtn];
+}
+
+#pragma - TouchEvent
+//MARK:发布
+-(void)publishAction:(UIButton *)sender{
+    
+}
+
+
 
 -(void)SearchBar{
 //    UISearchBar*searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0,30,SCREEN_WIDTH-6*15,15)];
@@ -100,96 +120,17 @@
     
 }
 
-@end
-
-
-
-#pragma mark - 相声评书
-@implementation DCrosstalkViewController
-
-//获取URL
--(NSString *)getURL{
-    return CrosstalkUrl;
-}
-//获取title
--(NSString *)getMenuTitle{
-    return @"相声";
+#pragma mark -Setting&&Getting
+- (UIButton *)publishBtn {
+    if (!_publishBtn) {
+        _publishBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _publishBtn.frame = CGRectMake(kScreenWidth-59,kScreenHeight-150,50,50);
+        [_publishBtn setImage:IMAGE_NAMED(@"发布") forState:UIControlStateNormal];
+        [_publishBtn addTarget:self action:@selector(publishAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _publishBtn;
 }
 
 @end
 
 
-
-
-#pragma mark - 玄幻小说
-@implementation DFantasyViewController
-
-//获取URL
--(NSString *)getURL{
-    return FantasyUrl;
-}
-//获取title
--(NSString *)getMenuTitle{
-    return @"玄幻";
-}
-
-@end
-
-
-#pragma mark - 都市小说
-@implementation DCityViewController
-
-//获取URL
--(NSString *)getURL{
-    return CityUrl;
-}
-//获取title
--(NSString *)getMenuTitle{
-    return @"都市";
-}
-@end
-
-
-#pragma mark - 恐怖小说
-@implementation DTerroristViewController
-
-//获取URL
--(NSString *)getURL{
-    return TerroristUrl;
-}
-//获取title
--(NSString *)getMenuTitle{
-    return @"恐怖";
-}
-
-@end
-
-
-#pragma mark - 历史小说
-@implementation DHistoryViewController
-
-//获取URL
--(NSString *)getURL{
-    return HistoryUrl;
-}
-//获取title
--(NSString *)getMenuTitle{
-    return @"历史";
-}
-
-@end
-
-
-#pragma mark - 武侠小说
-@implementation DMartialViewController
-
-//获取URL
--(NSString *)getURL{
-    return MartialUrl;
-}
-//获取title
--(NSString *)getMenuTitle{
-    return @"武侠";
-}
-
-@end
