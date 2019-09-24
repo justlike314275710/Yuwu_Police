@@ -46,9 +46,8 @@
 
 /**测试服务器*/
 #define URL_main @"http://192.168.20.31:20000/shark-miai-service"
-
-#define ServerDomain @"http://120.78.190.101:8084"
-#define ServerUrl [NSString stringWithFormat:@"%@/ywgk-app-demo",ServerDomain]
+#define ServerDomain @"http://120.79.251.238:8022"
+#define ServerUrl [NSString stringWithFormat:@"%@/ywgk-app",ServerDomain]
 #define EmallHostUrl @"http://qa.api.auth.prisonpublic.com"          //授权认证平台测试地址
 #define ConsultationHostUrl @"http://qa.api.legal.prisonpublic.com"  //法律咨询
 //聊天朋友圈

@@ -20,6 +20,7 @@
 #import "DPasswordViewController.h"
 #import "DModiyPhoneViewcontroller.h"
 #import "DWriteFeedListViewController.h"
+#import "DAccountViewController.h"
 
 @interface DLeftMenuViewController ()
 
@@ -58,9 +59,14 @@
      self.tableView.tableHeaderView = self.menuHeadView;
      WEAKSELF
      self.menuHeadView.headerViewBlock = ^{
-        DMeViewController *VC = [[DMeViewController alloc] init];
-        DNavigationController*NVC = [[DNavigationController alloc] initWithRootViewController:VC];
-        [weakSelf presentDropsWaterViewController:NVC];
+//        DMeViewController *VC = [[DMeViewController alloc] init];
+//        DNavigationController*NVC = [[DNavigationController alloc] initWithRootViewController:VC];
+//        [weakSelf presentDropsWaterViewController:NVC];
+         
+         DAccountViewController*vc=[[DAccountViewController alloc]init];
+         DNavigationController*nav=[[DNavigationController alloc]initWithRootViewController:vc];
+         [weakSelf presentViewController:nav animated:YES completion:nil];
+         
        };
 }
 //区尾

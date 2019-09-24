@@ -7,7 +7,7 @@
 //
 
 #import "MessageLogic.h"
-
+#import "DMessageModel.h"
 @interface MessageLogic()
 @property (nonatomic, strong) NSMutableArray *logs;
 
@@ -58,8 +58,7 @@
             if (self.page == 1) {
                 self.logs = [NSMutableArray array];
             }
-            [self.logs mj_keyValuesWithKeys:responseObject[@"data"][@"logs"]];
-            NSLog(@"%@",self.logs);
+            [self.logs addObjectsFromArray:[DMessageModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"][@"logs"]]];
             if (self.logs.count == 0) {
                 self.dataStatus = PSDataEmpty;
             }else{
@@ -74,12 +73,21 @@
             }else{
                 self.dataStatus = PSDataError;
             }
-            if (completedCallback) {
-                completedCallback(responseObject);
-            }
         }
-    } failure:^(NSError *error) {
+        if (completedCallback) {
+            completedCallback(responseObject);
+        }
         
+    } failure:^(NSError *error) {
+        if (failedCallback) {
+            failedCallback(error);
+        }
+        if (self.page > 0) {
+            self.page --;
+            self.hasNextPage = YES;
+        }else{
+            self.dataStatus = PSDataError;
+        }
     }];
 //    self.familyLogsRequest = [PSFamilyLogsRequest new];
 //    self.familyLogsRequest.page = self.page;

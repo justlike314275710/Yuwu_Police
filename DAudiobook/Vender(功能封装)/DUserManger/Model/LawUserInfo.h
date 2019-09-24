@@ -12,14 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LawUserInfo : NSObject
 
-@property (nonatomic,copy) NSString *certificationStatus;
-@property (nonatomic,copy) NSString *rewardAmount;
-@property (nonatomic,copy) NSString *alipayBind;
-@property (nonatomic,copy) NSString *avatar;   //支付宝头像
-@property (nonatomic,copy) NSString *nickName; //支付昵称
-@property (nonatomic , strong) NSArray *categories;
-@property (nonatomic , strong) NSString *name;
-@property (nonatomic , strong) NSString *lawOffice;
+@property (nonatomic,copy) NSString *disabledReason;
+@property (nonatomic,copy) NSString *accountName;
+@property (nonatomic,copy) NSString *userName;
+@property (nonatomic,copy) NSString *realName;
+@property (nonatomic,copy) NSString *pName;
+@property (nonatomic , strong) NSArray *cName;
+@property (nonatomic , strong) NSString *isEnabled;
+@property (nonatomic , strong) NSString *jailName;
+@property (nonatomic , strong) NSString *account;
 
 
 @end

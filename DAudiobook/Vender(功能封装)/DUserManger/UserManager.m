@@ -219,17 +219,24 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
 }
 #pragma mark ————— 狱警端登录同步—————
 -(void)police_Login:(NSDictionary *)params{
-    NSString*url=@"http://120.79.251.238:8022/ywgk-app/api/author_police/login";
-     NSString *username = [params valueForKey:@"name"];
+    //NSString*url=@"http://120.79.251.238:8022/ywgk-app/api/author_police/login";
+    NSString*url=@"http://192.168.0.112:8022/api/author_police/login";
+    NSString *username = [params valueForKey:@"name"];
     NSDictionary*param=@{@"accountName":username};
     NSString *access_token = help_userManager.oathInfo.access_token;
-   NSString *token = NSStringFormat(@"Bearer %@",access_token);
-    NSLog(@"***%@",token);
+    NSString *token = NSStringFormat(@"Bearer %@",access_token);
     [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
     [PPNetworkHelper setValue:token forHTTPHeaderField:@"Authorization"];
     [PPNetworkHelper POST:url parameters:param success:^(id responseObject) {
-        NSString*code=responseObject[@"code"];
+        NSString*code=[NSString stringWithFormat:@"%@",responseObject[@"code"]];
         if ([code isEqualToString:@"200"]) {
+            if (ValidDict(responseObject)) {
+                 LawUserInfo *lawUserInfo = [LawUserInfo modelWithJSON:responseObject[@"data"][@"data"][@"author"]];
+                self.lawUserInfo=lawUserInfo;
+                [self saveLawUserInfo];
+            }
+        }
+        else{
             
         }
     } failure:^(NSError *error) {

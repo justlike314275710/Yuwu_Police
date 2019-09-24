@@ -9,6 +9,8 @@
 #import "DMessageViewController.h"
 #import "DMessageTableViewCell.h"
 #import "MessageLogic.h"
+#import "DMessageModel.h"
+#import "NSString+Date.h"
 @interface DMessageViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *messageTableView;
 @property (nonatomic , strong) MessageLogic *logic;
@@ -28,18 +30,43 @@
 }
 
 - (void)refreshData {
+    [[PSLoadingView sharedInstance]show];
     [_logic refreshMessagesCompleted:^(id data) {
-        
+        [[PSLoadingView sharedInstance] dismiss];
+        [self reloadContents];
     } failed:^(NSError *error) {
-        
+        [[PSLoadingView sharedInstance] dismiss];
+        [self reloadContents];
     }];
 }
+
+- (void)reloadContents {
+    if (_logic.hasNextPage) {
+        self.messageTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+            [self loadMore];
+        }];
+    }else{
+        self.messageTableView.mj_footer = nil;
+    }
+    [self.messageTableView.mj_header endRefreshing];
+    [self.messageTableView.mj_footer endRefreshing];
+    [self.messageTableView reloadData];
+}
+
+- (void)loadMore {
+    [_logic loadMoreMessagesCompleted:^(id data) {
+         [self reloadContents];
+    } failed:^(NSError *error) {
+         [self reloadContents];
+    }];
+}
+
 
 - (void)renderContents {
     
     UIView *view = [[UIView alloc] init];
     [self.view addSubview:view];
-    view.frame = CGRectMake(15,88,SCREEN_WIDTH-30,SCREEN_HEIGHT-88-40);
+    view.frame = CGRectMake(15,88,SCREEN_WIDTH-30,SCREEN_HEIGHT-88-20);
     view.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];
     view.layer.shadowColor = [UIColor colorWithRed:0/255.0 green:41/255.0 blue:108/255.0 alpha:0.18].CGColor;
     view.layer.shadowOffset = CGSizeMake(0,4);
@@ -55,19 +82,16 @@
     //self.messageTableView.emptyDataSetDelegate = self;
     self.messageTableView.tableFooterView = [UIView new];
     self.messageTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-       // @strongify(self)
-       // [self refreshData];
+        [self refreshData];
     }];
     [self.messageTableView registerClass:[DMessageTableViewCell class] forCellReuseIdentifier:@"DMessageTableViewCell"];
     [view addSubview:self.messageTableView];
     [self.messageTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(64);
-//        make.left.mas_equalTo(15);
-//        make.right.mas_equalTo(-15);
-//        make.bottom.mas_equalTo(0);
         make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
+    self.messageTableView .showsVerticalScrollIndicator =NO;
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -78,6 +102,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
    // PSMessageViewModel *messageViewModel = (PSMessageViewModel *)self.viewModel;
     return _logic.messages.count;
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -89,8 +114,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
      DMessageTableViewCell*cell = [tableView dequeueReusableCellWithIdentifier:@"DMessageTableViewCell"];
-   // [self configureCell:cell atIndexPath:indexPath];
+    [self configureCell:cell atIndexPath:indexPath];
     return cell;
+}
+
+
+- (void)configureCell:(DMessageTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    DMessageModel *message = _logic.messages[indexPath.row];
+    cell.titleLable.text=[message.content substringWithRange:NSMakeRange(1, 4)];
+    cell.dataLable.text = [message.createdAt timestampTo_MMDDHHMM];
+    cell.detailLable.text = [message.content substringFromIndex:6];
 }
 
 /*

@@ -326,6 +326,11 @@
 		EA94571123389E21003C1C97 /* DMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94571023389E21003C1C97 /* DMessageTableViewCell.m */; };
 		EA9457152339BC34003C1C97 /* MessageLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9457142339BC34003C1C97 /* MessageLogic.m */; };
 		EA9457182339BFA9003C1C97 /* DMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9457172339BFA9003C1C97 /* DMessageModel.m */; };
+		EA94571B2339E70D003C1C97 /* NSString+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94571A2339E70C003C1C97 /* NSString+Date.m */; };
+		EA94571F233A015E003C1C97 /* DAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94571E233A015E003C1C97 /* DAccountViewController.m */; };
+		EA945723233A0315003C1C97 /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA945722233A0315003C1C97 /* MineTableViewCell.m */; };
+		EA94572B233A04E1003C1C97 /* LLActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA945726233A04E0003C1C97 /* LLActionSheetView.m */; };
+		EA94572C233A04E1003C1C97 /* HMActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA945727233A04E0003C1C97 /* HMActionSheetView.m */; };
 		EA960945232F294C00D81A25 /* LawUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EA96093D232F294A00D81A25 /* LawUserInfo.m */; };
 		EA960946232F294C00D81A25 /* OauthInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EA96093F232F294B00D81A25 /* OauthInfo.m */; };
 		EA960947232F294C00D81A25 /* GameInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EA960941232F294B00D81A25 /* GameInfo.m */; };
@@ -1306,6 +1311,16 @@
 		EA9457142339BC34003C1C97 /* MessageLogic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageLogic.m; sourceTree = "<group>"; };
 		EA9457162339BFA9003C1C97 /* DMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMessageModel.h; sourceTree = "<group>"; };
 		EA9457172339BFA9003C1C97 /* DMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMessageModel.m; sourceTree = "<group>"; };
+		EA9457192339E70C003C1C97 /* NSString+Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Date.h"; sourceTree = "<group>"; };
+		EA94571A2339E70C003C1C97 /* NSString+Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Date.m"; sourceTree = "<group>"; };
+		EA94571D233A015E003C1C97 /* DAccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DAccountViewController.h; sourceTree = "<group>"; };
+		EA94571E233A015E003C1C97 /* DAccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DAccountViewController.m; sourceTree = "<group>"; };
+		EA945721233A0315003C1C97 /* MineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewCell.h; sourceTree = "<group>"; };
+		EA945722233A0315003C1C97 /* MineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewCell.m; sourceTree = "<group>"; };
+		EA945726233A04E0003C1C97 /* LLActionSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLActionSheetView.m; sourceTree = "<group>"; };
+		EA945727233A04E0003C1C97 /* HMActionSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMActionSheetView.m; sourceTree = "<group>"; };
+		EA945729233A04E0003C1C97 /* LLActionSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLActionSheetView.h; sourceTree = "<group>"; };
+		EA94572A233A04E0003C1C97 /* HMActionSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMActionSheetView.h; sourceTree = "<group>"; };
 		EA96093D232F294A00D81A25 /* LawUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LawUserInfo.m; sourceTree = "<group>"; };
 		EA96093E232F294A00D81A25 /* LawUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LawUserInfo.h; sourceTree = "<group>"; };
 		EA96093F232F294B00D81A25 /* OauthInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OauthInfo.m; sourceTree = "<group>"; };
@@ -2743,6 +2758,7 @@
 		3C4A392D22681A0E00882244 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				EA945724233A04E0003C1C97 /* LLActionSheetView */,
 				EAA31146233472D7004DE08F /* BlocksKit */,
 				EA960E35233075BD00D81A25 /* IQKeyboardManager */,
 				EA960DE4232F84F900D81A25 /* AFNetworking */,
@@ -2896,7 +2912,7 @@
 		3C4A39A822681A0E00882244 /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
-				EA94570823389D45003C1C97 /* Message */,
+				EA94570823389D45003C1C97 /* Message(消息) */,
 				EA960BB2232F36A100D81A25 /* Other */,
 				EA96093A232F1EBD00D81A25 /* Login(登录) */,
 				3C4A3A1422681A0E00882244 /* AppDelegate(入口) */,
@@ -3161,6 +3177,7 @@
 		3C8F3E2C226B50F9006CF059 /* Menu(菜单) */ = {
 			isa = PBXGroup;
 			children = (
+				EA94571C233A0132003C1C97 /* 账号信息 */,
 				EAA30EE923331914004DE08F /* 更换手机号 */,
 				EA960E8E23321C1A00D81A25 /* 意见反馈 */,
 				EA960E712330E02E00D81A25 /* 重制密码 */,
@@ -3500,7 +3517,7 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
-		EA94570823389D45003C1C97 /* Message */ = {
+		EA94570823389D45003C1C97 /* Message(消息) */ = {
 			isa = PBXGroup;
 			children = (
 				EA9457122339BC11003C1C97 /* Logic */,
@@ -3508,7 +3525,7 @@
 				EA94570D23389D77003C1C97 /* View */,
 				EA94570C23389D6A003C1C97 /* Controller */,
 			);
-			path = Message;
+			path = "Message(消息)";
 			sourceTree = "<group>";
 		};
 		EA94570C23389D6A003C1C97 /* Controller */ = {
@@ -3545,6 +3562,36 @@
 				EA9457142339BC34003C1C97 /* MessageLogic.m */,
 			);
 			path = Logic;
+			sourceTree = "<group>";
+		};
+		EA94571C233A0132003C1C97 /* 账号信息 */ = {
+			isa = PBXGroup;
+			children = (
+				EA945720233A02FD003C1C97 /* View */,
+				EA94571D233A015E003C1C97 /* DAccountViewController.h */,
+				EA94571E233A015E003C1C97 /* DAccountViewController.m */,
+			);
+			path = "账号信息";
+			sourceTree = "<group>";
+		};
+		EA945720233A02FD003C1C97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EA945721233A0315003C1C97 /* MineTableViewCell.h */,
+				EA945722233A0315003C1C97 /* MineTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EA945724233A04E0003C1C97 /* LLActionSheetView */ = {
+			isa = PBXGroup;
+			children = (
+				EA945726233A04E0003C1C97 /* LLActionSheetView.m */,
+				EA945727233A04E0003C1C97 /* HMActionSheetView.m */,
+				EA945729233A04E0003C1C97 /* LLActionSheetView.h */,
+				EA94572A233A04E0003C1C97 /* HMActionSheetView.h */,
+			);
+			path = LLActionSheetView;
 			sourceTree = "<group>";
 		};
 		EA96093A232F1EBD00D81A25 /* Login(登录) */ = {
@@ -4370,6 +4417,8 @@
 		EA960BC4232F38C800D81A25 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				EA9457192339E70C003C1C97 /* NSString+Date.h */,
+				EA94571A2339E70C003C1C97 /* NSString+Date.m */,
 				EAA31022233461CE004DE08F /* NSString+emoji.h */,
 				EAA31023233461CF004DE08F /* NSString+emoji.m */,
 				EAA30EDC23330FDF004DE08F /* KGStatusBar.h */,
@@ -5750,6 +5799,7 @@
 				EA960BAC232F32E500D81A25 /* PSTipsView.m in Sources */,
 				EAA3119B233472D8004DE08F /* NSTimer+BlocksKit.m in Sources */,
 				EA960ABC232F29FB00D81A25 /* NIMTeamMemberCardHeaderCell.m in Sources */,
+				EA94571B2339E70D003C1C97 /* NSString+Date.m in Sources */,
 				EA960CC2232F3B1C00D81A25 /* NSNotificationCenter+YYAdd.m in Sources */,
 				3C4A3A4D22681A0F00882244 /* DataManager.m in Sources */,
 				EA960A8A232F29FA00D81A25 /* NIMContactPickedView.m in Sources */,
@@ -5934,8 +5984,10 @@
 				EA960AA4232F29FA00D81A25 /* NIMBadgeView.m in Sources */,
 				EA960DA0232F5BA000D81A25 /* DGActivityIndicatorLineScaleAnimation.m in Sources */,
 				3C4A3A3922681A0F00882244 /* View+MASAdditions.m in Sources */,
+				EA94572B233A04E1003C1C97 /* LLActionSheetView.m in Sources */,
 				3CCDAA642272D41D0019783A /* DSongModel.m in Sources */,
 				3C4A3A3422681A0F00882244 /* ViewController+MASAdditions.m in Sources */,
+				EA94571F233A015E003C1C97 /* DAccountViewController.m in Sources */,
 				3C0DB64222D731ED0029730E /* MJPropertyType.m in Sources */,
 				3C1E8262228189CA005D7A11 /* UIViewController+Animation.m in Sources */,
 				EA960AE5232F29FB00D81A25 /* NIMSessionNetChatNotifyContentView.m in Sources */,
@@ -6113,6 +6165,7 @@
 				EA960E69233075BE00D81A25 /* IQUIViewController+Additions.m in Sources */,
 				EA960AED232F29FB00D81A25 /* NIMLocationViewController.m in Sources */,
 				EAA311AB233472D8004DE08F /* UIPopoverController+BlocksKit.m in Sources */,
+				EA94572C233A04E1003C1C97 /* HMActionSheetView.m in Sources */,
 				3C4A3A3A22681A0F00882244 /* MASConstraint.m in Sources */,
 				EA960D98232F5BA000D81A25 /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,
 				EA960AFB232F29FB00D81A25 /* NIMKitSwitcherCell.m in Sources */,
@@ -6139,6 +6192,7 @@
 				EA960AB0232F29FA00D81A25 /* NIMCreateTeamAnnouncement.m in Sources */,
 				EA960CCB232F3B1C00D81A25 /* YYTransaction.m in Sources */,
 				EA960DAC232F5BA000D81A25 /* DGActivityIndicatorBallSpinFadeLoader.m in Sources */,
+				EA945723233A0315003C1C97 /* MineTableViewCell.m in Sources */,
 				3CCDA9D1226EF7E10019783A /* DBaseRequest.m in Sources */,
 				EA960E0F232F84F900D81A25 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				3CCDAA2D2270590A0019783A /* UIBarButtonItem+Helper.m in Sources */,
