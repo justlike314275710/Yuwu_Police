@@ -32,7 +32,7 @@
             if (code==200) {
                 NSDictionary *data=[responseObject objectForKey:@"data"];
                 NSArray *articles = [data valueForKey:@"articles"];
-                NSArray *dataAry = [self jsonsToModelsWithJsons:articles ];
+//                NSArray *dataAry = [self jsonsToModelsWithJsons:articles ];
                 
 
             }

@@ -54,18 +54,6 @@
     return [formatter stringFromDate:date];
 }
 
-
-- (NSString *)timestampTo_MMDDHHMM {
-    long long timeInterval = [self longLongValue];
-    if (self.length >= 13) {
-        timeInterval /= 1000.0;
-    }
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeInterval];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"MM月dd日 HH:mm"];
-    return [formatter stringFromDate:date];
-}
-
 - (NSString *)timestampToDateDetailSecondString {
     long long timeInterval = [self longLongValue];
     if (self.length >= 13) {
@@ -94,6 +82,17 @@
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MM-dd"];
+    return [formatter stringFromDate:date];
+}
+
+- (NSString *)timestampTo_MMDDHHMM {
+    long long timeInterval = [self longLongValue];
+    if (self.length >= 13) {
+        timeInterval /= 1000.0;
+    }
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM月dd日 HH:mm"];
     return [formatter stringFromDate:date];
 }
 

@@ -332,10 +332,17 @@
 		554E92E2233A1DAE009D2429 /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92D5233A1DAD009D2429 /* JSONHTTPClient.m */; };
 		554E92E3233A1DAE009D2429 /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92D6233A1DAD009D2429 /* JSONAPI.m */; };
 		554E92E4233A1DAE009D2429 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92DA233A1DAD009D2429 /* JSONModel+networking.m */; };
+		554E92EE233A268A009D2429 /* MessageLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92E6233A268A009D2429 /* MessageLogic.m */; };
+		554E92EF233A268A009D2429 /* DMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92EA233A268A009D2429 /* DMessageTableViewCell.m */; };
+		554E92F0233A268A009D2429 /* DMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92ED233A268A009D2429 /* DMessageViewController.m */; };
+		554E92F3233A2851009D2429 /* DMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92F1233A2851009D2429 /* DMessageModel.m */; };
+		554E92F9233A2938009D2429 /* NSString+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92F8233A2938009D2429 /* NSString+Date.m */; };
+		554E9300233A29FC009D2429 /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92FD233A29FC009D2429 /* MineTableViewCell.m */; };
+		554E9301233A29FC009D2429 /* DAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92FF233A29FC009D2429 /* DAccountViewController.m */; };
+		554E9307233A2A81009D2429 /* LLActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E9303233A2A81009D2429 /* LLActionSheetView.m */; };
+		554E9308233A2A81009D2429 /* HMActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E9304233A2A81009D2429 /* HMActionSheetView.m */; };
 		EA94570423385ABA003C1C97 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94570223385AB9003C1C97 /* UITextView+Placeholder.m */; };
 		EA94570723386021003C1C97 /* DWriteSucessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94570623386021003C1C97 /* DWriteSucessViewController.m */; };
-		EA94570B23389D63003C1C97 /* DMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94570A23389D63003C1C97 /* DMessageViewController.m */; };
-		EA94571123389E21003C1C97 /* DMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94571023389E21003C1C97 /* DMessageTableViewCell.m */; };
 		EA960945232F294C00D81A25 /* LawUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EA96093D232F294A00D81A25 /* LawUserInfo.m */; };
 		EA960946232F294C00D81A25 /* OauthInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EA96093F232F294B00D81A25 /* OauthInfo.m */; };
 		EA960947232F294C00D81A25 /* GameInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EA960941232F294B00D81A25 /* GameInfo.m */; };
@@ -1328,14 +1335,28 @@
 		554E92D8233A1DAD009D2429 /* JSONHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHTTPClient.h; sourceTree = "<group>"; };
 		554E92D9233A1DAD009D2429 /* JSONAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONAPI.h; sourceTree = "<group>"; };
 		554E92DA233A1DAD009D2429 /* JSONModel+networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONModel+networking.m"; sourceTree = "<group>"; };
+		554E92E6233A268A009D2429 /* MessageLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageLogic.m; sourceTree = "<group>"; };
+		554E92E7233A268A009D2429 /* MessageLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageLogic.h; sourceTree = "<group>"; };
+		554E92E9233A268A009D2429 /* DMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMessageTableViewCell.h; sourceTree = "<group>"; };
+		554E92EA233A268A009D2429 /* DMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMessageTableViewCell.m; sourceTree = "<group>"; };
+		554E92EC233A268A009D2429 /* DMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMessageViewController.h; sourceTree = "<group>"; };
+		554E92ED233A268A009D2429 /* DMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMessageViewController.m; sourceTree = "<group>"; };
+		554E92F1233A2851009D2429 /* DMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMessageModel.m; sourceTree = "<group>"; };
+		554E92F2233A2851009D2429 /* DMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMessageModel.h; sourceTree = "<group>"; };
+		554E92F7233A2937009D2429 /* NSString+Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Date.h"; sourceTree = "<group>"; };
+		554E92F8233A2938009D2429 /* NSString+Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Date.m"; sourceTree = "<group>"; };
+		554E92FB233A29FC009D2429 /* DAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAccountViewController.h; sourceTree = "<group>"; };
+		554E92FD233A29FC009D2429 /* MineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewCell.m; sourceTree = "<group>"; };
+		554E92FE233A29FC009D2429 /* MineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewCell.h; sourceTree = "<group>"; };
+		554E92FF233A29FC009D2429 /* DAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAccountViewController.m; sourceTree = "<group>"; };
+		554E9303233A2A81009D2429 /* LLActionSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLActionSheetView.m; sourceTree = "<group>"; };
+		554E9304233A2A81009D2429 /* HMActionSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMActionSheetView.m; sourceTree = "<group>"; };
+		554E9305233A2A81009D2429 /* LLActionSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLActionSheetView.h; sourceTree = "<group>"; };
+		554E9306233A2A81009D2429 /* HMActionSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMActionSheetView.h; sourceTree = "<group>"; };
 		EA94570223385AB9003C1C97 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		EA94570323385AB9003C1C97 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
 		EA94570523386021003C1C97 /* DWriteSucessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWriteSucessViewController.h; sourceTree = "<group>"; };
 		EA94570623386021003C1C97 /* DWriteSucessViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWriteSucessViewController.m; sourceTree = "<group>"; };
-		EA94570923389D63003C1C97 /* DMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMessageViewController.h; sourceTree = "<group>"; };
-		EA94570A23389D63003C1C97 /* DMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMessageViewController.m; sourceTree = "<group>"; };
-		EA94570F23389E21003C1C97 /* DMessageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMessageTableViewCell.h; sourceTree = "<group>"; };
-		EA94571023389E21003C1C97 /* DMessageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMessageTableViewCell.m; sourceTree = "<group>"; };
 		EA96093D232F294A00D81A25 /* LawUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LawUserInfo.m; sourceTree = "<group>"; };
 		EA96093E232F294A00D81A25 /* LawUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LawUserInfo.h; sourceTree = "<group>"; };
 		EA96093F232F294B00D81A25 /* OauthInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OauthInfo.m; sourceTree = "<group>"; };
@@ -2773,6 +2794,7 @@
 		3C4A392D22681A0E00882244 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				554E9302233A2A81009D2429 /* LLActionSheetView */,
 				554E92C3233A1DAD009D2429 /* JSONModel */,
 				EAA31146233472D7004DE08F /* BlocksKit */,
 				EA960E35233075BD00D81A25 /* IQKeyboardManager */,
@@ -2927,6 +2949,7 @@
 		3C4A39A822681A0E00882244 /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
+				554E92FA233A29FC009D2429 /* 账号信息 */,
 				EA94570823389D45003C1C97 /* Message */,
 				EA960BB2232F36A100D81A25 /* Other */,
 				EA96093A232F1EBD00D81A25 /* Login(登录) */,
@@ -3591,6 +3614,64 @@
 			path = JSONModelNetworking;
 			sourceTree = "<group>";
 		};
+		554E92E5233A268A009D2429 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				554E92E6233A268A009D2429 /* MessageLogic.m */,
+				554E92E7233A268A009D2429 /* MessageLogic.h */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		554E92E8233A268A009D2429 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				554E92E9233A268A009D2429 /* DMessageTableViewCell.h */,
+				554E92EA233A268A009D2429 /* DMessageTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		554E92EB233A268A009D2429 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				554E92EC233A268A009D2429 /* DMessageViewController.h */,
+				554E92ED233A268A009D2429 /* DMessageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		554E92FA233A29FC009D2429 /* 账号信息 */ = {
+			isa = PBXGroup;
+			children = (
+				554E92FB233A29FC009D2429 /* DAccountViewController.h */,
+				554E92FC233A29FC009D2429 /* View */,
+				554E92FF233A29FC009D2429 /* DAccountViewController.m */,
+			);
+			path = "账号信息";
+			sourceTree = "<group>";
+		};
+		554E92FC233A29FC009D2429 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				554E92FD233A29FC009D2429 /* MineTableViewCell.m */,
+				554E92FE233A29FC009D2429 /* MineTableViewCell.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		554E9302233A2A81009D2429 /* LLActionSheetView */ = {
+			isa = PBXGroup;
+			children = (
+				554E9303233A2A81009D2429 /* LLActionSheetView.m */,
+				554E9304233A2A81009D2429 /* HMActionSheetView.m */,
+				554E9305233A2A81009D2429 /* LLActionSheetView.h */,
+				554E9306233A2A81009D2429 /* HMActionSheetView.h */,
+			);
+			name = LLActionSheetView;
+			path = ../../../../../Downloads/LLActionSheetView;
+			sourceTree = "<group>";
+		};
 		EA94570123385A8F003C1C97 /* UITextViewTool */ = {
 			isa = PBXGroup;
 			children = (
@@ -3604,34 +3685,19 @@
 		EA94570823389D45003C1C97 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				554E92EB233A268A009D2429 /* Controller */,
+				554E92E5233A268A009D2429 /* Logic */,
+				554E92E8233A268A009D2429 /* View */,
 				EA94570E23389D82003C1C97 /* Model */,
-				EA94570D23389D77003C1C97 /* View */,
-				EA94570C23389D6A003C1C97 /* Controller */,
 			);
 			path = Message;
-			sourceTree = "<group>";
-		};
-		EA94570C23389D6A003C1C97 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				EA94570923389D63003C1C97 /* DMessageViewController.h */,
-				EA94570A23389D63003C1C97 /* DMessageViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		EA94570D23389D77003C1C97 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				EA94570F23389E21003C1C97 /* DMessageTableViewCell.h */,
-				EA94571023389E21003C1C97 /* DMessageTableViewCell.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		EA94570E23389D82003C1C97 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				554E92F2233A2851009D2429 /* DMessageModel.h */,
+				554E92F1233A2851009D2429 /* DMessageModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4459,6 +4525,8 @@
 		EA960BC4232F38C800D81A25 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				554E92F7233A2937009D2429 /* NSString+Date.h */,
+				554E92F8233A2938009D2429 /* NSString+Date.m */,
 				EAA31022233461CE004DE08F /* NSString+emoji.h */,
 				EAA31023233461CF004DE08F /* NSString+emoji.m */,
 				EAA30EDC23330FDF004DE08F /* KGStatusBar.h */,
@@ -5757,6 +5825,7 @@
 				EA960D9F232F5BA000D81A25 /* DGActivityIndicatorLineScalePartyAnimation.m in Sources */,
 				EA960D95232F5BA000D81A25 /* DGActivityIndicatorAnimation.m in Sources */,
 				EA960AD2232F29FB00D81A25 /* NIMBaseSessionContentConfig.m in Sources */,
+				554E92EE233A268A009D2429 /* MessageLogic.m in Sources */,
 				EA960CCF232F3B1C00D81A25 /* YYFileHash.m in Sources */,
 				3C37E973228BECC80035E114 /* DJokesViewController.m in Sources */,
 				EA960AE9232F29FB00D81A25 /* NIMSessionUnknowContentView.m in Sources */,
@@ -5809,6 +5878,7 @@
 				EA960CA0232F3B1C00D81A25 /* YYTextRunDelegate.m in Sources */,
 				EA960D90232F5BA000D81A25 /* DGActivityIndicatorTriangleSkewSpinAnimation.m in Sources */,
 				EAA311A0233472D8004DE08F /* NSObject+BKAssociatedObjects.m in Sources */,
+				554E92F9233A2938009D2429 /* NSString+Date.m in Sources */,
 				EA960D99232F5BA000D81A25 /* DGActivityIndicatorBallRotateAnimation.m in Sources */,
 				EAA3104423346965004DE08F /* UIViewController+Tool.m in Sources */,
 				EAA311B2233472D8004DE08F /* A2BlockInvocation.m in Sources */,
@@ -5820,7 +5890,6 @@
 				EA960DB1232F5BA000D81A25 /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */,
 				3C0DB68F22D7320B0029730E /* MJRefreshBackFooter.m in Sources */,
 				EA960C94232F3B1C00D81A25 /* YYClassInfo.m in Sources */,
-				EA94570B23389D63003C1C97 /* DMessageViewController.m in Sources */,
 				EA960ACC232F29FB00D81A25 /* NIMAudioContentConfig.m in Sources */,
 				3C0DB68422D7320B0029730E /* MJRefreshBackGifFooter.m in Sources */,
 				EAA3102123346163004DE08F /* DFeedBackLogic.m in Sources */,
@@ -5861,6 +5930,7 @@
 				EA960CB1232F3B1C00D81A25 /* UIView+YYAdd.m in Sources */,
 				EA960E812331C08D00D81A25 /* UIButton+BEEnLargeEdge.m in Sources */,
 				3C8F3E3E226DA1FA006CF059 /* DSideMenuTableViewCell.m in Sources */,
+				554E9301233A29FC009D2429 /* DAccountViewController.m in Sources */,
 				EA960C82232F3B1B00D81A25 /* YYDiskCache.m in Sources */,
 				3C3935612288297300A5190A /* DMeViewController.m in Sources */,
 				3C4A3A3522681A0F00882244 /* MASCompositeConstraint.m in Sources */,
@@ -5907,6 +5977,7 @@
 				EA960BC2232F37A400D81A25 /* FLAnimatedImageView.m in Sources */,
 				3C4A3A4122681A0F00882244 /* FMDatabase.m in Sources */,
 				EA960D9C232F5BA000D81A25 /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
+				554E92EF233A268A009D2429 /* DMessageTableViewCell.m in Sources */,
 				EA960C8C232F3B1B00D81A25 /* _YYWebImageSetter.m in Sources */,
 				EA960AAE232F29FA00D81A25 /* NIMTeamMemberCardViewController.m in Sources */,
 				EA960C8F232F3B1B00D81A25 /* MKAnnotationView+YYWebImage.m in Sources */,
@@ -5984,7 +6055,7 @@
 				EAA310342334657D004DE08F /* FeedloadImgView.m in Sources */,
 				EA960E60233075BE00D81A25 /* IQBarButtonItem.m in Sources */,
 				EA960C9F232F3B1C00D81A25 /* YYLabel.m in Sources */,
-				EA94571123389E21003C1C97 /* DMessageTableViewCell.m in Sources */,
+				554E92F0233A268A009D2429 /* DMessageViewController.m in Sources */,
 				3C8F3E28226B4F09006CF059 /* MMDrawerVisualState.m in Sources */,
 				3C8F3E37226B5324006CF059 /* DView.m in Sources */,
 				EA960CB3232F3B1C00D81A25 /* UIGestureRecognizer+YYAdd.m in Sources */,
@@ -5997,6 +6068,7 @@
 				EA960D97232F5BA000D81A25 /* DGActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
 				EA960CD1232F3B1C00D81A25 /* YYThreadSafeArray.m in Sources */,
 				EA960A89232F29FA00D81A25 /* NIMContactDataCell.m in Sources */,
+				554E9308233A2A81009D2429 /* HMActionSheetView.m in Sources */,
 				EA960CC4232F3B1C00D81A25 /* NSObject+YYAddForKVO.m in Sources */,
 				EA960ADE232F29FB00D81A25 /* NIMMessageCellFactory.m in Sources */,
 				EA960C83232F3B1B00D81A25 /* YYCache.m in Sources */,
@@ -6033,6 +6105,7 @@
 				EA960AA4232F29FA00D81A25 /* NIMBadgeView.m in Sources */,
 				EA960DA0232F5BA000D81A25 /* DGActivityIndicatorLineScaleAnimation.m in Sources */,
 				3C4A3A3922681A0F00882244 /* View+MASAdditions.m in Sources */,
+				554E92F3233A2851009D2429 /* DMessageModel.m in Sources */,
 				3CCDAA642272D41D0019783A /* DSongModel.m in Sources */,
 				3C4A3A3422681A0F00882244 /* ViewController+MASAdditions.m in Sources */,
 				3C0DB64222D731ED0029730E /* MJPropertyType.m in Sources */,
@@ -6095,6 +6168,7 @@
 				EA960CC3232F3B1C00D81A25 /* NSDictionary+YYAdd.m in Sources */,
 				EAA3119A233472D8004DE08F /* NSObject+BKBlockObservation.m in Sources */,
 				EA960AA8232F29FA00D81A25 /* NIMKitTitleView.m in Sources */,
+				554E9300233A29FC009D2429 /* MineTableViewCell.m in Sources */,
 				EAA30EE8233314CE004DE08F /* DFeedbackListLogic.m in Sources */,
 				EA960DC6232F616500D81A25 /* PSLoginBackgroundView.m in Sources */,
 				EA960AB1232F29FA00D81A25 /* NIMTeamMemberListViewController.m in Sources */,
@@ -6147,6 +6221,7 @@
 				EAA30EF023331A08004DE08F /* DModiyPhoneViewcontroller.m in Sources */,
 				EA960AFE232F29FB00D81A25 /* NIMKitIndependentModeExtraInfo.m in Sources */,
 				EA960A9B232F29FA00D81A25 /* NIMInputView.m in Sources */,
+				554E9307233A2A81009D2429 /* LLActionSheetView.m in Sources */,
 				3CACB0FE22928BBF0006AB3C /* UIView+LBFrame.m in Sources */,
 				EA960BAE232F32E500D81A25 /* UIView+Toast.m in Sources */,
 				3C4A3A7A22681A0F00882244 /* AppDelegate.m in Sources */,

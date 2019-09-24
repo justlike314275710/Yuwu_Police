@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (Date)
-- (NSString *)timestampTo_MMDDHHMM;
+
 - (NSDate *)stringToDateWithFormat:(NSString *)format;
 - (NSString *)timestampToDateString;
 - (NSString *)timestampToDateDetailString;
 - (NSDate *)timestampToDate;
 - (NSString *)timestampToMonthDayString;
 -(NSString *)timestampToDateString:(NSString *)format;
+- (NSString *)timestampTo_MMDDHHMM;
 
 @end
