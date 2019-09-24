@@ -324,6 +324,8 @@
 		EA94570723386021003C1C97 /* DWriteSucessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94570623386021003C1C97 /* DWriteSucessViewController.m */; };
 		EA94570B23389D63003C1C97 /* DMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94570A23389D63003C1C97 /* DMessageViewController.m */; };
 		EA94571123389E21003C1C97 /* DMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94571023389E21003C1C97 /* DMessageTableViewCell.m */; };
+		EA9457152339BC34003C1C97 /* MessageLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9457142339BC34003C1C97 /* MessageLogic.m */; };
+		EA9457182339BFA9003C1C97 /* DMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9457172339BFA9003C1C97 /* DMessageModel.m */; };
 		EA960945232F294C00D81A25 /* LawUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EA96093D232F294A00D81A25 /* LawUserInfo.m */; };
 		EA960946232F294C00D81A25 /* OauthInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EA96093F232F294B00D81A25 /* OauthInfo.m */; };
 		EA960947232F294C00D81A25 /* GameInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EA960941232F294B00D81A25 /* GameInfo.m */; };
@@ -1300,6 +1302,10 @@
 		EA94570A23389D63003C1C97 /* DMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMessageViewController.m; sourceTree = "<group>"; };
 		EA94570F23389E21003C1C97 /* DMessageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMessageTableViewCell.h; sourceTree = "<group>"; };
 		EA94571023389E21003C1C97 /* DMessageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMessageTableViewCell.m; sourceTree = "<group>"; };
+		EA9457132339BC34003C1C97 /* MessageLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageLogic.h; sourceTree = "<group>"; };
+		EA9457142339BC34003C1C97 /* MessageLogic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageLogic.m; sourceTree = "<group>"; };
+		EA9457162339BFA9003C1C97 /* DMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMessageModel.h; sourceTree = "<group>"; };
+		EA9457172339BFA9003C1C97 /* DMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMessageModel.m; sourceTree = "<group>"; };
 		EA96093D232F294A00D81A25 /* LawUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LawUserInfo.m; sourceTree = "<group>"; };
 		EA96093E232F294A00D81A25 /* LawUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LawUserInfo.h; sourceTree = "<group>"; };
 		EA96093F232F294B00D81A25 /* OauthInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OauthInfo.m; sourceTree = "<group>"; };
@@ -3497,6 +3503,7 @@
 		EA94570823389D45003C1C97 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				EA9457122339BC11003C1C97 /* Logic */,
 				EA94570E23389D82003C1C97 /* Model */,
 				EA94570D23389D77003C1C97 /* View */,
 				EA94570C23389D6A003C1C97 /* Controller */,
@@ -3525,8 +3532,19 @@
 		EA94570E23389D82003C1C97 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EA9457162339BFA9003C1C97 /* DMessageModel.h */,
+				EA9457172339BFA9003C1C97 /* DMessageModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EA9457122339BC11003C1C97 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				EA9457132339BC34003C1C97 /* MessageLogic.h */,
+				EA9457142339BC34003C1C97 /* MessageLogic.m */,
+			);
+			path = Logic;
 			sourceTree = "<group>";
 		};
 		EA96093A232F1EBD00D81A25 /* Login(登录) */ = {
@@ -6077,6 +6095,7 @@
 				EA960E15232F84F900D81A25 /* AFImageDownloader.m in Sources */,
 				EAA311A6233472D8004DE08F /* UIWebView+BlocksKit.m in Sources */,
 				3CAC52C62289590D0055C320 /* YLGIFImage.m in Sources */,
+				EA9457152339BC34003C1C97 /* MessageLogic.m in Sources */,
 				EA960D93232F5BA000D81A25 /* DGActivityIndicatorBallClipRotatePulseAnimation.m in Sources */,
 				EA960AE2232F29FB00D81A25 /* NIMSessionVideoContentView.m in Sources */,
 				EAA311AA233472D8004DE08F /* UIGestureRecognizer+BlocksKit.m in Sources */,
@@ -6107,6 +6126,7 @@
 				EAA311A1233472D8004DE08F /* NSArray+BlocksKit.m in Sources */,
 				EA960B61232F2FE900D81A25 /* SDWebImageDownloaderOperation.m in Sources */,
 				3CD2D83022998E5600C700D7 /* DAddViewController.m in Sources */,
+				EA9457182339BFA9003C1C97 /* DMessageModel.m in Sources */,
 				EA960E67233075BE00D81A25 /* IQUIScrollView+Additions.m in Sources */,
 				EA960DCB232F61FC00D81A25 /* CAGradientLayer+Gradient.m in Sources */,
 				EA960C96232F3B1C00D81A25 /* YYTextMagnifier.m in Sources */,

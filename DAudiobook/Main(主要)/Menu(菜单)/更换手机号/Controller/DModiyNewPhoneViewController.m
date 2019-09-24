@@ -109,7 +109,7 @@
 }
 
 
--(void)changePhoneNumber{
+-(void)changePhoneNumberAction{
     
     if (self.phoneField.text.length<11) {
         [PSTipsView showTips:@"请输入正确的手机号码！"];
@@ -142,8 +142,8 @@
             [help_userManager saveUserInfo];
             [[PSLoadingView sharedInstance]dismiss];
             //发送通知
-            KPostNotification(KNotificationModifyDataChange,nil);
-            KPostNotification(KNotificationMineDataChange, nil);
+           // KPostNotification(KNotificationModifyDataChange,nil);
+           // KPostNotification(KNotificationMineDataChange, nil);
             [self.navigationController popToRootViewControllerAnimated:YES];
 
             
@@ -154,7 +154,6 @@
         NSData *data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey];
         if (ValidData(data)) {
             id body = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-            //NSString*code=body[@"code"];
             NSString*message=body[@"message"];
             [PSTipsView showTips:message];
         }

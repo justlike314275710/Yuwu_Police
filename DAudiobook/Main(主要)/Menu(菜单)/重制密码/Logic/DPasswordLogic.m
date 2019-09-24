@@ -111,6 +111,15 @@
             completedCallback(responseObject);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        
+        
+        NSData *data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey];
+        if (data) {
+            id body = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            self.errorMsg=body[@"message"];
+        }
+        
         if (failedCallback) {
             failedCallback(error);
         }

@@ -208,7 +208,7 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
                     //获取云信账号信息
                     [self autoLoginToServer:nil];
                     //预警端平台登录同步
-                   // [self police_Login:params];
+                    [self police_Login:params];
                 }];
             }
         }
@@ -219,18 +219,23 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
 }
 #pragma mark ————— 狱警端登录同步—————
 -(void)police_Login:(NSDictionary *)params{
-    NSString*url=@"192.168.0.112:8022/api/author_police/login";
+    NSString*url=@"http://120.79.251.238:8022/ywgk-app/api/author_police/login";
      NSString *username = [params valueForKey:@"name"];
-    NSDictionary*param=@{@"accoutName":username};
+    NSDictionary*param=@{@"accountName":username};
     NSString *access_token = help_userManager.oathInfo.access_token;
-    NSString *token = NSStringFormat(@"Bearer %@",access_token);
+   NSString *token = NSStringFormat(@"Bearer %@",access_token);
+    NSLog(@"***%@",token);
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
     [PPNetworkHelper setValue:token forHTTPHeaderField:@"Authorization"];
-    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
     [PPNetworkHelper POST:url parameters:param success:^(id responseObject) {
-        
+        NSString*code=responseObject[@"code"];
+        if ([code isEqualToString:@"200"]) {
+            
+        }
     } failure:^(NSError *error) {
-        
+        [PSTipsView showTips:@"服务器异常"];
     }];
+ 
 }
 
 #pragma mark ————— 重新刷新获取Token —————

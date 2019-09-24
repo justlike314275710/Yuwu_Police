@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger, PSLoginModeType) {
     PSLoginModePassword,
 };
 
-@interface DLoginViewController ()
+@interface DLoginViewController ()<UITextFieldDelegate>
 @property (nonatomic ,assign) PSLoginModeType loginModeType;
 @property (nonatomic, strong) PSLoginMiddleView *loginMiddleView;
 @property (nonatomic, strong) YYLabel *protocolLabel;
@@ -38,8 +38,19 @@ typedef NS_ENUM(NSInteger, PSLoginModeType) {
     self.loginModeType=PSLoginModeCode;
     self.mode=@"sms_verification_code";
     [self renderContents];
-    // Do any additional setup after loading the view.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidChange:) name:@"UITextFieldTextDidChangeNotification" object:self.loginMiddleView.phoneTextField];
 }
+- (void)textFieldDidChange:(NSNotification *)notification{
+    UITextField *textField = (UITextField *)notification.object;
+    if (textField == self.loginMiddleView.phoneTextField) {
+        NSUInteger wordLen = textField.text.length;
+        if (wordLen > 0) {
+            [self.loginMiddleView.loginButton setBackgroundImage:[UIImage imageNamed:@"提交按钮底框"] forState:UIControlStateNormal];
+        }
+    }
+}
+
+
 
 - (void)renderContents {
    
@@ -58,6 +69,7 @@ typedef NS_ENUM(NSInteger, PSLoginModeType) {
         make.height.mas_equalTo(160);
         make.centerY.mas_equalTo(self.view).offset(10);
     }];
+    self.loginMiddleView.phoneTextField.delegate=self;
     
 //    loginViewModel.phoneNumber = self.loginMiddleView.phoneTextField.text;
 //    registViewModel.phoneNumber = self.loginMiddleView.phoneTextField.text;
@@ -140,7 +152,9 @@ typedef NS_ENUM(NSInteger, PSLoginModeType) {
 }
 //MARK:获取验证码
 - (void)getCode {
-    
+
+    [self.loginMiddleView.codeButton setTitle:@"" forState:UIControlStateDisabled];
+    [self.loginMiddleView.codeButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     self.loginMiddleView.codeButton.enabled = NO;
     _logic.phoneNumber = self.loginMiddleView.phoneTextField.text;
     [_logic checkDataWithPhoneCallback:^(BOOL successful, NSString *tips) {
@@ -178,6 +192,7 @@ typedef NS_ENUM(NSInteger, PSLoginModeType) {
 -(void)LoginAction{
     self.logic.phoneNumber = self.loginMiddleView.phoneTextField.text;
     self.logic.messageCode = self.loginMiddleView.codeTextField.text;
+    self.logic.loginModel=self.mode;
     [_logic checkDataWithCallback:^(BOOL successful, NSString *tips) {
         if (successful) {
             NSDictionary*parmeters=@{
@@ -260,6 +275,13 @@ typedef NS_ENUM(NSInteger, PSLoginModeType) {
     self.protocolLabel.attributedText = protocolText;
     self.protocolLabel.numberOfLines=0;
 }
+
+
+
+
+
+
+
 
 /*
 #pragma mark - Navigation

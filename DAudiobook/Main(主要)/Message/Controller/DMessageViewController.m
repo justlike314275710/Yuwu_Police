@@ -8,8 +8,10 @@
 
 #import "DMessageViewController.h"
 #import "DMessageTableViewCell.h"
+#import "MessageLogic.h"
 @interface DMessageViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *messageTableView;
+@property (nonatomic , strong) MessageLogic *logic;
 @end
 
 @implementation DMessageViewController
@@ -17,10 +19,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"消息";
+    self.logic=[[MessageLogic alloc]init];
     [self addBackItem];
     [self renderContents];
+    [self refreshData];
     self.view.backgroundColor=AppColor(255, 255, 255);
     // Do any additional setup after loading the view.
+}
+
+- (void)refreshData {
+    [_logic refreshMessagesCompleted:^(id data) {
+        
+    } failed:^(NSError *error) {
+        
+    }];
 }
 
 - (void)renderContents {
@@ -65,7 +77,7 @@
 #pragma mark -
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
    // PSMessageViewModel *messageViewModel = (PSMessageViewModel *)self.viewModel;
-    return 4;
+    return _logic.messages.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

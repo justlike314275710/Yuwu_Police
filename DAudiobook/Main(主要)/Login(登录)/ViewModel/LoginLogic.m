@@ -61,13 +61,26 @@
         return;
     }
     
-    if (self.messageCode.length == 0) {
-        if (callback) {
-            NSString*please_enter_verify_code = @"请输入短信验证码";
-            callback(NO,please_enter_verify_code);
+    
+    if ([self.loginModel isEqualToString:@"sms_verification_code"]) {
+        if (self.messageCode.length == 0) {
+            if (callback) {
+                NSString*please_enter_verify_code = @"请输入短信验证码";
+                callback(NO,please_enter_verify_code);
+            }
+            return;
         }
-        return;
+    } else {
+        if (self.messageCode.length == 0) {
+            if (callback) {
+                NSString*please_enter_verify_code = @"请输入密码";
+                callback(NO,please_enter_verify_code);
+            }
+            return;
+        }
     }
+    
+    
     if (!self.agreeProtocol) {
         if (callback) {
             NSString*tips = @"请同意狱务通使用协议";
@@ -103,6 +116,14 @@
         }
         return;
     }
+    if (self.phoneNumber.length != 11) {
+        if (callback) {
+            NSString*please_enter_phone_number = @"请输入正确的手机号码";
+            callback(NO,please_enter_phone_number);
+        }
+        return;
+    }
+    
     if (callback) {
         callback(YES,nil);
     }
