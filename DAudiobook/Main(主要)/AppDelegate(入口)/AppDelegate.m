@@ -48,8 +48,8 @@
     [self monitorNetworkStatus];
     
     //版本更新
-    //DVersionManger*versonManger=[DVersionManger new];
-    //[versonManger jundgeVersonUpdate];
+    DVersionManger*versonManger=[DVersionManger new];
+//    [versonManger jundgeVersonUpdate];
     
     [self  initWindow];
     [self  initService];

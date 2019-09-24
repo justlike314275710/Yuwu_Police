@@ -44,7 +44,7 @@
 }
 -(void)initializeTableView{
     self.tableView=[UITableView new];
-    self.tableView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
+    self.tableView.frame = CGRectMake(0,kTopHeight, kScreenWidth, kScreenHeight-kTopHeight);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.sectionHeaderHeight = 0;
     self.tableView.sectionFooterHeight = 0;
@@ -68,7 +68,7 @@
 -(void)initializeRefresh{
     WEAKSELF
     // 1.下拉刷新
-    MJRefreshHeader *header = [MJRefreshHeader headerWithRefreshingBlock:^{
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [weakSelf                    onHeaderRefreshing];
         [weakSelf.tableView.mj_header    endRefreshing];
     }];

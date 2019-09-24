@@ -46,6 +46,7 @@
 
 /**测试服务器*/
 #define URL_main @"http://192.168.20.31:20000/shark-miai-service"
+
 #define ServerDomain @"http://120.79.251.238:8022"
 #define ServerUrl [NSString stringWithFormat:@"%@/ywgk-app",ServerDomain]
 #define EmallHostUrl @"http://qa.api.auth.prisonpublic.com"          //授权认证平台测试地址
@@ -166,6 +167,13 @@
 #define URL_feedbacks_add     @"/feedbacks"
 
 #pragma mark - ——————— 法律咨询 ————————
+
+
+#pragma mark - ——————— 文章咨询 ————————
+//获取文章列表
+#define URL_Article_GetPublishArticle @"/api/article/getPublishArticle"
+
+
 
 #define URL_advice_processing  @"/lawyer/my/legal-advice/processing"
 #endif /* URLMacros_h */
