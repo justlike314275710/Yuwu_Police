@@ -44,7 +44,7 @@
 }
 -(void)initializeTableView{
     self.tableView=[UITableView new];
-    self.tableView.frame = CGRectMake(0,kTopHeight, kScreenWidth, kScreenHeight-kTopHeight);
+    self.tableView.frame = CGRectMake(0,0, kScreenWidth, kScreenHeight);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.sectionHeaderHeight = 0;
     self.tableView.sectionFooterHeight = 0;
