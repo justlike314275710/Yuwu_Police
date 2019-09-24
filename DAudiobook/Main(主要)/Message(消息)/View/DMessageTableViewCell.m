@@ -43,7 +43,7 @@
         make.left.mas_equalTo(self->_iconView.mas_right).mas_offset(5);
         make.top.mas_equalTo(verticalPadding);
         make.height.mas_equalTo(14);
-        make.width.mas_equalTo(70);
+        make.width.mas_equalTo(120);
     }];
     
     _dataLable=[UILabel new];
@@ -52,11 +52,12 @@
     _dataLable.textColor=AppColor(153, 153, 153);
     [self addSubview:_dataLable];
     [_dataLable mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self.mas_right).mas_offset(-5);
+        make.right.mas_equalTo(self.mas_right).mas_offset(-10);
         make.top.mas_equalTo(verticalPadding);
         make.height.mas_equalTo(12);
-        make.width.mas_equalTo(70);
+        make.width.mas_equalTo(120);
     }];
+    _dataLable.textAlignment=NSTextAlignmentRight;
     
     
     _detailLable=[UILabel new];
@@ -65,10 +66,11 @@
     [self addSubview:_detailLable];
     [_detailLable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.iconView.mas_right).mas_offset(5);
+        make.right.mas_equalTo(self.mas_right).mas_offset(-10);
         make.top.mas_equalTo(self.titleLable.mas_bottom).offset(5);
-        make.height.mas_equalTo(15);
-        make.width.mas_equalTo(SCREEN_WIDTH-34-3*15);
+        make.height.mas_equalTo(30);
     }];
+    _detailLable.numberOfLines=0;
     
 }
 

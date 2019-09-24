@@ -111,10 +111,10 @@
                   [PSTipsView showTips:@"设置密码成功!"];
                 [self dismissViewControllerAnimated:YES completion:nil];
             } failed:^(NSError *error) {
-                 [PSTipsView showTips:@"设置密码失败!"];
+                [PSTipsView showTips:logic.errorMsg?logic.errorMsg:@"设置密码失败!"];
             }];
         } else {
-            [PSTipsView showTips:@"设置密码失败!"];
+            [PSTipsView showTips:tips];
         }
     }];
     

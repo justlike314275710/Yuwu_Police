@@ -20,6 +20,7 @@
 #import "DPasswordViewController.h"
 #import "DModiyPhoneViewcontroller.h"
 #import "DWriteFeedListViewController.h"
+#import "DAccountViewController.h"
 
 @interface DLeftMenuViewController ()
 
@@ -58,9 +59,14 @@
      self.tableView.tableHeaderView = self.menuHeadView;
      WEAKSELF
      self.menuHeadView.headerViewBlock = ^{
-        DMeViewController *VC = [[DMeViewController alloc] init];
-        DNavigationController*NVC = [[DNavigationController alloc] initWithRootViewController:VC];
-        [weakSelf presentDropsWaterViewController:NVC];
+//        DMeViewController *VC = [[DMeViewController alloc] init];
+//        DNavigationController*NVC = [[DNavigationController alloc] initWithRootViewController:VC];
+//        [weakSelf presentDropsWaterViewController:NVC];
+         
+         DAccountViewController*vc=[[DAccountViewController alloc]init];
+         DNavigationController*nav=[[DNavigationController alloc]initWithRootViewController:vc];
+         [weakSelf presentViewController:nav animated:YES completion:nil];
+         
        };
 }
 //区尾
@@ -176,24 +182,37 @@
             
         case KVersionType:{
            // navVC=self.historyNavigationController;
+             [self loginOutAction];
             
         }
             break;
             
         case KLogoutType:{
             //navVC=self.martialNavigationController;
+            [self loginOutAction];
             
         }
             break;
-            
+        default:
+            break;
     }
     //切换根控制器
 //    [self.drawerController setCenterViewController:navVC];
 //    [UIApplication sharedApplication].keyWindow.rootViewController = self.drawerController;
 //    [[UIApplication sharedApplication].keyWindow makeKeyAndVisible];
 //    [self.drawerController closeDrawerAnimated:YES completion:nil];
-    
 }
+
+#pragma mark -- 注销登录
+-(void)loginOutAction{
+    
+    [PSAlertView showWithTitle:nil message:@"确定要退出吗?" messageAlignment:NSTextAlignmentCenter image:nil handler:^(PSAlertView *alertView, NSInteger buttonIndex) {
+        if (buttonIndex == 1) {
+            [help_userManager logout:nil];
+        }
+    } buttonTitles:@"取消",@"确定", nil];
+}
+
 #pragma mark -- 修改手机号码
 -(void)phonePhoneAction{
     DModiyPhoneViewcontroller*modiyPhoneViewcontroller=[[DModiyPhoneViewcontroller alloc]init];
