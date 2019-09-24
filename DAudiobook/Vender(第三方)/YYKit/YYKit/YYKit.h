@@ -142,6 +142,7 @@ FOUNDATION_EXPORT const unsigned char YYKitVersionString[];
 #import "YYCGUtilities.h"
 
 #import "NSObject+YYModel.h"
+#import "YYModel.h"
 #import "YYClassInfo.h"
 
 #import "YYCache.h"

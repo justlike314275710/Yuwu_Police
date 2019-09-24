@@ -9,7 +9,7 @@
 #import "DAllControllersTool.h"
 #import "DLeftMenuViewController.h"
 #import "DNavigationController.h"
-#import "DHomeViewController.h"
+#import "DHotNovelViewController.h"
 #import "DPasswordLogic.h"
 #import "DLoginViewController.h"
 #import "DResetPasswordViewController.h"

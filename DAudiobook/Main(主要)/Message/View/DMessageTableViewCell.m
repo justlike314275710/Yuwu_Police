@@ -54,8 +54,8 @@
     [_dataLable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(self.mas_right).mas_offset(-5);
         make.top.mas_equalTo(verticalPadding);
-        make.height.mas_equalTo(34);
-        make.width.mas_equalTo(34);
+        make.height.mas_equalTo(12);
+        make.width.mas_equalTo(70);
     }];
     
     
@@ -65,9 +65,9 @@
     [self addSubview:_detailLable];
     [_detailLable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.iconView.mas_right).mas_offset(5);
-        make.top.mas_equalTo(verticalPadding);
-        make.height.mas_equalTo(230);
-        make.width.mas_equalTo(15);
+        make.top.mas_equalTo(self.titleLable.mas_bottom).offset(5);
+        make.height.mas_equalTo(15);
+        make.width.mas_equalTo(SCREEN_WIDTH-34-3*15);
     }];
     
 }

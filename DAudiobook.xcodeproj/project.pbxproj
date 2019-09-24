@@ -197,7 +197,7 @@
 		3C4A3A4922681A0F00882244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C4A399A22681A0E00882244 /* Main.storyboard */; };
 		3C4A3A4A22681A0F00882244 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4A399C22681A0E00882244 /* main.m */; };
 		3C4A3A4D22681A0F00882244 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4A39A722681A0E00882244 /* DataManager.m */; };
-		3C4A3A5022681A0F00882244 /* DHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4A39B022681A0E00882244 /* DHomeViewController.m */; };
+		3C4A3A5022681A0F00882244 /* DHotNovelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4A39B022681A0E00882244 /* DHotNovelViewController.m */; };
 		3C4A3A6322681A0F00882244 /* DViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4A39E222681A0E00882244 /* DViewController.m */; };
 		3C4A3A6422681A0F00882244 /* DNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4A39E322681A0E00882244 /* DNavigationController.m */; };
 		3C4A3A6522681A0F00882244 /* DTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4A39E422681A0E00882244 /* DTableViewController.m */; };
@@ -320,6 +320,18 @@
 		3CDB10C32291696A00AEDE9E /* 丝袜.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CDB10BD2291696A00AEDE9E /* 丝袜.json */; };
 		3CDB10C42291696A00AEDE9E /* 美腿.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CDB10BE2291696A00AEDE9E /* 美腿.json */; };
 		3CDB10C52291696A00AEDE9E /* 性感.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CDB10BF2291696A00AEDE9E /* 性感.json */; };
+		554E92BE233A125F009D2429 /* HomePageLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92BD233A125F009D2429 /* HomePageLogic.m */; };
+		554E92C1233A1AEE009D2429 /* PSArticleDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92BF233A1AEC009D2429 /* PSArticleDetailModel.m */; };
+		554E92DB233A1DAE009D2429 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 554E92C4233A1DAD009D2429 /* LICENSE */; };
+		554E92DC233A1DAE009D2429 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 554E92C5233A1DAD009D2429 /* README.md */; };
+		554E92DD233A1DAE009D2429 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92C8233A1DAD009D2429 /* JSONValueTransformer.m */; };
+		554E92DE233A1DAE009D2429 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92CB233A1DAD009D2429 /* JSONKeyMapper.m */; };
+		554E92DF233A1DAE009D2429 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92CD233A1DAD009D2429 /* JSONModel.m */; };
+		554E92E0233A1DAE009D2429 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92CE233A1DAD009D2429 /* JSONModelError.m */; };
+		554E92E1233A1DAE009D2429 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92D1233A1DAD009D2429 /* JSONModelClassProperty.m */; };
+		554E92E2233A1DAE009D2429 /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92D5233A1DAD009D2429 /* JSONHTTPClient.m */; };
+		554E92E3233A1DAE009D2429 /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92D6233A1DAD009D2429 /* JSONAPI.m */; };
+		554E92E4233A1DAE009D2429 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92DA233A1DAD009D2429 /* JSONModel+networking.m */; };
 		EA94570423385ABA003C1C97 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94570223385AB9003C1C97 /* UITextView+Placeholder.m */; };
 		EA94570723386021003C1C97 /* DWriteSucessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94570623386021003C1C97 /* DWriteSucessViewController.m */; };
 		EA94570B23389D63003C1C97 /* DMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94570A23389D63003C1C97 /* DMessageViewController.m */; };
@@ -1082,8 +1094,8 @@
 		3C4A39A022681A0E00882244 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C4A39A322681A0E00882244 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		3C4A39A722681A0E00882244 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
-		3C4A39AC22681A0E00882244 /* DHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHomeViewController.h; sourceTree = "<group>"; };
-		3C4A39B022681A0E00882244 /* DHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHomeViewController.m; sourceTree = "<group>"; };
+		3C4A39AC22681A0E00882244 /* DHotNovelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHotNovelViewController.h; sourceTree = "<group>"; };
+		3C4A39B022681A0E00882244 /* DHotNovelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHotNovelViewController.m; sourceTree = "<group>"; };
 		3C4A39DD22681A0E00882244 /* DViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DViewController.h; sourceTree = "<group>"; };
 		3C4A39DF22681A0E00882244 /* DNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNavigationController.h; sourceTree = "<group>"; };
 		3C4A39E022681A0E00882244 /* DTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTableViewController.h; sourceTree = "<group>"; };
@@ -1292,6 +1304,30 @@
 		3CDB10BD2291696A00AEDE9E /* 丝袜.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "丝袜.json"; sourceTree = "<group>"; };
 		3CDB10BE2291696A00AEDE9E /* 美腿.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "美腿.json"; sourceTree = "<group>"; };
 		3CDB10BF2291696A00AEDE9E /* 性感.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "性感.json"; sourceTree = "<group>"; };
+		554E92BC233A125F009D2429 /* HomePageLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageLogic.h; sourceTree = "<group>"; };
+		554E92BD233A125F009D2429 /* HomePageLogic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageLogic.m; sourceTree = "<group>"; };
+		554E92BF233A1AEC009D2429 /* PSArticleDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArticleDetailModel.m; sourceTree = "<group>"; };
+		554E92C0233A1AEE009D2429 /* PSArticleDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArticleDetailModel.h; sourceTree = "<group>"; };
+		554E92C2233A1C61009D2429 /* YYModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
+		554E92C4233A1DAD009D2429 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		554E92C5233A1DAD009D2429 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		554E92C8233A1DAD009D2429 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
+		554E92C9233A1DAD009D2429 /* JSONKeyMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKeyMapper.h; sourceTree = "<group>"; };
+		554E92CA233A1DAD009D2429 /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
+		554E92CB233A1DAD009D2429 /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
+		554E92CD233A1DAD009D2429 /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
+		554E92CE233A1DAD009D2429 /* JSONModelError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelError.m; sourceTree = "<group>"; };
+		554E92CF233A1DAD009D2429 /* JSONModelClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelClassProperty.h; sourceTree = "<group>"; };
+		554E92D0233A1DAD009D2429 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
+		554E92D1233A1DAD009D2429 /* JSONModelClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelClassProperty.m; sourceTree = "<group>"; };
+		554E92D2233A1DAD009D2429 /* JSONModelError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelError.h; sourceTree = "<group>"; };
+		554E92D3233A1DAD009D2429 /* JSONModelLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelLib.h; sourceTree = "<group>"; };
+		554E92D5233A1DAD009D2429 /* JSONHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONHTTPClient.m; sourceTree = "<group>"; };
+		554E92D6233A1DAD009D2429 /* JSONAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONAPI.m; sourceTree = "<group>"; };
+		554E92D7233A1DAD009D2429 /* JSONModel+networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONModel+networking.h"; sourceTree = "<group>"; };
+		554E92D8233A1DAD009D2429 /* JSONHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHTTPClient.h; sourceTree = "<group>"; };
+		554E92D9233A1DAD009D2429 /* JSONAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONAPI.h; sourceTree = "<group>"; };
+		554E92DA233A1DAD009D2429 /* JSONModel+networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONModel+networking.m"; sourceTree = "<group>"; };
 		EA94570223385AB9003C1C97 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		EA94570323385AB9003C1C97 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
 		EA94570523386021003C1C97 /* DWriteSucessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWriteSucessViewController.h; sourceTree = "<group>"; };
@@ -2737,6 +2773,7 @@
 		3C4A392D22681A0E00882244 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				554E92C3233A1DAD009D2429 /* JSONModel */,
 				EAA31146233472D7004DE08F /* BlocksKit */,
 				EA960E35233075BD00D81A25 /* IQKeyboardManager */,
 				EA960DE4232F84F900D81A25 /* AFNetworking */,
@@ -2906,6 +2943,7 @@
 		3C4A39A922681A0E00882244 /* Home(首页) */ = {
 			isa = PBXGroup;
 			children = (
+				554E92BB233A11C4009D2429 /* Logic */,
 				3C4A39AA22681A0E00882244 /* Controller */,
 				3C4A39B122681A0E00882244 /* Model */,
 				3C4A39B422681A0E00882244 /* View */,
@@ -2916,8 +2954,8 @@
 		3C4A39AA22681A0E00882244 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3C4A39AC22681A0E00882244 /* DHomeViewController.h */,
-				3C4A39B022681A0E00882244 /* DHomeViewController.m */,
+				3C4A39AC22681A0E00882244 /* DHotNovelViewController.h */,
+				3C4A39B022681A0E00882244 /* DHotNovelViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2925,6 +2963,8 @@
 		3C4A39B122681A0E00882244 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				554E92C0233A1AEE009D2429 /* PSArticleDetailModel.h */,
+				554E92BF233A1AEC009D2429 /* PSArticleDetailModel.m */,
 				3CCDA9F2226F16130019783A /* DRadioModel.h */,
 				3CCDA9F3226F16130019783A /* DRadioModel.m */,
 			);
@@ -3482,6 +3522,73 @@
 				3C79D845229B95B400A9D10E /* DShareView.m */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		554E92BB233A11C4009D2429 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				554E92BC233A125F009D2429 /* HomePageLogic.h */,
+				554E92BD233A125F009D2429 /* HomePageLogic.m */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		554E92C3233A1DAD009D2429 /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				554E92C4233A1DAD009D2429 /* LICENSE */,
+				554E92C5233A1DAD009D2429 /* README.md */,
+				554E92C6233A1DAD009D2429 /* JSONModel */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		554E92C6233A1DAD009D2429 /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				554E92C7233A1DAD009D2429 /* JSONModelTransformations */,
+				554E92CC233A1DAD009D2429 /* JSONModel */,
+				554E92D3233A1DAD009D2429 /* JSONModelLib.h */,
+				554E92D4233A1DAD009D2429 /* JSONModelNetworking */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		554E92C7233A1DAD009D2429 /* JSONModelTransformations */ = {
+			isa = PBXGroup;
+			children = (
+				554E92C8233A1DAD009D2429 /* JSONValueTransformer.m */,
+				554E92C9233A1DAD009D2429 /* JSONKeyMapper.h */,
+				554E92CA233A1DAD009D2429 /* JSONValueTransformer.h */,
+				554E92CB233A1DAD009D2429 /* JSONKeyMapper.m */,
+			);
+			path = JSONModelTransformations;
+			sourceTree = "<group>";
+		};
+		554E92CC233A1DAD009D2429 /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				554E92CD233A1DAD009D2429 /* JSONModel.m */,
+				554E92CE233A1DAD009D2429 /* JSONModelError.m */,
+				554E92CF233A1DAD009D2429 /* JSONModelClassProperty.h */,
+				554E92D0233A1DAD009D2429 /* JSONModel.h */,
+				554E92D1233A1DAD009D2429 /* JSONModelClassProperty.m */,
+				554E92D2233A1DAD009D2429 /* JSONModelError.h */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		554E92D4233A1DAD009D2429 /* JSONModelNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				554E92D5233A1DAD009D2429 /* JSONHTTPClient.m */,
+				554E92D6233A1DAD009D2429 /* JSONAPI.m */,
+				554E92D7233A1DAD009D2429 /* JSONModel+networking.h */,
+				554E92D8233A1DAD009D2429 /* JSONHTTPClient.h */,
+				554E92D9233A1DAD009D2429 /* JSONAPI.h */,
+				554E92DA233A1DAD009D2429 /* JSONModel+networking.m */,
+			);
+			path = JSONModelNetworking;
 			sourceTree = "<group>";
 		};
 		EA94570123385A8F003C1C97 /* UITextViewTool */ = {
@@ -4457,6 +4564,7 @@
 		EA960BF3232F3B1A00D81A25 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				554E92C2233A1C61009D2429 /* YYModel.h */,
 				EA960BF4232F3B1A00D81A25 /* YYClassInfo.h */,
 				EA960BF5232F3B1A00D81A25 /* NSObject+YYModel.m */,
 				EA960BF6232F3B1A00D81A25 /* YYClassInfo.m */,
@@ -5547,6 +5655,7 @@
 				3C4543012275AB0600AE50B1 /* 12886345.json in Resources */,
 				3C45423B22757B8E00AE50B1 /* 玄幻.json in Resources */,
 				3C45431B2275AB0600AE50B1 /* 2774780.json in Resources */,
+				554E92DC233A1DAE009D2429 /* README.md in Resources */,
 				EA960E63233075BE00D81A25 /* IQKeyboardManager.bundle in Resources */,
 				3C4542FB2275AB0600AE50B1 /* 16639835.json in Resources */,
 				3C4543162275AB0600AE50B1 /* 13486515.json in Resources */,
@@ -5570,6 +5679,7 @@
 				3C4543042275AB0600AE50B1 /* 9431214.json in Resources */,
 				3C4543032275AB0600AE50B1 /* 4713541.json in Resources */,
 				3C45430A2275AB0600AE50B1 /* 15348126.json in Resources */,
+				554E92DB233A1DAE009D2429 /* LICENSE in Resources */,
 				3C4543152275AB0600AE50B1 /* 10587045.json in Resources */,
 				3C45430C2275AB0600AE50B1 /* 7166957.json in Resources */,
 				3C4542E02275AB0600AE50B1 /* 16076998.json in Resources */,
@@ -5770,6 +5880,7 @@
 				EA960B94232F319A00D81A25 /* TZPhotoPreviewController.m in Sources */,
 				3C4A3A3F22681A0F00882244 /* FMDatabaseQueue.m in Sources */,
 				EAA31024233461CF004DE08F /* NSString+emoji.m in Sources */,
+				554E92C1233A1AEE009D2429 /* PSArticleDetailModel.m in Sources */,
 				EAA311AE233472D8004DE08F /* UITextField+BlocksKit.m in Sources */,
 				EA960B56232F2FE900D81A25 /* UIImage+ForceDecode.m in Sources */,
 				EA960B93232F319A00D81A25 /* UIView+Layout.m in Sources */,
@@ -5822,12 +5933,14 @@
 				EA960AB3232F29FA00D81A25 /* NIMTeamCardRowItem.m in Sources */,
 				3CD2D8232299314200C700D7 /* UICKeyChainStore.m in Sources */,
 				EA960AF0232F29FB00D81A25 /* UIImage+NIMKit.m in Sources */,
+				554E92E4233A1DAE009D2429 /* JSONModel+networking.m in Sources */,
 				EA960DD3232F78FA00D81A25 /* HpBaseLogic.m in Sources */,
 				EA960D94232F5BA000D81A25 /* DGActivityIndicatorTriplePulseAnimation.m in Sources */,
 				3C4A3A4022681A0F00882244 /* FMDatabaseAdditions.m in Sources */,
 				EA960A85232F29FA00D81A25 /* NIMContactDataItem.m in Sources */,
 				EA960CA3232F3B1C00D81A25 /* YYTextParser.m in Sources */,
 				EA960C90232F3B1B00D81A25 /* CALayer+YYWebImage.m in Sources */,
+				554E92E3233A1DAE009D2429 /* JSONAPI.m in Sources */,
 				3C0DB64322D731ED0029730E /* NSObject+MJKeyValue.m in Sources */,
 				EA960D9D232F5BA000D81A25 /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
 				EA960BB1232F32E500D81A25 /* PSAlertView.m in Sources */,
@@ -5837,6 +5950,8 @@
 				EA960CAA232F3B1C00D81A25 /* UIBezierPath+YYAdd.m in Sources */,
 				EA960AAD232F29FA00D81A25 /* NIMLoadProgressView.m in Sources */,
 				EA960CBE232F3B1C00D81A25 /* NSTimer+YYAdd.m in Sources */,
+				554E92E0233A1DAE009D2429 /* JSONModelError.m in Sources */,
+				554E92DD233A1DAE009D2429 /* JSONValueTransformer.m in Sources */,
 				3CACB0FF22928BBF0006AB3C /* LBLoadingView.m in Sources */,
 				3CACB0FD22928BBF0006AB3C /* LBPhotoBrowserConst.m in Sources */,
 				EA960E702330CAA900D81A25 /* LPButton.m in Sources */,
@@ -5888,6 +6003,7 @@
 				EA960A86232F29FA00D81A25 /* NIMContactSelectViewController.m in Sources */,
 				EA960E17232F84F900D81A25 /* AFHTTPSessionManager.m in Sources */,
 				3C4A3A1822681A0E00882244 /* UIView+Additions.m in Sources */,
+				554E92DF233A1DAE009D2429 /* JSONModel.m in Sources */,
 				3CDB10AF228FEC8300AEDE9E /* DPictureViewController.m in Sources */,
 				EA960AFC232F29FB00D81A25 /* NIMKitConfig.m in Sources */,
 				EA960E0D232F84F900D81A25 /* UIProgressView+AFNetworking.m in Sources */,
@@ -5911,6 +6027,7 @@
 				3C8F3E27226B4F09006CF059 /* MMDrawerController.m in Sources */,
 				3C0DB68E22D7320B0029730E /* MJRefreshHeader.m in Sources */,
 				EA960A9F232F29FA00D81A25 /* NIMInputToolBar.m in Sources */,
+				554E92BE233A125F009D2429 /* HomePageLogic.m in Sources */,
 				EA960CA4232F3B1C00D81A25 /* NSAttributedString+YYText.m in Sources */,
 				EA960CA5232F3B1C00D81A25 /* UIPasteboard+YYText.m in Sources */,
 				EA960AA4232F29FA00D81A25 /* NIMBadgeView.m in Sources */,
@@ -5969,6 +6086,7 @@
 				EA960B98232F319A00D81A25 /* TZPhotoPickerController.m in Sources */,
 				EA960DA7232F5BA000D81A25 /* DGActivityIndicatorBallScaleAnimation.m in Sources */,
 				3C4A3A3B22681A0F00882244 /* MASViewConstraint.m in Sources */,
+				554E92E2233A1DAE009D2429 /* JSONHTTPClient.m in Sources */,
 				EA960B5B232F2FE900D81A25 /* UIImage+MultiFormat.m in Sources */,
 				3C0DB64622D731ED0029730E /* MJExtensionConst.m in Sources */,
 				3C79D846229B95B400A9D10E /* DShareView.m in Sources */,
@@ -6035,6 +6153,7 @@
 				EA960C8D232F3B1B00D81A25 /* UIButton+YYWebImage.m in Sources */,
 				EA960CCA232F3B1C00D81A25 /* YYSentinel.m in Sources */,
 				EA960C86232F3B1B00D81A25 /* YYImageCache.m in Sources */,
+				554E92E1233A1DAE009D2429 /* JSONModelClassProperty.m in Sources */,
 				EA960DD9232F7D6700D81A25 /* WXZTipView.m in Sources */,
 				EA960ACF232F29FB00D81A25 /* NIMUnsupportContentConfig.m in Sources */,
 				3C4A3A1B22681A0E00882244 /* UIColor+ColorHelper.m in Sources */,
@@ -6056,13 +6175,14 @@
 				EA960AB7232F29FA00D81A25 /* NIMTeamAnnouncementListViewController.m in Sources */,
 				EA960AB8232F29FA00D81A25 /* NIMTeamSwitchTableViewCell.m in Sources */,
 				EA960CB4232F3B1C00D81A25 /* UIImage+YYAdd.m in Sources */,
+				554E92DE233A1DAE009D2429 /* JSONKeyMapper.m in Sources */,
 				EA960B68232F2FE900D81A25 /* UIView+WebCache.m in Sources */,
 				3CCDAA5E2271BD6C0019783A /* DPlayerManager.m in Sources */,
 				EA960A8F232F29FA00D81A25 /* NIMKitResourceResizer.m in Sources */,
 				EA960BCB232F38F400D81A25 /* GTMBase64.m in Sources */,
 				3C39357222882A5400A5190A /* BAGridCollectionCell.m in Sources */,
 				EA960C88232F3B1B00D81A25 /* YYSpriteSheetImage.m in Sources */,
-				3C4A3A5022681A0F00882244 /* DHomeViewController.m in Sources */,
+				3C4A3A5022681A0F00882244 /* DHotNovelViewController.m in Sources */,
 				EA960AC0232F29FB00D81A25 /* NIMTimestampModel.m in Sources */,
 				EA960CCD232F3B1C00D81A25 /* YYKeychain.m in Sources */,
 				3C8F3E25226B4F09006CF059 /* MMDrawerBarButtonItem.m in Sources */,

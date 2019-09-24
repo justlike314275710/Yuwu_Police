@@ -6,13 +6,14 @@
 //  Copyright © 2019年 liujiliu. All rights reserved.
 //
 
-#import "DHomePageViewController.h"
+#import "DHotNovelViewController.h"
 #import "DRadioListCell.h"
 #import "DRadioModel.h"
 #import "DAlbumViewController.h"
 #import "DMessageViewController.h"
+#import "HomePageLogic.h"
 
-@interface DHomePageViewController() {
+@interface DHotNovelViewController() {
     
 }
 @property (nonatomic,strong) UIButton *publishBtn;
@@ -20,16 +21,18 @@
 @end
 
 #pragma mark - 热门小说
-@implementation DHomePageViewController
+@implementation DHotNovelViewController
 #pragma mark - LifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self onHeaderRefreshing];
    // [self GDTadvertising];
     [self SearchBar];
     
-    [self setupUI];
-    
     [self initializeRefresh];
+    
+    [self setupUI];
     
     [self onHeaderRefreshing];
     
@@ -37,6 +40,14 @@
 
 - (BOOL)prefersStatusBarHidden{
     return NO;
+}
+
+- (void)onHeaderRefreshing{
+    [[HomePageLogic new] refreshArticleListCompleted:^(id data) {
+        
+    } failed:^(NSError *error) {
+        
+    }];
 }
 
 - (void)rightBarItemPress{
@@ -47,6 +58,14 @@
 #pragma - PrivateMethods
 -(void)setupUI{
     [self.view addSubview:self.publishBtn];
+    
+    NSString *token = help_userManager.curUserInfo.token;
+    
+    NSLog(@"%@",token);
+    
+    
+    
+   
 }
 
 #pragma - TouchEvent
@@ -134,3 +153,93 @@
 @end
 
 
+
+#pragma mark - 相声评书
+@implementation DCrosstalkViewController
+
+//获取URL
+-(NSString *)getURL{
+    return CrosstalkUrl;
+}
+//获取title
+-(NSString *)getMenuTitle{
+    return @"相声";
+}
+
+@end
+
+
+
+
+#pragma mark - 玄幻小说
+@implementation DFantasyViewController
+
+//获取URL
+-(NSString *)getURL{
+    return FantasyUrl;
+}
+//获取title
+-(NSString *)getMenuTitle{
+    return @"玄幻";
+}
+
+@end
+
+
+#pragma mark - 都市小说
+@implementation DCityViewController
+
+//获取URL
+-(NSString *)getURL{
+    return CityUrl;
+}
+//获取title
+-(NSString *)getMenuTitle{
+    return @"都市";
+}
+@end
+
+
+#pragma mark - 恐怖小说
+@implementation DTerroristViewController
+
+//获取URL
+-(NSString *)getURL{
+    return TerroristUrl;
+}
+//获取title
+-(NSString *)getMenuTitle{
+    return @"恐怖";
+}
+
+@end
+
+
+#pragma mark - 历史小说
+@implementation DHistoryViewController
+
+//获取URL
+-(NSString *)getURL{
+    return HistoryUrl;
+}
+//获取title
+-(NSString *)getMenuTitle{
+    return @"历史";
+}
+
+@end
+
+
+#pragma mark - 武侠小说
+@implementation DMartialViewController
+
+//获取URL
+-(NSString *)getURL{
+    return MartialUrl;
+}
+//获取title
+-(NSString *)getMenuTitle{
+    return @"武侠";
+}
+
+@end

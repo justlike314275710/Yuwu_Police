@@ -6,7 +6,8 @@
 //  Copyright © 2019年 calvin. All rights reserved.
 //
 
-#import <JSONModel/JSONModel.h>
+#import "JSONModel.h"
+
 
 @protocol PSArticleDetailModel<NSObject>
 

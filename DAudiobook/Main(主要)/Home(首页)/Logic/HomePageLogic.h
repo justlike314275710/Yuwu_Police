@@ -12,6 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HomePageLogic : HpBaseLogic
 
+@property (nonatomic, assign) BOOL hasNextPage;
+
+- (void)refreshArticleListCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback;
+- (void)loadMoreArticleListCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END
