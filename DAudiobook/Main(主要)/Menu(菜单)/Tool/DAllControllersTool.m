@@ -155,6 +155,9 @@
     DAllControllersTool *dispatchTool = [DAllControllersTool shareOpenController];
     //用当前类的对象 执行实际选择执行的方法
     [dispatchTool openViewControllerWithIndex:menuModel];
+    
+
+    
 }
 
 

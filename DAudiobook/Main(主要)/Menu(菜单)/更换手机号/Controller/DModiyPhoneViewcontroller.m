@@ -122,9 +122,10 @@
     NSDictionary*parameters=@{@"phoneNumber":params[@"username"],@"code":params[@"password"]};
     [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
     [PPNetworkHelper POST:url1 parameters:parameters success:^(id responseObject) {
-        
+ 
         DModiyNewPhoneViewController*modiyNewVC=[[DModiyNewPhoneViewController alloc]init];
         [self.navigationController pushViewController:modiyNewVC animated:YES];
+        
         
     } failure:^(NSError *error) {
         NSData *data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey];

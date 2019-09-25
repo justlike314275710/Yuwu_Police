@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DNavigationController : UINavigationController
 
-
+@property (nonatomic , assign) BOOL isHidden;
 - (BOOL)prefersStatusBarHidden;
 
 
