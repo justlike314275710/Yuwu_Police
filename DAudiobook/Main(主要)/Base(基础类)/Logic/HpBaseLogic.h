@@ -24,19 +24,22 @@ typedef void(^CheckDataCallback)(BOOL successful, NSString *tips);
 typedef void(^Complete)(void);
 
 @interface HpBaseLogic : NSObject
+
 @property (nonatomic, assign) PSDataStatus dataStatus;
 
 @property (nonatomic, assign) NSInteger page;
 
 @property (nonatomic, assign) NSInteger pageSize;
 
-//- (void)checkDataWithCallback:(CheckDataCallback)callback;
+@property (nonatomic, assign) BOOL hasNextPage;
+
+
+- (void)checkDataWithCallback:(CheckDataCallback)callback;
 
 - (void)fetchDataWithParams:(id)params completed:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback;
 
 
-//解析json 数组
-- (NSArray *)jsonsToModelsWithJsons:(NSArray *)jsons;
+
 
 
 

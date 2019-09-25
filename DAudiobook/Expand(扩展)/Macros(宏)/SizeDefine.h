@@ -52,6 +52,9 @@
 
 #define FontOfSize(size) [UIFont systemFontOfSize:size]
 
+#define FontOfSize(size) [UIFont systemFontOfSize:size]
+#define boldFontOfSize(size) [UIFont boldSystemFontOfSize:size] 
+
 
 
 //图标大小

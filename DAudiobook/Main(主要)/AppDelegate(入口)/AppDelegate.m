@@ -49,7 +49,11 @@
     
     //版本更新
     DVersionManger*versonManger=[DVersionManger new];
+<<<<<<< HEAD
     //[versonManger jundgeVersonUpdate];
+=======
+//    [versonManger jundgeVersonUpdate];
+>>>>>>> 44d27f1f77522696687f4373377875155bd71e15
     
     [self  initWindow];
     [self  initService];

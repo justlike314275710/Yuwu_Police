@@ -177,8 +177,14 @@
 
 
 #pragma mark - ——————— 文章咨询 ————————
+//获取发布文章权限
+#define URL_Article_author @"/families/author/enabled"
 //获取文章列表
 #define URL_Article_GetPublishArticle @"/api/article/getPublishArticle"
+//查找作者笔名
+#define URL_Article_findPenName @"/api/article/findPenName"
+//发布文章
+#define URL_Article_publishFamilyArticle @"/api/article/publishFamilyArticle"
 
 
 

@@ -53,6 +53,12 @@
     self.tableView.estimatedSectionFooterHeight = 0;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.ly_emptyView = [LYEmptyView emptyViewWithImageStr:@"noData"
+                                                            titleStr:@"暂无数据"
+                                                           detailStr:nil];
+//    self.tableView.ly_emptyView = [LYEmptyView emptyActionViewWithImage:ImageNamed(@"noData") titleStr:@"暂无数据" detailStr:nil btnTitleStr:@"重新加载" btnClickBlock:^{
+//        
+//    }];
     [self.view addSubview:self.tableView];
 }
 //区头
