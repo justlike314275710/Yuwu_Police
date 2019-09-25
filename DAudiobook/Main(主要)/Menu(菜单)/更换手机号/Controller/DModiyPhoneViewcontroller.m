@@ -118,8 +118,6 @@
 }
 //MARK:判断手机号是否正确
 - (void)requestData:(NSDictionary*)params {
-    
-    
     NSString*url1=[NSString stringWithFormat:@"%@%@",EmallHostUrl,URL_post_sms_verification];
     NSDictionary*parameters=@{@"phoneNumber":params[@"username"],@"code":params[@"password"]};
     [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];

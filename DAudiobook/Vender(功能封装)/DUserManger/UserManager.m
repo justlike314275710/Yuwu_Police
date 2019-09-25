@@ -219,8 +219,7 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
 }
 #pragma mark ————— 狱警端登录同步—————
 -(void)police_Login:(NSDictionary *)params{
-    //NSString*url=@"http://120.79.251.238:8022/ywgk-app/api/author_police/login";
-    NSString*url=@"http://192.168.0.112:8022/api/author_police/login";
+    NSString*url=NSStringFormat(@"%@%@",ServerUrl,URL_Police_Login);
     NSString *username = [params valueForKey:@"name"];
     NSDictionary*param=@{@"accountName":username};
     NSString *access_token = help_userManager.oathInfo.access_token;
