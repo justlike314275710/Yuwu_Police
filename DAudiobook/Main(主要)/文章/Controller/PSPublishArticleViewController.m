@@ -520,6 +520,8 @@
         _articleTitleField.textColor = UIColorFromRGB(51,51,51);
         _articleTitleField.placeholder = @"请输入标题,不能超过20个字";
         _articleTitleField.delegate = self;
+        
+        
         [_articleTitleField.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
             _articleTitleLab.text = @"文章标题";
 //                        if (x.length>20) {
