@@ -49,7 +49,11 @@
     
     //版本更新
     DVersionManger*versonManger=[DVersionManger new];
+<<<<<<< HEAD
+    //[versonManger jundgeVersonUpdate];
+=======
 //    [versonManger jundgeVersonUpdate];
+>>>>>>> 44d27f1f77522696687f4373377875155bd71e15
     
     [self  initWindow];
     [self  initService];
@@ -271,8 +275,9 @@
         menuModel.menuType=KCollectionType;
         [DAllControllersTool createViewControllerWithIndex:menuModel];
         self.window.rootViewController = [DAllControllersTool shareOpenController].drawerController;
+       
+       
     }else {//登陆失败加载登陆页面控制器
-        
         DNavigationController*navController=[[DNavigationController alloc]initWithRootViewController:[[DLoginViewController alloc]init]];
         [navController setNavigationBarHidden:YES];
         self.window.rootViewController=navController;

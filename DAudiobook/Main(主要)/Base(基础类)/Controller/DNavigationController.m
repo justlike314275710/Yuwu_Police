@@ -29,7 +29,29 @@
     //开启编辑
     UINavigationBar *bar = [UINavigationBar appearance];
     //设置导航条背景颜色
-    [bar setBarTintColor:ImportantColor];
+   
+//        UIView *view = [[UIView alloc] init];
+//        view.frame = CGRectMake(0,25,SCREEN_WIDTH,48);
+//
+//        CAGradientLayer *gl = [CAGradientLayer layer];
+//        gl.frame = CGRectMake(0,25,SCREEN_WIDTH,48);
+//        gl.startPoint = CGPointMake(0, 0);
+//        gl.endPoint = CGPointMake(1, 1);
+//        gl.colors = @[(__bridge id)[UIColor colorWithRed:32/255.0 green:124/255.0 blue:251/255.0 alpha:1.0].CGColor,(__bridge id)[UIColor colorWithRed:76/255.0 green:179/255.0 blue:244/255.0 alpha:1.0].CGColor];
+//        gl.locations = @[@(0.0),@(1.0f)];
+//
+//        [self.view.layer addSublayer:gl];
+//        view.layer.shadowColor = [UIColor colorWithRed:0/255.0 green:42/255.0 blue:162/255.0 alpha:0.2].CGColor;
+//        view.layer.shadowOffset = CGSizeMake(0,4);
+//        view.layer.shadowOpacity = 1;
+//        view.layer.shadowRadius = 9;
+//        [self.navigationBar setBackgroundImage:[self convertViewToImage:view] forBarMetrics:UIBarMetricsDefault];
+   
+        [bar setBarTintColor:ImportantColor];
+    
+    
+    
+   // [bar setBarTintColor:ImportantColor];
     //设置字体颜色
     [bar setTintColor:[UIColor whiteColor]];
     //设置样式
@@ -49,6 +71,19 @@
     
     
 }
+
+
+
+
+-(UIImage*)convertViewToImage:(UIView*)v{
+    CGSize s = v.bounds.size;
+    UIGraphicsBeginImageContextWithOptions(s, YES, [UIScreen mainScreen].scale);
+    [v.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage*image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 //==========================================================滑动返回卡住问题解决
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
