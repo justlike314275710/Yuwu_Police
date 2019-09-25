@@ -18,15 +18,5 @@
     
 }
 
-//+ (NSArray *)jsonsToModelsWithJsons:(NSArray *)jsons {
-//    NSMutableArray *models = [NSMutableArray array];
-//    for (NSDictionary *json in jsons) {
-//        id model = [[self class] yy_modelWithJSON:json];
-//        if (model) {
-//            [models addObject:model];
-//        }
-//    }
-//    return models;
-//}
 
 @end

@@ -14,9 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSMutableArray *datalist;
 
 
-
 - (void)refreshArticleListCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback;
 - (void)loadMoreArticleListCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback;
+//获取是否能发文章权限
+- (void)authorArticleCompleted:(RequestDataCompleted)completedCallback
+                        failed:(RequestDataFailed)failedCallback;
+
 
 
 

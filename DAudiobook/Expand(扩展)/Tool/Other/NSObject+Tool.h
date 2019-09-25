@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (Tool)
 
+//解析json 数组
++ (NSArray *)jsonsToModelsWithJsons:(NSArray *)jsons;
+
 @end
 
 NS_ASSUME_NONNULL_END

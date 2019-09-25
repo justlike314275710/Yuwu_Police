@@ -12,11 +12,12 @@
 #import "DAlbumViewController.h"
 #import "DMessageViewController.h"
 #import "HomePageLogic.h"
-
+#import "PSPlatformArticleCell.h"
 @interface DHotNovelViewController() {
     
 }
 @property (nonatomic,strong) UIButton *publishBtn;
+@property (nonatomic,strong) HomePageLogic *logic;
 
 @end
 
@@ -30,10 +31,13 @@
    // [self GDTadvertising];
     [self SearchBar];
     
+    //加载刷新控件
     [self initializeRefresh];
     
     [self setupUI];
     
+    [self setupData];
+    //下啦刷新
     [self onHeaderRefreshing];
     
 }
@@ -41,13 +45,55 @@
 - (BOOL)prefersStatusBarHidden{
     return NO;
 }
-
+//下啦刷新
 - (void)onHeaderRefreshing{
-    [[HomePageLogic new] refreshArticleListCompleted:^(id data) {
-        
+    [[PSLoadingView sharedInstance] show];
+    [self.logic refreshArticleListCompleted:^(id data) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView.mj_header endRefreshing];
+            [self.tableView reloadData];
+            [self setTableleUI];
+            [[PSLoadingView sharedInstance] dismiss];
+        });
     } failed:^(NSError *error) {
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView.mj_header endRefreshing];
+            [self.tableView reloadData];
+            [self setTableleUI];
+            [[PSLoadingView sharedInstance] dismiss];
+        });
     }];
+}
+//上啦
+-(void)onFooterRefreshing {
+    [[PSLoadingView sharedInstance] show];
+    [_logic loadMoreArticleListCompleted:^(id data) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[PSLoadingView sharedInstance] dismiss];
+            [self.tableView.mj_footer endRefreshing];
+            [self.tableView reloadData];
+            [self setTableleUI];
+        });
+    } failed:^(NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[PSLoadingView sharedInstance] dismiss];
+            [self.tableView.mj_footer endRefreshing];
+            [self.tableView reloadData];
+            [self setTableleUI];
+        });
+    }];
+    
+}
+-(void)setTableleUI {
+    @weakify(self);
+    if (_logic.hasNextPage) {
+        @strongify(self);
+        self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+            [self onFooterRefreshing];
+        }];
+    }else{
+        self.tableView.mj_footer = nil;
+    }
 }
 
 - (void)rightBarItemPress{
@@ -57,15 +103,23 @@
 
 #pragma - PrivateMethods
 -(void)setupUI{
+    
+    self.logic = [HomePageLogic new];
+    
     [self.view addSubview:self.publishBtn];
     
     NSString *token = help_userManager.curUserInfo.token;
     
     NSLog(@"%@",token);
     
-    
-    
-   
+}
+
+- (void)setupData{
+    [self.logic authorArticleCompleted:^(id data) {
+        
+    } failed:^(NSError *error) {
+        
+    }];
 }
 
 #pragma - TouchEvent
@@ -95,41 +149,30 @@
 //    self.navigationItem.titleView.frame = CGRectMake(0,30,SCREEN_WIDTH-6*15,15);
 }
 
-#pragma mark - 共享方法
-//数据处理
--(void)dataProcessingIsRemove:(BOOL)isRemove input:(id)input{
-    if (isRemove) {
-        [self.listArray removeAllObjects];
-    }
-    [self.listArray addObjectsFromArray:[DRadioModel mj_objectArrayWithKeyValuesArray:input]];
-    [self.tableView  reloadData];
-    
-}
-//获取参数
--(NSMutableDictionary *)getJSON{
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithDictionary:[self.pageModel pageOutput]];
-    [dic setObject:@"1" forKey:@"type"];
-    return dic;
-}
-//获取URL
--(NSString *)getURL{
-    return HotNovelUrl;
-}
-//获取title
--(NSString *)getMenuTitle{
-    return @"热门";
+#pragma mark - Delegate
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.logic.datalist.count;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 85;
-}
-- (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    DRadioListCell *cell = [DRadioListCell cellWithTableView:tableView];
-    DRadioModel *model = self.listArray[indexPath.row];
-    [cell setData:model];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PSPlatformArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PSPlatformArticleCell"];
+    cell.model = [self.logic.datalist objectAtIndex:indexPath.row];
+    @weakify(self);
+    cell.praiseBlock = ^(BOOL action, NSString *id, PSPraiseResult result) {
+        @strongify(self);
+//        if (action) {
+//            [self praiseActionid:id result:result];
+//        } else {
+//            [self deletePraiseActionid:id result:result];
+//        }
+    };
     return cell;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 175;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     DRadioModel *model = self.listArray[indexPath.row];
     DAlbumViewController *VC = [[DAlbumViewController alloc] init];
