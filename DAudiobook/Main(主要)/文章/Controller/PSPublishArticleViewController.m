@@ -12,7 +12,6 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "NSString+emoji.h"
 #import <RZRichTextView/RZRichTextView.h>
-#import <ReactiveObjC/UITextField+RACSignalSupport.h>
 #import "IQKeyboardManager.h"
 #import "UITextView+Placeholder.h"
 #import "PSPublishArticleViewModel.h"
@@ -484,6 +483,7 @@
         _authorField.textColor = UIColorFromRGB(51,51,51);
         _authorField.placeholder = @"请输入笔名,不能超过六位数";
         _authorField.delegate = self;
+        /*
         [_authorField.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
             _authorLab.text = @"作者笔名";
 //            if (x.length>6) {
@@ -491,6 +491,7 @@
 //                [PSTipsView showTips:@"笔名不能超过6个字!"];
 //            }
         }];
+         */
         [_authorField addTarget:self action:@selector(textFiledChanged:) forControlEvents:UIControlEventEditingChanged];
     }
     return _authorField;
@@ -520,8 +521,7 @@
         _articleTitleField.textColor = UIColorFromRGB(51,51,51);
         _articleTitleField.placeholder = @"请输入标题,不能超过20个字";
         _articleTitleField.delegate = self;
-        
-        
+        /*
         [_articleTitleField.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
             _articleTitleLab.text = @"文章标题";
 //                        if (x.length>20) {
@@ -529,6 +529,7 @@
 //                            [PSTipsView showTips:@"标题不能超过20个字!"];
 //                        }
                     }];
+         */
             [_articleTitleField addTarget:self action:@selector(textFiledChanged:) forControlEvents:UIControlEventEditingChanged];
     }
     return _articleTitleField;
@@ -556,7 +557,7 @@
         
         _articleContent.rz_shouldChangeTextInRange = ^BOOL(RZRichTextView * _Nonnull textView, NSRange inRange, NSString * _Nonnull replacementText) {
             if ([[[textView textInputMode] primaryLanguage] isEqualToString:@"emoji"] || ![[textView textInputMode] primaryLanguage]) {
-                NSString *msg = NSLocalizedString(@"Can't enter expressions!", @"不能输入表情！");
+                NSString *msg = @"不能输入表情!";
                 [PSTipsView showTips:msg];
                 return NO;
             } else{
