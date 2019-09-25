@@ -17,11 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *userName;
 @property (nonatomic,copy) NSString *realName;
 @property (nonatomic,copy) NSString *pName;
-@property (nonatomic , strong) NSArray *cName;
+@property (nonatomic , strong) NSString *cName;
 @property (nonatomic , strong) NSString *isEnabled;
 @property (nonatomic , strong) NSString *jailName;
 @property (nonatomic , strong) NSString *account;
-
+@property (nonatomic , strong) NSString *pseudonym;
+@property (nonatomic , strong) NSString *sex;
 
 @end
 

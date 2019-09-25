@@ -83,11 +83,11 @@
         }
         
         if (cellData[@"arrow_icon"]) {
-            [self.arrowIcon setImage:IMAGE_NAMED(@"arrow_icon")];
+            [self.arrowIcon setImage:IMAGE_NAMED(@"开")];
             [_arrowIcon mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.right.mas_equalTo(-KNormalSpace);
                 make.top.mas_equalTo(KNormalSpace);
-                make.width.height.mas_equalTo(22);
+                make.width.height.mas_equalTo(10);
                 make.centerY.mas_equalTo(self);
             }];
             
@@ -171,7 +171,7 @@
         [_arrowIcon mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(-KNormalSpace);
             make.top.mas_equalTo(KNormalSpace);
-            make.width.height.mas_equalTo(22);
+            make.width.height.mas_equalTo(10);
             make.centerY.mas_equalTo(self);
         }];
     }

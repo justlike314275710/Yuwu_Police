@@ -352,6 +352,13 @@
 		EA9457D5233A30F5003C1C97 /* NMC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA9457CD233A2F9B003C1C97 /* NMC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EA9457D6233A30F5003C1C97 /* NIMAVChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9457CE233A2F9B003C1C97 /* NIMAVChat.framework */; };
 		EA9457D7233A30F5003C1C97 /* NIMAVChat.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA9457CE233A2F9B003C1C97 /* NIMAVChat.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EA9457F0233AF3B2003C1C97 /* DModiyPhoneViewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9457DD233AF3B1003C1C97 /* DModiyPhoneViewcontroller.m */; };
+		EA9457F1233AF3B2003C1C97 /* DModiyNewPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9457DE233AF3B1003C1C97 /* DModiyNewPhoneViewController.m */; };
+		EA9457F2233AF3B2003C1C97 /* DPasswordLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9457E4233AF3B2003C1C97 /* DPasswordLogic.m */; };
+		EA9457F3233AF3B2003C1C97 /* DResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9457E6233AF3B2003C1C97 /* DResetPasswordViewController.m */; };
+		EA9457F4233AF3B2003C1C97 /* DPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9457E7233AF3B2003C1C97 /* DPasswordViewController.m */; };
+		EA9457F5233AF3B2003C1C97 /* DForgetPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9457E9233AF3B2003C1C97 /* DForgetPWViewController.m */; };
+		EA9457F6233AF3B2003C1C97 /* DForgetPWNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9457EB233AF3B2003C1C97 /* DForgetPWNextViewController.m */; };
 		EA960945232F294C00D81A25 /* LawUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EA96093D232F294A00D81A25 /* LawUserInfo.m */; };
 		EA960946232F294C00D81A25 /* OauthInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EA96093F232F294B00D81A25 /* OauthInfo.m */; };
 		EA960947232F294C00D81A25 /* GameInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EA960941232F294B00D81A25 /* GameInfo.m */; };
@@ -719,19 +726,12 @@
 		EA960E6A233075BE00D81A25 /* IQKeyboardReturnKeyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = EA960E5A233075BE00D81A25 /* IQKeyboardReturnKeyHandler.m */; };
 		EA960E6C2330C86800D81A25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA960E6B2330C86700D81A25 /* Assets.xcassets */; };
 		EA960E702330CAA900D81A25 /* LPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EA960E6F2330CAA800D81A25 /* LPButton.m */; };
-		EA960E782330E0A500D81A25 /* DPasswordLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = EA960E772330E0A500D81A25 /* DPasswordLogic.m */; };
 		EA960E7B2330E34E00D81A25 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = EA960E7A2330E34D00D81A25 /* NSString+Utils.m */; };
-		EA960E7E2331BF6400D81A25 /* DResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA960E7D2331BF6400D81A25 /* DResetPasswordViewController.m */; };
 		EA960E812331C08D00D81A25 /* UIButton+BEEnLargeEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = EA960E802331C08D00D81A25 /* UIButton+BEEnLargeEdge.m */; };
-		EA960E872331DD8F00D81A25 /* DPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA960E862331DD8F00D81A25 /* DPasswordViewController.m */; };
-		EA960E8A233209E200D81A25 /* DForgetPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA960E89233209E200D81A25 /* DForgetPWViewController.m */; };
-		EA960E8D23320F6D00D81A25 /* DForgetPWNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA960E8C23320F6D00D81A25 /* DForgetPWNextViewController.m */; };
 		EA960E9023322AD000D81A25 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA960E8F23322AD000D81A25 /* Images.xcassets */; };
 		EAA30EDE23330FE0004DE08F /* KGStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA30EDD23330FDF004DE08F /* KGStatusBar.m */; };
 		EAA30EE52333147B004DE08F /* DWriteFeedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA30EE42333147B004DE08F /* DWriteFeedListViewController.m */; };
 		EAA30EE8233314CE004DE08F /* DFeedbackListLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA30EE7233314CE004DE08F /* DFeedbackListLogic.m */; };
-		EAA30EF023331A08004DE08F /* DModiyPhoneViewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA30EEF23331A08004DE08F /* DModiyPhoneViewcontroller.m */; };
-		EAA310112333535C004DE08F /* DModiyNewPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA310102333535C004DE08F /* DModiyNewPhoneViewController.m */; };
 		EAA31014233379BC004DE08F /* FeedbackTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA31013233379BC004DE08F /* FeedbackTypeModel.m */; };
 		EAA3101823338BA0004DE08F /* DVersionManger.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA3101723338BA0004DE08F /* DVersionManger.m */; };
 		EAA3101B23338BE4004DE08F /* DUpdataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA3101A23338BE4004DE08F /* DUpdataModel.m */; };
@@ -1365,6 +1365,20 @@
 		EA9457CD233A2F9B003C1C97 /* NMC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NMC.framework; sourceTree = "<group>"; };
 		EA9457CE233A2F9B003C1C97 /* NIMAVChat.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NIMAVChat.framework; sourceTree = "<group>"; };
 		EA9457D2233A307E003C1C97 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA9457DB233AF3B1003C1C97 /* DModiyPhoneViewcontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DModiyPhoneViewcontroller.h; sourceTree = "<group>"; };
+		EA9457DC233AF3B1003C1C97 /* DModiyNewPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DModiyNewPhoneViewController.h; sourceTree = "<group>"; };
+		EA9457DD233AF3B1003C1C97 /* DModiyPhoneViewcontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DModiyPhoneViewcontroller.m; sourceTree = "<group>"; };
+		EA9457DE233AF3B1003C1C97 /* DModiyNewPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DModiyNewPhoneViewController.m; sourceTree = "<group>"; };
+		EA9457E3233AF3B2003C1C97 /* DPasswordLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPasswordLogic.h; sourceTree = "<group>"; };
+		EA9457E4233AF3B2003C1C97 /* DPasswordLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPasswordLogic.m; sourceTree = "<group>"; };
+		EA9457E6233AF3B2003C1C97 /* DResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DResetPasswordViewController.m; sourceTree = "<group>"; };
+		EA9457E7233AF3B2003C1C97 /* DPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPasswordViewController.m; sourceTree = "<group>"; };
+		EA9457E8233AF3B2003C1C97 /* DForgetPWNextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DForgetPWNextViewController.h; sourceTree = "<group>"; };
+		EA9457E9233AF3B2003C1C97 /* DForgetPWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DForgetPWViewController.m; sourceTree = "<group>"; };
+		EA9457EA233AF3B2003C1C97 /* DResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DResetPasswordViewController.h; sourceTree = "<group>"; };
+		EA9457EB233AF3B2003C1C97 /* DForgetPWNextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DForgetPWNextViewController.m; sourceTree = "<group>"; };
+		EA9457EC233AF3B2003C1C97 /* DPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPasswordViewController.h; sourceTree = "<group>"; };
+		EA9457ED233AF3B2003C1C97 /* DForgetPWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DForgetPWViewController.h; sourceTree = "<group>"; };
 		EA96093D232F294A00D81A25 /* LawUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LawUserInfo.m; sourceTree = "<group>"; };
 		EA96093E232F294A00D81A25 /* LawUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LawUserInfo.h; sourceTree = "<group>"; };
 		EA96093F232F294B00D81A25 /* OauthInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OauthInfo.m; sourceTree = "<group>"; };
@@ -2102,20 +2116,10 @@
 		EA960E6B2330C86700D81A25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA960E6E2330CAA800D81A25 /* LPButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPButton.h; sourceTree = "<group>"; };
 		EA960E6F2330CAA800D81A25 /* LPButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPButton.m; sourceTree = "<group>"; };
-		EA960E762330E0A500D81A25 /* DPasswordLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPasswordLogic.h; sourceTree = "<group>"; };
-		EA960E772330E0A500D81A25 /* DPasswordLogic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DPasswordLogic.m; sourceTree = "<group>"; };
 		EA960E792330E34D00D81A25 /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
 		EA960E7A2330E34D00D81A25 /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
-		EA960E7C2331BF6400D81A25 /* DResetPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DResetPasswordViewController.h; sourceTree = "<group>"; };
-		EA960E7D2331BF6400D81A25 /* DResetPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DResetPasswordViewController.m; sourceTree = "<group>"; };
 		EA960E7F2331C08C00D81A25 /* UIButton+BEEnLargeEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+BEEnLargeEdge.h"; sourceTree = "<group>"; };
 		EA960E802331C08D00D81A25 /* UIButton+BEEnLargeEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+BEEnLargeEdge.m"; sourceTree = "<group>"; };
-		EA960E852331DD8F00D81A25 /* DPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPasswordViewController.h; sourceTree = "<group>"; };
-		EA960E862331DD8F00D81A25 /* DPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DPasswordViewController.m; sourceTree = "<group>"; };
-		EA960E88233209E200D81A25 /* DForgetPWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DForgetPWViewController.h; sourceTree = "<group>"; };
-		EA960E89233209E200D81A25 /* DForgetPWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DForgetPWViewController.m; sourceTree = "<group>"; };
-		EA960E8B23320F6D00D81A25 /* DForgetPWNextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DForgetPWNextViewController.h; sourceTree = "<group>"; };
-		EA960E8C23320F6D00D81A25 /* DForgetPWNextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DForgetPWNextViewController.m; sourceTree = "<group>"; };
 		EA960E8F23322AD000D81A25 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EAA30EDC23330FDF004DE08F /* KGStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGStatusBar.h; sourceTree = "<group>"; };
 		EAA30EDD23330FDF004DE08F /* KGStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGStatusBar.m; sourceTree = "<group>"; };
@@ -2123,10 +2127,6 @@
 		EAA30EE42333147B004DE08F /* DWriteFeedListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWriteFeedListViewController.m; sourceTree = "<group>"; };
 		EAA30EE6233314CE004DE08F /* DFeedbackListLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DFeedbackListLogic.h; sourceTree = "<group>"; };
 		EAA30EE7233314CE004DE08F /* DFeedbackListLogic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DFeedbackListLogic.m; sourceTree = "<group>"; };
-		EAA30EEE23331A08004DE08F /* DModiyPhoneViewcontroller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DModiyPhoneViewcontroller.h; sourceTree = "<group>"; };
-		EAA30EEF23331A08004DE08F /* DModiyPhoneViewcontroller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DModiyPhoneViewcontroller.m; sourceTree = "<group>"; };
-		EAA3100F2333535C004DE08F /* DModiyNewPhoneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DModiyNewPhoneViewController.h; sourceTree = "<group>"; };
-		EAA310102333535C004DE08F /* DModiyNewPhoneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DModiyNewPhoneViewController.m; sourceTree = "<group>"; };
 		EAA31012233379BC004DE08F /* FeedbackTypeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackTypeModel.h; sourceTree = "<group>"; };
 		EAA31013233379BC004DE08F /* FeedbackTypeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackTypeModel.m; sourceTree = "<group>"; };
 		EAA3101623338BA0004DE08F /* DVersionManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DVersionManger.h; sourceTree = "<group>"; };
@@ -3117,9 +3117,9 @@
 		3C8F3E2C226B50F9006CF059 /* Menu(菜单) */ = {
 			isa = PBXGroup;
 			children = (
-				EAA30EE923331914004DE08F /* 更换手机号 */,
+				EA9457D8233AF3B1003C1C97 /* 更换手机号 */,
+				EA9457E1233AF3B2003C1C97 /* 重制密码 */,
 				EA960E8E23321C1A00D81A25 /* 意见反馈 */,
-				EA960E712330E02E00D81A25 /* 重制密码 */,
 				3C8F3E3F226DA90C006CF059 /* Tool */,
 				3C8F3E38226D9E52006CF059 /* Model */,
 				3C8F3E31226B5211006CF059 /* View */,
@@ -3722,6 +3722,98 @@
 				EA9457CC233A2F9B003C1C97 /* NMCVideoFilter.bundle */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		EA9457D8233AF3B1003C1C97 /* 更换手机号 */ = {
+			isa = PBXGroup;
+			children = (
+				EA9457D9233AF3B1003C1C97 /* Logic */,
+				EA9457DA233AF3B1003C1C97 /* Controller */,
+				EA9457DF233AF3B1003C1C97 /* Model */,
+				EA9457E0233AF3B1003C1C97 /* View */,
+			);
+			path = "更换手机号";
+			sourceTree = "<group>";
+		};
+		EA9457D9233AF3B1003C1C97 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		EA9457DA233AF3B1003C1C97 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EA9457DB233AF3B1003C1C97 /* DModiyPhoneViewcontroller.h */,
+				EA9457DC233AF3B1003C1C97 /* DModiyNewPhoneViewController.h */,
+				EA9457DD233AF3B1003C1C97 /* DModiyPhoneViewcontroller.m */,
+				EA9457DE233AF3B1003C1C97 /* DModiyNewPhoneViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EA9457DF233AF3B1003C1C97 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EA9457E0233AF3B1003C1C97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EA9457E1233AF3B2003C1C97 /* 重制密码 */ = {
+			isa = PBXGroup;
+			children = (
+				EA9457E2233AF3B2003C1C97 /* Logic */,
+				EA9457E5233AF3B2003C1C97 /* Controller */,
+				EA9457EE233AF3B2003C1C97 /* Model */,
+				EA9457EF233AF3B2003C1C97 /* View */,
+			);
+			path = "重制密码";
+			sourceTree = "<group>";
+		};
+		EA9457E2233AF3B2003C1C97 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				EA9457E3233AF3B2003C1C97 /* DPasswordLogic.h */,
+				EA9457E4233AF3B2003C1C97 /* DPasswordLogic.m */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		EA9457E5233AF3B2003C1C97 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EA9457E6233AF3B2003C1C97 /* DResetPasswordViewController.m */,
+				EA9457E7233AF3B2003C1C97 /* DPasswordViewController.m */,
+				EA9457E8233AF3B2003C1C97 /* DForgetPWNextViewController.h */,
+				EA9457E9233AF3B2003C1C97 /* DForgetPWViewController.m */,
+				EA9457EA233AF3B2003C1C97 /* DResetPasswordViewController.h */,
+				EA9457EB233AF3B2003C1C97 /* DForgetPWNextViewController.m */,
+				EA9457EC233AF3B2003C1C97 /* DPasswordViewController.h */,
+				EA9457ED233AF3B2003C1C97 /* DForgetPWViewController.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EA9457EE233AF3B2003C1C97 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EA9457EF233AF3B2003C1C97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		EA96093A232F1EBD00D81A25 /* Login(登录) */ = {
@@ -5184,55 +5276,6 @@
 			path = LPButton;
 			sourceTree = "<group>";
 		};
-		EA960E712330E02E00D81A25 /* 重制密码 */ = {
-			isa = PBXGroup;
-			children = (
-				EA960E752330E06C00D81A25 /* Logic */,
-				EA960E742330E06000D81A25 /* Model */,
-				EA960E732330E05800D81A25 /* View */,
-				EA960E722330E04A00D81A25 /* Controller */,
-			);
-			path = "重制密码";
-			sourceTree = "<group>";
-		};
-		EA960E722330E04A00D81A25 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				EA960E7C2331BF6400D81A25 /* DResetPasswordViewController.h */,
-				EA960E7D2331BF6400D81A25 /* DResetPasswordViewController.m */,
-				EA960E852331DD8F00D81A25 /* DPasswordViewController.h */,
-				EA960E862331DD8F00D81A25 /* DPasswordViewController.m */,
-				EA960E88233209E200D81A25 /* DForgetPWViewController.h */,
-				EA960E89233209E200D81A25 /* DForgetPWViewController.m */,
-				EA960E8B23320F6D00D81A25 /* DForgetPWNextViewController.h */,
-				EA960E8C23320F6D00D81A25 /* DForgetPWNextViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		EA960E732330E05800D81A25 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		EA960E742330E06000D81A25 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		EA960E752330E06C00D81A25 /* Logic */ = {
-			isa = PBXGroup;
-			children = (
-				EA960E762330E0A500D81A25 /* DPasswordLogic.h */,
-				EA960E772330E0A500D81A25 /* DPasswordLogic.m */,
-			);
-			path = Logic;
-			sourceTree = "<group>";
-		};
 		EA960E8E23321C1A00D81A25 /* 意见反馈 */ = {
 			isa = PBXGroup;
 			children = (
@@ -5286,49 +5329,6 @@
 				EAA30EE7233314CE004DE08F /* DFeedbackListLogic.m */,
 				EAA3101F23346163004DE08F /* DFeedBackLogic.h */,
 				EAA3102023346163004DE08F /* DFeedBackLogic.m */,
-			);
-			path = Logic;
-			sourceTree = "<group>";
-		};
-		EAA30EE923331914004DE08F /* 更换手机号 */ = {
-			isa = PBXGroup;
-			children = (
-				EAA30EED23331967004DE08F /* Logic */,
-				EAA30EEC2333195F004DE08F /* Model */,
-				EAA30EEB23331954004DE08F /* View */,
-				EAA30EEA2333192E004DE08F /* Controller */,
-			);
-			path = "更换手机号";
-			sourceTree = "<group>";
-		};
-		EAA30EEA2333192E004DE08F /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				EAA30EEE23331A08004DE08F /* DModiyPhoneViewcontroller.h */,
-				EAA30EEF23331A08004DE08F /* DModiyPhoneViewcontroller.m */,
-				EAA3100F2333535C004DE08F /* DModiyNewPhoneViewController.h */,
-				EAA310102333535C004DE08F /* DModiyNewPhoneViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		EAA30EEB23331954004DE08F /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		EAA30EEC2333195F004DE08F /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		EAA30EED23331967004DE08F /* Logic */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -5803,12 +5803,12 @@
 				EAA311A8233472D8004DE08F /* UIAlertView+BlocksKit.m in Sources */,
 				3C4A3A6522681A0F00882244 /* DTableViewController.m in Sources */,
 				EA960DAA232F5BA000D81A25 /* DGActivityIndicatorNineDotsAnimation.m in Sources */,
-				EA960E7E2331BF6400D81A25 /* DResetPasswordViewController.m in Sources */,
 				EAA3104023346934004DE08F /* PSImagePickerController.m in Sources */,
 				EA960ADA232F29FB00D81A25 /* NIMSessionInteractorImpl.m in Sources */,
 				EA960ABA232F29FA00D81A25 /* NIMAdvancedTeamMemberCell.m in Sources */,
 				EA960AFA232F29FB00D81A25 /* NIMCommonTableData.m in Sources */,
 				EA960947232F294C00D81A25 /* GameInfo.m in Sources */,
+				EA9457F4233AF3B2003C1C97 /* DPasswordViewController.m in Sources */,
 				3C4A3A1D22681A0E00882244 /* UIBarButtonItem+Extension.m in Sources */,
 				EA960AB6232F29FA00D81A25 /* NIMTeamInfoData.m in Sources */,
 				EAA31199233472D8004DE08F /* NSMutableIndexSet+BlocksKit.m in Sources */,
@@ -5834,6 +5834,7 @@
 				EA960CCF232F3B1C00D81A25 /* YYFileHash.m in Sources */,
 				3C37E973228BECC80035E114 /* DJokesViewController.m in Sources */,
 				EA960AE9232F29FB00D81A25 /* NIMSessionUnknowContentView.m in Sources */,
+				EA9457F0233AF3B2003C1C97 /* DModiyPhoneViewcontroller.m in Sources */,
 				EA960E7B2330E34E00D81A25 /* NSString+Utils.m in Sources */,
 				EA960DA2232F5BA000D81A25 /* DGActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */,
 				3CACB10322928BBF0006AB3C /* LBZoomScrollView.m in Sources */,
@@ -5939,6 +5940,7 @@
 				EA960C82232F3B1B00D81A25 /* YYDiskCache.m in Sources */,
 				3C3935612288297300A5190A /* DMeViewController.m in Sources */,
 				3C4A3A3522681A0F00882244 /* MASCompositeConstraint.m in Sources */,
+				EA9457F1233AF3B2003C1C97 /* DModiyNewPhoneViewController.m in Sources */,
 				EA960CCE232F3B1C00D81A25 /* YYGestureRecognizer.m in Sources */,
 				3C2531672297B3670049968C /* DVideoPlayer.m in Sources */,
 				EAA3119C233472D8004DE08F /* NSInvocation+BlocksKit.m in Sources */,
@@ -5967,7 +5969,6 @@
 				EA960E1A232F84F900D81A25 /* AFNetworkReachabilityManager.m in Sources */,
 				EA960AF6232F29FB00D81A25 /* NIMKitProgressHUD.m in Sources */,
 				EA960ADC232F29FB00D81A25 /* NIMMessageMaker.m in Sources */,
-				EAA310112333535C004DE08F /* DModiyNewPhoneViewController.m in Sources */,
 				EA960A97232F29FA00D81A25 /* NIMSpellingCenter.m in Sources */,
 				3C8953ED229BCB0C00CB70E1 /* MBProgressHUD.m in Sources */,
 				EA96094B232F297E00D81A25 /* UserManager.m in Sources */,
@@ -5986,6 +5987,7 @@
 				554E92EF233A268A009D2429 /* DMessageTableViewCell.m in Sources */,
 				EA960C8C232F3B1B00D81A25 /* _YYWebImageSetter.m in Sources */,
 				EA960AAE232F29FA00D81A25 /* NIMTeamMemberCardViewController.m in Sources */,
+				EA9457F3233AF3B2003C1C97 /* DResetPasswordViewController.m in Sources */,
 				EA960C8F232F3B1B00D81A25 /* MKAnnotationView+YYWebImage.m in Sources */,
 				EA960CBF232F3B1C00D81A25 /* NSObject+YYAddForARC.m in Sources */,
 				3C0DB64722D731ED0029730E /* NSObject+MJProperty.m in Sources */,
@@ -5996,7 +5998,6 @@
 				3C0DB64922D731ED0029730E /* NSString+MJExtension.m in Sources */,
 				EA960B53232F2FE900D81A25 /* SDWebImageManager.m in Sources */,
 				3C8953EF229BCB0C00CB70E1 /* UIView+MBProgressHUD.m in Sources */,
-				EA960E782330E0A500D81A25 /* DPasswordLogic.m in Sources */,
 				3C1E825D228185D0005D7A11 /* DMusicDetailVIewController.m in Sources */,
 				3C8F3E26226B4F09006CF059 /* UIViewController+MMDrawerController.m in Sources */,
 				EA960DC7232F616600D81A25 /* PSLoginMiddleView.m in Sources */,
@@ -6051,7 +6052,6 @@
 				EA960C98232F3B1C00D81A25 /* YYTextEffectWindow.m in Sources */,
 				EA960AF9232F29FB00D81A25 /* NIMCommonTableDelegate.m in Sources */,
 				EA960A8D232F29FA00D81A25 /* NIMKitFileLocationHelper.m in Sources */,
-				EA960E872331DD8F00D81A25 /* DPasswordViewController.m in Sources */,
 				EA960B9C232F319A00D81A25 /* TZGifPhotoPreviewController.m in Sources */,
 				EA960AD5232F29FB00D81A25 /* NIMSessionTableAdapter.m in Sources */,
 				3CCDA9F7227047730019783A /* DPageModel.m in Sources */,
@@ -6097,7 +6097,6 @@
 				EA960DE2232F831700D81A25 /* RMTimer.m in Sources */,
 				EA960E0E232F84F900D81A25 /* UIRefreshControl+AFNetworking.m in Sources */,
 				EA960AA2232F29FA00D81A25 /* NIMGrowingTextView.m in Sources */,
-				EA960E8D23320F6D00D81A25 /* DForgetPWNextViewController.m in Sources */,
 				EA960B67232F2FE900D81A25 /* UIView+WebCacheOperation.m in Sources */,
 				EA960B5A232F2FE900D81A25 /* UIImage+GIF.m in Sources */,
 				EA960AEA232F29FB00D81A25 /* NIMSessionMessageContentView.m in Sources */,
@@ -6147,6 +6146,7 @@
 				3C0DB68522D7320B0029730E /* MJRefreshBackStateFooter.m in Sources */,
 				EA960B64232F2FE900D81A25 /* NSImage+WebCache.m in Sources */,
 				EA960E14232F84F900D81A25 /* AFAutoPurgingImageCache.m in Sources */,
+				EA9457F2233AF3B2003C1C97 /* DPasswordLogic.m in Sources */,
 				EA960DAF232F5BA000D81A25 /* DGActivityIndicatorRotatingTrigonAnimation.m in Sources */,
 				EA960ABF232F29FB00D81A25 /* NIMAdvancedTeamCardViewController.m in Sources */,
 				EAA311AF233472D8004DE08F /* UIControl+BlocksKit.m in Sources */,
@@ -6160,6 +6160,7 @@
 				EA960CC0232F3B1C00D81A25 /* NSDate+YYAdd.m in Sources */,
 				3CCDA9F1226F085A0019783A /* DRadioListCell.m in Sources */,
 				EA960AB4232F29FA00D81A25 /* NIMUsrInfoData.m in Sources */,
+				EA9457F6233AF3B2003C1C97 /* DForgetPWNextViewController.m in Sources */,
 				EA960AD4232F29FB00D81A25 /* NIMSessionDataSourceImpl.m in Sources */,
 				EA960B98232F319A00D81A25 /* TZPhotoPickerController.m in Sources */,
 				EA960DA7232F5BA000D81A25 /* DGActivityIndicatorBallScaleAnimation.m in Sources */,
@@ -6220,11 +6221,9 @@
 				EA960B63232F2FE900D81A25 /* UIImageView+WebCache.m in Sources */,
 				EA960C84232F3B1B00D81A25 /* YYKVStorage.m in Sources */,
 				3C37E97C228BFC290035E114 /* DTextJokesCell.m in Sources */,
-				EA960E8A233209E200D81A25 /* DForgetPWViewController.m in Sources */,
 				EAA311A9233472D8004DE08F /* UIView+BlocksKit.m in Sources */,
 				EA960B5F232F2FE900D81A25 /* SDWebImageCoder.m in Sources */,
 				EA960E6A233075BE00D81A25 /* IQKeyboardReturnKeyHandler.m in Sources */,
-				EAA30EF023331A08004DE08F /* DModiyPhoneViewcontroller.m in Sources */,
 				EA960AFE232F29FB00D81A25 /* NIMKitIndependentModeExtraInfo.m in Sources */,
 				EA960A9B232F29FA00D81A25 /* NIMInputView.m in Sources */,
 				3CACB0FE22928BBF0006AB3C /* UIView+LBFrame.m in Sources */,
@@ -6294,6 +6293,7 @@
 				EA94574E233A2C40003C1C97 /* HMActionSheetView.m in Sources */,
 				EA960AED232F29FB00D81A25 /* NIMLocationViewController.m in Sources */,
 				EAA311AB233472D8004DE08F /* UIPopoverController+BlocksKit.m in Sources */,
+				EA9457F5233AF3B2003C1C97 /* DForgetPWViewController.m in Sources */,
 				3C4A3A3A22681A0F00882244 /* MASConstraint.m in Sources */,
 				EA960D98232F5BA000D81A25 /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,
 				EA960AFB232F29FB00D81A25 /* NIMKitSwitcherCell.m in Sources */,
