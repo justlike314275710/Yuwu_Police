@@ -108,7 +108,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -- 狱警端修改手机号
+-(void)police_PhoneNumberAction{
+    NSString*url=NSStringFormat(@"%@%@",ServerUrl,URL_Police_updatePhone);
+    NSDictionary*param=@{@"accountName":self.phoneField.text};
+    NSString *access_token = help_userManager.oathInfo.access_token;
+    NSString *token = NSStringFormat(@"Bearer %@",access_token);
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    [PPNetworkHelper setValue:token forHTTPHeaderField:@"Authorization"];
+    [PPNetworkHelper GET:url parameters:param success:^(id responseObject) {
+        
+    } failure:^(NSError *error) {
+        
+    }];
+    
+}
 
+
+#pragma mark -- 公共服务修改手机号
 -(void)changePhoneNumberAction{
     
     if (self.phoneField.text.length<11) {
@@ -145,6 +162,7 @@
            // KPostNotification(KNotificationModifyDataChange,nil);
            // KPostNotification(KNotificationMineDataChange, nil);
             [self.navigationController popToRootViewControllerAnimated:YES];
+            [self police_PhoneNumberAction];//修改狱警端手机号码
 
             
         }

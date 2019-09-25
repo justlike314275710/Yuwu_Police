@@ -7,7 +7,7 @@
 //
 
 #import "DFeedbackListLogic.h"
-
+#import "DMessageModel.h"
 @interface DFeedbackListLogic()
 
 @property (nonatomic , strong) NSMutableArray *items;
@@ -37,7 +37,62 @@
     self.items = nil;
     self.hasNextPage = NO;
     self.dataStatus = PSDataInitial;
+    [self requestFeedbackListCompleted:completedCallback failed:failedCallback];
 }
+
+
+
+- (void)requestFeedbackListCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback {
+
+    NSString*page=[NSString stringWithFormat:@"%ld",(long)self.page];
+    NSString*pageSize=[NSString stringWithFormat:@"%ld",(long)self.pageSize];
+    NSDictionary*param=@{@"page":page,@"rows":pageSize,@"type":@"4"};
+    NSString*url=@"http://120.79.251.238:8022/ywgk-app/api/family_logs/findPage";
+    
+    NSString *access_token = help_userManager.oathInfo.access_token;
+    NSString *token = NSStringFormat(@"Bearer %@",access_token);
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    [PPNetworkHelper setValue:token forHTTPHeaderField:@"Authorization"];
+    [PPNetworkHelper GET:url parameters:param success:^(id responseObject) {
+        NSString*code=[NSString stringWithFormat:@"%@",responseObject[@"code"]];
+        if ([code isEqualToString:@"200"]) {
+            if (self.page == 1) {
+                self.items = [NSMutableArray array];
+            }
+            [self.items addObjectsFromArray:[DMessageModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"][@"logs"]]];
+            if (self.items.count == 0) {
+                self.dataStatus = PSDataEmpty;
+            }else{
+                self.dataStatus = PSDataNormal;
+            }
+            self.hasNextPage = self.items.count >= self.pageSize;
+            
+        } else {
+            if (self.page > 1) {
+                self.page --;
+                self.hasNextPage = YES;
+            }else{
+                self.dataStatus = PSDataError;
+            }
+        }
+        if (completedCallback) {
+            completedCallback(responseObject);
+        }
+        
+    } failure:^(NSError *error) {
+        if (failedCallback) {
+            failedCallback(error);
+        }
+        if (self.page > 0) {
+            self.page --;
+            self.hasNextPage = YES;
+        }else{
+            self.dataStatus = PSDataError;
+        }
+    }];
+  
+}
+
 
 
 @end

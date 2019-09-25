@@ -72,6 +72,13 @@
 
 #pragma mark - ——————— 详细接口地址 ————————
 
+
+
+#pragma mark ————— 狱警端—————
+#define URL_Police_Login @"/api/author_police/login"//登录
+#define URL_Police_Logs @"/ywgk-app/api/family_logs/findPage"//消息
+#define URL_Police_updatePenName @"/api/article/updatePolicePenName"//更新笔名
+#define URL_Police_updatePhone @"/api/author_police/updatePhone"//更新手机号码
 //测试接口
 //NSString *const URL_Test = @"api/recharge/price/list";
 #define URL_Test @"/api/cast/home/start"

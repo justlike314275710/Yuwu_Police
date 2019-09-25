@@ -359,6 +359,7 @@
 		EA9457F4233AF3B2003C1C97 /* DPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9457E7233AF3B2003C1C97 /* DPasswordViewController.m */; };
 		EA9457F5233AF3B2003C1C97 /* DForgetPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9457E9233AF3B2003C1C97 /* DForgetPWViewController.m */; };
 		EA9457F6233AF3B2003C1C97 /* DForgetPWNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9457EB233AF3B2003C1C97 /* DForgetPWNextViewController.m */; };
+		EA945804233B103B003C1C97 /* DPenNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA945803233B103B003C1C97 /* DPenNameViewController.m */; };
 		EA960945232F294C00D81A25 /* LawUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EA96093D232F294A00D81A25 /* LawUserInfo.m */; };
 		EA960946232F294C00D81A25 /* OauthInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EA96093F232F294B00D81A25 /* OauthInfo.m */; };
 		EA960947232F294C00D81A25 /* GameInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EA960941232F294B00D81A25 /* GameInfo.m */; };
@@ -1379,6 +1380,8 @@
 		EA9457EB233AF3B2003C1C97 /* DForgetPWNextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DForgetPWNextViewController.m; sourceTree = "<group>"; };
 		EA9457EC233AF3B2003C1C97 /* DPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPasswordViewController.h; sourceTree = "<group>"; };
 		EA9457ED233AF3B2003C1C97 /* DForgetPWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DForgetPWViewController.h; sourceTree = "<group>"; };
+		EA945802233B103B003C1C97 /* DPenNameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPenNameViewController.h; sourceTree = "<group>"; };
+		EA945803233B103B003C1C97 /* DPenNameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DPenNameViewController.m; sourceTree = "<group>"; };
 		EA96093D232F294A00D81A25 /* LawUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LawUserInfo.m; sourceTree = "<group>"; };
 		EA96093E232F294A00D81A25 /* LawUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LawUserInfo.h; sourceTree = "<group>"; };
 		EA96093F232F294B00D81A25 /* OauthInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OauthInfo.m; sourceTree = "<group>"; };
@@ -2955,7 +2958,7 @@
 			isa = PBXGroup;
 			children = (
 				554E92FA233A29FC009D2429 /* 账号信息 */,
-				EA94570823389D45003C1C97 /* Message */,
+				EA94570823389D45003C1C97 /* 消息 */,
 				EA960BB2232F36A100D81A25 /* Other */,
 				EA96093A232F1EBD00D81A25 /* Login(登录) */,
 				3C4A3A1422681A0E00882244 /* AppDelegate(入口) */,
@@ -3543,9 +3546,11 @@
 		554E92FA233A29FC009D2429 /* 账号信息 */ = {
 			isa = PBXGroup;
 			children = (
-				554E92FB233A29FC009D2429 /* DAccountViewController.h */,
 				554E92FC233A29FC009D2429 /* View */,
 				554E92FF233A29FC009D2429 /* DAccountViewController.m */,
+				554E92FB233A29FC009D2429 /* DAccountViewController.h */,
+				EA945802233B103B003C1C97 /* DPenNameViewController.h */,
+				EA945803233B103B003C1C97 /* DPenNameViewController.m */,
 			);
 			path = "账号信息";
 			sourceTree = "<group>";
@@ -3569,7 +3574,7 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
-		EA94570823389D45003C1C97 /* Message */ = {
+		EA94570823389D45003C1C97 /* 消息 */ = {
 			isa = PBXGroup;
 			children = (
 				554E92EB233A268A009D2429 /* Controller */,
@@ -3577,7 +3582,7 @@
 				554E92E8233A268A009D2429 /* View */,
 				EA94570E23389D82003C1C97 /* Model */,
 			);
-			path = Message;
+			path = "消息";
 			sourceTree = "<group>";
 		};
 		EA94570E23389D82003C1C97 /* Model */ = {
@@ -5963,6 +5968,7 @@
 				EA960B93232F319A00D81A25 /* UIView+Layout.m in Sources */,
 				EA960C9A232F3B1C00D81A25 /* YYTextLayout.m in Sources */,
 				3C4A3A3622681A0F00882244 /* MASConstraintMaker.m in Sources */,
+				EA945804233B103B003C1C97 /* DPenNameViewController.m in Sources */,
 				3C0DB67E22D7320B0029730E /* MJRefreshConst.m in Sources */,
 				EA960AC6232F29FB00D81A25 /* NIMSessionListViewController.m in Sources */,
 				EA960945232F294C00D81A25 /* LawUserInfo.m in Sources */,

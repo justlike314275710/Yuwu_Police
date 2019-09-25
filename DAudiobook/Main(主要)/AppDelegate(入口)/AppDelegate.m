@@ -49,7 +49,7 @@
     
     //版本更新
     DVersionManger*versonManger=[DVersionManger new];
-//    [versonManger jundgeVersonUpdate];
+    [versonManger jundgeVersonUpdate];
     
     [self  initWindow];
     [self  initService];
@@ -234,7 +234,7 @@
     if([help_userManager loadUserInfo]){
         //加载用户token
         [help_userManager loadUserOuathInfo];
-        //加载律师用户资料
+        //加载监狱端用户资料
         [help_userManager loadLawUserInfo];
         
         //如果有本地数据，先展示TabBar 随后异步自动登录

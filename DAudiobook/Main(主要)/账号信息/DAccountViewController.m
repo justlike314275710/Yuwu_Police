@@ -14,6 +14,7 @@
 #import "YYAnimatedImageView.h"
 #import "MineTableViewCell.h"
 #import "PSAuthorizationTool.h"
+#import "DPenNameViewController.h"
 @interface DAccountViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong) YYAnimatedImageView *headImgView; //头像
 @property(nonatomic, strong) NSArray *dataSource;
@@ -23,14 +24,24 @@
 
 @implementation DAccountViewController
 
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"账号信息";
-    [self.navigationController setNavigationBarHidden:YES];
+   
    // [self addBackItem];
     [self renderContents];
     [self intData];
     // Do any additional setup after loading the view.
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+     [self.navigationController setNavigationBarHidden:NO];
 }
 
 - (void)intData{
@@ -139,22 +150,22 @@
     switch (indexPath.row) {
         case 0:
         {
-            [self modifyNickName];
+            
         }
             break;
         case 1:
         {
-            [self modifyPhoneNumber];
+           
         }
             break;
         case 2:
         {
-            [self modifyAddress];
+            [self modifyPenName];
         }
             break;
         case 3:
         {
-            [self modifyPostalcode];
+           
         }
             break;
             
@@ -167,27 +178,14 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark - 修改昵称
--(void)modifyNickName {
-//    ModifyNicknameViewController *ModifyNickname = [[ModifyNicknameViewController alloc] init];
-//    ModifyNickname.modifyType=ModifyNickName;
-//    [self.navigationController pushViewController:ModifyNickname animated:nil];
-}
-#pragma mark - 修改手机号码
--(void)modifyPhoneNumber{
-//    ModifyoldPhoneNumberViewController *ModifyPhoneNumber = [[ModifyoldPhoneNumberViewController alloc] init];
-//    [self.navigationController pushViewController:ModifyPhoneNumber animated:YES];
-}
-#pragma mark - 修改家庭主址
--(void)modifyAddress{
+#pragma mark - 设置笔名
+-(void)modifyPenName {
+    DPenNameViewController*penNameViewController=[[DPenNameViewController alloc]init];
+   [self.navigationController pushViewController:penNameViewController animated:YES];
     
+   // [self presentViewController:penNameViewController animated:YES completion:nil];
 }
-#pragma mark - 修改邮政编码
--(void)modifyPostalcode{
-//    ModifyNicknameViewController *ModifyNickname = [[ModifyNicknameViewController alloc] init];
-//    ModifyNickname.modifyType=ModifyNickZipCode;
-//    [self.navigationController pushViewController:ModifyNickname animated:nil];
-}
+
 
 -(YYAnimatedImageView *)headImgView{
     if (!_headImgView) {
