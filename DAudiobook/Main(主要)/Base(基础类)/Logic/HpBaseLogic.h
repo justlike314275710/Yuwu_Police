@@ -34,7 +34,7 @@ typedef void(^Complete)(void);
 @property (nonatomic, assign) BOOL hasNextPage;
 
 
-//- (void)checkDataWithCallback:(CheckDataCallback)callback;
+- (void)checkDataWithCallback:(CheckDataCallback)callback;
 
 - (void)fetchDataWithParams:(id)params completed:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback;
 

@@ -13,6 +13,8 @@
 #import "DMessageViewController.h"
 #import "HomePageLogic.h"
 #import "PSPlatformArticleCell.h"
+#import "PSPublishArticleViewModel.h"
+#import "PSPublishArticleViewController.h"
 @interface DHotNovelViewController() {
     
 }
@@ -113,19 +115,26 @@
     NSLog(@"%@",token);
     
 }
-
+//获取发布文章权限
 - (void)setupData{
     [self.logic authorArticleCompleted:^(id data) {
-        
+        [self.publishBtn setImage:ImageNamed(@"发布") forState:UIControlStateNormal];
     } failed:^(NSError *error) {
-        
+        [_publishBtn setImage:IMAGE_NAMED(@"不能发布") forState:UIControlStateNormal];
     }];
 }
 
 #pragma - TouchEvent
 //MARK:发布
 -(void)publishAction:(UIButton *)sender{
-    
+    PSPublishArticleViewModel *viewModel = [[PSPublishArticleViewModel alloc] init];
+    if (!self.logic.author) {
+        [PSTipsView showTips:@"暂无权限!"];
+        return;
+    }
+    viewModel.type = PSPublishArticle;
+    PSPublishArticleViewController *publishVC = [[PSPublishArticleViewController alloc] init];
+    [self.navigationController pushViewController:publishVC animated:YES];
 }
 
 

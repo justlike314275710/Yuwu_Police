@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HomePageLogic : HpBaseLogic
 @property(nonatomic,strong)NSMutableArray *datalist;
+@property(nonatomic,assign)BOOL author; //是否有权限发布文章
 
 
 - (void)refreshArticleListCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback;

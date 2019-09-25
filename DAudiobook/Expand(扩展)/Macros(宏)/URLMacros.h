@@ -76,7 +76,7 @@
 
 #pragma mark ————— 狱警端—————
 #define URL_Police_Login @"/api/author_police/login"//登录
-#define URL_Police_Logs @"/ywgk-app/api/family_logs/findPage"//消息
+#define URL_Police_Logs @"/api/family_logs/findPage"//消息
 #define URL_Police_updatePenName @"/api/article/updatePolicePenName"//更新笔名
 #define URL_Police_updatePhone @"/api/author_police/updatePhone"//更新手机号码
 //测试接口
@@ -178,9 +178,13 @@
 
 #pragma mark - ——————— 文章咨询 ————————
 //获取发布文章权限
-#define URL_Article_author @"/families/author/enabled?"
+#define URL_Article_author @"/families/author/enabled"
 //获取文章列表
 #define URL_Article_GetPublishArticle @"/api/article/getPublishArticle"
+//查找作者笔名
+#define URL_Article_findPenName @"/api/article/findPenName"
+//发布文章
+#define URL_Article_publishFamilyArticle @"/api/article/publishFamilyArticle"
 
 
 

@@ -49,7 +49,7 @@
     
     //版本更新
     DVersionManger*versonManger=[DVersionManger new];
-    [versonManger jundgeVersonUpdate];
+//    [versonManger jundgeVersonUpdate];
     
     [self  initWindow];
     [self  initService];
