@@ -78,6 +78,8 @@ return shared##className; \
 #pragma mark - ——————— 拼接字符串 ————————
 #define NSStringFormat(format,...) [NSString stringWithFormat:format,##__VA_ARGS__]
 
+#define AvaterImageWithUsername(username)  [NSString stringWithFormat:@"%@/users/by-username/avatar?username=%@",EmallHostUrl,username]
+
 #pragma mark - ——————— 发送通知 ————————
 #define KPostNotification(name,obj) [[NSNotificationCenter defaultCenter] postNotificationName:name object:obj];
 

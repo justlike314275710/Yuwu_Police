@@ -79,6 +79,15 @@
 #define URL_Police_Logs @"/api/family_logs/findPage"//消息
 #define URL_Police_updatePenName @"/api/article/updatePolicePenName"//更新笔名
 #define URL_Police_updatePhone @"/api/author_police/updatePhone"//更新手机号码
+
+//新增加意见反馈
+#define URL_feedbacks_add     @"/api/feedbacks/addOpinion"
+#define URL_feedbacks_page    @"/api/feedbacks/findPage"
+
+
+
+
+
 //测试接口
 //NSString *const URL_Test = @"api/recharge/price/list";
 #define URL_Test @"/api/cast/home/start"
@@ -169,9 +178,7 @@
 //支付宝提现
 #define URL_Lawyer_aliPaywithdrawal     @"/lawyer/withdrawal/alipay"
 
-#pragma mark - ——————— 意见反馈 ————————
-//新增加意见反馈
-#define URL_feedbacks_add     @"/feedbacks"
+
 
 #pragma mark - ——————— 法律咨询 ————————
 

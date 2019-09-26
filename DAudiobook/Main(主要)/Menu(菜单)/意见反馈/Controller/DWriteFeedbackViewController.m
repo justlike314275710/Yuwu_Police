@@ -14,6 +14,7 @@
 #import "DFeedBackLogic.h"
 #import "NSString+emoji.h"
 #import "FeedbackTypeModel.h"
+#import "DWriteSucessViewController.h"
 
 @interface DWriteFeedbackViewController ()<UITextViewDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UIScrollView *scrollview;
@@ -47,10 +48,6 @@
 }
 
 - (void)submitContent {
-    DFeedBackLogic*logic=[[DFeedBackLogic alloc]init];
-    FeedbackTypeModel*typeModel=logic.reasons[self.selecldIndex];
-    logic.type=typeModel.feedId;
-    logic.content=self.contentTextView.text;
     if (self.imageUrls.count>0) {
         NSString *imageUrl = @"";
         for (NSString *url in self.imageUrls) {
@@ -59,13 +56,13 @@
         if ([imageUrl hasPrefix:@";"]) {
             imageUrl = [imageUrl substringFromIndex:1];
         }
-        logic.imageUrls = imageUrl;
+        _logic.imageUrls = imageUrl;
         NSLog(@"%@",imageUrl);
     } else {
-        logic.imageUrls = @"";
+        _logic.imageUrls = @"";
     }
    
-    [logic checkDataWithCallback:^(BOOL successful, NSString *tips) {
+    [_logic checkDataWithCallback:^(BOOL successful, NSString *tips) {
         if (successful) {
             [self sendFeedback];
         }else{
@@ -76,10 +73,12 @@
 
 
 - (void)sendFeedback {
-    DFeedBackLogic*logic=[[DFeedBackLogic alloc]init];
-    [logic sendFeedbackCompleted:^(id data) {
+    NSInteger reason=self.selecldIndex+1;
+    _logic.type=NSStringFormat(@"%ld",(long)reason);
+    [_logic sendFeedbackCompleted:^(id data) {
         if (data[@"code"]) {
              self.feedbackSucess = YES; //反馈成功
+            [self.navigationController pushViewController:[[DWriteSucessViewController alloc]init] animated:YES];
         } else {
             [PSTipsView showTips:@"提交失败!"];
         }
@@ -189,16 +188,7 @@
 #pragma mark - Delegate
 #pragma mark  UITextViewDelegate
 - (void)textViewDidEndEditing:(UITextView *)textView {
-//    PSFeedbackViewModel *feedbackViewModel = (PSFeedbackViewModel *)self.viewModel;
-//    feedbackViewModel.content = textView.text;
-    /*
-     if ([NSString hasEmoji:textView.text]||[NSString stringContainsEmoji:textView.text]) {
-     NSString *msg = @"Can't enter expressions!", @"不能输入表情！");
-     [PSTipsView showTips:msg];
-     }
-     */
-    DFeedBackLogic*logic=[[DFeedBackLogic alloc]init];
-    logic.content=textView.text;
+    _logic.content=textView.text;
     if ([NSString hasEmoji:textView.text]||[NSString stringContainsEmoji:textView.text]) {
         NSString *msg = @"不能输入表情!";
         [PSTipsView showTips:msg];

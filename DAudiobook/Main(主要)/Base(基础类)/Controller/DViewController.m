@@ -58,6 +58,11 @@
       self.navigationItem.rightBarButtonItem =[[UIBarButtonItem alloc] initWithImage:rightImage style:UIBarButtonItemStylePlain target:self action:@selector(rightItemClick)];
     
 }
+
+-(void)addRightBarButtonTitleItem:(NSString *)rightTitle{
+    self.navigationItem.rightBarButtonItem =[[UIBarButtonItem alloc] initWithTitle:rightTitle style:UIBarButtonItemStylePlain target:self action:@selector(rightItemClick)];
+    
+}
 -(void)rightItemClick{
     
 }

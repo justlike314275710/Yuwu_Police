@@ -8,6 +8,7 @@
 
 #import "DFeedbackListLogic.h"
 #import "DMessageModel.h"
+#import "FeedbackTypeModel.h"
 @interface DFeedbackListLogic()
 
 @property (nonatomic , strong) NSMutableArray *items;
@@ -40,15 +41,17 @@
     [self requestFeedbackListCompleted:completedCallback failed:failedCallback];
 }
 
-
+- (void)loadMoreFeedbackListCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback{
+    self.page ++;
+    [self requestFeedbackListCompleted:completedCallback failed:failedCallback];
+}
 
 - (void)requestFeedbackListCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback {
-
     NSString*page=[NSString stringWithFormat:@"%ld",(long)self.page];
     NSString*pageSize=[NSString stringWithFormat:@"%ld",(long)self.pageSize];
-    NSDictionary*param=@{@"page":page,@"rows":pageSize,@"type":@"4"};
-    NSString*url=@"http://120.79.251.238:8022/ywgk-app/api/family_logs/findPage";
-    
+    NSDictionary*param=
+    @{@"page":page,@"rows":pageSize,@"policeId":help_userManager.lawUserInfo.id};
+    NSString*url=NSStringFormat(@"%@%@",ServerUrl,URL_feedbacks_page);
     NSString *access_token = help_userManager.oathInfo.access_token;
     NSString *token = NSStringFormat(@"Bearer %@",access_token);
     [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
@@ -59,7 +62,7 @@
             if (self.page == 1) {
                 self.items = [NSMutableArray array];
             }
-            [self.items addObjectsFromArray:[DMessageModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"][@"logs"]]];
+            [self.items addObjectsFromArray:[FeedbackTypeModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"][@"feedbacks"]]];
             if (self.items.count == 0) {
                 self.dataStatus = PSDataEmpty;
             }else{

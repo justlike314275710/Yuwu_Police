@@ -19,14 +19,14 @@
 }
 
 - (void)checkDataWithCallback:(CheckDataCallback)callback {
-    if (self.detail.length <10) {
+    if (self.content.length <10) {
         if (callback) {
             NSString *less_msg = @"请输入不少于10个字的描述";
             callback(NO,less_msg);
         }
         return;
     }
-    if ([NSString hasEmoji:self.detail]||[NSString stringContainsEmoji:self.detail]) {
+    if ([NSString hasEmoji:self.content]||[NSString stringContainsEmoji:self.content]) {
         if (callback) {
             NSString *msg = @"输入的反馈详情不能包含表情,请重新输入";
             callback(NO,msg);
@@ -58,35 +58,27 @@
 }
 
 - (void)sendAppFeedbackCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback {
-    NSString *platform = @"assistant.app";  
-    NSDictionary *params = @{@"clientKey":platform,
-                             @"problem":self.problem,
-                             @"detail":self.detail,
-                             @"attachments":self.attachments,
-                             @"isCo":@"0"
+    NSLog(@"**%@*** %@ ***%@",help_userManager.lawUserInfo.id,self.type,self.content);
+    NSDictionary *params = @{
+                             @"policeId":help_userManager.lawUserInfo.id,
+                             @"type":self.type,
+                             @"content":self.content,
+                             @"imageUrls":self.imageUrls,
                              };
-    
-    NSString *url = NSStringFormat(@"%@%@",EmallHostUrl,URL_feedbacks_add);
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSString *url = NSStringFormat(@"%@%@",ServerUrl,URL_feedbacks_add);
     NSString*token=[NSString stringWithFormat:@"Bearer %@",help_userManager.oathInfo.access_token];
-    [manager.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
-    [manager POST:url parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if (responseObject) {
-            if (completedCallback) {
-                completedCallback(responseObject);
-            }
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
+    [PPNetworkHelper setValue:token forHTTPHeaderField:@"Authorization"];
+    [PPNetworkHelper POST:url parameters:params success:^(id responseObject) {
+        if (completedCallback) {
+            completedCallback(responseObject);
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } failure:^(NSError *error) {
         if (failedCallback) {
             failedCallback(error);
         }
     }];
+    
 }
 
 

@@ -15,6 +15,7 @@
 #import "PSPlatformArticleCell.h"
 #import "PSPublishArticleViewModel.h"
 #import "PSPublishArticleViewController.h"
+#import "SearchBarDisplayCenter.h"
 @interface DHotNovelViewController() {
     
 }
@@ -41,6 +42,7 @@
     [self setupData];
     //下啦刷新
     [self onHeaderRefreshing];
+    [self SearchBar];
     
 }
 
@@ -141,22 +143,11 @@
 
 
 -(void)SearchBar{
-//    UISearchBar*searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0,30,SCREEN_WIDTH-6*15,15)];
-//    searchBar.delegate = self;
-//    searchBar.placeholder = @"搜索文章|连载书籍";
-//    searchBar.barTintColor = [UIColor whiteColor];
-//    searchBar.tintColor = [UIColor blackColor];
-//    searchBar.layer.borderWidth = 1.0f;
-//    searchBar.layer.cornerRadius = 5.0f;
-//    searchBar.layer.borderColor = (__bridge CGColorRef _Nullable)([UIColor blackColor]);
-//    
-//    UIView *searchBarBgView = [[UIView alloc]init];
-//    searchBarBgView.backgroundColor = [UIColor clearColor];
-//    searchBar.clipsToBounds = YES;
-//    [searchBarBgView addSubview:searchBar];
-//    
-//    self.navigationItem.titleView= searchBarBgView;
-//    self.navigationItem.titleView.frame = CGRectMake(0,30,SCREEN_WIDTH-6*15,15);
+    self.view.backgroundColor = [UIColor orangeColor];
+    SearchBarDisplayCenter *searchBar = [[SearchBarDisplayCenter alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 30.0 )];
+    searchBar.placeholderStr=@"搜索文章|连载书籍";
+    searchBar.delegate = self;
+    self.navigationItem.titleView= searchBar;
 }
 
 #pragma mark - Delegate

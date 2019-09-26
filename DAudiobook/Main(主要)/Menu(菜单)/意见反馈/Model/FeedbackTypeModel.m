@@ -9,8 +9,8 @@
 #import "FeedbackTypeModel.h"
 
 @implementation FeedbackTypeModel
-- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
-    if([key isEqualToString:@"id"])
-        self.feedId = value;
-}
+//- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
+//    if([key isEqualToString:@"id"])
+//        self.feedId = value;
+//}
 @end

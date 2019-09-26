@@ -19,10 +19,10 @@ typedef NS_ENUM(NSInteger,WritefeedType) {
 @property (nonatomic, strong) NSArray *reasons;
 @property (nonatomic, assign)WritefeedType writefeedType;
 
-@property (nonatomic, strong) NSString *platform; //
-@property (nonatomic, strong) NSString *problem;  //
-@property (nonatomic, strong) NSString *detail; //
-@property (nonatomic, strong) NSArray *attachments;
+//@property (nonatomic, strong) NSString *platform; //
+//@property (nonatomic, strong) NSString *problem;  //
+//@property (nonatomic, strong) NSString *detail; //
+//@property (nonatomic, strong) NSArray *attachments;
 
 
 @property (nonatomic, assign)NSArray *urls; //要删除图片数组

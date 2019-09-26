@@ -32,6 +32,7 @@ typedef void(^UpdateTata)(DBaseModel * model,NSUInteger typeIndex);
 -(void)addBackItem;
 /** 添加右边按钮*/
 -(void)addRightBarButtonItem:(UIImage *)rightImage;
+-(void)addRightBarButtonTitleItem:(NSString *)rightTitle;
 -(void)rightItemClick;
 
 /**
