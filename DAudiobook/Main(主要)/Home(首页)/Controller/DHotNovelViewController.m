@@ -134,6 +134,7 @@
     }
     viewModel.type = PSPublishArticle;
     PSPublishArticleViewController *publishVC = [[PSPublishArticleViewController alloc] init];
+    publishVC.viewModel = viewModel;
     [self.navigationController pushViewController:publishVC animated:YES];
 }
 

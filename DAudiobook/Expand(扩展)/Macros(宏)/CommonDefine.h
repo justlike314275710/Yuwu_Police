@@ -85,6 +85,13 @@ return shared##className; \
 
 #define IMAGE_NAMED(name) [UIImage imageNamed:name]
 
+/// PushVC
+#define     PushVC(vc)                  {\
+[vc setHidesBottomBarWhenPushed:YES];\
+[self.navigationController pushViewController:vc animated:YES];\
+}
+
+
 
 // View 圆角
 #define ViewRadius(View, Radius)\

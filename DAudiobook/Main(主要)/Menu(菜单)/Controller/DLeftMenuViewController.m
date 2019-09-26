@@ -21,6 +21,7 @@
 #import "DModiyPhoneViewcontroller.h"
 #import "DWriteFeedListViewController.h"
 #import "DAccountViewController.h"
+#import "MineArticleViewController.h"
 
 @interface DLeftMenuViewController ()
 
@@ -158,7 +159,7 @@
             
         case KArticleType:{
            // navVC=self.crosstalkNavigationController;
-            
+            [self myAllArticle];
         }
             break;
             
@@ -202,7 +203,15 @@
 //    [[UIApplication sharedApplication].keyWindow makeKeyAndVisible];
 //    [self.drawerController closeDrawerAnimated:YES completion:nil];
 }
-
+#pragma mark -- 我的收藏
+-(void)mycollectionArticle {
+    
+}
+#pragma mark -- 我的文章
+-(void)myAllArticle {
+    MineArticleViewController *mineArticleVC = [[MineArticleViewController alloc] init];
+    [self presentViewController:mineArticleVC animated:YES completion:nil];
+}
 #pragma mark -- 注销登录
 -(void)loginOutAction{
     

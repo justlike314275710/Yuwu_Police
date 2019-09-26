@@ -7,6 +7,7 @@
 //
 
 #import "PSPublishScuessViewController.h"
+#import "DHotNovelViewController.h"
 
 
 @interface PSPublishScuessViewController ()
@@ -26,7 +27,7 @@
     iconImg.image = IMAGE_NAMED(@"发表文章审核图");
     [self.view addSubview:iconImg];
     [iconImg mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(65);
+        make.top.mas_equalTo(100);
         make.centerX.mas_equalTo(self.view);
         make.width.mas_equalTo(155);
         make.height.mas_equalTo(180);
@@ -63,7 +64,12 @@
 }
 
 - (void)backAction{
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController.viewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:[DHotNovelViewController class]]) {
+            [self.navigationController popToViewController:obj animated:YES];
+            *stop = YES;
+        }
+    }];
 }
 
 - (void)action:(UIButton *)sender {
