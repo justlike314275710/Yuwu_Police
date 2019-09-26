@@ -34,7 +34,6 @@
 @property(nonatomic,strong)RZRichTextView *articleContent;
 @property(nonatomic,strong)UIScrollView *scrollview;
 @property(nonatomic,strong)UIView *container;
-@property(nonatomic,strong)PSPublishArticleViewModel *viewModel;
 
 @end
 
@@ -43,16 +42,16 @@
 #pragma mark - CylceLife
 - (void)viewDidLoad {
     [super viewDidLoad];
-    PSPublishArticleViewModel *viewModel = (PSPublishArticleViewModel *)self.viewModel;
     self.title = @"发布文章";
     [self setupUI];
     //发布文章
-    if (viewModel.type == PSPublishArticle) {
+    if (_viewModel.type == PSPublishArticle) {
         [self setupData];
     } else {
         [self setEdeitUI];
     }
     [IQKeyboardManager sharedManager].enableAutoToolbar = YES;
+
 }
 
 - (BOOL)hiddenNavigationBar{
@@ -62,22 +61,28 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden=YES;
+    self.navigationController.navigationBar.hidden = YES;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.scrollview.contentSize = CGSizeMake(_container.width,700);
     });
     
 }
 
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+     self.navigationController.navigationBar.hidden = NO;
+}
+
 #pragma mark - PrivateMethods
 -(void)setupData{
-    PSPublishArticleViewModel *viewModel = (PSPublishArticleViewModel *)self.viewModel;
-//    [viewModel findPenNameCompleted:^(PSResponse *response) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [self refreshUI];
-//        });
-//    } failed:^(NSError *error) {
-//        
-//    }];
+
+    [self.viewModel findPenNameCompleted:^(id data) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self refreshUI];
+        });
+    } failed:^(NSError *error) {
+        
+    }];
 }
 
 -(void)refreshUI{
@@ -120,7 +125,7 @@
     [self.closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(15);
         make.height.with.mas_equalTo(14);
-        make.top.mas_equalTo(50);
+        make.top.mas_equalTo(30);
     }];
     [_closeBtn be_setEnlargeEdgeWithTop:20 right:15 bottom:5 left:20];
     
@@ -262,46 +267,44 @@
 }
 
 -(void)publishAction:(UIButton*)sender{
-     PSPublishArticleViewModel *viewModel = (PSPublishArticleViewModel *)self.viewModel;
-    viewModel.penName = _authorField.text;
-    viewModel.content = _articleContent.text;
-    viewModel.title = _articleTitleField.text;
-    viewModel.articleType = @"1";
-    [viewModel checkDataWithCallback:^(BOOL successful, NSString *tips) {
-//        if (successful) {
-            /*
-            [viewModel publishArticleCompleted:^(PSResponse *response) {
-                if (response.code == 200) { //文章发表成功
+    
+    _viewModel.penName = _authorField.text;
+    _viewModel.content = _articleContent.text;
+    _viewModel.title = _articleTitleField.text;
+    _viewModel.articleType = @"1";
+    [_viewModel checkDataWithCallback:^(BOOL successful, NSString *tips) {
+        if (successful) {
+            [_viewModel publishArticleCompleted:^(id data) {
+                NSInteger code = [[data valueForKey:@"code"] integerValue];
+                NSString *msg = [data valueForKey:@"msg"];
+                if (code == 200) { //文章发表成功
                     PSPublishScuessViewController *scuessVC = [[PSPublishScuessViewController alloc] init];
                     //刷新我的文章列表
-                    KPostNotification(KNotificationRefreshMyArticle, nil);
+//                    KPostNotification(KNotificationRefreshMyArticle, nil);
                     PushVC(scuessVC);
-                }else if (response.code == 1587) { //标题重复
-                    NSString *msg = response.msg;
-                    [PSTipsView showTips:msg];
+                }else if (code == 1587) { //标题重复
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [self reUseTitleName];
                     });
-                }else if (response.code == -1) { //笔名重复
-                    NSString *msg = response.msg;
-                    [PSTipsView showTips:msg];
+                }else if (code == -1) { //笔名重复
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [self reUsePenName];
+                        if ([msg isEqualToString:@"此笔名已经被使用!"]) {
+                            [self reUsePenName];
+                        }
                     });
-                }else if(response.code ==1586) { //存在敏感字符
-                    NSString *msg = response.msg;
-                    [PSTipsView showTips:msg];
+                }else if(code ==1586) { //存在敏感字符
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [self reEditContent];
                     });
                 }
+                [PSTipsView showTips:msg];
             } failed:^(NSError *error) {
                 
             }];
         } else {
             [PSTipsView showTips:tips];
         }
-             */
+    
     }];
 }
 //文章标题重复
@@ -483,7 +486,6 @@
         _authorField.textColor = UIColorFromRGB(51,51,51);
         _authorField.placeholder = @"请输入笔名,不能超过六位数";
         _authorField.delegate = self;
-        /*
         [_authorField.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
             _authorLab.text = @"作者笔名";
 //            if (x.length>6) {
@@ -491,7 +493,6 @@
 //                [PSTipsView showTips:@"笔名不能超过6个字!"];
 //            }
         }];
-         */
         [_authorField addTarget:self action:@selector(textFiledChanged:) forControlEvents:UIControlEventEditingChanged];
     }
     return _authorField;
@@ -521,7 +522,7 @@
         _articleTitleField.textColor = UIColorFromRGB(51,51,51);
         _articleTitleField.placeholder = @"请输入标题,不能超过20个字";
         _articleTitleField.delegate = self;
-        /*
+  
         [_articleTitleField.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
             _articleTitleLab.text = @"文章标题";
 //                        if (x.length>20) {
@@ -529,7 +530,7 @@
 //                            [PSTipsView showTips:@"标题不能超过20个字!"];
 //                        }
                     }];
-         */
+    
             [_articleTitleField addTarget:self action:@selector(textFiledChanged:) forControlEvents:UIControlEventEditingChanged];
     }
     return _articleTitleField;

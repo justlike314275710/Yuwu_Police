@@ -68,7 +68,7 @@
 
 - (RZRichTextInputAccessoryView *)kinputAccessoryView {
     if (!_kinputAccessoryView) {
-        _kinputAccessoryView = [[RZRichTextInputAccessoryView alloc] initWithFrame:CGRectMake(0, 0, rz_k_screen_width, 44)];
+//        _kinputAccessoryView = [[RZRichTextInputAccessoryView alloc] initWithFrame:CGRectMake(0, 0, rz_k_screen_width, 44)];
         rz_weakObj(self);
         _kinputAccessoryView.rz_attributeItems = self.rz_attributeItems;
         _kinputAccessoryView.cellForItemAtIndePath = self.cellForItemAtIndePath;

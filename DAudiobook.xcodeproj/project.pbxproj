@@ -303,6 +303,8 @@
 		3CDB10C32291696A00AEDE9E /* 丝袜.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CDB10BD2291696A00AEDE9E /* 丝袜.json */; };
 		3CDB10C42291696A00AEDE9E /* 美腿.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CDB10BE2291696A00AEDE9E /* 美腿.json */; };
 		3CDB10C52291696A00AEDE9E /* 性感.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CDB10BF2291696A00AEDE9E /* 性感.json */; };
+		55278D58233C487800FBEE66 /* libReactiveObjC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55278D57233C487800FBEE66 /* libReactiveObjC.a */; };
+		55278D5A233C5C6F00FBEE66 /* libRZColorful.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55278D59233C5C6F00FBEE66 /* libRZColorful.a */; };
 		5542A78C233B050900E4B5D7 /* NSObject+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5542A78B233B050900E4B5D7 /* NSObject+Tool.m */; };
 		5542A7AB233B12A000E4B5D7 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 5542A792233B12A000E4B5D7 /* LICENSE.md */; };
 		5542A7AC233B12A000E4B5D7 /* EXTSelectorChecking.m in Sources */ = {isa = PBXBuildFile; fileRef = 5542A797233B12A000E4B5D7 /* EXTSelectorChecking.m */; };
@@ -346,6 +348,13 @@
 		554E92F9233A2938009D2429 /* NSString+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92F8233A2938009D2429 /* NSString+Date.m */; };
 		554E9300233A29FC009D2429 /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92FD233A29FC009D2429 /* MineTableViewCell.m */; };
 		554E9301233A29FC009D2429 /* DAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92FF233A29FC009D2429 /* DAccountViewController.m */; };
+		55B078B0233C9816009BDDBC /* MineArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078AF233C9816009BDDBC /* MineArticleViewController.m */; };
+		55B078B3233C9827009BDDBC /* PSArticleStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078B1233C9827009BDDBC /* PSArticleStateViewController.m */; };
+		55B078B6233C9889009BDDBC /* PSArticleStateViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078B4233C9889009BDDBC /* PSArticleStateViewModel.m */; };
+		55B078B9233C9A48009BDDBC /* PSArticleDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078B7233C9A48009BDDBC /* PSArticleDetailViewModel.m */; };
+		55B078BC233C9A88009BDDBC /* PSDetailArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078BB233C9A87009BDDBC /* PSDetailArticleViewController.m */; };
+		55B078BF233C9E58009BDDBC /* PSMyTotalArtcleListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078BE233C9E58009BDDBC /* PSMyTotalArtcleListViewModel.m */; };
+		55B078C5233CA2BB009BDDBC /* PSPlatformHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078C3233CA2BA009BDDBC /* PSPlatformHeadView.m */; };
 		55CC6553233B6C4500D4A581 /* SDTextLimitTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CC6552233B6C4500D4A581 /* SDTextLimitTool.m */; };
 		55CC6555233B6D5700D4A581 /* libRZRichTextView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CC6554233B6D5700D4A581 /* libRZRichTextView.a */; };
 		55CC6557233B6D7800D4A581 /* libTZImagePickerController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CC6556233B6D7800D4A581 /* libTZImagePickerController.a */; };
@@ -1288,6 +1297,8 @@
 		3CDB10BD2291696A00AEDE9E /* 丝袜.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "丝袜.json"; sourceTree = "<group>"; };
 		3CDB10BE2291696A00AEDE9E /* 美腿.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "美腿.json"; sourceTree = "<group>"; };
 		3CDB10BF2291696A00AEDE9E /* 性感.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "性感.json"; sourceTree = "<group>"; };
+		55278D57233C487800FBEE66 /* libReactiveObjC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReactiveObjC.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		55278D59233C5C6F00FBEE66 /* libRZColorful.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRZColorful.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5542A78A233B050900E4B5D7 /* NSObject+Tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Tool.h"; sourceTree = "<group>"; };
 		5542A78B233B050900E4B5D7 /* NSObject+Tool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Tool.m"; sourceTree = "<group>"; };
 		5542A792233B12A000E4B5D7 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
@@ -1377,6 +1388,20 @@
 		554E92FD233A29FC009D2429 /* MineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewCell.m; sourceTree = "<group>"; };
 		554E92FE233A29FC009D2429 /* MineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewCell.h; sourceTree = "<group>"; };
 		554E92FF233A29FC009D2429 /* DAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAccountViewController.m; sourceTree = "<group>"; };
+		55B078AE233C9816009BDDBC /* MineArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineArticleViewController.h; sourceTree = "<group>"; };
+		55B078AF233C9816009BDDBC /* MineArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineArticleViewController.m; sourceTree = "<group>"; };
+		55B078B1233C9827009BDDBC /* PSArticleStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArticleStateViewController.m; sourceTree = "<group>"; };
+		55B078B2233C9827009BDDBC /* PSArticleStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArticleStateViewController.h; sourceTree = "<group>"; };
+		55B078B4233C9889009BDDBC /* PSArticleStateViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArticleStateViewModel.m; sourceTree = "<group>"; };
+		55B078B5233C9889009BDDBC /* PSArticleStateViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArticleStateViewModel.h; sourceTree = "<group>"; };
+		55B078B7233C9A48009BDDBC /* PSArticleDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArticleDetailViewModel.m; sourceTree = "<group>"; };
+		55B078B8233C9A48009BDDBC /* PSArticleDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArticleDetailViewModel.h; sourceTree = "<group>"; };
+		55B078BA233C9A87009BDDBC /* PSDetailArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDetailArticleViewController.h; sourceTree = "<group>"; };
+		55B078BB233C9A87009BDDBC /* PSDetailArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDetailArticleViewController.m; sourceTree = "<group>"; };
+		55B078BD233C9E58009BDDBC /* PSMyTotalArtcleListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMyTotalArtcleListViewModel.h; sourceTree = "<group>"; };
+		55B078BE233C9E58009BDDBC /* PSMyTotalArtcleListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMyTotalArtcleListViewModel.m; sourceTree = "<group>"; };
+		55B078C3233CA2BA009BDDBC /* PSPlatformHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPlatformHeadView.m; sourceTree = "<group>"; };
+		55B078C4233CA2BB009BDDBC /* PSPlatformHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPlatformHeadView.h; sourceTree = "<group>"; };
 		55CC6551233B6C4500D4A581 /* SDTextLimitTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTextLimitTool.h; sourceTree = "<group>"; };
 		55CC6552233B6C4500D4A581 /* SDTextLimitTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTextLimitTool.m; sourceTree = "<group>"; };
 		55CC6554233B6D5700D4A581 /* libRZRichTextView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRZRichTextView.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2277,6 +2302,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55278D5A233C5C6F00FBEE66 /* libRZColorful.a in Frameworks */,
+				55278D58233C487800FBEE66 /* libReactiveObjC.a in Frameworks */,
 				55CC6557233B6D7800D4A581 /* libTZImagePickerController.a in Frameworks */,
 				55CC6555233B6D5700D4A581 /* libRZRichTextView.a in Frameworks */,
 				EA9457D0233A2F9C003C1C97 /* NMC.framework in Frameworks */,
@@ -3222,6 +3249,8 @@
 		3CABB1D422748D5000F699C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				55278D59233C5C6F00FBEE66 /* libRZColorful.a */,
+				55278D57233C487800FBEE66 /* libReactiveObjC.a */,
 				55CC6556233B6D7800D4A581 /* libTZImagePickerController.a */,
 				55CC6554233B6D5700D4A581 /* libRZRichTextView.a */,
 				3C79D842229B939A00A9D10E /* libc++.tbd */,
@@ -3569,6 +3598,12 @@
 		5542A7D6233B37F500E4B5D7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				55B078BA233C9A87009BDDBC /* PSDetailArticleViewController.h */,
+				55B078BB233C9A87009BDDBC /* PSDetailArticleViewController.m */,
+				55B078B2233C9827009BDDBC /* PSArticleStateViewController.h */,
+				55B078B1233C9827009BDDBC /* PSArticleStateViewController.m */,
+				55B078AE233C9816009BDDBC /* MineArticleViewController.h */,
+				55B078AF233C9816009BDDBC /* MineArticleViewController.m */,
 				5542A7E4233B5A8C00E4B5D7 /* PSPublishScuessViewController.h */,
 				5542A7E5233B5A8C00E4B5D7 /* PSPublishScuessViewController.m */,
 				5542A7E2233B59D500E4B5D7 /* PSPublishArticleViewController.h */,
@@ -3580,6 +3615,8 @@
 		5542A7D7233B37F700E4B5D7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				55B078C4233CA2BB009BDDBC /* PSPlatformHeadView.h */,
+				55B078C3233CA2BA009BDDBC /* PSPlatformHeadView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3594,6 +3631,12 @@
 		5542A7D9233B37FB00E4B5D7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				55B078BD233C9E58009BDDBC /* PSMyTotalArtcleListViewModel.h */,
+				55B078BE233C9E58009BDDBC /* PSMyTotalArtcleListViewModel.m */,
+				55B078B8233C9A48009BDDBC /* PSArticleDetailViewModel.h */,
+				55B078B7233C9A48009BDDBC /* PSArticleDetailViewModel.m */,
+				55B078B5233C9889009BDDBC /* PSArticleStateViewModel.h */,
+				55B078B4233C9889009BDDBC /* PSArticleStateViewModel.m */,
 				5542A7DB233B55DF00E4B5D7 /* PSPublishArticleViewModel.h */,
 				5542A7DA233B55DF00E4B5D7 /* PSPublishArticleViewModel.m */,
 			);
@@ -6030,6 +6073,7 @@
 				EAA311BA23347B76004DE08F /* UIImage+WLCompress.m in Sources */,
 				EA960E12232F84F900D81A25 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				EA960CA6232F3B1C00D81A25 /* YYTextAttribute.m in Sources */,
+				55B078B3233C9827009BDDBC /* PSArticleStateViewController.m in Sources */,
 				3CD2D82D229985ED00C700D7 /* DPostModel.m in Sources */,
 				EA960ADB232F29FB00D81A25 /* NIMKitLocationPoint.m in Sources */,
 				EAA311AD233472D8004DE08F /* UIImagePickerController+BlocksKit.m in Sources */,
@@ -6094,6 +6138,7 @@
 				EA960A9D232F29FA00D81A25 /* NIMInputEmoticonManager.m in Sources */,
 				EA960BAC232F32E500D81A25 /* PSTipsView.m in Sources */,
 				EAA3119B233472D8004DE08F /* NSTimer+BlocksKit.m in Sources */,
+				55B078B6233C9889009BDDBC /* PSArticleStateViewModel.m in Sources */,
 				EA960ABC232F29FB00D81A25 /* NIMTeamMemberCardHeaderCell.m in Sources */,
 				EA960CC2232F3B1C00D81A25 /* NSNotificationCenter+YYAdd.m in Sources */,
 				3C4A3A4D22681A0F00882244 /* DataManager.m in Sources */,
@@ -6109,6 +6154,7 @@
 				3CD2D83322998ECF00C700D7 /* DCustomPlaceHolderTextView.m in Sources */,
 				5542A7E6233B5A8D00E4B5D7 /* PSPublishScuessViewController.m in Sources */,
 				EA960B58232F2FE900D81A25 /* FLAnimatedImageView+WebCache.m in Sources */,
+				55B078C5233CA2BB009BDDBC /* PSPlatformHeadView.m in Sources */,
 				EA960CAE232F3B1C00D81A25 /* UITableView+YYAdd.m in Sources */,
 				3CD2D82A2299822E00C700D7 /* DPostCell.m in Sources */,
 				3C0DB64822D731ED0029730E /* NSObject+MJClass.m in Sources */,
@@ -6178,6 +6224,7 @@
 				EA960B53232F2FE900D81A25 /* SDWebImageManager.m in Sources */,
 				3C8953EF229BCB0C00CB70E1 /* UIView+MBProgressHUD.m in Sources */,
 				3C1E825D228185D0005D7A11 /* DMusicDetailVIewController.m in Sources */,
+				55B078BF233C9E58009BDDBC /* PSMyTotalArtcleListViewModel.m in Sources */,
 				3C8F3E26226B4F09006CF059 /* UIViewController+MMDrawerController.m in Sources */,
 				EA960DC7232F616600D81A25 /* PSLoginMiddleView.m in Sources */,
 				EA960BC1232F37A400D81A25 /* FLAnimatedImage.m in Sources */,
@@ -6328,6 +6375,7 @@
 				EA960DAF232F5BA000D81A25 /* DGActivityIndicatorRotatingTrigonAnimation.m in Sources */,
 				EA960ABF232F29FB00D81A25 /* NIMAdvancedTeamCardViewController.m in Sources */,
 				EAA311AF233472D8004DE08F /* UIControl+BlocksKit.m in Sources */,
+				55B078BC233C9A88009BDDBC /* PSDetailArticleViewController.m in Sources */,
 				EA960AC2232F29FB00D81A25 /* NIMKitEvent.m in Sources */,
 				EA960E2923306EA000D81A25 /* AESCipher.m in Sources */,
 				EA960CA7232F3B1C00D81A25 /* YYTextArchiver.m in Sources */,
@@ -6386,6 +6434,7 @@
 				EAA3101B23338BE4004DE08F /* DUpdataModel.m in Sources */,
 				EA960DA6232F5BA000D81A25 /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
 				EAA3101E23346001004DE08F /* DWriteFeedbackViewController.m in Sources */,
+				55B078B9233C9A48009BDDBC /* PSArticleDetailViewModel.m in Sources */,
 				EAA31198233472D8004DE08F /* NSMutableArray+BlocksKit.m in Sources */,
 				55CC6553233B6C4500D4A581 /* SDTextLimitTool.m in Sources */,
 				3CABB1D322746B3000F699C5 /* DAlbumHeadView.m in Sources */,
@@ -6497,6 +6546,7 @@
 				3C0DB68922D7320B0029730E /* MJRefreshAutoNormalFooter.m in Sources */,
 				EA960B6A232F2FE900D81A25 /* UIButton+WebCache.m in Sources */,
 				3C4A3A4A22681A0F00882244 /* main.m in Sources */,
+				55B078B0233C9816009BDDBC /* MineArticleViewController.m in Sources */,
 				EA960AA0232F29FA00D81A25 /* NIMInputEmoticonContainerView.m in Sources */,
 				EA960AB0232F29FA00D81A25 /* NIMCreateTeamAnnouncement.m in Sources */,
 				EA960CCB232F3B1C00D81A25 /* YYTransaction.m in Sources */,

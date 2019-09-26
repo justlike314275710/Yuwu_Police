@@ -184,7 +184,15 @@
 //查找作者笔名
 #define URL_Article_findPenName @"/api/article/findPenName"
 //发布文章
-#define URL_Article_publishFamilyArticle @"/api/article/publishFamilyArticle"
+#define URL_Article_publishPoliceArticle @"/api/article/publishPoliceArticle"
+//查询我的总文章
+#define URL_Article_getMyTotalArticle @"/api/article/getMyTotalArticle"
+//查询我的分类文章
+#define URL_Article_getMyArticle @"/api/article/getMyArticle"
+
+
+
+
 
 
 
