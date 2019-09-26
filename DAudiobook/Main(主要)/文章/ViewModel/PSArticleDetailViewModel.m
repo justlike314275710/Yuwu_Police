@@ -25,94 +25,103 @@
 //文章详情
 - (void)loadArticleDetailCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback{
     
-    /*
-    self.familyLogsRequest = [PSArtcleFindDetailRequest new];
-    self.familyLogsRequest.id = [self.id integerValue];
-    [self.familyLogsRequest send:^(PSRequest *request, PSResponse *response) {
-        if (response.code == 200) {
-            PSArtcleFindDetailResponse *logsResponse = (PSArtcleFindDetailResponse *)response;
-            self.detailModel = logsResponse.detailModel;
-
-            if (completedCallback) {
-                completedCallback(response);
-            }
+    NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_findDetail];
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    NSDictionary *params = @{@"id":self.id};
+    NSString *access_token = help_userManager.oathInfo.access_token;
+    access_token = NSStringFormat(@"Bearer %@",access_token);
+    [PPNetworkHelper GET:urlString parameters:params success:^(id responseObject) {
+        NSInteger code = [[responseObject valueForKey:@"code"] integerValue];
+        if (code == 200) {
+            PSArticleDetailModel *detailModel = [PSArticleDetailModel modelWithJSON:responseObject[@"data"]];
+            self.detailModel = detailModel;
         }
-    } errorCallback:^(PSRequest *request, NSError *error) {
+        if (completedCallback) {
+            completedCallback(responseObject);
+        }
+        
+    } failure:^(NSError *error) {
         if (failedCallback) {
                 failedCallback(error);
             }
     }];
-    */
 }
 //收藏
 - (void)collectArticleCompleted:(RequestDataCompleted)completedCallback
                          failed:(RequestDataFailed)failedCallback {
-    /*
-    self.collectRequest = [PSCollectArticleRequest new];
-    self.collectRequest.articleId =  self.id;
-    [self.collectRequest send:^(PSRequest *request, PSResponse *response) {
-            if (completedCallback) {
-                completedCallback(response);
-            }
-    } errorCallback:^(PSRequest *request, NSError *error) {
+    
+    NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_collectArticle];
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    NSDictionary *params = @{@"articleId":self.id};
+    NSString *access_token = help_userManager.oathInfo.access_token;
+    access_token = NSStringFormat(@"Bearer %@",access_token);
+    [PPNetworkHelper POST:urlString parameters:params success:^(id responseObject) {
+        if (completedCallback) {
+            completedCallback(responseObject);
+        }
+    } failure:^(NSError *error) {
         if (failedCallback) {
             failedCallback(error);
         }
     }];
-     */
 }
 //取消收藏
 - (void)cancelCollectArticleCompleted:(RequestDataCompleted)completedCallback
                                failed:(RequestDataFailed)failedCallback {
-    /*
-    self.cancelCollectRequest = [PSCancelCollectArticleRequest new];
-    self.cancelCollectRequest.articleId =  self.id;
-    [self.cancelCollectRequest send:^(PSRequest *request, PSResponse *response) {
+    
+    NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_deleteCollect];
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    NSDictionary *params = @{@"articleId":self.id};
+    NSString *access_token = help_userManager.oathInfo.access_token;
+    access_token = NSStringFormat(@"Bearer %@",access_token);
+    [PPNetworkHelper POST:urlString parameters:params success:^(id responseObject) {
         if (completedCallback) {
-            completedCallback(response);
+            completedCallback(responseObject);
         }
-    } errorCallback:^(PSRequest *request, NSError *error) {
+    } failure:^(NSError *error) {
         if (failedCallback) {
             failedCallback(error);
         }
     }];
-     */
 }
 
 //点赞
 - (void)praiseArticleCompleted:(RequestDataCompleted)completedCallback
                         failed:(RequestDataFailed)failedCallback {
-    /*
-    self.praiseRequest = [PSArticlePraiseRequest new];
-    self.praiseRequest.articleId =  self.id;
-    [self.praiseRequest send:^(PSRequest *request, PSResponse *response) {
+    
+    NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_praise];
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    NSDictionary *params = @{@"articleId":self.id};
+    NSString *access_token = help_userManager.oathInfo.access_token;
+    access_token = NSStringFormat(@"Bearer %@",access_token);
+    [PPNetworkHelper POST:urlString parameters:params success:^(id responseObject) {
         if (completedCallback) {
-            completedCallback(response);
+            completedCallback(responseObject);
         }
-    } errorCallback:^(PSRequest *request, NSError *error) {
+    } failure:^(NSError *error) {
         if (failedCallback) {
             failedCallback(error);
         }
     }];
-     */
 }
 
 //取消点赞
 - (void)deletePraiseArticleCompleted:(RequestDataCompleted)completedCallback
                               failed:(RequestDataFailed)failedCallback{
-    /*
-    self.deletePraiseRequest = [PSArticleDeletePraiseRequest new];
-    self.deletePraiseRequest.articleId =  self.id;
-    [self.deletePraiseRequest send:^(PSRequest *request, PSResponse *response) {
+    NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_deletePraise];
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    NSDictionary *params = @{@"articleId":self.id};
+    NSString *access_token = help_userManager.oathInfo.access_token;
+    access_token = NSStringFormat(@"Bearer %@",access_token);
+    [PPNetworkHelper POST:urlString parameters:params success:^(id responseObject) {
         if (completedCallback) {
-            completedCallback(response);
+            completedCallback(responseObject);
         }
-    } errorCallback:^(PSRequest *request, NSError *error) {
+    } failure:^(NSError *error) {
         if (failedCallback) {
             failedCallback(error);
         }
     }];
-     */
     
 }
 

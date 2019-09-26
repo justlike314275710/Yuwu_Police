@@ -15,10 +15,18 @@
 #import "PSPlatformArticleCell.h"
 #import "PSPublishArticleViewModel.h"
 #import "PSPublishArticleViewController.h"
+
 #import "SearchBarDisplayCenter.h"
 @interface DHotNovelViewController() {
+
+#import "PSArticleDetailViewModel.h"
+#import "PSDetailArticleViewController.h"
+
+@interface DHotNovelViewController()<UITableViewDelegate,UITableViewDataSource> {
+
     
 }
+@property (nonatomic,strong) UITableView *tableview;
 @property (nonatomic,strong) UIButton *publishBtn;
 @property (nonatomic,strong) HomePageLogic *logic;
 
@@ -29,20 +37,21 @@
 #pragma mark - LifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self onHeaderRefreshing];
    // [self GDTadvertising];
-    [self SearchBar];
-    
-    //加载刷新控件
-    [self initializeRefresh];
+//    [self SearchBar];
+
+    self.logic = [HomePageLogic new];
     
     [self setupUI];
     
     [self setupData];
     //下啦刷新
+
     [self onHeaderRefreshing];
     [self SearchBar];
+
+    [self refreshData];
+
     
 }
 
@@ -50,55 +59,45 @@
     return NO;
 }
 //下啦刷新
-- (void)onHeaderRefreshing{
+- (void)refreshData{
     [[PSLoadingView sharedInstance] show];
     [self.logic refreshArticleListCompleted:^(id data) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView.mj_header endRefreshing];
-            [self.tableView reloadData];
-            [self setTableleUI];
+            [self.tableview.mj_header endRefreshing];
+            [self.tableview reloadData];
+             [self reloadContents];
             [[PSLoadingView sharedInstance] dismiss];
         });
     } failed:^(NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView.mj_header endRefreshing];
-            [self.tableView reloadData];
-            [self setTableleUI];
+            [self.tableview.mj_header endRefreshing];
+            [self.tableview reloadData];
+            [self reloadContents];
             [[PSLoadingView sharedInstance] dismiss];
         });
     }];
 }
 //上啦
--(void)onFooterRefreshing {
+-(void)loadMore {
     [[PSLoadingView sharedInstance] show];
     [_logic loadMoreArticleListCompleted:^(id data) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [[PSLoadingView sharedInstance] dismiss];
-            [self.tableView.mj_footer endRefreshing];
-            [self.tableView reloadData];
-            [self setTableleUI];
+            [self.tableview.mj_footer endRefreshing];
+            [self.tableview reloadData];
+            [self reloadContents];
         });
     } failed:^(NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [[PSLoadingView sharedInstance] dismiss];
-            [self.tableView.mj_footer endRefreshing];
-            [self.tableView reloadData];
-            [self setTableleUI];
+            [self.tableview.mj_footer endRefreshing];
+            [self.tableview reloadData];
+            [self reloadContents];
         });
     }];
     
 }
--(void)setTableleUI {
-    @weakify(self);
-    if (_logic.hasNextPage) {
-        @strongify(self);
-        self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-            [self onFooterRefreshing];
-        }];
-    }else{
-        self.tableView.mj_footer = nil;
-    }
-}
+
 
 - (void)rightBarItemPress{
     DMessageViewController*vc=[[DMessageViewController alloc]init];
@@ -106,17 +105,36 @@
 }
 
 #pragma - PrivateMethods
--(void)setupUI{
-    
-    self.logic = [HomePageLogic new];
-    
-    [self.view addSubview:self.publishBtn];
-    
-    NSString *token = help_userManager.curUserInfo.token;
-    
-    NSLog(@"%@",token);
+- (void)setupUI {
+
+    [self.view addSubview:self.tableview];
+    [self.tableview registerClass:[PSPlatformArticleCell class] forCellReuseIdentifier:@"PSPlatformArticleCell"];
+    self.tableview.tableFooterView = [UIView new];
+    @weakify(self)
+    self.tableview.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        @strongify(self)
+        [self refreshData];
+    }];
     
 }
+
+- (void)reloadContents {
+
+    if (self.logic.hasNextPage) {
+        @weakify(self)
+        self.tableview.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+            @strongify(self)
+            [self loadMore];
+        }];
+    }else{
+        self.tableview.mj_footer = nil;
+    }
+    [self.tableview.mj_header endRefreshing];
+    [self.tableview.mj_footer endRefreshing];
+    [self.tableview reloadData];
+}
+
+
 //获取发布文章权限
 - (void)setupData{
     [self.logic authorArticleCompleted:^(id data) {
@@ -175,11 +193,38 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    DRadioModel *model = self.listArray[indexPath.row];
-    DAlbumViewController *VC = [[DAlbumViewController alloc] init];
-    VC.model=model;
-    //[self presentViewController:VC animated:YES completion:nil];
-   // [self.navigationController pushViewController:VC animated:YES];
+  
+    PSArticleDetailModel *model = [self.logic.datalist objectAtIndex:indexPath.row];
+    PSArticleDetailViewModel *viewModel = [PSArticleDetailViewModel new];
+    viewModel.id = model.id;
+    PSDetailArticleViewController *DetailArticleVC = [[PSDetailArticleViewController alloc] init];
+    DetailArticleVC.viewModel = viewModel;
+    //点赞回调刷新
+    DetailArticleVC.praiseBlock = ^(BOOL isPraise, NSString *id, BOOL result) {
+        if (isPraise) {
+            model.praiseNum = [NSString stringWithFormat:@"%ld",[model.praiseNum integerValue]+1];
+            model.ispraise = @"1";
+        } else {
+            model.praiseNum = [NSString stringWithFormat:@"%ld",[model.praiseNum integerValue]-1];
+            model.ispraise = @"0";
+        }
+        //刷新
+        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+        //刷新另外的列表
+//        KPostNotification(KNotificationRefreshCollectArticle, nil);
+//        KPostNotification(KNotificationRefreshMyArticle, nil);
+        
+    };
+    //热度刷新
+    DetailArticleVC.hotChangeBlock = ^(NSString *clientNum) {
+        //刷新
+        model.clientNum = clientNum;
+        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+//        KPostNotification(KNotificationRefreshCollectArticle, nil);
+//        KPostNotification(KNotificationRefreshMyArticle, nil);
+    };
+    
+    [self.navigationController pushViewController:DetailArticleVC animated:YES];
     
 }
 
@@ -192,6 +237,17 @@
         [_publishBtn addTarget:self action:@selector(publishAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _publishBtn;
+}
+
+- (UITableView *)tableview {
+    if (!_tableview) {
+        _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0,64,self.view.width,kScreenHeight-64) style:UITableViewStyleGrouped];
+        _tableview.backgroundColor = UIColorFromRGB(249,248,254);
+        _tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableview.dataSource = self;
+        _tableview.delegate = self;
+    }
+    return _tableview;
 }
 
 @end

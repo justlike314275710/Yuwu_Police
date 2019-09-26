@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - 热门小说
-@interface DHotNovelViewController : DTableViewController
+@interface DHotNovelViewController : DViewController
 @end
 
 #pragma mark - 相声评书

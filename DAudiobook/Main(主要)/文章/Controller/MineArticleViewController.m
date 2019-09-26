@@ -29,8 +29,7 @@
     self.viewModel = [PSMyTotalArtcleListViewModel new];
     [self setupUI];
     [self refreshData];
-    
-    
+    [self addBackItem];
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KNotificationRefreshMyArticle object:nil];
     
 }
@@ -48,7 +47,6 @@
         @strongify(self)
         [self refreshData];
     }];
-    
 }
 
 - (void)loadMore {
@@ -96,7 +94,7 @@
 #pragma mark - Setting&&Getting
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0,self.view.width,kScreenHeight-164) style:UITableViewStyleGrouped];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,64,self.view.width,kScreenHeight-64) style:UITableViewStyleGrouped];
         _tableView.backgroundColor = UIColorFromRGB(249,248,254);
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.dataSource = self;
@@ -134,6 +132,7 @@
     PSArticleDetailViewModel *viewModel = [PSArticleDetailViewModel new];
     viewModel.id = model.id;
     PSDetailArticleViewController *DetailArticleVC = [[PSDetailArticleViewController alloc] init];    //点赞回调刷新
+    DetailArticleVC.viewModel = viewModel;
     DetailArticleVC.praiseBlock = ^(BOOL isPraise, NSString *id, BOOL result) {
         if (isPraise) {
             model.praiseNum = [NSString stringWithFormat:@"%ld",[model.praiseNum integerValue]+1];
@@ -193,6 +192,7 @@
     PSPlatformHeadView *headView = [[[PSPlatformHeadView alloc] init] initWithFrame:CGRectMake(0, 0, kScreenWidth,40) title:title];
     headView.block = ^(NSString * _Nonnull title) {
         PSArticleStateViewController *ArticleStateVC = [[PSArticleStateViewController alloc] init];
+        ArticleStateVC.viewModel = viewModel;
         [self.navigationController pushViewController:ArticleStateVC  animated:YES];
     };
     return headView;
