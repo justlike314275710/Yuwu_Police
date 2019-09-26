@@ -16,12 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) NSArray *articles_published;
 @property (nonatomic, strong) NSMutableArray *articles;
 
-
-
-@property (nonatomic, assign) NSInteger page;
-@property (nonatomic, assign) NSInteger pageSize;
-@property (nonatomic, assign) BOOL hasNextPage;
-
 - (void)refreshMessagesCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback;
 - (void)loadMoreMessagesCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback;
 @end

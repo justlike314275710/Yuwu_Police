@@ -68,19 +68,18 @@
         @strongify(self)
         NSInteger code = [[responseObject valueForKey:@"code"] integerValue];
         if (code == 200) {
-//            PSMyTotalListResponse *logsResponse = (PSMyTotalListResponse *)response;
-            NSArray *articles_notpublished = [NSArray array];
-            NSArray *articles_notpass = [NSArray array];
-            NSArray *articles_published = [NSArray array];
+            NSDictionary *data = [responseObject valueForKey:@"data"];
+            NSArray *articles_notpublished = [data valueForKey:@"articles_notpublished"];
+            NSArray *articles_notpass = [data valueForKey:@"articles_notpass"];
+            NSArray *articles_published = [data valueForKey:@"articles_published"];
 
             if (self.page == 1) {
                 self.logs = [NSMutableArray array];
                 self.logs1 = [NSMutableArray array];
                 self.logs2 = [NSMutableArray array];
-                
             }
             
-            if ((articles_notpublished.count == 0)&&articles_notpass.count==0&&articles_published.count==0) {
+            if (articles_notpublished.count == 0&&articles_notpass.count==0&&articles_published.count==0) {
                 self.dataStatus = PSDataEmpty;
             }else{
                 self.dataStatus = PSDataNormal;

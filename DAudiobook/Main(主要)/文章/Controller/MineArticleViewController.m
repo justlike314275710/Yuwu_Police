@@ -26,8 +26,10 @@
     [super viewDidLoad];
     self.title = @"我的文章";
     self.view.backgroundColor = [UIColor clearColor];
+    self.viewModel = [PSMyTotalArtcleListViewModel new];
     [self setupUI];
     [self refreshData];
+    
     
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KNotificationRefreshMyArticle object:nil];
     
@@ -50,24 +52,21 @@
 }
 
 - (void)loadMore {
-    /*
     @weakify(self)
-    [self.viewModel loadMoreMessagesCompleted:^(PSResponse *response) {
+    [self.viewModel loadMoreMessagesCompleted:^(id data) {
         @strongify(self)
         [self reloadContents];
     } failed:^(NSError *error) {
         @strongify(self)
         [self reloadContents];
     }];
-     */
 }
 
 - (void)refreshData {
-    /*
-    PSMyTotalArtcleListViewModel *messageViewModel = (PSMyTotalArtcleListViewModel *)self.viewModel;
+    
     [[PSLoadingView sharedInstance] show];
     @weakify(self)
-    [messageViewModel refreshMessagesCompleted:^(PSResponse *response) {
+    [self.viewModel refreshMessagesCompleted:^(id data) {
         @strongify(self)
         [[PSLoadingView sharedInstance] dismiss];
         [self reloadContents];
@@ -76,7 +75,6 @@
         [[PSLoadingView sharedInstance] dismiss];
         [self reloadContents];
     }];
-     */
 }
 
 - (void)reloadContents {
