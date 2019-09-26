@@ -24,6 +24,7 @@
     [super viewDidLoad];
     self.title = @"收藏文章";
     self.view.backgroundColor = [UIColor clearColor];
+    [self addBackItem];
     [self setupUI];
     [self refreshData];
 }
@@ -35,13 +36,12 @@
 #pragma mark - PrivateMethods
 - (void)setupUI {
     
-    PSArticleStateViewModel *viewModel = [PSArticleStateViewModel new];
     NSString *title = @"";
-    if ([viewModel.status isEqualToString:@"published"]) {
+    if ([self.viewModel.status isEqualToString:@"published"]) {
         title = @"我的文章-已发布";
-    } else if ([viewModel.status isEqualToString:@"not-published"]) {
+    } else if ([self.viewModel.status isEqualToString:@"not-published"]) {
         title = @"我的文章-未发布";
-    } else if([viewModel.status isEqualToString:@"not-pass"]) {
+    } else if([self.viewModel.status isEqualToString:@"not-pass"]) {
         title = @"我的文章-未通过";
     }
     self.title = title;
@@ -102,7 +102,7 @@
 #pragma mark - Setting&&Getting
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0,self.view.width,kScreenHeight-kTopHeight) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,64,self.view.width,kScreenHeight-54) style:UITableViewStylePlain];
         _tableView.backgroundColor = UIColorFromRGB(249,248,254);
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.dataSource = self;

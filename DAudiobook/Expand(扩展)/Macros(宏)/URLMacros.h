@@ -189,6 +189,16 @@
 #define URL_Article_getMyTotalArticle @"/api/article/getMyTotalArticle"
 //查询我的分类文章
 #define URL_Article_getMyArticle @"/api/article/getMyArticle"
+//查询我的详情
+#define URL_Article_findDetail @"/api/article/findDetail"
+//收藏文章
+#define URL_Article_collectArticle @"/api/article/collectArticle"
+//取消文章
+#define URL_Article_deleteCollect @"/api/article/deleteCollect"
+//点赞
+#define URL_Article_praise @"/api/article/praise"
+//取消点赞
+#define URL_Article_deletePraise @"/api/article/deletePraise"
 
 
 

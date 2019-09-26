@@ -209,8 +209,9 @@
 }
 #pragma mark -- 我的文章
 -(void)myAllArticle {
-    MineArticleViewController *mineArticleVC = [[MineArticleViewController alloc] init];
-    [self presentViewController:mineArticleVC animated:YES completion:nil];
+    MineArticleViewController*mineArticleVC=[[MineArticleViewController alloc]init];
+    DNavigationController*navVC=[[DNavigationController alloc]initWithRootViewController:mineArticleVC];
+    [self presentViewController:navVC animated:YES completion:nil];
 }
 #pragma mark -- 注销登录
 -(void)loginOutAction{

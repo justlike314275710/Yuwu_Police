@@ -7,6 +7,7 @@
 //
 
 #import "PSArticleStateViewModel.h"
+#import "PSArticleDetailModel.h"
 
 
 
@@ -53,9 +54,43 @@
     access_token = NSStringFormat(@"Bearer %@",access_token);
     [PPNetworkHelper setValue:access_token forHTTPHeaderField:@"Authorization"];
     [PPNetworkHelper GET:urlString parameters:parameters success:^(id responseObject) {
+        NSInteger code = [responseObject[@"code"] integerValue];
+        if (code == 200) {
+    
+            NSArray *articles = [[PSArticleDetailModel class] jsonsToModelsWithJsons:responseObject[@"data"][@"articles"]];
+            
+            if (self.page == 1) {
+                self.logs = [NSMutableArray array];
+            }
+            if (articles.count == 0) {
+                self.dataStatus = PSDataEmpty;
+            }else{
+                self.dataStatus = PSDataNormal;
+            }
+            self.hasNextPage = articles.count >= self.pageSize;
+            [self.logs addObjectsFromArray:articles];
+        }else{
+            if (self.page > 1) {
+                self.page --;
+                self.hasNextPage = YES;
+            }else{
+                self.dataStatus = PSDataError;
+            }
+        }
+        if (completedCallback) {
+            completedCallback(responseObject);
+        }
         
     } failure:^(NSError *error) {
-        
+        if (self.page > 1) {
+            self.page --;
+            self.hasNextPage = YES;
+        }else{
+            self.dataStatus = PSDataError;
+        }
+        if (failedCallback) {
+            failedCallback(error);
+        }
     }];
     /*
     self.familyLogsRequest = [PSArticleGetMyArticleRequest new];

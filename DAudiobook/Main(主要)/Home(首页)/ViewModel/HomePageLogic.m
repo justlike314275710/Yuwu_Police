@@ -8,6 +8,7 @@
 
 #import "HomePageLogic.h"
 #import "PSArticleDetailModel.h"
+#import "AFNetworking.h"
 @interface HomePageLogic()
 @property (nonatomic,strong)NSMutableArray *items;
 
@@ -31,7 +32,9 @@
     
     NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_GetPublishArticle];
     NSDictionary *parameters = @{@"page":[NSString stringWithFormat:@"%ld",(long)self.page],@"rows":[NSString stringWithFormat:@"%ld",(long)self.pageSize]};
-    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
+        [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    [PPNetworkHelper setResponseSerializer:PPResponseSerializerJSON];
     NSString *access_token = help_userManager.oathInfo.access_token;
     access_token = NSStringFormat(@"Bearer %@",access_token);
     [PPNetworkHelper setValue:access_token forHTTPHeaderField:@"Authorization"];
@@ -81,7 +84,7 @@
 }
 
 - (void)refreshArticleListCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback {
-    self.pageSize = 0;
+    self.page = 1;
     self.items = nil;
     self.hasNextPage = NO;
     self.dataStatus = PSDataInitial;

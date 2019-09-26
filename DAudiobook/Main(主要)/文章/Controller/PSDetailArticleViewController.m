@@ -43,6 +43,7 @@
     // Do any additional setup after loading the view.
     self.title = @"";
     self.view.backgroundColor=[UIColor whiteColor];
+    [self addBackItem];
     [self setupData];
 }
 
@@ -54,10 +55,10 @@
 #pragma mark - PrivateMethods
 -(void)setupUI{
     
-    PSArticleDetailViewModel *viewModel =  (PSArticleDetailViewModel *)self.viewModel;
     [self.view addSubview:self.topTipLab];
     [self.topTipLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.mas_equalTo(self.view);
+        make.left.right.mas_equalTo(self.view);
+        make.top.mas_equalTo(kTopHeight);
         make.height.mas_equalTo(42);
     }];
     
@@ -293,9 +294,8 @@
 }
 
 -(void)setupData{
-    PSArticleDetailViewModel *viewModel =  (PSArticleDetailViewModel *)self.viewModel;
     [[PSLoadingView sharedInstance] show];
-    [viewModel loadArticleDetailCompleted:^(id data) {
+    [self.viewModel loadArticleDetailCompleted:^(id data) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self setupUI];
             [self refreshUI];
@@ -343,35 +343,35 @@
 
 //收藏
 -(void)collectAction{
-
-    PSArticleDetailViewModel *viewModel =  (PSArticleDetailViewModel *)self.viewModel;
-    [viewModel collectArticleCompleted:^(id data) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            NSString *msg = [response msg];
-//            [PSTipsView showTips:msg];
-//            if (response.code == 200){
-//                [self setupData];
-//                //刷新收藏列表
+    [self.viewModel collectArticleCompleted:^(id data) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *msg = data[@"msg"];
+            [PSTipsView showTips:msg];
+            NSInteger code = [data[@"code"] integerValue];
+            if (code == 200){
+                [self setupData];
+                //刷新收藏列表
 //                KPostNotification(KNotificationRefreshCollectArticle, nil);
-//            }
-//        });
+            }
+        });
     } failed:^(NSError *error) {
         [PSTipsView showTips:@"收藏失败"];
     }];
 }
 //取消收藏
 -(void)cancelCollectAction{
-    PSArticleDetailViewModel *viewModel =  (PSArticleDetailViewModel *)self.viewModel;
-    [viewModel cancelCollectArticleCompleted:^(id data) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            NSString *msg = [response msg];
-//            [PSTipsView showTips:msg];
-//            if (response.code == 200){
-//                [self setupData];
-//                //刷新收藏列表
+    
+    [self.viewModel cancelCollectArticleCompleted:^(id data) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *msg = data[@"msg"];
+            NSInteger code = [data[@"code"] integerValue];
+            [PSTipsView showTips:msg];
+            if (code == 200){
+                [self setupData];
+                //刷新收藏列表
 //                KPostNotification(KNotificationRefreshCollectArticle, nil);
-//            }
-//        });
+            }
+        });
     } failed:^(NSError *error) {
         [PSTipsView showTips:@"取消收藏失败"];
     }];
@@ -381,15 +381,16 @@
 -(void)praiseAction{
     PSArticleDetailViewModel *viewModel =  (PSArticleDetailViewModel *)self.viewModel;
     [viewModel praiseArticleCompleted:^(id data) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            NSString *msg = [response msg];
-//            [PSTipsView showTips:msg];
-//            if (response.code == 200){
-//                [self setupData];
-//                //刷新列表
-//                if (self.praiseBlock) self.praiseBlock(YES, viewModel.id, YES);
-//            }
-//        });
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *msg = data[@"msg"];
+            NSInteger code = [data[@"code"] integerValue];
+            [PSTipsView showTips:msg];
+            if (code == 200){
+                [self setupData];
+                //刷新列表
+                if (self.praiseBlock) self.praiseBlock(YES, viewModel.id, YES);
+            }
+        });
     } failed:^(NSError *error) {
         [PSTipsView showTips:@"点赞失败"];
     }];
@@ -398,15 +399,16 @@
 -(void)cancelPraiseAction{
     PSArticleDetailViewModel *viewModel =  (PSArticleDetailViewModel *)self.viewModel;
     [viewModel deletePraiseArticleCompleted:^(id data) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            NSString *msg = [response msg];
-//            [PSTipsView showTips:msg];
-//            if (response.code == 200){
-//                [self setupData];
-//                //刷新列表
-//                if (self.praiseBlock) self.praiseBlock(NO, viewModel.id, YES);
-//            }
-//        });
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *msg = data[@"msg"];
+            NSInteger code = data[@"code"];
+            [PSTipsView showTips:msg];
+            if (code == 200){
+                [self setupData];
+                //刷新列表
+                if (self.praiseBlock) self.praiseBlock(NO, viewModel.id, YES);
+            }
+        });
     } failed:^(NSError *error) {
         [PSTipsView showTips:@"取消点赞失败"];
     }];
@@ -416,13 +418,14 @@
     
     PSArticleDetailViewModel *viewModel =  (PSArticleDetailViewModel *)self.viewModel;
     [viewModel collectArticleCompleted:^(id data) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            NSString *msg = [response msg];
-//            [PSTipsView showTips:msg];
-//            if (response.code == 200){
-//                [self setupData];
-//            }
-//        });
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *msg = data[@"msg"];
+            NSInteger code = [data[@"code"] integerValue];
+            [PSTipsView showTips:msg];
+            if (code == 200){
+                [self setupData];
+            }
+        });
     } failed:^(NSError *error) {
         [PSTipsView showTips:@"收藏失败"];
     }];
