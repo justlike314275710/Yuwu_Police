@@ -19,6 +19,7 @@
 #import "PPNetworkHelper.h"
 #import "KGStatusBar.h"
 #import "DVersionManger.h"
+#import "ZXCTimer.h"
 
 @interface AppDelegate ()
 @property (retain, nonatomic) GDTSplashAd  *splash;
@@ -50,10 +51,16 @@
     //版本更新
     DVersionManger*versonManger=[DVersionManger new];
     //[versonManger jundgeVersonUpdate];
-    [self  initWindow];
-    [self  initService];
+    [self initWindow];
+    [self initService];
     [self initUserManager];
+    [self addCycleTime];
+    
     return YES;
+}
+-(void)addCycleTime{
+    
+    
 }
 //应用完成启动
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
