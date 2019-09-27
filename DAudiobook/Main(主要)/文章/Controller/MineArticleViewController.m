@@ -30,6 +30,9 @@
     [self setupUI];
     [self refreshData];
     [self addBackItem];
+    self.tableView.ly_emptyView = [LYEmptyView emptyActionViewWithImage:ImageNamed(@"noData") titleStr:@"暂无数据" detailStr:nil btnTitleStr:@"" btnClickBlock:^{
+        [self refreshData];
+    }];
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KNotificationRefreshMyArticle object:nil];
     
 }
@@ -143,7 +146,7 @@
         }
         //刷新
         [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
-//        KPostNotification(KNotificationRefreshInteractiveArticle, nil);
+        KPostNotification(KNotificationHomePageRefreshList, nil);
 //        KPostNotification(KNotificationRefreshCollectArticle, nil);
     };
     
@@ -151,9 +154,10 @@
     DetailArticleVC.hotChangeBlock = ^(NSString *clientNum) {
         model.clientNum = clientNum;
         //刷新
-        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
-//        KPostNotification(KNotificationRefreshInteractiveArticle, nil);
-//        KPostNotification(KNotificationRefreshCollectArticle, nil);
+        if (indexPath.row<self.viewModel.articles.count) {
+              [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+        }
+        KPostNotification(KNotificationHomePageRefreshList, nil);
     };
     [self.navigationController pushViewController:DetailArticleVC animated:YES];
 }

@@ -136,9 +136,10 @@
 //获取我的生活圈最新四张图片
 #define URL_LifeCircle_getMyNewPicture @"/customer/circleoffriends/getNewPicture"
 
+//获取我的头像
+#define URL_get_userAvatar @"/users/me/avatar"
 //获取用户头像
-#define URL_get_userAvatar @"/users/by-username/avatar"
-
+#define URL_get_Avatar @"/users/by-username/avatar?username="
 //添加好友
 #define URL_friend_add @"/customer/customerfriend/add"
 //删除好友关系
@@ -189,7 +190,7 @@
 //获取文章列表
 #define URL_Article_GetPublishArticle @"/api/article/getPublishArticle"
 //查找作者笔名
-#define URL_Article_findPenName @"/api/article/findPenName"
+#define URL_Article_findPolicePenName @"/api/article/findPolicePenName" 
 //发布文章
 #define URL_Article_publishPoliceArticle @"/api/article/publishPoliceArticle"
 //查询我的总文章

@@ -361,6 +361,8 @@
 		55ED6392233DA028004A9C37 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 55ED6391233DA028004A9C37 /* SVProgressHUD.bundle */; };
 		55ED6395233DA2A6004A9C37 /* PSCollecArtcleListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED6394233DA2A6004A9C37 /* PSCollecArtcleListViewModel.m */; };
 		55ED6398233DA2C6004A9C37 /* CollectionArtcleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED6396233DA2C5004A9C37 /* CollectionArtcleViewController.m */; };
+		55ED639B233DEA0A004A9C37 /* HAccountViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED639A233DEA0A004A9C37 /* HAccountViewModel.m */; };
+		55ED639F233DFA5E004A9C37 /* XXEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED639D233DFA5E004A9C37 /* XXEmptyView.m */; };
 		E473341141BF7F02638F5529 /* libPods-DAudiobook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A489DFF9190310E891E597 /* libPods-DAudiobook.a */; };
 		EA94570423385ABA003C1C97 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94570223385AB9003C1C97 /* UITextView+Placeholder.m */; };
 		EA94574D233A2C40003C1C97 /* LLActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA945749233A2C40003C1C97 /* LLActionSheetView.m */; };
@@ -1438,6 +1440,10 @@
 		55ED6394233DA2A6004A9C37 /* PSCollecArtcleListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCollecArtcleListViewModel.m; sourceTree = "<group>"; };
 		55ED6396233DA2C5004A9C37 /* CollectionArtcleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionArtcleViewController.m; sourceTree = "<group>"; };
 		55ED6397233DA2C6004A9C37 /* CollectionArtcleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionArtcleViewController.h; sourceTree = "<group>"; };
+		55ED6399233DEA0A004A9C37 /* HAccountViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAccountViewModel.h; sourceTree = "<group>"; };
+		55ED639A233DEA0A004A9C37 /* HAccountViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAccountViewModel.m; sourceTree = "<group>"; };
+		55ED639D233DFA5E004A9C37 /* XXEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXEmptyView.m; sourceTree = "<group>"; };
+		55ED639E233DFA5E004A9C37 /* XXEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXEmptyView.h; sourceTree = "<group>"; };
 		77A489DFF9190310E891E597 /* libPods-DAudiobook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DAudiobook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10A1B66EF6EE62C2CCE46C8 /* Pods-DAudiobook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DAudiobook.debug.xcconfig"; path = "Target Support Files/Pods-DAudiobook/Pods-DAudiobook.debug.xcconfig"; sourceTree = "<group>"; };
 		EA94570223385AB9003C1C97 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
@@ -2949,6 +2955,7 @@
 		3C4A392D22681A0E00882244 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				55ED639C233DFA2D004A9C37 /* XXEmptyView */,
 				EAA21BE8233CB88E00A06819 /* SVProgressHUD */,
 				EAA21BCA233CB77800A06819 /* HUPhotoBrowser */,
 				55CC6550233B6C4500D4A581 /* SDTextLimitTool */,
@@ -3727,6 +3734,8 @@
 				5542A7DA233B55DF00E4B5D7 /* PSPublishArticleViewModel.m */,
 				55B078D6233CD7A1009BDDBC /* PSArticleDDetailViewModel.h */,
 				55B078D7233CD7A1009BDDBC /* PSArticleDDetailViewModel.m */,
+				55ED6399233DEA0A004A9C37 /* HAccountViewModel.h */,
+				55ED639A233DEA0A004A9C37 /* HAccountViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -3862,6 +3871,15 @@
 				55CC6552233B6C4500D4A581 /* SDTextLimitTool.m */,
 			);
 			path = SDTextLimitTool;
+			sourceTree = "<group>";
+		};
+		55ED639C233DFA2D004A9C37 /* XXEmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				55ED639E233DFA5E004A9C37 /* XXEmptyView.h */,
+				55ED639D233DFA5E004A9C37 /* XXEmptyView.m */,
+			);
+			path = XXEmptyView;
 			sourceTree = "<group>";
 		};
 		628B1DEB0318C3A3A857DDB1 /* Pods */ = {
@@ -6175,6 +6193,7 @@
 				EA960ACD232F29FB00D81A25 /* NIMNotificationContentConfig.m in Sources */,
 				EA960B1A232F2F5900D81A25 /* NSMutableAttributedString+M80.m in Sources */,
 				EAA21BC9233CB71D00A06819 /* FeedLoadItemView.m in Sources */,
+				55ED639B233DEA0A004A9C37 /* HAccountViewModel.m in Sources */,
 				3CACB10122928BBF0006AB3C /* LBPhotoBrowserManager.m in Sources */,
 				EA960DBC232F600B00D81A25 /* DLoginViewController.m in Sources */,
 				EA960B60232F2FE900D81A25 /* SDImageCache.m in Sources */,
@@ -6531,6 +6550,7 @@
 				3C4A3A3922681A0F00882244 /* View+MASAdditions.m in Sources */,
 				554E92F3233A2851009D2429 /* DMessageModel.m in Sources */,
 				3C4A3A3422681A0F00882244 /* ViewController+MASAdditions.m in Sources */,
+				55ED639F233DFA5E004A9C37 /* XXEmptyView.m in Sources */,
 				3C0DB64222D731ED0029730E /* MJPropertyType.m in Sources */,
 				3C1E8262228189CA005D7A11 /* UIViewController+Animation.m in Sources */,
 				EA960AE5232F29FB00D81A25 /* NIMSessionNetChatNotifyContentView.m in Sources */,

@@ -27,6 +27,10 @@
     [self addBackItem];
     [self setupUI];
     [self refreshData];
+    self.tableView.ly_emptyView = [LYEmptyView emptyActionViewWithImage:ImageNamed(@"noData") titleStr:@"暂无数据" detailStr:nil btnTitleStr:@"" btnClickBlock:^{
+        [self refreshData];
+    }];
+    
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -139,9 +143,11 @@
             model.ispraise = @"0";
         }
         //刷新
-        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+        if (indexPath.row<self.viewModel.messages.count) {
+            [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+        }
 //        KPostNotification(KNotificationRefreshInteractiveArticle, nil);
-//        KPostNotification(KNotificationRefreshCollectArticle, nil);
+        KPostNotification(KNotificationHomePageRefreshList, nil);
 //        KPostNotification(KNotificationRefreshMyArticle, nil);
         
     };
@@ -151,7 +157,7 @@
         model.clientNum = clientNum;
         //刷新
 //        KPostNotification(KNotificationRefreshInteractiveArticle, nil);
-//        KPostNotification(KNotificationRefreshCollectArticle, nil);
+        KPostNotification(KNotificationHomePageRefreshList, nil);
 //        KPostNotification(KNotificationRefreshMyArticle, nil);
     };
     [self.navigationController pushViewController:DetailArticleVC animated:YES];

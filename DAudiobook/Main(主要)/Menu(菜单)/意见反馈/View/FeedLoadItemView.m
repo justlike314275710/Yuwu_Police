@@ -122,10 +122,9 @@
         _closeImg.frame = CGRectMake(self.width-close_width,0,close_width, close_width);
         _closeImg.image = [UIImage imageNamed:@"closeimg"];
         _closeImg.userInteractionEnabled = YES;
-
-//        [_closeImg bk_whenTapped:^{
-//            [self cancelPickerImage];
-//        }];
+        [_closeImg bk_whenTapped:^{
+            [self cancelPickerImage];
+        }];
     }
     return _closeImg;
 }

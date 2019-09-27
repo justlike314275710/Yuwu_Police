@@ -91,8 +91,10 @@
     self.authorField.text = viewModel.model.pseudonym;
     if (self.authorField.text.length>0) {
        self.authorField.enabled = NO;
+        self.viewModel.editPenName = NO;
     } else {
        self.authorField.enabled = YES;
+        self.viewModel.editPenName = YES; 
     }
 }
 

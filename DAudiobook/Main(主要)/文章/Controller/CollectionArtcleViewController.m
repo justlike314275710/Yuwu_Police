@@ -26,8 +26,11 @@
     [self addBackItem];
     [self setupUI];
     [self refreshData];
-    //收藏刷新
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KNotificationRefreshCollectArticle object:nil];
+    self.tableView.ly_emptyView = [LYEmptyView emptyActionViewWithImage:ImageNamed(@"noData") titleStr:@"暂无数据" detailStr:nil btnTitleStr:@"" btnClickBlock:^{
+        [self refreshData];
+    }];
+//    收藏列表刷新
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KNotificationCollectArtickeRefreshList object:nil];
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -43,7 +46,6 @@
         @strongify(self)
         [self refreshData];
     }];
-
 }
 
 - (void)loadMore {
@@ -128,6 +130,13 @@
         result(NO);
     }];
 }
+//取消收藏
+-(void)deleteCollect:(NSIndexPath *)indexPath model:(PSCollectArticleListModel *)model{
+    //刷新
+    if (indexPath.row<self.viewModel.messages.count) {
+        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+    }
+}
 
 #pragma mark - Setting&&Getting
 - (UITableView *)tableView {
@@ -148,9 +157,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PSPlatformArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PSPlatformArticleCell"];
-    cell.collecModel = [self.viewModel.messages objectAtIndex:indexPath.row];
-    
+    PSCollectArticleListModel *model = [self.viewModel.messages objectAtIndex:indexPath.row];
+    cell.collecModel = model;
     @weakify(self);
+    //点赞(取消点赞)
     cell.praiseBlock = ^(BOOL action, NSString *id, PSPraiseResult result) {
         @strongify(self);
         if (action) {
@@ -158,6 +168,12 @@
         } else {
             [self deletePraiseActionid:id result:result];
         }
+    };
+    //取消(收藏)
+    cell.deleteCollect = ^(NSString *titleid) {
+        @strongify(self);
+        model.seleted = !model.seleted;
+        [self deleteCollect:indexPath model:model];
     };
     return cell;
 }
@@ -183,9 +199,11 @@
             listmodel.is_praise = @"0";
         }
         //刷新
-        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
-//        KPostNotification(KNotificationRefreshInteractiveArticle, nil);
-//        KPostNotification(KNotificationRefreshMyArticle, nil);
+        if (indexPath.row<self.viewModel.messages.count) {
+            [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+        }
+        KPostNotification(KNotificationHomePageRefreshList, nil);
+
         
         
     };
@@ -193,9 +211,10 @@
     DetailArticleVC.hotChangeBlock = ^(NSString *clientNum) {
         listmodel.client_num = clientNum;
         //刷新
-        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
-//        KPostNotification(KNotificationRefreshInteractiveArticle, nil);
-//        KPostNotification(KNotificationRefreshMyArticle, nil);
+        if (indexPath.row<self.viewModel.messages.count) {
+            [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+        }
+        KPostNotification(KNotificationHomePageRefreshList, nil);
     };
     [self.navigationController pushViewController:DetailArticleVC animated:YES];
 }

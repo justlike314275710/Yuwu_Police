@@ -170,8 +170,10 @@ return shared##className; \
 
 //个人中心界面变化
 #define KNotificationMineDataChange    @"KNotificationMineDataDataChange"
-//刷新首页列表
+//刷新首页文章列表
 #define KNotificationHomePageRefreshList    @"KNotificationHomePageRefreshList"
+//刷新收藏文章列表
+#define KNotificationCollectArtickeRefreshList    @"KNotificationCollectArtickeRefreshList"
 
 
 

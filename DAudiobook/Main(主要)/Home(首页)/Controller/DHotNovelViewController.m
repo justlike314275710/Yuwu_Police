@@ -42,15 +42,22 @@
     [self SearchBar];
     [self setupUI];
     
-    [self setupData];
+//    [self setupData];
     //下啦刷新
     [self refreshData];
+    
+    self.tableview.ly_emptyView = [LYEmptyView emptyActionViewWithImage:ImageNamed(@"noData") titleStr:@"暂无数据" detailStr:nil btnTitleStr:@"" btnClickBlock:^{
+        [self refreshData];
+    }];
     
     //刷新列表
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KNotificationHomePageRefreshList object:nil];
 
+}
 
-    
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self setupData];
 }
 
 - (void)setupNavItem
@@ -279,19 +286,17 @@
             model.ispraise = @"0";
         }
         //刷新
-        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
-        //刷新另外的列表
-//        KPostNotification(KNotificationRefreshCollectArticle, nil);
-//        KPostNotification(KNotificationRefreshMyArticle, nil);
-        
+        if (indexPath.row<self.logic.datalist.count) {
+            [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+        }
     };
     //热度刷新
     DetailArticleVC.hotChangeBlock = ^(NSString *clientNum) {
         //刷新
         model.clientNum = clientNum;
-        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
-//        KPostNotification(KNotificationRefreshCollectArticle, nil);
-//        KPostNotification(KNotificationRefreshMyArticle, nil);
+        if (indexPath.row<self.logic.datalist.count) {
+            [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+        }
     };
     
     [self.navigationController pushViewController:DetailArticleVC animated:YES];

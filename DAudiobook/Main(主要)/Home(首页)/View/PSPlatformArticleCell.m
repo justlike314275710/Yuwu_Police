@@ -7,8 +7,9 @@
 //
 
 #import "PSPlatformArticleCell.h"
-//#import "PSAccountViewModel.h"
+#import "HAccountViewModel.h"
 #import "UIButton+BEEnLargeEdge.h"
+
 
 @interface PSPlatformArticleCell()
 @property(nonatomic,strong)UIView *bgView;
@@ -120,7 +121,12 @@
         make.centerY.mas_equalTo(_hotIconImg);
         make.height.mas_equalTo(10);
         make.width.mas_equalTo(60);
-        
+    }];
+    [_bgView addSubview:self.selectBtn];
+    [self.selectBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(_bgView).offset(-15);
+        make.centerY.mas_equalTo(_hotIconImg);
+        make.height.width.mas_equalTo(16);
     }];
 }
 //
@@ -131,6 +137,7 @@
     _nameLab.text = model.penName;
     _hotLab.text = model.clientNum;
     _likeLab.text = model.praiseNum;
+    _selectBtn.hidden = YES;
     //是否能点赞
     if ([_model.ispraise isEqualToString:@"0"]) {
         [_likeBtn setImage:IMAGE_NAMED(@"未赞") forState:UIControlStateNormal];
@@ -139,16 +146,16 @@
     }
     
     //用户头像
-//    PSAccountViewModel *viewModel = [[PSAccountViewModel alloc] init];
-//    [viewModel getAvatarImageUserName:model.username Completed:^(UIImage *image) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            _headImg.image = image;
-//        });
-//    } failed:^(NSError *error) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            _headImg.image = IMAGE_NAMED(@"作者头像");
-//        });
-//    }];
+    HAccountViewModel *viewModel = [[HAccountViewModel alloc] init];
+    [viewModel getAvatarImageUserName:model.username Completed:^(UIImage *image) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            _headImg.image = image;
+        });
+    } failed:^(NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            _headImg.image = IMAGE_NAMED(@"作者头像");
+        });
+    }];
     
     if ([model.status isEqualToString:@"pass"]) {
         _hotLab.hidden = NO;
@@ -189,7 +196,12 @@
     _timeLab.text = collecModel.created_at;
     _hotLab.text = collecModel.client_num;
     _likeLab.text = collecModel.praise_num;
-    
+ 
+//    if (_collecModel.seleted) {
+//         [_selectBtn setImage:ImageNamed(@"已勾选") forState:UIControlStateNormal];
+//    } else {
+//        [_selectBtn setImage:IMAGE_NAMED(@"未勾选") forState:UIControlStateNormal];
+//    }
     
     //是否能点赞
     if ([collecModel.is_praise isEqualToString:@"0"]) {
@@ -198,16 +210,16 @@
         [_likeBtn setImage:IMAGE_NAMED(@"已赞") forState:UIControlStateNormal];
     }
     //用户头像
-//    PSAccountViewModel *viewModel = [[PSAccountViewModel alloc] init];
-//    [viewModel getAvatarImageUserName:collecModel.username Completed:^(UIImage *image) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            _headImg.image = image;
-//        });
-//    } failed:^(NSError *error) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            _headImg.image = IMAGE_NAMED(@"作者头像");
-//        });
-//    }];
+    HAccountViewModel *viewModel = [[HAccountViewModel alloc] init];
+    [viewModel getAvatarImageUserName:collecModel.username Completed:^(UIImage *image) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            _headImg.image = image;
+        });
+    } failed:^(NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            _headImg.image = IMAGE_NAMED(@"作者头像");
+        });
+    }];
 }
  
 
@@ -262,6 +274,12 @@
                 });
             }
         }
+    }
+}
+//选择
+-(void)selectAction:(UIButton *)sender {
+    if (self.deleteCollect) {
+        self.deleteCollect(_collecModel.id);
     }
 }
 
@@ -397,6 +415,17 @@
         _stateImageView.hidden = YES;
     }
     return _stateImageView;
+}
+
+- (UIButton *)selectBtn {
+    if (!_selectBtn) {
+        _selectBtn = [UIButton new];
+        [_selectBtn setImage:IMAGE_NAMED(@"未勾选") forState:UIControlStateNormal];
+        [_selectBtn be_setEnlargeEdge:10];
+        [_selectBtn addTarget:self action:@selector(selectAction:) forControlEvents:UIControlEventTouchUpInside];
+        _selectBtn.hidden = YES;
+    }
+    return _selectBtn;
 }
 
 

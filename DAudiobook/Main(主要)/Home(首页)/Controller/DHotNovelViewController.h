@@ -11,7 +11,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - 热门小说
 @interface DHotNovelViewController : DTableViewController
 @end
 
