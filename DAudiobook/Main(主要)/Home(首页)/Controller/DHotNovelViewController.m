@@ -45,7 +45,10 @@
     //下啦刷新
     [self SearchBar];
 
-    [self refreshData];
+//    [self refreshData];   
+    
+    //刷新列表
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KNotificationHomePageRefreshList object:nil];
 
     
 }

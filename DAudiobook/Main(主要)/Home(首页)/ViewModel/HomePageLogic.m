@@ -76,6 +76,9 @@
         }else{
             self.dataStatus = PSDataError;
         }
+        if (self.datalist.count==0) {
+            self.hasNextPage = NO;
+        }
         if (failedCallback) {
             failedCallback(error);
         }

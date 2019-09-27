@@ -19,10 +19,11 @@
 -(void)loadArticleDetailCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback{
     
     NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_findDetail];
-    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
     NSDictionary *params = @{@"id":self.id};
     NSString *access_token = help_userManager.oathInfo.access_token;
     access_token = NSStringFormat(@"Bearer %@",access_token);
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
+    [PPNetworkHelper setResponseSerializer:PPResponseSerializerJSON];
     [PPNetworkHelper GET:urlString parameters:params success:^(id responseObject) {
         NSInteger code = [[responseObject valueForKey:@"code"] integerValue];
         if (code == 200) {
@@ -44,7 +45,8 @@
                          failed:(RequestDataFailed)failedCallback {
     
     NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_collectArticle];
-    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
+    [PPNetworkHelper setResponseSerializer:PPResponseSerializerJSON];
     NSDictionary *params = @{@"articleId":self.id};
     NSString *access_token = help_userManager.oathInfo.access_token;
     access_token = NSStringFormat(@"Bearer %@",access_token);
@@ -63,7 +65,7 @@
                               failed:(RequestDataFailed)failedCallback {
     
     NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_deleteCollect];
-    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
     NSDictionary *params = @{@"articleId":self.id};
     NSString *access_token = help_userManager.oathInfo.access_token;
     access_token = NSStringFormat(@"Bearer %@",access_token);
@@ -83,7 +85,7 @@
                         failed:(RequestDataFailed)failedCallback {
     
     NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_praise];
-    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
     NSDictionary *params = @{@"articleId":self.id};
     NSString *access_token = help_userManager.oathInfo.access_token;
     access_token = NSStringFormat(@"Bearer %@",access_token);
@@ -102,7 +104,7 @@
 -(void)deletePraiseArticleCompleted:(RequestDataCompleted)completedCallback
                              failed:(RequestDataFailed)failedCallback{
     NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_deletePraise];
-    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
     NSDictionary *params = @{@"articleId":self.id};
     NSString *access_token = help_userManager.oathInfo.access_token;
     access_token = NSStringFormat(@"Bearer %@",access_token);

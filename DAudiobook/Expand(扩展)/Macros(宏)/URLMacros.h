@@ -206,6 +206,8 @@
 #define URL_Article_praise @"/api/article/praise"
 //取消点赞
 #define URL_Article_deletePraise @"/api/article/deletePraise"
+//收藏列表
+#define URL_Article_collectList @"/api/article/collectList"
 
 
 
