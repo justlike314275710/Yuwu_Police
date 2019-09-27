@@ -14,6 +14,8 @@ typedef void (^PSPraiseResult)(BOOL action);
 //YES 点赞,NO 取消点赞
 typedef void (^PSCellPraiseBlock)(BOOL action,NSString *id,PSPraiseResult result);
 
+typedef void (^PSCellDeleteCollect)(NSString *titleid);
+
 NS_ASSUME_NONNULL_BEGIN
 @interface PSPlatformArticleCell : UITableViewCell
 @property(nonatomic,strong)UILabel *titleLab;
@@ -27,12 +29,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)UILabel *likeLab;
 @property(nonatomic,strong)UIImageView *hotIconImg;
 @property(nonatomic,strong)UILabel *hotLab;
+@property(nonatomic,strong)UIButton *selectBtn;
 
 @property(nonatomic,strong)PSArticleDetailModel *model;
-//收藏文章
+//收藏文章model
 @property(nonatomic,strong)PSCollectArticleListModel *collecModel;
-
+//点赞回调
 @property(nonatomic,copy)PSCellPraiseBlock praiseBlock;
+//收藏回调
+@property(nonatomic,copy)PSCellDeleteCollect deleteCollect;
+
+
 
 @end
 

@@ -19,10 +19,12 @@
 -(void)loadArticleDetailCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback{
     
     NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_findDetail];
-    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
     NSDictionary *params = @{@"id":self.id};
     NSString *access_token = help_userManager.oathInfo.access_token;
     access_token = NSStringFormat(@"Bearer %@",access_token);
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
+    [PPNetworkHelper setResponseSerializer:PPResponseSerializerJSON];
+    [PPNetworkHelper setValue:access_token forHTTPHeaderField:@"Authorization"];
     [PPNetworkHelper GET:urlString parameters:params success:^(id responseObject) {
         NSInteger code = [[responseObject valueForKey:@"code"] integerValue];
         if (code == 200) {
@@ -44,10 +46,12 @@
                          failed:(RequestDataFailed)failedCallback {
     
     NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_collectArticle];
-    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
+    [PPNetworkHelper setResponseSerializer:PPResponseSerializerJSON];
     NSDictionary *params = @{@"articleId":self.id};
     NSString *access_token = help_userManager.oathInfo.access_token;
     access_token = NSStringFormat(@"Bearer %@",access_token);
+    [PPNetworkHelper setValue:access_token forHTTPHeaderField:@"Authorization"];
     [PPNetworkHelper POST:urlString parameters:params success:^(id responseObject) {
         if (completedCallback) {
             completedCallback(responseObject);
@@ -63,10 +67,11 @@
                               failed:(RequestDataFailed)failedCallback {
     
     NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_deleteCollect];
-    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
     NSDictionary *params = @{@"articleId":self.id};
     NSString *access_token = help_userManager.oathInfo.access_token;
     access_token = NSStringFormat(@"Bearer %@",access_token);
+    [PPNetworkHelper setValue:access_token forHTTPHeaderField:@"Authorization"];
     [PPNetworkHelper POST:urlString parameters:params success:^(id responseObject) {
         if (completedCallback) {
             completedCallback(responseObject);
@@ -83,10 +88,11 @@
                         failed:(RequestDataFailed)failedCallback {
     
     NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_praise];
-    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
     NSDictionary *params = @{@"articleId":self.id};
     NSString *access_token = help_userManager.oathInfo.access_token;
     access_token = NSStringFormat(@"Bearer %@",access_token);
+    [PPNetworkHelper setValue:access_token forHTTPHeaderField:@"Authorization"];
     [PPNetworkHelper POST:urlString parameters:params success:^(id responseObject) {
         if (completedCallback) {
             completedCallback(responseObject);
@@ -102,10 +108,11 @@
 -(void)deletePraiseArticleCompleted:(RequestDataCompleted)completedCallback
                              failed:(RequestDataFailed)failedCallback{
     NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_deletePraise];
-    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
     NSDictionary *params = @{@"articleId":self.id};
     NSString *access_token = help_userManager.oathInfo.access_token;
     access_token = NSStringFormat(@"Bearer %@",access_token);
+    [PPNetworkHelper setValue:access_token forHTTPHeaderField:@"Authorization"];
     [PPNetworkHelper POST:urlString parameters:params success:^(id responseObject) {
         if (completedCallback) {
             completedCallback(responseObject);

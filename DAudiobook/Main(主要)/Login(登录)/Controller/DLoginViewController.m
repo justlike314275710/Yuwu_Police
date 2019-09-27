@@ -153,8 +153,6 @@ typedef NS_ENUM(NSInteger, PSLoginModeType) {
 //MARK:获取验证码
 - (void)getCode {
 
-    [self.loginMiddleView.codeButton setTitle:@"" forState:UIControlStateDisabled];
-    [self.loginMiddleView.codeButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     self.loginMiddleView.codeButton.enabled = NO;
     _logic.phoneNumber = self.loginMiddleView.phoneTextField.text;
     [_logic checkDataWithPhoneCallback:^(BOOL successful, NSString *tips) {
@@ -243,6 +241,9 @@ typedef NS_ENUM(NSInteger, PSLoginModeType) {
         [self.loginMiddleView.codeButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     } timeOutBlock:^{
         self.loginMiddleView.codeButton.enabled = YES;
+        [self.loginMiddleView.codeButton setTitle:[NSString stringWithFormat:@"%@",@"获取验证码"] forState:UIControlStateNormal];
+        
+        
     }];
 }
 

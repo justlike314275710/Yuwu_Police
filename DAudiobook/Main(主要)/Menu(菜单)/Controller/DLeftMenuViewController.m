@@ -22,6 +22,8 @@
 #import "DWriteFeedListViewController.h"
 #import "DAccountViewController.h"
 #import "MineArticleViewController.h"
+#import "CollectionArtcleViewController.h"
+#import "PSCollecArtcleListViewModel.h"
 
 @interface DLeftMenuViewController ()
 
@@ -153,7 +155,7 @@
 //            [self presentViewController:[[DLoginViewController alloc]init]  animated:YES completion:^{
 //
 //            }];
-            
+            [self mycollectionArticle];
         }
             break;
             
@@ -205,7 +207,11 @@
 }
 #pragma mark -- 我的收藏
 -(void)mycollectionArticle {
-    
+    PSCollecArtcleListViewModel *collecArtcleViewModel = [PSCollecArtcleListViewModel new];
+    CollectionArtcleViewController*collecArticleVC=[[CollectionArtcleViewController alloc]init];
+    collecArticleVC.viewModel = collecArtcleViewModel;
+    DNavigationController*navVC=[[DNavigationController alloc]initWithRootViewController:collecArticleVC];
+    [self presentViewController:navVC animated:YES completion:nil];
 }
 #pragma mark -- 我的文章
 -(void)myAllArticle {

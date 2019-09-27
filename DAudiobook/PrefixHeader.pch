@@ -25,6 +25,7 @@
 #import "UIView+Empty.h"
 #import "UIButton+BEEnLargeEdge.h"
 #import "SDTextLimitTool.h"
+#import "XXEmptyView.h"
 
 
 

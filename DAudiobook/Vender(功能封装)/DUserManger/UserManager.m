@@ -209,6 +209,7 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
                     [self autoLoginToServer:nil];
                     //预警端平台登录同步
                     [self police_Login:params];
+                 
                 }];
             }
         }
@@ -283,6 +284,8 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
             [self LoginSuccess:responseObject completion:^(BOOL success, NSString *des) {
             
             }];
+            //获取公共服务token后刷新首页列表
+            KPostNotification(KNotificationHomePageRefreshList, nil);
         } else {
             
         }

@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSString<Optional> *pen_name;
 @property (nonatomic, strong) NSString<Optional> *content;
 @property (nonatomic, strong) NSString<Optional> *username;
+@property (nonatomic, assign) BOOL seleted; //是否已选
 
 
 @end

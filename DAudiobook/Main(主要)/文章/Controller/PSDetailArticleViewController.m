@@ -11,7 +11,7 @@
 #import "PSPublishArticleViewController.h"
 #import "PSPublishArticleViewModel.h"
 #import "UIButton+BEEnLargeEdge.h"
-//#import "PSAccountViewModel.h"
+#import "HAccountViewModel.h"
 
 
 @interface PSDetailArticleViewController ()
@@ -195,25 +195,24 @@
         _topTipLab.hidden = NO;
         _topTipLab.text = [NSString stringWithFormat:@"发布未通过,%@",self.viewModel.detailModel.rejectReason];
         isHideBottom = YES;
-//        [self createRightBarButtonItemWithTarget:self action:@selector(editAction) title:@"编辑"];
+        [self addRightBarButtonTitleItem:@"编辑"];
     } else if ([self.viewModel.detailModel.status isEqualToString:@"shelf"]) { //已下架
         _topTipLab.hidden = NO;
         _topTipLab.text = [NSString stringWithFormat:@"文章已下架,%@",_viewModel.detailModel.shelfReason];
         isHideBottom = NO;
-//        [self createRightBarButtonItemWithTarget:self action:@selector(editAction) title:@"编辑"];
+        [self addRightBarButtonTitleItem:@"编辑"];
     }
     [self setupUIViewHidden:isHideBottom];
     
     //用户头像
-//    PSAccountViewModel *accountViewModel = [[PSAccountViewModel alloc] init];
-//    [accountViewModel getAvatarImageUserName:viewModel.detailModel.username Completed:^(UIImage *image) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            _headImageView.image = image;
-//        });
-//    } failed:^(NSError *error) {
-//
-//    }];
-    
+    HAccountViewModel *accountViewModel = [[HAccountViewModel alloc] init];
+    [accountViewModel getAvatarImageUserName:_viewModel.detailModel.username Completed:^(UIImage *image) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            _headImageView.image = image;
+        });
+    } failed:^(NSError *error) {
+
+    }];
     
     
     if ([_viewModel.detailModel.iscollect isEqualToString:@"0"]) {
@@ -273,6 +272,10 @@
    return  UIColorFromRGB(38,76,144);
 }
 
+-(void)rightItemClick{
+    [self editAction];
+}
+
 - (void)editAction{
 
     PSPublishArticleViewModel *viewModel = [[PSPublishArticleViewModel alloc] init];
@@ -307,12 +310,12 @@
 }
 #pragma mark - TouchEvent
 //返回刷新热度
-- (IBAction)actionOfLeftItem:(id)sender {
+- (void)backAction {
     PSArticleDDetailViewModel *viewModel =  (PSArticleDDetailViewModel *)self.viewModel;
-//    [super actionOfLeftItem:sender];
     if (self.hotChangeBlock) {
         self.hotChangeBlock(viewModel.detailModel.clientNum);
     }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 //收藏
 -(void)clickCollectAction:(UIButton *)sender{
@@ -350,7 +353,7 @@
             if (code == 200){
                 [self setupData];
                 //刷新收藏列表
-//                KPostNotification(KNotificationRefreshCollectArticle, nil);
+                KPostNotification(KNotificationCollectArtickeRefreshList, nil);
             }
         });
     } failed:^(NSError *error) {
@@ -368,7 +371,7 @@
             if (code == 200){
                 [self setupData];
                 //刷新收藏列表
-//                KPostNotification(KNotificationRefreshCollectArticle, nil);
+                KPostNotification(KNotificationCollectArtickeRefreshList, nil);
             }
         });
     } failed:^(NSError *error) {

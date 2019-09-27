@@ -25,7 +25,7 @@
 //{"msg":"获取笔名成功","code":200,"data":{"familyId":null,"disabledReason":null,"accountName":null,"isEnabled":1,"id":4,"pseudonym":"吴小可爱"}}
 - (void)findPenNameCompleted:(RequestDataCompleted)completedCallback
                       failed:(RequestDataFailed)failedCallback{
-    NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_findPenName];
+    NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_findPolicePenName];
     NSString *token = NSStringFormat(@"Bearer %@",help_userManager.oathInfo.access_token);
     [PPNetworkHelper setValue:token forHTTPHeaderField:@"Authorization"];
     [PPNetworkHelper GET:urlString parameters:nil success:^(id responseObject) {
@@ -145,9 +145,9 @@
     if (self.penName.length<=0)
     {
         callback(NO,@"请输入作者笔名");
-//    } else if (self.penName.length>6)
-//    {
-//        callback(NO,@"作者笔名不能超过6个字");
+    } else if (self.penName.length>6&&self.editPenName)
+    {
+        callback(NO,@"作者笔名不能超过6个字");
     } else if (self.title.length<=0)
     {
         callback(NO,@"请输入文章标题");

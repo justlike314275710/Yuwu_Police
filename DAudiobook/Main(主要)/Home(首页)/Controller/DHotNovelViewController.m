@@ -42,13 +42,22 @@
     [self SearchBar];
     [self setupUI];
     
-    [self setupData];
+//    [self setupData];
     //下啦刷新
-
-   // [self setupNavItem];
     [self refreshData];
-
     
+    self.tableview.ly_emptyView = [LYEmptyView emptyActionViewWithImage:ImageNamed(@"noData") titleStr:@"暂无数据" detailStr:nil btnTitleStr:@"" btnClickBlock:^{
+        [self refreshData];
+    }];
+    
+    //刷新列表
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KNotificationHomePageRefreshList object:nil];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self setupData];
 }
 
 - (void)setupNavItem
@@ -149,6 +158,47 @@
     [self.tableview reloadData];
 }
 
+//点赞
+-(void)praiseActionid:(NSString *)articleID result:(PSPraiseResult)result {
+    PSArticleDDetailViewModel *viewModel = [PSArticleDDetailViewModel new];
+    viewModel.id = articleID;
+    [viewModel praiseArticleCompleted:^(id data) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *msg = data[@"msg"];
+            NSInteger code = [data[@"code"] integerValue];
+            [PSTipsView showTips:msg];
+            if (code == 200){
+                result(YES);
+            } else {
+                result(NO);
+            }
+        });
+    } failed:^(NSError *error) {
+        [PSTipsView showTips:@"点赞失败"];
+        result(NO);
+    }];
+}
+//取消点赞
+-(void)deletePraiseActionid:(NSString *)articleId result:(PSPraiseResult)result {
+    PSArticleDDetailViewModel *viewModel = [PSArticleDDetailViewModel new];
+    viewModel.id = articleId;
+    [viewModel deletePraiseArticleCompleted:^(id data) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *msg = data[@"msg"];
+            NSInteger code = [data[@"code"] integerValue];
+            [PSTipsView showTips:msg];
+            if (code == 200){
+                result(YES);
+            } else {
+                result(NO);
+            }
+        });
+    } failed:^(NSError *error) {
+        [PSTipsView showTips:@"取消点赞失败"];
+        result(NO);
+    }];
+}
+
 
 //获取发布文章权限
 - (void)setupData{
@@ -206,11 +256,11 @@
     @weakify(self);
     cell.praiseBlock = ^(BOOL action, NSString *id, PSPraiseResult result) {
         @strongify(self);
-//        if (action) {
-//            [self praiseActionid:id result:result];
-//        } else {
-//            [self deletePraiseActionid:id result:result];
-//        }
+        if (action) {
+            [self praiseActionid:id result:result];
+        } else {
+            [self deletePraiseActionid:id result:result];
+        }
     };
     return cell;
 }
@@ -236,19 +286,17 @@
             model.ispraise = @"0";
         }
         //刷新
-        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
-        //刷新另外的列表
-//        KPostNotification(KNotificationRefreshCollectArticle, nil);
-//        KPostNotification(KNotificationRefreshMyArticle, nil);
-        
+        if (indexPath.row<self.logic.datalist.count) {
+            [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+        }
     };
     //热度刷新
     DetailArticleVC.hotChangeBlock = ^(NSString *clientNum) {
         //刷新
         model.clientNum = clientNum;
-        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
-//        KPostNotification(KNotificationRefreshCollectArticle, nil);
-//        KPostNotification(KNotificationRefreshMyArticle, nil);
+        if (indexPath.row<self.logic.datalist.count) {
+            [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+        }
     };
     
     [self.navigationController pushViewController:DetailArticleVC animated:YES];
@@ -268,7 +316,7 @@
 
 - (UITableView *)tableview {
     if (!_tableview) {
-        _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0,45,self.view.width,kScreenHeight-64) style:UITableViewStyleGrouped];
+        _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0,64,self.view.width,kScreenHeight-64) style:UITableViewStyleGrouped];
         _tableview.backgroundColor = UIColorFromRGB(249,248,254);
         _tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableview.dataSource = self;

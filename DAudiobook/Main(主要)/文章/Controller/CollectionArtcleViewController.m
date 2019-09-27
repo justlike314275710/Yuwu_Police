@@ -1,24 +1,23 @@
 //
-//  PSArticleStateViewController.m
+//  CollectionArtcleViewController.m
 //  PrisonService
 //
-//  Created by kky on 2019/8/6.
+//  Created by kky on 2019/8/2.
 //  Copyright © 2019年 calvin. All rights reserved.
 //
 
-#import "PSArticleStateViewController.h"
+#import "CollectionArtcleViewController.h"
 #import "PSPlatformArticleCell.h"
-#import "PSArticleStateViewModel.h"
+#import "PSCollecArtcleListViewModel.h"
 #import "PSArticleDDetailViewModel.h"
 #import "PSDetailArticleViewController.h"
 
-@interface PSArticleStateViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property(nonatomic,strong) UITableView *tableView;
+@interface CollectionArtcleViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic,strong) UITableView *tableView;
 
 @end
 
-@implementation PSArticleStateViewController
-
+@implementation CollectionArtcleViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,26 +29,15 @@
     self.tableView.ly_emptyView = [LYEmptyView emptyActionViewWithImage:ImageNamed(@"noData") titleStr:@"暂无数据" detailStr:nil btnTitleStr:@"" btnClickBlock:^{
         [self refreshData];
     }];
-    
+//    收藏列表刷新
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KNotificationCollectArtickeRefreshList object:nil];
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.tabBarController.tabBar.hidden=YES;
 }
 
 #pragma mark - PrivateMethods
 - (void)setupUI {
-    
-    NSString *title = @"";
-    if ([self.viewModel.status isEqualToString:@"published"]) {
-        title = @"我的文章-已发布";
-    } else if ([self.viewModel.status isEqualToString:@"not-published"]) {
-        title = @"我的文章-未发布";
-    } else if([self.viewModel.status isEqualToString:@"not-pass"]) {
-        title = @"我的文章-未通过";
-    }
-    self.title = title;
-    
     [self.view addSubview:self.tableView];
     [self.tableView registerClass:[PSPlatformArticleCell class] forCellReuseIdentifier:@"PSPlatformArticleCell"];
     self.tableView.tableFooterView = [UIView new];
@@ -58,22 +46,21 @@
         @strongify(self)
         [self refreshData];
     }];
-    
 }
 
 - (void)loadMore {
-     @weakify(self)
+
+    @weakify(self)
     [self.viewModel loadMoreMessagesCompleted:^(id data) {
         @strongify(self)
-          [self reloadContents];
+        [self reloadContents];
     } failed:^(NSError *error) {
         @strongify(self)
-         [self reloadContents];
+        [self reloadContents];
     }];
 }
 
 - (void)refreshData {
-   
     [[PSLoadingView sharedInstance] show];
     @weakify(self)
     [self.viewModel refreshMessagesCompleted:^(id data) {
@@ -88,7 +75,6 @@
 }
 
 - (void)reloadContents {
-  
     if (self.viewModel.hasNextPage) {
         @weakify(self)
         self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
@@ -101,6 +87,55 @@
     [self.tableView.mj_header endRefreshing];
     [self.tableView.mj_footer endRefreshing];
     [self.tableView reloadData];
+}
+//点赞
+-(void)praiseActionid:(NSString *)artileid result:(PSPraiseResult)result {
+    PSArticleDDetailViewModel *viewModel = [PSArticleDDetailViewModel new];
+    viewModel.id = artileid;
+    [viewModel praiseArticleCompleted:^(id data) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *msg = data[@"msg"];
+            NSInteger code = [data[@"code"] integerValue];
+            [PSTipsView showTips:msg];
+            if (code == 200){
+                result(YES);
+            } else {
+                result(NO);
+            }
+        });
+    } failed:^(NSError *error) {
+            [PSTipsView showTips:@"点赞失败"];
+            result(NO);
+    }];
+    
+
+}
+//取消点赞
+-(void)deletePraiseActionid:(NSString *)artcleid result:(PSPraiseResult)result {
+    PSArticleDDetailViewModel *viewModel = [PSArticleDDetailViewModel new];
+    viewModel.id = artcleid;
+    [viewModel deletePraiseArticleCompleted:^(id data) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *msg = data[@"msg"];
+            NSInteger code = [data[@"code"] integerValue];
+            [PSTipsView showTips:msg];
+            if (code == 200){
+                result(YES);
+            } else {
+                result(NO);
+            }
+        });
+    } failed:^(NSError *error) {
+        [PSTipsView showTips:@"取消点赞失败"];
+        result(NO);
+    }];
+}
+//取消收藏
+-(void)deleteCollect:(NSIndexPath *)indexPath model:(PSCollectArticleListModel *)model{
+    //刷新
+    if (indexPath.row<self.viewModel.messages.count) {
+        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+    }
 }
 
 #pragma mark - Setting&&Getting
@@ -122,51 +157,67 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PSPlatformArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PSPlatformArticleCell"];
-    cell.model = [self.viewModel.messages objectAtIndex:indexPath.row];
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    PSArticleDetailModel*model = [self.viewModel.messages objectAtIndex:indexPath.row];
-    PSArticleDDetailViewModel *viewModel = [PSArticleDDetailViewModel new];
-    viewModel.id = model.id;
-    PSDetailArticleViewController *DetailArticleVC = [[PSDetailArticleViewController alloc] init];
-    DetailArticleVC.viewModel = viewModel;
-    //点赞回调刷新
-    DetailArticleVC.praiseBlock = ^(BOOL isPraise, NSString *id, BOOL result) {
-        if (isPraise) {
-            model.praiseNum = [NSString stringWithFormat:@"%ld",[model.praiseNum integerValue]+1];
-            model.ispraise = @"1";
+    PSCollectArticleListModel *model = [self.viewModel.messages objectAtIndex:indexPath.row];
+    cell.collecModel = model;
+    @weakify(self);
+    //点赞(取消点赞)
+    cell.praiseBlock = ^(BOOL action, NSString *id, PSPraiseResult result) {
+        @strongify(self);
+        if (action) {
+            [self praiseActionid:id result:result];
         } else {
-            model.praiseNum = [NSString stringWithFormat:@"%ld",[model.praiseNum integerValue]-1];
-            model.ispraise = @"0";
+            [self deletePraiseActionid:id result:result];
         }
-        //刷新
-        if (indexPath.row<self.viewModel.messages.count) {
-            [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
-        }
-//        KPostNotification(KNotificationRefreshInteractiveArticle, nil);
-        KPostNotification(KNotificationHomePageRefreshList, nil);
-//        KPostNotification(KNotificationRefreshMyArticle, nil);
-        
     };
-    
-    //热度刷新
-    DetailArticleVC.hotChangeBlock = ^(NSString *clientNum) {
-        model.clientNum = clientNum;
-        //刷新
-//        KPostNotification(KNotificationRefreshInteractiveArticle, nil);
-        KPostNotification(KNotificationHomePageRefreshList, nil);
-//        KPostNotification(KNotificationRefreshMyArticle, nil);
+    //取消(收藏)
+    cell.deleteCollect = ^(NSString *titleid) {
+        @strongify(self);
+        model.seleted = !model.seleted;
+        [self deleteCollect:indexPath model:model];
     };
-    [self.navigationController pushViewController:DetailArticleVC animated:YES];
+    return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 175;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PSCollecArtcleListViewModel *messageViewModel = self.viewModel;
+    PSCollectArticleListModel *listmodel = [messageViewModel.messages objectAtIndex:indexPath.row];
+    PSArticleDDetailViewModel *viewModel = [PSArticleDDetailViewModel new];
+    viewModel.id = listmodel.id;
+    PSDetailArticleViewController *DetailArticleVC = [[PSDetailArticleViewController alloc] init];
+    DetailArticleVC.viewModel = viewModel;
+    //点赞回调刷新
+    DetailArticleVC.praiseBlock = ^(BOOL isPraise, NSString *id, BOOL result) {
+        if (isPraise) {
+            listmodel.praise_num = [NSString stringWithFormat:@"%ld",[listmodel.praise_num integerValue]+1];
+            listmodel.is_praise = @"1";
+        } else {
+            listmodel.praise_num = [NSString stringWithFormat:@"%ld",[listmodel.praise_num integerValue]-1];
+            listmodel.is_praise = @"0";
+        }
+        //刷新
+        if (indexPath.row<self.viewModel.messages.count) {
+            [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+        }
+        KPostNotification(KNotificationHomePageRefreshList, nil);
+
+        
+        
+    };
+    //热度刷新
+    DetailArticleVC.hotChangeBlock = ^(NSString *clientNum) {
+        listmodel.client_num = clientNum;
+        //刷新
+        if (indexPath.row<self.viewModel.messages.count) {
+            [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+        }
+        KPostNotification(KNotificationHomePageRefreshList, nil);
+    };
+    [self.navigationController pushViewController:DetailArticleVC animated:YES];
+}
 
 
 @end
