@@ -7,7 +7,7 @@
 //
 
 #import "DViewController.h"
-#import "PSArticleDetailViewModel.h"
+#import "PSArticleDDetailViewModel.h"
 
 typedef void (^DetailPraiseBlock)(BOOL isPraise,NSString*id,BOOL result); //刷新
 typedef void (^DetailHotChangeBlock)(NSString*clientNum); //热度刷新
@@ -23,7 +23,7 @@ typedef NS_ENUM(NSInteger, PSDetailArticleType) {
 @property(nonatomic,assign)PSDetailArticleType type;
 @property(nonatomic,copy)DetailPraiseBlock praiseBlock;
 @property(nonatomic,copy)DetailHotChangeBlock hotChangeBlock;
-@property(nonatomic,strong)PSArticleDetailViewModel *viewModel;
+@property(nonatomic,strong)PSArticleDDetailViewModel *viewModel;
 
 @end
 

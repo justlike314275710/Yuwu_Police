@@ -12,7 +12,7 @@
 #import "PSPlatformHeadView.h"
 #import "PSArticleStateViewController.h"
 #import "PSArticleStateViewModel.h"
-#import "PSArticleDetailViewModel.h"
+#import "PSArticleDDetailViewModel.h"
 #import "PSDetailArticleViewController.h"
 
 @interface MineArticleViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -129,7 +129,7 @@
     NSArray *models = [messageViewModel.articles objectAtIndex:indexPath.section];
     PSArticleDetailModel*model = [models objectAtIndex:indexPath.row];
     
-    PSArticleDetailViewModel *viewModel = [PSArticleDetailViewModel new];
+    PSArticleDDetailViewModel *viewModel = [PSArticleDDetailViewModel new];
     viewModel.id = model.id;
     PSDetailArticleViewController *DetailArticleVC = [[PSDetailArticleViewController alloc] init];    //点赞回调刷新
     DetailArticleVC.viewModel = viewModel;

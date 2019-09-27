@@ -9,7 +9,7 @@
 #import "PSArticleStateViewController.h"
 #import "PSPlatformArticleCell.h"
 #import "PSArticleStateViewModel.h"
-#import "PSArticleDetailViewModel.h"
+#import "PSArticleDDetailViewModel.h"
 #import "PSDetailArticleViewController.h"
 
 @interface PSArticleStateViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -125,7 +125,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     PSArticleDetailModel*model = [self.viewModel.messages objectAtIndex:indexPath.row];
-    PSArticleDetailViewModel *viewModel = [PSArticleDetailViewModel new];
+    PSArticleDDetailViewModel *viewModel = [PSArticleDDetailViewModel new];
     viewModel.id = model.id;
     PSDetailArticleViewController *DetailArticleVC = [[PSDetailArticleViewController alloc] init];
     DetailArticleVC.viewModel = viewModel;

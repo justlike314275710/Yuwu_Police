@@ -15,8 +15,6 @@ typedef NS_ENUM(NSInteger, PSDataStatus) {
     PSDataNormal       //接口返回有正常数据
 };
 
-
-
 typedef void(^RequestDataCompleted)(id data);
 typedef void(^RequestDataFailed)(NSError *error);
 typedef void(^RequestDataTaskCompleted)(id data);

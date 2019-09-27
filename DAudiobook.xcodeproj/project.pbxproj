@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -318,8 +318,6 @@
 		5542A7B4233B12A000E4B5D7 /* EXTNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5542A7A8233B12A000E4B5D7 /* EXTNil.m */; };
 		5542A7B5233B12A000E4B5D7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5542A7AA233B12A000E4B5D7 /* README.md */; };
 		5542A7B8233B151500E4B5D7 /* PSPlatformArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5542A7B6233B151400E4B5D7 /* PSPlatformArticleCell.m */; };
-		5542A7C0233B15E500E4B5D7 /* PSPublicArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5542A7BA233B15E400E4B5D7 /* PSPublicArticleModel.m */; };
-		5542A7C1233B15E500E4B5D7 /* PSCollectArticleListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5542A7BB233B15E400E4B5D7 /* PSCollectArticleListModel.m */; };
 		5542A7C6233B17C600E4B5D7 /* DSongModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5542A7C5233B17C600E4B5D7 /* DSongModel.m */; };
 		5542A7D1233B19FE00E4B5D7 /* LYEmptyBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5542A7C8233B19FE00E4B5D7 /* LYEmptyBaseView.m */; };
 		5542A7D2233B19FE00E4B5D7 /* UIView+Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = 5542A7CA233B19FE00E4B5D7 /* UIView+Empty.m */; };
@@ -330,7 +328,6 @@
 		5542A7E3233B59D500E4B5D7 /* PSPublishArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5542A7E1233B59D500E4B5D7 /* PSPublishArticleViewController.m */; };
 		5542A7E6233B5A8D00E4B5D7 /* PSPublishScuessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5542A7E5233B5A8C00E4B5D7 /* PSPublishScuessViewController.m */; };
 		554E92BE233A125F009D2429 /* HomePageLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92BD233A125F009D2429 /* HomePageLogic.m */; };
-		554E92C1233A1AEE009D2429 /* PSArticleDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92BF233A1AEC009D2429 /* PSArticleDetailModel.m */; };
 		554E92DB233A1DAE009D2429 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 554E92C4233A1DAD009D2429 /* LICENSE */; };
 		554E92DC233A1DAE009D2429 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 554E92C5233A1DAD009D2429 /* README.md */; };
 		554E92DD233A1DAE009D2429 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92C8233A1DAD009D2429 /* JSONValueTransformer.m */; };
@@ -351,13 +348,17 @@
 		55B078B0233C9816009BDDBC /* MineArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078AF233C9816009BDDBC /* MineArticleViewController.m */; };
 		55B078B3233C9827009BDDBC /* PSArticleStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078B1233C9827009BDDBC /* PSArticleStateViewController.m */; };
 		55B078B6233C9889009BDDBC /* PSArticleStateViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078B4233C9889009BDDBC /* PSArticleStateViewModel.m */; };
-		55B078B9233C9A48009BDDBC /* PSArticleDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078B7233C9A48009BDDBC /* PSArticleDetailViewModel.m */; };
 		55B078BC233C9A88009BDDBC /* PSDetailArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078BB233C9A87009BDDBC /* PSDetailArticleViewController.m */; };
 		55B078BF233C9E58009BDDBC /* PSMyTotalArtcleListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078BE233C9E58009BDDBC /* PSMyTotalArtcleListViewModel.m */; };
 		55B078C5233CA2BB009BDDBC /* PSPlatformHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078C3233CA2BA009BDDBC /* PSPlatformHeadView.m */; };
+		55B078CC233CD1D5009BDDBC /* PSArticleDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078C6233CD1D5009BDDBC /* PSArticleDetailModel.m */; };
+		55B078CD233CD1D5009BDDBC /* PSCollectArticleListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078C8233CD1D5009BDDBC /* PSCollectArticleListModel.m */; };
+		55B078CE233CD1D5009BDDBC /* PSPublicArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078CA233CD1D5009BDDBC /* PSPublicArticleModel.m */; };
+		55B078D8233CD7A1009BDDBC /* PSArticleDDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078D7233CD7A1009BDDBC /* PSArticleDDetailViewModel.m */; };
 		55CC6553233B6C4500D4A581 /* SDTextLimitTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CC6552233B6C4500D4A581 /* SDTextLimitTool.m */; };
 		55CC6555233B6D5700D4A581 /* libRZRichTextView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CC6554233B6D5700D4A581 /* libRZRichTextView.a */; };
 		55CC6557233B6D7800D4A581 /* libTZImagePickerController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CC6556233B6D7800D4A581 /* libTZImagePickerController.a */; };
+		55ED6392233DA028004A9C37 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 55ED6391233DA028004A9C37 /* SVProgressHUD.bundle */; };
 		E473341141BF7F02638F5529 /* libPods-DAudiobook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A489DFF9190310E891E597 /* libPods-DAudiobook.a */; };
 		EA94570423385ABA003C1C97 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94570223385AB9003C1C97 /* UITextView+Placeholder.m */; };
 		EA94574D233A2C40003C1C97 /* LLActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA945749233A2C40003C1C97 /* LLActionSheetView.m */; };
@@ -773,7 +774,6 @@
 		EAA21BF3233CB88F00A06819 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA21BEC233CB88E00A06819 /* SVProgressAnimatedView.m */; };
 		EAA21BF4233CB88F00A06819 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA21BEE233CB88E00A06819 /* SVProgressHUD.m */; };
 		EAA21BF5233CB88F00A06819 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA21BEF233CB88E00A06819 /* SVIndefiniteAnimatedView.m */; };
-		EAA21BF6233CB88F00A06819 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EAA21BF0233CB88E00A06819 /* SVProgressHUD.bundle */; };
 		EAA30EDE23330FE0004DE08F /* KGStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA30EDD23330FDF004DE08F /* KGStatusBar.m */; };
 		EAA3101823338BA0004DE08F /* DVersionManger.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA3101723338BA0004DE08F /* DVersionManger.m */; };
 		EAA3101B23338BE4004DE08F /* DUpdataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA3101A23338BE4004DE08F /* DUpdataModel.m */; };
@@ -1344,10 +1344,6 @@
 		5542A7AA233B12A000E4B5D7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5542A7B6233B151400E4B5D7 /* PSPlatformArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPlatformArticleCell.m; sourceTree = "<group>"; };
 		5542A7B7233B151500E4B5D7 /* PSPlatformArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPlatformArticleCell.h; sourceTree = "<group>"; };
-		5542A7BA233B15E400E4B5D7 /* PSPublicArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPublicArticleModel.m; sourceTree = "<group>"; };
-		5542A7BB233B15E400E4B5D7 /* PSCollectArticleListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCollectArticleListModel.m; sourceTree = "<group>"; };
-		5542A7BD233B15E400E4B5D7 /* PSCollectArticleListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCollectArticleListModel.h; sourceTree = "<group>"; };
-		5542A7BE233B15E400E4B5D7 /* PSPublicArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPublicArticleModel.h; sourceTree = "<group>"; };
 		5542A7C4233B17C600E4B5D7 /* DSongModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSongModel.h; sourceTree = "<group>"; };
 		5542A7C5233B17C600E4B5D7 /* DSongModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSongModel.m; sourceTree = "<group>"; };
 		5542A7C8233B19FE00E4B5D7 /* LYEmptyBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYEmptyBaseView.m; sourceTree = "<group>"; };
@@ -1369,8 +1365,6 @@
 		5542A7E5233B5A8C00E4B5D7 /* PSPublishScuessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPublishScuessViewController.m; sourceTree = "<group>"; };
 		554E92BC233A125F009D2429 /* HomePageLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageLogic.h; sourceTree = "<group>"; };
 		554E92BD233A125F009D2429 /* HomePageLogic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageLogic.m; sourceTree = "<group>"; };
-		554E92BF233A1AEC009D2429 /* PSArticleDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArticleDetailModel.m; sourceTree = "<group>"; };
-		554E92C0233A1AEE009D2429 /* PSArticleDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArticleDetailModel.h; sourceTree = "<group>"; };
 		554E92C2233A1C61009D2429 /* YYModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
 		554E92C4233A1DAD009D2429 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		554E92C5233A1DAD009D2429 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -1411,18 +1405,25 @@
 		55B078B2233C9827009BDDBC /* PSArticleStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArticleStateViewController.h; sourceTree = "<group>"; };
 		55B078B4233C9889009BDDBC /* PSArticleStateViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArticleStateViewModel.m; sourceTree = "<group>"; };
 		55B078B5233C9889009BDDBC /* PSArticleStateViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArticleStateViewModel.h; sourceTree = "<group>"; };
-		55B078B7233C9A48009BDDBC /* PSArticleDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArticleDetailViewModel.m; sourceTree = "<group>"; };
-		55B078B8233C9A48009BDDBC /* PSArticleDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArticleDetailViewModel.h; sourceTree = "<group>"; };
 		55B078BA233C9A87009BDDBC /* PSDetailArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDetailArticleViewController.h; sourceTree = "<group>"; };
 		55B078BB233C9A87009BDDBC /* PSDetailArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDetailArticleViewController.m; sourceTree = "<group>"; };
 		55B078BD233C9E58009BDDBC /* PSMyTotalArtcleListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMyTotalArtcleListViewModel.h; sourceTree = "<group>"; };
 		55B078BE233C9E58009BDDBC /* PSMyTotalArtcleListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMyTotalArtcleListViewModel.m; sourceTree = "<group>"; };
 		55B078C3233CA2BA009BDDBC /* PSPlatformHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPlatformHeadView.m; sourceTree = "<group>"; };
 		55B078C4233CA2BB009BDDBC /* PSPlatformHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPlatformHeadView.h; sourceTree = "<group>"; };
+		55B078C6233CD1D5009BDDBC /* PSArticleDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArticleDetailModel.m; sourceTree = "<group>"; };
+		55B078C7233CD1D5009BDDBC /* PSPublicArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPublicArticleModel.h; sourceTree = "<group>"; };
+		55B078C8233CD1D5009BDDBC /* PSCollectArticleListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCollectArticleListModel.m; sourceTree = "<group>"; };
+		55B078C9233CD1D5009BDDBC /* PSCollectArticleListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCollectArticleListModel.h; sourceTree = "<group>"; };
+		55B078CA233CD1D5009BDDBC /* PSPublicArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPublicArticleModel.m; sourceTree = "<group>"; };
+		55B078CB233CD1D5009BDDBC /* PSArticleDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArticleDetailModel.h; sourceTree = "<group>"; };
+		55B078D6233CD7A1009BDDBC /* PSArticleDDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSArticleDDetailViewModel.h; sourceTree = "<group>"; };
+		55B078D7233CD7A1009BDDBC /* PSArticleDDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSArticleDDetailViewModel.m; sourceTree = "<group>"; };
 		55CC6551233B6C4500D4A581 /* SDTextLimitTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTextLimitTool.h; sourceTree = "<group>"; };
 		55CC6552233B6C4500D4A581 /* SDTextLimitTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTextLimitTool.m; sourceTree = "<group>"; };
 		55CC6554233B6D5700D4A581 /* libRZRichTextView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRZRichTextView.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CC6556233B6D7800D4A581 /* libTZImagePickerController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libTZImagePickerController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		55ED6391233DA028004A9C37 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		77A489DFF9190310E891E597 /* libPods-DAudiobook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DAudiobook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10A1B66EF6EE62C2CCE46C8 /* Pods-DAudiobook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DAudiobook.debug.xcconfig"; path = "Target Support Files/Pods-DAudiobook/Pods-DAudiobook.debug.xcconfig"; sourceTree = "<group>"; };
 		EA94570223385AB9003C1C97 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
@@ -2248,7 +2249,6 @@
 		EAA21BED233CB88E00A06819 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
 		EAA21BEE233CB88E00A06819 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		EAA21BEF233CB88E00A06819 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
-		EAA21BF0233CB88E00A06819 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		EAA21BF1233CB88E00A06819 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
 		EAA30EDC23330FDF004DE08F /* KGStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGStatusBar.h; sourceTree = "<group>"; };
 		EAA30EDD23330FDF004DE08F /* KGStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGStatusBar.m; sourceTree = "<group>"; };
@@ -3116,12 +3116,6 @@
 		3C4A39B122681A0E00882244 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5542A7BD233B15E400E4B5D7 /* PSCollectArticleListModel.h */,
-				5542A7BB233B15E400E4B5D7 /* PSCollectArticleListModel.m */,
-				5542A7BE233B15E400E4B5D7 /* PSPublicArticleModel.h */,
-				5542A7BA233B15E400E4B5D7 /* PSPublicArticleModel.m */,
-				554E92C0233A1AEE009D2429 /* PSArticleDetailModel.h */,
-				554E92BF233A1AEC009D2429 /* PSArticleDetailModel.m */,
 				3CCDA9F2226F16130019783A /* DRadioModel.h */,
 				3CCDA9F3226F16130019783A /* DRadioModel.m */,
 			);
@@ -3677,6 +3671,12 @@
 		5542A7D8233B37F900E4B5D7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				55B078CB233CD1D5009BDDBC /* PSArticleDetailModel.h */,
+				55B078C6233CD1D5009BDDBC /* PSArticleDetailModel.m */,
+				55B078C9233CD1D5009BDDBC /* PSCollectArticleListModel.h */,
+				55B078C8233CD1D5009BDDBC /* PSCollectArticleListModel.m */,
+				55B078C7233CD1D5009BDDBC /* PSPublicArticleModel.h */,
+				55B078CA233CD1D5009BDDBC /* PSPublicArticleModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3686,12 +3686,12 @@
 			children = (
 				55B078BD233C9E58009BDDBC /* PSMyTotalArtcleListViewModel.h */,
 				55B078BE233C9E58009BDDBC /* PSMyTotalArtcleListViewModel.m */,
-				55B078B8233C9A48009BDDBC /* PSArticleDetailViewModel.h */,
-				55B078B7233C9A48009BDDBC /* PSArticleDetailViewModel.m */,
 				55B078B5233C9889009BDDBC /* PSArticleStateViewModel.h */,
 				55B078B4233C9889009BDDBC /* PSArticleStateViewModel.m */,
 				5542A7DB233B55DF00E4B5D7 /* PSPublishArticleViewModel.h */,
 				5542A7DA233B55DF00E4B5D7 /* PSPublishArticleViewModel.m */,
+				55B078D6233CD7A1009BDDBC /* PSArticleDDetailViewModel.h */,
+				55B078D7233CD7A1009BDDBC /* PSArticleDDetailViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -5617,6 +5617,7 @@
 		EAA21BE8233CB88E00A06819 /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
+				55ED6391233DA028004A9C37 /* SVProgressHUD.bundle */,
 				EAA21BE9233CB88E00A06819 /* SVRadialGradientLayer.m */,
 				EAA21BEA233CB88E00A06819 /* SVIndefiniteAnimatedView.h */,
 				EAA21BEB233CB88E00A06819 /* SVProgressHUD.h */,
@@ -5624,7 +5625,6 @@
 				EAA21BED233CB88E00A06819 /* SVRadialGradientLayer.h */,
 				EAA21BEE233CB88E00A06819 /* SVProgressHUD.m */,
 				EAA21BEF233CB88E00A06819 /* SVIndefiniteAnimatedView.m */,
-				EAA21BF0233CB88E00A06819 /* SVProgressHUD.bundle */,
 				EAA21BF1233CB88E00A06819 /* SVProgressAnimatedView.h */,
 			);
 			path = SVProgressHUD;
@@ -5925,7 +5925,7 @@
 				EA960E5C233075BE00D81A25 /* README.md in Resources */,
 				3C4542D82275AB0600AE50B1 /* 10102910.json in Resources */,
 				EA960BAD232F32E500D81A25 /* license in Resources */,
-				EAA21BF6233CB88F00A06819 /* SVProgressHUD.bundle in Resources */,
+				55ED6392233DA028004A9C37 /* SVProgressHUD.bundle in Resources */,
 				3C4543022275AB0600AE50B1 /* 12716555.json in Resources */,
 				3C0DB68022D7320B0029730E /* MJRefresh.bundle in Resources */,
 				3C4542BF2275AB0600AE50B1 /* 8667850.json in Resources */,
@@ -6071,7 +6071,13 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DAudiobook/Pods-DAudiobook-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
 			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DAudiobook/Pods-DAudiobook-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DAudiobook/Pods-DAudiobook-resources.sh\"\n";
@@ -6129,6 +6135,7 @@
 				EAA311B1233472D8004DE08F /* MFMessageComposeViewController+BlocksKit.m in Sources */,
 				EA960A96232F29FA00D81A25 /* NIMPinyinConverter.m in Sources */,
 				EA960D96232F5BA000D81A25 /* DGActivityIndicatorRotatingSquaresAnimation.m in Sources */,
+				55B078CC233CD1D5009BDDBC /* PSArticleDetailModel.m in Sources */,
 				3C0DB68A22D7320B0029730E /* MJRefreshNormalHeader.m in Sources */,
 				EA960E65233075BE00D81A25 /* IQNSArray+Sort.m in Sources */,
 				EAA311B7233472D8004DE08F /* NSObject+A2DynamicDelegate.m in Sources */,
@@ -6287,6 +6294,7 @@
 				EA960E812331C08D00D81A25 /* UIButton+BEEnLargeEdge.m in Sources */,
 				3C8F3E3E226DA1FA006CF059 /* DSideMenuTableViewCell.m in Sources */,
 				554E9301233A29FC009D2429 /* DAccountViewController.m in Sources */,
+				55B078D8233CD7A1009BDDBC /* PSArticleDDetailViewModel.m in Sources */,
 				EA960C82232F3B1B00D81A25 /* YYDiskCache.m in Sources */,
 				3C3935612288297300A5190A /* DMeViewController.m in Sources */,
 				3C4A3A3522681A0F00882244 /* MASCompositeConstraint.m in Sources */,
@@ -6306,7 +6314,6 @@
 				EA960AE7232F29FB00D81A25 /* NIMSessionFileTransContentView.m in Sources */,
 				3C4A3A3F22681A0F00882244 /* FMDatabaseQueue.m in Sources */,
 				EAA31024233461CF004DE08F /* NSString+emoji.m in Sources */,
-				554E92C1233A1AEE009D2429 /* PSArticleDetailModel.m in Sources */,
 				EAA311AE233472D8004DE08F /* UITextField+BlocksKit.m in Sources */,
 				EA960B56232F2FE900D81A25 /* UIImage+ForceDecode.m in Sources */,
 				EAA21BC6233CB71D00A06819 /* PSPhotoBrowser.m in Sources */,
@@ -6481,6 +6488,7 @@
 				3C0DB68B22D7320B0029730E /* MJRefreshStateHeader.m in Sources */,
 				EA960C93232F3B1B00D81A25 /* NSObject+YYModel.m in Sources */,
 				EA960B55232F2FE900D81A25 /* SDWebImageFrame.m in Sources */,
+				55B078CD233CD1D5009BDDBC /* PSCollectArticleListModel.m in Sources */,
 				EA960C87232F3B1B00D81A25 /* YYWebImageManager.m in Sources */,
 				3C4A3A3722681A0F00882244 /* MASLayoutConstraint.m in Sources */,
 				EA960BB0232F32E500D81A25 /* PSLoadingView.m in Sources */,
@@ -6516,7 +6524,6 @@
 				EA960CC0232F3B1C00D81A25 /* NSDate+YYAdd.m in Sources */,
 				3CCDA9F1226F085A0019783A /* DRadioListCell.m in Sources */,
 				EA960AB4232F29FA00D81A25 /* NIMUsrInfoData.m in Sources */,
-				5542A7C0233B15E500E4B5D7 /* PSPublicArticleModel.m in Sources */,
 				EAA21BE0233CB77900A06819 /* UIView+frame.m in Sources */,
 				EA9457F6233AF3B2003C1C97 /* DForgetPWNextViewController.m in Sources */,
 				EA960AD4232F29FB00D81A25 /* NIMSessionDataSourceImpl.m in Sources */,
@@ -6563,8 +6570,8 @@
 				3C1E8265228190A2005D7A11 /* DMusicDetailView.m in Sources */,
 				EAA3101B23338BE4004DE08F /* DUpdataModel.m in Sources */,
 				EA960DA6232F5BA000D81A25 /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
-				55B078B9233C9A48009BDDBC /* PSArticleDetailViewModel.m in Sources */,
 				EAA31198233472D8004DE08F /* NSMutableArray+BlocksKit.m in Sources */,
+				55B078CE233CD1D5009BDDBC /* PSPublicArticleModel.m in Sources */,
 				55CC6553233B6C4500D4A581 /* SDTextLimitTool.m in Sources */,
 				3CABB1D322746B3000F699C5 /* DAlbumHeadView.m in Sources */,
 				EA960DA8232F5BA000D81A25 /* DGActivityIndicatorFiveDotsAnimation.m in Sources */,
@@ -6665,7 +6672,6 @@
 				EA960AC1232F29FB00D81A25 /* NIMKitInfoFetchOption.m in Sources */,
 				EA960CC9232F3B1C00D81A25 /* YYThreadSafeDictionary.m in Sources */,
 				EAA311A1233472D8004DE08F /* NSArray+BlocksKit.m in Sources */,
-				5542A7C1233B15E500E4B5D7 /* PSCollectArticleListModel.m in Sources */,
 				EA960B61232F2FE900D81A25 /* SDWebImageDownloaderOperation.m in Sources */,
 				3CD2D83022998E5600C700D7 /* DAddViewController.m in Sources */,
 				EA960E67233075BE00D81A25 /* IQUIScrollView+Additions.m in Sources */,
