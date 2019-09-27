@@ -33,7 +33,7 @@
     self.view.backgroundColor=UIColorFromRGBA(248, 247, 254, 1);
     [self.view addSubview:self.myTableview];
     [self.myTableview mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view).with.insets(UIEdgeInsetsMake(20,0,0,0));
+        make.edges.equalTo(self.view).with.insets(UIEdgeInsetsMake(69,0,0,0));
     }];
     [self.myTableview registerClass:[FeedbackListCell class] forCellReuseIdentifier:@"FeedbackListCell"];
    WEAKSELF
@@ -93,9 +93,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FeedbackListCell *feedbackListCell = [[FeedbackListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FeedbackListCell"];
-   
     FeedbackTypeModel *model = _logic.Recodes[indexPath.row];
-//    model.writefeedType = feedbackListViewModel.writefeedType==PSWritefeedBack?@"0":@"1";
     feedbackListCell.model = model;
     return feedbackListCell;
 }

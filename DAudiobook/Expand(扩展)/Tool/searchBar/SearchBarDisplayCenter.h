@@ -10,6 +10,7 @@
 
 @protocol SearchBarDisplayCenterDelegate<NSObject>
 -(void)getSearchKeyWord:(NSString *)searchWord;
+-(void)tapAction:(NSString *)searchWord;
 @end
 @interface SearchBarDisplayCenter : UIView
 /** 搜索框提示语 */

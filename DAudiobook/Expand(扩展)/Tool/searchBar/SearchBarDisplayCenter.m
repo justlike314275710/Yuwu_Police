@@ -103,6 +103,25 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showKeyboard:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideKeyboard:) name:UIKeyboardWillHideNotification object:nil];
 }
+
+-(void)textFieldDidBeginEditing:(UITextField*)textField{
+    
+    if(_searchField.text.length)
+    {
+        _placeholderLabel.hidden = YES;
+    }
+    else
+    {
+        _placeholderLabel.hidden = NO;
+    }
+    if(_delegate && [_delegate respondsToSelector:@selector(tapAction:)])
+    {
+        //[_delegate getSearchKeyWord:_searchField.text];
+        [_delegate tapAction:@"开始编辑"];
+    }
+}
+
+
 -(void)textFieldContentDidChange:(NSNotification *)notification
 {
     NSLog(@"textFieldContentDidChange");

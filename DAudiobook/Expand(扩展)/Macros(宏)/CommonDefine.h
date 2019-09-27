@@ -1,4 +1,16 @@
 
+
+
+//搜索界面
+#define KScreenWidth   [UIScreen mainScreen].bounds.size.width
+#define KScreenHeight  [UIScreen mainScreen].bounds.size.height
+
+#define KHistorySearchPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"PYSearchhistories.plist"]
+
+#define KColor(r,g,b) [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:1.0]
+#define KWidth (KScreenWidth > 375 ? 576/3 : 345/2)
+#define kSpace (KScreenWidth - KWidth * 2) / 3
+
 /*------------------------------数据验证------------------------------*/
 #define StrValid(f) (f!=nil && [f isKindOfClass:[NSString class]] && ![f isEqualToString:@""])
 #define SafeStr(f) (StrValid(f) ? f:@"")

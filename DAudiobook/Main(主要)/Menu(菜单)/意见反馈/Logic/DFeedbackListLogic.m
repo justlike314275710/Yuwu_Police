@@ -95,7 +95,18 @@
     }];
   
 }
-
+- (void)refreshFeedbackDetaik:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback{
+    NSString*url=NSStringFormat(@"%@%@",ServerUrl,URL_feedbacks_detai);
+    NSString *access_token = help_userManager.oathInfo.access_token;
+    NSString *token = NSStringFormat(@"Bearer %@",access_token);
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    [PPNetworkHelper setValue:token forHTTPHeaderField:@"Authorization"];
+    [PPNetworkHelper GET:url parameters:nil success:^(id responseObject) {
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
 
 
 @end

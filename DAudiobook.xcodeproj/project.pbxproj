@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -822,6 +822,14 @@
 		EAA311B6233472D8004DE08F /* A2DynamicDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA31192233472D7004DE08F /* A2DynamicDelegate.m */; };
 		EAA311B7233472D8004DE08F /* NSObject+A2DynamicDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA31193233472D7004DE08F /* NSObject+A2DynamicDelegate.m */; };
 		EAA311BA23347B76004DE08F /* UIImage+WLCompress.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA311B923347B76004DE08F /* UIImage+WLCompress.m */; };
+		EAE6BC8F233DB54300E4C4DB /* DFeedBackDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6BC8E233DB54300E4C4DB /* DFeedBackDetailViewController.m */; };
+		EAE6BC9F233DB92400E4C4DB /* LLSearchResultListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6BC92233DB91E00E4C4DB /* LLSearchResultListViewCell.m */; };
+		EAE6BCA0233DB92400E4C4DB /* LLSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6BC93233DB91F00E4C4DB /* LLSearchResultViewController.m */; };
+		EAE6BCA1233DB92400E4C4DB /* LLSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6BC95233DB91F00E4C4DB /* LLSearchView.m */; };
+		EAE6BCA2233DB92400E4C4DB /* LLSearchSuggestionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6BC97233DB92000E4C4DB /* LLSearchSuggestionVC.m */; };
+		EAE6BCA3233DB92400E4C4DB /* LLSearchResultDoubleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6BC98233DB92100E4C4DB /* LLSearchResultDoubleViewCell.m */; };
+		EAE6BCA4233DB92400E4C4DB /* LLSearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6BC9A233DB92200E4C4DB /* LLSearchResultView.m */; };
+		EAE6BCA5233DB92400E4C4DB /* LLSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6BC9C233DB92300E4C4DB /* LLSearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -2350,6 +2358,22 @@
 		EAA31194233472D7004DE08F /* NSObject+A2BlockDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+A2BlockDelegate.h"; sourceTree = "<group>"; };
 		EAA311B823347B75004DE08F /* UIImage+WLCompress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WLCompress.h"; sourceTree = "<group>"; };
 		EAA311B923347B76004DE08F /* UIImage+WLCompress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WLCompress.m"; sourceTree = "<group>"; };
+		EAE6BC8D233DB54300E4C4DB /* DFeedBackDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DFeedBackDetailViewController.h; sourceTree = "<group>"; };
+		EAE6BC8E233DB54300E4C4DB /* DFeedBackDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DFeedBackDetailViewController.m; sourceTree = "<group>"; };
+		EAE6BC91233DB91E00E4C4DB /* LLSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSearchViewController.h; sourceTree = "<group>"; };
+		EAE6BC92233DB91E00E4C4DB /* LLSearchResultListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSearchResultListViewCell.m; sourceTree = "<group>"; };
+		EAE6BC93233DB91F00E4C4DB /* LLSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSearchResultViewController.m; sourceTree = "<group>"; };
+		EAE6BC94233DB91F00E4C4DB /* LLSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSearchView.h; sourceTree = "<group>"; };
+		EAE6BC95233DB91F00E4C4DB /* LLSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSearchView.m; sourceTree = "<group>"; };
+		EAE6BC96233DB92000E4C4DB /* LLSearchResultListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSearchResultListViewCell.h; sourceTree = "<group>"; };
+		EAE6BC97233DB92000E4C4DB /* LLSearchSuggestionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSearchSuggestionVC.m; sourceTree = "<group>"; };
+		EAE6BC98233DB92100E4C4DB /* LLSearchResultDoubleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSearchResultDoubleViewCell.m; sourceTree = "<group>"; };
+		EAE6BC99233DB92100E4C4DB /* LLSearchResultDoubleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSearchResultDoubleViewCell.h; sourceTree = "<group>"; };
+		EAE6BC9A233DB92200E4C4DB /* LLSearchResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSearchResultView.m; sourceTree = "<group>"; };
+		EAE6BC9B233DB92200E4C4DB /* LLSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSearchResultViewController.h; sourceTree = "<group>"; };
+		EAE6BC9C233DB92300E4C4DB /* LLSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSearchViewController.m; sourceTree = "<group>"; };
+		EAE6BC9D233DB92300E4C4DB /* LLSearchResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSearchResultView.h; sourceTree = "<group>"; };
+		EAE6BC9E233DB92300E4C4DB /* LLSearchSuggestionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSearchSuggestionVC.h; sourceTree = "<group>"; };
 		EAF104B5210D53160009CED7 /* DAudiobook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DAudiobook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -3084,6 +3108,7 @@
 		3C4A39A822681A0E00882244 /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
+				EAE6BC90233DB8F800E4C4DB /* 文章搜索 */,
 				5542A7D5233B37E500E4B5D7 /* 文章 */,
 				554E92FA233A29FC009D2429 /* 账号信息 */,
 				EA94570823389D45003C1C97 /* 消息 */,
@@ -5553,6 +5578,8 @@
 				EAA21BAD233CB71D00A06819 /* DWriteFeedbackViewController.h */,
 				EAA21BAF233CB71D00A06819 /* DWriteFeedbackViewController.m */,
 				EAA21BB0233CB71D00A06819 /* DWriteSucessViewController.m */,
+				EAE6BC8D233DB54300E4C4DB /* DFeedBackDetailViewController.h */,
+				EAE6BC8E233DB54300E4C4DB /* DFeedBackDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -5809,6 +5836,27 @@
 				EAA3118F233472D7004DE08F /* NSURLConnection+BlocksKit.m */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		EAE6BC90233DB8F800E4C4DB /* 文章搜索 */ = {
+			isa = PBXGroup;
+			children = (
+				EAE6BC99233DB92100E4C4DB /* LLSearchResultDoubleViewCell.h */,
+				EAE6BC98233DB92100E4C4DB /* LLSearchResultDoubleViewCell.m */,
+				EAE6BC96233DB92000E4C4DB /* LLSearchResultListViewCell.h */,
+				EAE6BC92233DB91E00E4C4DB /* LLSearchResultListViewCell.m */,
+				EAE6BC9D233DB92300E4C4DB /* LLSearchResultView.h */,
+				EAE6BC9A233DB92200E4C4DB /* LLSearchResultView.m */,
+				EAE6BC9B233DB92200E4C4DB /* LLSearchResultViewController.h */,
+				EAE6BC93233DB91F00E4C4DB /* LLSearchResultViewController.m */,
+				EAE6BC9E233DB92300E4C4DB /* LLSearchSuggestionVC.h */,
+				EAE6BC97233DB92000E4C4DB /* LLSearchSuggestionVC.m */,
+				EAE6BC94233DB91F00E4C4DB /* LLSearchView.h */,
+				EAE6BC95233DB91F00E4C4DB /* LLSearchView.m */,
+				EAE6BC91233DB91E00E4C4DB /* LLSearchViewController.h */,
+				EAE6BC9C233DB92300E4C4DB /* LLSearchViewController.m */,
+			);
+			path = "文章搜索";
 			sourceTree = "<group>";
 		};
 		EAF104AC210D53160009CED7 = {
@@ -6081,13 +6129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DAudiobook/Pods-DAudiobook-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
 			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DAudiobook/Pods-DAudiobook-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DAudiobook/Pods-DAudiobook-resources.sh\"\n";
@@ -6258,6 +6300,7 @@
 				EA960DB1232F5BA000D81A25 /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */,
 				3C0DB68F22D7320B0029730E /* MJRefreshBackFooter.m in Sources */,
 				EA960C94232F3B1C00D81A25 /* YYClassInfo.m in Sources */,
+				EAE6BCA3233DB92400E4C4DB /* LLSearchResultDoubleViewCell.m in Sources */,
 				EA960ACC232F29FB00D81A25 /* NIMAudioContentConfig.m in Sources */,
 				3C0DB68422D7320B0029730E /* MJRefreshBackGifFooter.m in Sources */,
 				EA960ABB232F29FB00D81A25 /* NIMTeamAnnouncementListCell.m in Sources */,
@@ -6266,6 +6309,7 @@
 				EA960C95232F3B1C00D81A25 /* YYTextView.m in Sources */,
 				3CD2D8222299314200C700D7 /* FCUUID.m in Sources */,
 				EA960CAF232F3B1C00D81A25 /* UIScrollView+YYAdd.m in Sources */,
+				EAE6BC8F233DB54300E4C4DB /* DFeedBackDetailViewController.m in Sources */,
 				EAA311B3233472D8004DE08F /* NSCache+BlocksKit.m in Sources */,
 				EA960CD2232F3B1C00D81A25 /* YYReachability.m in Sources */,
 				5542A7E3233B59D500E4B5D7 /* PSPublishArticleViewController.m in Sources */,
@@ -6305,6 +6349,7 @@
 				3C8F3E3E226DA1FA006CF059 /* DSideMenuTableViewCell.m in Sources */,
 				554E9301233A29FC009D2429 /* DAccountViewController.m in Sources */,
 				55B078D8233CD7A1009BDDBC /* PSArticleDDetailViewModel.m in Sources */,
+				EAE6BCA1233DB92400E4C4DB /* LLSearchView.m in Sources */,
 				EA960C82232F3B1B00D81A25 /* YYDiskCache.m in Sources */,
 				3C3935612288297300A5190A /* DMeViewController.m in Sources */,
 				3C4A3A3522681A0F00882244 /* MASCompositeConstraint.m in Sources */,
@@ -6349,6 +6394,7 @@
 				EA960A87232F29FA00D81A25 /* NIMGroupedData.m in Sources */,
 				EA960AAB232F29FA00D81A25 /* NIMKitKeyboardInfo.m in Sources */,
 				EA960AD3232F29FB00D81A25 /* NIMCellLayoutConfig.m in Sources */,
+				EAE6BCA5233DB92400E4C4DB /* LLSearchViewController.m in Sources */,
 				EA960BC2232F37A400D81A25 /* FLAnimatedImageView.m in Sources */,
 				3C4A3A4122681A0F00882244 /* FMDatabase.m in Sources */,
 				EA960D9C232F5BA000D81A25 /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
@@ -6390,6 +6436,7 @@
 				EA960CA3232F3B1C00D81A25 /* YYTextParser.m in Sources */,
 				EA960C90232F3B1B00D81A25 /* CALayer+YYWebImage.m in Sources */,
 				554E92E3233A1DAE009D2429 /* JSONAPI.m in Sources */,
+				EAE6BCA0233DB92400E4C4DB /* LLSearchResultViewController.m in Sources */,
 				3C0DB64322D731ED0029730E /* NSObject+MJKeyValue.m in Sources */,
 				EA960D9D232F5BA000D81A25 /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
 				EA960BB1232F32E500D81A25 /* PSAlertView.m in Sources */,
@@ -6519,6 +6566,7 @@
 				3C0DB68522D7320B0029730E /* MJRefreshBackStateFooter.m in Sources */,
 				EA960B64232F2FE900D81A25 /* NSImage+WebCache.m in Sources */,
 				EA960E14232F84F900D81A25 /* AFAutoPurgingImageCache.m in Sources */,
+				EAE6BCA4233DB92400E4C4DB /* LLSearchResultView.m in Sources */,
 				EA9457F2233AF3B2003C1C97 /* DPasswordLogic.m in Sources */,
 				EA960DAF232F5BA000D81A25 /* DGActivityIndicatorRotatingTrigonAnimation.m in Sources */,
 				EA960ABF232F29FB00D81A25 /* NIMAdvancedTeamCardViewController.m in Sources */,
@@ -6628,6 +6676,7 @@
 				EA960A95232F29FA00D81A25 /* NIMKitUtil.m in Sources */,
 				EA960C85232F3B1B00D81A25 /* YYMemoryCache.m in Sources */,
 				EA960E2523306D9A00D81A25 /* PPNetworkCache.m in Sources */,
+				EAE6BCA2233DB92400E4C4DB /* LLSearchSuggestionVC.m in Sources */,
 				EA960B5C232F2FE900D81A25 /* SDWebImageCoderHelper.m in Sources */,
 				EA960AB7232F29FA00D81A25 /* NIMTeamAnnouncementListViewController.m in Sources */,
 				EA960AB8232F29FA00D81A25 /* NIMTeamSwitchTableViewCell.m in Sources */,
@@ -6670,6 +6719,7 @@
 				EA960E69233075BE00D81A25 /* IQUIViewController+Additions.m in Sources */,
 				EA94574E233A2C40003C1C97 /* HMActionSheetView.m in Sources */,
 				EA960AED232F29FB00D81A25 /* NIMLocationViewController.m in Sources */,
+				EAE6BC9F233DB92400E4C4DB /* LLSearchResultListViewCell.m in Sources */,
 				EAA311AB233472D8004DE08F /* UIPopoverController+BlocksKit.m in Sources */,
 				5542A7D2233B19FE00E4B5D7 /* UIView+Empty.m in Sources */,
 				EA9457F5233AF3B2003C1C97 /* DForgetPWViewController.m in Sources */,
