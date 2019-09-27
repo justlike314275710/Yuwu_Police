@@ -44,6 +44,7 @@
     
     [self setupData];
     //下啦刷新
+    [self refreshData];
     
     //刷新列表
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KNotificationHomePageRefreshList object:nil];
@@ -150,6 +151,47 @@
     [self.tableview reloadData];
 }
 
+//点赞
+-(void)praiseActionid:(NSString *)articleID result:(PSPraiseResult)result {
+    PSArticleDDetailViewModel *viewModel = [PSArticleDDetailViewModel new];
+    viewModel.id = articleID;
+    [viewModel praiseArticleCompleted:^(id data) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *msg = data[@"msg"];
+            NSInteger code = [data[@"code "] integerValue];
+            [PSTipsView showTips:msg];
+            if (code == 200){
+                result(YES);
+            } else {
+                result(NO);
+            }
+        });
+    } failed:^(NSError *error) {
+        [PSTipsView showTips:@"点赞失败"];
+        result(NO);
+    }];
+}
+//取消点赞
+-(void)deletePraiseActionid:(NSString *)articleId result:(PSPraiseResult)result {
+    PSArticleDDetailViewModel *viewModel = [PSArticleDDetailViewModel new];
+    viewModel.id = articleId;
+    [viewModel deletePraiseArticleCompleted:^(id data) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *msg = data[@"msg"];
+            NSInteger code = [data[@"code"] integerValue];
+            [PSTipsView showTips:msg];
+            if (code == 200){
+                result(YES);
+            } else {
+                result(NO);
+            }
+        });
+    } failed:^(NSError *error) {
+        [PSTipsView showTips:@"取消点赞失败"];
+        result(NO);
+    }];
+}
+
 
 //获取发布文章权限
 - (void)setupData{
@@ -207,11 +249,11 @@
     @weakify(self);
     cell.praiseBlock = ^(BOOL action, NSString *id, PSPraiseResult result) {
         @strongify(self);
-//        if (action) {
-//            [self praiseActionid:id result:result];
-//        } else {
-//            [self deletePraiseActionid:id result:result];
-//        }
+        if (action) {
+            [self praiseActionid:id result:result];
+        } else {
+            [self deletePraiseActionid:id result:result];
+        }
     };
     return cell;
 }
