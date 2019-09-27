@@ -129,7 +129,7 @@
 #pragma mark - Setting&&Getting
 - (UIView *)bgView {
     if (!_bgView) {
-        _bgView = [[UIView alloc] initWithFrame:CGRectMake(0,5,SCREEN_WIDTH,180)];
+        _bgView = [[UIView alloc] initWithFrame:CGRectMake(15,5,SCREEN_WIDTH-30,180)];
         _bgView.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];
         _bgView.layer.shadowColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.1].CGColor;
         _bgView.layer.shadowOffset = CGSizeMake(0,3);
