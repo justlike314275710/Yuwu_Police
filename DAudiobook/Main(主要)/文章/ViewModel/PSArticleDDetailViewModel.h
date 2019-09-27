@@ -1,5 +1,5 @@
 //
-//  PSArticleDetailViewModel.h
+//  PSArticleDDetailViewModel.h
 //  DAudiobook
 //
 //  Created by kky on 2019/9/26.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PSArticleDetailViewModel : HpBaseLogic
+@interface PSArticleDDetailViewModel : HpBaseLogic
 
 @end
 
