@@ -20,6 +20,7 @@
 #import "KGStatusBar.h"
 #import "DVersionManger.h"
 
+
 @interface AppDelegate ()
 @property (retain, nonatomic) GDTSplashAd  *splash;
 @property (retain, nonatomic) UIView       *bottomView;
@@ -58,7 +59,13 @@
     [[IMManager sharedIMManager]initIM];
     //初始化用户系统
     [self initUserManager];
+    [self addCycleTime];
+    
     return YES;
+}
+-(void)addCycleTime{
+    
+    
 }
 //应用完成启动
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

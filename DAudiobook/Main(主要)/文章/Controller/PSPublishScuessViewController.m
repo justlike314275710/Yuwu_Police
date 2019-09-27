@@ -8,6 +8,7 @@
 
 #import "PSPublishScuessViewController.h"
 #import "DHotNovelViewController.h"
+#import "MineArticleViewController.h"
 
 
 @interface PSPublishScuessViewController ()
@@ -20,6 +21,7 @@
     [super viewDidLoad];
     self.title = @"发表文章";
     [self p_setUI];
+    [self addBackItem];
 }
 
 -(void)p_setUI{
@@ -58,14 +60,9 @@
     
 }
 
-//返回
-- (IBAction)actionOfLeftItem:(id)sender {
-    [self backAction];
-}
-
 - (void)backAction{
     [self.navigationController.viewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([obj isKindOfClass:[DHotNovelViewController class]]) {
+        if ([obj isKindOfClass:[DHotNovelViewController class]]||[obj isKindOfClass:[MineArticleViewController class]]) {
             [self.navigationController popToViewController:obj animated:YES];
             *stop = YES;
         }

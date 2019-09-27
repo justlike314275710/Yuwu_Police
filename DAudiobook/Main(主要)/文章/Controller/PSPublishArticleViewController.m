@@ -281,9 +281,9 @@
                 NSString *msg = [data valueForKey:@"msg"];
                 if (code == 200) { //文章发表成功
                     PSPublishScuessViewController *scuessVC = [[PSPublishScuessViewController alloc] init];
-                    //刷新我的文章列表
-//                    KPostNotification(KNotificationRefreshMyArticle, nil);
                     PushVC(scuessVC);
+                    //刷新我的文章列表
+                    KPostNotification(KNotificationRefreshMyArticle, nil);
                 }else if (code == 1587) { //标题重复
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [self reUseTitleName];

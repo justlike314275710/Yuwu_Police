@@ -7,10 +7,11 @@
 //
 
 #import "IMManager.h"
+#import "EBBannerView.h"
 //#import "NTESCellLayoutConfig.h"
 //#import "NTESAttachmentDecoder.h"
-//#import "ZQLocalNotification.h"
-//#import "XXAlertView.h"
+#import "ZQLocalNotification.h"
+
 @interface IMManager()<NIMLoginManagerDelegate,NIMChatManagerDelegate,NIMSystemNotificationManagerDelegate,NIMNetCallManagerDelegate>
 //@interface IMManager()
 @property (nonatomic, strong) NIMSession *session;
@@ -148,6 +149,7 @@ SINGLETON_FOR_CLASS(IMManager);
 
 -(void)onReceiveCustomSystemNotification:(NIMCustomSystemNotification *)notification{
       NSLog(@"***收到新消息***");
+<<<<<<< HEAD
     [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationRedDotRefresh object:nil];
 //    NSData *jsonData = [notification.content dataUsingEncoding:NSUTF8StringEncoding];
 //    NSDictionary*dic=[NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
@@ -203,6 +205,27 @@ SINGLETON_FOR_CLASS(IMManager);
 //            }
 //        }
 //    }
+=======
+    NSData *jsonData = [notification.content dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary*dic=[NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+    NSInteger code = [dic[@"code"] integerValue];
+    //认证文章
+    if (code==PSMessageArticleInteractive) {
+        NSString *content = dic[@"msg"];        
+        EBBannerView *banner = [EBBannerView bannerWithBlock:^(EBBannerViewMaker *make) {
+            make.style = 11;
+            make.content = dic[@"msg"];
+        }];
+        [banner show]; //NOTIFICATION_PRAISE_ADVICE
+        [ZQLocalNotification NotificationType:CountdownNotification Identifier:@"3" activityId:1900000 alertBody:dic[@"msg"] alertTitle:@"狱警通" alertString:@"确定" withTimeDay:0 hour:0 minute:0 second:1];
+        KPostNotification(KNotificationHomePageRefreshList, nil);
+        KPostNotification(KNotificationCollectArtickeRefreshList, nil);
+        KPostNotification(KNotificationRefreshMyArticle, nil);
+    
+    }
+
+    
+>>>>>>> 4a1f515eb8f54ac0240c64a9a18e6168f0ff27ee
 }
 
 @end
