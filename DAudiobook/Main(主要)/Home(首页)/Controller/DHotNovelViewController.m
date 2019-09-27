@@ -18,8 +18,10 @@
 #import "PSArticleDDetailViewModel.h"
 #import "PSDetailArticleViewController.h"
 #import "SearchBarDisplayCenter.h"
-
-@interface DHotNovelViewController()<UITableViewDelegate,UITableViewDataSource> {
+#import "MMDrawerBarButtonItem.h"
+#import "UIBarButtonItem+Helper.h"
+#import "LLSearchViewController.h"
+@interface DHotNovelViewController()<UITableViewDelegate,UITableViewDataSource,SearchBarDisplayCenterDelegate> {
 
     
 }
@@ -35,20 +37,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    // [self GDTadvertising];
-//    [self SearchBar];
 
     self.logic = [HomePageLogic new];
-    
+    [self SearchBar];
     [self setupUI];
     
     [self setupData];
     //下啦刷新
-    [self SearchBar];
 
+   // [self setupNavItem];
     [self refreshData];
 
     
 }
+
+- (void)setupNavItem
+{
+    //设置导航栏唤醒抽屉按钮
+    MMDrawerBarButtonItem *leftItem = [MMDrawerBarButtonItem itemWithNormalIcon:@"我的icon" highlightedIcon:nil target:self action:@selector(leftDrawerButtonPress)];
+
+    //设置紧挨着左侧按钮的标题按钮
+    //    MMDrawerBarButtonItem *titleItem = [MMDrawerBarButtonItem itemWithTitle:[self getMenuTitle] target:self action:@selector(leftDrawerButtonPress)];
+    
+    self.navigationItem.leftBarButtonItems = @[leftItem];
+    
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc]initWithNormalIcon:@"消息icon" highlightedIcon:nil target:self action:@selector(rightBarItemPress)];
+    self.navigationItem.rightBarButtonItem = rightBarItem;
+    
+    
+    
+}
+
 
 - (BOOL)prefersStatusBarHidden{
     return NO;
@@ -158,11 +177,23 @@
 
 -(void)SearchBar{
     self.view.backgroundColor = [UIColor orangeColor];
-    SearchBarDisplayCenter *searchBar = [[SearchBarDisplayCenter alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 30.0 )];
+    SearchBarDisplayCenter *searchBar = [[SearchBarDisplayCenter alloc]initWithFrame:CGRectMake(0, 30, [UIScreen mainScreen].bounds.size.width-60, 30.0 )];
     searchBar.placeholderStr=@"搜索文章|连载书籍";
     searchBar.delegate = self;
     self.navigationItem.titleView= searchBar;
 }
+
+- (void)tapAction:(NSString *)searchWord{
+    LLSearchViewController *seachVC = [[LLSearchViewController alloc] init];
+    [self.navigationController pushViewController:seachVC animated:YES];
+}
+
+
+
+//-(void)getSearchKeyWord:(NSString *)searchWord{
+//    LLSearchViewController *seachVC = [[LLSearchViewController alloc] init];
+//    [self.navigationController pushViewController:seachVC animated:YES];
+//}
 
 #pragma mark - Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -237,7 +268,7 @@
 
 - (UITableView *)tableview {
     if (!_tableview) {
-        _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0,64,self.view.width,kScreenHeight-64) style:UITableViewStyleGrouped];
+        _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0,45,self.view.width,kScreenHeight-64) style:UITableViewStyleGrouped];
         _tableview.backgroundColor = UIColorFromRGB(249,248,254);
         _tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableview.dataSource = self;

@@ -192,12 +192,7 @@
     UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc]initWithNormalIcon:@"消息icon" highlightedIcon:nil target:self action:@selector(rightBarItemPress)];
     self.navigationItem.rightBarButtonItem = rightBarItem;
     
-    
-    
 
-    
-    
-   
     
 }
 - (void)leftDrawerButtonPress

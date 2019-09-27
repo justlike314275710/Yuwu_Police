@@ -21,7 +21,7 @@
 @property(nonatomic,strong)UILabel *dateLab;
 @property(nonatomic,strong)UILabel *detailLab;
 @property(nonatomic,strong)UIView  *contenView;
-
+@property (nonatomic , strong) UIView *lineView ;
 
 @end
 
@@ -51,17 +51,16 @@
     
     [self addSubview:self.bgView];
     
-    self.titleLab.frame = CGRectMake(8, 8, 200, 35);
+    self.titleLab.frame = CGRectMake(12, 8, 200, 20);
     [_bgView addSubview:self.titleLab];
     
-    self.dateLab.frame = CGRectMake(SCREEN_WIDTH-120, 8,100 , 35);
+    self.dateLab.frame = CGRectMake(SCREEN_WIDTH-120-20, 3,100 , 35);
     [_bgView addSubview:self.dateLab];
     
-    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(8,self.titleLab.bottom+8,SCREEN_WIDTH-16, 1)];
-    lineView.backgroundColor = UIColorFromRGB(234, 235, 238);
-    [_bgView addSubview:lineView];
+    self.lineView.frame=CGRectMake(3, 10, 5, 15);
+    [_bgView addSubview:self.lineView];
     
-    self.detailLab.frame = CGRectMake(8,lineView.bottom+5, SCREEN_WIDTH-16, 40);
+    self.detailLab.frame = CGRectMake(12,self.titleLab.bottom, SCREEN_WIDTH-16, 40);
     [_bgView addSubview:self.detailLab];
 
 }
@@ -71,19 +70,13 @@
     
     NSString *title = model.desc.length>0?[NSString stringWithFormat:@"%@: %@",model.typeName,model.desc]:model.typeName;
     self.titleLab.text = title;
-    //if ([model.writefeedType integerValue]==0) {
-        NSString*repalyTime=[model.createdAt timestampToDateString];
-        self.dateLab.text = repalyTime;
-        self.detailLab.text = model.content;
-//    } else {
-//        NSString*repalyTime=model.createdAt;
-//        repalyTime = repalyTime.length>10?[repalyTime substringToIndex:10]:repalyTime;
-//        self.dateLab.text = repalyTime;
-//        self.detailLab.text = model.contents;
-//
-//    }
     
-    int spaceWidth = (SCREEN_WIDTH-15*2-67*4)/3;
+    NSString*repalyTime=[model.createdAt timestampToDateString];
+    self.dateLab.text = repalyTime;
+    self.detailLab.text = model.content;
+
+    
+    int spaceWidth = (SCREEN_WIDTH-15*2-67*4-30)/3;
     NSMutableArray *imagesicon = [NSMutableArray array];
     
     NSArray *imageUrls = [NSArray array];
@@ -99,12 +92,11 @@
     for (int i = 0; i<imageUrls.count; i++) {
         UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(15+(67+spaceWidth)*i,self.detailLab.bottom+5, 67, 67)];
         NSString *userName = imageUrls[i];
-        NSString*url=AvaterImageWithUsername(userName);
+//        NSString*url=AvaterImageWithUsername(userName);
         
         NSString*imageUrl=[NSString stringWithFormat:@"%@/files/%@",EmallHostUrl,userName];
-        NSLog(@"*******%@*****",url);
-        [imageV sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:ImageNamed(@"作者头像")];
-        
+        [imageV sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:ImageNamed(@"意见反馈")];
+        [imagesicon addObject:imageUrl];
        // if (url)[imagesicon addObject:PICURL(url)];
         imageV.tag = i+100;
         imageV.userInteractionEnabled = YES;
@@ -113,6 +105,21 @@
         }];
         [_bgView addSubview:imageV];
     }
+    
+    
+    if ([model.typeId isEqualToString:@"1"]) {
+        self.lineView.backgroundColor = UIColorFromRGB(150, 204, 78);
+    }
+    else if ([model.typeId isEqualToString:@"2"]){
+        self.lineView.backgroundColor = UIColorFromRGB(255, 162, 71);
+    }
+    else if ([model.typeId isEqualToString:@"3"]){
+        self.lineView.backgroundColor = UIColorFromRGB(179, 65, 127);
+    }
+    else if ([model.typeId isEqualToString:@"4"]){
+        self.lineView.backgroundColor = UIColorFromRGB(179, 65, 127);
+    }
+    
 }
 
 - (void)awakeFromNib {
@@ -142,7 +149,7 @@
 - (UILabel *)titleLab {
     if (!_titleLab) {
         _titleLab = [UILabel new];
-        _titleLab.font = FontOfSize(12);
+        _titleLab.font = FontOfSize(14);
         _titleLab.textColor = UIColorFromRGB(51, 51, 51);
         _titleLab.textAlignment = NSTextAlignmentLeft;
         _titleLab.numberOfLines = 0;
@@ -150,6 +157,15 @@
     }
     return _titleLab;
 }
+
+- (UIView *)lineView{
+    if (!_lineView) {
+        _lineView = [UIView new];
+        
+    }
+    return _lineView;
+}
+
 
 - (UILabel *)dateLab {
     if (!_dateLab) {
@@ -166,7 +182,7 @@
 - (UILabel *)detailLab {
     if (!_detailLab) {
         _detailLab = [UILabel new];
-        _detailLab.font = FontOfSize(11);
+        _detailLab.font = FontOfSize(12);
         _detailLab.textColor = UIColorFromRGB(102, 102, 102);
         _detailLab.textAlignment = NSTextAlignmentLeft;
         _detailLab.numberOfLines = 0;
