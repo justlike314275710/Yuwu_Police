@@ -51,7 +51,7 @@
     
     [self addSubview:self.bgView];
     
-    self.titleLab.frame = CGRectMake(12, 8, 200, 20);
+    self.titleLab.frame = CGRectMake(12, 8, 250, 20);
     [_bgView addSubview:self.titleLab];
     
     self.dateLab.frame = CGRectMake(SCREEN_WIDTH-120-20, 3,100 , 35);
@@ -60,7 +60,7 @@
     self.lineView.frame=CGRectMake(3, 10, 5, 15);
     [_bgView addSubview:self.lineView];
     
-    self.detailLab.frame = CGRectMake(12,self.titleLab.bottom, SCREEN_WIDTH-16, 40);
+    self.detailLab.frame = CGRectMake(12,self.titleLab.bottom, SCREEN_WIDTH-62, 40);
     [_bgView addSubview:self.detailLab];
 
 }

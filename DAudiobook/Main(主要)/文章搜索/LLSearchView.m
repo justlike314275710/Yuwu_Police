@@ -96,7 +96,7 @@
         label.userInteractionEnabled = YES;
         label.font = [UIFont systemFontOfSize:12];
         label.text = text;
-        label.layer.borderWidth = 0.5;
+        //label.layer.borderWidth = 0.5;
         //label.layer.cornerRadius = 15;
         label.textAlignment = NSTextAlignmentCenter;
         if (i % 2 == 0 && [title isEqualToString:@"热门搜索"]) {

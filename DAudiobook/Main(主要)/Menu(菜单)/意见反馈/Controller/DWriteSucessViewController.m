@@ -19,12 +19,13 @@
     [self addBackItem];
     self.title=@"意见反馈";
      [self p_setUI];
-    [self addRightBarButtonTitleItem:@"关闭"];
+    //[self addRightBarButtonTitleItem:@"关闭"];
     // Do any additional setup after loading the view.
 }
-- (void)rightItemClick{
+- (void)backAction{
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
+
 
 - (void)p_setUI {
     UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.width-156)/2,60+44, 156, 138)];

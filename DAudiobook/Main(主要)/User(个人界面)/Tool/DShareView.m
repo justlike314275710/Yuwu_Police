@@ -7,7 +7,7 @@
 //
 
 #import "DShareView.h"
-#import <UShareUI/UShareUI.h>
+//#import <UShareUI/UShareUI.h>
 
 @interface DShareView ()
 
@@ -102,49 +102,49 @@
 
 -(void)shareButtonAction:(UIButton *)button{
     
-    switch (button.tag) {
-        case 0:
-            [self  shareWebPageToPlatformType:UMSocialPlatformType_WechatSession];
-            
-            break;
-        case 1:
-            [self  shareWebPageToPlatformType:UMSocialPlatformType_Sina];
-            
-            break;
-            
-        case 2:
-            [self  shareWebPageToPlatformType:UMSocialPlatformType_QQ];
-            
-            break;
-        case 3:
-            [self  shareWebPageToPlatformType:UMSocialPlatformType_WechatTimeLine];
-            break;
-            
-        case 4:
-            
-            break;
-    }
+//    switch (button.tag) {
+//        case 0:
+//            [self  shareWebPageToPlatformType:UMSocialPlatformType_WechatSession];
+//
+//            break;
+//        case 1:
+//            [self  shareWebPageToPlatformType:UMSocialPlatformType_Sina];
+//
+//            break;
+//
+//        case 2:
+//            [self  shareWebPageToPlatformType:UMSocialPlatformType_QQ];
+//
+//            break;
+//        case 3:
+//            [self  shareWebPageToPlatformType:UMSocialPlatformType_WechatTimeLine];
+//            break;
+//
+//        case 4:
+//
+//            break;
+//    }
 }
-- (void)shareWebPageToPlatformType:(UMSocialPlatformType)platformType
-{
-    //创建分享消息对象
-    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
-    
-    //创建网页内容对象
-    UIImage* thumbURL =  [UIImage imageNamed:@"小熊明星资讯"];
-    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"小熊" descr:@"有趣的视频，好听的音乐都在这里。" thumImage:thumbURL];
-    //设置网页地址
-    shareObject.webpageUrl=[NSString stringWithFormat:@"www.baidu.com"];
-    
-    //分享消息对象设置分享内容对象
-    messageObject.shareObject = shareObject;
-   
-    //调用分享接口
-    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
-        NSLog(@"");
-    }];
-    [self dismiss];
-}
+//- (void)shareWebPageToPlatformType:(UMSocialPlatformType)platformType
+//{
+//    //创建分享消息对象
+//    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+//
+//    //创建网页内容对象
+//    UIImage* thumbURL =  [UIImage imageNamed:@"小熊明星资讯"];
+//    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"小熊" descr:@"有趣的视频，好听的音乐都在这里。" thumImage:thumbURL];
+//    //设置网页地址
+//    shareObject.webpageUrl=[NSString stringWithFormat:@"www.baidu.com"];
+//
+//    //分享消息对象设置分享内容对象
+//    messageObject.shareObject = shareObject;
+//
+//    //调用分享接口
+//    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+//        NSLog(@"");
+//    }];
+//    [self dismiss];
+//}
 
 /**
  *  点击按钮弹出

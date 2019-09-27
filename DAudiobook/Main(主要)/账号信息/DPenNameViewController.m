@@ -52,6 +52,7 @@
     [PPNetworkHelper POST:url parameters:param success:^(id responseObject) {
          [[PSLoadingView sharedInstance]dismiss];
         [PSTipsView showTips:@"修改笔名成功"];
+
     } failure:^(NSError *error) {
          [[PSLoadingView sharedInstance]dismiss];
         [PSTipsView showTips:@"修改笔名失败"];

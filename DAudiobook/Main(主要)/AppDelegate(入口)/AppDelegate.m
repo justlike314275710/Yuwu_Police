@@ -7,8 +7,8 @@
 //
 
 #import <BmobSDK/Bmob.h>
-#import <UMSocialCore/UMSocialCore.h>
-#import <Bugly/Bugly.h>
+//#import <UMSocialCore/UMSocialCore.h>
+//#import <Bugly/Bugly.h>
 #import "AppDelegate.h"
 #import "DAllControllersTool.h"
 #import "DMenuModel.h"
@@ -33,7 +33,7 @@
     //云服务器SDK
     [Bmob registerWithAppKey:BmobAppkey];
     //腾讯bug收集
-    [Bugly startWithAppId:BuglyAppID];
+    //[Bugly startWithAppId:BuglyAppID];
     //第三方分享
     [self initializeShareSDK];
     //推送
@@ -51,8 +51,13 @@
     //版本更新
     DVersionManger*versonManger=[DVersionManger new];
     //[versonManger jundgeVersonUpdate];
-    [self initWindow];
-    [self initService];
+    //初始化window
+    [self  initWindow];
+    //初始化app服务
+    [self  initService];
+    //初始化IM
+    [[IMManager sharedIMManager]initIM];
+    //初始化用户系统
     [self initUserManager];
     [self addCycleTime];
     
@@ -107,9 +112,9 @@
 }
 //分享
 -(void)initializeShareSDK{
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:WXAppkey appSecret:WXAppSecret redirectURL:@""];
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:QQAppkey  appSecret:QQAppSecret redirectURL:@""];
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:WBAppkey  appSecret:WBAppSecret redirectURL:@""];
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:WXAppkey appSecret:WXAppSecret redirectURL:@""];
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:QQAppkey  appSecret:QQAppSecret redirectURL:@""];
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:WBAppkey  appSecret:WBAppSecret redirectURL:@""];
 }
 //推送
 -(void)initializePushSDK{
