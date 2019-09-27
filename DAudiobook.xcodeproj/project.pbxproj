@@ -773,7 +773,6 @@
 		EAA21BF3233CB88F00A06819 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA21BEC233CB88E00A06819 /* SVProgressAnimatedView.m */; };
 		EAA21BF4233CB88F00A06819 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA21BEE233CB88E00A06819 /* SVProgressHUD.m */; };
 		EAA21BF5233CB88F00A06819 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA21BEF233CB88E00A06819 /* SVIndefiniteAnimatedView.m */; };
-		EAA21BF6233CB88F00A06819 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EAA21BF0233CB88E00A06819 /* SVProgressHUD.bundle */; };
 		EAA30EDE23330FE0004DE08F /* KGStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA30EDD23330FDF004DE08F /* KGStatusBar.m */; };
 		EAA3101823338BA0004DE08F /* DVersionManger.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA3101723338BA0004DE08F /* DVersionManger.m */; };
 		EAA3101B23338BE4004DE08F /* DUpdataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA3101A23338BE4004DE08F /* DUpdataModel.m */; };
@@ -2248,7 +2247,6 @@
 		EAA21BED233CB88E00A06819 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
 		EAA21BEE233CB88E00A06819 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		EAA21BEF233CB88E00A06819 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
-		EAA21BF0233CB88E00A06819 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		EAA21BF1233CB88E00A06819 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
 		EAA30EDC23330FDF004DE08F /* KGStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGStatusBar.h; sourceTree = "<group>"; };
 		EAA30EDD23330FDF004DE08F /* KGStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGStatusBar.m; sourceTree = "<group>"; };
@@ -5624,7 +5622,6 @@
 				EAA21BED233CB88E00A06819 /* SVRadialGradientLayer.h */,
 				EAA21BEE233CB88E00A06819 /* SVProgressHUD.m */,
 				EAA21BEF233CB88E00A06819 /* SVIndefiniteAnimatedView.m */,
-				EAA21BF0233CB88E00A06819 /* SVProgressHUD.bundle */,
 				EAA21BF1233CB88E00A06819 /* SVProgressAnimatedView.h */,
 			);
 			path = SVProgressHUD;
@@ -5925,7 +5922,6 @@
 				EA960E5C233075BE00D81A25 /* README.md in Resources */,
 				3C4542D82275AB0600AE50B1 /* 10102910.json in Resources */,
 				EA960BAD232F32E500D81A25 /* license in Resources */,
-				EAA21BF6233CB88F00A06819 /* SVProgressHUD.bundle in Resources */,
 				3C4543022275AB0600AE50B1 /* 12716555.json in Resources */,
 				3C0DB68022D7320B0029730E /* MJRefresh.bundle in Resources */,
 				3C4542BF2275AB0600AE50B1 /* 8667850.json in Resources */,
