@@ -1,21 +1,14 @@
 //
-//  PSArticleDetailViewModel.m
-//  PrisonService
+//  PSArticleDDetailViewModel.m
+//  DAudiobook
 //
-//  Created by kky on 2019/9/17.
-//  Copyright © 2019年 calvin. All rights reserved.
+//  Created by kky on 2019/9/26.
+//  Copyright © 2019年 liujiliu. All rights reserved.
 //
 
-#import "PSArticleDetailViewModel.h"
+#import "PSArticleDDetailViewModel.h"
 
-
-
-@interface PSArticleDetailViewModel ()
-
-
-@end
-
-@implementation PSArticleDetailViewModel
+@implementation PSArticleDDetailViewModel
 - (id)init {
     self = [super init];
     if (self) {
@@ -23,7 +16,7 @@
     return self;
 }
 //文章详情
-- (void)loadArticleDetailCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback{
+-(void)loadArticleDetailCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback{
     
     NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_findDetail];
     [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
@@ -42,8 +35,8 @@
         
     } failure:^(NSError *error) {
         if (failedCallback) {
-                failedCallback(error);
-            }
+            failedCallback(error);
+        }
     }];
 }
 //收藏
@@ -66,8 +59,8 @@
     }];
 }
 //取消收藏
-- (void)cancelCollectArticleCompleted:(RequestDataCompleted)completedCallback
-                               failed:(RequestDataFailed)failedCallback {
+-(void)cancelCollectArticleCompleted:(RequestDataCompleted)completedCallback
+                              failed:(RequestDataFailed)failedCallback {
     
     NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_deleteCollect];
     [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
@@ -106,8 +99,8 @@
 }
 
 //取消点赞
-- (void)deletePraiseArticleCompleted:(RequestDataCompleted)completedCallback
-                              failed:(RequestDataFailed)failedCallback{
+-(void)deletePraiseArticleCompleted:(RequestDataCompleted)completedCallback
+                             failed:(RequestDataFailed)failedCallback{
     NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_deletePraise];
     [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
     NSDictionary *params = @{@"articleId":self.id};
@@ -128,36 +121,35 @@
 //获取是否能发文章权限
 - (void)authorArticleCompleted:(RequestDataCompleted)completedCallback
                         failed:(RequestDataFailed)failedCallback {
-//    {"msg":"[互动中心]检测账户是否禁用账户成功","code":200,"data":{"author":{"familyId":null,"disabledReason":null,"accountName":null,"isEnabled":1,"id":4,"pseudonym":"吴小可爱"}}}
+    //    {"msg":"[互动中心]检测账户是否禁用账户成功","code":200,"data":{"author":{"familyId":null,"disabledReason":null,"accountName":null,"isEnabled":1,"id":4,"pseudonym":"吴小可爱"}}}
     /*
-    NSString*username=[NSString stringWithFormat:@"%@",[LXFileManager readUserDataForKey:@"username"]];
-    self.articleAuthorRequest = [PSfamiliesAuthorRequest new];
-    self.articleAuthorRequest.userName = username;
-    self.articleAuthorRequest.type =  @"1";
-    [self.articleAuthorRequest send:^(PSRequest *request, PSResponse *response) {
-        if (!response) {
-            PSPublicArticleModel *model = [[PSPublicArticleModel alloc] init];
-            model.isEnabled = @"1";
-            self.authorModel = model;
-            completedCallback(response);
-        }
-        
-        if (completedCallback) {
-            if (response.code==200) {
-                PSfamiliesAuthorResponse *AuthorResponse = (PSfamiliesAuthorResponse *)response;
-                self.authorModel = AuthorResponse.author;
-                completedCallback(response);
-            }
-        }
-    } errorCallback:^(PSRequest *request, NSError *error) {
-        if (failedCallback) {
-            failedCallback(error);
-        }
-    }];
+     NSString*username=[NSString stringWithFormat:@"%@",[LXFileManager readUserDataForKey:@"username"]];
+     self.articleAuthorRequest = [PSfamiliesAuthorRequest new];
+     self.articleAuthorRequest.userName = username;
+     self.articleAuthorRequest.type =  @"1";
+     [self.articleAuthorRequest send:^(PSRequest *request, PSResponse *response) {
+     if (!response) {
+     PSPublicArticleModel *model = [[PSPublicArticleModel alloc] init];
+     model.isEnabled = @"1";
+     self.authorModel = model;
+     completedCallback(response);
+     }
+     
+     if (completedCallback) {
+     if (response.code==200) {
+     PSfamiliesAuthorResponse *AuthorResponse = (PSfamiliesAuthorResponse *)response;
+     self.authorModel = AuthorResponse.author;
+     completedCallback(response);
+     }
+     }
+     } errorCallback:^(PSRequest *request, NSError *error) {
+     if (failedCallback) {
+     failedCallback(error);
+     }
+     }];
      */
     
 }
-
 
 //计算高度
 -(CGFloat)calculationTextViewHeight:(UITextView *)textView {
@@ -177,7 +169,7 @@
 - (float)heightForString:(NSString *)value andWidth:(float)width{
     //获取当前文本的属性
     NSAttributedString *attrStr = [[NSAttributedString alloc] initWithString:value];
-//    text.attributedText = attrStr;
+    //    text.attributedText = attrStr;
     NSRange range = NSMakeRange(0, attrStr.length);
     // 获取该段attributedString的属性字典
     NSDictionary *dic = [attrStr attributesAtIndex:0 effectiveRange:&range];
@@ -206,8 +198,4 @@
     CGSize sizeToFit = [textView sizeThatFits:CGSizeMake(width, MAXFLOAT)];
     return sizeToFit.height;
 }
-
-        
-
-
 @end

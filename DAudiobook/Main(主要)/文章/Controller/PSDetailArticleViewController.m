@@ -7,7 +7,7 @@
 //
 
 #import "PSDetailArticleViewController.h"
-#import "PSArticleDetailViewModel.h"
+#import "PSArticleDDetailViewModel.h"
 #import "PSPublishArticleViewController.h"
 #import "PSPublishArticleViewModel.h"
 #import "UIButton+BEEnLargeEdge.h"
@@ -172,34 +172,33 @@
 
 -(void)refreshUI{
     
-    PSArticleDetailViewModel *viewModel =  (PSArticleDetailViewModel *)self.viewModel;
-     _nameLab.text = viewModel.detailModel.penName;
-     _titleLab.text = viewModel.detailModel.title;
-     _timeLab.text = viewModel.detailModel.publishAt;
-     _contentTextView.text = viewModel.detailModel.content;
-    _likeLab.text = [NSString stringWithFormat:@"%@赞",viewModel.detailModel.praiseNum];
-    viewModel.detailModel.clientNum = [NSString stringWithFormat:@"%d",[viewModel.detailModel.clientNum intValue]+1];
-    _hotLab.text = [NSString stringWithFormat:@"%@热度",viewModel.detailModel.clientNum];
+     _nameLab.text = self.viewModel.detailModel.penName;
+     _titleLab.text = self.viewModel.detailModel.title;
+     _timeLab.text = self.viewModel.detailModel.publishAt;
+     _contentTextView.text = self.viewModel.detailModel.content;
+    _likeLab.text = [NSString stringWithFormat:@"%@赞",self.viewModel.detailModel.praiseNum];
+    self.viewModel.detailModel.clientNum = [NSString stringWithFormat:@"%d",[_viewModel.detailModel.clientNum intValue]+1];
+    _hotLab.text = [NSString stringWithFormat:@"%@热度",self.viewModel.detailModel.clientNum];
     BOOL isHideBottom = YES;
-    if ([viewModel.detailModel.status isEqualToString:@"publish"]) { //已发布待审核
+    if ([self.viewModel.detailModel.status isEqualToString:@"publish"]) { //已发布待审核
         _topTipLab.text = @"平台正在审核中";
         _topTipLab.hidden = NO;
         isHideBottom = YES;
-    } else if ([viewModel.detailModel.status isEqualToString:@"pass"]) { //已通过
+    } else if ([self.viewModel.detailModel.status isEqualToString:@"pass"]) { //已通过
         _topTipLab.text = @"";
         _topTipLab.hidden = YES;
         [_topTipLab mas_updateConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(0);
         }];
         isHideBottom = NO;
-    } else if ([viewModel.detailModel.status isEqualToString:@"reject"]) { //未通过
+    } else if ([self.viewModel.detailModel.status isEqualToString:@"reject"]) { //未通过
         _topTipLab.hidden = NO;
-        _topTipLab.text = [NSString stringWithFormat:@"发布未通过,%@",viewModel.detailModel.rejectReason];
+        _topTipLab.text = [NSString stringWithFormat:@"发布未通过,%@",self.viewModel.detailModel.rejectReason];
         isHideBottom = YES;
 //        [self createRightBarButtonItemWithTarget:self action:@selector(editAction) title:@"编辑"];
-    } else if ([viewModel.detailModel.status isEqualToString:@"shelf"]) { //已下架
+    } else if ([self.viewModel.detailModel.status isEqualToString:@"shelf"]) { //已下架
         _topTipLab.hidden = NO;
-        _topTipLab.text = [NSString stringWithFormat:@"文章已下架,%@",viewModel.detailModel.shelfReason];
+        _topTipLab.text = [NSString stringWithFormat:@"文章已下架,%@",_viewModel.detailModel.shelfReason];
         isHideBottom = NO;
 //        [self createRightBarButtonItemWithTarget:self action:@selector(editAction) title:@"编辑"];
     }
@@ -217,7 +216,7 @@
     
     
     
-    if ([viewModel.detailModel.iscollect isEqualToString:@"0"]) {
+    if ([_viewModel.detailModel.iscollect isEqualToString:@"0"]) {
         [_collectBtn setImage:IMAGE_NAMED(@"未收藏") forState:UIControlStateNormal];
         [_collectLab setText:@"点击收藏"];
         [_collectLab setTextColor:UIColorFromRGB(102, 102, 102)];
@@ -226,7 +225,7 @@
         [_collectLab setText:@"已收藏"];
         [_collectLab setTextColor:UIColorFromRGB(0, 107, 255)];
     }
-    if ([viewModel.detailModel.ispraise isEqualToString:@"0"]) {
+    if ([_viewModel.detailModel.ispraise isEqualToString:@"0"]) {
         [_likeBtn setImage:IMAGE_NAMED(@"未点赞") forState:UIControlStateNormal];
         [_likeLab setTextColor:UIColorFromRGB(102,102,102)];
     } else {
@@ -234,7 +233,7 @@
         [_likeLab setTextColor:UIColorFromRGB(237,63,92)];
     }
     
-    if ([viewModel.detailModel.clientNum integerValue]>0) {
+    if ([_viewModel.detailModel.clientNum integerValue]>0) {
         [_hotBtn setImage:IMAGE_NAMED(@"热度icon") forState:UIControlStateNormal];
         [_hotLab setTextColor:UIColorFromRGB(255,134,0)];
     } else {
@@ -248,7 +247,7 @@
         make.bottom.mas_equalTo(bottom);
     }];
     
-    CGFloat height = [viewModel heightForString:_contentTextView.text andWidth:kScreenWidth-48];
+    CGFloat height = [_viewModel heightForString:_contentTextView.text andWidth:kScreenWidth-48];
     [self.contentTextView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(164);
         make.left.mas_equalTo(24);
@@ -275,12 +274,12 @@
 }
 
 - (void)editAction{
-    PSArticleDetailViewModel *detailviewModel =  (PSArticleDetailViewModel *)self.viewModel;
+
     PSPublishArticleViewModel *viewModel = [[PSPublishArticleViewModel alloc] init];
-    viewModel.id = detailviewModel.detailModel.id;
-    viewModel.content = detailviewModel.detailModel.content;
-    viewModel.title = detailviewModel.detailModel.title;
-    viewModel.penName = detailviewModel.detailModel.penName;
+    viewModel.id = _viewModel.detailModel.id;
+    viewModel.content = _viewModel.detailModel.content;
+    viewModel.title = _viewModel.detailModel.title;
+    viewModel.penName = _viewModel.detailModel.penName;
     viewModel.type = PSEditArticle;
 //    PSPublishArticleViewController *publishArticleVC = [[PSPublishArticleViewController alloc] initWithViewModel:viewModel];
     PSPublishArticleViewController *publishArticleVC = [[PSPublishArticleViewController alloc] init];
@@ -309,7 +308,7 @@
 #pragma mark - TouchEvent
 //返回刷新热度
 - (IBAction)actionOfLeftItem:(id)sender {
-    PSArticleDetailViewModel *viewModel =  (PSArticleDetailViewModel *)self.viewModel;
+    PSArticleDDetailViewModel *viewModel =  (PSArticleDDetailViewModel *)self.viewModel;
 //    [super actionOfLeftItem:sender];
     if (self.hotChangeBlock) {
         self.hotChangeBlock(viewModel.detailModel.clientNum);
@@ -318,7 +317,7 @@
 //收藏
 -(void)clickCollectAction:(UIButton *)sender{
     
-    PSArticleDetailViewModel *viewModel = (PSArticleDetailViewModel *)self.viewModel;
+    PSArticleDDetailViewModel *viewModel = (PSArticleDDetailViewModel *)self.viewModel;
     if ([viewModel.detailModel.status isEqualToString:@"shelf"]) {
         [PSTipsView showTips:@"已下架文章不支持收藏"];
         return;
@@ -332,7 +331,7 @@
 }
 
 -(void)clickPraiseAction:(UIButton *)sender{
-    PSArticleDetailViewModel *viewModel =  (PSArticleDetailViewModel *)self.viewModel;
+    PSArticleDDetailViewModel *viewModel =  (PSArticleDDetailViewModel *)self.viewModel;
     //点赞
     if ([viewModel.detailModel.ispraise isEqualToString:@"0"]) {
         [self praiseAction];
@@ -379,7 +378,7 @@
 
 //点赞
 -(void)praiseAction{
-    PSArticleDetailViewModel *viewModel =  (PSArticleDetailViewModel *)self.viewModel;
+    PSArticleDDetailViewModel *viewModel =  (PSArticleDDetailViewModel *)self.viewModel;
     [viewModel praiseArticleCompleted:^(id data) {
         dispatch_async(dispatch_get_main_queue(), ^{
             NSString *msg = data[@"msg"];
@@ -397,11 +396,11 @@
 }
 //取消点赞
 -(void)cancelPraiseAction{
-    PSArticleDetailViewModel *viewModel =  (PSArticleDetailViewModel *)self.viewModel;
+    PSArticleDDetailViewModel *viewModel =  (PSArticleDDetailViewModel *)self.viewModel;
     [viewModel deletePraiseArticleCompleted:^(id data) {
         dispatch_async(dispatch_get_main_queue(), ^{
             NSString *msg = data[@"msg"];
-            NSInteger code = data[@"code"];
+            NSInteger code = [data[@"code"] integerValue];
             [PSTipsView showTips:msg];
             if (code == 200){
                 [self setupData];
@@ -416,7 +415,7 @@
 //取消收藏
 -(void)cancleCollectAction:(UIButton *)sender{
     
-    PSArticleDetailViewModel *viewModel =  (PSArticleDetailViewModel *)self.viewModel;
+    PSArticleDDetailViewModel *viewModel =  (PSArticleDDetailViewModel *)self.viewModel;
     [viewModel collectArticleCompleted:^(id data) {
         dispatch_async(dispatch_get_main_queue(), ^{
             NSString *msg = data[@"msg"];

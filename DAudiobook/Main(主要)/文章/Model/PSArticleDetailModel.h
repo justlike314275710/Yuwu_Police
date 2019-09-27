@@ -8,7 +8,6 @@
 
 #import "JSONModel.h"
 
-
 @protocol PSArticleDetailModel<NSObject>
 
 @end
@@ -42,7 +41,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString<Optional> *publishTypeName;
 @property (nonatomic, strong) NSString<Optional> *ispraise;
 @property (nonatomic, strong) NSString<Optional> *iscollect;
-
 
 @end
 

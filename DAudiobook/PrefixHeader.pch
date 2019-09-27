@@ -1,3 +1,5 @@
+
+#ifdef __OBJC__
 /*------------------------------宏定义------------------------------*/
 #import "CommonDefine.h"
 #import "SizeDefine.h"
@@ -63,3 +65,4 @@
 #import <NIMSDK/NIMSDK.h>
 #import <NIMAVChat/NIMAVChat.h>
 
+#endif

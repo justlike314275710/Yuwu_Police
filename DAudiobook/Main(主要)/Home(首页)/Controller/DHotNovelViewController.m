@@ -15,12 +15,9 @@
 #import "PSPlatformArticleCell.h"
 #import "PSPublishArticleViewModel.h"
 #import "PSPublishArticleViewController.h"
-
-#import "SearchBarDisplayCenter.h"
-@interface DHotNovelViewController() {
-
-#import "PSArticleDetailViewModel.h"
+#import "PSArticleDDetailViewModel.h"
 #import "PSDetailArticleViewController.h"
+#import "SearchBarDisplayCenter.h"
 
 @interface DHotNovelViewController()<UITableViewDelegate,UITableViewDataSource> {
 
@@ -46,8 +43,6 @@
     
     [self setupData];
     //下啦刷新
-
-    [self onHeaderRefreshing];
     [self SearchBar];
 
     [self refreshData];
@@ -108,6 +103,7 @@
 - (void)setupUI {
 
     [self.view addSubview:self.tableview];
+    [self.view addSubview:self.publishBtn];
     [self.tableview registerClass:[PSPlatformArticleCell class] forCellReuseIdentifier:@"PSPlatformArticleCell"];
     self.tableview.tableFooterView = [UIView new];
     @weakify(self)
@@ -195,7 +191,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
     PSArticleDetailModel *model = [self.logic.datalist objectAtIndex:indexPath.row];
-    PSArticleDetailViewModel *viewModel = [PSArticleDetailViewModel new];
+    PSArticleDDetailViewModel *viewModel = [PSArticleDDetailViewModel new];
     viewModel.id = model.id;
     PSDetailArticleViewController *DetailArticleVC = [[PSDetailArticleViewController alloc] init];
     DetailArticleVC.viewModel = viewModel;
@@ -254,92 +250,6 @@
 
 
 
-#pragma mark - 相声评书
-@implementation DCrosstalkViewController
-
-//获取URL
--(NSString *)getURL{
-    return CrosstalkUrl;
-}
-//获取title
--(NSString *)getMenuTitle{
-    return @"相声";
-}
-
-@end
 
 
 
-
-#pragma mark - 玄幻小说
-@implementation DFantasyViewController
-
-//获取URL
--(NSString *)getURL{
-    return FantasyUrl;
-}
-//获取title
--(NSString *)getMenuTitle{
-    return @"玄幻";
-}
-
-@end
-
-
-#pragma mark - 都市小说
-@implementation DCityViewController
-
-//获取URL
--(NSString *)getURL{
-    return CityUrl;
-}
-//获取title
--(NSString *)getMenuTitle{
-    return @"都市";
-}
-@end
-
-
-#pragma mark - 恐怖小说
-@implementation DTerroristViewController
-
-//获取URL
--(NSString *)getURL{
-    return TerroristUrl;
-}
-//获取title
--(NSString *)getMenuTitle{
-    return @"恐怖";
-}
-
-@end
-
-
-#pragma mark - 历史小说
-@implementation DHistoryViewController
-
-//获取URL
--(NSString *)getURL{
-    return HistoryUrl;
-}
-//获取title
--(NSString *)getMenuTitle{
-    return @"历史";
-}
-
-@end
-
-
-#pragma mark - 武侠小说
-@implementation DMartialViewController
-
-//获取URL
--(NSString *)getURL{
-    return MartialUrl;
-}
-//获取title
--(NSString *)getMenuTitle{
-    return @"武侠";
-}
-
-@end

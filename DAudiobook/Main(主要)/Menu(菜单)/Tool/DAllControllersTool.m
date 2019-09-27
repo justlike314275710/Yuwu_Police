@@ -93,48 +93,48 @@
 - (DNavigationController *)crosstalkNavigationController
 {
     if (!_crosstalkNavigationController) {
-         DCrosstalkViewController *VC = [[DCrosstalkViewController alloc] init];
-        _crosstalkNavigationController = [[DNavigationController alloc] initWithRootViewController:VC];
+//         DCrosstalkViewController *VC = [[DCrosstalkViewController alloc] init];
+//        _crosstalkNavigationController = [[DNavigationController alloc] initWithRootViewController:VC];
     }
     return _crosstalkNavigationController;
 }
 - (DNavigationController *)fantasyNavigationController
 {
     if (!_fantasyNavigationController) {
-        DFantasyViewController *VC = [[DFantasyViewController alloc] init];
-        _fantasyNavigationController = [[DNavigationController alloc] initWithRootViewController:VC];
+//        DFantasyViewController *VC = [[DFantasyViewController alloc] init];
+//        _fantasyNavigationController = [[DNavigationController alloc] initWithRootViewController:VC];
     }
     return _fantasyNavigationController;
 }
 - (DNavigationController *)cityNavigationController
 {
     if (!_cityNavigationController) {
-        DCityViewController *VC = [[DCityViewController alloc] init];
-        _cityNavigationController = [[DNavigationController alloc] initWithRootViewController:VC];
+//        DCityViewController *VC = [[DCityViewController alloc] init];
+//        _cityNavigationController = [[DNavigationController alloc] initWithRootViewController:VC];
     }
     return _cityNavigationController;
 }
 - (DNavigationController *)terroristNavigationController
 {
     if (!_terroristNavigationController) {
-        DTerroristViewController *VC = [[DTerroristViewController alloc] init];
-        _terroristNavigationController = [[DNavigationController alloc] initWithRootViewController:VC];
+//        DTerroristViewController *VC = [[DTerroristViewController alloc] init];
+//        _terroristNavigationController = [[DNavigationController alloc] initWithRootViewController:VC];
     }
     return _terroristNavigationController;
 }
 - (DNavigationController *)historyNavigationController
 {
     if (!_historyNavigationController) {
-        DHistoryViewController *VC = [[DHistoryViewController alloc] init];
-        _historyNavigationController = [[DNavigationController alloc] initWithRootViewController:VC];
+//        DHistoryViewController *VC = [[DHistoryViewController alloc] init];
+//        _historyNavigationController = [[DNavigationController alloc] initWithRootViewController:VC];
     }
     return _historyNavigationController;
 }
 - (DNavigationController *)martialNavigationController
 {
     if (!_martialNavigationController) {
-        DMartialViewController *VC = [[DMartialViewController alloc] init];
-        _martialNavigationController = [[DNavigationController alloc] initWithRootViewController:VC];
+//        DMartialViewController *VC = [[DMartialViewController alloc] init];
+//        _martialNavigationController = [[DNavigationController alloc] initWithRootViewController:VC];
     }
     return _martialNavigationController;
 }
@@ -155,9 +155,7 @@
     DAllControllersTool *dispatchTool = [DAllControllersTool shareOpenController];
     //用当前类的对象 执行实际选择执行的方法
     [dispatchTool openViewControllerWithIndex:menuModel];
-    
 
-    
 }
 
 

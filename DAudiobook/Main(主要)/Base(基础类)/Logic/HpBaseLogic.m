@@ -10,9 +10,9 @@
 
 @implementation HpBaseLogic
 
-//- (void)checkDataWithCallback:(CheckDataCallback)callback {
-//    
-//}
+- (void)checkDataWithCallback:(CheckDataCallback)callback {
+    
+}
 
 - (void)fetchDataWithParams:(id)params completed:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback {
     
