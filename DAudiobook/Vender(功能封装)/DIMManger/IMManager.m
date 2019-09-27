@@ -110,7 +110,7 @@ SINGLETON_FOR_CLASS(IMManager);
     NSString *reason = @"你的帐号被踢出下线，请注意帐号信息安全";
     NSString*determine=@"确定";
     NSString*Tips= @"提示";
-    NSString*pushed_off_line=@"您的账号已在其他设备登陆,已被挤下线";
+//    NSString*pushed_off_line=@"您的账号已在其他设备登陆,已被挤下线";
 //    XXAlertView*alert=[[XXAlertView alloc]initWithTitle:Tips message:pushed_off_line sureBtn:determine cancleBtn:nil];
 //    alert.clickIndex = ^(NSInteger index) {
 //        if (index==2) {
@@ -120,11 +120,16 @@ SINGLETON_FOR_CLASS(IMManager);
 //    dispatch_async(dispatch_get_main_queue(), ^{
 //        [alert show];
 //    });
+   [ PSAlertView showWithTitle:Tips message:reason messageAlignment:NSTextAlignmentCenter image:nil handler:^(PSAlertView *alertView, NSInteger buttonIndex) {
+       if (buttonIndex==0) {
+            KPostNotification(KNotificationOnKick, nil);
+       }
+   } buttonTitles:determine, nil];
 }
 
 #pragma mark ————— 代理 收到新消息 —————
 - (void)onRecvMessages:(NSArray<NIMMessage *> *)messages{
-//    DLog(@"收到新消息");
+    NSLog(@"收到新消息");
 //    if (messages.count <=0) return;
 //    NIMMessage *meeesage = [messages objectAtIndex:0];
 //    NSString *msg = meeesage.text.length>0?meeesage.text:meeesage.apnsContent;
@@ -141,6 +146,7 @@ SINGLETON_FOR_CLASS(IMManager);
 
 
 -(void)onReceiveCustomSystemNotification:(NIMCustomSystemNotification *)notification{
+      NSLog(@"***收到新消息***");
 //    NSData *jsonData = [notification.content dataUsingEncoding:NSUTF8StringEncoding];
 //    NSDictionary*dic=[NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
 //    if ([dic[@"type"] isEqualToString:@"RUSH_PAGE_REFRESH"]) {

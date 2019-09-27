@@ -160,7 +160,12 @@
             break;
         case 2:
         {
-            [self modifyPenName];
+            if (help_userManager.lawUserInfo.pseudonym) {
+                
+            } else {
+                [self modifyPenName];
+            }
+            
         }
             break;
         case 3:

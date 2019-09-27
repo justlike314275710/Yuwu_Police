@@ -360,6 +360,7 @@
 		55CC6557233B6D7800D4A581 /* libTZImagePickerController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CC6556233B6D7800D4A581 /* libTZImagePickerController.a */; };
 		55ED6392233DA028004A9C37 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 55ED6391233DA028004A9C37 /* SVProgressHUD.bundle */; };
 		E473341141BF7F02638F5529 /* libPods-DAudiobook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A489DFF9190310E891E597 /* libPods-DAudiobook.a */; };
+		EA92622D233DEB360028FAF7 /* XXEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA92622B233DEB2D0028FAF7 /* XXEmptyView.m */; };
 		EA94570423385ABA003C1C97 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94570223385AB9003C1C97 /* UITextView+Placeholder.m */; };
 		EA94574D233A2C40003C1C97 /* LLActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA945749233A2C40003C1C97 /* LLActionSheetView.m */; };
 		EA94574E233A2C40003C1C97 /* HMActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94574A233A2C40003C1C97 /* HMActionSheetView.m */; };
@@ -820,6 +821,7 @@
 		EAA311B6233472D8004DE08F /* A2DynamicDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA31192233472D7004DE08F /* A2DynamicDelegate.m */; };
 		EAA311B7233472D8004DE08F /* NSObject+A2DynamicDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA31193233472D7004DE08F /* NSObject+A2DynamicDelegate.m */; };
 		EAA311BA23347B76004DE08F /* UIImage+WLCompress.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA311B923347B76004DE08F /* UIImage+WLCompress.m */; };
+		EABE0E51233E12BC000B7345 /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = EABE0E50233E12BC000B7345 /* UIBarButtonItem+Badge.m */; };
 		EAE6BC8F233DB54300E4C4DB /* DFeedBackDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6BC8E233DB54300E4C4DB /* DFeedBackDetailViewController.m */; };
 		EAE6BC9F233DB92400E4C4DB /* LLSearchResultListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6BC92233DB91E00E4C4DB /* LLSearchResultListViewCell.m */; };
 		EAE6BCA0233DB92400E4C4DB /* LLSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6BC93233DB91F00E4C4DB /* LLSearchResultViewController.m */; };
@@ -1434,6 +1436,8 @@
 		55ED6391233DA028004A9C37 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		77A489DFF9190310E891E597 /* libPods-DAudiobook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DAudiobook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10A1B66EF6EE62C2CCE46C8 /* Pods-DAudiobook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DAudiobook.debug.xcconfig"; path = "Target Support Files/Pods-DAudiobook/Pods-DAudiobook.debug.xcconfig"; sourceTree = "<group>"; };
+		EA92622B233DEB2D0028FAF7 /* XXEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXEmptyView.m; sourceTree = "<group>"; };
+		EA92622C233DEB330028FAF7 /* XXEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXEmptyView.h; sourceTree = "<group>"; };
 		EA94570223385AB9003C1C97 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		EA94570323385AB9003C1C97 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
 		EA945749233A2C40003C1C97 /* LLActionSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLActionSheetView.m; sourceTree = "<group>"; };
@@ -2352,6 +2356,8 @@
 		EAA31194233472D7004DE08F /* NSObject+A2BlockDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+A2BlockDelegate.h"; sourceTree = "<group>"; };
 		EAA311B823347B75004DE08F /* UIImage+WLCompress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WLCompress.h"; sourceTree = "<group>"; };
 		EAA311B923347B76004DE08F /* UIImage+WLCompress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WLCompress.m"; sourceTree = "<group>"; };
+		EABE0E4F233E12BB000B7345 /* UIBarButtonItem+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Badge.h"; sourceTree = "<group>"; };
+		EABE0E50233E12BC000B7345 /* UIBarButtonItem+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Badge.m"; sourceTree = "<group>"; };
 		EAE6BC8D233DB54300E4C4DB /* DFeedBackDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DFeedBackDetailViewController.h; sourceTree = "<group>"; };
 		EAE6BC8E233DB54300E4C4DB /* DFeedBackDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DFeedBackDetailViewController.m; sourceTree = "<group>"; };
 		EAE6BC91233DB91E00E4C4DB /* LLSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSearchViewController.h; sourceTree = "<group>"; };
@@ -3409,6 +3415,8 @@
 		3CCDA9C2226EF1C90019783A /* UIBarButtonItem+Extension */ = {
 			isa = PBXGroup;
 			children = (
+				EABE0E4F233E12BB000B7345 /* UIBarButtonItem+Badge.h */,
+				EABE0E50233E12BC000B7345 /* UIBarButtonItem+Badge.m */,
 				3C4A391D22681A0E00882244 /* UIBarButtonItem+Extension.h */,
 				3C4A392822681A0E00882244 /* UIBarButtonItem+Extension.m */,
 			);
@@ -4800,6 +4808,8 @@
 		EA960B9E232F32E300D81A25 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EA92622C233DEB330028FAF7 /* XXEmptyView.h */,
+				EA92622B233DEB2D0028FAF7 /* XXEmptyView.m */,
 				EA960DD7232F7D6600D81A25 /* WXZTipView.h */,
 				EA960DD8232F7D6600D81A25 /* WXZTipView.m */,
 				EA960BA9232F32E400D81A25 /* PSTipsView.h */,
@@ -6296,6 +6306,7 @@
 				EA960ABB232F29FB00D81A25 /* NIMTeamAnnouncementListCell.m in Sources */,
 				EA960D9A232F5BA000D81A25 /* DGActivityIndicatorBallZigZagAnimation.m in Sources */,
 				EA960CA1232F3B1C00D81A25 /* YYTextUtilities.m in Sources */,
+				EABE0E51233E12BC000B7345 /* UIBarButtonItem+Badge.m in Sources */,
 				EA960C95232F3B1C00D81A25 /* YYTextView.m in Sources */,
 				3CD2D8222299314200C700D7 /* FCUUID.m in Sources */,
 				EA960CAF232F3B1C00D81A25 /* UIScrollView+YYAdd.m in Sources */,
@@ -6484,6 +6495,7 @@
 				EA960ADE232F29FB00D81A25 /* NIMMessageCellFactory.m in Sources */,
 				EA960C83232F3B1B00D81A25 /* YYCache.m in Sources */,
 				EA960A86232F29FA00D81A25 /* NIMContactSelectViewController.m in Sources */,
+				EA92622D233DEB360028FAF7 /* XXEmptyView.m in Sources */,
 				EA960E17232F84F900D81A25 /* AFHTTPSessionManager.m in Sources */,
 				EAA21BF2233CB88F00A06819 /* SVRadialGradientLayer.m in Sources */,
 				3C4A3A1822681A0E00882244 /* UIView+Additions.m in Sources */,

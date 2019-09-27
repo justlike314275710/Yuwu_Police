@@ -10,12 +10,19 @@
 #import "DWriteFeedbackViewController.h"
 #import "FeedbackListCell.h"
 #import "DFeedbackListLogic.h"
+#import "XXEmptyView.h"
 @interface DWriteFeedListViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *myTableview;
 @property (nonatomic , strong) DFeedbackListLogic *logic;
 @end
 
 @implementation DWriteFeedListViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+     [self p_refreshData];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,6 +35,7 @@
 
     // Do any additional setup after loading the view.
 }
+
 
 -(void)renderContents{
     self.view.backgroundColor=UIColorFromRGBA(248, 247, 254, 1);
@@ -47,7 +55,17 @@
     [[PSLoadingView sharedInstance]show];
     [_logic refreshFeedbackListCompleted:^(id data) {
          [[PSLoadingView sharedInstance] dismiss];
-         [self p_reloadContents];
+        
+        switch (_logic.dataStatus) {
+            case PSDataEmpty:{
+                [XXEmptyView diyEmptyView];}
+                break;
+                
+            default:{
+                  [self p_reloadContents];
+            }
+                break;
+        }
     } failed:^(NSError *error) {
           [[PSLoadingView sharedInstance] dismiss];
           [self p_reloadContents];

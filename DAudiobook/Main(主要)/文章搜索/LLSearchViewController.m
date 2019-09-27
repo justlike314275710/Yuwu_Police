@@ -107,7 +107,7 @@
     // 创建搜索框
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(5, 7, self.view.frame.size.width, 30)];
     UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(titleView.frame) - 15, 30)];
-    searchBar.placeholder = @"搜索内容";
+    searchBar.placeholder = @"搜索文章|连载书籍";
     searchBar.backgroundImage = [UIImage imageNamed:@"clearImage"];
     searchBar.delegate = self;
     searchBar.showsCancelButton = YES;

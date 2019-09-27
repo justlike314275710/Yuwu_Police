@@ -7,7 +7,7 @@
 //
 
 #import "UserManager.h"
-#import <UMSocialCore/UMSocialCore.h>
+//#import <UMSocialCore/UMSocialCore.h>
 #import "AFNetworking.h"
 //#import "Mine_AuthLogic.h"
 //#import "lawyerInfo.h"
