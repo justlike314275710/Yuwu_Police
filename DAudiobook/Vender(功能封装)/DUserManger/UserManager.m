@@ -205,8 +205,7 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
                     [kUserDefaults synchronize];
                     
                     [self saveUserInfo];
-                    //获取云信账号信息
-                    [self autoLoginToServer:nil];
+                  
                     //预警端平台登录同步
                     [self police_Login:params];
                  
@@ -235,13 +234,25 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
                  LawUserInfo *lawUserInfo = [LawUserInfo modelWithJSON:responseObject[@"data"][@"data"][@"author"]];
                 self.lawUserInfo=lawUserInfo;
                 [self saveLawUserInfo];
+                if ([self.lawUserInfo.isEnabled isEqualToString:@"1"]) {
+                     KPostNotification(KNotificationLoginStateChange, @YES);
+                    //获取云信账号信息
+                    [self autoLoginToServer:nil];
+                 
+                }
+                else{
+                     KPostNotification(KNotificationLoginStateChange, @NO);
+                    [PSTipsView showTips:@"请联系监狱管理人员进行身份认证登记"];
+                }
             }
         }
         else{
-            
+            KPostNotification(KNotificationLoginStateChange, @NO);
+             [PSTipsView showTips:@"请联系监狱管理人员进行身份认证登记"];
         }
     } failure:^(NSError *error) {
         [PSTipsView showTips:@"服务器异常"];
+        KPostNotification(KNotificationLoginStateChange, @NO);
     }];
  
 }

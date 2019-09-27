@@ -7,13 +7,15 @@
 //
 
 #import "HpBaseLogic.h"
-
+#import "FeedbackTypeModel.h"
 @interface DFeedbackListLogic : HpBaseLogic
 @property (nonatomic, strong,readonly) NSArray *Recodes;
 @property (nonatomic, assign) NSInteger page;
 @property (nonatomic, assign) NSInteger pageSize;
 @property (nonatomic, assign) BOOL hasNextPage;
 @property (nonatomic, copy)   NSString *id;
+
+@property (nonatomic, strong) FeedbackTypeModel *detailModel;
 
 
 - (void)refreshFeedbackListCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback;

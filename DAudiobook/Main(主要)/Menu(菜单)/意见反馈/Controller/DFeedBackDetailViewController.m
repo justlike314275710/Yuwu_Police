@@ -5,9 +5,10 @@
 //  Created by 狂生烈徒 on 2019/9/27.
 //  Copyright © 2019年 liujiliu. All rights reserved.
 //
-
+#import "NSString+Date.h"
 #import "DFeedBackDetailViewController.h"
 #import "DFeedbackListLogic.h"
+#import "HUPhotoBrowser.h"
 @interface DFeedBackDetailViewController ()
 @property(nonatomic, strong)UIView *firstView;
 @property(nonatomic, strong)UIView *secondView;
@@ -16,19 +17,28 @@
 @property(nonatomic, strong)UILabel *detailLab;
 @property(nonatomic, strong)UILabel *feedbackLab;
 @property(nonatomic, strong)UIScrollView *scrollview;
+
+@property(nonatomic, strong)DFeedbackListLogic*logic;
 @end
 
 @implementation DFeedBackDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _logic=[[DFeedbackListLogic alloc]init];
     [self renderContents];
+    [self addBackItem];
     [self refreshData];
     // Do any additional setup after loading the view.
 }
 
 -(void)refreshData{
-    DFeedbackListLogic*logic=[[DFeedbackListLogic alloc]init];
+   
+    [_logic refreshFeedbackDetaik:^(id data) {
+        
+    } failed:^(NSError *error) {
+        
+    }];
    
 }
 
@@ -43,6 +53,79 @@
     [self.secondView addSubview:self.feedbackLab];
     
 }
+
+
+- (void)p_freshUI {
+    
+
+    FeedbackTypeModel *model = _logic.detailModel;
+    //title
+    NSString *title = model.desc.length>0?[NSString stringWithFormat:@"%@: %@",model.typeName,model.desc]:model.typeName;
+    self.titleLab.text = title;
+  self.detailLab.text = model.content;
+   
+    CGRect rect = [self.detailLab.text boundingRectWithSize:CGSizeMake(self.detailLab.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.detailLab.font} context:nil];
+    int detailLab_H = rect.size.height>35?rect.size.height+10:35;
+    self.detailLab.frame = CGRectMake(self.detailLab.frame.origin.x, self.detailLab.frame.origin.y,self.detailLab.width, detailLab_H);
+    
+    NSString*repalyTime=[model.createdAt timestampToDateDetailString];
+    self.dateLabl.text = repalyTime;
+    
+    int firstView_h = self.titleLab.height + self.dateLabl.height + 5 +self.detailLab.height;
+    
+    NSMutableArray *imagesicon = [NSMutableArray array];
+    NSArray *imageUrls = [NSArray array];
+    int width = (SCREEN_WIDTH-40)/2;
+    
+    if (model.imageUrls.length > 0) {
+        if ([model.imageUrls hasSuffix:@";"]) {
+            model.imageUrls = [model.imageUrls substringToIndex:model.imageUrls.length-1];
+        }
+        imageUrls = [model.imageUrls componentsSeparatedByString:@";"];
+        if (imageUrls.count<3) {
+            firstView_h = firstView_h + (width+10)*1+10;
+        } else {
+            firstView_h = firstView_h + (width+10)*2+10;
+        }
+    } else {
+        firstView_h = firstView_h+10;
+    }
+    self.firstView.frame = CGRectMake(self.firstView.frame.origin.x, self.firstView.frame.origin.y,self.firstView.width, firstView_h);
+    for (int i = 0; i<imageUrls.count; i++) {
+        int x = i%2;
+        int y = i/2;
+        UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(15+x*(width+10),self.detailLab.bottom+5+(width+10)*y, width, width)];
+        NSString *url = imageUrls[i];
+        NSString*imageUrl=[NSString stringWithFormat:@"%@/files/%@",EmallHostUrl,url];
+//        [imageV sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:ImageNamed(@"意见反馈")];
+        [imageV sd_setImageWithURL:[NSURL URLWithString:imageUrl] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            if (imageV.image) [imagesicon addObject:imageV.image];
+        }];
+        imageV.tag = i+100;
+        imageV.userInteractionEnabled = YES;
+        [imageV bk_whenTapped:^{
+            [HUPhotoBrowser showFromImageView:imageV withImages:imagesicon atIndex:i];
+        }];
+        [self.firstView addSubview:imageV];
+    }
+    if (model.reply.length>0) {
+        
+        NSString *feedback = NSLocalizedString(@"Feedback reply", @"反馈回复");
+        NSString *feedanswer = [NSString stringWithFormat:@"%@: %@",feedback,model.reply];
+        self.feedbackLab.text = feedanswer;
+        CGRect rect = [self.feedbackLab.text boundingRectWithSize:CGSizeMake(self.feedbackLab.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.feedbackLab.font} context:nil];
+        int detailLab_H = rect.size.height>35?rect.size.height:35;
+        self.feedbackLab.frame = CGRectMake(self.feedbackLab.frame.origin.x, self.feedbackLab.frame.origin.y,self.feedbackLab.width, detailLab_H);
+        int sencond_h = self.feedbackLab.height+30>110?self.feedbackLab.height+30:110;
+        self.secondView.frame = CGRectMake(0, self.firstView.bottom+15, self.secondView.width,sencond_h);
+    } else {
+        self.secondView.hidden = YES;
+    }
+    _scrollview.contentSize = CGSizeMake(SCREEN_WIDTH, self.firstView.height+self.secondView.height+120);
+    
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -53,7 +136,7 @@
 #pragma mark - Setting&&Getting
 - (UIScrollView *)scrollview {
     if (!_scrollview) {
-        _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)];
+        _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH,SCREEN_HEIGHT)];
         _scrollview.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT);
     }
     return _scrollview;

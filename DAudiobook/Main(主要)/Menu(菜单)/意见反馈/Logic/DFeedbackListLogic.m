@@ -95,16 +95,30 @@
     }];
   
 }
+
+
 - (void)refreshFeedbackDetaik:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback{
     NSString*url=NSStringFormat(@"%@%@",ServerUrl,URL_feedbacks_detai);
+    NSDictionary*params=@{@"id":self.id};
     NSString *access_token = help_userManager.oathInfo.access_token;
     NSString *token = NSStringFormat(@"Bearer %@",access_token);
     [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
     [PPNetworkHelper setValue:token forHTTPHeaderField:@"Authorization"];
-    [PPNetworkHelper GET:url parameters:nil success:^(id responseObject) {
+    [PPNetworkHelper GET:url parameters:params success:^(id responseObject) {
+         NSString*code=[NSString stringWithFormat:@"%@",responseObject[@"code"]];
+        if ([code isEqualToString:@"200"]) {
+            self.detailModel=[FeedbackTypeModel mj_objectWithKeyValues:responseObject[@"data"][@"detail"]];
+        } else {
+            
+        }
+        if (completedCallback) {
+            completedCallback(responseObject);
+        }
         
     } failure:^(NSError *error) {
-        
+        if (completedCallback) {
+            completedCallback(error);
+        }
     }];
 }
 

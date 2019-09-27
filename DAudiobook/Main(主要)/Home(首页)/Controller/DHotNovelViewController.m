@@ -21,6 +21,7 @@
 #import "MMDrawerBarButtonItem.h"
 #import "UIBarButtonItem+Helper.h"
 #import "LLSearchViewController.h"
+#import "PPBadgeView.h"
 @interface DHotNovelViewController()<UITableViewDelegate,UITableViewDataSource,SearchBarDisplayCenterDelegate> {
 
     
@@ -37,12 +38,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    // [self GDTadvertising];
-
+  
     self.logic = [HomePageLogic new];
     [self SearchBar];
     [self setupUI];
     
 //    [self setupData];
+    
     //下啦刷新
     [self refreshData];
     
@@ -52,7 +54,14 @@
     
     //刷新列表
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KNotificationHomePageRefreshList object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshRedDot) name:KNotificationRedDotRefresh object:nil];
+    
 
+}
+
+-(void)refreshRedDot{
+  [self.navigationItem.rightBarButtonItem pp_addDotWithColor:[UIColor redColor]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -125,6 +134,7 @@
 - (void)rightBarItemPress{
     DMessageViewController*vc=[[DMessageViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
+    [self.navigationItem.rightBarButtonItem  pp_hiddenBadge];
 }
 
 #pragma - PrivateMethods

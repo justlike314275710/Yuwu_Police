@@ -362,7 +362,6 @@
 		55ED6395233DA2A6004A9C37 /* PSCollecArtcleListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED6394233DA2A6004A9C37 /* PSCollecArtcleListViewModel.m */; };
 		55ED6398233DA2C6004A9C37 /* CollectionArtcleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED6396233DA2C5004A9C37 /* CollectionArtcleViewController.m */; };
 		55ED639B233DEA0A004A9C37 /* HAccountViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED639A233DEA0A004A9C37 /* HAccountViewModel.m */; };
-		55ED639F233DFA5E004A9C37 /* XXEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED639D233DFA5E004A9C37 /* XXEmptyView.m */; };
 		E473341141BF7F02638F5529 /* libPods-DAudiobook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A489DFF9190310E891E597 /* libPods-DAudiobook.a */; };
 		EA92622D233DEB360028FAF7 /* XXEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA92622B233DEB2D0028FAF7 /* XXEmptyView.m */; };
 		EA94570423385ABA003C1C97 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94570223385AB9003C1C97 /* UITextView+Placeholder.m */; };
@@ -826,6 +825,10 @@
 		EAA311B7233472D8004DE08F /* NSObject+A2DynamicDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA31193233472D7004DE08F /* NSObject+A2DynamicDelegate.m */; };
 		EAA311BA23347B76004DE08F /* UIImage+WLCompress.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA311B923347B76004DE08F /* UIImage+WLCompress.m */; };
 		EABE0E51233E12BC000B7345 /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = EABE0E50233E12BC000B7345 /* UIBarButtonItem+Badge.m */; };
+		EABE0E5C233E2B80000B7345 /* UITabBarItem+PPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EABE0E53233E2B7F000B7345 /* UITabBarItem+PPBadgeView.m */; };
+		EABE0E5D233E2B80000B7345 /* PPBadgeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = EABE0E58233E2B7F000B7345 /* PPBadgeControl.m */; };
+		EABE0E5E233E2B80000B7345 /* UIBarButtonItem+PPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EABE0E5A233E2B80000B7345 /* UIBarButtonItem+PPBadgeView.m */; };
+		EABE0E5F233E2B80000B7345 /* UIView+PPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EABE0E5B233E2B80000B7345 /* UIView+PPBadgeView.m */; };
 		EAE6BC8F233DB54300E4C4DB /* DFeedBackDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6BC8E233DB54300E4C4DB /* DFeedBackDetailViewController.m */; };
 		EAE6BC9F233DB92400E4C4DB /* LLSearchResultListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6BC92233DB91E00E4C4DB /* LLSearchResultListViewCell.m */; };
 		EAE6BCA0233DB92400E4C4DB /* LLSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6BC93233DB91F00E4C4DB /* LLSearchResultViewController.m */; };
@@ -1444,8 +1447,6 @@
 		55ED6397233DA2C6004A9C37 /* CollectionArtcleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionArtcleViewController.h; sourceTree = "<group>"; };
 		55ED6399233DEA0A004A9C37 /* HAccountViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAccountViewModel.h; sourceTree = "<group>"; };
 		55ED639A233DEA0A004A9C37 /* HAccountViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAccountViewModel.m; sourceTree = "<group>"; };
-		55ED639D233DFA5E004A9C37 /* XXEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXEmptyView.m; sourceTree = "<group>"; };
-		55ED639E233DFA5E004A9C37 /* XXEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXEmptyView.h; sourceTree = "<group>"; };
 		77A489DFF9190310E891E597 /* libPods-DAudiobook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DAudiobook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10A1B66EF6EE62C2CCE46C8 /* Pods-DAudiobook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DAudiobook.debug.xcconfig"; path = "Target Support Files/Pods-DAudiobook/Pods-DAudiobook.debug.xcconfig"; sourceTree = "<group>"; };
 		EA92622B233DEB2D0028FAF7 /* XXEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXEmptyView.m; sourceTree = "<group>"; };
@@ -2370,6 +2371,15 @@
 		EAA311B923347B76004DE08F /* UIImage+WLCompress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WLCompress.m"; sourceTree = "<group>"; };
 		EABE0E4F233E12BB000B7345 /* UIBarButtonItem+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Badge.h"; sourceTree = "<group>"; };
 		EABE0E50233E12BC000B7345 /* UIBarButtonItem+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Badge.m"; sourceTree = "<group>"; };
+		EABE0E53233E2B7F000B7345 /* UITabBarItem+PPBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+PPBadgeView.m"; sourceTree = "<group>"; };
+		EABE0E54233E2B7F000B7345 /* PPBadgeControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPBadgeControl.h; sourceTree = "<group>"; };
+		EABE0E55233E2B7F000B7345 /* PPBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPBadgeView.h; sourceTree = "<group>"; };
+		EABE0E56233E2B7F000B7345 /* UIView+PPBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PPBadgeView.h"; sourceTree = "<group>"; };
+		EABE0E57233E2B7F000B7345 /* UIBarButtonItem+PPBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+PPBadgeView.h"; sourceTree = "<group>"; };
+		EABE0E58233E2B7F000B7345 /* PPBadgeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPBadgeControl.m; sourceTree = "<group>"; };
+		EABE0E59233E2B7F000B7345 /* UITabBarItem+PPBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+PPBadgeView.h"; sourceTree = "<group>"; };
+		EABE0E5A233E2B80000B7345 /* UIBarButtonItem+PPBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+PPBadgeView.m"; sourceTree = "<group>"; };
+		EABE0E5B233E2B80000B7345 /* UIView+PPBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PPBadgeView.m"; sourceTree = "<group>"; };
 		EAE6BC8D233DB54300E4C4DB /* DFeedBackDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DFeedBackDetailViewController.h; sourceTree = "<group>"; };
 		EAE6BC8E233DB54300E4C4DB /* DFeedBackDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DFeedBackDetailViewController.m; sourceTree = "<group>"; };
 		EAE6BC91233DB91E00E4C4DB /* LLSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSearchViewController.h; sourceTree = "<group>"; };
@@ -2961,7 +2971,7 @@
 		3C4A392D22681A0E00882244 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
-				55ED639C233DFA2D004A9C37 /* XXEmptyView */,
+				EABE0E52233E2B7F000B7345 /* PPBadgeView */,
 				EAA21BE8233CB88E00A06819 /* SVProgressHUD */,
 				EAA21BCA233CB77800A06819 /* HUPhotoBrowser */,
 				55CC6550233B6C4500D4A581 /* SDTextLimitTool */,
@@ -3879,15 +3889,6 @@
 				55CC6552233B6C4500D4A581 /* SDTextLimitTool.m */,
 			);
 			path = SDTextLimitTool;
-			sourceTree = "<group>";
-		};
-		55ED639C233DFA2D004A9C37 /* XXEmptyView */ = {
-			isa = PBXGroup;
-			children = (
-				55ED639E233DFA5E004A9C37 /* XXEmptyView.h */,
-				55ED639D233DFA5E004A9C37 /* XXEmptyView.m */,
-			);
-			path = XXEmptyView;
 			sourceTree = "<group>";
 		};
 		628B1DEB0318C3A3A857DDB1 /* Pods */ = {
@@ -5866,6 +5867,22 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
+		EABE0E52233E2B7F000B7345 /* PPBadgeView */ = {
+			isa = PBXGroup;
+			children = (
+				EABE0E53233E2B7F000B7345 /* UITabBarItem+PPBadgeView.m */,
+				EABE0E54233E2B7F000B7345 /* PPBadgeControl.h */,
+				EABE0E55233E2B7F000B7345 /* PPBadgeView.h */,
+				EABE0E56233E2B7F000B7345 /* UIView+PPBadgeView.h */,
+				EABE0E57233E2B7F000B7345 /* UIBarButtonItem+PPBadgeView.h */,
+				EABE0E58233E2B7F000B7345 /* PPBadgeControl.m */,
+				EABE0E59233E2B7F000B7345 /* UITabBarItem+PPBadgeView.h */,
+				EABE0E5A233E2B80000B7345 /* UIBarButtonItem+PPBadgeView.m */,
+				EABE0E5B233E2B80000B7345 /* UIView+PPBadgeView.m */,
+			);
+			path = PPBadgeView;
+			sourceTree = "<group>";
+		};
 		EAE6BC90233DB8F800E4C4DB /* 文章搜索 */ = {
 			isa = PBXGroup;
 			children = (
@@ -6399,6 +6416,7 @@
 				EA960AE7232F29FB00D81A25 /* NIMSessionFileTransContentView.m in Sources */,
 				3C4A3A3F22681A0F00882244 /* FMDatabaseQueue.m in Sources */,
 				EAA31024233461CF004DE08F /* NSString+emoji.m in Sources */,
+				EABE0E5C233E2B80000B7345 /* UITabBarItem+PPBadgeView.m in Sources */,
 				EAA311AE233472D8004DE08F /* UITextField+BlocksKit.m in Sources */,
 				EA960B56232F2FE900D81A25 /* UIImage+ForceDecode.m in Sources */,
 				EAA21BC6233CB71D00A06819 /* PSPhotoBrowser.m in Sources */,
@@ -6540,6 +6558,7 @@
 				3C25315F22953C6C0049968C /* DVideoCell.m in Sources */,
 				EA960DC8232F616600D81A25 /* PSLoginTopView.m in Sources */,
 				EA960AD6232F29FB00D81A25 /* NIMSessionMsgDatasource.m in Sources */,
+				EABE0E5F233E2B80000B7345 /* UIView+PPBadgeView.m in Sources */,
 				EAA30EDE23330FE0004DE08F /* KGStatusBar.m in Sources */,
 				EAA3119D233472D8004DE08F /* NSSet+BlocksKit.m in Sources */,
 				EA960DE2232F831700D81A25 /* RMTimer.m in Sources */,
@@ -6562,7 +6581,6 @@
 				3C4A3A3922681A0F00882244 /* View+MASAdditions.m in Sources */,
 				554E92F3233A2851009D2429 /* DMessageModel.m in Sources */,
 				3C4A3A3422681A0F00882244 /* ViewController+MASAdditions.m in Sources */,
-				55ED639F233DFA5E004A9C37 /* XXEmptyView.m in Sources */,
 				3C0DB64222D731ED0029730E /* MJPropertyType.m in Sources */,
 				3C1E8262228189CA005D7A11 /* UIViewController+Animation.m in Sources */,
 				EA960AE5232F29FB00D81A25 /* NIMSessionNetChatNotifyContentView.m in Sources */,
@@ -6696,8 +6714,10 @@
 				3C4A3A1B22681A0E00882244 /* UIColor+ColorHelper.m in Sources */,
 				5542A78C233B050900E4B5D7 /* NSObject+Tool.m in Sources */,
 				EA960D9B232F5BA000D81A25 /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,
+				EABE0E5E233E2B80000B7345 /* UIBarButtonItem+PPBadgeView.m in Sources */,
 				EA960B66232F2FE900D81A25 /* SDImageCacheConfig.m in Sources */,
 				3CACB10222928BBF0006AB3C /* UIImage+LBDecoder.m in Sources */,
+				EABE0E5D233E2B80000B7345 /* PPBadgeControl.m in Sources */,
 				3C4A3A1E22681A0E00882244 /* SDiPhoneVersion.m in Sources */,
 				EA960E1B232F84F900D81A25 /* AFSecurityPolicy.m in Sources */,
 				EAA21BF5233CB88F00A06819 /* SVIndefiniteAnimatedView.m in Sources */,

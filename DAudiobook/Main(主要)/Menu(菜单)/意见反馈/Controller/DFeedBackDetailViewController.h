@@ -9,5 +9,5 @@
 #import "DViewController.h"
 
 @interface DFeedBackDetailViewController : DViewController
-
+@property (nonatomic , strong) NSString *detailId;
 @end

@@ -83,7 +83,7 @@
 //新增加意见反馈
 #define URL_feedbacks_add     @"/api/feedbacks/addOpinion"
 #define URL_feedbacks_page    @"/api/feedbacks/findPage"
-#define URL_feedbacks_detai   @"/api/feedbacks/detai"
+#define URL_feedbacks_detai   @"/api/feedbacks/detail"
 
 
 

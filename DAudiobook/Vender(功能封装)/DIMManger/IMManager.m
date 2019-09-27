@@ -130,6 +130,7 @@ SINGLETON_FOR_CLASS(IMManager);
 #pragma mark ————— 代理 收到新消息 —————
 - (void)onRecvMessages:(NSArray<NIMMessage *> *)messages{
     NSLog(@"收到新消息");
+    [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationRedDotRefresh object:nil];
 //    if (messages.count <=0) return;
 //    NIMMessage *meeesage = [messages objectAtIndex:0];
 //    NSString *msg = meeesage.text.length>0?meeesage.text:meeesage.apnsContent;
@@ -147,6 +148,7 @@ SINGLETON_FOR_CLASS(IMManager);
 
 -(void)onReceiveCustomSystemNotification:(NIMCustomSystemNotification *)notification{
       NSLog(@"***收到新消息***");
+    [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationRedDotRefresh object:nil];
 //    NSData *jsonData = [notification.content dataUsingEncoding:NSUTF8StringEncoding];
 //    NSDictionary*dic=[NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
 //    if ([dic[@"type"] isEqualToString:@"RUSH_PAGE_REFRESH"]) {

@@ -5,7 +5,7 @@
 //  Created by 狂生烈徒 on 2019/9/19.
 //  Copyright © 2019年 liujiliu. All rights reserved.
 //
-
+#import "DFeedBackDetailViewController.h"
 #import "DWriteFeedListViewController.h"
 #import "DWriteFeedbackViewController.h"
 #import "FeedbackListCell.h"
@@ -125,15 +125,11 @@
     return imageUrls.count>0?190:120;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     FeedbackTypeModel *model = _logic.Recodes[indexPath.row];
-//    feedbackListViewModel.id = model.id;
-//    PSWriteFeedbackDetailViewController *feedbackDetailVC = [[PSWriteFeedbackDetailViewController alloc] initWithViewModel:feedbackListViewModel];
-//    UIViewController *VC = [UIViewController jsd_getCurrentViewController];
-//    [VC.navigationController pushViewController:feedbackDetailVC animated:YES];
-    //    [self.navigationController pushViewController:feedbackDetailVC animated:YES];
-    
+    DFeedBackDetailViewController*feedbackDetailVC=[[DFeedBackDetailViewController alloc]init];
+    feedbackDetailVC.detailId=model.id;
+    [self.navigationController pushViewController:feedbackDetailVC animated:YES];
 }
 
 

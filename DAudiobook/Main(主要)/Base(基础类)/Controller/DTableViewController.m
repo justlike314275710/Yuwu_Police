@@ -12,8 +12,8 @@
 #import "UIBarButtonItem+Helper.h"
 #import "UIViewController+MMDrawerController.h"
 #import "DAllControllersTool.h"
-#import "UIBarButtonItem+Badge.h"
 
+#import "PPBadgeView.h"
 #import "GDTMobBannerView.h"
 
 
@@ -186,11 +186,12 @@
 //    MMDrawerBarButtonItem *titleItem = [MMDrawerBarButtonItem itemWithTitle:[self getMenuTitle] target:self action:@selector(leftDrawerButtonPress)];
     
     self.navigationItem.leftBarButtonItems = @[leftItem];
+  
+    
     
     UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc]initWithNormalIcon:@"消息icon" highlightedIcon:nil target:self action:@selector(rightBarItemPress)];
     self.navigationItem.rightBarButtonItem = rightBarItem;
-    self.navigationItem.rightBarButtonItem.badgeBGColor=[UIColor redColor];
-    self.navigationItem.rightBarButtonItem.badgeValue=@"1";
+
 
     
 }

@@ -175,5 +175,5 @@ return shared##className; \
 //刷新收藏文章列表
 #define KNotificationCollectArtickeRefreshList    @"KNotificationCollectArtickeRefreshList"
 
-
-
+//红点刷新
+#define KNotificationRedDotRefresh @"KNotificationRedDotRefresh"
