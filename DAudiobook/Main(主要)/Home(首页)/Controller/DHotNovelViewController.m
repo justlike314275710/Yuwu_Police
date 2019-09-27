@@ -158,7 +158,7 @@
     [viewModel praiseArticleCompleted:^(id data) {
         dispatch_async(dispatch_get_main_queue(), ^{
             NSString *msg = data[@"msg"];
-            NSInteger code = [data[@"code "] integerValue];
+            NSInteger code = [data[@"code"] integerValue];
             [PSTipsView showTips:msg];
             if (code == 200){
                 result(YES);

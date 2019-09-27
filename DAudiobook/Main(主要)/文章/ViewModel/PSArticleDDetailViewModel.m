@@ -24,6 +24,7 @@
     access_token = NSStringFormat(@"Bearer %@",access_token);
     [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
     [PPNetworkHelper setResponseSerializer:PPResponseSerializerJSON];
+    [PPNetworkHelper setValue:access_token forHTTPHeaderField:@"Authorization"];
     [PPNetworkHelper GET:urlString parameters:params success:^(id responseObject) {
         NSInteger code = [[responseObject valueForKey:@"code"] integerValue];
         if (code == 200) {
@@ -50,6 +51,7 @@
     NSDictionary *params = @{@"articleId":self.id};
     NSString *access_token = help_userManager.oathInfo.access_token;
     access_token = NSStringFormat(@"Bearer %@",access_token);
+    [PPNetworkHelper setValue:access_token forHTTPHeaderField:@"Authorization"];
     [PPNetworkHelper POST:urlString parameters:params success:^(id responseObject) {
         if (completedCallback) {
             completedCallback(responseObject);
@@ -69,6 +71,7 @@
     NSDictionary *params = @{@"articleId":self.id};
     NSString *access_token = help_userManager.oathInfo.access_token;
     access_token = NSStringFormat(@"Bearer %@",access_token);
+    [PPNetworkHelper setValue:access_token forHTTPHeaderField:@"Authorization"];
     [PPNetworkHelper POST:urlString parameters:params success:^(id responseObject) {
         if (completedCallback) {
             completedCallback(responseObject);
@@ -89,6 +92,7 @@
     NSDictionary *params = @{@"articleId":self.id};
     NSString *access_token = help_userManager.oathInfo.access_token;
     access_token = NSStringFormat(@"Bearer %@",access_token);
+    [PPNetworkHelper setValue:access_token forHTTPHeaderField:@"Authorization"];
     [PPNetworkHelper POST:urlString parameters:params success:^(id responseObject) {
         if (completedCallback) {
             completedCallback(responseObject);
@@ -108,6 +112,7 @@
     NSDictionary *params = @{@"articleId":self.id};
     NSString *access_token = help_userManager.oathInfo.access_token;
     access_token = NSStringFormat(@"Bearer %@",access_token);
+    [PPNetworkHelper setValue:access_token forHTTPHeaderField:@"Authorization"];
     [PPNetworkHelper POST:urlString parameters:params success:^(id responseObject) {
         if (completedCallback) {
             completedCallback(responseObject);
