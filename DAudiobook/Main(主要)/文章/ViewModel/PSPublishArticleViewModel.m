@@ -91,8 +91,7 @@
                     //        {"msg":"存在敏感字","code":1586,"data":{"words":["测试","刘德华"]}}
                     if (code==1586) {
                         NSDictionary *responseDic =[dataDic objectForKey:@"data"];
-                        NSDictionary *dic = [responseDic valueForKey:@"data"];
-                        self.words =  [dic valueForKey:@"words"];
+                        self.words =  [responseDic valueForKey:@"words"];
                         NSLog(@"%@",_words);
                     }
                     if (completedCallback) {

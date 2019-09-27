@@ -19,7 +19,7 @@
 #import "PPNetworkHelper.h"
 #import "KGStatusBar.h"
 #import "DVersionManger.h"
-#import "ZXCTimer.h"
+
 
 @interface AppDelegate ()
 @property (retain, nonatomic) GDTSplashAd  *splash;

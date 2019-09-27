@@ -174,6 +174,9 @@ return shared##className; \
 #define KNotificationHomePageRefreshList    @"KNotificationHomePageRefreshList"
 //刷新收藏文章列表
 #define KNotificationCollectArtickeRefreshList    @"KNotificationCollectArtickeRefreshList"
+//刷新我的文章列表
+#define KNotificationRefreshMyArticle    @"KNotificationRefreshMyArticle"
+
 
 
 

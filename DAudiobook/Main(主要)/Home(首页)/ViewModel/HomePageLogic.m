@@ -9,6 +9,7 @@
 #import "HomePageLogic.h"
 #import "PSArticleDetailModel.h"
 #import "AFNetworking.h"
+#import "PSPublicArticleModel.h"
 @interface HomePageLogic()
 @property (nonatomic,strong)NSMutableArray *items;
 
@@ -101,7 +102,7 @@
 //获取是否能发文章权限
 - (void)authorArticleCompleted:(RequestDataCompleted)completedCallback
                         failed:(RequestDataFailed)failedCallback {
-    NSString *userName = help_userManager.curUserInfo.account;
+    NSString *userName = help_userManager.curUserInfo.account?help_userManager.curUserInfo.account:@"";
     NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_author];
     NSDictionary *parameters = @{@"userName":userName,@"type":@"2"};
     NSString *token = NSStringFormat(@"Bearer %@",help_userManager.oathInfo.access_token);
@@ -111,9 +112,12 @@
     [PPNetworkHelper POST:urlString parameters:parameters success:^(id responseObject) {
         NSLog(@"%@",responseObject);
         if (responseObject) {
+            PSPublicArticleModel *model = [PSPublicArticleModel modelWithJSON:responseObject[@"author"]];
+            self.author = [model.isEnabled integerValue];
             completedCallback(responseObject);
         } else {
-            self.author = YES; //没任何返回默认有权限
+            self.author = NO;
+            completedCallback(responseObject);
         }
     } failure:^(NSError *error) {
         NSData *data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey];
@@ -121,6 +125,7 @@
             id body = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             NSLog(@"%@",body);
         }
+        self.author = NO;
         if (error) {
             failedCallback(error);
         }

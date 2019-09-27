@@ -58,13 +58,13 @@
     [self.nameLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.headImg.mas_right).offset(10);
         make.height.mas_equalTo(21);
-        make.width.mas_equalTo(75);
+        make.width.mas_equalTo(85);
         make.centerY.mas_equalTo(self.headImg);
     }];
     
     [_bgView addSubview:self.stateImageView];
     [self.stateImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_nameLab.mas_right).offset(5);
+        make.left.mas_equalTo(_nameLab.mas_right).offset(0);
         make.height.mas_equalTo(15);
         make.width.mas_equalTo(50);
         make.centerY.mas_equalTo(self.headImg);

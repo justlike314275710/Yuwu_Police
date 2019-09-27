@@ -362,7 +362,18 @@
 		55ED6395233DA2A6004A9C37 /* PSCollecArtcleListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED6394233DA2A6004A9C37 /* PSCollecArtcleListViewModel.m */; };
 		55ED6398233DA2C6004A9C37 /* CollectionArtcleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED6396233DA2C5004A9C37 /* CollectionArtcleViewController.m */; };
 		55ED639B233DEA0A004A9C37 /* HAccountViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED639A233DEA0A004A9C37 /* HAccountViewModel.m */; };
-		55ED639F233DFA5E004A9C37 /* XXEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED639D233DFA5E004A9C37 /* XXEmptyView.m */; };
+		55ED63A3233E32DC004A9C37 /* ZQLocalNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED63A2233E32DC004A9C37 /* ZQLocalNotification.m */; };
+		55ED63B8233E3452004A9C37 /* EBBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED63AA233E3451004A9C37 /* EBBannerView.m */; };
+		55ED63B9233E3452004A9C37 /* EBBannerViewMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED63AB233E3451004A9C37 /* EBBannerViewMaker.m */; };
+		55ED63BA233E3452004A9C37 /* EBEmptyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED63AC233E3451004A9C37 /* EBEmptyWindow.m */; };
+		55ED63BB233E3452004A9C37 /* EBBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55ED63AD233E3451004A9C37 /* EBBannerView.xib */; };
+		55ED63BC233E3452004A9C37 /* EBBannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55ED63AE233E3451004A9C37 /* EBBannerViewController.xib */; };
+		55ED63BD233E3452004A9C37 /* EBBannerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED63AF233E3451004A9C37 /* EBBannerWindow.m */; };
+		55ED63BE233E3452004A9C37 /* EBCustomBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED63B0233E3451004A9C37 /* EBCustomBannerView.m */; };
+		55ED63BF233E3452004A9C37 /* EBMuteDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED63B1233E3451004A9C37 /* EBMuteDetector.m */; };
+		55ED63C0233E3452004A9C37 /* EBBannerView+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED63B2233E3451004A9C37 /* EBBannerView+Categories.m */; };
+		55ED63C1233E3452004A9C37 /* EBMuteDetector.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55ED63B4233E3451004A9C37 /* EBMuteDetector.mp3 */; };
+		55ED63C2233E3452004A9C37 /* EBBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED63B5233E3451004A9C37 /* EBBannerViewController.m */; };
 		E473341141BF7F02638F5529 /* libPods-DAudiobook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A489DFF9190310E891E597 /* libPods-DAudiobook.a */; };
 		EA92622D233DEB360028FAF7 /* XXEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA92622B233DEB2D0028FAF7 /* XXEmptyView.m */; };
 		EA94570423385ABA003C1C97 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94570223385AB9003C1C97 /* UITextView+Placeholder.m */; };
@@ -1444,8 +1455,26 @@
 		55ED6397233DA2C6004A9C37 /* CollectionArtcleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionArtcleViewController.h; sourceTree = "<group>"; };
 		55ED6399233DEA0A004A9C37 /* HAccountViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HAccountViewModel.h; sourceTree = "<group>"; };
 		55ED639A233DEA0A004A9C37 /* HAccountViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HAccountViewModel.m; sourceTree = "<group>"; };
-		55ED639D233DFA5E004A9C37 /* XXEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXEmptyView.m; sourceTree = "<group>"; };
-		55ED639E233DFA5E004A9C37 /* XXEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXEmptyView.h; sourceTree = "<group>"; };
+		55ED63A1233E32DB004A9C37 /* ZQLocalNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQLocalNotification.h; sourceTree = "<group>"; };
+		55ED63A2233E32DC004A9C37 /* ZQLocalNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQLocalNotification.m; sourceTree = "<group>"; };
+		55ED63A5233E3451004A9C37 /* EBCustomBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBCustomBannerView.h; sourceTree = "<group>"; };
+		55ED63A7233E3451004A9C37 /* EBMuteDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBMuteDetector.h; sourceTree = "<group>"; };
+		55ED63A8233E3451004A9C37 /* EBBannerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBBannerWindow.h; sourceTree = "<group>"; };
+		55ED63A9233E3451004A9C37 /* EBBannerView+Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EBBannerView+Categories.h"; sourceTree = "<group>"; };
+		55ED63AA233E3451004A9C37 /* EBBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBBannerView.m; sourceTree = "<group>"; };
+		55ED63AB233E3451004A9C37 /* EBBannerViewMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBBannerViewMaker.m; sourceTree = "<group>"; };
+		55ED63AC233E3451004A9C37 /* EBEmptyWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBEmptyWindow.m; sourceTree = "<group>"; };
+		55ED63AD233E3451004A9C37 /* EBBannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EBBannerView.xib; sourceTree = "<group>"; };
+		55ED63AE233E3451004A9C37 /* EBBannerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EBBannerViewController.xib; sourceTree = "<group>"; };
+		55ED63AF233E3451004A9C37 /* EBBannerWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBBannerWindow.m; sourceTree = "<group>"; };
+		55ED63B0233E3451004A9C37 /* EBCustomBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBCustomBannerView.m; sourceTree = "<group>"; };
+		55ED63B1233E3451004A9C37 /* EBMuteDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBMuteDetector.m; sourceTree = "<group>"; };
+		55ED63B2233E3451004A9C37 /* EBBannerView+Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EBBannerView+Categories.m"; sourceTree = "<group>"; };
+		55ED63B3233E3451004A9C37 /* EBEmptyWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBEmptyWindow.h; sourceTree = "<group>"; };
+		55ED63B4233E3451004A9C37 /* EBMuteDetector.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = EBMuteDetector.mp3; sourceTree = "<group>"; };
+		55ED63B5233E3451004A9C37 /* EBBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBBannerViewController.m; sourceTree = "<group>"; };
+		55ED63B6233E3451004A9C37 /* EBBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBBannerViewController.h; sourceTree = "<group>"; };
+		55ED63B7233E3451004A9C37 /* EBBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBBannerView.h; sourceTree = "<group>"; };
 		77A489DFF9190310E891E597 /* libPods-DAudiobook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DAudiobook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10A1B66EF6EE62C2CCE46C8 /* Pods-DAudiobook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DAudiobook.debug.xcconfig"; path = "Target Support Files/Pods-DAudiobook/Pods-DAudiobook.debug.xcconfig"; sourceTree = "<group>"; };
 		EA92622B233DEB2D0028FAF7 /* XXEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXEmptyView.m; sourceTree = "<group>"; };
@@ -2961,7 +2990,8 @@
 		3C4A392D22681A0E00882244 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
-				55ED639C233DFA2D004A9C37 /* XXEmptyView */,
+				55ED63A4233E3451004A9C37 /* EBBannerView */,
+				55ED63A0233E32C7004A9C37 /* ZQLocalNotification */,
 				EAA21BE8233CB88E00A06819 /* SVProgressHUD */,
 				EAA21BCA233CB77800A06819 /* HUPhotoBrowser */,
 				55CC6550233B6C4500D4A581 /* SDTextLimitTool */,
@@ -3881,13 +3911,46 @@
 			path = SDTextLimitTool;
 			sourceTree = "<group>";
 		};
-		55ED639C233DFA2D004A9C37 /* XXEmptyView */ = {
+		55ED63A0233E32C7004A9C37 /* ZQLocalNotification */ = {
 			isa = PBXGroup;
 			children = (
-				55ED639E233DFA5E004A9C37 /* XXEmptyView.h */,
-				55ED639D233DFA5E004A9C37 /* XXEmptyView.m */,
+				55ED63A1233E32DB004A9C37 /* ZQLocalNotification.h */,
+				55ED63A2233E32DC004A9C37 /* ZQLocalNotification.m */,
 			);
-			path = XXEmptyView;
+			path = ZQLocalNotification;
+			sourceTree = "<group>";
+		};
+		55ED63A4233E3451004A9C37 /* EBBannerView */ = {
+			isa = PBXGroup;
+			children = (
+				55ED63A5233E3451004A9C37 /* EBCustomBannerView.h */,
+				55ED63A6233E3451004A9C37 /* Classes */,
+				55ED63B6233E3451004A9C37 /* EBBannerViewController.h */,
+				55ED63B7233E3451004A9C37 /* EBBannerView.h */,
+			);
+			path = EBBannerView;
+			sourceTree = "<group>";
+		};
+		55ED63A6233E3451004A9C37 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				55ED63A7233E3451004A9C37 /* EBMuteDetector.h */,
+				55ED63A8233E3451004A9C37 /* EBBannerWindow.h */,
+				55ED63A9233E3451004A9C37 /* EBBannerView+Categories.h */,
+				55ED63AA233E3451004A9C37 /* EBBannerView.m */,
+				55ED63AB233E3451004A9C37 /* EBBannerViewMaker.m */,
+				55ED63AC233E3451004A9C37 /* EBEmptyWindow.m */,
+				55ED63AD233E3451004A9C37 /* EBBannerView.xib */,
+				55ED63AE233E3451004A9C37 /* EBBannerViewController.xib */,
+				55ED63AF233E3451004A9C37 /* EBBannerWindow.m */,
+				55ED63B0233E3451004A9C37 /* EBCustomBannerView.m */,
+				55ED63B1233E3451004A9C37 /* EBMuteDetector.m */,
+				55ED63B2233E3451004A9C37 /* EBBannerView+Categories.m */,
+				55ED63B3233E3451004A9C37 /* EBEmptyWindow.h */,
+				55ED63B4233E3451004A9C37 /* EBMuteDetector.mp3 */,
+				55ED63B5233E3451004A9C37 /* EBBannerViewController.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		628B1DEB0318C3A3A857DDB1 /* Pods */ = {
@@ -5983,6 +6046,7 @@
 				3C4542B82275AB0600AE50B1 /* 4535925.json in Resources */,
 				EA960B51232F2FE900D81A25 /* LICENSE in Resources */,
 				3C4542BD2275AB0600AE50B1 /* 11627864.json in Resources */,
+				55ED63BC233E3452004A9C37 /* EBBannerViewController.xib in Resources */,
 				3C4542C12275AB0600AE50B1 /* 10129560.json in Resources */,
 				EA960B15232F2F5900D81A25 /* README.md in Resources */,
 				3C4542D42275AB0600AE50B1 /* 9742533.json in Resources */,
@@ -6036,6 +6100,7 @@
 				3C4542DE2275AB0600AE50B1 /* 2667276.json in Resources */,
 				EA960D8E232F5B9F00D81A25 /* LICENSE in Resources */,
 				3C4542CE2275AB0600AE50B1 /* 5163253.json in Resources */,
+				55ED63C1233E3452004A9C37 /* EBMuteDetector.mp3 in Resources */,
 				3C4542DC2275AB0600AE50B1 /* 231992.json in Resources */,
 				3C4542BB2275AB0600AE50B1 /* 13363635.json in Resources */,
 				3C4543182275AB0600AE50B1 /* 7568525.json in Resources */,
@@ -6062,6 +6127,7 @@
 				3C4542F62275AB0600AE50B1 /* 13359469.json in Resources */,
 				3C4542FC2275AB0600AE50B1 /* 8461936.json in Resources */,
 				3C4542BA2275AB0600AE50B1 /* 16030452.json in Resources */,
+				55ED63BB233E3452004A9C37 /* EBBannerView.xib in Resources */,
 				3C4542FD2275AB0600AE50B1 /* 12642831.json in Resources */,
 				3C4542C42275AB0600AE50B1 /* 11574332.json in Resources */,
 				3C4542F02275AB0600AE50B1 /* 15065572.json in Resources */,
@@ -6203,6 +6269,7 @@
 				EA960ACD232F29FB00D81A25 /* NIMNotificationContentConfig.m in Sources */,
 				EA960B1A232F2F5900D81A25 /* NSMutableAttributedString+M80.m in Sources */,
 				EAA21BC9233CB71D00A06819 /* FeedLoadItemView.m in Sources */,
+				55ED63C2233E3452004A9C37 /* EBBannerViewController.m in Sources */,
 				55ED639B233DEA0A004A9C37 /* HAccountViewModel.m in Sources */,
 				3CACB10122928BBF0006AB3C /* LBPhotoBrowserManager.m in Sources */,
 				EA960DBC232F600B00D81A25 /* DLoginViewController.m in Sources */,
@@ -6288,6 +6355,7 @@
 				3C0DB69022D7320B0029730E /* MJRefreshAutoFooter.m in Sources */,
 				EAA21BE2233CB77900A06819 /* HUWebImageDownloadOperation.m in Sources */,
 				EAA21BC7233CB71D00A06819 /* FeedbackListCell.m in Sources */,
+				55ED63BD233E3452004A9C37 /* EBBannerWindow.m in Sources */,
 				3CD2D7EC2297CCF700C700D7 /* DSlider.m in Sources */,
 				EA960A90232F29FA00D81A25 /* NIMKitTimerHolder.m in Sources */,
 				3C39357622882A5400A5190A /* BAGridViewTypeTitleDescCell.m in Sources */,
@@ -6465,6 +6533,7 @@
 				EA960A85232F29FA00D81A25 /* NIMContactDataItem.m in Sources */,
 				EA960CA3232F3B1C00D81A25 /* YYTextParser.m in Sources */,
 				EA960C90232F3B1B00D81A25 /* CALayer+YYWebImage.m in Sources */,
+				55ED63BE233E3452004A9C37 /* EBCustomBannerView.m in Sources */,
 				554E92E3233A1DAE009D2429 /* JSONAPI.m in Sources */,
 				EAE6BCA0233DB92400E4C4DB /* LLSearchResultViewController.m in Sources */,
 				3C0DB64322D731ED0029730E /* NSObject+MJKeyValue.m in Sources */,
@@ -6518,6 +6587,7 @@
 				EA960B69232F2FE900D81A25 /* SDWebImageImageIOCoder.m in Sources */,
 				EA960AC7232F29FB00D81A25 /* NIMSessionListCell.m in Sources */,
 				EA960D97232F5BA000D81A25 /* DGActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
+				55ED63C0233E3452004A9C37 /* EBBannerView+Categories.m in Sources */,
 				EA960CD1232F3B1C00D81A25 /* YYThreadSafeArray.m in Sources */,
 				EA960A89232F29FA00D81A25 /* NIMContactDataCell.m in Sources */,
 				EA960CC4232F3B1C00D81A25 /* NSObject+YYAddForKVO.m in Sources */,
@@ -6529,10 +6599,12 @@
 				EAA21BF2233CB88F00A06819 /* SVRadialGradientLayer.m in Sources */,
 				3C4A3A1822681A0E00882244 /* UIView+Additions.m in Sources */,
 				554E92DF233A1DAE009D2429 /* JSONModel.m in Sources */,
+				55ED63A3233E32DC004A9C37 /* ZQLocalNotification.m in Sources */,
 				3CDB10AF228FEC8300AEDE9E /* DPictureViewController.m in Sources */,
 				EA960AFC232F29FB00D81A25 /* NIMKitConfig.m in Sources */,
 				EA960E0D232F84F900D81A25 /* UIProgressView+AFNetworking.m in Sources */,
 				3C4A3A6322681A0F00882244 /* DViewController.m in Sources */,
+				55ED63B9233E3452004A9C37 /* EBBannerViewMaker.m in Sources */,
 				EA960CBC232F3B1C00D81A25 /* NSThread+YYAdd.m in Sources */,
 				EA960ACA232F29FB00D81A25 /* NIMLocationContentConfig.m in Sources */,
 				EA960AD8232F29FB00D81A25 /* NIMSessionLayoutImpl.m in Sources */,
@@ -6562,7 +6634,6 @@
 				3C4A3A3922681A0F00882244 /* View+MASAdditions.m in Sources */,
 				554E92F3233A2851009D2429 /* DMessageModel.m in Sources */,
 				3C4A3A3422681A0F00882244 /* ViewController+MASAdditions.m in Sources */,
-				55ED639F233DFA5E004A9C37 /* XXEmptyView.m in Sources */,
 				3C0DB64222D731ED0029730E /* MJPropertyType.m in Sources */,
 				3C1E8262228189CA005D7A11 /* UIViewController+Animation.m in Sources */,
 				EA960AE5232F29FB00D81A25 /* NIMSessionNetChatNotifyContentView.m in Sources */,
@@ -6662,11 +6733,13 @@
 				EAA3101B23338BE4004DE08F /* DUpdataModel.m in Sources */,
 				55ED6398233DA2C6004A9C37 /* CollectionArtcleViewController.m in Sources */,
 				EA960DA6232F5BA000D81A25 /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
+				55ED63B8233E3452004A9C37 /* EBBannerView.m in Sources */,
 				EAA31198233472D8004DE08F /* NSMutableArray+BlocksKit.m in Sources */,
 				55B078CE233CD1D5009BDDBC /* PSPublicArticleModel.m in Sources */,
 				55CC6553233B6C4500D4A581 /* SDTextLimitTool.m in Sources */,
 				3CABB1D322746B3000F699C5 /* DAlbumHeadView.m in Sources */,
 				EA960DA8232F5BA000D81A25 /* DGActivityIndicatorFiveDotsAnimation.m in Sources */,
+				55ED63BF233E3452004A9C37 /* EBMuteDetector.m in Sources */,
 				3C4A3A7D226858F800882244 /* AppDelegate+UI.m in Sources */,
 				EA960A9C232F29FA00D81A25 /* NIMInputEmoticonTabView.m in Sources */,
 				EA960AEB232F29FB00D81A25 /* NIMSessionRobotContentView.m in Sources */,
@@ -6730,6 +6803,7 @@
 				EA960AD0232F29FB00D81A25 /* NIMTextContentConfig.m in Sources */,
 				EA960ADF232F29FB00D81A25 /* NIMSessionTimestampCell.m in Sources */,
 				EA960C8B232F3B1B00D81A25 /* YYFrameImage.m in Sources */,
+				55ED63BA233E3452004A9C37 /* EBEmptyWindow.m in Sources */,
 				EA960DAD232F5BA000D81A25 /* DGActivityIndicatorBallZigZagDeflectAnimation.m in Sources */,
 				EAA311B0233472D8004DE08F /* MFMailComposeViewController+BlocksKit.m in Sources */,
 				EA960E15232F84F900D81A25 /* AFImageDownloader.m in Sources */,

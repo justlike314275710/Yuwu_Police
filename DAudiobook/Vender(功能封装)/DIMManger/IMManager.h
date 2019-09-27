@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <NIMSDK/NIMSDK.h>
+typedef NS_ENUM(NSInteger, PSMeetingCode) {
+    PSMessageArticleInteractive = 4,    //互动文章消息
+};
 
 typedef void (^loginBlock)(BOOL success, NSString * des);
 
