@@ -13,8 +13,7 @@
 #define kTimeInterval 30
 @interface DMenuHeadView ()
 
-@property(nonatomic, strong) UIImageView    *iconView;
-@property(nonatomic, strong) UILabel        *nameLable;
+
 @property(nonatomic, strong) UIImageView    *levelView;
 
 @property(nonatomic, strong) UILabel        *infoLabel;
@@ -139,7 +138,6 @@
     if (!_iconView) {
         _iconView = [[UIImageView alloc] init];
         //_iconView.image = [UIImage imageNamed:@"小熊明星资讯"];
-         [_iconView setImageWithURL:[NSURL URLWithString:help_userManager.curUserInfo.avatar] placeholder:[UIImage imageNamed:@"小熊明星资讯"]];
         _iconView.layer.cornerRadius = kIconView_W/2;
         _iconView.layer.masksToBounds = YES;
         _iconView.layer.borderWidth = 2;
@@ -151,7 +149,7 @@
 -(UILabel*)nameLable{
     if (!_nameLable) {
         _nameLable = [[UILabel alloc] init];
-        _nameLable.text =help_userManager.lawUserInfo.pseudonym?help_userManager.lawUserInfo.pseudonym:@"";
+//        _nameLable.text =help_userManager.lawUserInfo.pseudonym?help_userManager.lawUserInfo.pseudonym:@"";
         _nameLable.textColor = [UIColor whiteColor];
         _nameLable.font = AppFont(24);
         _nameLable.shadowColor = [UIColor blackColor];

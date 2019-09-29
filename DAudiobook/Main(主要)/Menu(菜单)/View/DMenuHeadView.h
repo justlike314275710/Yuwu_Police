@@ -19,6 +19,8 @@ typedef void(^HeaderViewClickEvent)(void);
 @property(nonatomic, strong) NSTimer *timer;
 @property(nonatomic, copy) HeaderViewClickEvent headerViewBlock;
 
+@property(nonatomic, strong) UIImageView    *iconView;
+@property(nonatomic, strong) UILabel        *nameLable;
 
 @property(nonatomic, strong) NSString *uesrName;
 @property(nonatomic, strong) UIImage  *userIcon;

@@ -837,6 +837,11 @@
 		EAA311B7233472D8004DE08F /* NSObject+A2DynamicDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA31193233472D7004DE08F /* NSObject+A2DynamicDelegate.m */; };
 		EAA311BA23347B76004DE08F /* UIImage+WLCompress.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA311B923347B76004DE08F /* UIImage+WLCompress.m */; };
 		EABE0E51233E12BC000B7345 /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = EABE0E50233E12BC000B7345 /* UIBarButtonItem+Badge.m */; };
+		EABE0E6A233E4EEB000B7345 /* UITabBarItem+PPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EABE0E61233E4EEA000B7345 /* UITabBarItem+PPBadgeView.m */; };
+		EABE0E6B233E4EEB000B7345 /* PPBadgeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = EABE0E66233E4EEA000B7345 /* PPBadgeControl.m */; };
+		EABE0E6C233E4EEB000B7345 /* UIBarButtonItem+PPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EABE0E68233E4EEA000B7345 /* UIBarButtonItem+PPBadgeView.m */; };
+		EABE0E6D233E4EEB000B7345 /* UIView+PPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EABE0E69233E4EEA000B7345 /* UIView+PPBadgeView.m */; };
+		EABE0E74233F700A000B7345 /* DTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EABE0E73233F700A000B7345 /* DTitleTableViewCell.m */; };
 		EAE6BC8F233DB54300E4C4DB /* DFeedBackDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6BC8E233DB54300E4C4DB /* DFeedBackDetailViewController.m */; };
 		EAE6BC9F233DB92400E4C4DB /* LLSearchResultListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6BC92233DB91E00E4C4DB /* LLSearchResultListViewCell.m */; };
 		EAE6BCA0233DB92400E4C4DB /* LLSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6BC93233DB91F00E4C4DB /* LLSearchResultViewController.m */; };
@@ -2399,6 +2404,17 @@
 		EAA311B923347B76004DE08F /* UIImage+WLCompress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WLCompress.m"; sourceTree = "<group>"; };
 		EABE0E4F233E12BB000B7345 /* UIBarButtonItem+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Badge.h"; sourceTree = "<group>"; };
 		EABE0E50233E12BC000B7345 /* UIBarButtonItem+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Badge.m"; sourceTree = "<group>"; };
+		EABE0E61233E4EEA000B7345 /* UITabBarItem+PPBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+PPBadgeView.m"; sourceTree = "<group>"; };
+		EABE0E62233E4EEA000B7345 /* PPBadgeControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPBadgeControl.h; sourceTree = "<group>"; };
+		EABE0E63233E4EEA000B7345 /* PPBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPBadgeView.h; sourceTree = "<group>"; };
+		EABE0E64233E4EEA000B7345 /* UIView+PPBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PPBadgeView.h"; sourceTree = "<group>"; };
+		EABE0E65233E4EEA000B7345 /* UIBarButtonItem+PPBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+PPBadgeView.h"; sourceTree = "<group>"; };
+		EABE0E66233E4EEA000B7345 /* PPBadgeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPBadgeControl.m; sourceTree = "<group>"; };
+		EABE0E67233E4EEA000B7345 /* UITabBarItem+PPBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+PPBadgeView.h"; sourceTree = "<group>"; };
+		EABE0E68233E4EEA000B7345 /* UIBarButtonItem+PPBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+PPBadgeView.m"; sourceTree = "<group>"; };
+		EABE0E69233E4EEA000B7345 /* UIView+PPBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PPBadgeView.m"; sourceTree = "<group>"; };
+		EABE0E72233F700A000B7345 /* DTitleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTitleTableViewCell.h; sourceTree = "<group>"; };
+		EABE0E73233F700A000B7345 /* DTitleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DTitleTableViewCell.m; sourceTree = "<group>"; };
 		EAE6BC8D233DB54300E4C4DB /* DFeedBackDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DFeedBackDetailViewController.h; sourceTree = "<group>"; };
 		EAE6BC8E233DB54300E4C4DB /* DFeedBackDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DFeedBackDetailViewController.m; sourceTree = "<group>"; };
 		EAE6BC91233DB91E00E4C4DB /* LLSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSearchViewController.h; sourceTree = "<group>"; };
@@ -2990,6 +3006,7 @@
 		3C4A392D22681A0E00882244 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				EABE0E60233E4EEA000B7345 /* PPBadgeView */,
 				55ED63A4233E3451004A9C37 /* EBBannerView */,
 				55ED63A0233E32C7004A9C37 /* ZQLocalNotification */,
 				EAA21BE8233CB88E00A06819 /* SVProgressHUD */,
@@ -5929,6 +5946,22 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
+		EABE0E60233E4EEA000B7345 /* PPBadgeView */ = {
+			isa = PBXGroup;
+			children = (
+				EABE0E61233E4EEA000B7345 /* UITabBarItem+PPBadgeView.m */,
+				EABE0E62233E4EEA000B7345 /* PPBadgeControl.h */,
+				EABE0E63233E4EEA000B7345 /* PPBadgeView.h */,
+				EABE0E64233E4EEA000B7345 /* UIView+PPBadgeView.h */,
+				EABE0E65233E4EEA000B7345 /* UIBarButtonItem+PPBadgeView.h */,
+				EABE0E66233E4EEA000B7345 /* PPBadgeControl.m */,
+				EABE0E67233E4EEA000B7345 /* UITabBarItem+PPBadgeView.h */,
+				EABE0E68233E4EEA000B7345 /* UIBarButtonItem+PPBadgeView.m */,
+				EABE0E69233E4EEA000B7345 /* UIView+PPBadgeView.m */,
+			);
+			path = PPBadgeView;
+			sourceTree = "<group>";
+		};
 		EAE6BC90233DB8F800E4C4DB /* 文章搜索 */ = {
 			isa = PBXGroup;
 			children = (
@@ -5946,6 +5979,8 @@
 				EAE6BC95233DB91F00E4C4DB /* LLSearchView.m */,
 				EAE6BC91233DB91E00E4C4DB /* LLSearchViewController.h */,
 				EAE6BC9C233DB92300E4C4DB /* LLSearchViewController.m */,
+				EABE0E72233F700A000B7345 /* DTitleTableViewCell.h */,
+				EABE0E73233F700A000B7345 /* DTitleTableViewCell.m */,
 			);
 			path = "文章搜索";
 			sourceTree = "<group>";
@@ -6351,6 +6386,7 @@
 				55B078B3233C9827009BDDBC /* PSArticleStateViewController.m in Sources */,
 				3CD2D82D229985ED00C700D7 /* DPostModel.m in Sources */,
 				EA960ADB232F29FB00D81A25 /* NIMKitLocationPoint.m in Sources */,
+				EABE0E6C233E4EEB000B7345 /* UIBarButtonItem+PPBadgeView.m in Sources */,
 				EAA311AD233472D8004DE08F /* UIImagePickerController+BlocksKit.m in Sources */,
 				3C0DB69022D7320B0029730E /* MJRefreshAutoFooter.m in Sources */,
 				EAA21BE2233CB77900A06819 /* HUWebImageDownloadOperation.m in Sources */,
@@ -6649,6 +6685,7 @@
 				EA960C93232F3B1B00D81A25 /* NSObject+YYModel.m in Sources */,
 				EA960B55232F2FE900D81A25 /* SDWebImageFrame.m in Sources */,
 				55B078CD233CD1D5009BDDBC /* PSCollectArticleListModel.m in Sources */,
+				EABE0E6B233E4EEB000B7345 /* PPBadgeControl.m in Sources */,
 				EA960C87232F3B1B00D81A25 /* YYWebImageManager.m in Sources */,
 				3C4A3A3722681A0F00882244 /* MASLayoutConstraint.m in Sources */,
 				EA960BB0232F32E500D81A25 /* PSLoadingView.m in Sources */,
@@ -6728,6 +6765,7 @@
 				EA960AEC232F29FB00D81A25 /* NIMMessageCell.m in Sources */,
 				EA960AEF232F29FB00D81A25 /* NSDictionary+NIMKit.m in Sources */,
 				3C0DB64522D731ED0029730E /* NSObject+MJCoding.m in Sources */,
+				EABE0E74233F700A000B7345 /* DTitleTableViewCell.m in Sources */,
 				EA960B62232F2FE900D81A25 /* NSData+ImageContentType.m in Sources */,
 				3C1E8265228190A2005D7A11 /* DMusicDetailView.m in Sources */,
 				EAA3101B23338BE4004DE08F /* DUpdataModel.m in Sources */,
@@ -6825,6 +6863,7 @@
 				EA960E69233075BE00D81A25 /* IQUIViewController+Additions.m in Sources */,
 				EA94574E233A2C40003C1C97 /* HMActionSheetView.m in Sources */,
 				EA960AED232F29FB00D81A25 /* NIMLocationViewController.m in Sources */,
+				EABE0E6D233E4EEB000B7345 /* UIView+PPBadgeView.m in Sources */,
 				EAE6BC9F233DB92400E4C4DB /* LLSearchResultListViewCell.m in Sources */,
 				EAA311AB233472D8004DE08F /* UIPopoverController+BlocksKit.m in Sources */,
 				5542A7D2233B19FE00E4B5D7 /* UIView+Empty.m in Sources */,
@@ -6862,6 +6901,7 @@
 				EA960C97232F3B1C00D81A25 /* YYTextContainerView.m in Sources */,
 				EA960A99232F29FA00D81A25 /* NIMInputAudioRecordIndicatorView.m in Sources */,
 				EAA21BF3233CB88F00A06819 /* SVProgressAnimatedView.m in Sources */,
+				EABE0E6A233E4EEB000B7345 /* UITabBarItem+PPBadgeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

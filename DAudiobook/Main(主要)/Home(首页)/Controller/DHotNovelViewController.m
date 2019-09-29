@@ -139,7 +139,6 @@
 
 #pragma - PrivateMethods
 - (void)setupUI {
-
     [self.view addSubview:self.tableview];
     [self.view addSubview:self.publishBtn];
     [self.tableview registerClass:[PSPlatformArticleCell class] forCellReuseIdentifier:@"PSPlatformArticleCell"];

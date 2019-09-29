@@ -5,7 +5,7 @@
 //  Created by 王龙龙 on 2017/7/25.
 //  Copyright © 2017年 王龙龙. All rights reserved.
 //
-
+#import "DTitleTableViewCell.h"
 #import "LLSearchSuggestionVC.h"
 
 @interface LLSearchSuggestionVC ()<UITableViewDelegate, UITableViewDataSource>
@@ -20,11 +20,12 @@
 - (UITableView *)contentView
 {
     if (!_contentView) {
-        self.contentView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight) style:UITableViewStylePlain];
+        self.contentView = [[UITableView alloc] initWithFrame:CGRectMake(0, 15, KScreenWidth, KScreenHeight) style:UITableViewStylePlain];
         _contentView.delegate = self;
         _contentView.dataSource = self;
         _contentView.backgroundColor = [UIColor whiteColor];
         _contentView.tableFooterView = [UIView new];
+        _contentView.separatorStyle=UITableViewCellAccessoryNone;
     }
     return _contentView;
 }
@@ -34,6 +35,7 @@
 {
     [super viewDidLoad];
     [self.view addSubview:self.contentView];
+    [self.contentView registerClass:[DTitleTableViewCell class] forCellReuseIdentifier:@"DTitleTableViewCell"];
 }
 
 - (void)searchTestChangeWithTest:(NSString *)test
@@ -57,12 +59,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellId = @"CellIdentifier";
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-    }
-    cell.textLabel.text = [NSString stringWithFormat:@"%@编号%ld", _searchTest, indexPath.row];
+    static NSString *cellId = @"DTitleTableViewCell";
+    //DTitleTableViewCell*cell=[UITableViewCell initw];
+//    if (!cell) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+//    }
+//    cell.textLabel.text = [NSString stringWithFormat:@"%@编号%ld", _searchTest, indexPath.row];
+     DTitleTableViewCell*cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     return cell;
 }
 
@@ -71,7 +74,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44;
+    return 69;
 }
 
 

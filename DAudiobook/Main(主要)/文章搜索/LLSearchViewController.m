@@ -105,14 +105,16 @@
 {
     [self.navigationItem setHidesBackButton:YES];
     // 创建搜索框
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(5, 7, self.view.frame.size.width, 30)];
-    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(titleView.frame) - 15, 30)];
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(5, 5, self.view.frame.size.width, 30)];
+    ViewRadius(titleView, 15);
+    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(5, 0, CGRectGetWidth(titleView.frame) - 15-5, 30)];
     searchBar.placeholder = @"搜索文章|连载书籍";
-    searchBar.backgroundImage = [UIImage imageNamed:@"clearImage"];
+   // searchBar.backgroundImage = [UIImage imageNamed:@"clearImage"];
     searchBar.delegate = self;
     searchBar.showsCancelButton = YES;
     UIView *searchTextField = searchTextField = [searchBar valueForKey:@"_searchField"];
-    searchTextField.backgroundColor = [UIColor colorWithRed:234/255.0 green:235/255.0 blue:237/255.0 alpha:1];
+    searchTextField.backgroundColor = [UIColor whiteColor];
+   // ViewRadius(searchBar, 15);
     [searchBar setImage:[UIImage imageNamed:@"sort_magnifier"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
     UIButton *cancleBtn = [searchBar valueForKey:@"cancelButton"];
     //修改标题和标题颜色

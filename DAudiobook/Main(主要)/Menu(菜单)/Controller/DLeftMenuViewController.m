@@ -59,6 +59,8 @@
 //区头
 -(void)initializeTableHeaderView{
      self.menuHeadView.frame=CGRectMake(0, 0, kScreenWidth,200+MenuHeadViewTopDistance);
+     self.menuHeadView.nameLable.text=help_userManager.lawUserInfo.pseudonym?help_userManager.lawUserInfo.pseudonym:@"";
+    [self.menuHeadView.iconView setImageWithURL:[NSURL URLWithString:help_userManager.curUserInfo.avatar] placeholder:[UIImage imageNamed:@"小熊明星资讯"]];
      self.tableView.tableHeaderView = self.menuHeadView;
      WEAKSELF
      self.menuHeadView.headerViewBlock = ^{

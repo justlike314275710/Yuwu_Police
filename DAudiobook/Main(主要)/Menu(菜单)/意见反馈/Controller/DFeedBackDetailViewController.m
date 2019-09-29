@@ -29,15 +29,18 @@
     [self renderContents];
     [self addBackItem];
     [self refreshData];
+    self.title=@"意见详情";
     // Do any additional setup after loading the view.
 }
 
 -(void)refreshData{
-   
+    _logic.id=self.detailId;
+    [[PSLoadingView sharedInstance]show];
     [_logic refreshFeedbackDetaik:^(id data) {
-        
+        [self p_freshUI];
+        [[PSLoadingView sharedInstance]dismiss];
     } failed:^(NSError *error) {
-        
+        [[PSLoadingView sharedInstance]dismiss];
     }];
    
 }
