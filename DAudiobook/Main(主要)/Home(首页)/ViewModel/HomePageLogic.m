@@ -114,6 +114,7 @@
         if (responseObject) {
             PSPublicArticleModel *model = [PSPublicArticleModel modelWithJSON:responseObject[@"author"]];
             self.author = [model.isEnabled integerValue];
+            if(!model) self.author = YES;
             completedCallback(responseObject);
         } else {
             self.author = NO;

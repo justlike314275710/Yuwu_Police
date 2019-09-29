@@ -374,6 +374,10 @@
 		55ED63C0233E3452004A9C37 /* EBBannerView+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED63B2233E3451004A9C37 /* EBBannerView+Categories.m */; };
 		55ED63C1233E3452004A9C37 /* EBMuteDetector.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55ED63B4233E3451004A9C37 /* EBMuteDetector.mp3 */; };
 		55ED63C2233E3452004A9C37 /* EBBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED63B5233E3451004A9C37 /* EBBannerViewController.m */; };
+		55FF6BCD2340499B0001FA6C /* UITabBarItem+PPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF6BC42340499B0001FA6C /* UITabBarItem+PPBadgeView.m */; };
+		55FF6BCE2340499B0001FA6C /* PPBadgeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF6BC92340499B0001FA6C /* PPBadgeControl.m */; };
+		55FF6BCF2340499B0001FA6C /* UIBarButtonItem+PPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF6BCB2340499B0001FA6C /* UIBarButtonItem+PPBadgeView.m */; };
+		55FF6BD02340499B0001FA6C /* UIView+PPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FF6BCC2340499B0001FA6C /* UIView+PPBadgeView.m */; };
 		E473341141BF7F02638F5529 /* libPods-DAudiobook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A489DFF9190310E891E597 /* libPods-DAudiobook.a */; };
 		EA92622D233DEB360028FAF7 /* XXEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA92622B233DEB2D0028FAF7 /* XXEmptyView.m */; };
 		EA94570423385ABA003C1C97 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94570223385AB9003C1C97 /* UITextView+Placeholder.m */; };
@@ -1475,6 +1479,15 @@
 		55ED63B5233E3451004A9C37 /* EBBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBBannerViewController.m; sourceTree = "<group>"; };
 		55ED63B6233E3451004A9C37 /* EBBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBBannerViewController.h; sourceTree = "<group>"; };
 		55ED63B7233E3451004A9C37 /* EBBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBBannerView.h; sourceTree = "<group>"; };
+		55FF6BC42340499B0001FA6C /* UITabBarItem+PPBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+PPBadgeView.m"; sourceTree = "<group>"; };
+		55FF6BC52340499B0001FA6C /* PPBadgeControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPBadgeControl.h; sourceTree = "<group>"; };
+		55FF6BC62340499B0001FA6C /* PPBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPBadgeView.h; sourceTree = "<group>"; };
+		55FF6BC72340499B0001FA6C /* UIView+PPBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PPBadgeView.h"; sourceTree = "<group>"; };
+		55FF6BC82340499B0001FA6C /* UIBarButtonItem+PPBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+PPBadgeView.h"; sourceTree = "<group>"; };
+		55FF6BC92340499B0001FA6C /* PPBadgeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPBadgeControl.m; sourceTree = "<group>"; };
+		55FF6BCA2340499B0001FA6C /* UITabBarItem+PPBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+PPBadgeView.h"; sourceTree = "<group>"; };
+		55FF6BCB2340499B0001FA6C /* UIBarButtonItem+PPBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+PPBadgeView.m"; sourceTree = "<group>"; };
+		55FF6BCC2340499B0001FA6C /* UIView+PPBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PPBadgeView.m"; sourceTree = "<group>"; };
 		77A489DFF9190310E891E597 /* libPods-DAudiobook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DAudiobook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10A1B66EF6EE62C2CCE46C8 /* Pods-DAudiobook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DAudiobook.debug.xcconfig"; path = "Target Support Files/Pods-DAudiobook/Pods-DAudiobook.debug.xcconfig"; sourceTree = "<group>"; };
 		EA92622B233DEB2D0028FAF7 /* XXEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXEmptyView.m; sourceTree = "<group>"; };
@@ -2990,6 +3003,7 @@
 		3C4A392D22681A0E00882244 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				55FF6BC32340499A0001FA6C /* PPBadgeView */,
 				55ED63A4233E3451004A9C37 /* EBBannerView */,
 				55ED63A0233E32C7004A9C37 /* ZQLocalNotification */,
 				EAA21BE8233CB88E00A06819 /* SVProgressHUD */,
@@ -3951,6 +3965,22 @@
 				55ED63B5233E3451004A9C37 /* EBBannerViewController.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		55FF6BC32340499A0001FA6C /* PPBadgeView */ = {
+			isa = PBXGroup;
+			children = (
+				55FF6BC42340499B0001FA6C /* UITabBarItem+PPBadgeView.m */,
+				55FF6BC52340499B0001FA6C /* PPBadgeControl.h */,
+				55FF6BC62340499B0001FA6C /* PPBadgeView.h */,
+				55FF6BC72340499B0001FA6C /* UIView+PPBadgeView.h */,
+				55FF6BC82340499B0001FA6C /* UIBarButtonItem+PPBadgeView.h */,
+				55FF6BC92340499B0001FA6C /* PPBadgeControl.m */,
+				55FF6BCA2340499B0001FA6C /* UITabBarItem+PPBadgeView.h */,
+				55FF6BCB2340499B0001FA6C /* UIBarButtonItem+PPBadgeView.m */,
+				55FF6BCC2340499B0001FA6C /* UIView+PPBadgeView.m */,
+			);
+			path = PPBadgeView;
 			sourceTree = "<group>";
 		};
 		628B1DEB0318C3A3A857DDB1 /* Pods */ = {
@@ -6351,6 +6381,7 @@
 				55B078B3233C9827009BDDBC /* PSArticleStateViewController.m in Sources */,
 				3CD2D82D229985ED00C700D7 /* DPostModel.m in Sources */,
 				EA960ADB232F29FB00D81A25 /* NIMKitLocationPoint.m in Sources */,
+				55FF6BCF2340499B0001FA6C /* UIBarButtonItem+PPBadgeView.m in Sources */,
 				EAA311AD233472D8004DE08F /* UIImagePickerController+BlocksKit.m in Sources */,
 				3C0DB69022D7320B0029730E /* MJRefreshAutoFooter.m in Sources */,
 				EAA21BE2233CB77900A06819 /* HUWebImageDownloadOperation.m in Sources */,
@@ -6649,6 +6680,7 @@
 				EA960C93232F3B1B00D81A25 /* NSObject+YYModel.m in Sources */,
 				EA960B55232F2FE900D81A25 /* SDWebImageFrame.m in Sources */,
 				55B078CD233CD1D5009BDDBC /* PSCollectArticleListModel.m in Sources */,
+				55FF6BCE2340499B0001FA6C /* PPBadgeControl.m in Sources */,
 				EA960C87232F3B1B00D81A25 /* YYWebImageManager.m in Sources */,
 				3C4A3A3722681A0F00882244 /* MASLayoutConstraint.m in Sources */,
 				EA960BB0232F32E500D81A25 /* PSLoadingView.m in Sources */,
@@ -6825,6 +6857,7 @@
 				EA960E69233075BE00D81A25 /* IQUIViewController+Additions.m in Sources */,
 				EA94574E233A2C40003C1C97 /* HMActionSheetView.m in Sources */,
 				EA960AED232F29FB00D81A25 /* NIMLocationViewController.m in Sources */,
+				55FF6BD02340499B0001FA6C /* UIView+PPBadgeView.m in Sources */,
 				EAE6BC9F233DB92400E4C4DB /* LLSearchResultListViewCell.m in Sources */,
 				EAA311AB233472D8004DE08F /* UIPopoverController+BlocksKit.m in Sources */,
 				5542A7D2233B19FE00E4B5D7 /* UIView+Empty.m in Sources */,
@@ -6862,6 +6895,7 @@
 				EA960C97232F3B1C00D81A25 /* YYTextContainerView.m in Sources */,
 				EA960A99232F29FA00D81A25 /* NIMInputAudioRecordIndicatorView.m in Sources */,
 				EAA21BF3233CB88F00A06819 /* SVProgressAnimatedView.m in Sources */,
+				55FF6BCD2340499B0001FA6C /* UITabBarItem+PPBadgeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

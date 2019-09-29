@@ -149,8 +149,6 @@ SINGLETON_FOR_CLASS(IMManager);
 
 -(void)onReceiveCustomSystemNotification:(NIMCustomSystemNotification *)notification{
       NSLog(@"***收到新消息***");
-<<<<<<< HEAD
-    [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationRedDotRefresh object:nil];
 //    NSData *jsonData = [notification.content dataUsingEncoding:NSUTF8StringEncoding];
 //    NSDictionary*dic=[NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
 //    if ([dic[@"type"] isEqualToString:@"RUSH_PAGE_REFRESH"]) {
@@ -205,7 +203,7 @@ SINGLETON_FOR_CLASS(IMManager);
 //            }
 //        }
 //    }
-=======
+
     NSData *jsonData = [notification.content dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary*dic=[NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
     NSInteger code = [dic[@"code"] integerValue];
@@ -223,9 +221,6 @@ SINGLETON_FOR_CLASS(IMManager);
         KPostNotification(KNotificationRefreshMyArticle, nil);
     
     }
-
-    
->>>>>>> 4a1f515eb8f54ac0240c64a9a18e6168f0ff27ee
 }
 
 @end
