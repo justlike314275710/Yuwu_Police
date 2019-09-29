@@ -209,8 +209,13 @@
        // _headImgView.frame = CGRectMake((self.view.width-90*Iphone6ScaleWidth)/2,64, 100*Iphone6ScaleWidth, 100*Iphone6ScaleWidth);
         ViewRadius(_headImgView, 30);
         [bgView addSubview:_headImgView];
-        //        [_headImgView setImageWithURL:[NSURL URLWithString:help_userManager.curUserInfo.avatar] options:YYWebImageOptionRefreshImageCache];
-        [_headImgView setImageWithURL:[NSURL URLWithString:help_userManager.curUserInfo.avatar] placeholder:[UIImage imageNamed:@"登录－头像"]];
+        if (help_userManager.avatarImage) {
+            [_headImgView setImage:help_userManager.avatarImage];
+        } else {
+            [_headImgView setImageWithURL:[NSURL URLWithString:help_userManager.curUserInfo.avatar] placeholder:[UIImage imageNamed:@"登录－头像"]];
+        }
+        
+
     }
     return _headImgView;
 }

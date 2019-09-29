@@ -104,7 +104,7 @@
     _searchBar.tintColor = [UIColor redColor];
     
     UIView *searchTextField = searchTextField = [self.searchBar valueForKey:@"_searchField"];
-    searchTextField.backgroundColor = [UIColor colorWithRed:234/255.0 green:235/255.0 blue:237/255.0 alpha:1];
+    searchTextField.backgroundColor = [UIColor clearColor];
     
     [self.searchBar setImage:[UIImage imageNamed:@"sort_magnifier"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
     [_titleView addSubview:_searchBar];

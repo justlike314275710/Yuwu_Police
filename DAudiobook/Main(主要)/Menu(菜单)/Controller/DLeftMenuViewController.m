@@ -33,15 +33,9 @@
 @end
 
 @implementation DLeftMenuViewController
-- (void)viewDidAppear:(BOOL)animated {
-    [self.menuHeadView.timer fire];
-    [self.menuHeadView refreshvView];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [self.menuHeadView.timer invalidate];
-    self.menuHeadView.timer = nil;
-    
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self reloadHeaderView];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,6 +43,10 @@
     contentInset.top =-MenuHeadViewTopDistance;
     [self.tableView setContentInset:contentInset];
     self.tableView.backgroundColor=ImportantColor;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadHeaderView)
+                                                 name:KNotificationMineDataChange
+                                               object:nil];
 }
 
 -(void)initializeData{
@@ -56,18 +54,40 @@
     [self.tableView  reloadData];
     
 }
+
+-(void)reloadHeaderView{
+    NSString *access_token =help_userManager.oathInfo.access_token;
+    NSString *token = NSStringFormat(@"Bearer %@",access_token);
+    [PPNetworkHelper setValue:token forHTTPHeaderField:@"Authorization"];
+    NSString *url = NSStringFormat(@"%@%@",EmallHostUrl,URL_get_im_info);
+    [PPNetworkHelper GET:url parameters:nil success:^(id responseObject) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[PSLoadingView sharedInstance]dismiss];
+        });
+        if (ValidDict(responseObject)) {
+            UserInfo *userInfo = [UserInfo modelWithDictionary:responseObject];
+            help_userManager.curUserInfo.avatar=userInfo.avatar;
+            [self initializeTableHeaderView];
+        } else {
+            
+        }
+    } failure:^(NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[PSLoadingView sharedInstance]dismiss];
+        });
+    }];
+    
+   
+}
+
 //区头
 -(void)initializeTableHeaderView{
      self.menuHeadView.frame=CGRectMake(0, 0, kScreenWidth,200+MenuHeadViewTopDistance);
      self.menuHeadView.nameLable.text=help_userManager.lawUserInfo.pseudonym?help_userManager.lawUserInfo.pseudonym:@"";
-    [self.menuHeadView.iconView setImageWithURL:[NSURL URLWithString:help_userManager.curUserInfo.avatar] placeholder:[UIImage imageNamed:@"小熊明星资讯"]];
+    [self.menuHeadView.iconView setImageWithURL:[NSURL URLWithString:help_userManager.curUserInfo.avatar] placeholder:[UIImage imageNamed:@"侧滑－大头像"]];
      self.tableView.tableHeaderView = self.menuHeadView;
      WEAKSELF
      self.menuHeadView.headerViewBlock = ^{
-//        DMeViewController *VC = [[DMeViewController alloc] init];
-//        DNavigationController*NVC = [[DNavigationController alloc] initWithRootViewController:VC];
-//        [weakSelf presentDropsWaterViewController:NVC];
-         
          DAccountViewController*vc=[[DAccountViewController alloc]init];
          DNavigationController*nav=[[DNavigationController alloc]initWithRootViewController:vc];
          [weakSelf presentViewController:nav animated:YES completion:nil];

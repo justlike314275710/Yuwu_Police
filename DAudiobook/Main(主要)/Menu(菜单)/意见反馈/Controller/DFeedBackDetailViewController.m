@@ -113,7 +113,7 @@
     }
     if (model.reply.length>0) {
         
-        NSString *feedback = NSLocalizedString(@"Feedback reply", @"反馈回复");
+        NSString *feedback = @"反馈回复";
         NSString *feedanswer = [NSString stringWithFormat:@"%@: %@",feedback,model.reply];
         self.feedbackLab.text = feedanswer;
         CGRect rect = [self.feedbackLab.text boundingRectWithSize:CGSizeMake(self.feedbackLab.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.feedbackLab.font} context:nil];

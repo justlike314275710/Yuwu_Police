@@ -71,29 +71,7 @@ typedef NS_ENUM(NSInteger, PSLoginModeType) {
     }];
     self.loginMiddleView.phoneTextField.delegate=self;
     
-//    loginViewModel.phoneNumber = self.loginMiddleView.phoneTextField.text;
-//    registViewModel.phoneNumber = self.loginMiddleView.phoneTextField.text;
-//    [self.loginMiddleView.phoneTextField setBk_didEndEditingBlock:^(UITextField *textField) {
-//        loginViewModel.phoneNumber = textField.text;
-//        registViewModel.phoneNumber=textField.text;
-//
-//    }];
-//
-//    @weakify(self)
-//    [self.loginMiddleView.codeButton bk_whenTapped:^{
-//        @strongify(self)
-//        [self codeClicks];//连续点击获取验证码
-//    }];
-//    [self.loginMiddleView.codeTextField setBk_didEndEditingBlock:^(UITextField *textField) {
-//        loginViewModel.messageCode =textField.text;
-//    }];
-//    [self.loginMiddleView.loginButton bk_whenTapped:^{
-//        @strongify(self)
-//        [self checkDataIsEmpty];
-//
-//    }];
-    // _loginMiddleView = midView;
-    
+
  
     [self.loginMiddleView.codeButton addTarget:self action:@selector(getCode) forControlEvents:UIControlEventTouchUpInside];
     
@@ -268,8 +246,8 @@ typedef NS_ENUM(NSInteger, PSLoginModeType) {
     NSMutableAttributedString *protocolText = [NSMutableAttributedString new];
     UIFont *textFont = FontOfSize(12);
     [protocolText appendAttributedString:[[NSAttributedString alloc] initWithString:read_agree attributes:@{NSFontAttributeName:textFont,NSForegroundColorAttributeName:AppBaseTextColor2}]];
-    [protocolText appendAttributedString:[[NSAttributedString  alloc] initWithString: usageProtocol attributes:@{NSFontAttributeName:textFont,NSForegroundColorAttributeName:AppBaseTextColor3}]];
-    [protocolText appendAttributedString:[[NSAttributedString  alloc] initWithString:@" " attributes:@{NSFontAttributeName:textFont,NSForegroundColorAttributeName:AppBaseTextColor3}]];
+    [protocolText appendAttributedString:[[NSAttributedString  alloc] initWithString: usageProtocol attributes:@{NSFontAttributeName:textFont,NSForegroundColorAttributeName:AppBaseTextColor2}]];
+    [protocolText appendAttributedString:[[NSAttributedString  alloc] initWithString:@" " attributes:@{NSFontAttributeName:textFont,NSForegroundColorAttributeName:AppBaseTextColor2}]];
     UIImage *statusImage = self.logic.agreeProtocol?[UIImage imageNamed:@"同意勾选icon"] : [UIImage imageNamed:@"未勾选"] ;
     [protocolText insertAttributedString:[NSAttributedString attachmentStringWithContent:statusImage contentMode:UIViewContentModeCenter attachmentSize:statusImage.size alignToFont:textFont alignment:YYTextVerticalAlignmentCenter] atIndex:0];
     protocolText.alignment = NSTextAlignmentRight ;

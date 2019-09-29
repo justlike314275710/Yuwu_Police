@@ -179,38 +179,38 @@
     }
     return _tapButton;
 }
-- (NSTimer *)timer {
-    WEAKSELF
-    if (!_timer) {
-        _timer = [NSTimer scheduledTimerWithTimeInterval:kTimeInterval repeats:YES block:^(NSTimer * _Nonnull timer) {
-            [UIView animateWithDuration:kTimeInterval * 0.5 animations:^{
-                weakSelf.backView.contentOffset = CGPointMake(0, 700);
-            } completion:^(BOOL finished) {
-                [UIView animateWithDuration:kTimeInterval * 0.5 animations:^{
-                    weakSelf.backView.contentOffset = CGPointMake(0, 0);
-                }];
-            }];
-        }];
-        [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
-    }
-    return _timer;
-}
-
--(void)refreshvView{
-    BmobUser*user = [BmobUser currentUser];
-    if (user) {
-        NSString*nickName=[user objectForKey:@"nickName"];
-        if (nickName.length) {
-           self.nameLable.text=nickName;
-        }
-        NSString*userLogo=[user objectForKey:@"userLogo"];
-        if (userLogo.length) {
-            [self.iconView sd_setImageWithURL:[NSURL URLWithString:[DInterfaceUrl getImgString:userLogo]] placeholderImage:[UIImage imageNamed:@"小熊明星资讯"]];
-        }
-        
-      
-        
-    }
-    
-}
+//- (NSTimer *)timer {
+//    WEAKSELF
+//    if (!_timer) {
+//        _timer = [NSTimer scheduledTimerWithTimeInterval:kTimeInterval repeats:YES block:^(NSTimer * _Nonnull timer) {
+//            [UIView animateWithDuration:kTimeInterval * 0.5 animations:^{
+//                weakSelf.backView.contentOffset = CGPointMake(0, 700);
+//            } completion:^(BOOL finished) {
+//                [UIView animateWithDuration:kTimeInterval * 0.5 animations:^{
+//                    weakSelf.backView.contentOffset = CGPointMake(0, 0);
+//                }];
+//            }];
+//        }];
+//        [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+//    }
+//    return _timer;
+//}
+//
+//-(void)refreshvView{
+//    BmobUser*user = [BmobUser currentUser];
+//    if (user) {
+//        NSString*nickName=[user objectForKey:@"nickName"];
+//        if (nickName.length) {
+//           self.nameLable.text=nickName;
+//        }
+//        NSString*userLogo=[user objectForKey:@"userLogo"];
+//        if (userLogo.length) {
+//            [self.iconView sd_setImageWithURL:[NSURL URLWithString:[DInterfaceUrl getImgString:userLogo]] placeholderImage:[UIImage imageNamed:@"小熊明星资讯"]];
+//        }
+//
+//
+//
+//    }
+//
+//}
 @end

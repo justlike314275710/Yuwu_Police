@@ -133,7 +133,7 @@
 {
       PSArticleDetailModel*model=_logic.Articles[indexPath.row];
     if (self.searchBlock) {
-        self.searchBlock(model.title);
+        self.searchBlock(_searchString);
     }
     
     PSArticleDDetailViewModel *viewModel = [PSArticleDDetailViewModel new];
