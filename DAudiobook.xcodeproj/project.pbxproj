@@ -842,6 +842,7 @@
 		EABE0E6C233E4EEB000B7345 /* UIBarButtonItem+PPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EABE0E68233E4EEA000B7345 /* UIBarButtonItem+PPBadgeView.m */; };
 		EABE0E6D233E4EEB000B7345 /* UIView+PPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EABE0E69233E4EEA000B7345 /* UIView+PPBadgeView.m */; };
 		EABE0E74233F700A000B7345 /* DTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EABE0E73233F700A000B7345 /* DTitleTableViewCell.m */; };
+		EABE0E7823403DBB000B7345 /* DSearchLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = EABE0E7723403DBB000B7345 /* DSearchLogic.m */; };
 		EAE6BC8F233DB54300E4C4DB /* DFeedBackDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6BC8E233DB54300E4C4DB /* DFeedBackDetailViewController.m */; };
 		EAE6BC9F233DB92400E4C4DB /* LLSearchResultListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6BC92233DB91E00E4C4DB /* LLSearchResultListViewCell.m */; };
 		EAE6BCA0233DB92400E4C4DB /* LLSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE6BC93233DB91F00E4C4DB /* LLSearchResultViewController.m */; };
@@ -2415,6 +2416,8 @@
 		EABE0E69233E4EEA000B7345 /* UIView+PPBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PPBadgeView.m"; sourceTree = "<group>"; };
 		EABE0E72233F700A000B7345 /* DTitleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTitleTableViewCell.h; sourceTree = "<group>"; };
 		EABE0E73233F700A000B7345 /* DTitleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DTitleTableViewCell.m; sourceTree = "<group>"; };
+		EABE0E7623403DBB000B7345 /* DSearchLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSearchLogic.h; sourceTree = "<group>"; };
+		EABE0E7723403DBB000B7345 /* DSearchLogic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSearchLogic.m; sourceTree = "<group>"; };
 		EAE6BC8D233DB54300E4C4DB /* DFeedBackDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DFeedBackDetailViewController.h; sourceTree = "<group>"; };
 		EAE6BC8E233DB54300E4C4DB /* DFeedBackDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DFeedBackDetailViewController.m; sourceTree = "<group>"; };
 		EAE6BC91233DB91E00E4C4DB /* LLSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSearchViewController.h; sourceTree = "<group>"; };
@@ -5962,9 +5965,19 @@
 			path = PPBadgeView;
 			sourceTree = "<group>";
 		};
+		EABE0E7523403D5F000B7345 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				EABE0E7623403DBB000B7345 /* DSearchLogic.h */,
+				EABE0E7723403DBB000B7345 /* DSearchLogic.m */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
 		EAE6BC90233DB8F800E4C4DB /* 文章搜索 */ = {
 			isa = PBXGroup;
 			children = (
+				EABE0E7523403D5F000B7345 /* Logic */,
 				EAE6BC99233DB92100E4C4DB /* LLSearchResultDoubleViewCell.h */,
 				EAE6BC98233DB92100E4C4DB /* LLSearchResultDoubleViewCell.m */,
 				EAE6BC96233DB92000E4C4DB /* LLSearchResultListViewCell.h */,
@@ -6684,6 +6697,7 @@
 				3C0DB68B22D7320B0029730E /* MJRefreshStateHeader.m in Sources */,
 				EA960C93232F3B1B00D81A25 /* NSObject+YYModel.m in Sources */,
 				EA960B55232F2FE900D81A25 /* SDWebImageFrame.m in Sources */,
+				EABE0E7823403DBB000B7345 /* DSearchLogic.m in Sources */,
 				55B078CD233CD1D5009BDDBC /* PSCollectArticleListModel.m in Sources */,
 				EABE0E6B233E4EEB000B7345 /* PPBadgeControl.m in Sources */,
 				EA960C87232F3B1B00D81A25 /* YYWebImageManager.m in Sources */,

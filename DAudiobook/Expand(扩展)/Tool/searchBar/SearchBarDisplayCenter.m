@@ -76,17 +76,17 @@
 -(void)hideKeyboard:(NSNotification *)notification
 {
     NSLog(@"收起键盘");
-//    UIViewAnimationOptions option = [notification.userInfo[UIKeyboardAnimationCurveUserInfoKey] intValue];
-//    NSTimeInterval duration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-//    __weak typeof(self)weakSelf = self;
-//    [UIView animateWithDuration:duration delay:0 options:option animations:^{
-//        if(weakSelf.searchField.text.length == 0)
-//        {
-//           weakSelf.placeholderView.frame = CGRectMake(weakSelf.searchX, 0, weakSelf.placeholderView.frame.size.width, weakSelf.placeholderView.frame.size.height);
-//        }
-//
-//
-//    } completion:nil];
+    UIViewAnimationOptions option = [notification.userInfo[UIKeyboardAnimationCurveUserInfoKey] intValue];
+    NSTimeInterval duration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    __weak typeof(self)weakSelf = self;
+    [UIView animateWithDuration:duration delay:0 options:option animations:^{
+        if(weakSelf.searchField.text.length == 0)
+        {
+           weakSelf.placeholderView.frame = CGRectMake(weakSelf.searchX, 0, weakSelf.placeholderView.frame.size.width, weakSelf.placeholderView.frame.size.height);
+        }
+
+
+    } completion:nil];
 }
 #pragma mark 移除监听
 /** 移除监听 */

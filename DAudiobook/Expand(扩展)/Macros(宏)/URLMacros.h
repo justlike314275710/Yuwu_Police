@@ -210,10 +210,8 @@
 //收藏列表
 #define URL_Article_collectList @"/api/article/collectList"
 
-
-
-
-
+//搜索文章
+#define URL_Article_searchList  @"/api/article/findPublishArticle"
 
 
 #define URL_advice_processing  @"/lawyer/my/legal-advice/processing"

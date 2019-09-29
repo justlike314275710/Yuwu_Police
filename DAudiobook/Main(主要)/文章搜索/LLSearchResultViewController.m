@@ -149,7 +149,7 @@
 
 - (void)presentVCFirstBackClick:(UIButton *)sender
 {
-    [_searchBar resignFirstResponder];
+   // [_searchBar resignFirstResponder];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

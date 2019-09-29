@@ -74,7 +74,7 @@
     if (!_hotButton) {
         self.hotButton =[[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_dataButton.frame)+15, CGRectGetMaxY(_titleLable.frame)+10, 50, 10)];
         
-        [_hotButton setImage:ImageNamed(@"时间") forState: UIControlStateNormal];
+        [_hotButton setImage:ImageNamed(@"未赞") forState: UIControlStateNormal];
         [_hotButton setTitle:@"  1.6w" forState:UIControlStateNormal];
         _hotButton.titleLabel.font=FontOfSize(8);
         [_hotButton setTitleColor:AppColor(153, 153, 153) forState:UIControlStateNormal];

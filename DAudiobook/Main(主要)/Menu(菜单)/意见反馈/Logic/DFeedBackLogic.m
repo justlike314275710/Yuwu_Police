@@ -26,6 +26,13 @@
         }
         return;
     }
+    if (self.content.length >100) {
+        if (callback) {
+            NSString *more_msg = @"请输入不多于100个字的描述";
+            callback(NO,more_msg);
+        }
+        return;
+    }
     if ([NSString hasEmoji:self.content]||[NSString stringContainsEmoji:self.content]) {
         if (callback) {
             NSString *msg = @"输入的反馈详情不能包含表情,请重新输入";

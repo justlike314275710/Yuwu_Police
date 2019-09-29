@@ -156,14 +156,20 @@
 
 - (void)clearnSearchHistory:(UIButton *)sender
 {
-    [self.searchHistoryView removeFromSuperview];
-    self.searchHistoryView = [self setNoHistoryView];
-    [_historyArray removeAllObjects];
-    [NSKeyedArchiver archiveRootObject:_historyArray toFile:KHistorySearchPath];
-    [self addSubview:self.searchHistoryView];
-    CGRect frame = _hotSearchView.frame;
-    frame.origin.y = CGRectGetHeight(_searchHistoryView.frame);
-    _hotSearchView.frame = frame;
+    [PSAlertView showWithTitle:nil message:@"确定清空历史搜索字" messageAlignment:NSTextAlignmentCenter image:nil handler:^(PSAlertView *alertView, NSInteger buttonIndex) {
+        if (buttonIndex==1) {
+            [self.searchHistoryView removeFromSuperview];
+            self.searchHistoryView = [self setNoHistoryView];
+            [_historyArray removeAllObjects];
+            [NSKeyedArchiver archiveRootObject:_historyArray toFile:KHistorySearchPath];
+            [self addSubview:self.searchHistoryView];
+            CGRect frame = _hotSearchView.frame;
+            frame.origin.y = CGRectGetHeight(_searchHistoryView.frame);
+            _hotSearchView.frame = frame;
+        }
+    } buttonTitles:@"取消",@"确定", nil];
+    
+   
 }
 
 - (void)removeTestDataWithTextArr:(NSMutableArray *)testArr index:(int)index

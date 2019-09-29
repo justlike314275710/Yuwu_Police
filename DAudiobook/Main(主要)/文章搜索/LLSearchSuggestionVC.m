@@ -7,12 +7,15 @@
 //
 #import "DTitleTableViewCell.h"
 #import "LLSearchSuggestionVC.h"
-
+#import "DSearchLogic.h"
+#import "PSArticleDetailModel.h"
+#import "PSDetailArticleViewController.h"
+#import "PSArticleDDetailViewModel.h"
 @interface LLSearchSuggestionVC ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *contentView;
-@property (nonatomic, copy)   NSString *searchTest;
-
+@property (nonatomic, copy)   NSString *searchString;
+@property (nonatomic , strong) DSearchLogic *logic;
 @end
 
 @implementation LLSearchSuggestionVC
@@ -25,6 +28,7 @@
         _contentView.dataSource = self;
         _contentView.backgroundColor = [UIColor whiteColor];
         _contentView.tableFooterView = [UIView new];
+       
         _contentView.separatorStyle=UITableViewCellAccessoryNone;
     }
     return _contentView;
@@ -33,6 +37,7 @@
 
 - (void)viewDidLoad
 {
+    _logic=[[DSearchLogic alloc]init];
     [super viewDidLoad];
     [self.view addSubview:self.contentView];
     [self.contentView registerClass:[DTitleTableViewCell class] forCellReuseIdentifier:@"DTitleTableViewCell"];
@@ -40,12 +45,53 @@
 
 - (void)searchTestChangeWithTest:(NSString *)test
 {
-    _searchTest = test;
-    [_contentView reloadData];
+    _searchString = test;
+    _logic.title=test;
+    [self refreshData];
+    //[_contentView reloadData];
 }
 
 
+-(void)refreshData{
+    [[PSLoadingView sharedInstance]show];
+    [_logic refreshArticlesCompleted:^(id data) {
+        [[PSLoadingView sharedInstance]dismiss];
+        [_contentView reloadData];
+        [self.view endEditing:YES];
+    } failed:^(NSError *error) {
+        [[PSLoadingView sharedInstance]dismiss];
+    }];
+}
+
+
+
 #pragma mark - UITableViewDataSource -
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView*headView=[UIView new];
+    headView.frame=CGRectMake(20, 5, SCREEN_WIDTH-40, 44);
+    //headView.backgroundColor=[UIColor grayColor];
+    
+    UILabel*countLable=[[UILabel alloc]initWithFrame:CGRectMake(20, 5, 200, 14)];
+    countLable.text=NSStringFormat(@"搜索到%ld条结果",_logic.Articles.count);
+    countLable.font=FontOfSize(12);
+    countLable.textColor=AppColor(102, 102, 102);
+    [headView addSubview:countLable];
+    
+    UILabel*titleLable=[[UILabel alloc]initWithFrame:CGRectMake(20, 30, 200, 15)];
+    titleLable.text=@"相关文章";
+    titleLable.textColor=[UIColor blackColor];
+    titleLable.font=FontOfSize(15);
+    [headView addSubview:titleLable];
+    
+    
+    return headView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 64;
+}
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -54,18 +100,23 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return (_searchTest.length > 0) ? (10 / _searchTest.length) : 0;
+    return _logic.Articles.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellId = @"DTitleTableViewCell";
-    //DTitleTableViewCell*cell=[UITableViewCell initw];
-//    if (!cell) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-//    }
-//    cell.textLabel.text = [NSString stringWithFormat:@"%@编号%ld", _searchTest, indexPath.row];
+
+    PSArticleDetailModel*model=_logic.Articles[indexPath.row];
      DTitleTableViewCell*cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+   
+    NSMutableAttributedString *attrituteString = [[NSMutableAttributedString alloc] initWithString:model.title];
+    NSRange range = [model.title rangeOfString:_searchString];
+    [attrituteString setAttributes:@{NSForegroundColorAttributeName : [UIColor redColor],   NSFontAttributeName : [UIFont systemFontOfSize:15]} range:range];
+     cell.titleLable.attributedText=attrituteString;
+    [cell.dataButton setTitle:NSStringFormat(@" %@",model.updatedAt) forState:UIControlStateNormal];
+    [cell.hotButton setTitle:NSStringFormat(@" %@",model.praiseNum) forState:UIControlStateNormal];
+    cell.nameLable.text=model.penName;
     return cell;
 }
 
@@ -80,9 +131,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+      PSArticleDetailModel*model=_logic.Articles[indexPath.row];
     if (self.searchBlock) {
-        self.searchBlock([NSString stringWithFormat:@"%@编号%ld", _searchTest, indexPath.row]);
+        self.searchBlock(model.title);
     }
+    
+    PSArticleDDetailViewModel *viewModel = [PSArticleDDetailViewModel new];
+    viewModel.id = model.id;
+    PSDetailArticleViewController *DetailArticleVC = [[PSDetailArticleViewController alloc] init];
+    DetailArticleVC.viewModel = viewModel;
+    [self.navigationController pushViewController:DetailArticleVC animated:YES];
+    
 }
 
 

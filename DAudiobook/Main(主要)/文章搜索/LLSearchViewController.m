@@ -27,7 +27,7 @@
 - (NSMutableArray *)hotArray
 {
     if (!_hotArray) {
-        self.hotArray = [NSMutableArray arrayWithObjects:@"悦诗风吟", @"洗面奶", @"兰芝", @"面膜", @"篮球鞋", @"阿迪达斯", @"耐克", @"运动鞋", nil];
+        self.hotArray = nil;
     }
     return _hotArray;
 }
@@ -139,7 +139,7 @@
 /** 点击取消 */
 - (void)cancelDidClick
 {
-    [self.searchBar resignFirstResponder];
+    //[self.searchBar resignFirstResponder];
     
     [self dismissViewControllerAnimated:NO completion:nil];
 }
@@ -152,7 +152,7 @@
     searchResultVC.searchStr = str;
     searchResultVC.hotArray = _hotArray;
     searchResultVC.historyArray = _historyArray;
-    [self.navigationController pushViewController:searchResultVC animated:YES];
+    //[self.navigationController pushViewController:searchResultVC animated:YES];
     [self setHistoryArrWithStr:str];
 }
 
@@ -174,7 +174,10 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    [self pushToSearchResultWithSearchStr:searchBar.text];
+    _searchSuggestVC.view.hidden = NO;
+    [self.view bringSubviewToFront:_searchSuggestVC.view];
+    [self.searchBar resignFirstResponder];
+    [_searchSuggestVC searchTestChangeWithTest:searchBar.text];
 }
 
 
@@ -187,6 +190,7 @@
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
 {
     searchBar.showsCancelButton = YES;
+  
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
@@ -197,9 +201,12 @@
     } else {
         _searchSuggestVC.view.hidden = NO;
         [self.view bringSubviewToFront:_searchSuggestVC.view];
+        [self.searchBar resignFirstResponder];
         [_searchSuggestVC searchTestChangeWithTest:searchBar.text];
     }
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
