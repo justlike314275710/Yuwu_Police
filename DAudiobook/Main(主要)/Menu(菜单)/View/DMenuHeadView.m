@@ -5,7 +5,7 @@
 //  Created by DUCHENGWEN on 2019/4/20.
 //  Copyright © 2019 liujiliu. All rights reserved.
 //
-#import "LPButton.h"
+
 #import "DMenuHeadView.h"
 #import <BmobSDK/Bmob.h>
 #define kIconView_W 94
@@ -72,18 +72,18 @@
     }];
     
     
-    LPButton * AuthenticaBtn = [[LPButton alloc] init];
-    AuthenticaBtn.titleLabel.font=FontOfSize(14);
-    AuthenticaBtn.style = LPButtonStyleLeft;
-    [AuthenticaBtn setTitle:@"已认证" forState:UIControlStateNormal];
-    [AuthenticaBtn  setImage:[UIImage imageNamed:@"认证icon"] forState:UIControlStateNormal];
-    AuthenticaBtn.layer.masksToBounds = YES;
-    AuthenticaBtn.layer.borderWidth = 1;
-    AuthenticaBtn.layer.borderColor =[UIColor whiteColor].CGColor;
-    AuthenticaBtn.layer.cornerRadius = 15.0;
-    [self addSubview:AuthenticaBtn];
+    self. AuthenticaBtn = [[LPButton alloc] init];
+    _AuthenticaBtn.titleLabel.font=FontOfSize(14);
+    _AuthenticaBtn.style = LPButtonStyleLeft;
+    [_AuthenticaBtn setTitle:@"已认证" forState:UIControlStateNormal];
+    [_AuthenticaBtn  setImage:[UIImage imageNamed:@"认证icon"] forState:UIControlStateNormal];
+    _AuthenticaBtn.layer.masksToBounds = YES;
+    _AuthenticaBtn.layer.borderWidth = 1;
+    _AuthenticaBtn.layer.borderColor =[UIColor whiteColor].CGColor;
+    _AuthenticaBtn.layer.cornerRadius = 15.0;
+    [self addSubview:_AuthenticaBtn];
     
-    [AuthenticaBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_AuthenticaBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.nameLable.mas_bottom).offset(10);
         make.left.mas_equalTo(self.iconView.mas_right).offset(15);
         make.width.mas_equalTo(80);

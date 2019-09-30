@@ -95,6 +95,11 @@
          [weakSelf presentViewController:nav animated:YES completion:nil];
          
        };
+    [self.menuHeadView.AuthenticaBtn bk_whenTapped:^{
+        DAccountViewController*vc=[[DAccountViewController alloc]init];
+        DNavigationController*nav=[[DNavigationController alloc]initWithRootViewController:vc];
+        [weakSelf presentViewController:nav animated:YES completion:nil];
+    }];
 }
 
 -(void)getArticeData{
