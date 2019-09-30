@@ -101,7 +101,6 @@
     sender.selected=!sender.selected;
 }
 
-
 - (void)passwordButtonClicked {
     DPasswordLogic*logic=[[DPasswordLogic alloc]init];
     logic.phone_oldpassword=self.passwordTextfield.text;
