@@ -84,7 +84,7 @@
         _penName= @{@"titleText":@"笔名",@"title_icon":@"作者icon",@"detailText":self.pseudinym?self.pseudinym:penNameSting,@"arrow_icon":@"进入"};
     } else {
         NSString *penNameSting  = @"请设置笔名";
-        _penName= @{@"titleText":@"笔名",@"title_icon":@"作者icon",@"detailText":penNameSting,@"arrow_icon":@"进入"};
+        _penName= @{@"titleText":@"笔名",@"title_icon":@"作者icon",@"detailText":self.pseudinym?self.pseudinym:penNameSting,@"arrow_icon":@"进入"};
     }
     
     
@@ -183,7 +183,7 @@
             break;
         case 2:
         {
-            if (self.pseudinym) {
+            if (ValidStr(self.pseudinym)) {
              
             } else {
                 [self modifyPenName];
