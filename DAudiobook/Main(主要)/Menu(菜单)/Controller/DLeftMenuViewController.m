@@ -30,6 +30,7 @@
 @property (nonatomic,strong) DMenuHeadView  *menuHeadView;
 @property (nonatomic,strong) DPlayMusicView *playMusicView;
 @property (nonatomic , strong)NSString * pseudinym ;
+@property (nonatomic , strong)  NSArray *array ;
 @end
 
 @implementation DLeftMenuViewController
@@ -105,8 +106,12 @@
         NSString*code=[NSString stringWithFormat:@"%@",responseObject[@"code"]];
         if ([code isEqualToString:@"200"]) {
             self.pseudinym=responseObject[@"data"][@"pseudonym"];
-            NSArray *array = [self.pseudinym componentsSeparatedByString:@"-"];
-             self.menuHeadView.nameLable.text=array[1];
+            if( ValidStr(self.pseudinym)){
+                 _array = [self.pseudinym componentsSeparatedByString:@"-"];
+                 self.menuHeadView.nameLable.text=_array[1];
+            }
+            else{
+                self.menuHeadView.nameLable.text=@"";}
         }
         else{
             [PSTipsView showTips:@"获取账号信息失败!"];
