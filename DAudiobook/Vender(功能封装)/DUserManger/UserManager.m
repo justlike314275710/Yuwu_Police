@@ -298,6 +298,7 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
             }];
             //获取公共服务token后刷新首页列表
             KPostNotification(KNotificationHomePageRefreshList, nil);
+            KPostNotification(KNotificationArticleAuthor, nil);
         } else {
             
         }

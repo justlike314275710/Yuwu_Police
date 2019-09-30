@@ -102,7 +102,7 @@
 //获取是否能发文章权限
 - (void)authorArticleCompleted:(RequestDataCompleted)completedCallback
                         failed:(RequestDataFailed)failedCallback {
-    NSString *userName = help_userManager.curUserInfo.account?help_userManager.curUserInfo.account:@"";
+    NSString *userName = help_userManager.curUserInfo.im_username?help_userManager.curUserInfo.im_username:@"";
     NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_author];
     NSDictionary *parameters = @{@"userName":userName,@"type":@"2"};
     NSString *token = NSStringFormat(@"Bearer %@",help_userManager.oathInfo.access_token);
@@ -114,7 +114,7 @@
         if (responseObject) {
             PSPublicArticleModel *model = [PSPublicArticleModel modelWithJSON:responseObject[@"author"]];
             self.author = [model.isEnabled integerValue];
-            if(!model) self.author = YES;
+            if(!model) self.author = NO;
             completedCallback(responseObject);
         } else {
             self.author = NO;

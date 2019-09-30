@@ -24,8 +24,16 @@
         self.contentView.backgroundColor = UIColorFromRGB(249,248,254);
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         [self renderContents];
+        [self SDWebImageAuth];
     }
     return self;
+}
+-(void)SDWebImageAuth{
+    
+    NSString*token=NSStringFormat(@"Bearer %@",help_userManager.oathInfo.access_token);
+    [SDWebImageDownloader.sharedDownloader setValue:@"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" forHTTPHeaderField:@"Accept"];
+    [SDWebImageManager.sharedManager.imageDownloader setValue:token forHTTPHeaderField:@"Authorization"];
+    [SDWebImageManager sharedManager].imageCache.config.maxCacheAge=5*60.0;
 }
 
 - (void)renderContents {
@@ -146,16 +154,9 @@
     }
     
     //用户头像
-    HAccountViewModel *viewModel = [[HAccountViewModel alloc] init];
-    [viewModel getAvatarImageUserName:model.username Completed:^(UIImage *image) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            _headImg.image = image;
-        });
-    } failed:^(NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            _headImg.image = IMAGE_NAMED(@"作者头像");
-        });
-    }];
+    NSString*url=AvaterImageWithUsername(_model.username);
+    [_headImg sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"作者头像"] options:SDWebImageRefreshCached];
+
     
     if ([model.status isEqualToString:@"pass"]) {
         _hotLab.hidden = NO;
@@ -210,16 +211,8 @@
         [_likeBtn setImage:IMAGE_NAMED(@"已赞") forState:UIControlStateNormal];
     }
     //用户头像
-    HAccountViewModel *viewModel = [[HAccountViewModel alloc] init];
-    [viewModel getAvatarImageUserName:collecModel.username Completed:^(UIImage *image) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            _headImg.image = image;
-        });
-    } failed:^(NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            _headImg.image = IMAGE_NAMED(@"作者头像");
-        });
-    }];
+    NSString*url=AvaterImageWithUsername(_model.username);
+    [_headImg sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"作者头像"] options:SDWebImageRefreshCached];
 }
  
 

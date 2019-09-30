@@ -45,6 +45,7 @@
     self.view.backgroundColor=[UIColor whiteColor];
     [self addBackItem];
     [self setupData];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -205,14 +206,9 @@
     [self setupUIViewHidden:isHideBottom];
     
     //用户头像
-    HAccountViewModel *accountViewModel = [[HAccountViewModel alloc] init];
-    [accountViewModel getAvatarImageUserName:_viewModel.detailModel.username Completed:^(UIImage *image) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            _headImageView.image = image;
-        });
-    } failed:^(NSError *error) {
-
-    }];
+    NSString*url=AvaterImageWithUsername(_viewModel.detailModel.username);
+    [_headImageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"作者头像"] options:SDWebImageRefreshCached];
+    
     
     
     if ([_viewModel.detailModel.iscollect isEqualToString:@"0"]) {

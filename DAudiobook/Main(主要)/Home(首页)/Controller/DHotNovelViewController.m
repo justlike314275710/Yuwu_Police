@@ -22,7 +22,7 @@
 #import "UIBarButtonItem+Helper.h"
 #import "LLSearchViewController.h"
 #import "PPBadgeView.h"
-@interface DHotNovelViewController()<UITableViewDelegate,UITableViewDataSource,SearchBarDisplayCenterDelegate> {
+@interface DHotNovelViewController()<UITableViewDelegate,UITableViewDataSource,SearchBarDisplayCenterDelegate,UITextFieldDelegate> {
 
     
 }
@@ -57,6 +57,9 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshRedDot) name:KNotificationRedDotRefresh object:nil];
     
+    //发文章权限
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupData) name:KNotificationArticleAuthor object:nil];
+    
 
 }
 
@@ -67,6 +70,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self setupData];
+
 }
 
 - (void)setupNavItem
@@ -240,24 +244,24 @@
 
 
 -(void)SearchBar{
-    self.view.backgroundColor = [UIColor orangeColor];
+    
     SearchBarDisplayCenter *searchBar = [[SearchBarDisplayCenter alloc]initWithFrame:CGRectMake(0, 30, [UIScreen mainScreen].bounds.size.width-60, 30.0 )];
     searchBar.placeholderStr=@"搜索文章|连载书籍";
     searchBar.delegate = self;
     self.navigationItem.titleView= searchBar;
 }
 
-- (void)tapAction:(NSString *)searchWord{
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
     LLSearchViewController *seachVC = [[LLSearchViewController alloc] init];
-    [self.navigationController pushViewController:seachVC animated:YES];
+    [self.navigationController pushViewController:seachVC animated:NO];
+}
+
+- (void)tapAction:(NSString *)searchWord{
+        LLSearchViewController *seachVC = [[LLSearchViewController alloc] init];
+        [self.navigationController pushViewController:seachVC animated:NO];
 }
 
 
-
-//-(void)getSearchKeyWord:(NSString *)searchWord{
-//    LLSearchViewController *seachVC = [[LLSearchViewController alloc] init];
-//    [self.navigationController pushViewController:seachVC animated:YES];
-//}
 
 #pragma mark - Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
