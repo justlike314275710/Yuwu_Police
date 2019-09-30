@@ -77,14 +77,13 @@
     NSDictionary *sex = @{@"titleText":@"性别",@"title_icon":@"性别icon",@"detailText":ValidStr(sexSting)?sexSting:@"无",@"arrow_icon":@"进入"};
     
     
-    
     _penName=[NSDictionary new];
     if (ValidStr(help_userManager.lawUserInfo.pseudonym)) {
         NSString *penNameSting  = help_userManager.lawUserInfo.pseudonym;
-        _penName= @{@"titleText":@"笔名",@"title_icon":@"作者icon",@"detailText":self.pseudinym?self.pseudinym:penNameSting,@"arrow_icon":@"进入"};
+        _penName= @{@"titleText":@"笔名",@"title_icon":@"作者icon",@"detailText":ValidStr(self.pseudinym)?self.pseudinym:penNameSting,@"arrow_icon":@"进入"};
     } else {
-        NSString *penNameSting  = @"请设置笔名";
-        _penName= @{@"titleText":@"笔名",@"title_icon":@"作者icon",@"detailText":self.pseudinym?self.pseudinym:penNameSting,@"arrow_icon":@"进入"};
+        _penName= @{@"titleText":@"笔名",@"title_icon":@"作者icon",@"detailText":ValidStr(self.pseudinym)?self.pseudinym:@"请设置笔名",@"arrow_icon":@"进入"};
+        
     }
     
     
