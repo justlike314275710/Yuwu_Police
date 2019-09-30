@@ -16,4 +16,5 @@
 /** 搜索框提示语 */
 @property(nonatomic,copy)NSString *placeholderStr;
 @property(nonatomic,weak)id<SearchBarDisplayCenterDelegate>delegate;
+
 @end

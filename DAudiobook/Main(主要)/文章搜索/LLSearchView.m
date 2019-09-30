@@ -74,7 +74,7 @@
     if ([title isEqualToString:@"历史搜索"]) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         btn.frame = CGRectMake(KScreenWidth - 45, 10, 28, 30);
-        [btn setImage:[UIImage imageNamed:@"sort_recycle"] forState:UIControlStateNormal];
+        [btn setImage:[UIImage imageNamed:@"shanchu"] forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(clearnSearchHistory:) forControlEvents:UIControlEventTouchUpInside];
         [view addSubview:btn];
     }

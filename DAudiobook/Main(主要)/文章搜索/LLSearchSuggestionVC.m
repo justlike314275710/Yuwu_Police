@@ -23,7 +23,7 @@
 - (UITableView *)contentView
 {
     if (!_contentView) {
-        self.contentView = [[UITableView alloc] initWithFrame:CGRectMake(0, 15, KScreenWidth, KScreenHeight) style:UITableViewStylePlain];
+        self.contentView = [[UITableView alloc] initWithFrame:CGRectMake(0, 15, KScreenWidth, KScreenHeight) style:UITableViewStyleGrouped];
         _contentView.delegate = self;
         _contentView.dataSource = self;
         _contentView.backgroundColor = [UIColor whiteColor];
@@ -66,6 +66,18 @@
 
 
 #pragma mark - UITableViewDataSource -
+
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    if (section == 0) {
+        return CGFLOAT_MIN;//最小数，相当于0
+    }
+    else if(section == 1){
+        return CGFLOAT_MIN;//最小数，相当于0
+    }
+    return 0;//机器不可识别，然后自动返回默认高度
+}
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView*headView=[UIView new];
@@ -114,7 +126,7 @@
     NSRange range = [model.title rangeOfString:_searchString];
     [attrituteString setAttributes:@{NSForegroundColorAttributeName : [UIColor redColor],   NSFontAttributeName : [UIFont systemFontOfSize:15]} range:range];
      cell.titleLable.attributedText=attrituteString;
-    [cell.dataButton setTitle:NSStringFormat(@" %@",model.updatedAt) forState:UIControlStateNormal];
+    [cell.dataButton setTitle:NSStringFormat(@" %@",model.publishAt) forState:UIControlStateNormal];
     [cell.hotButton setTitle:NSStringFormat(@" %@",model.praiseNum) forState:UIControlStateNormal];
     cell.nameLable.text=model.penName;
     return cell;

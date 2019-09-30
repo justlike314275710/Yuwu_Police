@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface LLSearchViewController : UIViewController
+#import "DViewController.h"
+@interface LLSearchViewController : DViewController
 
 @end

@@ -234,7 +234,7 @@
         if (help_userManager.avatarImage) {
             [_headImgView setImage:help_userManager.avatarImage];
         } else {
-            [_headImgView setImageWithURL:[NSURL URLWithString:help_userManager.curUserInfo.avatar] placeholder:[UIImage imageNamed:@"登录－头像"]];
+            [_headImgView setImageWithURL:[NSURL URLWithString:help_userManager.curUserInfo.avatar] placeholder:[UIImage imageNamed:@"作者头像"]];
         }
         
 
