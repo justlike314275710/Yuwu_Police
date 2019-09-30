@@ -183,8 +183,8 @@
             break;
         case 2:
         {
-            if (help_userManager.lawUserInfo.pseudonym) {
-
+            if (self.pseudinym) {
+             
             } else {
                 [self modifyPenName];
             }
