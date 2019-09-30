@@ -57,7 +57,7 @@
         _drawerController = [[MMDrawerController alloc] init];
         _drawerController.showsShadow = YES;
         [_drawerController setMaximumLeftDrawerWidth:[UIScreen mainScreen].bounds.size.width * 0.75];
-        [_drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+        [_drawerController setOpenDrawerGestureModeMask: MMOpenDrawerGestureModeAll ];
         [_drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
         
         [_drawerController setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {

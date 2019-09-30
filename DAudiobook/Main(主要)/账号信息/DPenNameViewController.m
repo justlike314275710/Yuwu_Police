@@ -43,15 +43,32 @@
 
 -(void)saveItemClick{
     [[PSLoadingView sharedInstance]show];
-    NSDictionary*param=@{@"penName":self.penTextField.text};
+    NSDictionary*param=@{@"penName":_penTextField.text};
+
     NSString*url=NSStringFormat(@"%@%@",ServerUrl,URL_Police_updatePenName);
     NSString *access_token = help_userManager.oathInfo.access_token;
     NSString *token = NSStringFormat(@"Bearer %@",access_token);
-    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
     [PPNetworkHelper setValue:token forHTTPHeaderField:@"Authorization"];
     [PPNetworkHelper POST:url parameters:param success:^(id responseObject) {
          [[PSLoadingView sharedInstance]dismiss];
-        [PSTipsView showTips:@"修改笔名成功"];
+        NSString*code=[NSString stringWithFormat:@"%@",responseObject[@"code"]];
+        if ([code isEqualToString:@"1586"]) {
+            [PSTipsView showTips:responseObject[@"msg"]];
+        }
+        else if ([code isEqualToString:@"-1"]){
+             [PSTipsView showTips:responseObject[@"msg"]];
+            self.penTextField.textColor=[UIColor redColor];
+        }
+        else if ([code isEqualToString:@"500"]){
+            [PSTipsView showTips:responseObject[@"msg"]];
+            
+        }
+        else {
+            [PSTipsView showTips:@"修改笔名成功"];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        
 
     } failure:^(NSError *error) {
          [[PSLoadingView sharedInstance]dismiss];
@@ -71,10 +88,11 @@
     [self.view addSubview:bgview];
     
     self.penTextField=[UITextField new];
-    self.penTextField.placeholder=@"  请输入作者笔名，不能少于2个字";
-    self.penTextField.frame=CGRectMake(5, 0, SCREEN_WIDTH-10, 44);
-    [bgview addSubview:self.penTextField];
-    self.penTextField.font=FontOfSize(14);
+    _penTextField.placeholder=@"  请输入作者笔名，不能少于2个字";
+    _penTextField.frame=CGRectMake(5, 0, SCREEN_WIDTH-10, 44);
+    [bgview addSubview:_penTextField];
+    _penTextField.textColor=[UIColor blackColor];
+    _penTextField.font=FontOfSize(14);
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

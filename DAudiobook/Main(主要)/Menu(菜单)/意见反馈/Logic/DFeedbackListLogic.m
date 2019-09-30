@@ -50,7 +50,9 @@
     NSString*page=[NSString stringWithFormat:@"%ld",(long)self.page];
     NSString*pageSize=[NSString stringWithFormat:@"%ld",(long)self.pageSize];
     NSDictionary*param=
-    @{@"page":page,@"rows":pageSize,@"policeId":help_userManager.lawUserInfo.id};
+    @{@"page":page,
+    @"rows":pageSize,
+    @"policeId":help_userManager.lawUserInfo.policeId};
     NSString*url=NSStringFormat(@"%@%@",ServerUrl,URL_feedbacks_page);
     NSString *access_token = help_userManager.oathInfo.access_token;
     NSString *token = NSStringFormat(@"Bearer %@",access_token);

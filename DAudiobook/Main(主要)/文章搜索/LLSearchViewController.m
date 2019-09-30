@@ -88,7 +88,10 @@
     [self.searchBar resignFirstResponder];
     _searchSuggestVC.view.hidden = YES;
 }
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.searchBar.text=@"";
+}
 
 - (void)viewDidLoad
 {

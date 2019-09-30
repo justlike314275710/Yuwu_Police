@@ -70,7 +70,7 @@ typedef NS_ENUM(NSInteger, PSLoginModeType) {
         make.centerY.mas_equalTo(self.view).offset(10);
     }];
     self.loginMiddleView.phoneTextField.delegate=self;
-    
+    self.loginMiddleView.phoneTextField.text=[kUserDefaults objectForKey:@"D_phone"]?[kUserDefaults objectForKey:@"D_phone"]:@"";
 
  
     [self.loginMiddleView.codeButton addTarget:self action:@selector(getCode) forControlEvents:UIControlEventTouchUpInside];
@@ -171,6 +171,7 @@ typedef NS_ENUM(NSInteger, PSLoginModeType) {
     self.logic.loginModel=self.mode;
     [_logic checkDataWithCallback:^(BOOL successful, NSString *tips) {
         if (successful) {
+            [kUserDefaults setObject:self.loginMiddleView.phoneTextField.text forKey:@"D_phone"];
             NSDictionary*parmeters=@{
             @"phoneNumber":self.loginMiddleView.phoneTextField.text,
             @"verificationCode":self.loginMiddleView.codeTextField.text,

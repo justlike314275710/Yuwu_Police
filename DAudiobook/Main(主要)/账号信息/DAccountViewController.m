@@ -20,6 +20,7 @@
 @property(nonatomic, strong) NSArray *dataSource;
 @property (nonatomic , strong) UITableView *accountTableView;
 @property (nonatomic , strong) NSDictionary *penName ;
+@property (nonatomic , strong) NSString *pseudinym ;
 @end
 
 @implementation DAccountViewController
@@ -28,6 +29,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
+    [self getArticeData];
 }
 
 - (void)viewDidLoad {
@@ -36,13 +38,34 @@
    
    // [self addBackItem];
     [self renderContents];
-    [self intData];
+   
     // Do any additional setup after loading the view.
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
      [self.navigationController setNavigationBarHidden:NO];
 }
+
+
+-(void)getArticeData{
+    NSString *url = NSStringFormat(@"%@%@",ServerUrl,URL_Police_updateArticle);
+    NSString*token=[NSString stringWithFormat:@"Bearer %@",help_userManager.oathInfo.access_token];
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
+    [PPNetworkHelper setValue:token forHTTPHeaderField:@"Authorization"];
+    [PPNetworkHelper GET:url parameters:nil success:^(id responseObject) {
+        NSString*code=[NSString stringWithFormat:@"%@",responseObject[@"code"]];
+        if ([code isEqualToString:@"200"]) {
+            self.pseudinym=responseObject[@"data"][@"pseudonym"];
+            [self intData];
+        }
+        else{
+            [PSTipsView showTips:@"获取账号信息失败!"];
+        }
+    } failure:^(NSError *error) {
+         [PSTipsView showTips:@"获取账号信息失败!"];
+    }];
+}
+
 
 - (void)intData{
     _dataSource=[NSArray new];
@@ -58,7 +81,7 @@
     _penName=[NSDictionary new];
     if (ValidStr(help_userManager.lawUserInfo.pseudonym)) {
         NSString *penNameSting  = help_userManager.lawUserInfo.pseudonym;
-        _penName= @{@"titleText":@"笔名",@"title_icon":@"作者icon",@"detailText":penNameSting,@"arrow_icon":@"进入"};
+        _penName= @{@"titleText":@"笔名",@"title_icon":@"作者icon",@"detailText":self.pseudinym?self.pseudinym:penNameSting,@"arrow_icon":@"进入"};
     } else {
         NSString *penNameSting  = @"请设置笔名";
         _penName= @{@"titleText":@"笔名",@"title_icon":@"作者icon",@"detailText":penNameSting,@"arrow_icon":@"进入"};
@@ -161,11 +184,11 @@
         case 2:
         {
             if (help_userManager.lawUserInfo.pseudonym) {
-                
+
             } else {
                 [self modifyPenName];
             }
-            
+           
         }
             break;
         case 3:

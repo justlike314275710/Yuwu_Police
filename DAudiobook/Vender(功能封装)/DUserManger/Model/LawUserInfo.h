@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LawUserInfo : NSObject
-@property (nonatomic , strong) NSString *id;
+@property (nonatomic , strong) NSString *policeId;
 @property (nonatomic,copy) NSString *disabledReason;
 @property (nonatomic,copy) NSString *accountName;
 @property (nonatomic,copy) NSString *userName;

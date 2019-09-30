@@ -29,7 +29,7 @@
 
 @property (nonatomic,strong) DMenuHeadView  *menuHeadView;
 @property (nonatomic,strong) DPlayMusicView *playMusicView;
-
+@property (nonatomic , strong)NSString * pseudinym ;
 @end
 
 @implementation DLeftMenuViewController
@@ -83,9 +83,10 @@
 //区头
 -(void)initializeTableHeaderView{
      self.menuHeadView.frame=CGRectMake(0, 0, kScreenWidth,200+MenuHeadViewTopDistance);
-     self.menuHeadView.nameLable.text=help_userManager.lawUserInfo.pseudonym?help_userManager.lawUserInfo.pseudonym:@"";
+    
     [self.menuHeadView.iconView setImageWithURL:[NSURL URLWithString:help_userManager.curUserInfo.avatar] placeholder:[UIImage imageNamed:@"侧滑－大头像"]];
      self.tableView.tableHeaderView = self.menuHeadView;
+    [self getArticeData];
      WEAKSELF
      self.menuHeadView.headerViewBlock = ^{
          DAccountViewController*vc=[[DAccountViewController alloc]init];
@@ -94,6 +95,28 @@
          
        };
 }
+
+-(void)getArticeData{
+    NSString *url = NSStringFormat(@"%@%@",ServerUrl,URL_Police_updateArticle);
+    NSString*token=[NSString stringWithFormat:@"Bearer %@",help_userManager.oathInfo.access_token];
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
+    [PPNetworkHelper setValue:token forHTTPHeaderField:@"Authorization"];
+    [PPNetworkHelper GET:url parameters:nil success:^(id responseObject) {
+        NSString*code=[NSString stringWithFormat:@"%@",responseObject[@"code"]];
+        if ([code isEqualToString:@"200"]) {
+            self.pseudinym=responseObject[@"data"][@"pseudonym"];
+            NSArray *array = [self.pseudinym componentsSeparatedByString:@"-"];
+             self.menuHeadView.nameLable.text=array[1];
+        }
+        else{
+            [PSTipsView showTips:@"获取账号信息失败!"];
+        }
+    } failure:^(NSError *error) {
+        [PSTipsView showTips:@"获取账号信息失败!"];
+    }];
+}
+
+
 //区尾
 - (void)initializeTableFooterView
 {
@@ -173,10 +196,6 @@
     switch (menuModel.menuType) {
             
         case KCollectionType:{
-            //[self.navigationController pushViewController:[[DLoginViewController alloc]init] animated:YES];
-//            [self presentViewController:[[DLoginViewController alloc]init]  animated:YES completion:^{
-//
-//            }];
             [self mycollectionArticle];
         }
             break;

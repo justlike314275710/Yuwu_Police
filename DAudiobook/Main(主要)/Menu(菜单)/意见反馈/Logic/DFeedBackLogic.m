@@ -65,9 +65,8 @@
 }
 
 - (void)sendAppFeedbackCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback {
-    NSLog(@"**%@*** %@ ***%@",help_userManager.lawUserInfo.id,self.type,self.content);
     NSDictionary *params = @{
-                             @"policeId":help_userManager.lawUserInfo.id,
+                             @"policeId":help_userManager.lawUserInfo.policeId,
                              @"type":self.type,
                              @"content":self.content,
                              @"imageUrls":self.imageUrls,
