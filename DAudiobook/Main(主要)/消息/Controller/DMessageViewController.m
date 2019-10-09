@@ -90,6 +90,9 @@
         make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
     self.messageTableView .showsVerticalScrollIndicator =NO;
+    self.messageTableView.ly_emptyView=[LYEmptyView emptyViewWithImageStr:@"noData"
+                                                                 titleStr:@"暂无数据"
+                                                                detailStr:nil];
 }
 
 - (void)didReceiveMemoryWarning {

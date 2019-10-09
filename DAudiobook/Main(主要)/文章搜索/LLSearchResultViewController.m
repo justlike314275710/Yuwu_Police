@@ -168,19 +168,19 @@
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
 {
-//    NSLog(@"searchBarShouldBeginEditing");
-//    _activity = !_activity;
-//    if (_activity) {
-//        self.navigationItem.rightBarButtonItem = nil;
-//        _titleView.frame = CGRectMake(0, 7, self.view.frame.size.width - 44 - 16, 30);
-//        _searchBar.frame = CGRectMake(0, 0, CGRectGetWidth(_titleView.frame), 30);
-//        searchBar.showsCancelButton = YES;
-//        UIButton *cancleBtn = [_searchBar valueForKey:@"cancelButton"];
-//        //修改标题和标题颜色
-//        [cancleBtn setTitle:@"取消" forState:UIControlStateNormal];
-//        [cancleBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//    }
-//
+    NSLog(@"searchBarShouldBeginEditing");
+    _activity = !_activity;
+    if (_activity) {
+        self.navigationItem.rightBarButtonItem = nil;
+        _titleView.frame = CGRectMake(0, 7, self.view.frame.size.width - 44 - 16, 30);
+        _searchBar.frame = CGRectMake(0, 0, CGRectGetWidth(_titleView.frame), 30);
+        searchBar.showsCancelButton = YES;
+        UIButton *cancleBtn = [_searchBar valueForKey:@"cancelButton"];
+        //修改标题和标题颜色
+        [cancleBtn setTitle:@"取消" forState:UIControlStateNormal];
+        [cancleBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }
+
    return YES;
 }
 

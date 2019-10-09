@@ -159,6 +159,8 @@ return shared##className; \
 
 #define AppScheme @"gkytHelpApp"
 
+#define KNSKeyedArchiverRemoveAll @"KNSKeyedArchiverRemoveAll"
+
 //登录状态改变通知
 #define KNotificationLoginStateChange @"loginStateChange"
 

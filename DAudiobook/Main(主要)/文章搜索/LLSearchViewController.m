@@ -116,17 +116,17 @@
     UIView *searchTextField = searchTextField = [searchBar valueForKey:@"_searchField"];
     searchTextField.backgroundColor = [UIColor whiteColor];
    // ViewRadius(searchBar, 15);
-//    [searchBar setImage:[UIImage imageNamed:@"sort_magnifier"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
-//    UIButton *cancleBtn = [searchBar valueForKey:@"cancelButton"];
-//    //修改标题和标题颜色
-//   [cancleBtn setTitle:@"取消" forState:UIControlStateNormal];
-//    [cancleBtn setBackgroundColor:[UIColor clearColor]];
-    //[cancleBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [searchBar setImage:[UIImage imageNamed:@"sort_magnifier"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
+    UIButton *cancleBtn = [searchBar valueForKey:@"cancelButton"];
+    //修改标题和标题颜色
+    [cancleBtn setTitle:@"取消" forState:UIControlStateNormal];
+    [cancleBtn setBackgroundColor:[UIColor clearColor]];
+    [cancleBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
     [titleView addSubview:searchBar];
     
     self.searchBar = searchBar;
-    //[self.searchBar becomeFirstResponder];
+    [self.searchBar becomeFirstResponder];
     self.navigationItem.titleView = titleView;
     
    // [self addRightBarButtonTitleItem:@"取消"];

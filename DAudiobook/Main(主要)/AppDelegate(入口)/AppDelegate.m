@@ -50,7 +50,7 @@
     
     //版本更新
     DVersionManger*versonManger=[DVersionManger new];
-    //[versonManger jundgeVersonUpdate];
+    [versonManger jundgeVersonUpdate];
     //初始化window
     [self  initWindow];
     //初始化app服务

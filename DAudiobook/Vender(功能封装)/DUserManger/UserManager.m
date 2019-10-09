@@ -504,5 +504,12 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
     }];
     
     KPostNotification(KNotificationLoginStateChange, @NO);
+
+    
+    
+    NSMutableArray*historyArray=[NSMutableArray new];
+    [historyArray removeAllObjects];
+    [NSKeyedArchiver archiveRootObject:historyArray toFile:KHistorySearchPath];
+    
 }
 @end

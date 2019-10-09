@@ -4169,8 +4169,8 @@
 			isa = PBXGroup;
 			children = (
 				EA9457DB233AF3B1003C1C97 /* DModiyPhoneViewcontroller.h */,
-				EA9457DC233AF3B1003C1C97 /* DModiyNewPhoneViewController.h */,
 				EA9457DD233AF3B1003C1C97 /* DModiyPhoneViewcontroller.m */,
+				EA9457DC233AF3B1003C1C97 /* DModiyNewPhoneViewController.h */,
 				EA9457DE233AF3B1003C1C97 /* DModiyNewPhoneViewController.m */,
 			);
 			path = Controller;

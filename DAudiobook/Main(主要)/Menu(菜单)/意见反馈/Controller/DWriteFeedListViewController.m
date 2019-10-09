@@ -164,6 +164,9 @@
         _myTableview.separatorStyle = UITableViewCellSeparatorStyleNone;
         _myTableview.dataSource = self;
         _myTableview.delegate = self;
+        _myTableview.ly_emptyView = [LYEmptyView emptyViewWithImageStr:@"noData"
+                                                                titleStr:@"暂无数据"
+                                                               detailStr:nil];
        // _myTableview.emptyDataSetDelegate=self;
        // _myTableview.emptyDataSetSource=self;
     }

@@ -33,6 +33,7 @@
         self.hotArray = hotArr;
         [self addSubview:self.searchHistoryView];
        // [self addSubview:self.hotSearchView];
+        
     }
     return self;
 }
@@ -169,8 +170,11 @@
         }
     } buttonTitles:@"取消",@"确定", nil];
     
-   
 }
+
+
+
+
 
 - (void)removeTestDataWithTextArr:(NSMutableArray *)testArr index:(int)index
 {
