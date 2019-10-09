@@ -16,7 +16,7 @@
 #import "UITextView+Placeholder.h"
 #import "PSPublishArticleViewModel.h"
 #import "UITextView+RZColorful.h"
-
+#import "NSMutableAttributedString+XZExtension.h"
 
 @interface PSPublishArticleViewController ()<UITextFieldDelegate>
 
@@ -557,13 +557,17 @@
                 [PSTipsView showTips:msg];
             }
         }];
-        
+        @weakify(_articleContent);
         _articleContent.rz_shouldChangeTextInRange = ^BOOL(RZRichTextView * _Nonnull textView, NSRange inRange, NSString * _Nonnull replacementText) {
+             @strongify(_articleContent);
             if ([[[textView textInputMode] primaryLanguage] isEqualToString:@"emoji"] || ![[textView textInputMode] primaryLanguage]) {
                 NSString *msg = @"不能输入表情!";
                 [PSTipsView showTips:msg];
                 return NO;
             } else{
+                if (replacementText.length>0) {
+                    [NSMutableAttributedString xz_makeWordsAnotherColor:replacementText color:[UIColor redColor] view:_articleContent];
+                }
                 return YES;
             }
         };

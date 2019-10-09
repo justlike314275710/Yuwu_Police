@@ -358,6 +358,7 @@
 		55CC6553233B6C4500D4A581 /* SDTextLimitTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CC6552233B6C4500D4A581 /* SDTextLimitTool.m */; };
 		55CC6555233B6D5700D4A581 /* libRZRichTextView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CC6554233B6D5700D4A581 /* libRZRichTextView.a */; };
 		55CC6557233B6D7800D4A581 /* libTZImagePickerController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CC6556233B6D7800D4A581 /* libTZImagePickerController.a */; };
+		55E29E59234C28180001470E /* NSMutableAttributedString+XZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E29E58234C28180001470E /* NSMutableAttributedString+XZExtension.m */; };
 		55ED6392233DA028004A9C37 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 55ED6391233DA028004A9C37 /* SVProgressHUD.bundle */; };
 		55ED6395233DA2A6004A9C37 /* PSCollecArtcleListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED6394233DA2A6004A9C37 /* PSCollecArtcleListViewModel.m */; };
 		55ED6398233DA2C6004A9C37 /* CollectionArtcleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED6396233DA2C5004A9C37 /* CollectionArtcleViewController.m */; };
@@ -1454,6 +1455,8 @@
 		55CC6552233B6C4500D4A581 /* SDTextLimitTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTextLimitTool.m; sourceTree = "<group>"; };
 		55CC6554233B6D5700D4A581 /* libRZRichTextView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRZRichTextView.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CC6556233B6D7800D4A581 /* libTZImagePickerController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libTZImagePickerController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		55E29E57234C28180001470E /* NSMutableAttributedString+XZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+XZExtension.h"; sourceTree = "<group>"; };
+		55E29E58234C28180001470E /* NSMutableAttributedString+XZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+XZExtension.m"; sourceTree = "<group>"; };
 		55ED6391233DA028004A9C37 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		55ED6393233DA2A6004A9C37 /* PSCollecArtcleListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCollecArtcleListViewModel.h; sourceTree = "<group>"; };
 		55ED6394233DA2A6004A9C37 /* PSCollecArtcleListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCollecArtcleListViewModel.m; sourceTree = "<group>"; };
@@ -2949,6 +2952,7 @@
 		3C4A391A22681A0E00882244 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				55E29E56234C28000001470E /* XZExtension */,
 				EAA21B9D233CB3C900A06819 /* searchBar */,
 				5542A791233B12A000E4B5D7 /* libextobjc */,
 				EA94570123385A8F003C1C97 /* UITextViewTool */,
@@ -3929,6 +3933,15 @@
 				55CC6552233B6C4500D4A581 /* SDTextLimitTool.m */,
 			);
 			path = SDTextLimitTool;
+			sourceTree = "<group>";
+		};
+		55E29E56234C28000001470E /* XZExtension */ = {
+			isa = PBXGroup;
+			children = (
+				55E29E57234C28180001470E /* NSMutableAttributedString+XZExtension.h */,
+				55E29E58234C28180001470E /* NSMutableAttributedString+XZExtension.m */,
+			);
+			path = XZExtension;
 			sourceTree = "<group>";
 		};
 		55ED63A0233E32C7004A9C37 /* ZQLocalNotification */ = {
@@ -6327,6 +6340,7 @@
 				3C0DB69122D7320B0029730E /* MJRefreshComponent.m in Sources */,
 				EAA3105023346AA4004DE08F /* PSAuthorizationTool.m in Sources */,
 				EA960AD9232F29FB00D81A25 /* NIMSessionConfigurator.m in Sources */,
+				55E29E59234C28180001470E /* NSMutableAttributedString+XZExtension.m in Sources */,
 				EAA3103E23346934004DE08F /* PSIntercepter.m in Sources */,
 				EAA311B1233472D8004DE08F /* MFMessageComposeViewController+BlocksKit.m in Sources */,
 				EA960A96232F29FA00D81A25 /* NIMPinyinConverter.m in Sources */,
