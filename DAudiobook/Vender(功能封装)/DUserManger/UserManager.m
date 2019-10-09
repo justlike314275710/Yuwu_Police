@@ -103,13 +103,14 @@ SINGLETON_FOR_CLASS(UserManager);
             id body = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             result = NO;
             NSString*code=body[@"code"];
+            NSString*message = body[@"message"];
             if ([code isEqualToString:@"user.PhoneNumberExisted"]) {
 
                 [self loginToServer:parmeters refresh:NO  completion:nil];
                 NSLog(@"公共服务注册成功");
             }
             else if ([code isEqualToString:@"user.SmsVerificationCodeNotMatched"]){
-                [PSTipsView showTips:@"短信验证码不匹配"];
+                [PSTipsView showTips:message];
             }
             else {
                [PSTipsView showTips:@"服务器异常"];

@@ -110,11 +110,10 @@
         [defaults synchronize];
     }];
     [alertController addAction:otherAction];
-    [alertController addAction:cancerAction];
     //强制更新---->不要取消
-//    if ([model.isForce integerValue] != 1) {
-//        [alertController addAction:cancerAction];
-//    }
+    if ([model.isForce integerValue] != 1) {
+        [alertController addAction:cancerAction];
+    }
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     
     //确认是否还需要弹出提示

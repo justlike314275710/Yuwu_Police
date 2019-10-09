@@ -162,7 +162,7 @@
     [versionView addSubview:titleLable];
     titleLable.textColor=[UIColor whiteColor];
     titleLable.font=FontOfSize(12);
-    titleLable.text=@"版本号:v1.00";
+    titleLable.text=@"版本号:v1.0.0";
     [titleLable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.view.mas_left).offset(20);
         make.right.equalTo(self.view.mas_right);

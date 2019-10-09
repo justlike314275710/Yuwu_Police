@@ -59,6 +59,7 @@
         switch (_logic.dataStatus) {
             case PSDataEmpty:{
                 [XXEmptyView diyEmptyView];}
+                 [self p_reloadContents];
                 break;
                 
             default:{

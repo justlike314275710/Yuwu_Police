@@ -117,11 +117,10 @@
         NSString *feedanswer = [NSString stringWithFormat:@"%@: %@",feedback,model.reply];
         self.feedbackLab.text = feedanswer;
         CGRect rect = [self.feedbackLab.text boundingRectWithSize:CGSizeMake(self.feedbackLab.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.feedbackLab.font} context:nil];
-        int detailLab_H = rect.size.height>35?rect.size.height:35;
+        int detailLab_H = rect.size.height>35?rect.size.height+15:35;
         self.feedbackLab.frame = CGRectMake(self.feedbackLab.frame.origin.x, self.feedbackLab.frame.origin.y,self.feedbackLab.width, detailLab_H);
         int sencond_h = self.feedbackLab.height+30>110?self.feedbackLab.height+30:110;
         self.secondView.frame = CGRectMake(0, self.firstView.bottom+15, self.secondView.width,sencond_h);
-        self.feedbackLab.lineBreakMode=0;
     } else {
         self.secondView.hidden = YES;
     }

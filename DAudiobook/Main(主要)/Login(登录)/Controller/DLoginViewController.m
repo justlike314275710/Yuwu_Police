@@ -105,6 +105,7 @@ typedef NS_ENUM(NSInteger, PSLoginModeType) {
     self.loginTypeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.loginTypeButton addTarget:self action:@selector(loginTypeChange) forControlEvents:UIControlEventTouchUpInside];
     [self.loginTypeButton setTitleColor:AppBaseTextColor3 forState:UIControlStateNormal];
+
     self.loginTypeButton.titleLabel.font = AppFont(13);
     self.loginTypeButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [self.loginTypeButton setTitle:@"使用密码登录" forState:UIControlStateNormal];
@@ -215,14 +216,16 @@ typedef NS_ENUM(NSInteger, PSLoginModeType) {
 - (void)startTimer {
     RMTimer *sharedTimer = [RMTimer sharedTimer];
     [sharedTimer resumeTimerWithDuration:self.seconds interval:1 handleBlock:^(NSInteger currentTime) {
-        self.loginMiddleView.codeButton.enabled = NO;
-        [self.loginMiddleView.codeButton setTitle:[NSString stringWithFormat:@"重发(%ld)",(long)currentTime] forState:UIControlStateDisabled];
-        [self.loginMiddleView.codeButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
+        NSLog(@"%ld",(long)currentTime);
+    
+            self.loginMiddleView.codeButton.enabled = NO;
+            [self.loginMiddleView.codeButton setTitle:[NSString stringWithFormat:@"重发(%ld)",(long)currentTime] forState:UIControlStateDisabled];
+            [self.loginMiddleView.codeButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
+      
+       
     } timeOutBlock:^{
         self.loginMiddleView.codeButton.enabled = YES;
         [self.loginMiddleView.codeButton setTitle:[NSString stringWithFormat:@"%@",@"获取验证码"] forState:UIControlStateNormal];
-        
-        
     }];
 }
 
