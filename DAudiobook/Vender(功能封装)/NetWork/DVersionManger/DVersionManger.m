@@ -116,11 +116,16 @@
     }
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     
-    //确认是否还需要弹出提示
-    NSString *value = [[NSUserDefaults standardUserDefaults] valueForKey:[NSString stringWithFormat:@"%@",localVersion]];
-    if (!value) {
-        [window.rootViewController presentViewController:alertController animated:YES completion:nil];
+    if ([model.isForce integerValue]==1) {
+         [window.rootViewController presentViewController:alertController animated:YES completion:nil];
+    } else {
+        //确认是否还需要弹出提示
+        NSString *value = [[NSUserDefaults standardUserDefaults] valueForKey:[NSString stringWithFormat:@"%@",localVersion]];
+        if (!value) {
+            [window.rootViewController presentViewController:alertController animated:YES completion:nil];
+        }
     }
+ 
 }
 
 #pragma mark - 异常提示OR不提示

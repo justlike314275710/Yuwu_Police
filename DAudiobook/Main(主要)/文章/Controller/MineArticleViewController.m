@@ -94,6 +94,50 @@
     [self.tableView reloadData];
 }
 
+//取消点赞
+-(void)deletePraiseActionid:(NSString *)artcleid result:(PSPraiseResult)result {
+    PSArticleDDetailViewModel *viewModel = [PSArticleDDetailViewModel new];
+    viewModel.id = artcleid;
+    [viewModel deletePraiseArticleCompleted:^(id data) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *msg = data[@"msg"];
+            NSInteger code = [data[@"code"] integerValue];
+            [PSTipsView showTips:msg];
+            if (code == 200){
+                result(YES);
+            } else {
+                result(NO);
+            }
+        });
+    } failed:^(NSError *error) {
+        [PSTipsView showTips:@"取消点赞失败"];
+        result(NO);
+    }];
+}
+
+//点赞
+-(void)praiseActionid:(NSString *)artileid result:(PSPraiseResult)result {
+    PSArticleDDetailViewModel *viewModel = [PSArticleDDetailViewModel new];
+    viewModel.id = artileid;
+    [viewModel praiseArticleCompleted:^(id data) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *msg = data[@"msg"];
+            NSInteger code = [data[@"code"] integerValue];
+            [PSTipsView showTips:msg];
+            if (code == 200){
+                result(YES);
+            } else {
+                result(NO);
+            }
+        });
+    } failed:^(NSError *error) {
+        [PSTipsView showTips:@"点赞失败"];
+        result(NO);
+    }];
+}
+
+
+
 #pragma mark - Setting&&Getting
 - (UITableView *)tableView {
     if (!_tableView) {
@@ -123,6 +167,16 @@
     PSMyTotalArtcleListViewModel *messageViewModel = (PSMyTotalArtcleListViewModel *)self.viewModel;
     NSArray *models = [messageViewModel.articles objectAtIndex:indexPath.section];
     cell.model = [models objectAtIndex:indexPath.row];
+    //点赞(取消点赞)
+    @weakify(self);
+    cell.praiseBlock = ^(BOOL action, NSString *id, PSPraiseResult result) {
+        @strongify(self);
+        if (action) {
+            [self praiseActionid:id result:result];
+        } else {
+            [self deletePraiseActionid:id result:result];
+        }
+    };
     return cell;
 }
 
@@ -133,6 +187,7 @@
     PSArticleDetailModel*model = [models objectAtIndex:indexPath.row];
     
     PSArticleDDetailViewModel *viewModel = [PSArticleDDetailViewModel new];
+    viewModel.detailModel = model;
     viewModel.id = model.id;
     PSDetailArticleViewController *DetailArticleVC = [[PSDetailArticleViewController alloc] init];    //点赞回调刷新
     DetailArticleVC.viewModel = viewModel;

@@ -103,6 +103,55 @@
     [self.tableView reloadData];
 }
 
+//点赞
+-(void)praiseActionid:(NSString *)artileid result:(PSPraiseResult)result {
+    PSArticleDDetailViewModel *viewModel = [PSArticleDDetailViewModel new];
+    viewModel.id = artileid;
+    [viewModel praiseArticleCompleted:^(id data) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *msg = data[@"msg"];
+            NSInteger code = [data[@"code"] integerValue];
+            [PSTipsView showTips:msg];
+            if (code == 200){
+                result(YES);
+            } else {
+                result(NO);
+            }
+        });
+    } failed:^(NSError *error) {
+        [PSTipsView showTips:@"点赞失败"];
+        result(NO);
+    }];
+}
+
+//取消点赞
+-(void)deletePraiseActionid:(NSString *)artcleid result:(PSPraiseResult)result {
+    PSArticleDDetailViewModel *viewModel = [PSArticleDDetailViewModel new];
+    viewModel.id = artcleid;
+    [viewModel deletePraiseArticleCompleted:^(id data) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *msg = data[@"msg"];
+            NSInteger code = [data[@"code"] integerValue];
+            [PSTipsView showTips:msg];
+            if (code == 200){
+                result(YES);
+            } else {
+                result(NO);
+            }
+        });
+    } failed:^(NSError *error) {
+        [PSTipsView showTips:@"取消点赞失败"];
+        result(NO);
+    }];
+}
+//取消收藏
+-(void)deleteCollect:(NSIndexPath *)indexPath model:(PSCollectArticleListModel *)model{
+    //刷新
+    if (indexPath.row<self.viewModel.messages.count) {
+        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+    }
+}
+
 #pragma mark - Setting&&Getting
 - (UITableView *)tableView {
     if (!_tableView) {
@@ -122,7 +171,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PSPlatformArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PSPlatformArticleCell"];
-    cell.model = [self.viewModel.messages objectAtIndex:indexPath.row];
+    PSArticleDetailModel *model = [self.viewModel.messages objectAtIndex:indexPath.row];
+    cell.model = model;
+    //点赞(取消点赞)
+    @weakify(self);
+    cell.praiseBlock = ^(BOOL action, NSString *id, PSPraiseResult result) {
+        @strongify(self);
+        if (action) {
+            [self praiseActionid:id result:result];
+        } else {
+            [self deletePraiseActionid:id result:result];
+        }
+    };
     return cell;
 }
 

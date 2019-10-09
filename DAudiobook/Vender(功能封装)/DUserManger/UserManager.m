@@ -223,7 +223,7 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
 -(void)police_Login:(NSDictionary *)params{
     NSString*url=NSStringFormat(@"%@%@",ServerUrl,URL_Police_Login);
     //NSString*url=@"http://192.168.0.112:8022/api/author_police/login";
-    NSString *username = [params valueForKey:@"name"];
+    NSString *username = [params valueForKey:@"name"]?[params valueForKey:@"name"]:@"";
     NSDictionary*param=@{@"accountName":username};
     NSString *access_token = help_userManager.oathInfo.access_token;
     NSString *token = NSStringFormat(@"Bearer %@",access_token);
