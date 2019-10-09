@@ -44,7 +44,7 @@
 -(void)saveItemClick{
     [[PSLoadingView sharedInstance]show];
     NSDictionary*param=@{@"penName":_penTextField.text};
-    if (_penTextField.text.length>0) {
+    if (_penTextField.text.length>6) {
         [PSTipsView showTips:@"笔名不能超过6个字"];
         return;
     }
@@ -58,6 +58,13 @@
         NSString*code=[NSString stringWithFormat:@"%@",responseObject[@"code"]];
         if ([code isEqualToString:@"1586"]) {
             [PSTipsView showTips:responseObject[@"msg"]];
+            NSArray*wordsArray=responseObject[@"data"][@"words"];
+            NSString*words=wordsArray[0];
+            NSMutableAttributedString *attrituteString = [[NSMutableAttributedString alloc] initWithString:self.penTextField.text];
+            NSRange range = [self.penTextField.text rangeOfString:words];
+            [attrituteString setAttributes:@{NSForegroundColorAttributeName : [UIColor redColor],   NSFontAttributeName : [UIFont systemFontOfSize:13]} range:range];
+            self.penTextField.attributedText=attrituteString;
+            
         }
         else if ([code isEqualToString:@"-1"]){
              [PSTipsView showTips:responseObject[@"msg"]];
@@ -90,7 +97,7 @@
     [self.view addSubview:bgview];
     
     self.penTextField=[UITextField new];
-    _penTextField.placeholder=@"  请输入作者笔名，不能少于2个字";
+    _penTextField.placeholder=@"  请输入作者笔名，不能超过6个字";
     _penTextField.frame=CGRectMake(5, 0, SCREEN_WIDTH-10, 44);
     [bgview addSubview:_penTextField];
     _penTextField.textColor=[UIColor blackColor];

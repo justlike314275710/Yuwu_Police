@@ -102,7 +102,7 @@
         [_loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         NSString*login=@"登录";
         [_loginButton setTitle:login forState:UIControlStateNormal];
-        [_loginButton setBackgroundImage:[UIImage imageNamed:@"提交按钮底框-灰色状态"] forState:UIControlStateNormal];
+        [_loginButton setBackgroundImage:[UIImage imageNamed:@"提交按钮底框"] forState:UIControlStateNormal];
         //[_loginButton setBackgroundColor:AppBaseTextColor3];
         [self addSubview:_loginButton];
         [_loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
