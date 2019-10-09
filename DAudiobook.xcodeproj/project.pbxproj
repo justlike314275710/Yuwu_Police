@@ -4226,14 +4226,14 @@
 		EA9457E5233AF3B2003C1C97 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				EA9457E6233AF3B2003C1C97 /* DResetPasswordViewController.m */,
+				EA9457ED233AF3B2003C1C97 /* DForgetPWViewController.h */,
+				EA9457E9233AF3B2003C1C97 /* DForgetPWViewController.m */,
+				EA9457EC233AF3B2003C1C97 /* DPasswordViewController.h */,
 				EA9457E7233AF3B2003C1C97 /* DPasswordViewController.m */,
 				EA9457E8233AF3B2003C1C97 /* DForgetPWNextViewController.h */,
-				EA9457E9233AF3B2003C1C97 /* DForgetPWViewController.m */,
-				EA9457EA233AF3B2003C1C97 /* DResetPasswordViewController.h */,
 				EA9457EB233AF3B2003C1C97 /* DForgetPWNextViewController.m */,
-				EA9457EC233AF3B2003C1C97 /* DPasswordViewController.h */,
-				EA9457ED233AF3B2003C1C97 /* DForgetPWViewController.h */,
+				EA9457EA233AF3B2003C1C97 /* DResetPasswordViewController.h */,
+				EA9457E6233AF3B2003C1C97 /* DResetPasswordViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

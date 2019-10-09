@@ -69,6 +69,7 @@
     UIButton*showPasswordButton=[UIButton new];
     [showPasswordButton setImage:IMAGE_NAMED(@"显示密码icon") forState:UIControlStateSelected ];
     [showPasswordButton setImage:IMAGE_NAMED(@"不显示密码icon") forState:UIControlStateNormal];
+    [showPasswordButton be_setEnlargeEdgeWithTop:5 right:15 bottom:5 left:15];
     [bgView addSubview:showPasswordButton];
     [showPasswordButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.passwordTextfield.top).offset(horizontalSpace);
