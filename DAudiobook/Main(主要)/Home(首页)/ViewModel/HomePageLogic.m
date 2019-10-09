@@ -112,7 +112,8 @@
     [PPNetworkHelper POST:urlString parameters:parameters success:^(id responseObject) {
         NSLog(@"%@",responseObject);
         if (responseObject) {
-            PSPublicArticleModel *model = [PSPublicArticleModel modelWithJSON:responseObject[@"author"]];
+            NSDictionary *dataDic = [responseObject objectForKey:@"data"];
+            PSPublicArticleModel *model = [PSPublicArticleModel modelWithJSON:dataDic[@"author"]];
             self.author = [model.isEnabled integerValue];
             if(!model) self.author = NO;
             completedCallback(responseObject);
