@@ -44,7 +44,10 @@
 -(void)saveItemClick{
     [[PSLoadingView sharedInstance]show];
     NSDictionary*param=@{@"penName":_penTextField.text};
-
+    if (_penTextField.text.length>0) {
+        [PSTipsView showTips:@"笔名不能超过6个字"];
+        return;
+    }
     NSString*url=NSStringFormat(@"%@%@",ServerUrl,URL_Police_updatePenName);
     NSString *access_token = help_userManager.oathInfo.access_token;
     NSString *token = NSStringFormat(@"Bearer %@",access_token);
@@ -58,7 +61,6 @@
         }
         else if ([code isEqualToString:@"-1"]){
              [PSTipsView showTips:responseObject[@"msg"]];
-            self.penTextField.textColor=[UIColor redColor];
         }
         else if ([code isEqualToString:@"500"]){
             [PSTipsView showTips:responseObject[@"msg"]];
