@@ -16,6 +16,8 @@
  @param color         颜色
  */
 + (void)xz_makeWordsAnotherColor:(NSString *)attributeText color:(UIColor *)color view:(UITextView *)textView;
+
++ (void)xzt_makeWordsAnotherColor:(NSString *)attributeText color:(UIColor *)color view:(UITextField *)textField;
 /**
  让部分文字变大/变色
  */

@@ -88,15 +88,16 @@
     [self.scrollview addSubview:self.nameLab];
     [self.nameLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(_headImageView.mas_right).offset(15);
-        make.top.mas_equalTo(_headImageView);
-        make.height.mas_equalTo(20);
-        make.width.mas_equalTo(200);
+        make.top.mas_equalTo(_headImageView.mas_top).offset(-5);
+        make.height.mas_equalTo(35);
+//        make.width.mas_equalTo(200);
     }];
+    [self.nameLab setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
     
     [self.scrollview addSubview:self.timeImageView];
     [self.timeImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(_headImageView.mas_right).offset(15);
-        make.top.mas_equalTo(_nameLab.mas_bottom).offset(11);
+        make.top.mas_equalTo(_nameLab.mas_bottom).offset(0);
         make.width.height.mas_equalTo(10);
     }];
     

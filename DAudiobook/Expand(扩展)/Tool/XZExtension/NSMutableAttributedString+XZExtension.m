@@ -27,10 +27,18 @@
     
     // 设置颜色属性
     NSInteger length = [attributeText length];
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:10];
+      //    [paragraphStyle setFirstLineHeadIndent:20];
+    
     if ([attributeText containsString:@"["]) {
         [attrStr addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(0, length)];//kXZMainBgColor
+         [attrStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, length)];
     }else { // 黑色
         [attrStr addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(0, length)];
+        [attrStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, length)];
+     
     }
 
     // 设置字体属性
@@ -43,10 +51,62 @@
     // 设置文本
     textView.attributedText = attrStrM;
     // 恢复光标位置
-    NSRange rangeNow = NSMakeRange(range.location + 1, 0);
+    NSRange rangeNow = NSMakeRange(range.location + length, 0);
     
     textView.selectedRange = rangeNow;
+
+
 }
+
++ (void)xzt_makeWordsAnotherColor:(NSString *)attributeText color:(UIColor *)color view:(UITextField *)textField{
+    // 获取当前 textView 属性文本 => 可变的
+    NSMutableAttributedString *attrStrM = [[NSMutableAttributedString alloc] initWithAttributedString:textField.attributedText];
+    
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString: attributeText];
+    
+    // 设置颜色属性
+    NSInteger length = [attributeText length];
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:10];
+    //    [paragraphStyle setFirstLineHeadIndent:20];
+    
+    if ([attributeText containsString:@"["]) {
+        [attrStr addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(0, length)];//kXZMainBgColor
+        [attrStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, length)];
+    }else { // 黑色
+        [attrStr addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(0, length)];
+        [attrStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, length)];
+        
+    }
+    
+    // 设置字体属性
+    UIFont *font = textField.font;
+    [attrStr addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, length)];
+    // 记录光标位置
+    NSRange range = [self selectedRange:textField];
+    // 将属性文本插入到当前的光标位置
+    [attrStrM replaceCharactersInRange:range withAttributedString:attrStr];
+    // 设置文本
+    textField.attributedText = attrStrM;
+    // 恢复光标位置
+    NSRange rangeNow = NSMakeRange(range.location + length, 0);
+    
+    textField.selectedRange = rangeNow;
+}
+//获取textfield 光标位置
++(NSRange)selectedRange:(UITextField*)textfield{
+    NSInteger location = [textfield offsetFromPosition:textfield.beginningOfDocument toPosition:textfield.selectedTextRange.start];
+    NSInteger length = [textfield offsetFromPosition:textfield.selectedTextRange.start toPosition:textfield.selectedTextRange.end];
+    return NSMakeRange(location, length);
+}
+
+//-(void)setSelectedRange:(NSRange)selectedRange{
+//    UITextPosition *startPosition = [self positionFromPosition:self.beginningOfDocument offset:selectedRange.location];
+//    UITextPosition *endPosition = [self positionFromPosition:self.beginningOfDocument offset:selectedRange.location + selectedRange.length];
+//    UITextRange *selectedTextRange = [self textRangeFromPosition:startPosition toPosition:endPosition];
+//    [self setSelectedTextRange:selectedTextRange];
+//}
 
 /**
  让部分文字变大/变色

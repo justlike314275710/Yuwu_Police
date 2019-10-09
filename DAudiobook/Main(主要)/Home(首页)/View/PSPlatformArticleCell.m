@@ -65,14 +65,14 @@
     [_bgView addSubview:self.nameLab];
     [self.nameLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.headImg.mas_right).offset(10);
-        make.height.mas_equalTo(21);
-        make.width.mas_equalTo(85);
+        make.height.mas_equalTo(35);
         make.centerY.mas_equalTo(self.headImg);
     }];
+    [self.nameLab setContentHuggingPriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisHorizontal];
     
     [_bgView addSubview:self.stateImageView];
     [self.stateImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_nameLab.mas_right).offset(0);
+        make.left.mas_equalTo(_nameLab.mas_right).offset(10);
         make.height.mas_equalTo(15);
         make.width.mas_equalTo(50);
         make.centerY.mas_equalTo(self.headImg);
@@ -139,6 +139,8 @@
 }
 //
 - (void)setModel:(PSArticleDetailModel *)model {
+    
+    
     _model = model;
     _titleLab.text = model.title;
     _contentLab.text = model.content;
@@ -211,7 +213,7 @@
         [_likeBtn setImage:IMAGE_NAMED(@"已赞") forState:UIControlStateNormal];
     }
     //用户头像
-    NSString*url=AvaterImageWithUsername(_model.username);
+    NSString*url=AvaterImageWithUsername(_collecModel.username);
     [_headImg sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"作者头像"] options:SDWebImageRefreshCached];
 }
  
@@ -352,6 +354,7 @@
         _nameLab.text = @"国科吴彦祖肖局";
         _nameLab.font = FontOfSize(12);
         _nameLab.textColor = UIColorFromRGB(102, 102, 102);
+//        _nameLab.numberOfLines = 0;
         _nameLab.textAlignment = NSTextAlignmentLeft;
     }
     return _nameLab;
