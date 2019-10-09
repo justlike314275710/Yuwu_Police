@@ -56,15 +56,15 @@
     [PPNetworkHelper POST:url parameters:param success:^(id responseObject) {
          [[PSLoadingView sharedInstance]dismiss];
         NSString*code=[NSString stringWithFormat:@"%@",responseObject[@"code"]];
-        NSString*message=responseObject[@"msg"];
         if ([code isEqualToString:@"1586"]) {
             [PSTipsView showTips:responseObject[@"msg"]];
-            
-            NSMutableAttributedString *attrituteString = [[NSMutableAttributedString alloc] initWithString:message];
-            
-            NSRange range = [self.penTextField.text rangeOfString:self.penTextField.text];
+            NSArray*wordsArray=responseObject[@"data"][@"words"];
+            NSString*words=wordsArray[0];
+            NSMutableAttributedString *attrituteString = [[NSMutableAttributedString alloc] initWithString:self.penTextField.text];
+            NSRange range = [self.penTextField.text rangeOfString:words];
             [attrituteString setAttributes:@{NSForegroundColorAttributeName : [UIColor redColor],   NSFontAttributeName : [UIFont systemFontOfSize:13]} range:range];
             self.penTextField.attributedText=attrituteString;
+            
         }
         else if ([code isEqualToString:@"-1"]){
              [PSTipsView showTips:responseObject[@"msg"]];
