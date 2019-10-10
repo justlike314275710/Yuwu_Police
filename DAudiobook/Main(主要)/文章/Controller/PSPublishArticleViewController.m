@@ -34,6 +34,7 @@
 @property(nonatomic,strong)RZRichTextView *articleContent;
 @property(nonatomic,strong)UIScrollView *scrollview;
 @property(nonatomic,strong)UIView *container;
+@property(nonatomic,assign)BOOL hasWords;
 
 @end
 
@@ -115,7 +116,7 @@
     }
     NSMutableAttributedString * attriStr = [[NSMutableAttributedString alloc] initWithString:viewModel.content];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    [paragraphStyle setFirstLineHeadIndent:20];
+//    [paragraphStyle setFirstLineHeadIndent:20];
     [paragraphStyle setLineSpacing:10];
     [attriStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0,[viewModel.content length])];
     _articleContent.attributedText = attriStr;
@@ -269,7 +270,7 @@
 }
 
 -(void)publishAction:(UIButton*)sender{
-    
+    _hasWords = NO;
     _viewModel.penName = _authorField.text;
     _viewModel.content = _articleContent.text;
     _viewModel.title = _articleTitleField.text;
@@ -328,6 +329,7 @@
 //存在敏感字符
 -(void)reEditContent{
     //内容
+    self.hasWords = YES;
     PSPublishArticleViewModel *viewModel = (PSPublishArticleViewModel *)self.viewModel;
     NSMutableAttributedString * attriStr = [[NSMutableAttributedString alloc] initWithString:viewModel.content];
     [viewModel.words enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -339,7 +341,7 @@
         }];
     }];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    [paragraphStyle setFirstLineHeadIndent:20];
+//    [paragraphStyle setFirstLineHeadIndent:20];
     [paragraphStyle setLineSpacing:10];
     [attriStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0,[viewModel.content length])];
     // 调整字间距
@@ -387,6 +389,13 @@
         [PSTipsView showTips:msg];
         return NO;
     }
+    
+    if (string.length>0&&self.hasWords) {
+        [NSMutableAttributedString xzt_makeWordsAnotherColor:string color:[UIColor redColor] view:textField];
+        return NO;
+    }
+    
+//    textField.textColor = [UIColor blackColor];
     return YES;
 }
 //限制数字
@@ -544,7 +553,7 @@
         _articleContent.placeholder = @"请输入正文，字数限制为100-20000字";
         _articleContent.font = FontOfSize(14);
         NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-        [paragraphStyle setFirstLineHeadIndent:20];
+//        [paragraphStyle setFirstLineHeadIndent:20];
         [paragraphStyle setLineSpacing:10];
         _articleContent.rz_attributedDictionays[NSParagraphStyleAttributeName] = paragraphStyle;
         @weakify(self);
@@ -556,21 +565,25 @@
                 NSString *msg = NSLocalizedString(@"Can't enter expressions!", @"不能输入表情！");
                 [PSTipsView showTips:msg];
             }
+            
         }];
         @weakify(_articleContent);
         _articleContent.rz_shouldChangeTextInRange = ^BOOL(RZRichTextView * _Nonnull textView, NSRange inRange, NSString * _Nonnull replacementText) {
              @strongify(_articleContent);
+            _articleContent.rz_attributedDictionays[NSParagraphStyleAttributeName] = paragraphStyle;
             if ([[[textView textInputMode] primaryLanguage] isEqualToString:@"emoji"] || ![[textView textInputMode] primaryLanguage]) {
                 NSString *msg = @"不能输入表情!";
                 [PSTipsView showTips:msg];
                 return NO;
             } else{
-                if (replacementText.length>0) {
+                if (replacementText.length>0&&self.hasWords) {
                     [NSMutableAttributedString xz_makeWordsAnotherColor:replacementText color:[UIColor redColor] view:_articleContent];
+                    return NO;
                 }
                 return YES;
             }
         };
+
     }
     return _articleContent;
 }
