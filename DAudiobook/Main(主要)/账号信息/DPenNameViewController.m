@@ -7,7 +7,7 @@
 //
 
 #import "DPenNameViewController.h"
-
+#import "NSString+emoji.h"
 @interface DPenNameViewController ()
 @property (nonatomic , strong) UITextField *penTextField;
 @end
@@ -42,12 +42,17 @@
 
 
 -(void)saveItemClick{
-    [[PSLoadingView sharedInstance]show];
     NSDictionary*param=@{@"penName":_penTextField.text};
     if (_penTextField.text.length>6) {
         [PSTipsView showTips:@"笔名不能超过6个字"];
         return;
     }
+    if (![NSString hasEmoji:_penTextField.text]) {
+        [PSTipsView showTips:@"笔名不能包含表情"];
+        return;
+    }
+    
+    [[PSLoadingView sharedInstance]show];
     NSString*url=NSStringFormat(@"%@%@",ServerUrl,URL_Police_updatePenName);
     NSString *access_token = help_userManager.oathInfo.access_token;
     NSString *token = NSStringFormat(@"Bearer %@",access_token);
