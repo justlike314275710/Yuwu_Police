@@ -394,8 +394,6 @@
         [NSMutableAttributedString xzt_makeWordsAnotherColor:string color:[UIColor redColor] view:textField];
         return NO;
     }
-    
-//    textField.textColor = [UIColor blackColor];
     return YES;
 }
 //限制数字

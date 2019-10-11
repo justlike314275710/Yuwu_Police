@@ -77,7 +77,6 @@
     }else { // 黑色
         [attrStr addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(0, length)];
         [attrStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, length)];
-        
     }
     
     // 设置字体属性

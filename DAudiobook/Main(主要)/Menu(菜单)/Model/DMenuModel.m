@@ -45,16 +45,16 @@
     [dataArry addObject:arraymodelE];
     
     DMenuModel*arraymodelF      =[DMenuModel new];
-    arraymodelF.title           =@"版本更新";
-    arraymodelF.pictureImage    =@"版本更新";
-    arraymodelF.menuType        =KVersionType;
+    arraymodelF.title           =@"退出登录";
+    arraymodelF.pictureImage    =@"退出icon";
+    arraymodelF.menuType        =KLogoutType;
     [dataArry addObject:arraymodelF];
     
-    DMenuModel*arraymodelG      =[DMenuModel new];
-    arraymodelG.title           =@"退出登录";
-    arraymodelG.pictureImage    =@"退出icon";
-    arraymodelG.menuType        =KLogoutType;
-    [dataArry addObject:arraymodelG];
+//    DMenuModel*arraymodelG      =[DMenuModel new];
+//    arraymodelG.title           =@"退出登录";
+//    arraymodelG.pictureImage    =@"退出icon";
+//    arraymodelG.menuType        =KLogoutType;
+//    [dataArry addObject:arraymodelG];
     
      return dataArry;
     
