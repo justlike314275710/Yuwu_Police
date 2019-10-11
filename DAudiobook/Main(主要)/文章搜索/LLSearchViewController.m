@@ -111,12 +111,15 @@
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(5, 5, self.view.frame.size.width, 30)];
     UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(5, 0, CGRectGetWidth(titleView.frame) - 15-5, 30)];
     searchBar.placeholder = @"搜索文章|连载书籍";
+    
     searchBar.delegate = self;
     searchBar.showsCancelButton = YES;
     UIView *searchTextField = searchTextField = [searchBar valueForKey:@"_searchField"];
     searchTextField.backgroundColor = [UIColor whiteColor];
    // ViewRadius(searchBar, 15);
     [searchBar setImage:[UIImage imageNamed:@"sort_magnifier"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
+    [searchTextField setValue:[UIFont systemFontOfSize:13] forKeyPath:@"_placeholderLabel.font"];
+
     UIButton *cancleBtn = [searchBar valueForKey:@"cancelButton"];
     //修改标题和标题颜色
     [cancleBtn setTitle:@"取消" forState:UIControlStateNormal];

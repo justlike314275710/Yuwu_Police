@@ -401,13 +401,13 @@
 		55ED63C1233E3452004A9C37 /* EBMuteDetector.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55ED63B4233E3451004A9C37 /* EBMuteDetector.mp3 */; };
 		55ED63C2233E3452004A9C37 /* EBBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED63B5233E3451004A9C37 /* EBBannerViewController.m */; };
 		E473341141BF7F02638F5529 /* libPods-DAudiobook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A489DFF9190310E891E597 /* libPods-DAudiobook.a */; };
+		EA4D2C9E23506A7E001D376F /* UMSocialNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4D2C9D23506A7D001D376F /* UMSocialNetwork.framework */; };
 		EA92622D233DEB360028FAF7 /* XXEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA92622B233DEB2D0028FAF7 /* XXEmptyView.m */; };
 		EA94570423385ABA003C1C97 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94570223385AB9003C1C97 /* UITextView+Placeholder.m */; };
 		EA94574D233A2C40003C1C97 /* LLActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA945749233A2C40003C1C97 /* LLActionSheetView.m */; };
 		EA94574E233A2C40003C1C97 /* HMActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94574A233A2C40003C1C97 /* HMActionSheetView.m */; };
 		EA9457B7233A2D9B003C1C97 /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EA94578D233A2D9A003C1C97 /* UMSocialSDKResources.bundle */; };
 		EA9457B8233A2D9B003C1C97 /* UShareUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA94578E233A2D9A003C1C97 /* UShareUI.framework */; };
-		EA9457B9233A2D9B003C1C97 /* UMSocialNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA945790233A2D9A003C1C97 /* UMSocialNetwork.framework */; };
 		EA9457BA233A2D9B003C1C97 /* UMSocialCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA945791233A2D9A003C1C97 /* UMSocialCore.framework */; };
 		EA9457BB233A2D9B003C1C97 /* libSocialDouban.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA945795233A2D9A003C1C97 /* libSocialDouban.a */; };
 		EA9457BC233A2D9B003C1C97 /* libSocialRenren.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA945798233A2D9A003C1C97 /* libSocialRenren.a */; };
@@ -1543,6 +1543,7 @@
 		55ED63B7233E3451004A9C37 /* EBBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBBannerView.h; sourceTree = "<group>"; };
 		77A489DFF9190310E891E597 /* libPods-DAudiobook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DAudiobook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10A1B66EF6EE62C2CCE46C8 /* Pods-DAudiobook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DAudiobook.debug.xcconfig"; path = "Target Support Files/Pods-DAudiobook/Pods-DAudiobook.debug.xcconfig"; sourceTree = "<group>"; };
+		EA4D2C9D23506A7D001D376F /* UMSocialNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMSocialNetwork.framework; sourceTree = "<group>"; };
 		EA92622B233DEB2D0028FAF7 /* XXEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXEmptyView.m; sourceTree = "<group>"; };
 		EA92622C233DEB330028FAF7 /* XXEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXEmptyView.h; sourceTree = "<group>"; };
 		EA94570223385AB9003C1C97 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
@@ -1553,7 +1554,6 @@
 		EA94574C233A2C40003C1C97 /* HMActionSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMActionSheetView.h; sourceTree = "<group>"; };
 		EA94578D233A2D9A003C1C97 /* UMSocialSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResources.bundle; sourceTree = "<group>"; };
 		EA94578E233A2D9A003C1C97 /* UShareUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UShareUI.framework; sourceTree = "<group>"; };
-		EA945790233A2D9A003C1C97 /* UMSocialNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMSocialNetwork.framework; sourceTree = "<group>"; };
 		EA945791233A2D9A003C1C97 /* UMSocialCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMSocialCore.framework; sourceTree = "<group>"; };
 		EA945794233A2D9A003C1C97 /* UMSocialDoubanHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialDoubanHandler.h; sourceTree = "<group>"; };
 		EA945795233A2D9A003C1C97 /* libSocialDouban.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialDouban.a; sourceTree = "<group>"; };
@@ -2509,6 +2509,7 @@
 				EA9457D0233A2F9C003C1C97 /* NMC.framework in Frameworks */,
 				EA9457D4233A30F5003C1C97 /* NMC.framework in Frameworks */,
 				EA9457BA233A2D9B003C1C97 /* UMSocialCore.framework in Frameworks */,
+				EA4D2C9E23506A7E001D376F /* UMSocialNetwork.framework in Frameworks */,
 				EA9457C6233A2D9B003C1C97 /* TencentOpenAPI.framework in Frameworks */,
 				3C79D843229B939A00A9D10E /* libc++.tbd in Frameworks */,
 				EA9457C2233A2D9B003C1C97 /* libSocialSina.a in Frameworks */,
@@ -2526,7 +2527,6 @@
 				3CD2D805229926EB00C700D7 /* MessageUI.framework in Frameworks */,
 				3CD2D803229926AE00C700D7 /* UIKit.framework in Frameworks */,
 				EA9457BB233A2D9B003C1C97 /* libSocialDouban.a in Frameworks */,
-				EA9457B9233A2D9B003C1C97 /* UMSocialNetwork.framework in Frameworks */,
 				3CD2D8012299268600C700D7 /* Foundation.framework in Frameworks */,
 				3CD2D7FF2299265A00C700D7 /* Photos.framework in Frameworks */,
 				EA960E32233070F500D81A25 /* NIMSDK.framework in Frameworks */,
@@ -4171,7 +4171,7 @@
 		EA94578F233A2D9A003C1C97 /* UMSocialSDK */ = {
 			isa = PBXGroup;
 			children = (
-				EA945790233A2D9A003C1C97 /* UMSocialNetwork.framework */,
+				EA4D2C9D23506A7D001D376F /* UMSocialNetwork.framework */,
 				EA945791233A2D9A003C1C97 /* UMSocialCore.framework */,
 			);
 			path = UMSocialSDK;
