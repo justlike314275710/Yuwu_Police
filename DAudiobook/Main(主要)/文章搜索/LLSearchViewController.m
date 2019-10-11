@@ -183,11 +183,9 @@
     [self.view bringSubviewToFront:_searchSuggestVC.view];
     [self.searchBar resignFirstResponder];
     [_searchSuggestVC searchTestChangeWithTest:searchBar.text];
-<<<<<<< HEAD
+
     [self setHistoryArrWithStr:searchBar.text];
-=======
-     [self setHistoryArrWithStr:searchBar.text];
->>>>>>> a947def030ee56b1905da28cc9ef67df2283fd1d
+
 }
 
 
