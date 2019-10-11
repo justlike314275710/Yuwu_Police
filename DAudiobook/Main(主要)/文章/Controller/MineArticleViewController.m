@@ -141,7 +141,7 @@
 #pragma mark - Setting&&Getting
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,64,self.view.width,kScreenHeight-64) style:UITableViewStyleGrouped];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,Height_NavBar,self.view.width,kScreenHeight-Height_NavBar) style:UITableViewStyleGrouped];
         _tableView.backgroundColor = UIColorFromRGB(249,248,254);
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.dataSource = self;
