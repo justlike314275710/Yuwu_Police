@@ -61,8 +61,8 @@ SINGLETON_FOR_HEADER(UserManager)
 
 
 #pragma mark - ——————— 注册账号判断账号状态   ————————
--(BOOL)requestEcomRegister:(NSDictionary *)parmeters;
-
+-(BOOL)requestPhoneEcomRegister:(NSDictionary *)parmeters;
+-(BOOL)requestUsernameEcomRegister:(NSDictionary *)parmeters;
 
 #pragma mark - ——————— 登录相关 ————————
 

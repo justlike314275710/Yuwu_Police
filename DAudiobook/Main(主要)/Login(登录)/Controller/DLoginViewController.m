@@ -181,7 +181,7 @@ typedef NS_ENUM(NSInteger, PSLoginModeType) {
             };
             [kUserDefaults setObject:self.loginMiddleView.phoneTextField.text forKey:@"phone"];
             help_userManager.loginMode=self.mode;
-            [help_userManager requestEcomRegister:parmeters];
+            [help_userManager requestPhoneEcomRegister:parmeters];
         } else {
             [PSTipsView showTips:tips];
         }
