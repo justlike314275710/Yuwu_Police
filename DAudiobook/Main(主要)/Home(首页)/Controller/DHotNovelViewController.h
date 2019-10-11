@@ -12,6 +12,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DHotNovelViewController : DTableViewController
+//最新文章数
+-(void)refreshNewCount;
+
 @end
 
 

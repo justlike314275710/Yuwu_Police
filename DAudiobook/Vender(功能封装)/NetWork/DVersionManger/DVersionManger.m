@@ -125,7 +125,6 @@
             [window.rootViewController presentViewController:alertController animated:YES completion:nil];
         }
     }
- 
 }
 
 #pragma mark - 异常提示OR不提示
@@ -177,15 +176,15 @@
             if (dataAry.count > 0) {
                 [dataAry enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     DUpdataModel *model =[DUpdataModel mj_objectWithKeyValues:obj];
-//                    [[UpDateModel alloc] initWithDictionary:obj error:nil];
+//                   [[UpDateModel alloc] initWithDictionary:obj error:nil];
                     [mary addObject:model];
                     //IOS-->更新
-                    if ([model.id isEqualToString:@"3"]&&update) {
+                    if ([model.id isEqualToString:@"5"]&&update) {
                         [self updateVersion:model];
                         *stop = YES;
                     }
                     //不更新---->异常提示
-                    if ([model.id isEqualToString:@"3"]&&!update) {
+                    if ([model.id isEqualToString:@"5"]&&!update) {
                         [self showErrorMsg:model];
                         *stop = YES;
                     }

@@ -15,6 +15,8 @@
 
 + (UIViewController *)jsd_getCurrentViewController;
 
++(BOOL)isCurrentViewControllerVisible:(UIViewController *)viewController;
+
 @end
 
 

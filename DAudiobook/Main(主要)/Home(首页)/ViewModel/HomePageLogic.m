@@ -135,4 +135,40 @@
     }];
 }
 
+//查询新文章数量
+-(void)getNewArticleCountCompleted:(RequestDataCompleted)completedCallback
+                            failed:(RequestDataFailed)failedCallback{
+    NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_NewArticleCount];
+    if (self.datalist.count<=0) return;
+    PSArticleDetailModel *model = [self.datalist objectAtIndex:0];
+    if (!model) {
+        if (failedCallback) {
+            failedCallback(nil);
+        }
+        return;
+    }
+    NSDictionary *parameters = @{@"id":model.id};
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    [PPNetworkHelper setResponseSerializer:PPResponseSerializerJSON];
+    NSString *access_token = help_userManager.oathInfo.access_token;
+    access_token = NSStringFormat(@"Bearer %@",access_token);
+    [PPNetworkHelper setValue:access_token forHTTPHeaderField:@"Authorization"];
+    [PPNetworkHelper GET:urlString parameters:parameters success:^(id responseObject) {
+        NSInteger code = [[responseObject objectForKey:@"code"] integerValue];
+        if (code==200) {
+            self.count = [[[responseObject objectForKey:@"data"] valueForKey:@"count"] integerValue];
+            NSLog(@"%ld",(long)self.count);
+            if (completedCallback&&self.count>0) {
+                completedCallback(responseObject);
+            }
+        }
+    } failure:^(NSError *error) {
+        if (failedCallback) {
+            failedCallback(error);
+        }
+    }];
+    
+}
+
 @end
