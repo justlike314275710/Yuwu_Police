@@ -22,6 +22,9 @@
 #import "UIBarButtonItem+Helper.h"
 #import "LLSearchViewController.h"
 #import "PPBadgeView.h"
+#import "MJCPromptsMessage.h"
+#import "ZXCTimer.h"
+#import "UIViewController+Tool.h"
 @interface DHotNovelViewController()<UITableViewDelegate,UITableViewDataSource,SearchBarDisplayCenterDelegate,UITextFieldDelegate> {
 
     
@@ -29,6 +32,7 @@
 @property (nonatomic,strong) UITableView *tableview;
 @property (nonatomic,strong) UIButton *publishBtn;
 @property (nonatomic,strong) HomePageLogic *logic;
+@property (nonatomic,assign) BOOL hasCount;
 
 @end
 
@@ -40,10 +44,9 @@
    // [self GDTadvertising];
   
     self.logic = [HomePageLogic new];
+    self.hasCount = NO;
     [self SearchBar];
     [self setupUI];
-    
-//    [self setupData];
     
     //下啦刷新
     [self refreshData];
@@ -59,8 +62,27 @@
     
     //发文章权限
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupData) name:KNotificationArticleAuthor object:nil];
-    
+    //获取有几条新消息
+    [[ZXCTimer shareInstance]addCycleTask:^{
+          [self refreshNewCount];
+    } timeInterval:30];
 
+}
+-(void)refreshNewCount{
+    BOOL isCurrent = [UIViewController isCurrentViewControllerVisible:self];
+    if (isCurrent) {
+        [self.logic getNewArticleCountCompleted:^(id data) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // 设置颜色
+                NSString *msg = [NSString stringWithFormat:@"%ld条新内容,下拉刷新",(long)self.logic.count];
+                [MJCPromptsMessage showMessage:msg backColor:UIColorFromRGB(97, 189, 254) textColor:[UIColor whiteColor] image:nil msgHidden:NO starFrame:64];
+                [MJCPromptsMessage reviseMessageFrame:CGRectMake(0,kTopHeight,KScreenWidth,30)];
+                self.hasCount = YES;
+            });
+        } failed:^(NSError *error) {
+            
+        }];
+    }
 }
 
 -(void)refreshRedDot{
@@ -127,6 +149,12 @@
 }
 //下啦刷新
 - (void)refreshData{
+    // 初始化文字
+//    if (self.hasCount) {
+//        NSString *msg = [NSString stringWithFormat:@"**正在刷新列表**"];
+//        [MJCPromptsMessage showMessage:msg backColor:UIColorFromRGB(97, 189, 254) textColor:[UIColor whiteColor] image:nil msgHidden:NO starFrame:64];
+//        [MJCPromptsMessage reviseMessageFrame:CGRectMake(0,kTopHeight,KScreenWidth,30)];
+//    }
     [[PSLoadingView sharedInstance] show];
     [self.logic refreshArticleListCompleted:^(id data) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -134,6 +162,12 @@
             [self.tableview reloadData];
              [self reloadContents];
             [[PSLoadingView sharedInstance] dismiss];
+            if (self.hasCount==YES) {
+                NSString *msg = [NSString stringWithFormat:@"为您更新了%ld篇内容",(long)self.logic.count];
+                [MJCPromptsMessage showMessage:msg backColor:UIColorFromRGB(97, 189, 254) textColor:[UIColor whiteColor] image:nil msgHidden:YES starFrame:64];
+                [MJCPromptsMessage reviseMessageFrame:CGRectMake(0,kTopHeight,KScreenWidth,30)];
+            }
+            self.hasCount = NO;
         });
     } failed:^(NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -141,6 +175,7 @@
             [self.tableview reloadData];
             [self reloadContents];
             [[PSLoadingView sharedInstance] dismiss];
+            [MJCPromptsMessage hideDismiss];
         });
     }];
 }

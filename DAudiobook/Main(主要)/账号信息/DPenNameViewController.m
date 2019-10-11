@@ -8,7 +8,7 @@
 
 #import "DPenNameViewController.h"
 #import "NSString+emoji.h"
-@interface DPenNameViewController ()
+@interface DPenNameViewController ()<UITextFieldDelegate>
 @property (nonatomic , strong) UITextField *penTextField;
 @end
 
@@ -39,7 +39,15 @@
 //    [self.navigationController setNavigationBarHidden:YES];
 //}
 
-
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if ([[[textField textInputMode] primaryLanguage] isEqualToString:@"emoji"] || ![[textField textInputMode] primaryLanguage])
+    {
+        NSString *msg = @"笔名不能包含表情符号!";
+        [PSTipsView showTips:msg];
+        return NO;
+    }
+    return YES;
+}
 
 -(void)saveItemClick{
     NSDictionary*param=@{@"penName":_penTextField.text};
@@ -47,7 +55,7 @@
         [PSTipsView showTips:@"笔名不能超过6个字"];
         return;
     }
-    if ([NSString hasEmoji:_penTextField.text]) {
+    if ([NSString hasEmoji:_penTextField.text]||[NSString stringContainsEmoji:_penTextField.text]) {
         [PSTipsView showTips:@"笔名不能包含表情"];
         return;
     }
@@ -107,6 +115,7 @@
     [bgview addSubview:_penTextField];
     _penTextField.textColor=[UIColor blackColor];
     _penTextField.font=FontOfSize(14);
+    _penTextField.delegate = self;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

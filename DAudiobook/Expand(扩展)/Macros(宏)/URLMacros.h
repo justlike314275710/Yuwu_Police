@@ -211,10 +211,15 @@
 #define URL_Article_deletePraise @"/api/article/deletePraise"
 //收藏列表
 #define URL_Article_collectList @"/api/article/collectList"
+//查询最新文章数量
+#define URL_Article_NewArticleCount @"/api/article/getNewArticleCount"
 
 //搜索文章
 #define URL_Article_searchList  @"/api/article/findPublishArticle"
 
 
 #define URL_advice_processing  @"/lawyer/my/legal-advice/processing"
+
+
+
 #endif /* URLMacros_h */
