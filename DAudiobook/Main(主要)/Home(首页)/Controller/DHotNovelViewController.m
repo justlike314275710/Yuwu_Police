@@ -36,7 +36,7 @@
 
 @end
 
-#pragma mark - 热门小说
+
 @implementation DHotNovelViewController
 #pragma mark - LifeCycle
 - (void)viewDidLoad {
@@ -95,8 +95,39 @@
 
 }
 
+-(UIImage*)convertViewToImage:(UIView*)v{
+    CGSize s = v.bounds.size;
+    UIGraphicsBeginImageContextWithOptions(s, YES, [UIScreen mainScreen].scale);
+    [v.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage*image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 - (void)setupNavItem
 {
+    
+//    UIView *view = [[UIView alloc] init];
+//    view.frame = CGRectMake(0,25,SCREEN_WIDTH,48);
+//    
+//    CAGradientLayer *gl = [CAGradientLayer layer];
+//    gl.frame = CGRectMake(0,25,SCREEN_WIDTH,48);
+//    gl.startPoint = CGPointMake(0, 0);
+//    gl.endPoint = CGPointMake(1, 1);
+//    gl.colors = @[(__bridge id)[UIColor colorWithRed:32/255.0 green:124/255.0 blue:251/255.0 alpha:1.0].CGColor,(__bridge id)[UIColor colorWithRed:76/255.0 green:179/255.0 blue:244/255.0 alpha:1.0].CGColor];
+//    gl.locations = @[@(0.0),@(1.0f)];
+//    
+//    [self.view.layer addSublayer:gl];
+//    view.layer.shadowColor = [UIColor colorWithRed:0/255.0 green:42/255.0 blue:162/255.0 alpha:0.2].CGColor;
+//    view.layer.shadowOffset = CGSizeMake(0,4);
+//    view.layer.shadowOpacity = 1;
+//    view.layer.shadowRadius = 9;
+//    [self.navigationController.navigationBar setBackgroundImage:[self convertViewToImage:view] forBarMetrics:UIBarMetricsDefault];
+    
+    
+    
+    
+    
     //设置导航栏唤醒抽屉按钮
     MMDrawerBarButtonItem *leftItem = [MMDrawerBarButtonItem itemWithNormalIcon:@"我的icon" highlightedIcon:nil target:self action:@selector(leftDrawerButtonPress)];
 

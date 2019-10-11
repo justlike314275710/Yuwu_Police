@@ -240,11 +240,10 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
                      KPostNotification(KNotificationLoginStateChange, @YES);
                     //获取云信账号信息
                     [self autoLoginToServer:nil];
-                 
                 }
                 else{
                      KPostNotification(KNotificationLoginStateChange, @NO);
-                    [PSTipsView showTips:@"请联系监狱管理人员进行身份认证登记"];
+                     [PSTipsView showTips:@"您已被禁用,暂不能登录"];
                 }
             }
         }
@@ -253,7 +252,7 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
              [PSTipsView showTips:@"请联系监狱管理人员进行身份认证登记"];
         }
     } failure:^(NSError *error) {
-        [PSTipsView showTips:@"服务器异常"];
+         [PSTipsView showTips:@"请联系监狱管理人员进行身份认证登记"];
         KPostNotification(KNotificationLoginStateChange, @NO);
     }];
  

@@ -167,7 +167,7 @@
     [manager GET:updateApi parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSString *msg = responseObject[@"msg"];
+       // NSString *msg = responseObject[@"msg"];
         NSInteger code = [responseObject[@"code"] integerValue];
         NSDictionary *datadic = responseObject[@"data"];
         NSMutableArray *mary = [NSMutableArray array];

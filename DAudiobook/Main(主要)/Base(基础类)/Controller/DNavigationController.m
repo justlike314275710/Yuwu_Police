@@ -12,56 +12,47 @@
 
 - (void)viewDidLoad
 {
-    //=============================自定义返回按钮，开启原生滑动返回功能
+    //定义返回按钮，开启原生滑动返回功能
     WEAKSELF
     if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)])
     {
         self.interactivePopGestureRecognizer.delegate = (id)weakSelf;
         self.delegate = (id)weakSelf;
     }
-    //=============================
     [self setItems];
 }
 -(void)setItems
 {
 
-    //动态更改导航背景 / 样式
-    //开启编辑
-    UINavigationBar *bar = [UINavigationBar appearance];
+  /*
     //设置导航条背景颜色
    
-//        UIView *view = [[UIView alloc] init];
-//        view.frame = CGRectMake(0,25,SCREEN_WIDTH,48);
-//
-//        CAGradientLayer *gl = [CAGradientLayer layer];
-//        gl.frame = CGRectMake(0,25,SCREEN_WIDTH,48);
-//        gl.startPoint = CGPointMake(0, 0);
-//        gl.endPoint = CGPointMake(1, 1);
-//        gl.colors = @[(__bridge id)[UIColor colorWithRed:32/255.0 green:124/255.0 blue:251/255.0 alpha:1.0].CGColor,(__bridge id)[UIColor colorWithRed:76/255.0 green:179/255.0 blue:244/255.0 alpha:1.0].CGColor];
-//        gl.locations = @[@(0.0),@(1.0f)];
-//
-//        [self.view.layer addSublayer:gl];
-//        view.layer.shadowColor = [UIColor colorWithRed:0/255.0 green:42/255.0 blue:162/255.0 alpha:0.2].CGColor;
-//        view.layer.shadowOffset = CGSizeMake(0,4);
-//        view.layer.shadowOpacity = 1;
-//        view.layer.shadowRadius = 9;
-//        [self.navigationBar setBackgroundImage:[self convertViewToImage:view] forBarMetrics:UIBarMetricsDefault];
-   
-        [bar setBarTintColor:ImportantColor];
-    
-    
-    
-   // [bar setBarTintColor:ImportantColor];
-    //设置字体颜色
+        UIView *view = [[UIView alloc] init];
+        view.frame = CGRectMake(0,25,SCREEN_WIDTH,48);
+
+        CAGradientLayer *gl = [CAGradientLayer layer];
+        gl.frame = CGRectMake(0,25,SCREEN_WIDTH,48);
+        gl.startPoint = CGPointMake(0, 0);
+        gl.endPoint = CGPointMake(1, 1);
+        gl.colors = @[(__bridge id)[UIColor colorWithRed:32/255.0 green:124/255.0 blue:251/255.0 alpha:1.0].CGColor,(__bridge id)[UIColor colorWithRed:76/255.0 green:179/255.0 blue:244/255.0 alpha:1.0].CGColor];
+        gl.locations = @[@(0.0),@(1.0f)];
+
+        [self.view.layer addSublayer:gl];
+        view.layer.shadowColor = [UIColor colorWithRed:0/255.0 green:42/255.0 blue:162/255.0 alpha:0.2].CGColor;
+        view.layer.shadowOffset = CGSizeMake(0,4);
+        view.layer.shadowOpacity = 1;
+        view.layer.shadowRadius = 9;
+        [self.navigationBar setBackgroundImage:[self convertViewToImage:view] forBarMetrics:UIBarMetricsDefault];
+   */
+ 
+
+    UINavigationBar *bar = [UINavigationBar appearance];
+    [bar setBarTintColor:ImportantColor];
     [bar setTintColor:[UIColor whiteColor]];
-    //设置样式
     [bar setTitleTextAttributes:@{
                                   NSForegroundColorAttributeName : [UIColor whiteColor],
                                   NSFontAttributeName : [UIFont boldSystemFontOfSize:14]
                                   }];
-    
-    //设置导航条按钮样式
-    //开启编辑
     UIBarButtonItem *item = [UIBarButtonItem appearance];
     //设置样式
     [item setTitleTextAttributes:@{
@@ -69,7 +60,7 @@
                                    NSFontAttributeName : [UIFont boldSystemFontOfSize:16]
                                    } forState:UIControlStateNormal]; 
     
-    
+   
 }
 
 
@@ -84,7 +75,7 @@
     return image;
 }
 
-//==========================================================滑动返回卡住问题解决
+//滑动返回卡住问题解决
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)] && animated == YES)

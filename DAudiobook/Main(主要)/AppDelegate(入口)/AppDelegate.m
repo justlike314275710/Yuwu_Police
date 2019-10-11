@@ -105,9 +105,9 @@
 }
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
     //注册成功后上传Token至服务器
-    BmobInstallation  *currentIntallation = [BmobInstallation installation];
-    [currentIntallation setDeviceTokenFromData:deviceToken];
-    [currentIntallation saveInBackground];
+//    BmobInstallation  *currentIntallation = [BmobInstallation installation];
+//    [currentIntallation setDeviceTokenFromData:deviceToken];
+//    [currentIntallation saveInBackground];
     
 }
 //分享
@@ -140,18 +140,18 @@
 //广点通广告
 -(void)initializeGdtSDK{
    //开屏广告初始化并展示代码
-    GDTSplashAd *splash = [[GDTSplashAd alloc] initWithAppId:GDTAppkey placementId:GDTPlacementIdK];
-    splash.delegate = self;
-    UIImage *splashImage = [UIImage imageNamed:@"SplashNormal"];
-    if (isIPhoneXSeries()) {
-        splashImage = [UIImage imageNamed:@"SplashX"];
-    } else if ([UIScreen mainScreen].bounds.size.height == 480) {
-        splashImage = [UIImage imageNamed:@"SplashSmall"];
-    }
-    splash.backgroundImage = splashImage;
-    splash.fetchDelay = 5;//设置开屏拉取时长限制，若超时则不再展示广告
-    [splash loadAdAndShowInWindow:self.window];
-    self.splash = splash;
+//    GDTSplashAd *splash = [[GDTSplashAd alloc] initWithAppId:GDTAppkey placementId:GDTPlacementIdK];
+//    splash.delegate = self;
+//    UIImage *splashImage = [UIImage imageNamed:@"SplashNormal"];
+//    if (isIPhoneXSeries()) {
+//        splashImage = [UIImage imageNamed:@"SplashX"];
+//    } else if ([UIScreen mainScreen].bounds.size.height == 480) {
+//        splashImage = [UIImage imageNamed:@"SplashSmall"];
+//    }
+//    splash.backgroundImage = splashImage;
+//    splash.fetchDelay = 5;//设置开屏拉取时长限制，若超时则不再展示广告
+//    [splash loadAdAndShowInWindow:self.window];
+//    self.splash = splash;
     
     
 
@@ -254,13 +254,13 @@
         [DAllControllersTool createViewControllerWithIndex:menuModel];
         self.window.rootViewController = [DAllControllersTool shareOpenController].drawerController;
         
-        //        自动登录
+        // 自动登录
         [help_userManager autoLoginToServer:^(BOOL success, NSString *des) {
             if (success) {
-                //                    [MBProgressHUD showSuccessMessage:@"自动登录成功"];
+                //[MBProgressHUD showSuccessMessage:@"自动登录成功"];
                 KPostNotification(KNotificationAutoLoginSuccess, nil);
             }else{
-                //                [MBProgressHUD showErrorMessage:NSStringFormat(@"自动登录失败：%@",des)];
+                //[MBProgressHUD showErrorMessage:NSStringFormat(@"自动登录失败：%@",des)];
                 [PSTipsView showTips:@"自动登录失败"];
             }
         }];
