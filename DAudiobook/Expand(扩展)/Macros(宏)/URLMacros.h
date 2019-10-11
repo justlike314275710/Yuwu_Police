@@ -93,8 +93,10 @@
 #define URL_Test @"/api/cast/home/start"
 
 #pragma mark - ——————— 公共服务 ————————
-//注册接口
-#define URL_post_registe @"/users/of-mobile"
+//注册手机用户接口
+#define URL_post_mobileRegiste @"/users/of-mobile"
+//注册用户名用户接口
+#define URL_post_usernameRegiste @"/users/of-username"
 //获取验证码
 #define URL_get_verification_code @"/sms/verification-codes"
 

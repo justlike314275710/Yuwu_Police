@@ -183,6 +183,7 @@
     [self.view bringSubviewToFront:_searchSuggestVC.view];
     [self.searchBar resignFirstResponder];
     [_searchSuggestVC searchTestChangeWithTest:searchBar.text];
+     [self setHistoryArrWithStr:searchBar.text];
 }
 
 
@@ -210,6 +211,7 @@
         [self.view bringSubviewToFront:_searchSuggestVC.view];
         [self.searchBar resignFirstResponder];
         [_searchSuggestVC searchTestChangeWithTest:searchBar.text];
+       
     }
 }
 

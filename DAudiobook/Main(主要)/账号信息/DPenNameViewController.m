@@ -47,7 +47,7 @@
         [PSTipsView showTips:@"笔名不能超过6个字"];
         return;
     }
-    if (![NSString hasEmoji:_penTextField.text]) {
+    if ([NSString hasEmoji:_penTextField.text]) {
         [PSTipsView showTips:@"笔名不能包含表情"];
         return;
     }

@@ -218,8 +218,7 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    NSLog(@"textDidChange");
-    
+
     if (searchBar.text == nil || [searchBar.text length] <= 0) {
         _searchSuggestVC.view.hidden = YES;
         [self.view addSubview:self.searchView];

@@ -79,9 +79,9 @@ SINGLETON_FOR_CLASS(UserManager);
  */
 #pragma mark ————— 注册账号或者判断账号是否存在 —————
 
--(BOOL)requestEcomRegister:(NSDictionary *)parmeters {
+-(BOOL)requestPhoneEcomRegister:(NSDictionary *)parmeters{
     __block BOOL result = NO;
-    NSString *url = NSStringFormat(@"%@%@",EmallHostUrl,URL_post_registe);
+    NSString *url = NSStringFormat(@"%@%@",EmallHostUrl,URL_post_mobileRegiste);
     AFHTTPSessionManager* manager=[AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -120,6 +120,53 @@ SINGLETON_FOR_CLASS(UserManager);
     return result;
  
 }
+
+
+-(BOOL)requestUsernameEcomRegister:(NSDictionary *)parmeters {
+    __block BOOL result = NO;
+    NSString *url = NSStringFormat(@"%@%@",EmallHostUrl,URL_post_usernameRegiste);
+    AFHTTPSessionManager* manager=[AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.requestSerializer.timeoutInterval = 10.f;
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSString*username=parmeters[@"phoneNumber"];
+    NSString*password=parmeters[@"verificationCode"];
+    NSDictionary*dict=
+    @{@"username":username,@"password":password,@"group":@"CUSTOMER",@"name":password};
+    [manager POST:url parameters:dict progress:^(NSProgress * _Nonnull uploadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSHTTPURLResponse * responses = (NSHTTPURLResponse *)task.response;
+        NSInteger code = responses.statusCode;
+        if (code == 201) {
+            [self loginToServer:parmeters refresh:NO completion:nil];
+            result = YES;
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSData *data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey];
+        if (ValidData(data)) {
+            id body = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            result = NO;
+            NSString*code=body[@"code"];
+            NSString*message = body[@"message"];
+            if ([code isEqualToString:@"user.UsernameExisted"]) {
+                
+                [self loginToServer:parmeters refresh:NO  completion:nil];
+                NSLog(@"公共服务注册成功");
+            }
+            else if ([code isEqualToString:@"user.SmsVerificationCodeNotMatched"]){
+                [PSTipsView showTips:message];
+            }
+            else {
+                [PSTipsView showTips:@"服务器异常"];
+            }
+        }
+    }];
+    return result;
+    
+}
+
 
 #pragma mark ————— 手动登录到服务器 —————
 
