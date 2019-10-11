@@ -182,12 +182,11 @@
             break;
         case 2:
         {
-//            if (ValidStr(self.pseudinym)) {
-//
-//            } else {
-//                [self modifyPenName];
-//            }
-            [self modifyPenName];
+            if (ValidStr(self.pseudinym)) {
+
+            } else {
+                [self modifyPenName];
+            }
         }
             break;
         case 3:

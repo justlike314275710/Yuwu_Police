@@ -162,7 +162,9 @@
     [versionView addSubview:titleLable];
     titleLable.textColor=[UIColor whiteColor];
     titleLable.font=FontOfSize(12);
-    titleLable.text=@"版本号:v1.0.0";
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    titleLable.text=NSStringFormat(@"版本号:v",app_Version);
     [titleLable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.view.mas_left).offset(20);
         make.right.equalTo(self.view.mas_right);
