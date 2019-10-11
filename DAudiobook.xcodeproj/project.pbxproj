@@ -303,6 +303,8 @@
 		3CDB10C32291696A00AEDE9E /* 丝袜.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CDB10BD2291696A00AEDE9E /* 丝袜.json */; };
 		3CDB10C42291696A00AEDE9E /* 美腿.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CDB10BE2291696A00AEDE9E /* 美腿.json */; };
 		3CDB10C52291696A00AEDE9E /* 性感.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CDB10BF2291696A00AEDE9E /* 性感.json */; };
+		550CB2B2235059A900088129 /* TSScrollStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 550CB2AE235059A800088129 /* TSScrollStatusBar.m */; };
+		550CB2B3235059A900088129 /* UIScrollView+TSSCrollStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 550CB2AF235059A800088129 /* UIScrollView+TSSCrollStatusBar.m */; };
 		55278D58233C487800FBEE66 /* libReactiveObjC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55278D57233C487800FBEE66 /* libReactiveObjC.a */; };
 		55278D5A233C5C6F00FBEE66 /* libRZColorful.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55278D59233C5C6F00FBEE66 /* libRZColorful.a */; };
 		553D6919234F109800909A66 /* infowhite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 553D6900234F109700909A66 /* infowhite@2x.png */; };
@@ -1371,6 +1373,10 @@
 		3CDB10BD2291696A00AEDE9E /* 丝袜.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "丝袜.json"; sourceTree = "<group>"; };
 		3CDB10BE2291696A00AEDE9E /* 美腿.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "美腿.json"; sourceTree = "<group>"; };
 		3CDB10BF2291696A00AEDE9E /* 性感.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "性感.json"; sourceTree = "<group>"; };
+		550CB2AE235059A800088129 /* TSScrollStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSScrollStatusBar.m; sourceTree = "<group>"; };
+		550CB2AF235059A800088129 /* UIScrollView+TSSCrollStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TSSCrollStatusBar.m"; sourceTree = "<group>"; };
+		550CB2B0235059A900088129 /* UIScrollView+TSSCrollStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TSSCrollStatusBar.h"; sourceTree = "<group>"; };
+		550CB2B1235059A900088129 /* TSScrollStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSScrollStatusBar.h; sourceTree = "<group>"; };
 		55278D57233C487800FBEE66 /* libReactiveObjC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReactiveObjC.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		55278D59233C5C6F00FBEE66 /* libRZColorful.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRZColorful.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		553D68FE234F109700909A66 /* UIView+MJCExtenSion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJCExtenSion.h"; sourceTree = "<group>"; };
@@ -3738,6 +3744,10 @@
 				553D6916234F109700909A66 /* MJCPackageMessage.m */,
 				553D6917234F109700909A66 /* MJCPromptsMessage.m */,
 				553D6918234F109700909A66 /* MJCPromptsView.h */,
+				550CB2B1235059A900088129 /* TSScrollStatusBar.h */,
+				550CB2AE235059A800088129 /* TSScrollStatusBar.m */,
+				550CB2B0235059A900088129 /* UIScrollView+TSSCrollStatusBar.h */,
+				550CB2AF235059A800088129 /* UIScrollView+TSSCrollStatusBar.m */,
 			);
 			path = MJCPromptsMessage;
 			sourceTree = "<group>";
@@ -6552,6 +6562,7 @@
 				EAA21BC7233CB71D00A06819 /* FeedbackListCell.m in Sources */,
 				55ED63BD233E3452004A9C37 /* EBBannerWindow.m in Sources */,
 				3CD2D7EC2297CCF700C700D7 /* DSlider.m in Sources */,
+				550CB2B3235059A900088129 /* UIScrollView+TSSCrollStatusBar.m in Sources */,
 				EA960A90232F29FA00D81A25 /* NIMKitTimerHolder.m in Sources */,
 				3C39357622882A5400A5190A /* BAGridViewTypeTitleDescCell.m in Sources */,
 				EA960E68233075BE00D81A25 /* IQUIView+Hierarchy.m in Sources */,
@@ -6949,6 +6960,7 @@
 				3CCDAA612271C0190019783A /* DPlayMusicView.m in Sources */,
 				3C8953F6229D293D00CB70E1 /* DChooseMusicView.m in Sources */,
 				3C0DB67D22D7320B0029730E /* UIScrollView+MJRefresh.m in Sources */,
+				550CB2B2235059A900088129 /* TSScrollStatusBar.m in Sources */,
 				EA960B63232F2FE900D81A25 /* UIImageView+WebCache.m in Sources */,
 				EA960C84232F3B1B00D81A25 /* YYKVStorage.m in Sources */,
 				3C37E97C228BFC290035E114 /* DTextJokesCell.m in Sources */,

@@ -59,7 +59,7 @@
     [self.view addSubview:self.topTipLab];
     [self.topTipLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(self.view);
-        make.top.mas_equalTo(kTopHeight);
+        make.top.mas_equalTo(Height_NavBar);
         make.height.mas_equalTo(42);
     }];
     

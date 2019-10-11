@@ -33,6 +33,7 @@
 @property (nonatomic,strong) UIButton *publishBtn;
 @property (nonatomic,strong) HomePageLogic *logic;
 @property (nonatomic,assign) BOOL hasCount;
+@property (nonatomic,strong) UILabel*tipLab;
 
 @end
 
@@ -73,10 +74,9 @@
     if (isCurrent) {
         [self.logic getNewArticleCountCompleted:^(id data) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                // 设置颜色
                 NSString *msg = [NSString stringWithFormat:@"%ld条新内容,下拉刷新",(long)self.logic.count];
-                [MJCPromptsMessage showMessage:msg backColor:UIColorFromRGB(97, 189, 254) textColor:[UIColor whiteColor] image:nil msgHidden:NO starFrame:64];
-                [MJCPromptsMessage reviseMessageFrame:CGRectMake(0,kTopHeight,KScreenWidth,30)];
+                self.tipLab.text = msg;
+                self.tipLab.hidden=NO;
                 self.hasCount = YES;
             });
         } failed:^(NSError *error) {
@@ -92,7 +92,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 //    [self setupData];
+}
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
 }
 
 -(UIImage*)convertViewToImage:(UIView*)v{
@@ -125,9 +128,6 @@
 //    [self.navigationController.navigationBar setBackgroundImage:[self convertViewToImage:view] forBarMetrics:UIBarMetricsDefault];
     
     
-    
-    
-    
     //设置导航栏唤醒抽屉按钮
     MMDrawerBarButtonItem *leftItem = [MMDrawerBarButtonItem itemWithNormalIcon:@"我的icon" highlightedIcon:nil target:self action:@selector(leftDrawerButtonPress)];
 
@@ -139,8 +139,6 @@
     UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc]initWithNormalIcon:@"消息icon" highlightedIcon:nil target:self action:@selector(rightBarItemPress)];
     self.navigationItem.rightBarButtonItem = rightBarItem;
     
-    
-    
 }
 
 
@@ -150,11 +148,6 @@
 //下啦刷新
 - (void)refreshData{
     // 初始化文字
-//    if (self.hasCount) {
-//        NSString *msg = [NSString stringWithFormat:@"**正在刷新列表**"];
-//        [MJCPromptsMessage showMessage:msg backColor:UIColorFromRGB(97, 189, 254) textColor:[UIColor whiteColor] image:nil msgHidden:NO starFrame:64];
-//        [MJCPromptsMessage reviseMessageFrame:CGRectMake(0,kTopHeight,KScreenWidth,30)];
-//    }
     [[PSLoadingView sharedInstance] show];
     [self.logic refreshArticleListCompleted:^(id data) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -164,8 +157,8 @@
             [[PSLoadingView sharedInstance] dismiss];
             if (self.hasCount==YES) {
                 NSString *msg = [NSString stringWithFormat:@"为您更新了%ld篇内容",(long)self.logic.count];
-                [MJCPromptsMessage showMessage:msg backColor:UIColorFromRGB(97, 189, 254) textColor:[UIColor whiteColor] image:nil msgHidden:YES starFrame:64];
-                [MJCPromptsMessage reviseMessageFrame:CGRectMake(0,kTopHeight,KScreenWidth,30)];
+                self.tipLab.text = msg;
+                [self showAutoHiden];
             }
             self.hasCount = NO;
         });
@@ -409,6 +402,26 @@
     return _tableview;
 }
 
+- (UILabel*)tipLab {
+    if (!_tipLab) {
+        _tipLab = [UILabel new];
+        _tipLab.backgroundColor = UIColorFromRGB(97,185,254);
+        _tipLab.hidden = NO;
+        _tipLab.textColor = [UIColor whiteColor];
+        _tipLab.font = FontOfSize(12);
+        _tipLab.textAlignment = NSTextAlignmentCenter;
+        _tipLab.frame = CGRectMake(0,kTopHeight,KScreenWidth,30);
+        _tipLab.text = @"";
+        [self.view addSubview:_tipLab];
+    }
+    return _tipLab;
+}
+- (void)showAutoHiden{
+    self.tipLab.hidden = NO;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.tipLab.hidden=YES;
+    });
+}
 @end
 
 

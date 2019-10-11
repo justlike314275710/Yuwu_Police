@@ -148,7 +148,6 @@
         return;
     }
     NSDictionary *parameters = @{@"id":model.id};
-    [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
     [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
     [PPNetworkHelper setResponseSerializer:PPResponseSerializerJSON];
     NSString *access_token = help_userManager.oathInfo.access_token;
