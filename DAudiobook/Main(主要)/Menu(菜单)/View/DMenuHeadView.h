@@ -31,7 +31,7 @@ typedef void(^HeaderViewClickEvent)(void);
 @property(nonatomic, strong) UIButton       *tapButton;
 @property(nonatomic, strong) LPButton * AuthenticaBtn;
 
--(void)refreshvView;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -12,8 +12,8 @@
 
 - (void)setLayout{
     
-    self.contentView.backgroundColor=ImportantColor;
-    
+//    self.contentView.backgroundColor=ImportantColor;
+//     self.contentView.backgroundColor=[UIColor clearColor];
     [self.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.mas_left).offset(0);
         make.right.mas_equalTo(self.mas_right).offset(0);
@@ -54,7 +54,7 @@
 - (UIView *)lineView{
     if (!_lineView) {
         _lineView=[[UIView alloc]init];
-        _lineView.backgroundColor=ImportantColor;
+        _lineView.backgroundColor=[UIColor clearColor];
         [self addSubview:_lineView];
     }
     return _lineView;
