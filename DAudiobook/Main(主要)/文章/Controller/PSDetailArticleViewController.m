@@ -59,10 +59,10 @@
     [self.view addSubview:self.topTipLab];
     [self.topTipLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(self.view);
-        make.top.mas_equalTo(Height_NavBar);
+        make.top.mas_equalTo(0);
         make.height.mas_equalTo(42);
     }];
-    
+
     [self.view addSubview:self.scrollview];
     [self.scrollview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_topTipLab.mas_bottom);
@@ -517,6 +517,7 @@
     if (!_bottomView) {
         _bottomView = [UIImageView new];
         _bottomView.image = ImageNamed(@"ArticleDetailBottomBG");
+        _bottomView.userInteractionEnabled = YES;
     }
     return _bottomView;
 }
