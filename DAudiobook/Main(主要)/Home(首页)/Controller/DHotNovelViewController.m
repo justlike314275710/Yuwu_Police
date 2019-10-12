@@ -283,8 +283,6 @@
     [self.navigationController pushViewController:publishVC animated:YES];
 }
 
-
-
 -(void)SearchBar{
     
     SearchBarDisplayCenter *searchBar = [[SearchBarDisplayCenter alloc]initWithFrame:CGRectMake(0, 30, [UIScreen mainScreen].bounds.size.width-60, 30.0 )];
@@ -328,7 +326,9 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 175;
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0.01f;
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
     PSArticleDetailModel *model = [self.logic.datalist objectAtIndex:indexPath.row];
@@ -376,11 +376,13 @@
 
 - (UITableView *)tableview {
     if (!_tableview) {
-        _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0,44,self.view.width,kScreenHeight-44) style:UITableViewStyleGrouped];
+        _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0,0,self.view.width,kScreenHeight-Height_NavBar) style:UITableViewStyleGrouped];
         _tableview.backgroundColor = UIColorFromRGB(249,248,254);
         _tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableview.dataSource = self;
         _tableview.delegate = self;
+        UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1,10)];   
+        _tableview.tableHeaderView = tableHeaderView;
     }
     return _tableview;
 }
