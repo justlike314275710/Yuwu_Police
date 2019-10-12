@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString*characterSpace;
 
 // 行间距 自定义属性
-@property (nonatomic, copy) NSString*lineSpace;
+@property (nonatomic, copy) NSString*lineSpace;   
 
 // 获取lab的高度
 - (CGFloat)getLableHeightWithMaxWidth:(CGFloat)maxWidth;

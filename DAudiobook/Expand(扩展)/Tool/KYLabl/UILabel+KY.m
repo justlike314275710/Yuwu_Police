@@ -15,7 +15,7 @@ static const char *characterSpaceKey = "characterSpaceKey";
 static const char *lineSpaceKey = "lineSpaceKey";
 
 - (void)setCharacterSpace:(NSString *)characterSpace{
-
+    
         [self willChangeValueForKey:@"characterSpace"]; // KVO
         NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:self.text];
         [attributedString addAttribute:NSFontAttributeName value:self.font range:NSMakeRange(0,self.text.length)];

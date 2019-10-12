@@ -67,7 +67,7 @@
     [self.scrollview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_topTipLab.mas_bottom);
         make.left.right.mas_equalTo(0);
-        make.bottom.mas_equalTo(-50);
+        make.bottom.mas_equalTo(-90);
     }];
     
     [self.scrollview addSubview:self.titleLab];
@@ -119,22 +119,22 @@
     
     [self.view addSubview:self.bottomView];
     [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(20);
-        make.left.mas_equalTo(-10);
-        make.right.mas_equalTo(10);
+        make.bottom.mas_equalTo(0);
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
         make.height.mas_equalTo(90);
     }];
     
     [self.bottomView addSubview:self.likeBtn];
     [self.likeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(0);
+        make.centerY.mas_equalTo(self.bottomView.centerY).offset(10);
         make.height.width.mas_equalTo(20);
         make.left.mas_equalTo(25);
     }];
     
     [self.bottomView addSubview:self.likeLab];
     [self.likeLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(0);
+        make.centerY.mas_equalTo(self.bottomView.centerY).offset(10);
         make.height.mas_equalTo(20);
         make.width.mas_equalTo(35);
         make.left.mas_equalTo(_likeBtn.mas_right).offset(10);
@@ -142,14 +142,14 @@
     
     [self.bottomView addSubview:self.hotBtn];
     [self.hotBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(0);
+        make.centerY.mas_equalTo(self.bottomView.centerY).offset(10);
         make.height.width.mas_equalTo(20);
         make.centerX.mas_equalTo(_bottomView.mas_centerX).offset(-45);
     }];
     
     [self.bottomView addSubview:self.hotLab];
     [self.hotLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(0);
+        make.centerY.mas_equalTo(self.bottomView.centerY).offset(10);
         make.height.mas_equalTo(20);
         make.width.mas_equalTo(60);
         make.left.mas_equalTo(_hotBtn.mas_right).offset(10);
@@ -157,14 +157,14 @@
     
     [self.bottomView addSubview:self.collectBtn];
     [self.collectBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(0);
+        make.centerY.mas_equalTo(self.bottomView.centerY).offset(10);
         make.height.width.mas_equalTo(20);
         make.centerX.mas_equalTo(_bottomView.mas_centerX).offset(80);
     }];
     
     [self.bottomView addSubview:self.collectLab];
     [self.collectLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(0);
+        make.centerY.mas_equalTo(self.bottomView.centerY).offset(10);
         make.height.mas_equalTo(20);
         make.width.mas_equalTo(60);
         make.left.mas_equalTo(_collectBtn.mas_right).offset(10);
@@ -238,7 +238,7 @@
         [_hotBtn setImage:IMAGE_NAMED(@"热度") forState:UIControlStateNormal];
         [_hotLab setTextColor:UIColorFromRGB(102,102,102)];
     }
-    CGFloat bottom = isHideBottom?0:-50;
+    CGFloat bottom = isHideBottom?0:-90;
     [self.scrollview mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_topTipLab.mas_bottom);
         make.left.right.mas_equalTo(0);
@@ -255,7 +255,7 @@
     
     [self.scrollview addSubview:self.endIconImageView];
     [self.endIconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(_contentTextView.mas_bottom).offset(20);
+        make.top.mas_equalTo(_contentTextView.mas_bottom).offset(10);
         make.centerX.mas_equalTo(0);
         make.height.mas_equalTo(10);
         make.width.mas_equalTo(57);
