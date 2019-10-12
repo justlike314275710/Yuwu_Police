@@ -395,7 +395,7 @@
         _tipLab.textColor = [UIColor whiteColor];
         _tipLab.font = FontOfSize(12);
         _tipLab.textAlignment = NSTextAlignmentCenter;
-        _tipLab.frame = CGRectMake(0,kTopHeight,KScreenWidth,30);
+        _tipLab.frame = CGRectMake(0,0,KScreenWidth,30);
         _tipLab.text = @"";
         [self.view addSubview:_tipLab];
     }

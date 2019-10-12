@@ -160,6 +160,8 @@
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.dataSource = self;
         _tableView.delegate = self;
+        UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1,10)];
+        _tableView.tableHeaderView = tableHeaderView;
     }
     return _tableView;
 }

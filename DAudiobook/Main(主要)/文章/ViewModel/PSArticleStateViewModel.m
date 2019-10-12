@@ -48,7 +48,7 @@
 - (void)requestMessagesCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback {
     
     NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_getMyArticle];
-    NSDictionary *parameters = @{@"page":[NSString stringWithFormat:@"%ld",(long)self.page],@"rows":[NSString stringWithFormat:@"%ld",(long)self.pageSize],@"status":self.status};
+    NSDictionary *parameters = @{@"page":[NSString stringWithFormat:@"%ld",(long)self.page],@"rows":[NSString stringWithFormat:@"%ld",(long)self.pageSize],@"status":self.status,@"type":@"2"};
     [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
     NSString *access_token = help_userManager.oathInfo.access_token;
     access_token = NSStringFormat(@"Bearer %@",access_token);

@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"收藏文章";
-    self.view.backgroundColor = [UIColor clearColor];
+    self.view.backgroundColor =  UIColorFromRGB(249,248,254);
     [self addBackItem];
     [self setupUI];
     [self refreshData];
@@ -142,6 +142,8 @@
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,0,self.view.width,kScreenHeight-Height_NavBar) style:UITableViewStylePlain];
+        UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1,10)];
+        _tableView.tableHeaderView = tableHeaderView;
         _tableView.backgroundColor = UIColorFromRGB(249,248,254);
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.dataSource = self;

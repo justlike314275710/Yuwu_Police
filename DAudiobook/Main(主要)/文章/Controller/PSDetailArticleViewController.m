@@ -204,6 +204,7 @@
         _topTipLab.hidden = NO;
         _topTipLab.text = [NSString stringWithFormat:@"文章已下架,%@",_viewModel.detailModel.shelfReason];
         isHideBottom = NO;
+        _timeLab.text = self.viewModel.detailModel.auditAt;
         [self addRightBarButtonTitleItem:@"编辑"];
     }
     [self setupUIViewHidden:isHideBottom];
