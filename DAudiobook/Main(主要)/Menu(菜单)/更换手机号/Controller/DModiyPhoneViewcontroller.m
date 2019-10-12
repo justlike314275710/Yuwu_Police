@@ -38,7 +38,7 @@
 - (void)renderContents {
     [self.view addSubview:self.scrollview];
     [self.scrollview addSubview:self.msglab];
-    _msglab.frame = CGRectMake(16,64,SCREEN_WIDTH-32,45);
+    _msglab.frame = CGRectMake(16,Height_NavBar,SCREEN_WIDTH-32,45);
     NSString *phone = curUser.username;
 
     _msglab.text = NSStringFormat(@"＊更换手机号，下次登录可使用新手机号登录。当前手机号:%@",phone);

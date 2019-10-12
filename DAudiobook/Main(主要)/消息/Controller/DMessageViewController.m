@@ -30,6 +30,7 @@
 }
 
 - (void)refreshData {
+    
     [[PSLoadingView sharedInstance]show];
     [_logic refreshMessagesCompleted:^(id data) {
         [[PSLoadingView sharedInstance] dismiss];
@@ -66,7 +67,7 @@
     
     UIView *view = [[UIView alloc] init];
     [self.view addSubview:view];
-    view.frame = CGRectMake(15,88,SCREEN_WIDTH-30,SCREEN_HEIGHT-88-20);
+    view.frame = CGRectMake(15,Height_NavBar+10,SCREEN_WIDTH-30,SCREEN_HEIGHT-Height_NavBar-20);
     view.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];
     view.layer.shadowColor = [UIColor colorWithRed:0/255.0 green:41/255.0 blue:108/255.0 alpha:0.18].CGColor;
     view.layer.shadowOffset = CGSizeMake(0,4);

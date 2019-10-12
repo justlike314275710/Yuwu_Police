@@ -23,7 +23,7 @@
 - (UITableView *)contentView
 {
     if (!_contentView) {
-        self.contentView = [[UITableView alloc] initWithFrame:CGRectMake(0, 15, KScreenWidth, KScreenHeight) style:UITableViewStyleGrouped];
+        self.contentView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight) style:UITableViewStyleGrouped];
         _contentView.delegate = self;
         _contentView.dataSource = self;
         _contentView.backgroundColor = [UIColor whiteColor];

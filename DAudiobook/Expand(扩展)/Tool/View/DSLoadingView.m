@@ -6,20 +6,19 @@
 //  Copyright (c) 2014年 BuBuGao. All rights reserved.
 //
 
-#import "PSLoadingView.h"
+#import "DSLoadingView.h"
 #import "DGActivityIndicatorView.h"
-//#import "PSMacro.h"
-
-@interface PSLoadingView ()
+#import "LLGifImageView.h"
+@interface DSLoadingView ()
 
 @property (nonatomic, strong) DGActivityIndicatorView *indicatorView;
-
+@property (nonatomic, strong) LLGifImageView *gifImageView;
 @end
 
-@implementation PSLoadingView
+@implementation DSLoadingView
 
-+ (PSLoadingView *)sharedInstance {
-    static PSLoadingView *loadingView = nil;
++ (DSLoadingView *)sharedInstance {
+    static DSLoadingView *loadingView = nil;
     static dispatch_once_t oncetoken;
     dispatch_once(&oncetoken,^{
         if (!loadingView) {
@@ -36,8 +35,10 @@
         self.backgroundColor = [UIColor clearColor];
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
-        self.indicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeLineScale tintColor:ImportantColor size:60];
-        [self addSubview:self.indicatorView];
+        NSData *localData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"加载动画" ofType:@"gif"]];
+        _gifImageView = [[LLGifImageView alloc] initWithFrame:CGRectMake(100, 100, 200, 200)];
+        _gifImageView.gifData = localData;
+        [self addSubview:_gifImageView];
     }
     return self;
 }
@@ -45,12 +46,12 @@
 
 - (void)setFrame:(CGRect)frame {
     [super setFrame:frame];
-    self.indicatorView.center = self.center;
+    self.gifImageView.center = self.center;
 }
 
 - (void)show {
     if ([NSThread mainThread]) {
-         [self showOnView:[[UIApplication sharedApplication] keyWindow]];
+        [self showOnView:[[UIApplication sharedApplication] keyWindow]];
     } else {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self showOnView:[[UIApplication sharedApplication] keyWindow]];
@@ -60,19 +61,19 @@
 
 - (void)showOnView:(UIView *)view {
     self.frame = view.bounds;
-    [self.indicatorView startAnimating];
-    self.indicatorView.center = self.center;
+    [self.gifImageView startGif];
+    self.gifImageView.center = self.center;
     [view addSubview:self];
     [view bringSubviewToFront:self];
 }
 
 - (void)dismiss {
     if ([NSThread mainThread]) {
-        [self.indicatorView stopAnimating];
+        [self.gifImageView stopGif];
         [self removeFromSuperview];
     } else {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.indicatorView stopAnimating];
+            [self.gifImageView stopGif];
             [self removeFromSuperview];
         });
     }
