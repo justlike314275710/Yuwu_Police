@@ -45,7 +45,7 @@
 - (void)requestMessagesCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback {
     NSString*page=[NSString stringWithFormat:@"%ld",(long)self.page];
     NSString*pageSize=[NSString stringWithFormat:@"%ld",(long)self.pageSize];
-    NSDictionary*param=@{@"page":page,@"rows":pageSize,@"type":@"4"};
+    NSDictionary*param=@{@"page":page,@"rows":pageSize,@"type":@"4",@"channel":@"2"};
     NSString*url=NSStringFormat(@"%@%@",ServerUrl,URL_Police_Logs);
     NSString *access_token = help_userManager.oathInfo.access_token;
     NSString *token = NSStringFormat(@"Bearer %@",access_token);

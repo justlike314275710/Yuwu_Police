@@ -22,7 +22,7 @@
 @property(nonatomic,strong)UIImageView *timeImageView;
 @property(nonatomic,strong)UILabel *timeLab;
 @property(nonatomic,strong)UITextView *contentTextView;
-@property(nonatomic,strong)UIView *bottomView;
+@property(nonatomic,strong)UIImageView *bottomView;
 @property(nonatomic,strong)UIButton *likeBtn; //点赞
 @property(nonatomic,strong)UILabel *likeLab; //点赞
 @property(nonatomic,strong)UIButton *hotBtn; //热度
@@ -119,9 +119,10 @@
     
     [self.view addSubview:self.bottomView];
     [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(self.view);
-        make.left.right.mas_equalTo(0);
-        make.height.mas_equalTo(50);
+        make.bottom.mas_equalTo(20);
+        make.left.mas_equalTo(-10);
+        make.right.mas_equalTo(10);
+        make.height.mas_equalTo(90);
     }];
     
     [self.bottomView addSubview:self.likeBtn];
@@ -189,6 +190,7 @@
     } else if ([self.viewModel.detailModel.status isEqualToString:@"pass"]) { //已通过
         _topTipLab.text = @"";
         _topTipLab.hidden = YES;
+        _timeLab.text = self.viewModel.detailModel.auditAt;
         [_topTipLab mas_updateConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(0);
         }];
@@ -261,7 +263,6 @@
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.scrollview.contentSize = CGSizeMake(kScreenWidth-48,height+164+50);
-
     });
 }
 
@@ -281,10 +282,8 @@
     viewModel.title = _viewModel.detailModel.title;
     viewModel.penName = _viewModel.detailModel.penName;
     viewModel.type = PSEditArticle;
-//    PSPublishArticleViewController *publishArticleVC = [[PSPublishArticleViewController alloc] initWithViewModel:viewModel];
     PSPublishArticleViewController *publishArticleVC = [[PSPublishArticleViewController alloc] init];
     publishArticleVC.viewModel = viewModel;
-    
     PushVC(publishArticleVC);
 }
 
@@ -502,22 +501,22 @@
         _contentTextView.text = @"那是在 被人们";
         _contentTextView.editable = NO;
         NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
-        paragraphStyle.lineSpacing = 20;// 字体的行间距
-        NSDictionary *attributes = @{
-                                     NSParagraphStyleAttributeName:paragraphStyle
-                                     };
+        paragraphStyle.lineSpacing = 10;// 字体的行间距
+        [paragraphStyle setFirstLineHeadIndent:20];
+        NSDictionary *attributes = @{NSParagraphStyleAttributeName:paragraphStyle};
         _contentTextView.typingAttributes = attributes;
         _contentTextView.textContainerInset = UIEdgeInsetsZero;
         _contentTextView.textContainer.lineFragmentPadding = 0;
         _contentTextView.scrollEnabled = NO;
+        _contentTextView.textColor = UIColorFromRGB(51, 51, 51);
     }
     return _contentTextView;
 }
 
-- (UIView *)bottomView{
+- (UIImageView *)bottomView{
     if (!_bottomView) {
-        _bottomView = [UIView new];
-        _bottomView.backgroundColor = [UIColor whiteColor];
+        _bottomView = [UIImageView new];
+        _bottomView.image = ImageNamed(@"ArticleDetailBottomBG");
     }
     return _bottomView;
 }

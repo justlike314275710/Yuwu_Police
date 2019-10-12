@@ -149,81 +149,24 @@ SINGLETON_FOR_CLASS(IMManager);
 
 -(void)onReceiveCustomSystemNotification:(NIMCustomSystemNotification *)notification{
       NSLog(@"***收到新消息***");
-
-    [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationRedDotRefresh object:nil];
-
-
-//    NSData *jsonData = [notification.content dataUsingEncoding:NSUTF8StringEncoding];
-//    NSDictionary*dic=[NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
-//    if ([dic[@"type"] isEqualToString:@"RUSH_PAGE_REFRESH"]) {
-//        KPostNotification(@"RUSH_PAGE_REFRESH", nil);
-//        EBBannerView *banner = [EBBannerView bannerWithBlock:^(EBBannerViewMaker *make) {
-//            make.style = 11;
-//            make.content = @"您有一笔新的订单!";
-//
-//        }];
-//        [banner show];
-//        [ZQLocalNotification NotificationType:CountdownNotification Identifier:@"1" activityId:1900000 alertBody:@"您有一笔新的订单!" alertTitle:@"帮帮忙" alertString:@"确定" withTimeDay:0 hour:0 minute:0 second:1];
-//
-//    }
-//    else if ([dic[@"type"] isEqualToString:@"NOTIFICATION_LEGAL_ADVICE"]){
-//
-//        EBBannerView *banner = [EBBannerView bannerWithBlock:^(EBBannerViewMaker *make) {
-//            make.style = 11;
-//            make.content = dic[@"content"];
-//        }];
-//        [banner show];
-//        [ZQLocalNotification NotificationType:CountdownNotification Identifier:@"2" activityId:1900000 alertBody: dic[@"content"] alertTitle:@"帮帮忙" alertString:@"确定" withTimeDay:0 hour:0 minute:0 second:1];
-//        KPostNotification(KNotificationGetCashSuccess,nil);
-//        KPostNotification(KNotificationMineDataChange,nil);
-//        KPostNotification(KNotificationOrderStateEnd, nil);
-//
-//    }
-//    else if ([dic[@"type"] isEqualToString:@"NOTIFICATION_PRAISE_ADVICE"]||[dic[@"type"] isEqualToString:@"NOTIFICATION_COMMENT_ADVICE"]){  //评论点赞
-//        KPostNotification(KNotificationMineRefreshDot, @"1");
-//        EBBannerView *banner = [EBBannerView bannerWithBlock:^(EBBannerViewMaker *make) {
-//            make.style = 11;
-//            make.content = dic[@"content"];
-//        }];
-//        [banner show]; //NOTIFICATION_PRAISE_ADVICE
-//        [ZQLocalNotification NotificationType:CountdownNotification Identifier:@"3" activityId:1900000 alertBody:dic[@"content"] alertTitle:@"帮帮忙" alertString:@"确定" withTimeDay:0 hour:0 minute:0 second:1];
-//
-//    }
-//
-//
-//
-//    else {
-//        EBBannerView *banner = [EBBannerView bannerWithBlock:^(EBBannerViewMaker *make) {
-//            make.style = 11;
-//            make.content = dic[@"content"];
-//        }];
-//        [banner show];
-////        [ZQLocalNotification NotificationType:CountdownNotification Identifier:@"4" activityId:1900000 alertBody:dic[@"content"] alertTitle:@"帮帮忙" alertString:@"确定" withTimeDay:0 hour:0 minute:0 second:1];
-//        if (ValidStr(dic[@"content"])) {
-//            NSString *content = dic[@"content"];
-//            if ([content containsString:@"您的律师认证审核已通过"]) {
-//                help_userManager.userStatus =  CERTIFIED;
-//                KPostNotification(KNotificationMineDataChange, nil);
-//            }
-//        }
-//    }
-
     NSData *jsonData = [notification.content dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary*dic=[NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
     NSInteger code = [dic[@"code"] integerValue];
+    NSString *content = dic[@"msg"];
+    NSString *channel = [NSString stringWithFormat:@"%@",dic[@"channel"]];
+    if (channel&&[channel isEqualToString:@"1"]) return; //1为家属端推送
+    [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationRedDotRefresh object:nil];
     //认证文章
     if (code==PSMessageArticleInteractive) {
-        NSString *content = dic[@"msg"];        
         EBBannerView *banner = [EBBannerView bannerWithBlock:^(EBBannerViewMaker *make) {
             make.style = 11;
-            make.content = dic[@"msg"];
+            make.content = content;
         }];
         [banner show]; //NOTIFICATION_PRAISE_ADVICE
-        [ZQLocalNotification NotificationType:CountdownNotification Identifier:@"3" activityId:1900000 alertBody:dic[@"msg"] alertTitle:@"狱警通" alertString:@"确定" withTimeDay:0 hour:0 minute:0 second:1];
+        [ZQLocalNotification NotificationType:CountdownNotification Identifier:@"3" activityId:1900000 alertBody:content alertTitle:@"狱警通" alertString:@"确定" withTimeDay:0 hour:0 minute:0 second:1];
         KPostNotification(KNotificationHomePageRefreshList, nil);
         KPostNotification(KNotificationCollectArtickeRefreshList, nil);
         KPostNotification(KNotificationRefreshMyArticle, nil);
-    
     }
 }
 

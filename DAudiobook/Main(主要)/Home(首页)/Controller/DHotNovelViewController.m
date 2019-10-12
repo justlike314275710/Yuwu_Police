@@ -376,7 +376,7 @@
 
 - (UITableView *)tableview {
     if (!_tableview) {
-        _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0,64,self.view.width,kScreenHeight-64) style:UITableViewStyleGrouped];
+        _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0,44,self.view.width,kScreenHeight-44) style:UITableViewStyleGrouped];
         _tableview.backgroundColor = UIColorFromRGB(249,248,254);
         _tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableview.dataSource = self;
