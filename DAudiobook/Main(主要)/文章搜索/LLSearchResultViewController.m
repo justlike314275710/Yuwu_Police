@@ -50,7 +50,7 @@
 - (LLSearchView *)searchView
 {
     if (!_searchView) {
-        self.searchView = [[LLSearchView alloc] initWithFrame:CGRectMake(0, Height_NavBar, KScreenWidth, KScreenHeight - 64) hotArray:self.hotArray historyArray:self.historyArray];
+        self.searchView = [[LLSearchView alloc] initWithFrame:CGRectMake(0, 5, KScreenWidth, KScreenHeight - 64) hotArray:self.hotArray historyArray:self.historyArray];
         __weak LLSearchResultViewController *weakSelf = self;
         _searchView.backgroundColor = [UIColor whiteColor];
         _searchView.tapAction = ^(NSString *str) {
@@ -64,7 +64,7 @@
 {
     if (!_searchSuggestVC) {
         self.searchSuggestVC = [[LLSearchSuggestionVC alloc] init];
-        _searchSuggestVC.view.frame = CGRectMake(0, Height_NavBar, KScreenWidth, KScreenHeight - 64);
+        _searchSuggestVC.view.frame = CGRectMake(0, 5, KScreenWidth, KScreenHeight - 64);
         _searchSuggestVC.view.hidden = YES;
         __weak LLSearchResultViewController *weakSelf = self;
         _searchSuggestVC.searchBlock = ^(NSString *searchTest) {

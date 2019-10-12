@@ -139,7 +139,7 @@
 #pragma mark - Setting&&Getting
 - (UIScrollView *)scrollview {
     if (!_scrollview) {
-        _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, Height_NavBar, SCREEN_WIDTH,SCREEN_HEIGHT)];
+        _scrollview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 5, SCREEN_WIDTH,SCREEN_HEIGHT)];
         _scrollview.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT);
     }
     return _scrollview;
