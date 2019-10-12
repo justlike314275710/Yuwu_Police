@@ -292,7 +292,14 @@
     }
 
 }
-
+-(UIImage*)convertViewToImage:(UIView*)v{
+    CGSize s = v.bounds.size;
+    UIGraphicsBeginImageContextWithOptions(s, YES, [UIScreen mainScreen].scale);
+    [v.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage*image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
 
 
 #pragma mark - 接收远程事件
