@@ -41,7 +41,7 @@
     self.view.backgroundColor=UIColorFromRGBA(248, 247, 254, 1);
     [self.view addSubview:self.myTableview];
     [self.myTableview mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view).with.insets(UIEdgeInsetsMake(69,0,0,0));
+        make.edges.equalTo(self.view).with.insets(UIEdgeInsetsMake(Height_NavBar,0,0,0));
     }];
     [self.myTableview registerClass:[FeedbackListCell class] forCellReuseIdentifier:@"FeedbackListCell"];
    WEAKSELF

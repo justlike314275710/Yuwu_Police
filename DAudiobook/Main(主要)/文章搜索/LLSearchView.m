@@ -123,7 +123,8 @@
 
 - (UIView *)setNoHistoryView
 {
-    UIView *historyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, 80)];
+
+    UIView *historyView = [[UIView alloc] initWithFrame:CGRectMake(0, 10, KScreenWidth, 80)];
     UILabel *titleL = [[UILabel alloc] initWithFrame:CGRectMake(15, 10, KScreenWidth - 30, 30)];
     titleL.text = @"历史搜索";
     titleL.font = [UIFont systemFontOfSize:15];

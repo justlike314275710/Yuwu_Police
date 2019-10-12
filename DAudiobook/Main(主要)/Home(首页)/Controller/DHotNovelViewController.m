@@ -174,6 +174,8 @@
 }
 //上啦
 -(void)loadMore {
+   
+    
     [[PSLoadingView sharedInstance] show];
     [_logic loadMoreArticleListCompleted:^(id data) {
         dispatch_async(dispatch_get_main_queue(), ^{

@@ -33,7 +33,7 @@
 }
 - (void)renderContents{
     self.view.backgroundColor=[UIColor colorWithRed:249/255.0 green:248/255.0 blue:254/255.0 alpha:1.0];
-    CGFloat topSpace=64.0f+9.0;
+   // CGFloat topSpace=64.0f+9.0;
     //DT_IS_IPHONEX_XS?64.0f+44.0f:44.0f;
     CGFloat horizontalSpace=15.0f;
     CGFloat defultTag = 999;
@@ -43,7 +43,7 @@
     bgView.backgroundColor=[UIColor whiteColor];
     [self.view addSubview:bgView];
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(topSpace);
+        make.top.mas_equalTo(Height_NavBar);
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
         make.height.mas_equalTo(132);

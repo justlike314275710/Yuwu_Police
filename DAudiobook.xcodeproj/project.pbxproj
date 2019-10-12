@@ -404,6 +404,9 @@
 		55ED63C2233E3452004A9C37 /* EBBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED63B5233E3451004A9C37 /* EBBannerViewController.m */; };
 		E473341141BF7F02638F5529 /* libPods-DAudiobook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A489DFF9190310E891E597 /* libPods-DAudiobook.a */; };
 		EA4D2C9E23506A7E001D376F /* UMSocialNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4D2C9D23506A7D001D376F /* UMSocialNetwork.framework */; };
+		EA4D2CA623516C8B001D376F /* DSLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4D2CA423516C89001D376F /* DSLoadingView.m */; };
+		EA4D2CAA23516CFB001D376F /* LLGifImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4D2CA923516CFA001D376F /* LLGifImageView.m */; };
+		EA4D2CAC23516DDA001D376F /* 加载动画.gif in Resources */ = {isa = PBXBuildFile; fileRef = EA4D2CAB23516DD9001D376F /* 加载动画.gif */; };
 		EA92622D233DEB360028FAF7 /* XXEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA92622B233DEB2D0028FAF7 /* XXEmptyView.m */; };
 		EA94570423385ABA003C1C97 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = EA94570223385AB9003C1C97 /* UITextView+Placeholder.m */; };
 		EA94574D233A2C40003C1C97 /* LLActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA945749233A2C40003C1C97 /* LLActionSheetView.m */; };
@@ -1550,6 +1553,11 @@
 		77A489DFF9190310E891E597 /* libPods-DAudiobook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DAudiobook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10A1B66EF6EE62C2CCE46C8 /* Pods-DAudiobook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DAudiobook.debug.xcconfig"; path = "Target Support Files/Pods-DAudiobook/Pods-DAudiobook.debug.xcconfig"; sourceTree = "<group>"; };
 		EA4D2C9D23506A7D001D376F /* UMSocialNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMSocialNetwork.framework; sourceTree = "<group>"; };
+		EA4D2CA423516C89001D376F /* DSLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLoadingView.m; sourceTree = "<group>"; };
+		EA4D2CA523516C8A001D376F /* DSLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLoadingView.h; sourceTree = "<group>"; };
+		EA4D2CA823516CFA001D376F /* LLGifImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLGifImageView.h; sourceTree = "<group>"; };
+		EA4D2CA923516CFA001D376F /* LLGifImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLGifImageView.m; sourceTree = "<group>"; };
+		EA4D2CAB23516DD9001D376F /* 加载动画.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "加载动画.gif"; sourceTree = "<group>"; };
 		EA92622B233DEB2D0028FAF7 /* XXEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXEmptyView.m; sourceTree = "<group>"; };
 		EA92622C233DEB330028FAF7 /* XXEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXEmptyView.h; sourceTree = "<group>"; };
 		EA94570223385AB9003C1C97 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
@@ -3192,6 +3200,7 @@
 		3C4A398822681A0E00882244 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				EA4D2CAB23516DD9001D376F /* 加载动画.gif */,
 				EA960E6B2330C86700D81A25 /* Assets.xcassets */,
 				3CAC52C8228959280055C320 /* 个人页面动态图.gif */,
 			);
@@ -4116,6 +4125,15 @@
 				05B736457BAB3F381552BD4D /* Pods-DAudiobook.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EA4D2CA723516CFA001D376F /* LLGifImageView */ = {
+			isa = PBXGroup;
+			children = (
+				EA4D2CA823516CFA001D376F /* LLGifImageView.h */,
+				EA4D2CA923516CFA001D376F /* LLGifImageView.m */,
+			);
+			path = LLGifImageView;
 			sourceTree = "<group>";
 		};
 		EA94570123385A8F003C1C97 /* UITextViewTool */ = {
@@ -5055,6 +5073,9 @@
 		EA960B9E232F32E300D81A25 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EA4D2CA723516CFA001D376F /* LLGifImageView */,
+				EA4D2CA523516C8A001D376F /* DSLoadingView.h */,
+				EA4D2CA423516C89001D376F /* DSLoadingView.m */,
 				EA92622C233DEB330028FAF7 /* XXEmptyView.h */,
 				EA92622B233DEB2D0028FAF7 /* XXEmptyView.m */,
 				EA960DD7232F7D6600D81A25 /* WXZTipView.h */,
@@ -6296,6 +6317,7 @@
 				3C4542BB2275AB0600AE50B1 /* 13363635.json in Resources */,
 				3C4543182275AB0600AE50B1 /* 7568525.json in Resources */,
 				3C4542E72275AB0600AE50B1 /* 4170732.json in Resources */,
+				EA4D2CAC23516DDA001D376F /* 加载动画.gif in Resources */,
 				EA960B52232F2FE900D81A25 /* README.md in Resources */,
 				3C4543082275AB0600AE50B1 /* 16986904.json in Resources */,
 				EA960A83232F29FA00D81A25 /* NIMKitResource.bundle in Resources */,
@@ -7005,7 +7027,9 @@
 				EA960A8F232F29FA00D81A25 /* NIMKitResourceResizer.m in Sources */,
 				EA960BCB232F38F400D81A25 /* GTMBase64.m in Sources */,
 				3C39357222882A5400A5190A /* BAGridCollectionCell.m in Sources */,
+				EA4D2CA623516C8B001D376F /* DSLoadingView.m in Sources */,
 				EA960C88232F3B1B00D81A25 /* YYSpriteSheetImage.m in Sources */,
+				EA4D2CAA23516CFB001D376F /* LLGifImageView.m in Sources */,
 				3C4A3A5022681A0F00882244 /* DHotNovelViewController.m in Sources */,
 				EA960AC0232F29FB00D81A25 /* NIMTimestampModel.m in Sources */,
 				EA960CCD232F3B1C00D81A25 /* YYKeychain.m in Sources */,

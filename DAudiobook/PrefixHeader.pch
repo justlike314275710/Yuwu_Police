@@ -49,6 +49,7 @@
 #import "PSTipsView.h"
 #import "PSAlertView.h"
 #import "PSLoadingView.h"
+#import "DSLoadingView.h"
 
 #import "WXZTipView.h"
 #import "YYKit.h"

@@ -94,7 +94,7 @@
 - (void)renderContents {
     [self.view addSubview:self.scrollview];
     self.view.backgroundColor = AppBaseBackgroundColor2;
-    UIView *oneView = [[UIView alloc] initWithFrame:CGRectMake(15,15 ,SCREEN_WIDTH-30,210)];
+    UIView *oneView = [[UIView alloc] initWithFrame:CGRectMake(15,Height_NavBar ,SCREEN_WIDTH-30,210)];
     oneView.backgroundColor = [UIColor clearColor];
     oneView.layer.shadowColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.1].CGColor;
     oneView.layer.shadowOffset = CGSizeMake(0,3);

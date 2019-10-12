@@ -182,13 +182,14 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
+    [self setHistoryArrWithStr:searchBar.text];
+
     _searchSuggestVC.view.hidden = NO;
     [self.view bringSubviewToFront:_searchSuggestVC.view];
     [self.searchBar resignFirstResponder];
     [_searchSuggestVC searchTestChangeWithTest:searchBar.text];
 
-    [self setHistoryArrWithStr:searchBar.text];
-
+   
 }
 
 
@@ -212,11 +213,12 @@
         _searchSuggestVC.view.hidden = YES;
         [self.view bringSubviewToFront:_searchView];
     } else {
+        [self setHistoryArrWithStr:searchBar.text];
         _searchSuggestVC.view.hidden = NO;
         [self.view bringSubviewToFront:_searchSuggestVC.view];
         [self.searchBar resignFirstResponder];
         [_searchSuggestVC searchTestChangeWithTest:searchBar.text];
-        [self setHistoryArrWithStr:searchBar.text];
+        
     }
 }
 

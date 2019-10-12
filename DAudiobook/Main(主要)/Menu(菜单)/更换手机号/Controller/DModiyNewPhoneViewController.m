@@ -36,7 +36,7 @@
 -(void)renderContents{
     [self.view addSubview:self.scrollview];
     
-    UIView *line0 = [[UIView alloc] initWithFrame:CGRectMake(0,64, self.scrollview.width, 1)];
+    UIView *line0 = [[UIView alloc] initWithFrame:CGRectMake(0,Height_NavBar, self.scrollview.width, 1)];
     line0.backgroundColor = CLineColor;
     [self.scrollview addSubview:line0];
     
