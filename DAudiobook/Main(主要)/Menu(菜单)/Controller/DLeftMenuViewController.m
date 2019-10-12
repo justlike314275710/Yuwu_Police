@@ -43,11 +43,32 @@
     UIEdgeInsets contentInset = self.tableView.contentInset;
     contentInset.top =-MenuHeadViewTopDistance;
     [self.tableView setContentInset:contentInset];
-    self.tableView.backgroundColor=ImportantColor;
+    //self.tableView.backgroundColor=ImportantColor;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(reloadHeaderView)
                                                  name:KNotificationMineDataChange
                                                object:nil];
+    [self setTableViewBackcolorUI];
+}
+
+
+-(void)setTableViewBackcolorUI{
+    UIView *view = [[UIView alloc] init];
+    view.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT);
+    
+    CAGradientLayer *gl = [CAGradientLayer layer];
+    gl.frame = CGRectMake(0,0,SCREEN_WIDTH,SCREEN_HEIGHT);
+    gl.startPoint = CGPointMake(0, 0);
+    gl.endPoint = CGPointMake(1, 1);
+    gl.colors = @[(__bridge id)[UIColor colorWithRed:76/255.0 green:179/255.0 blue:244/255.0 alpha:1.0].CGColor,(__bridge id)[UIColor colorWithRed:32/255.0 green:124/255.0 blue:251/255.0 alpha:1.0].CGColor];
+    gl.locations = @[@(0.0),@(1.0f)];
+    
+    [view.layer addSublayer:gl];
+    view.layer.shadowColor = [UIColor colorWithRed:0/255.0 green:42/255.0 blue:162/255.0 alpha:0.2].CGColor;
+    view.layer.shadowOffset = CGSizeMake(0,4);
+    view.layer.shadowOpacity = 1;
+    view.layer.shadowRadius = 9;
+    [self.tableView setBackgroundView:view];
 }
 
 -(void)initializeData{
@@ -177,9 +198,7 @@
 -(void)initializeRefresh{
 
 }
-- (void)setupNavItem
-{
-}
+
 
 #pragma mark  - UITableViewDelegate-回调
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -188,6 +207,7 @@
 }
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DSideMenuTableViewCell *cell = [DSideMenuTableViewCell cellWithTableView:tableView];
+    cell.backgroundColor=[UIColor clearColor];
     DMenuModel *model = self.listArray[indexPath.row];
     [cell setData:model];
     return cell;
