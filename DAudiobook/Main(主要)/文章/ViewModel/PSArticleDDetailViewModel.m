@@ -48,7 +48,7 @@
     NSString*urlString=[NSString stringWithFormat:@"%@%@",ServerUrl,URL_Article_collectArticle];
     [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
     [PPNetworkHelper setResponseSerializer:PPResponseSerializerJSON];
-    NSDictionary *params = @{@"articleId":self.id};
+    NSDictionary *params = @{@"articleId":self.id,@"type":@"2"};
     NSString *access_token = help_userManager.oathInfo.access_token;
     access_token = NSStringFormat(@"Bearer %@",access_token);
     [PPNetworkHelper setValue:access_token forHTTPHeaderField:@"Authorization"];
@@ -183,7 +183,7 @@
     // 计算文本的大小
     
     NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
-    paragraphStyle.lineSpacing = 20;// 字体的行间距
+    paragraphStyle.lineSpacing = 10;// 字体的行间距
     NSDictionary *attributes = @{
                                  NSParagraphStyleAttributeName:paragraphStyle
                                  };

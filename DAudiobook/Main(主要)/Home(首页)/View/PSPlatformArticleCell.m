@@ -50,15 +50,15 @@
     [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(15);
         make.right.mas_equalTo(-15);
-        make.top.mas_equalTo(20);
-        make.height.mas_equalTo(40);
+        make.top.mas_equalTo(17);
+        make.height.mas_equalTo(21);
     }];
     
     [self.bgView addSubview:self.headImg];
     ViewRadius(_headImg,12);
     [self.headImg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(_titleLab);
-        make.top.mas_equalTo(_titleLab.mas_bottom).offset(3);
+        make.top.mas_equalTo(_titleLab.mas_bottom).offset(10);
         make.width.height.mas_equalTo(24);
     }];
     
@@ -82,14 +82,14 @@
     [_bgView addSubview:self.contentLab];
     [self.contentLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(_titleLab);
-        make.top.mas_equalTo(_headImg.mas_bottom).offset(5);
-        make.height.mas_equalTo(45);
+        make.top.mas_equalTo(_headImg.mas_bottom).offset(8);
+        make.height.mas_equalTo(40);
     }];
     
     [_bgView addSubview:self.timeIconImg];
     [self.timeIconImg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.contentLab);
-        make.bottom.mas_equalTo(-13);
+        make.bottom.mas_equalTo(-18);
         make.width.height.mas_equalTo(10);
     }];
     
@@ -148,6 +148,9 @@
     _hotLab.text = model.clientNum;
     _likeLab.text = model.praiseNum;
     _selectBtn.hidden = YES;
+    //行间距(赋值attributedString)
+    _contentLab.lineSpace = @"6";
+    _contentLab.lineBreakMode = NSLineBreakByTruncatingTail;
     //是否能点赞
     if ([_model.ispraise isEqualToString:@"0"]) {
         [_likeBtn setImage:IMAGE_NAMED(@"未赞") forState:UIControlStateNormal];
@@ -166,7 +169,7 @@
         _hotIconImg.hidden = NO;
         _likeLab.hidden = NO;
         _stateImageView.hidden = YES;
-        _timeLab.text = model.publishAt;
+        _timeLab.text = model.auditAt;
     } else {
         _hotLab.hidden = YES;
         _likeBtn.hidden = YES;
@@ -181,7 +184,7 @@
             _timeLab.text = model.publishAt;
         } else if ([model.status isEqualToString:@"shelf"]) {
             _stateImageView.image = IMAGE_NAMED(@"已下架");
-            _timeLab.text = model.publishAt;
+            _timeLab.text = model.auditAt;
         }
     }
     
@@ -199,13 +202,8 @@
     _timeLab.text = collecModel.created_at;
     _hotLab.text = collecModel.client_num;
     _likeLab.text = collecModel.praise_num;
- 
-//    if (_collecModel.seleted) {
-//         [_selectBtn setImage:ImageNamed(@"已勾选") forState:UIControlStateNormal];
-//    } else {
-//        [_selectBtn setImage:IMAGE_NAMED(@"未勾选") forState:UIControlStateNormal];
-//    }
-    
+    self.contentLab.lineSpace = @"6";
+    _contentLab.lineBreakMode = NSLineBreakByTruncatingTail;
     //是否能点赞
     if ([collecModel.is_praise isEqualToString:@"0"]) {
         [_likeBtn setImage:IMAGE_NAMED(@"未赞") forState:UIControlStateNormal];
@@ -216,9 +214,6 @@
     NSString*url=AvaterImageWithUsername(_collecModel.username);
     [_headImg sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"作者头像"] options:SDWebImageRefreshCached];
 }
- 
-
-
 
 #pragma mark - TouchEvent
 -(void)praiseAction:(UIButton *)sender {

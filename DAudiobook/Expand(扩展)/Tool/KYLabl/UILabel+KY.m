@@ -15,9 +15,8 @@ static const char *characterSpaceKey = "characterSpaceKey";
 static const char *lineSpaceKey = "lineSpaceKey";
 
 - (void)setCharacterSpace:(NSString *)characterSpace{
-    if (characterSpace != self.characterSpace) {
+
         [self willChangeValueForKey:@"characterSpace"]; // KVO
-        
         NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:self.text];
         [attributedString addAttribute:NSFontAttributeName value:self.font range:NSMakeRange(0,self.text.length)];
         if ([characterSpace integerValue]>0) {
@@ -31,11 +30,9 @@ static const char *lineSpaceKey = "lineSpaceKey";
         objc_setAssociatedObject(self, &characterSpaceKey,
                                  characterSpace, OBJC_ASSOCIATION_ASSIGN);
         [self didChangeValueForKey:@"characterSpace"]; // KVO
-    }
 }
 
 -(void)setLineSpace:(NSString *)lineSpace {
-    if (lineSpace != self.lineSpace) {
         [self willChangeValueForKey:@"lineSpace"]; // KVO
         objc_setAssociatedObject(self, &lineSpaceKey,
                                  lineSpace, OBJC_ASSOCIATION_ASSIGN);
@@ -52,7 +49,6 @@ static const char *lineSpaceKey = "lineSpaceKey";
         self.attributedText = attributedString;
         
         [self didChangeValueForKey:@"lineSpace"]; // KVO
-    }
 }
 
 
@@ -65,7 +61,33 @@ static const char *lineSpaceKey = "lineSpaceKey";
 }
 
 - (CGFloat)getLableHeightWithMaxWidth:(CGFloat)maxWidth{
-    return 0;
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:self.text];
+    [attributedString addAttribute:NSFontAttributeName value:self.font range:NSMakeRange(0,self.text.length)];
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+    // 行间距
+    if(self.lineSpace > 0){
+        
+        [paragraphStyle setLineSpacing:[self.lineSpace integerValue]];
+        [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0,self.text.length)];
+    }
+    
+    // 字间距
+    if(self.characterSpace > 0){
+        
+        long number = [self.characterSpace integerValue];
+        CFNumberRef num = CFNumberCreate(kCFAllocatorDefault,kCFNumberSInt8Type,&number);
+        [attributedString addAttribute:(id)kCTKernAttributeName value:(__bridge id)num range:NSMakeRange(0,[attributedString length])];
+        
+        CFRelease(num);
+    }
+        
+    self.attributedText = attributedString;
+    
+    CGRect rect = [attributedString boundingRectWithSize:CGSizeMake(maxWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];
+    
+    // 向上取整，防止画UI时lab的高度取整
+    return ceil(rect.size.height);
 }
 
 @end

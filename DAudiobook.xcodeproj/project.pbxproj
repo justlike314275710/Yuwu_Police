@@ -372,6 +372,7 @@
 		554E92F9233A2938009D2429 /* NSString+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92F8233A2938009D2429 /* NSString+Date.m */; };
 		554E9300233A29FC009D2429 /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92FD233A29FC009D2429 /* MineTableViewCell.m */; };
 		554E9301233A29FC009D2429 /* DAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92FF233A29FC009D2429 /* DAccountViewController.m */; };
+		5572356023517B260004488E /* UILabel+KY.m in Sources */ = {isa = PBXBuildFile; fileRef = 5572355F23517B260004488E /* UILabel+KY.m */; };
 		55B078B0233C9816009BDDBC /* MineArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078AF233C9816009BDDBC /* MineArticleViewController.m */; };
 		55B078B3233C9827009BDDBC /* PSArticleStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078B1233C9827009BDDBC /* PSArticleStateViewController.m */; };
 		55B078B6233C9889009BDDBC /* PSArticleStateViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078B4233C9889009BDDBC /* PSArticleStateViewModel.m */; };
@@ -1494,6 +1495,8 @@
 		554E92FD233A29FC009D2429 /* MineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewCell.m; sourceTree = "<group>"; };
 		554E92FE233A29FC009D2429 /* MineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewCell.h; sourceTree = "<group>"; };
 		554E92FF233A29FC009D2429 /* DAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAccountViewController.m; sourceTree = "<group>"; };
+		5572355E23517B260004488E /* UILabel+KY.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+KY.h"; sourceTree = "<group>"; };
+		5572355F23517B260004488E /* UILabel+KY.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+KY.m"; sourceTree = "<group>"; };
 		55B078AE233C9816009BDDBC /* MineArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineArticleViewController.h; sourceTree = "<group>"; };
 		55B078AF233C9816009BDDBC /* MineArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineArticleViewController.m; sourceTree = "<group>"; };
 		55B078B1233C9827009BDDBC /* PSArticleStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArticleStateViewController.m; sourceTree = "<group>"; };
@@ -3015,6 +3018,7 @@
 		3C4A391A22681A0E00882244 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				5572355D23517AB40004488E /* KYLabl */,
 				55E29E56234C28000001470E /* XZExtension */,
 				EAA21B9D233CB3C900A06819 /* searchBar */,
 				5542A791233B12A000E4B5D7 /* libextobjc */,
@@ -4047,6 +4051,15 @@
 				554E92FE233A29FC009D2429 /* MineTableViewCell.h */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5572355D23517AB40004488E /* KYLabl */ = {
+			isa = PBXGroup;
+			children = (
+				5572355E23517B260004488E /* UILabel+KY.h */,
+				5572355F23517B260004488E /* UILabel+KY.m */,
+			);
+			path = KYLabl;
 			sourceTree = "<group>";
 		};
 		55CC6550233B6C4500D4A581 /* SDTextLimitTool */ = {
@@ -6690,6 +6703,7 @@
 				EA960A97232F29FA00D81A25 /* NIMSpellingCenter.m in Sources */,
 				3C8953ED229BCB0C00CB70E1 /* MBProgressHUD.m in Sources */,
 				EA96094B232F297E00D81A25 /* UserManager.m in Sources */,
+				5572356023517B260004488E /* UILabel+KY.m in Sources */,
 				EA960CAB232F3B1C00D81A25 /* UIColor+YYAdd.m in Sources */,
 				EA960B57232F2FE900D81A25 /* SDWebImageCodersManager.m in Sources */,
 				EA94574D233A2C40003C1C97 /* LLActionSheetView.m in Sources */,

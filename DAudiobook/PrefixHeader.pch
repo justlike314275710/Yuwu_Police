@@ -57,6 +57,7 @@
 #import "BlocksKit.h"
 #import "BlocksKit+UIKit.h"
 #import "YYModel.h"
+#import "UILabel+KY.h"
 
 
 
