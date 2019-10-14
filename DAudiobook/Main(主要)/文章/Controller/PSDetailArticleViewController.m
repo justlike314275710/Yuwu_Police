@@ -44,7 +44,7 @@
     self.title = @"";
     self.view.backgroundColor=[UIColor whiteColor];
     [self addBackItem];
-    [self setupData];
+    [self setupDataIsLoading:YES];
     
 }
 
@@ -75,14 +75,16 @@
         make.top.mas_equalTo(20);
         make.left.mas_equalTo(25);
         make.right.mas_equalTo(-25);
-        make.height.mas_equalTo(50);
+        make.height.mas_equalTo(38);
+
     }];
-    //20+50+20+44+30
+  
+    //20+38+10+44+30
     [self.scrollview addSubview:self.headImageView];
     [self.headImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(_titleLab.mas_left);
         make.height.width.mas_equalTo(44);
-        make.top.mas_equalTo(_titleLab.mas_bottom).offset(20);
+        make.top.mas_equalTo(_titleLab.mas_bottom).offset(10);
     }];
     
     [self.scrollview addSubview:self.nameLab];
@@ -103,7 +105,7 @@
     
     [self.scrollview addSubview:self.timeLab];
     [self.timeLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_timeImageView.mas_right).offset(10);
+        make.left.mas_equalTo(_timeImageView.mas_right).offset(5);
         make.top.mas_equalTo(_timeImageView);
         make.width.mas_equalTo(250);
         make.height.mas_equalTo(10);
@@ -131,6 +133,7 @@
         make.height.width.mas_equalTo(20);
         make.left.mas_equalTo(25);
     }];
+    self.likeBtn.touchExtendInset = UIEdgeInsetsMake(-20, -20, -20, -20);
     
     [self.bottomView addSubview:self.likeLab];
     [self.likeLab mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -161,6 +164,8 @@
         make.height.width.mas_equalTo(20);
         make.centerX.mas_equalTo(_bottomView.mas_centerX).offset(80);
     }];
+    self.collectBtn.touchExtendInset = UIEdgeInsetsMake(-20, -20, -20, -20);
+
     
     [self.bottomView addSubview:self.collectLab];
     [self.collectLab mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -175,10 +180,10 @@
 
 -(void)refreshUI{
     
-     _nameLab.text = self.viewModel.detailModel.penName;
-     _titleLab.text = self.viewModel.detailModel.title;
-     _timeLab.text = self.viewModel.detailModel.publishAt;
-     _contentTextView.text = self.viewModel.detailModel.content;
+    _nameLab.text = self.viewModel.detailModel.penName;
+    _titleLab.text = self.viewModel.detailModel.title;
+    _timeLab.text =  self.viewModel.detailModel.publishAt;
+    _contentTextView.text = self.viewModel.detailModel.content;
     _likeLab.text = [NSString stringWithFormat:@"%@赞",self.viewModel.detailModel.praiseNum];
     self.viewModel.detailModel.clientNum = [NSString stringWithFormat:@"%d",[_viewModel.detailModel.clientNum intValue]+1];
     _hotLab.text = [NSString stringWithFormat:@"%@热度",self.viewModel.detailModel.clientNum];
@@ -208,12 +213,9 @@
         [self addRightBarButtonTitleItem:@"编辑"];
     }
     [self setupUIViewHidden:isHideBottom];
-    
     //用户头像
     NSString*url=AvaterImageWithUsername(_viewModel.detailModel.username);
     [_headImageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"作者头像"] options:SDWebImageRefreshCached];
-    
-    
     
     if ([_viewModel.detailModel.iscollect isEqualToString:@"0"]) {
         [_collectBtn setImage:IMAGE_NAMED(@"未收藏") forState:UIControlStateNormal];
@@ -248,7 +250,7 @@
     
     CGFloat height = [_viewModel heightForString:_contentTextView.text andWidth:kScreenWidth-48];
     [self.contentTextView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(164);
+        make.top.mas_equalTo(142);
         make.left.mas_equalTo(24);
         make.width.mas_equalTo(kScreenWidth-48);
         make.height.mas_equalTo(height);
@@ -292,17 +294,17 @@
     self.bottomView.hidden = Hidden;
 }
 
--(void)setupData{
-    [[PSLoadingView sharedInstance] show];
+-(void)setupDataIsLoading:(BOOL)IsLoading{
+    
+    if (IsLoading) [[PSLoadingView sharedInstance] show];
     [self.viewModel loadArticleDetailCompleted:^(id data) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self setupUI];
             [self refreshUI];
-            [[PSLoadingView sharedInstance] dismiss];
+            if (IsLoading) [[PSLoadingView sharedInstance] dismiss];
         });
     } failed:^(NSError *error) {
-        [[PSLoadingView sharedInstance] dismiss];
-        
+        if (IsLoading) [[PSLoadingView sharedInstance] dismiss];
     }];
 }
 #pragma mark - TouchEvent
@@ -348,7 +350,7 @@
             [PSTipsView showTips:msg];
             NSInteger code = [data[@"code"] integerValue];
             if (code == 200){
-                [self setupData];
+                [self setupDataIsLoading:NO];
                 //刷新收藏列表
                 KPostNotification(KNotificationCollectArtickeRefreshList, nil);
             }
@@ -366,7 +368,7 @@
             NSInteger code = [data[@"code"] integerValue];
             [PSTipsView showTips:msg];
             if (code == 200){
-                [self setupData];
+                [self setupDataIsLoading:NO];
                 //刷新收藏列表
                 KPostNotification(KNotificationCollectArtickeRefreshList, nil);
             }
@@ -385,7 +387,7 @@
             NSInteger code = [data[@"code"] integerValue];
             [PSTipsView showTips:msg];
             if (code == 200){
-                [self setupData];
+                [self setupDataIsLoading:NO];
                 //刷新列表
                 if (self.praiseBlock) self.praiseBlock(YES, viewModel.id, YES);
             }
@@ -403,7 +405,7 @@
             NSInteger code = [data[@"code"] integerValue];
             [PSTipsView showTips:msg];
             if (code == 200){
-                [self setupData];
+                [self setupDataIsLoading:NO];
                 //刷新列表
                 if (self.praiseBlock) self.praiseBlock(NO, viewModel.id, YES);
             }
@@ -422,7 +424,7 @@
             NSInteger code = [data[@"code"] integerValue];
             [PSTipsView showTips:msg];
             if (code == 200){
-                [self setupData];
+                [self setupDataIsLoading:NO];
             }
         });
     } failed:^(NSError *error) {
@@ -449,7 +451,7 @@
     if (!_titleLab) {
         _titleLab = [UILabel new];
         [_titleLab setText:@"平台正在审核中"];
-        _titleLab.font = boldFontOfSize(20);
+        _titleLab.font = boldFontOfSize(18);
         [_titleLab setTextColor:UIColorFromRGB(51,51,51)];
         _titleLab.textAlignment = NSTextAlignmentLeft;
         _titleLab.numberOfLines = 0;
@@ -519,6 +521,7 @@
         _bottomView = [UIImageView new];
         _bottomView.image = ImageNamed(@"ArticleDetailBottomBG");
         _bottomView.userInteractionEnabled = YES;
+//        _bottomView.backgroundColor = [UIColor grayColor];
     }
     return _bottomView;
 }
@@ -528,7 +531,6 @@
         _likeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_likeBtn setImage:IMAGE_NAMED(@"未点赞") forState:UIControlStateNormal];
         [_likeBtn addTarget:self action:@selector(clickPraiseAction:) forControlEvents:UIControlEventTouchUpInside];
-        [_likeBtn be_setEnlargeEdge:10];
     }
     return _likeBtn;
 }
@@ -563,13 +565,11 @@
     }
     return _hotLab;
 }
-
 - (UIButton*)collectBtn {
     if (!_collectBtn) {
         _collectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_collectBtn setImage:IMAGE_NAMED(@"已收藏") forState:UIControlStateNormal];
         [_collectBtn addTarget:self action:@selector(clickCollectAction:) forControlEvents:UIControlEventTouchUpInside];
-        [_collectBtn be_setEnlargeEdge:10];
     }
     return _collectBtn;
 }

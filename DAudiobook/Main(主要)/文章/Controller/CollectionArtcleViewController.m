@@ -61,15 +61,17 @@
 }
 
 - (void)refreshData {
-    [[PSLoadingView sharedInstance] show];
+    BOOL isCurrent = [UIViewController isCurrentViewControllerVisible:self];
+    if (isCurrent) [[PSLoadingView sharedInstance] show];
     @weakify(self)
     [self.viewModel refreshMessagesCompleted:^(id data) {
         @strongify(self)
-        [[PSLoadingView sharedInstance] dismiss];
+        
+        if (isCurrent) [[PSLoadingView sharedInstance] dismiss];
         [self reloadContents];
     } failed:^(NSError *error) {
         @strongify(self)
-        [[PSLoadingView sharedInstance] dismiss];
+        if (isCurrent) [[PSLoadingView sharedInstance] dismiss];
         [self reloadContents];
     }];
 }

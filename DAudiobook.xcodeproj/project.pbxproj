@@ -373,6 +373,8 @@
 		554E9300233A29FC009D2429 /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92FD233A29FC009D2429 /* MineTableViewCell.m */; };
 		554E9301233A29FC009D2429 /* DAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 554E92FF233A29FC009D2429 /* DAccountViewController.m */; };
 		5572356023517B260004488E /* UILabel+KY.m in Sources */ = {isa = PBXBuildFile; fileRef = 5572355F23517B260004488E /* UILabel+KY.m */; };
+		5572356623545E130004488E /* UIView+JJChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 5572356423545E130004488E /* UIView+JJChange.m */; };
+		55723569235461180004488E /* KpengDianZanBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 55723568235461180004488E /* KpengDianZanBtn.m */; };
 		55B078B0233C9816009BDDBC /* MineArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078AF233C9816009BDDBC /* MineArticleViewController.m */; };
 		55B078B3233C9827009BDDBC /* PSArticleStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078B1233C9827009BDDBC /* PSArticleStateViewController.m */; };
 		55B078B6233C9889009BDDBC /* PSArticleStateViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078B4233C9889009BDDBC /* PSArticleStateViewModel.m */; };
@@ -1500,6 +1502,10 @@
 		554E92FF233A29FC009D2429 /* DAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAccountViewController.m; sourceTree = "<group>"; };
 		5572355E23517B260004488E /* UILabel+KY.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+KY.h"; sourceTree = "<group>"; };
 		5572355F23517B260004488E /* UILabel+KY.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+KY.m"; sourceTree = "<group>"; };
+		5572356423545E130004488E /* UIView+JJChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JJChange.m"; sourceTree = "<group>"; };
+		5572356523545E130004488E /* UIView+JJChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JJChange.h"; sourceTree = "<group>"; };
+		55723567235461170004488E /* KpengDianZanBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KpengDianZanBtn.h; sourceTree = "<group>"; };
+		55723568235461180004488E /* KpengDianZanBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KpengDianZanBtn.m; sourceTree = "<group>"; };
 		55B078AE233C9816009BDDBC /* MineArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineArticleViewController.h; sourceTree = "<group>"; };
 		55B078AF233C9816009BDDBC /* MineArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineArticleViewController.m; sourceTree = "<group>"; };
 		55B078B1233C9827009BDDBC /* PSArticleStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArticleStateViewController.m; sourceTree = "<group>"; };
@@ -3870,10 +3876,10 @@
 		5542A7D5233B37E500E4B5D7 /* 文章 */ = {
 			isa = PBXGroup;
 			children = (
+				5542A7D6233B37F500E4B5D7 /* Controller */,
 				5542A7D9233B37FB00E4B5D7 /* ViewModel */,
 				5542A7D8233B37F900E4B5D7 /* Model */,
 				5542A7D7233B37F700E4B5D7 /* View */,
-				5542A7D6233B37F500E4B5D7 /* Controller */,
 			);
 			path = "文章";
 			sourceTree = "<group>";
@@ -4065,8 +4071,12 @@
 		5572355D23517AB40004488E /* KYLabl */ = {
 			isa = PBXGroup;
 			children = (
+				55723567235461170004488E /* KpengDianZanBtn.h */,
+				55723568235461180004488E /* KpengDianZanBtn.m */,
 				5572355E23517B260004488E /* UILabel+KY.h */,
 				5572355F23517B260004488E /* UILabel+KY.m */,
+				5572356523545E130004488E /* UIView+JJChange.h */,
+				5572356423545E130004488E /* UIView+JJChange.m */,
 			);
 			path = KYLabl;
 			sourceTree = "<group>";
@@ -6713,6 +6723,7 @@
 				EA960B56232F2FE900D81A25 /* UIImage+ForceDecode.m in Sources */,
 				EAA21BC6233CB71D00A06819 /* PSPhotoBrowser.m in Sources */,
 				EA960C9A232F3B1C00D81A25 /* YYTextLayout.m in Sources */,
+				5572356623545E130004488E /* UIView+JJChange.m in Sources */,
 				3C4A3A3622681A0F00882244 /* MASConstraintMaker.m in Sources */,
 				EA945804233B103B003C1C97 /* DPenNameViewController.m in Sources */,
 				3C0DB67E22D7320B0029730E /* MJRefreshConst.m in Sources */,
@@ -6898,6 +6909,7 @@
 				3C4A3A3722681A0F00882244 /* MASLayoutConstraint.m in Sources */,
 				EA960BB0232F32E500D81A25 /* PSLoadingView.m in Sources */,
 				EA960D9E232F5BA000D81A25 /* DGActivityIndicatorCookieTerminatorAnimation.m in Sources */,
+				55723569235461180004488E /* KpengDianZanBtn.m in Sources */,
 				EA960E2423306D9A00D81A25 /* HeaderModel.m in Sources */,
 				5542A7D4233B19FE00E4B5D7 /* LYEmptyView.m in Sources */,
 				EAA311A4233472D8004DE08F /* NSMutableDictionary+BlocksKit.m in Sources */,
