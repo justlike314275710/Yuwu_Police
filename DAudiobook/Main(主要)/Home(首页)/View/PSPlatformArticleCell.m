@@ -99,6 +99,8 @@
         make.width.height.mas_equalTo(10);
         make.centerX.mas_equalTo(_bgView.mas_centerX);
     }];
+    self.likeBtn.touchExtendInset = UIEdgeInsetsMake(-15, -15, -15, -15);
+    
 
     [_bgView addSubview:self.timeLab];
     [self.timeLab mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -337,7 +339,6 @@
     if (!_likeBtn) {
         _likeBtn = [UIButton new];
         [_likeBtn setImage:IMAGE_NAMED(@"未赞") forState:UIControlStateNormal];
-        [_likeBtn be_setEnlargeEdge:10];
         [_likeBtn addTarget:self action:@selector(praiseAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _likeBtn;
