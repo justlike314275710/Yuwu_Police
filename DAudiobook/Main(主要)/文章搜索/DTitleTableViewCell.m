@@ -39,17 +39,13 @@
     }
     return self;
     
-//    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-//
-//
-//    }
-//    return self;
+
 }
 
 //CGRectGetMaxY(_rightImage.frame)+10
 - (UILabel *)titleLable{
     if (!_titleLable) {
-        self.titleLable = [[UILabel alloc] initWithFrame:CGRectMake(5, 5 + 10, SCREEN_WIDTH-40, 20)];
+        self.titleLable = [[UILabel alloc] initWithFrame:CGRectMake(15, 5 + 10, SCREEN_WIDTH-40, 20)];
       
         _titleLable.font = [UIFont systemFontOfSize:15];
         _titleLable.text=@"今夜的月光超载太重照着我一夜哄不成梦每根";

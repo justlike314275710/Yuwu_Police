@@ -25,6 +25,7 @@
 #import "MJCPromptsMessage.h"
 #import "ZXCTimer.h"
 #import "UIViewController+Tool.h"
+#import "UIButton+BEEnLargeEdge.h"
 @interface DHotNovelViewController()<UITableViewDelegate,UITableViewDataSource,SearchBarDisplayCenterDelegate,UITextFieldDelegate> {
 
     
@@ -111,11 +112,8 @@
 {
     //设置导航栏唤醒抽屉按钮
     MMDrawerBarButtonItem *leftItem = [MMDrawerBarButtonItem itemWithNormalIcon:@"我的icon" highlightedIcon:nil target:self action:@selector(leftDrawerButtonPress)];
-
-    //设置紧挨着左侧按钮的标题按钮
-    //    MMDrawerBarButtonItem *titleItem = [MMDrawerBarButtonItem itemWithTitle:[self getMenuTitle] target:self action:@selector(leftDrawerButtonPress)];
-    
     self.navigationItem.leftBarButtonItems = @[leftItem];
+    
     
     UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc]initWithNormalIcon:@"消息icon" highlightedIcon:nil target:self action:@selector(rightBarItemPress)];
     self.navigationItem.rightBarButtonItem = rightBarItem;
@@ -285,7 +283,7 @@
 
 -(void)SearchBar{
     
-    SearchBarDisplayCenter *searchBar = [[SearchBarDisplayCenter alloc]initWithFrame:CGRectMake(0, 30, [UIScreen mainScreen].bounds.size.width-60, 30.0 )];
+    SearchBarDisplayCenter *searchBar = [[SearchBarDisplayCenter alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width-60, 30.0 )];
     searchBar.placeholderStr=@"搜索文章|连载书籍";
     searchBar.delegate = self;
     self.navigationItem.titleView= searchBar;
