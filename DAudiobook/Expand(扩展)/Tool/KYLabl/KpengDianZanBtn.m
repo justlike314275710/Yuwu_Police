@@ -31,7 +31,7 @@
     [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     self.titleLabel.font =[UIFont systemFontOfSize:14];
     [self addTarget:self action:@selector(btnActionClick:) forControlEvents:UIControlEventTouchUpInside];
-    
+
     _addLab =[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.frame)+5, self.frame.size.height-20, 20, 20)];
     _addLab.textColor =[UIColor redColor];
     _addLab.text =@"+1";
@@ -46,11 +46,11 @@
         _addLab.hidden =NO;
         [self setImage:[UIImage imageNamed:@"imgBundle.bundle/evtDetail_btn_like_c"] forState:UIControlStateNormal];
         [UIView animateWithDuration:1 animations:^{
-            _addLab.frame =CGRectMake(self.frame.origin.x-20, -30, 20, 20);
+            _addLab.frame =CGRectMake(self.addLab.ly_x, -30, 20, 20);
         } completion:^(BOOL finished) {
             if (finished) {
                 _addLab.hidden =YES;
-               _addLab.frame = CGRectMake(self.frame.origin.x-20, self.frame.size.height-20, 20, 20);
+               _addLab.frame = CGRectMake(self.addLab.ly_x, self.frame.size.height-20, 20, 20);
             }
  
             

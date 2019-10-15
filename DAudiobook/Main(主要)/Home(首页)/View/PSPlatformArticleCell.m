@@ -8,7 +8,8 @@
 
 #import "PSPlatformArticleCell.h"
 #import "HAccountViewModel.h"
-#import "UIButton+BEEnLargeEdge.h"
+
+
 
 
 @interface PSPlatformArticleCell()
@@ -156,8 +157,10 @@
     //是否能点赞
     if ([_model.ispraise isEqualToString:@"0"]) {
         [_likeBtn setImage:IMAGE_NAMED(@"未赞") forState:UIControlStateNormal];
+        _likeBtn.selected = NO;
     } else {
         [_likeBtn setImage:IMAGE_NAMED(@"已赞") forState:UIControlStateNormal];
+        _likeBtn.selected = YES;
     }
     
     //用户头像
@@ -209,8 +212,10 @@
     //是否能点赞
     if ([collecModel.is_praise isEqualToString:@"0"]) {
         [_likeBtn setImage:IMAGE_NAMED(@"未赞") forState:UIControlStateNormal];
+        _likeBtn.selected = NO;
     } else {
         [_likeBtn setImage:IMAGE_NAMED(@"已赞") forState:UIControlStateNormal];
+        _likeBtn.selected = YES;
     }
     //用户头像
     NSString*url=AvaterImageWithUsername(_collecModel.username);
@@ -335,9 +340,9 @@
     return _hotIconImg;
 }
 
-- (UIButton *)likeBtn {
+- (KpengDianZanBtn *)likeBtn {
     if (!_likeBtn) {
-        _likeBtn = [UIButton new];
+        _likeBtn = [KpengDianZanBtn new];
         [_likeBtn setImage:IMAGE_NAMED(@"未赞") forState:UIControlStateNormal];
         [_likeBtn addTarget:self action:@selector(praiseAction:) forControlEvents:UIControlEventTouchUpInside];
     }
