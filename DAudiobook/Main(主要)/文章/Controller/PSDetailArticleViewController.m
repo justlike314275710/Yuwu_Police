@@ -76,7 +76,7 @@
         make.top.mas_equalTo(20);
         make.left.mas_equalTo(25);
         make.right.mas_equalTo(-25);
-        make.height.mas_equalTo(38);
+        make.height.mas_equalTo(43);
 
     }];
   
@@ -85,7 +85,7 @@
     [self.headImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(_titleLab.mas_left);
         make.height.width.mas_equalTo(44);
-        make.top.mas_equalTo(_titleLab.mas_bottom).offset(10);
+        make.top.mas_equalTo(_titleLab.mas_bottom).offset(5);
     }];
     
     [self.scrollview addSubview:self.nameLab];
@@ -106,7 +106,7 @@
     
     [self.scrollview addSubview:self.timeLab];
     [self.timeLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_timeImageView.mas_right).offset(5);
+        make.left.mas_equalTo(_timeImageView.mas_right).offset(2);
         make.top.mas_equalTo(_timeImageView);
         make.width.mas_equalTo(250);
         make.height.mas_equalTo(10);
