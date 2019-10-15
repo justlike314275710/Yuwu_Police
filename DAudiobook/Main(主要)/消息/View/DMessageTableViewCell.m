@@ -25,14 +25,14 @@
     CGFloat sidePadding = 15;
     CGFloat verticalPadding = 10;
     
-    _iconView=[[UIImageView alloc]initWithImage:ImageNamed(@"互动平台列表icon")];
-    [self addSubview:_iconView];
-    [_iconView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(sidePadding);
-        make.top.mas_equalTo(verticalPadding);
-        make.height.mas_equalTo(34);
-        make.width.mas_equalTo(34);
-    }];
+//    _iconView=[[UIImageView alloc]initWithImage:ImageNamed(@"互动平台列表icon")];
+//    [self addSubview:_iconView];
+//    [_iconView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(sidePadding);
+//        make.top.mas_equalTo(verticalPadding);
+//        make.height.mas_equalTo(34);
+//        make.width.mas_equalTo(34);
+//    }];
     
     _titleLable=[UILabel new];
     _titleLable.text=@"文章审核";
@@ -40,7 +40,7 @@
     _titleLable.font=FontOfSize(14);
     [self addSubview:_titleLable];
     [_titleLable mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self->_iconView.mas_right).mas_offset(5);
+        make.left.mas_equalTo(sidePadding);
         make.top.mas_equalTo(verticalPadding);
         make.height.mas_equalTo(14);
         make.width.mas_equalTo(120);
@@ -65,7 +65,7 @@
     _detailLable.font=FontOfSize(11);
     [self addSubview:_detailLable];
     [_detailLable mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.iconView.mas_right).mas_offset(5);
+        make.left.mas_equalTo(sidePadding);
         make.right.mas_equalTo(self.mas_right).mas_offset(-10);
         make.top.mas_equalTo(self.titleLable.mas_bottom).offset(5);
         make.height.mas_equalTo(30);
