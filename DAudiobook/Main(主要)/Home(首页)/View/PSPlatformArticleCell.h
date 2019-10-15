@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PSArticleDetailModel.h"
 #import "PSCollectArticleListModel.h"
+#import "KpengDianZanBtn.h"
 
 typedef void (^PSPraiseResult)(BOOL action);
 //YES 点赞,NO 取消点赞
@@ -25,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)UILabel *contentLab;
 @property(nonatomic,strong)UIImageView *timeIconImg;
 @property(nonatomic,strong)UILabel *timeLab;
-@property(nonatomic,strong)UIButton *likeBtn;
+@property(nonatomic,strong)KpengDianZanBtn *likeBtn;
 @property(nonatomic,strong)UILabel *likeLab;
 @property(nonatomic,strong)UIImageView *hotIconImg;
 @property(nonatomic,strong)UILabel *hotLab;

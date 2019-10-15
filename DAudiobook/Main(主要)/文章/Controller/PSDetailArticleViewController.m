@@ -12,6 +12,7 @@
 #import "PSPublishArticleViewModel.h"
 #import "UIButton+BEEnLargeEdge.h"
 #import "HAccountViewModel.h"
+#import "KpengDianZanBtn.h"
 
 
 @interface PSDetailArticleViewController ()
@@ -23,7 +24,7 @@
 @property(nonatomic,strong)UILabel *timeLab;
 @property(nonatomic,strong)UITextView *contentTextView;
 @property(nonatomic,strong)UIImageView *bottomView;
-@property(nonatomic,strong)UIButton *likeBtn; //点赞
+@property(nonatomic,strong)KpengDianZanBtn *likeBtn; //点赞
 @property(nonatomic,strong)UILabel *likeLab; //点赞
 @property(nonatomic,strong)UIButton *hotBtn; //热度
 @property(nonatomic,strong)UILabel *hotLab;  //热度
@@ -229,7 +230,9 @@
     if ([_viewModel.detailModel.ispraise isEqualToString:@"0"]) {
         [_likeBtn setImage:IMAGE_NAMED(@"未点赞") forState:UIControlStateNormal];
         [_likeLab setTextColor:UIColorFromRGB(102,102,102)];
+        _likeBtn.selected = NO;
     } else {
+        _likeBtn.selected = YES;
         [_likeBtn setImage:IMAGE_NAMED(@"已赞icon") forState:UIControlStateNormal];
         [_likeLab setTextColor:UIColorFromRGB(237,63,92)];
     }
@@ -361,7 +364,6 @@
 }
 //取消收藏
 -(void)cancelCollectAction{
-    
     [self.viewModel cancelCollectArticleCompleted:^(id data) {
         dispatch_async(dispatch_get_main_queue(), ^{
             NSString *msg = data[@"msg"];
@@ -446,7 +448,6 @@
     }
     return _topTipLab;
 }
-
 -(UILabel *)titleLab{
     if (!_titleLab) {
         _titleLab = [UILabel new];
@@ -477,7 +478,6 @@
     }
     return _nameLab;
 }
-
 -(UIImageView *)timeImageView{
     if (!_timeImageView) {
         _timeImageView = [UIImageView new];
@@ -485,7 +485,6 @@
     }
     return _timeImageView;
 }
-
 -(UILabel *)timeLab{
     if (!_timeLab) {
         _timeLab = [UILabel new];
@@ -497,7 +496,6 @@
     }
     return _timeLab;
 }
-
 - (UITextView *)contentTextView {
     if (!_contentTextView) {
         _contentTextView = [UITextView new];
@@ -515,7 +513,6 @@
     }
     return _contentTextView;
 }
-
 - (UIImageView *)bottomView{
     if (!_bottomView) {
         _bottomView = [UIImageView new];
@@ -525,16 +522,14 @@
     }
     return _bottomView;
 }
-
-- (UIButton*)likeBtn {
+- (KpengDianZanBtn*)likeBtn {
     if (!_likeBtn) {
-        _likeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _likeBtn = [KpengDianZanBtn buttonWithType:UIButtonTypeCustom];
         [_likeBtn setImage:IMAGE_NAMED(@"未点赞") forState:UIControlStateNormal];
         [_likeBtn addTarget:self action:@selector(clickPraiseAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _likeBtn;
 }
-
 -(UILabel *)likeLab{
     if (!_likeLab) {
         _likeLab = [UILabel new];
@@ -545,7 +540,6 @@
     }
     return _likeLab;
 }
-
 - (UIButton*)hotBtn {
     if (!_hotBtn) {
         _hotBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -573,7 +567,6 @@
     }
     return _collectBtn;
 }
-
 -(UILabel *)collectLab{
     if (!_collectLab) {
         _collectLab = [UILabel new];
@@ -584,7 +577,6 @@
     }
     return _collectLab;
 }
-
 -(UIScrollView *)scrollview {
     if (!_scrollview) {
         _scrollview = [[UIScrollView alloc] init];
