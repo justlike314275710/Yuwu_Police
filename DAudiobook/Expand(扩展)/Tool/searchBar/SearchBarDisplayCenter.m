@@ -147,7 +147,7 @@
 {
     CGFloat containerW = self.frame.size.width - 20.0;
     //_containerView.frame = CGRectMake(10.0, 2.0, containerW, 35.0);
-    _containerView.frame = CGRectMake(10.0, 2.0, containerW, 30.0);
+    _containerView.frame = CGRectMake(10.0, 0.0, containerW, 30.0);
     _containerView.backgroundColor = [UIColor whiteColor];
     _containerView.layer.cornerRadius = 30.0 / 2.0;
     _containerView.layer.masksToBounds = YES;
