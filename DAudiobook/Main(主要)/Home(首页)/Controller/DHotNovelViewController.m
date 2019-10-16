@@ -22,7 +22,6 @@
 #import "UIBarButtonItem+Helper.h"
 #import "LLSearchViewController.h"
 #import "PPBadgeView.h"
-#import "MJCPromptsMessage.h"
 #import "ZXCTimer.h"
 #import "UIViewController+Tool.h"
 
@@ -44,29 +43,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    // [self GDTadvertising];
-  
+    self.view.backgroundColor = [UIColor whiteColor];
     self.logic = [HomePageLogic new];
     self.hasCount = NO;
     [self SearchBar];
     [self setupUI];
-    
     //下啦刷新
     [self refreshData];
     
     self.tableview.ly_emptyView = [LYEmptyView emptyActionViewWithImage:ImageNamed(@"noData") titleStr:@"暂无数据" detailStr:nil btnTitleStr:@"" btnClickBlock:^{
         [self refreshData];
     }];
-    
     //刷新列表
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KNotificationHomePageRefreshList object:nil];
-    
+    //刷新红点
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshRedDot) name:KNotificationRedDotRefresh object:nil];
-    
     //发文章权限
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupData) name:KNotificationArticleAuthor object:nil];
     //获取有几条新消息
     [[ZXCTimer shareInstance]addCycleTask:^{
-          [self refreshNewCount];
+        [self refreshNewCount];
     } timeInterval:30];
 
 }
@@ -77,7 +73,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSString *msg = [NSString stringWithFormat:@"%ld条新内容,下拉刷新",(long)self.logic.count];
                 self.tipLab.text = msg;
-                self.tipLab.hidden=NO;
+                [self showTip];
                 self.hasCount = YES;
             });
         } failed:^(NSError *error) {
@@ -127,13 +123,15 @@
 //下啦刷新
 - (void)refreshData{
     // 初始化文字
-    [[PSLoadingView sharedInstance] show];
+    BOOL isCurrent = [UIViewController isCurrentViewControllerVisible:self];
+    if (isCurrent) [[PSLoadingView sharedInstance] show];
     [self.logic refreshArticleListCompleted:^(id data) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableview.mj_header endRefreshing];
             [self.tableview reloadData];
              [self reloadContents];
-            [[PSLoadingView sharedInstance] dismiss];
+            
+            if (isCurrent) [[PSLoadingView sharedInstance] dismiss];
             if (self.hasCount==YES) {
                 NSString *msg = [NSString stringWithFormat:@"为您更新了%ld篇内容",(long)self.logic.count];
                 self.tipLab.text = msg;
@@ -146,8 +144,7 @@
             [self.tableview.mj_header endRefreshing];
             [self.tableview reloadData];
             [self reloadContents];
-            [[PSLoadingView sharedInstance] dismiss];
-            [MJCPromptsMessage hideDismiss];
+            if (isCurrent) [[PSLoadingView sharedInstance] dismiss];
         });
     }];
 }
@@ -173,7 +170,6 @@
     }];
     
 }
-
 
 - (void)rightBarItemPress{
     DMessageViewController*vc=[[DMessageViewController alloc]init];
@@ -308,6 +304,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PSPlatformArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PSPlatformArticleCell"];
+
     cell.model = [self.logic.datalist objectAtIndex:indexPath.row];
     @weakify(self);
     cell.praiseBlock = ^(BOOL action, NSString *id, PSPraiseResult result) {
@@ -356,7 +353,6 @@
             [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
         }
     };
-    
     [self.navigationController pushViewController:DetailArticleVC animated:YES];
     
 }
@@ -375,7 +371,7 @@
 - (UITableView *)tableview {
     if (!_tableview) {
         _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0,0,self.view.width,kScreenHeight-Height_NavBar) style:UITableViewStyleGrouped];
-        _tableview.backgroundColor = UIColorFromRGB(249,248,254);
+        _tableview.backgroundColor = [UIColor whiteColor];
         _tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableview.dataSource = self;
         _tableview.delegate = self;
@@ -393,16 +389,30 @@
         _tipLab.textColor = [UIColor whiteColor];
         _tipLab.font = FontOfSize(12);
         _tipLab.textAlignment = NSTextAlignmentCenter;
-        _tipLab.frame = CGRectMake(0,0,KScreenWidth,30);
+        _tipLab.frame = CGRectMake(0,-30,KScreenWidth,30);
         _tipLab.text = @"";
         [self.view addSubview:_tipLab];
     }
     return _tipLab;
 }
+- (void)showTip{
+    self.tipLab.hidden = NO;
+    [UIView animateWithDuration:0.35 animations:^{
+        self.tipLab.ly_y = 0;
+        self.tableview.top = self.tipLab.bottom;
+    } completion:^(BOOL finished) {
+        self.tipLab.hidden = NO;
+    }];
+}
 - (void)showAutoHiden{
     self.tipLab.hidden = NO;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.tipLab.hidden=YES;
+        [UIView animateWithDuration:0.35 animations:^{
+            self.tipLab.ly_y = -30;
+            self.tableview.top = self.tipLab.bottom;
+        } completion:^(BOOL finished) {
+            self.tipLab.hidden = YES;
+        }];
     });
 }
 @end

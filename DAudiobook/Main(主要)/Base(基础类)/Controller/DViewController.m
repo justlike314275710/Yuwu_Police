@@ -8,7 +8,7 @@
 
 #import "DViewController.h"
 
-@interface DViewController ()
+@interface DViewController ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -21,6 +21,7 @@
     
    
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -35,6 +36,17 @@
     
     
 }
+
+//- (void)viewDidAppear:(BOOL)animated{
+//    [super viewDidAppear:animated];
+//    self.navigationController.interactivePopGestureRecognizer.delegate=self;
+//}
+//
+//
+//- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+//    return NO;
+//}
+
 -(void)addBackItem{
    
 
