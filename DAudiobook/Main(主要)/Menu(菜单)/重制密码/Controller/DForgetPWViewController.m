@@ -29,7 +29,7 @@
 -(void)renderContents{
     self.view.backgroundColor=[UIColor colorWithRed:249/255.0 green:248/255.0 blue:254/255.0 alpha:1.0];
     CGFloat horizontalSpace = 15.0f;
-    CGFloat topSpace = 64.0f+9.0f;
+    CGFloat topSpace = 5.0f;
     NSString*phone=[kUserDefaults objectForKey:@"phone"];
     UILabel*tipsLable=[UILabel new];
     tipsLable.text=[NSString stringWithFormat:@"短信验证码已发送至手机上，手机号为:%@",phone];
