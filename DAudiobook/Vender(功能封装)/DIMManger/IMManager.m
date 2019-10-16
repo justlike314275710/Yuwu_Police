@@ -156,6 +156,7 @@ SINGLETON_FOR_CLASS(IMManager);
         KPostNotification(KNotificationHomePageRefreshList, nil);
         KPostNotification(KNotificationCollectArtickeRefreshList, nil);
         KPostNotification(KNotificationRefreshMyArticle, nil);
+        
     }
 }
 
