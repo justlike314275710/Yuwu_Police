@@ -99,8 +99,9 @@
     UIButton*nextTipButton=[UIButton new];
     [nextTipButton setTitle:@"下一步" forState:UIControlStateNormal];
     [nextTipButton setTitleColor:[UIColor whiteColor] forState:0];
-    ViewRadius(nextTipButton, 4);
-    [nextTipButton setBackgroundColor:AppBaseTextColor3];
+    ViewRadius(nextTipButton, 22);
+    //[nextTipButton setBackgroundColor:AppBaseTextColor3];
+     [nextTipButton setBackgroundImage:[UIImage imageNamed:@"提交按钮底框"] forState:UIControlStateNormal];
     nextTipButton.titleLabel.font=FontOfSize(14);
     [self.view addSubview:nextTipButton];
     [nextTipButton mas_makeConstraints:^(MASConstraintMaker *make) {

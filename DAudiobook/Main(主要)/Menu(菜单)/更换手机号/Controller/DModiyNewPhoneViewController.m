@@ -70,15 +70,7 @@
     self.codeField.frame = CGRectMake(k_codeLabel.right,k_codeLabel.frame.origin.y,self.scrollview.width-k_codeLabel.right-_getCodeBtn.width, 21);
     [BgView addSubview: self.codeField];
     
-//    [self.codeField.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
-//        if (x.length>0) {
-//            self.nextStep.enabled = YES;
-//            [self.nextStep setBackgroundImage:IMAGE_NAMED(@"提交按钮底框") forState:UIControlStateNormal];
-//        } else {
-//            self.nextStep.enabled = NO;
-//            [self.nextStep setBackgroundImage:IMAGE_NAMED(@"n提交按钮底框") forState:UIControlStateNormal];
-//        }
-//    }];
+
     
     UIView *v_line = [[UIView alloc] initWithFrame:CGRectMake(self.codeField.right-10, k_codeLabel.frame.origin.y+3, 1,15)];
     v_line.backgroundColor = CFontColor3;
@@ -98,7 +90,7 @@
     
     [self.scrollview addSubview:self.nextStep];
     _nextStep.frame = CGRectMake(15,160,self.scrollview.width-30,KNormalBBtnHeight);
-   
+  
     [_nextStep addTarget:self action:@selector(changePhoneNumberAction) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -271,7 +263,10 @@
         //_nextStep.enabled = NO;
         _nextStep.titleLabel.font=FontOfSize(14);
         [_nextStep setTitleColor:[UIColor colorWithHexString:@"ffffff"] forState:UIControlStateNormal];
-        [_nextStep setBackgroundColor:ImportantColor];
+        //[_nextStep setBackgroundColor:ImportantColor];
+         [_nextStep setBackgroundImage:[UIImage imageNamed:@"提交按钮底框"] forState:UIControlStateNormal];
+        ViewRadius(_nextStep, 22);
+        
     }
     return _nextStep;
 }

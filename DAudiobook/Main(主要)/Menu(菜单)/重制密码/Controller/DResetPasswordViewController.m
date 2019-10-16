@@ -207,7 +207,8 @@
     [passwordButton setTitle:@"完成" forState:0];
     [passwordButton setTitleColor:[UIColor whiteColor] forState:0];
     passwordButton.titleLabel.font=FontOfSize(14);
-    passwordButton.backgroundColor=ImportantColor;
+    [passwordButton setBackgroundImage:[UIImage imageNamed:@"提交按钮底框"] forState:UIControlStateNormal];
+    //passwordButton.backgroundColor=ImportantColor;
     [self.view addSubview:passwordButton];
     [passwordButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(forgetPasswordButton.mas_bottom)
