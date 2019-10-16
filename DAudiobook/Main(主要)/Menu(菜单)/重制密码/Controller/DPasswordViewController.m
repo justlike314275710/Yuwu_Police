@@ -82,7 +82,7 @@
     
     
     UIButton*passwordButton=[UIButton new];
-    ViewRadius(passwordButton, 4);
+    ViewRadius(passwordButton, 22);
     [passwordButton setTitle:@"完成" forState:0];
     [passwordButton setTitleColor:[UIColor whiteColor] forState:0];
     passwordButton.titleLabel.font=FontOfSize(14);

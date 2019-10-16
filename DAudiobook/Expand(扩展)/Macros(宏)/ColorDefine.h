@@ -14,7 +14,8 @@
 #define UIColorFromRGBA(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
 
 /** *  主色调 */
-#define ImportantColor UIColorFromRGBValue(0x4876FF)
+#define ImportantColor UIColorFromRGBA(0, 107, 255,1)
+//UIColorFromRGBValue(0x4876FF)
 
 #define AppBaseTextColor1 (UIColorHex(0x666666))//灰色
 
