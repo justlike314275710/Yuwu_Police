@@ -61,7 +61,7 @@
     if (!_insertAction) {
         _insertAction = [UIButton buttonWithType:UIButtonTypeCustom];
         _insertAction.frame = CGRectMake(kScreenWidth-25,12,10,16);
-        [_insertAction be_setEnlargeEdgeWithTop:10 right:5 bottom:10 left:100];
+        _insertAction.touchExtendInset = UIEdgeInsetsMake(-15, -30, -15, -15);
         [_insertAction setImage:[UIImage imageNamed:@"进入icon"] forState:UIControlStateNormal];
         [_insertAction addTarget:self action:@selector(action:) forControlEvents:UIControlEventTouchUpInside];
     }

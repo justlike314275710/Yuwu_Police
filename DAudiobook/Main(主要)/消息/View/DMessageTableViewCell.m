@@ -76,7 +76,7 @@
     [bgview addSubview:_detailLable];
     [_detailLable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(sidePadding);
-        make.right.mas_equalTo(self.mas_right).mas_offset(-10);
+        make.right.mas_equalTo(self.mas_right).mas_offset(-30);
         make.top.mas_equalTo(self.titleLable.mas_bottom).offset(5);
         make.height.mas_equalTo(30);
     }];
