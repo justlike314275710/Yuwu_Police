@@ -132,18 +132,7 @@ SINGLETON_FOR_CLASS(IMManager);
 - (void)onRecvMessages:(NSArray<NIMMessage *> *)messages{
     NSLog(@"收到新消息");
     [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationRedDotRefresh object:nil];
-//    if (messages.count <=0) return;
-//    NIMMessage *meeesage = [messages objectAtIndex:0];
-//    NSString *msg = meeesage.text.length>0?meeesage.text:meeesage.apnsContent;
-//    if (msg.length<=0) return;
-//    [ZQLocalNotification NotificationType:CountdownNotification Identifier:@"0" activityId:1900001 alertBody:msg alertTitle:@"帮帮忙" alertString:@"确定" withTimeDay:0 hour:0 minute:0 second:1];
-//    //未读消息
-//    NSInteger systemCount = [NIMSDK sharedSDK].conversationManager.allUnreadCount;
-//    if (systemCount>0) {
-//        [kAppDelegate.mainTabBar setRedDotWithIndex:1 isShow:YES];
-//    } else {
-//        [kAppDelegate.mainTabBar setRedDotWithIndex:1 isShow:NO];
-//    }
+
 }
 
 
