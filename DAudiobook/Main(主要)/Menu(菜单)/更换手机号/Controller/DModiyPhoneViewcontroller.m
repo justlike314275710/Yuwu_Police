@@ -227,11 +227,13 @@
     if (!_nextStep) {
         _nextStep = [UIButton buttonWithType:UIButtonTypeCustom];
         [_nextStep setTitle:@"下一步" forState:UIControlStateNormal];
-       // _nextStep.enabled = NO;
+      
+         [_nextStep setBackgroundImage:[UIImage imageNamed:@"提交按钮底框"] forState:UIControlStateNormal];
         [_nextStep setTitleColor:[UIColor colorWithHexString:@"ffffff"] forState:UIControlStateNormal];
         _nextStep.titleLabel.font=FontOfSize(14);
-//        [_nextStep setBackgroundImage:IMAGE_NAMED(@"n提交按钮底框") forState:UIControlStateNormal];
-        [_nextStep setBackgroundColor:ImportantColor];
+        ViewRadius(_nextStep, 22);
+
+        //[_nextStep setBackgroundColor:ImportantColor];
     }
     return _nextStep;
 }

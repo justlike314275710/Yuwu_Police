@@ -87,7 +87,8 @@
     [passwordButton setTitle:@"确定" forState:0];
     [passwordButton setTitleColor:[UIColor whiteColor] forState:0];
     passwordButton.titleLabel.font=FontOfSize(14);
-    passwordButton.backgroundColor=AppBaseTextColor3;
+    //passwordButton.backgroundColor=AppBaseTextColor3;
+    [passwordButton setBackgroundImage:[UIImage imageNamed:@"提交按钮底框"] forState:UIControlStateNormal];
     [self.view addSubview:passwordButton];
     [passwordButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.passwordTextfield.mas_bottom).offset(horizontalSpace);
