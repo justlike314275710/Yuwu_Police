@@ -19,6 +19,7 @@ typedef void (^PSCellDeleteCollect)(NSString *titleid);
 
 NS_ASSUME_NONNULL_BEGIN
 @interface PSPlatformArticleCell : UITableViewCell
+@property(nonatomic,strong)UIImageView *bgView;
 @property(nonatomic,strong)UILabel *titleLab;
 @property(nonatomic,strong)UIImageView *headImg;
 @property(nonatomic,strong)UILabel *nameLab;

@@ -66,7 +66,6 @@
     @weakify(self)
     [self.viewModel refreshMessagesCompleted:^(id data) {
         @strongify(self)
-        
         if (isCurrent) [[PSLoadingView sharedInstance] dismiss];
         [self reloadContents];
     } failed:^(NSError *error) {
@@ -146,7 +145,7 @@
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,0,self.view.width,kScreenHeight-Height_NavBar) style:UITableViewStylePlain];
         UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1,10)];
         _tableView.tableHeaderView = tableHeaderView;
-        _tableView.backgroundColor = UIColorFromRGB(249,248,254);
+        _tableView.backgroundColor = UIColorFromRGB(255,255,255);
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.dataSource = self;
         _tableView.delegate = self;

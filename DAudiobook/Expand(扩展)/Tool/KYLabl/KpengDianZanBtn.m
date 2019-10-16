@@ -43,7 +43,7 @@
 - (void)btnActionClick:(UIButton*)sender {
     sender.selected =!sender.selected;
     if (sender.selected) {
-        _addLab.hidden =NO;
+        _addLab.hidden = YES;
         [self setImage:[UIImage imageNamed:@"imgBundle.bundle/evtDetail_btn_like_c"] forState:UIControlStateNormal];
         [UIView animateWithDuration:1 animations:^{
             _addLab.frame =CGRectMake(self.addLab.ly_x, -30, 20, 20);
@@ -52,11 +52,7 @@
                 _addLab.hidden =YES;
                _addLab.frame = CGRectMake(self.addLab.ly_x, self.frame.size.height-20, 20, 20);
             }
- 
-            
         }];
-        
-        
     } else {
         [self setImage:[UIImage imageNamed:@"imgBundle.bundle/evtDetail_btn_like_n"] forState:UIControlStateNormal];
     }
@@ -74,13 +70,9 @@
         } completion:^(BOOL finished) {
             [UIView animateWithDuration:1/3 animations:^{
                 self.imageView.transform = CGAffineTransformScale(self.imageView.transform, 1.0, 1.0);
-               
             }];
         }];
     }];
-    
-   
-    
     if (_btnActionCallBack) {
         _btnActionCallBack (sender.selected,sender);
     }

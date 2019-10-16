@@ -10,10 +10,8 @@
 #import "HAccountViewModel.h"
 
 
-
-
 @interface PSPlatformArticleCell()
-@property(nonatomic,strong)UIView *bgView;
+
 @end
 
 @implementation PSPlatformArticleCell
@@ -21,14 +19,16 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.backgroundColor = UIColorFromRGB(249,248,254);
-        self.contentView.backgroundColor = UIColorFromRGB(249,248,254);
+        self.backgroundColor = [UIColor whiteColor];
+        self.contentView.backgroundColor = [UIColor whiteColor];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         [self renderContents];
         [self SDWebImageAuth];
     }
     return self;
 }
+
+
 -(void)SDWebImageAuth{
     
     NSString*token=NSStringFormat(@"Bearer %@",help_userManager.oathInfo.access_token);
@@ -41,20 +41,20 @@
     
     [self addSubview:self.bgView];
     [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(15);
-        make.right.mas_equalTo(-15);
-        make.height.mas_equalTo(161);
-        make.top.mas_equalTo(5);
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+        make.height.mas_equalTo(175);
+        make.top.mas_equalTo(0);
     }];
     
     [self.bgView addSubview:self.titleLab];
     [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(15);
+        make.left.mas_equalTo(30);
         make.right.mas_equalTo(-15);
         make.top.mas_equalTo(17);
         make.height.mas_equalTo(21);
     }];
-    
+
     [self.bgView addSubview:self.headImg];
     ViewRadius(_headImg,12);
     [self.headImg mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -90,7 +90,7 @@
     [_bgView addSubview:self.timeIconImg];
     [self.timeIconImg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.contentLab);
-        make.bottom.mas_equalTo(-18);
+        make.bottom.mas_equalTo(-33);
         make.width.height.mas_equalTo(10);
     }];
     
@@ -283,6 +283,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -291,16 +292,20 @@
     // Configure the view for the selected state
 }
 
+
 #pragma mark - Setting&&Getting
-- (UIView *)bgView{
+- (UIImageView *)bgView{
     if (!_bgView) {
-        _bgView = [UIView new];
-        _bgView.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];
-        _bgView.layer.shadowColor = [UIColor colorWithRed:0/255.0 green:41/255.0 blue:108/255.0 alpha:0.18].CGColor;
-        _bgView.layer.shadowOffset = CGSizeMake(0,4);
-        _bgView.layer.shadowOpacity = 1;
-        _bgView.layer.shadowRadius = 12;
-        _bgView.layer.cornerRadius = 4;
+        _bgView = [UIImageView new];
+        _bgView.image = ImageNamed(@"homePage_cell_bottom");
+        _bgView.userInteractionEnabled = YES;
+//        _bgView.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];
+//        _bgView.layer.shadowColor = [UIColor colorWithRed:0/255.0 green:41/255.0 blue:108/255.0 alpha:0.18].CGColor;
+//        _bgView.layer.shadowOffset = CGSizeMake(-4,4);
+//        _bgView.layer.shadowOpacity = 0.9;
+//        _bgView.layer.shadowRadius = 12;
+//        _bgView.layer.cornerRadius = 4;
+        
     }
     return _bgView;
 }

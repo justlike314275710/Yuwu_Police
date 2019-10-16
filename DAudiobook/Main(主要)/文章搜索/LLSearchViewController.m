@@ -12,7 +12,7 @@
 #import "LLSearchView.h"
 
 
-@interface LLSearchViewController ()<UISearchBarDelegate>
+@interface LLSearchViewController ()<UISearchBarDelegate,UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) LLSearchView *searchView;
@@ -91,6 +91,11 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.searchBar.text=@"";
+    if (_searchView) {
+        [_searchView removeFromSuperview];
+        _searchView = nil;
+        [self.view addSubview:self.searchView];
+    }
 }
 
 - (void)viewDidLoad
@@ -101,9 +106,21 @@
     [self.view addSubview:self.searchView];
     [self.view addSubview:self.searchSuggestVC.view];
     [self addChildViewController:_searchSuggestVC];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideKeyboard) name:@"hideKeyboard" object:nil];
 }
 
+- (void)hideKeyboard {
+    [self.searchBar resignFirstResponder];
+}
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+}
+    
 - (void)setBarButtonItem
 {
     [self.navigationItem setHidesBackButton:YES];
