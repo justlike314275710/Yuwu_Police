@@ -50,7 +50,7 @@
     [self.bgView addSubview:self.titleLab];
     [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(30);
-        make.right.mas_equalTo(-15);
+        make.right.mas_equalTo(-25);
         make.top.mas_equalTo(17);
         make.height.mas_equalTo(21);
     }];
@@ -299,13 +299,6 @@
         _bgView = [UIImageView new];
         _bgView.image = ImageNamed(@"homePage_cell_bottom");
         _bgView.userInteractionEnabled = YES;
-//        _bgView.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];
-//        _bgView.layer.shadowColor = [UIColor colorWithRed:0/255.0 green:41/255.0 blue:108/255.0 alpha:0.18].CGColor;
-//        _bgView.layer.shadowOffset = CGSizeMake(-4,4);
-//        _bgView.layer.shadowOpacity = 0.9;
-//        _bgView.layer.shadowRadius = 12;
-//        _bgView.layer.cornerRadius = 4;
-        
     }
     return _bgView;
 }

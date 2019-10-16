@@ -47,7 +47,7 @@
 - (LLSearchView *)searchView
 {
     if (!_searchView) {
-        self.searchView = [[LLSearchView alloc] initWithFrame:CGRectMake(0, 5, KScreenWidth, KScreenHeight - 10) hotArray:self.hotArray historyArray:_historyArray];
+        self.searchView = [[LLSearchView alloc] initWithFrame:CGRectMake(0, 5, KScreenWidth, KScreenHeight - 10) hotArray:self.hotArray historyArray:self.historyArray];
         __weak LLSearchViewController *weakSelf = self;
         _searchView.tapAction = ^(NSString *str) {
             [weakSelf pushToSearchResultWithSearchStr:str];
@@ -209,8 +209,8 @@
     self.searchBar.text = str;
     LLSearchResultViewController *searchResultVC = [[LLSearchResultViewController alloc] init];
     searchResultVC.searchStr = str;
-    searchResultVC.hotArray = _hotArray;
-    searchResultVC.historyArray = _historyArray;
+    searchResultVC.hotArray = self.hotArray;
+    searchResultVC.historyArray = self.historyArray;
     //[self.navigationController pushViewController:searchResultVC animated:YES];
     [self setHistoryArrWithStr:str];
     KPostNotification(@"reloadHistory", nil);
@@ -218,7 +218,7 @@
 
 - (void)setHistoryArrWithStr:(NSString *)str
 {
-    for (int i = 0; i < _historyArray.count; i++) {
+    for (int i = 0; i < self.historyArray.count; i++) {
         if ([_historyArray[i] isEqualToString:str]) {
             [_historyArray removeObjectAtIndex:i];
             break;
@@ -265,7 +265,7 @@
         _searchSuggestVC.view.hidden = YES;
         [self.view bringSubviewToFront:_searchView];
     } else {
-        [self setHistoryArrWithStr:searchBar.text];
+        //[self setHistoryArrWithStr:searchBar.text];
         _searchSuggestVC.view.hidden = NO;
         [self.view bringSubviewToFront:_searchSuggestVC.view];
         //[self.searchBar resignFirstResponder];
