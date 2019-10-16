@@ -47,7 +47,7 @@
 - (LLSearchView *)searchView
 {
     if (!_searchView) {
-        self.searchView = [[LLSearchView alloc] initWithFrame:CGRectMake(0, 5, KScreenWidth, KScreenHeight - 10) hotArray:self.hotArray historyArray:self.historyArray];
+        self.searchView = [[LLSearchView alloc] initWithFrame:CGRectMake(0, 5, KScreenWidth, KScreenHeight - 10) hotArray:self.hotArray historyArray:_historyArray];
         __weak LLSearchViewController *weakSelf = self;
         _searchView.tapAction = ^(NSString *str) {
             [weakSelf pushToSearchResultWithSearchStr:str];
@@ -88,10 +88,7 @@
     [self.searchBar resignFirstResponder];
     _searchSuggestVC.view.hidden = YES;
 }
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    self.searchBar.text=@"";
-}
+
 
 - (void)viewDidLoad
 {
@@ -108,16 +105,34 @@
 {
     [self.navigationItem setHidesBackButton:YES];
     // 创建搜索框
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(5, 5, self.view.frame.size.width, 30)];
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
+    ViewBorderRadius(titleView, 15, 1, [UIColor whiteColor]);
+    titleView.backgroundColor=[UIColor whiteColor];
     UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(5, 0, CGRectGetWidth(titleView.frame) - 15-5, 30)];
     searchBar.placeholder = @"搜索文章|连载书籍";
-    
     searchBar.delegate = self;
     searchBar.showsCancelButton = YES;
-    UIView *searchTextField = searchTextField = [searchBar valueForKey:@"_searchField"];
+    [searchBar setBackgroundColor:[UIColor clearColor]];
+   
+    
+    
+    UITextField *searchTextField = [searchBar valueForKey:@"_searchField"];
+   // searchTextField.borderStyle=UITextBorderStyleBezel;
     searchTextField.backgroundColor = [UIColor whiteColor];
-   // ViewRadius(searchBar, 15);
-    [searchBar setImage:[UIImage imageNamed:@"sort_magnifier"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
+
+
+//     searchTextField.layer.borderWidth = 1 ;
+//     searchTextField.layer.borderColor = [UIColor whiteColor].CGColor ;
+//     searchTextField.layer.cornerRadius = 18 ;
+//     searchTextField.clipsToBounds = YES ;
+    
+   
+    
+    //ViewBorderRadius(searchTextField, 15.0f, 5, [UIColor whiteColor]);
+    //[searchBar setImage:[UIImage imageNamed:@"sort_magnifier"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
+    
+
+    
     [searchTextField setValue:[UIFont systemFontOfSize:13] forKeyPath:@"_placeholderLabel.font"];
 
     UIButton *cancleBtn = [searchBar valueForKey:@"cancelButton"];
@@ -132,10 +147,25 @@
     [self.searchBar becomeFirstResponder];
     self.navigationItem.titleView = titleView;
     
-   // [self addRightBarButtonTitleItem:@"取消"];
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];
+    [self addRightBarButtonTitleItem:@"取消"];
+  //  self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(presentVCFirstBackClick:)];
 }
 
+- (void)rightItemClick{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+- (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size{
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
 
 - (void)presentVCFirstBackClick:(UIButton *)sender
 {
@@ -162,6 +192,7 @@
     searchResultVC.historyArray = _historyArray;
     //[self.navigationController pushViewController:searchResultVC animated:YES];
     [self setHistoryArrWithStr:str];
+    KPostNotification(@"reloadHistory", nil);
 }
 
 - (void)setHistoryArrWithStr:(NSString *)str
@@ -216,7 +247,7 @@
         [self setHistoryArrWithStr:searchBar.text];
         _searchSuggestVC.view.hidden = NO;
         [self.view bringSubviewToFront:_searchSuggestVC.view];
-        [self.searchBar resignFirstResponder];
+        //[self.searchBar resignFirstResponder];
         [_searchSuggestVC searchTestChangeWithTest:searchBar.text];
         
     }

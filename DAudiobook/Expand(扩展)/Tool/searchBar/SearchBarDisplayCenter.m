@@ -42,6 +42,7 @@
         
         _placeholderLabel = [[UILabel alloc]init];
         [_placeholderView addSubview:_placeholderLabel];
+        
         _seachIconIV = [[UIImageView alloc]init];
         [_placeholderView addSubview:_seachIconIV];
         [self addObserver];
@@ -174,7 +175,8 @@
     _placeholderView.frame = CGRectMake(10, 0, needW, 30.0);
     _searchX =(containerW - needW) / 2.0;
     _seachIconIV.frame = CGRectMake(containerW-50, 7.6 , 15.0, 16.0);
-    _seachIconIV.image = [UIImage imageNamed:@"搜索"];
+   // _seachIconIV.image = [UIImage imageNamed:@"搜索"];
+    [_seachIconIV setImage:[UIImage imageNamed:@"搜索"]];
     _seachIconIV.userInteractionEnabled = NO;
     _placeholderLabel.frame = CGRectMake(5, 0, needSize.width + 2.0, 30.0);
     _placeholderLabel.text = placeHolderStr;

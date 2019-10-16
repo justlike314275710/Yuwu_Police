@@ -207,7 +207,7 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
     [formRequest setValue:authorization forHTTPHeaderField:@"Authorization"];
     
     AFHTTPSessionManager*manager = [AFHTTPSessionManager manager];
-    
+    manager.requestSerializer.timeoutInterval = 10.f;
     AFJSONResponseSerializer* responseSerializer = [AFJSONResponseSerializer serializer];
     
     [responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:@"application/json",@"text/json",@"text/javascript",@"text/html",@"text/plain",nil]];

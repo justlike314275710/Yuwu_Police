@@ -126,7 +126,7 @@
     NSRange range = [model.title rangeOfString:_searchString];
     [attrituteString setAttributes:@{NSForegroundColorAttributeName : [UIColor redColor],   NSFontAttributeName : [UIFont systemFontOfSize:15]} range:range];
      cell.titleLable.attributedText=attrituteString;
-    [cell.dataButton setTitle:NSStringFormat(@" %@",model.publishAt) forState:UIControlStateNormal];
+    [cell.dataButton setTitle:NSStringFormat(@" %@",model.auditAt) forState:UIControlStateNormal];
     [cell.hotButton setTitle:NSStringFormat(@" %@",model.praiseNum) forState:UIControlStateNormal];
     cell.nameLable.text=model.penName;
     return cell;
