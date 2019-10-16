@@ -63,6 +63,7 @@
     _detailLable=[UILabel new];
     _detailLable.text=@"您于2019-07-12 19:12提交的认证已通过审核。";
     _detailLable.font=FontOfSize(11);
+    _detailLable.textColor=AppColor(102, 102, 102);
     [self addSubview:_detailLable];
     [_detailLable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(sidePadding);
