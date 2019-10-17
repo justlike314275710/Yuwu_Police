@@ -151,8 +151,6 @@
             [help_userManager saveUserInfo];
             [[PSLoadingView sharedInstance]dismiss];
             //发送通知
-           // KPostNotification(KNotificationModifyDataChange,nil);
-           // KPostNotification(KNotificationMineDataChange, nil);
             [self.navigationController popViewControllerAnimated:YES];
             [self dismissViewControllerAnimated:NO completion:nil];
             [self police_PhoneNumberAction];//修改狱警端手机号码

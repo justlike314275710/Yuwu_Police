@@ -24,7 +24,7 @@
 #import "PPBadgeView.h"
 #import "ZXCTimer.h"
 #import "UIViewController+Tool.h"
-
+#import "DAllControllersTool.h"
 @interface DHotNovelViewController()<UITableViewDelegate,UITableViewDataSource,SearchBarDisplayCenterDelegate,UITextFieldDelegate> {
 
     
@@ -89,10 +89,16 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 //    [self setupData];
+    [[DAllControllersTool shareOpenController].drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+     [[DAllControllersTool shareOpenController].drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll
+      ];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    [[DAllControllersTool shareOpenController].drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
+    [[DAllControllersTool shareOpenController].drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeNone
+     ];
 }
 
 -(UIImage*)convertViewToImage:(UIView*)v{

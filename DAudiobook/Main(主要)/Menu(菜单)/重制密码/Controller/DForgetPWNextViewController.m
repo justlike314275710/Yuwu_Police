@@ -19,6 +19,7 @@
     [super viewDidLoad];
     self.title=@"设置密码";
     [self renderContents];
+    [self addBackItem];
     // Do any additional setup after loading the view.
 }
 
@@ -68,17 +69,21 @@
     self.passwordTextfield.secureTextEntry=YES;
     
     UIButton*showPasswordButton=[UIButton new];
-    [showPasswordButton setImage:IMAGE_NAMED(@"显示密码iocn") forState:UIControlStateSelected];
-    [showPasswordButton setImage:IMAGE_NAMED(@"不显示密码icon") forState:UIControlStateNormal];
+
+    
+    
+    [showPasswordButton setImage:IMAGE_NAMED(@"显示密码icon") forState:UIControlStateSelected];
+    [showPasswordButton setImage:IMAGE_NAMED(@"不显示密码icon") forState:UIControlStateNormal ];
+    
     [showPasswordButton be_setEnlargeEdgeWithTop:5 right:15 bottom:5 left:15];
     [bgView addSubview:showPasswordButton];
     [showPasswordButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.passwordTextfield.top).offset(horizontalSpace);
-        make.right.mas_equalTo(-15);
+        make.right.mas_equalTo(-20);
         make.height.mas_equalTo(10);
         make.width.mas_equalTo(16);
     }];
-    [showPasswordButton addTarget:self action:@selector(rightBarButtonItemClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [showPasswordButton addTarget:self action:@selector(showPassBarButtonItemClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     
     
@@ -87,7 +92,6 @@
     [passwordButton setTitle:@"确定" forState:0];
     [passwordButton setTitleColor:[UIColor whiteColor] forState:0];
     passwordButton.titleLabel.font=FontOfSize(14);
-    //passwordButton.backgroundColor=AppBaseTextColor3;
     [passwordButton setBackgroundImage:[UIImage imageNamed:@"提交按钮底框"] forState:UIControlStateNormal];
     [self.view addSubview:passwordButton];
     [passwordButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -108,7 +112,8 @@
         if (successful) {
             [logic requestByVerficationCodeCompleted:^(id data) {
                  [PSTipsView showTips:@"密码修改成功!"];
-                [self.navigationController popToRootViewControllerAnimated:YES];
+                 [self.navigationController popViewControllerAnimated:YES];
+                 [self dismissViewControllerAnimated:NO completion:nil];
             } failed:^(NSError *error) {
                  [PSTipsView showTips:@"密码修改失败!"];
             }];
@@ -120,7 +125,7 @@
 
 
 
-- (void) rightBarButtonItemClicked:(UIButton *)sender{
+- (void)showPassBarButtonItemClicked:(UIButton *)sender{
     self.passwordTextfield.secureTextEntry=! self.passwordTextfield.secureTextEntry;
     sender.selected=!sender.selected;
 }
