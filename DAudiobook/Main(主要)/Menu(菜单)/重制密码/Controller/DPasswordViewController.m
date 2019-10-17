@@ -30,7 +30,7 @@
 - (void)renderContents{
     self.view.backgroundColor=[UIColor groupTableViewBackgroundColor];
     CGFloat horizontalSpace = 15.0f;
-     CGFloat topSpace = 64.0f+9.0f;
+     CGFloat topSpace = 5.0f;
     UILabel*tipsLabel=[UILabel new];
     [self.view addSubview:tipsLabel];
     tipsLabel.font=FontOfSize(12);
