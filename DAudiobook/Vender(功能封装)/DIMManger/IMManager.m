@@ -156,7 +156,11 @@ SINGLETON_FOR_CLASS(IMManager);
         KPostNotification(KNotificationHomePageRefreshList, nil);
         KPostNotification(KNotificationCollectArtickeRefreshList, nil);
         KPostNotification(KNotificationRefreshMyArticle, nil);
-        
+        //发布文章权限改变
+        NSString *isEnabled = [NSString stringWithFormat:@"%@",dic[@"isEnabled"]];
+        if (isEnabled&&isEnabled.length>0) {
+            KPostNotification(KNotificationArticleAuthor, nil);
+        }
     }
 }
 
