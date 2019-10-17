@@ -192,7 +192,6 @@
 }
 
 - (void)reloadContents {
-
     if (self.logic.hasNextPage) {
         @weakify(self)
         self.tableview.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
@@ -298,8 +297,6 @@
         LLSearchViewController *seachVC = [[LLSearchViewController alloc] init];
         [self.navigationController pushViewController:seachVC animated:NO];
 }
-
-
 
 #pragma mark - Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
