@@ -58,9 +58,9 @@
         _drawerController = [[MMDrawerController alloc] init];
         _drawerController.showsShadow = YES;
         [_drawerController setMaximumLeftDrawerWidth:[UIScreen mainScreen].bounds.size.width * 0.75];
-        [_drawerController setOpenDrawerGestureModeMask: MMOpenDrawerGestureModePanningNavigationBar ];
+        [_drawerController setOpenDrawerGestureModeMask: MMOpenDrawerGestureModeNone ];
         [_drawerController setCloseDrawerGestureModeMask:
-         MMCloseDrawerGestureModePanningNavigationBar];
+         MMCloseDrawerGestureModeNone];
         [_drawerController setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
             KPostNotification(@"hideKeyboard", nil);
             MMDrawerControllerDrawerVisualStateBlock block = [MMDrawerVisualState slideVisualStateBlock];
@@ -227,7 +227,6 @@
     [UIApplication sharedApplication].keyWindow.rootViewController = self.drawerController;
     [[UIApplication sharedApplication].keyWindow makeKeyAndVisible];
     [self.drawerController closeDrawerAnimated:YES completion:nil];
-    
 }
 
 @end

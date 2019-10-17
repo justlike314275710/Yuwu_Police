@@ -19,7 +19,7 @@
 #import "PPNetworkHelper.h"
 #import "KGStatusBar.h"
 #import "DVersionManger.h"
-
+#import "DHotNovelViewController.h"
 
 @interface AppDelegate ()
 @property (retain, nonatomic) GDTSplashAd  *splash;
@@ -282,7 +282,6 @@
         menuModel.menuType=KCollectionType;
         [DAllControllersTool createViewControllerWithIndex:menuModel];
         self.window.rootViewController = [DAllControllersTool shareOpenController].drawerController;
-       
        
     }else {//登陆失败加载登陆页面控制器
         DNavigationController*navController=[[DNavigationController alloc]initWithRootViewController:[[DLoginViewController alloc]init]];
