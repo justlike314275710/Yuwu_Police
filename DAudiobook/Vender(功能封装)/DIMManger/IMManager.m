@@ -135,7 +135,6 @@ SINGLETON_FOR_CLASS(IMManager);
 
 }
 
-
 -(void)onReceiveCustomSystemNotification:(NIMCustomSystemNotification *)notification{
       NSLog(@"***收到新消息***");
     NSData *jsonData = [notification.content dataUsingEncoding:NSUTF8StringEncoding];
