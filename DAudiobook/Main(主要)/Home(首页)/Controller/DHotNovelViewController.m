@@ -280,9 +280,7 @@
 #pragma - TouchEvent
 //MARK:发布
 -(void)publishAction:(UIButton *)sender{
-    [self.logic authorArticleCompleted:^(id data) {
         if (self.logic.author==YES) {
-            [self.publishBtn setImage:ImageNamed(@"发布") forState:UIControlStateNormal];
             PSPublishArticleViewModel *viewModel = [[PSPublishArticleViewModel alloc] init];
             viewModel.type = PSPublishArticle;
             PSPublishArticleViewController *publishVC = [[PSPublishArticleViewController alloc] init];
@@ -290,11 +288,7 @@
             [self.navigationController pushViewController:publishVC animated:YES];
         } else {
             [PSTipsView showTips:@"暂无权限!"];
-            [self.publishBtn setImage:IMAGE_NAMED(@"不能发布") forState:UIControlStateNormal];
         }
-    } failed:^(NSError *error) {
-        [_publishBtn setImage:IMAGE_NAMED(@"不能发布") forState:UIControlStateNormal];
-    }];
 }
 
 -(void)SearchBar{

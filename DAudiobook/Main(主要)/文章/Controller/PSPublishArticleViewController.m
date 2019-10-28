@@ -130,9 +130,11 @@
         make.height.with.mas_equalTo(14);
         make.top.mas_equalTo(30);
     }];
-    [_closeBtn be_setEnlargeEdgeWithTop:20 right:15 bottom:5 left:20];
+    _closeBtn.touchExtendInset = UIEdgeInsetsMake(15, 20, 5, 20);
+
     
     [self.view addSubview:self.scrollview];
+    
     [self.scrollview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.closeBtn.mas_bottom).offset(5);
         make.left.right.mas_equalTo(0);
@@ -143,6 +145,7 @@
     [self.scrollview addSubview:self.container];
     [self.container mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.width.height.mas_equalTo(_scrollview);
+        make.top.mas_equalTo(0);
     }];
     
     [self.container addSubview:self.articletypeImg];
