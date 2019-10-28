@@ -209,7 +209,7 @@
         }
             break;
             
-        case KVersionType:{
+        case KStorageType:{
             navVC=self.historyNavigationController;
             
         }

@@ -18,6 +18,11 @@
 
 @implementation DMessageViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(coverWindowClick) name:@"statusBarTappedNotification" object:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"消息";
@@ -29,6 +34,21 @@
     self.messageTableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     // Do any additional setup after loading the view.
 }
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
+
+
+- (void)coverWindowClick {
+    if (_logic.messages.count>1) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self.messageTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    }
+}
+
+
 
 - (void)refreshData {
     
@@ -65,10 +85,6 @@
 
 
 - (void)renderContents {
-    
-    
-    
-    
     self.messageTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     self.messageTableView.dataSource = self;
     self.messageTableView.delegate = self;
@@ -97,7 +113,6 @@
 
 #pragma mark -
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-   // PSMessageViewModel *messageViewModel = (PSMessageViewModel *)self.viewModel;
     return _logic.messages.count;
     
 }

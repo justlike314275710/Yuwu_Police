@@ -406,6 +406,8 @@
 		55ED63C1233E3452004A9C37 /* EBMuteDetector.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55ED63B4233E3451004A9C37 /* EBMuteDetector.mp3 */; };
 		55ED63C2233E3452004A9C37 /* EBBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED63B5233E3451004A9C37 /* EBBannerViewController.m */; };
 		E473341141BF7F02638F5529 /* libPods-DAudiobook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A489DFF9190310E891E597 /* libPods-DAudiobook.a */; };
+		EA448EA723667B59008AB0FB /* DStorageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA448EA623667B59008AB0FB /* DStorageViewController.m */; };
+		EA448EAD23667CE5008AB0FB /* DStorageLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = EA448EAC23667CE5008AB0FB /* DStorageLogic.m */; };
 		EA4D2C9E23506A7E001D376F /* UMSocialNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4D2C9D23506A7D001D376F /* UMSocialNetwork.framework */; };
 		EA4D2CA623516C8B001D376F /* DSLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4D2CA423516C89001D376F /* DSLoadingView.m */; };
 		EA4D2CAA23516CFB001D376F /* LLGifImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4D2CA923516CFA001D376F /* LLGifImageView.m */; };
@@ -1561,6 +1563,10 @@
 		55ED63B7233E3451004A9C37 /* EBBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBBannerView.h; sourceTree = "<group>"; };
 		77A489DFF9190310E891E597 /* libPods-DAudiobook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DAudiobook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10A1B66EF6EE62C2CCE46C8 /* Pods-DAudiobook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DAudiobook.debug.xcconfig"; path = "Target Support Files/Pods-DAudiobook/Pods-DAudiobook.debug.xcconfig"; sourceTree = "<group>"; };
+		EA448EA523667B59008AB0FB /* DStorageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DStorageViewController.h; sourceTree = "<group>"; };
+		EA448EA623667B59008AB0FB /* DStorageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DStorageViewController.m; sourceTree = "<group>"; };
+		EA448EAB23667CE5008AB0FB /* DStorageLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DStorageLogic.h; sourceTree = "<group>"; };
+		EA448EAC23667CE5008AB0FB /* DStorageLogic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DStorageLogic.m; sourceTree = "<group>"; };
 		EA4D2C9D23506A7D001D376F /* UMSocialNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMSocialNetwork.framework; sourceTree = "<group>"; };
 		EA4D2CA423516C89001D376F /* DSLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLoadingView.m; sourceTree = "<group>"; };
 		EA4D2CA523516C8A001D376F /* DSLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLoadingView.h; sourceTree = "<group>"; };
@@ -3424,6 +3430,7 @@
 		3C8F3E2C226B50F9006CF059 /* Menu(菜单) */ = {
 			isa = PBXGroup;
 			children = (
+				EA448EA423667B22008AB0FB /* 存储空间 */,
 				EAA21BA4233CB71D00A06819 /* 意见反馈 */,
 				EA9457D8233AF3B1003C1C97 /* 更换手机号 */,
 				EA9457E1233AF3B2003C1C97 /* 重制密码 */,
@@ -4148,6 +4155,17 @@
 				05B736457BAB3F381552BD4D /* Pods-DAudiobook.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EA448EA423667B22008AB0FB /* 存储空间 */ = {
+			isa = PBXGroup;
+			children = (
+				EA448EA523667B59008AB0FB /* DStorageViewController.h */,
+				EA448EA623667B59008AB0FB /* DStorageViewController.m */,
+				EA448EAB23667CE5008AB0FB /* DStorageLogic.h */,
+				EA448EAC23667CE5008AB0FB /* DStorageLogic.m */,
+			);
+			path = "存储空间";
 			sourceTree = "<group>";
 		};
 		EA4D2CA723516CFA001D376F /* LLGifImageView */ = {
@@ -6956,6 +6974,7 @@
 				3C39357322882A5400A5190A /* BAGridView_Config.m in Sources */,
 				EA960CC3232F3B1C00D81A25 /* NSDictionary+YYAdd.m in Sources */,
 				EAA3119A233472D8004DE08F /* NSObject+BKBlockObservation.m in Sources */,
+				EA448EA723667B59008AB0FB /* DStorageViewController.m in Sources */,
 				EA9457C9233A2F21003C1C97 /* NIMSessionVideoContentView.m in Sources */,
 				EA960AA8232F29FA00D81A25 /* NIMKitTitleView.m in Sources */,
 				554E9300233A29FC009D2429 /* MineTableViewCell.m in Sources */,
@@ -7054,6 +7073,7 @@
 				EA960BCB232F38F400D81A25 /* GTMBase64.m in Sources */,
 				3C39357222882A5400A5190A /* BAGridCollectionCell.m in Sources */,
 				EA4D2CA623516C8B001D376F /* DSLoadingView.m in Sources */,
+				EA448EAD23667CE5008AB0FB /* DStorageLogic.m in Sources */,
 				EA960C88232F3B1B00D81A25 /* YYSpriteSheetImage.m in Sources */,
 				EA4D2CAA23516CFB001D376F /* LLGifImageView.m in Sources */,
 				3C4A3A5022681A0F00882244 /* DHotNovelViewController.m in Sources */,

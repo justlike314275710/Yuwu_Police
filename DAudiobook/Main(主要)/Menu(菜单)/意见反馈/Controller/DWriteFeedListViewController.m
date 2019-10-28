@@ -21,6 +21,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
      [self p_refreshData];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(coverWindowClick) name:@"statusBarTappedNotification" object:nil];
 }
 
 
@@ -34,6 +35,18 @@
     [self p_refreshData];
 
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
+
+- (void)coverWindowClick {
+    if (_logic.Recodes.count>1) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self.myTableview scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    }
 }
 
 

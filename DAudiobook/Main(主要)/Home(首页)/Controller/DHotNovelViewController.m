@@ -92,6 +92,16 @@
     [[DAllControllersTool shareOpenController].drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
      [[DAllControllersTool shareOpenController].drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll
       ];
+
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(coverWindowClick) name:@"statusBarTappedNotification" object:nil];
+   
+}
+
+- (void)coverWindowClick {
+    if (self.logic.datalist.count>1) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self.tableview scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -99,6 +109,7 @@
     [[DAllControllersTool shareOpenController].drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
     [[DAllControllersTool shareOpenController].drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeNone
      ];
+     [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 -(UIImage*)convertViewToImage:(UIView*)v{

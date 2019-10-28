@@ -332,6 +332,11 @@
     }
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if ([touches.anyObject locationInView:nil].y > 20) return;
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"statusBarTappedNotification" object:nil];
+    
+}
 
 
 /**

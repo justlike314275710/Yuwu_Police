@@ -44,17 +44,20 @@
     arraymodelE.menuType        =KPhonenumberType;
     [dataArry addObject:arraymodelE];
     
+    DMenuModel*arraymodelG      =[DMenuModel new];
+    arraymodelG.title           =@"存储空间";
+    arraymodelG.pictureImage    =@"矩形 2";
+    arraymodelG.menuType        =KStorageType;
+    [dataArry addObject:arraymodelG];
+    
+    
     DMenuModel*arraymodelF      =[DMenuModel new];
     arraymodelF.title           =@"退出登录";
     arraymodelF.pictureImage    =@"退出icon";
     arraymodelF.menuType        =KLogoutType;
     [dataArry addObject:arraymodelF];
     
-//    DMenuModel*arraymodelG      =[DMenuModel new];
-//    arraymodelG.title           =@"退出登录";
-//    arraymodelG.pictureImage    =@"退出icon";
-//    arraymodelG.menuType        =KLogoutType;
-//    [dataArry addObject:arraymodelG];
+
     
      return dataArry;
     

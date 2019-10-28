@@ -24,6 +24,7 @@
 #import "MineArticleViewController.h"
 #import "CollectionArtcleViewController.h"
 #import "PSCollecArtcleListViewModel.h"
+#import "DStorageViewController.h"
 
 @interface DLeftMenuViewController ()
 
@@ -256,9 +257,9 @@
         }
             break;
             
-        case KVersionType:{
+        case KStorageType:{
            // navVC=self.historyNavigationController;
-             [self loginOutAction];
+             [self storageOutAction];
             
         }
             break;
@@ -278,6 +279,14 @@
 //    [[UIApplication sharedApplication].keyWindow makeKeyAndVisible];
 //    [self.drawerController closeDrawerAnimated:YES completion:nil];
 }
+
+#pragma mark -- 存储空间
+-(void)storageOutAction{
+    DStorageViewController*storageVC=[[DStorageViewController alloc]init];
+    DNavigationController*navVC=[[DNavigationController alloc]initWithRootViewController:storageVC];
+    [self presentViewController:navVC animated:YES completion:nil];
+}
+
 #pragma mark -- 我的收藏
 -(void)mycollectionArticle {
     PSCollecArtcleListViewModel *collecArtcleViewModel = [PSCollecArtcleListViewModel new];
