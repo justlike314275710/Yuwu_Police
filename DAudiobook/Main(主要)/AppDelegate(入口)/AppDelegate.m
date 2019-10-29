@@ -20,6 +20,7 @@
 #import "KGStatusBar.h"
 #import "DVersionManger.h"
 #import "DHotNovelViewController.h"
+#import "DMessageViewController.h"
 
 @interface AppDelegate ()
 @property (retain, nonatomic) GDTSplashAd  *splash;
@@ -176,6 +177,11 @@
                                                  name:KNotificationLoginStateChange
                                                object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(EBBannerViewDidClickNotification)
+                                                 name:@"EBBannerViewDidClickNotification"
+                                               object:nil];
+    
     //网络状态监听
 //    [[NSNotificationCenter defaultCenter] addObserver:self
 //                                             selector:@selector(netWorkStateChange:)
@@ -184,8 +190,18 @@
 }
 
 
+#pragma mark ————— EBBanner点击事件 —————
+-(void)EBBannerViewDidClickNotification{
+    DMessageViewController *VC = [[DMessageViewController alloc] init];
+    
+    DNavigationController *nav = [[DNavigationController alloc] initWithRootViewController:VC];
+    
+    [self.window.rootViewController presentViewController:nav animated:YES completion:nil];
+    
+}
+
 //
-//#pragma mark ————— 网络状态监听 —————
+#pragma mark ————— 网络状态监听 —————
 - (void)monitorNetworkStatus
 {
     // 网络状态改变一次, networkStatusWithBlock就会响应一次
