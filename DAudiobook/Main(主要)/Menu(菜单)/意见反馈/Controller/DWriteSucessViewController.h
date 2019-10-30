@@ -7,7 +7,8 @@
 //
 
 #import "DViewController.h"
-
+typedef void (^BackBlock)();
 @interface DWriteSucessViewController : DViewController
+@property(nonatomic,copy)BackBlock backBlock;
 
 @end

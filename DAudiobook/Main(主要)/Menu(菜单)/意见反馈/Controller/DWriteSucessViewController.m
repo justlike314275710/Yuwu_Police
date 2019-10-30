@@ -23,7 +23,8 @@
     // Do any additional setup after loading the view.
 }
 - (void)backAction{
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:NO];
+    if (self.backBlock) self.backBlock();
 }
 
 
@@ -45,7 +46,7 @@
     UILabel *msgLab = [[UILabel alloc] init];
     msgLab.frame = CGRectMake((self.view.width-250)/2,label.bottom+5,250,60);
     msgLab.numberOfLines = 0;
-    NSString *msg = @"您的反馈我们会认真查看，并尽快修复及完善 感谢您对狱务通一如既往的支持。";
+    NSString *msg = @"您的反馈我们会认真查看，并尽快修复及完善 感谢您对狱警通一如既往的支持。";
     msgLab.text = msg;
     msgLab.font = FontOfSize(12);
     msgLab.textAlignment = NSTextAlignmentCenter;

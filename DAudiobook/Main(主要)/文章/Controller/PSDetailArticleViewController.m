@@ -13,6 +13,8 @@
 #import "UIButton+BEEnLargeEdge.h"
 #import "HAccountViewModel.h"
 #import "KpengDianZanBtn.h"
+#import "PSReportArticleViewModel.h"
+#import "PSReportArticleViewController.h"
 
 
 @interface PSDetailArticleViewController ()
@@ -32,6 +34,7 @@
 @property(nonatomic,strong)UILabel *collectLab;  //收藏
 @property(nonatomic,strong)UIImageView *endIconImageView;
 @property(nonatomic,strong)UIScrollView *scrollview;
+@property(nonatomic,strong)UIButton *reportBtn;
 
 
 @end
@@ -46,6 +49,7 @@
     self.view.backgroundColor=[UIColor whiteColor];
     [self addBackItem];
     [self setupDataIsLoading:YES];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupDataIsLoading:) name:KNotificationRefreshArticleDetail object:nil];
     
 }
 
@@ -70,6 +74,7 @@
         make.left.right.mas_equalTo(0);
         make.bottom.mas_equalTo(-90);
     }];
+    
     
     [self.scrollview addSubview:self.titleLab];
     [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -176,6 +181,14 @@
         make.left.mas_equalTo(_collectBtn.mas_right).offset(10);
     }];
     
+    [self.view addSubview:self.reportBtn];
+    [self.reportBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.bottomView.mas_top).offset(5);
+        make.width.height.mas_equalTo(62);
+        make.right.mas_equalTo(-6);
+    }];
+    ViewRadius(_reportBtn,31);
+    
 }
 
 
@@ -216,6 +229,13 @@
     [self setupUIViewHidden:isHideBottom];
     //用户头像
     NSString*url=AvaterImageWithUsername(_viewModel.detailModel.username);
+    //自己头像
+    NSString*username= help_userManager.curUserInfo.im_username;
+    if ([_viewModel.detailModel.username isEqualToString:username]) {
+        self.reportBtn.hidden = YES;
+    } else {
+        self.reportBtn.hidden = [_viewModel.detailModel.isreport isEqualToString:@"0"]?NO:YES;
+    }
     [_headImageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"作者头像"] options:SDWebImageRefreshCached];
     
     if ([_viewModel.detailModel.iscollect isEqualToString:@"0"]) {
@@ -433,6 +453,15 @@
         [PSTipsView showTips:@"收藏失败"];
     }];
 }
+//举报
+-(void)reportAction:(UIButton *)sender{
+    PSArticleDDetailViewModel *viewModel =  (PSArticleDDetailViewModel *)self.viewModel;
+    PSReportArticleViewModel*reportViewModel = [PSReportArticleViewModel new];
+    reportViewModel.detailModel = viewModel.detailModel;
+    PSReportArticleViewController *reportArticleVC = [[PSReportArticleViewController alloc] init];
+    reportArticleVC.viewModel = reportViewModel;
+    PushVC(reportArticleVC);
+}
 
 #pragma mark - Setting&&Getting
 -(UILabel *)topTipLab{
@@ -589,6 +618,15 @@
         _endIconImageView.image = IMAGE_NAMED(@"end");
     }
     return _endIconImageView;
+}
+
+-(UIButton *)reportBtn{
+    if(_reportBtn==nil){
+        _reportBtn = [[UIButton alloc] init];
+        [_reportBtn setImage:IMAGE_NAMED(@"举报") forState:UIControlStateNormal];
+        [_reportBtn addTarget:self action:@selector(reportAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _reportBtn;
 }
 
 

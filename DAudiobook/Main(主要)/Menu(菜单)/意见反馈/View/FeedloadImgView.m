@@ -76,13 +76,6 @@
         if (i<tag) {
             feedLoadItem.Type = FeedloadIng;
             feedLoadItem.upLoadimage = self.dataString[i];
-            //浏览图片
-            /*
-            feedLoadItem.browserBlock = ^(UIImageView *imgV, NSInteger tag) {
-                [HUPhotoBrowser showFromImageView:imgV withImages:self.dataString atIndex:i];
-            };
-             */
-            
         } else if (i==tag) {
             feedLoadItem.Type = FeedLoadSelect;
         } else {

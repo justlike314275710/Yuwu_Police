@@ -180,6 +180,8 @@ return shared##className; \
 #define KNotificationRefreshMyArticle    @"KNotificationRefreshMyArticle"
 //发文章权限
 #define KNotificationArticleAuthor @"KNotificationArticleAuthor"
-
 //红点刷新
 #define KNotificationRedDotRefresh @"KNotificationRedDotRefresh"
+//刷新文章详情通知
+#define KNotificationRefreshArticleDetail @"KNotificationRefreshArticleDetail"
+

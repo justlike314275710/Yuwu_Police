@@ -224,7 +224,6 @@
 }
 
 - (void)handlePickerImage:(UIImage *)image {
-
     WEAKSELF
     [[PSLoadingView sharedInstance] show];
     [[UploadManager uploadManager] uploadConsultationImages:image completed:^(BOOL successful, NSString *tips) {

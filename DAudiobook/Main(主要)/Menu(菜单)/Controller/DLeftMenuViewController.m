@@ -19,12 +19,12 @@
 #import "DPasswordLogic.h"
 #import "DPasswordViewController.h"
 #import "DModiyPhoneViewcontroller.h"
-#import "DWriteFeedListViewController.h"
 #import "DAccountViewController.h"
 #import "MineArticleViewController.h"
 #import "CollectionArtcleViewController.h"
 #import "PSCollecArtcleListViewModel.h"
 #import "DStorageViewController.h"
+#import "DWriteFeedbackViewController.h"
 
 @interface DLeftMenuViewController ()
 
@@ -319,7 +319,9 @@
 }
 #pragma mark -- 意见反馈
 -(void)opinionAction{
-    DWriteFeedListViewController*feedList=[[DWriteFeedListViewController alloc]init];
+    
+    
+    DWriteFeedbackViewController*feedList=[[DWriteFeedbackViewController alloc]init];
     DNavigationController*navVC=[[DNavigationController alloc]initWithRootViewController:feedList];
     [self presentViewController:navVC animated:YES completion:nil];
 }

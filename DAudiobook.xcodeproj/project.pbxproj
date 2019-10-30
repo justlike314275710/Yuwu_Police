@@ -405,6 +405,10 @@
 		55ED63C0233E3452004A9C37 /* EBBannerView+Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED63B2233E3451004A9C37 /* EBBannerView+Categories.m */; };
 		55ED63C1233E3452004A9C37 /* EBMuteDetector.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 55ED63B4233E3451004A9C37 /* EBMuteDetector.mp3 */; };
 		55ED63C2233E3452004A9C37 /* EBBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED63B5233E3451004A9C37 /* EBBannerViewController.m */; };
+		55FE571E2366DF78008056C9 /* PSReportArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE571B2366DF78008056C9 /* PSReportArticleViewController.m */; };
+		55FE571F2366DF78008056C9 /* PSReportScuessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE571C2366DF78008056C9 /* PSReportScuessViewController.m */; };
+		55FE57222366DF87008056C9 /* PSArticleReportCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE57212366DF87008056C9 /* PSArticleReportCell.m */; };
+		55FE57252366DFA7008056C9 /* PSReportArticleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE57232366DFA7008056C9 /* PSReportArticleViewModel.m */; };
 		E473341141BF7F02638F5529 /* libPods-DAudiobook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A489DFF9190310E891E597 /* libPods-DAudiobook.a */; };
 		EA448EA723667B59008AB0FB /* DStorageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA448EA623667B59008AB0FB /* DStorageViewController.m */; };
 		EA448EAD23667CE5008AB0FB /* DStorageLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = EA448EAC23667CE5008AB0FB /* DStorageLogic.m */; };
@@ -1561,6 +1565,14 @@
 		55ED63B5233E3451004A9C37 /* EBBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBBannerViewController.m; sourceTree = "<group>"; };
 		55ED63B6233E3451004A9C37 /* EBBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBBannerViewController.h; sourceTree = "<group>"; };
 		55ED63B7233E3451004A9C37 /* EBBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBBannerView.h; sourceTree = "<group>"; };
+		55FE571A2366DF77008056C9 /* PSReportArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSReportArticleViewController.h; sourceTree = "<group>"; };
+		55FE571B2366DF78008056C9 /* PSReportArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSReportArticleViewController.m; sourceTree = "<group>"; };
+		55FE571C2366DF78008056C9 /* PSReportScuessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSReportScuessViewController.m; sourceTree = "<group>"; };
+		55FE571D2366DF78008056C9 /* PSReportScuessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSReportScuessViewController.h; sourceTree = "<group>"; };
+		55FE57202366DF87008056C9 /* PSArticleReportCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArticleReportCell.h; sourceTree = "<group>"; };
+		55FE57212366DF87008056C9 /* PSArticleReportCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSArticleReportCell.m; sourceTree = "<group>"; };
+		55FE57232366DFA7008056C9 /* PSReportArticleViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSReportArticleViewModel.m; sourceTree = "<group>"; };
+		55FE57242366DFA7008056C9 /* PSReportArticleViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSReportArticleViewModel.h; sourceTree = "<group>"; };
 		77A489DFF9190310E891E597 /* libPods-DAudiobook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DAudiobook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10A1B66EF6EE62C2CCE46C8 /* Pods-DAudiobook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DAudiobook.debug.xcconfig"; path = "Target Support Files/Pods-DAudiobook/Pods-DAudiobook.debug.xcconfig"; sourceTree = "<group>"; };
 		EA448EA523667B59008AB0FB /* DStorageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DStorageViewController.h; sourceTree = "<group>"; };
@@ -3894,6 +3906,10 @@
 		5542A7D6233B37F500E4B5D7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				55FE571A2366DF77008056C9 /* PSReportArticleViewController.h */,
+				55FE571B2366DF78008056C9 /* PSReportArticleViewController.m */,
+				55FE571D2366DF78008056C9 /* PSReportScuessViewController.h */,
+				55FE571C2366DF78008056C9 /* PSReportScuessViewController.m */,
 				55ED6397233DA2C6004A9C37 /* CollectionArtcleViewController.h */,
 				55ED6396233DA2C5004A9C37 /* CollectionArtcleViewController.m */,
 				55B078BA233C9A87009BDDBC /* PSDetailArticleViewController.h */,
@@ -3913,6 +3929,8 @@
 		5542A7D7233B37F700E4B5D7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				55FE57202366DF87008056C9 /* PSArticleReportCell.h */,
+				55FE57212366DF87008056C9 /* PSArticleReportCell.m */,
 				55B078C4233CA2BB009BDDBC /* PSPlatformHeadView.h */,
 				55B078C3233CA2BA009BDDBC /* PSPlatformHeadView.m */,
 			);
@@ -3935,6 +3953,8 @@
 		5542A7D9233B37FB00E4B5D7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				55FE57242366DFA7008056C9 /* PSReportArticleViewModel.h */,
+				55FE57232366DFA7008056C9 /* PSReportArticleViewModel.m */,
 				55ED6393233DA2A6004A9C37 /* PSCollecArtcleListViewModel.h */,
 				55ED6394233DA2A6004A9C37 /* PSCollecArtcleListViewModel.m */,
 				55B078BD233C9E58009BDDBC /* PSMyTotalArtcleListViewModel.h */,
@@ -6570,6 +6590,7 @@
 				5542A7B3233B12A000E4B5D7 /* NSMethodSignature+EXT.m in Sources */,
 				EA9457F4233AF3B2003C1C97 /* DPasswordViewController.m in Sources */,
 				3C4A3A1D22681A0E00882244 /* UIBarButtonItem+Extension.m in Sources */,
+				55FE571F2366DF78008056C9 /* PSReportScuessViewController.m in Sources */,
 				EA960AB6232F29FA00D81A25 /* NIMTeamInfoData.m in Sources */,
 				EAA31199233472D8004DE08F /* NSMutableIndexSet+BlocksKit.m in Sources */,
 				EA960CCC232F3B1C00D81A25 /* YYDispatchQueuePool.m in Sources */,
@@ -6851,6 +6872,7 @@
 				554E92F0233A268A009D2429 /* DMessageViewController.m in Sources */,
 				3C8F3E28226B4F09006CF059 /* MMDrawerVisualState.m in Sources */,
 				3C8F3E37226B5324006CF059 /* DView.m in Sources */,
+				55FE57222366DF87008056C9 /* PSArticleReportCell.m in Sources */,
 				EA960CB3232F3B1C00D81A25 /* UIGestureRecognizer+YYAdd.m in Sources */,
 				EA960AE4232F29FB00D81A25 /* NIMSessionNotificationContentView.m in Sources */,
 				EA960A98232F29FA00D81A25 /* NIMInputEmoticonParser.m in Sources */,
@@ -7019,6 +7041,7 @@
 				EA960DA8232F5BA000D81A25 /* DGActivityIndicatorFiveDotsAnimation.m in Sources */,
 				55ED63BF233E3452004A9C37 /* EBMuteDetector.m in Sources */,
 				3C4A3A7D226858F800882244 /* AppDelegate+UI.m in Sources */,
+				55FE571E2366DF78008056C9 /* PSReportArticleViewController.m in Sources */,
 				EA960A9C232F29FA00D81A25 /* NIMInputEmoticonTabView.m in Sources */,
 				EA960AEB232F29FB00D81A25 /* NIMSessionRobotContentView.m in Sources */,
 				3C4A3A3822681A0F00882244 /* NSArray+MASAdditions.m in Sources */,
@@ -7092,6 +7115,7 @@
 				EAA311B0233472D8004DE08F /* MFMailComposeViewController+BlocksKit.m in Sources */,
 				EA960E15232F84F900D81A25 /* AFImageDownloader.m in Sources */,
 				EAA311A6233472D8004DE08F /* UIWebView+BlocksKit.m in Sources */,
+				55FE57252366DFA7008056C9 /* PSReportArticleViewModel.m in Sources */,
 				3CAC52C62289590D0055C320 /* YLGIFImage.m in Sources */,
 				EA960D93232F5BA000D81A25 /* DGActivityIndicatorBallClipRotatePulseAnimation.m in Sources */,
 				EAA311AA233472D8004DE08F /* UIGestureRecognizer+BlocksKit.m in Sources */,

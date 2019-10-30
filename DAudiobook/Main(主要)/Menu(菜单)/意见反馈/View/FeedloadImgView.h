@@ -16,10 +16,6 @@ typedef void (^FeedloadResultBlock)(NSMutableArray *result); //浏览图片
 @property (nonatomic,strong) NSMutableArray *dataUrlString; //上传返回的URL
 @property (nonatomic,copy) FeedloadResultBlock feedloadResultBlock;
 
-//- (instancetype)initWithFrame:(CGRect)frame type:(FeedLoadType)type;
-/***
- 最多上传几张图片
- ***/
 - (instancetype)initWithFrame:(CGRect)frame count:(NSInteger)count;
 
 
