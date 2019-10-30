@@ -73,12 +73,17 @@
 
 
 - (void)sendFeedback {
-    NSInteger reason=self.selecldIndex+1;
-    _logic.type=NSStringFormat(@"%ld",(long)reason);
+    self.logic.problem = [self.logic.reasons objectAtIndex:self.selecldIndex];
+    self.logic.detail = self.contentTextView.text;
+    self.logic.attachments = [self.imageUrls copy];
     [_logic sendFeedbackCompleted:^(id data) {
-        if (data[@"code"]) {
+        if (ValidDict(data)) {
              self.feedbackSucess = YES; //反馈成功
-            [self.navigationController pushViewController:[[DWriteSucessViewController alloc]init] animated:YES];
+            DWriteSucessViewController *scucessVC = [[DWriteSucessViewController alloc] init];
+            scucessVC.backBlock = ^{
+                [self dismissViewControllerAnimated:YES completion:nil];
+            };
+            [self.navigationController pushViewController:scucessVC animated:YES];
         } else {
             [PSTipsView showTips:@"提交失败!"];
         }
@@ -102,7 +107,6 @@
     oneView.layer.shadowRadius = 4;
     [self.scrollview addSubview:oneView];
     [oneView addSubview:self.tableview];
-    
     
     UIView *secondeView = [[UIView alloc] initWithFrame:CGRectMake(15,oneView.bottom+18,self.scrollview.width-30, 170)];
     secondeView.backgroundColor = [UIColor whiteColor];
@@ -133,9 +137,6 @@
     self.contentTextView.frame = CGRectMake(15,titleLab.bottom+8,secondeView.width-30, 110);
     [secondeView addSubview:self.contentTextView];
     
-//    self.countLab.frame = CGRectMake(secondeView.width-75,secondeView.height-25, 60, 21);
-//    [secondeView addSubview:self.countLab];
-    
     UIView *thirdView = [[UIView alloc] initWithFrame:CGRectMake(15, secondeView.bottom+18,self.scrollview.width-30, 130)];
     thirdView.backgroundColor = [UIColor whiteColor];
     thirdView.layer.shadowColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.1].CGColor;
@@ -143,8 +144,6 @@
     thirdView.layer.shadowOpacity = 1;
     thirdView.layer.shadowRadius = 4;
     [self.scrollview addSubview:thirdView];
-    
-    
     
     UIView*thirdLineView=[[UIView alloc]initWithFrame:CGRectMake(0, 8+8, 5, 15)];
     thirdLineView.backgroundColor=AppColor(179, 65, 127);
@@ -165,8 +164,7 @@
         self.imageUrls = result;
     };
 
-    
-    
+
     [self.scrollview addSubview:secondeView];
     
     UIButton *submitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -204,7 +202,6 @@
             [PSTipsView showTips:msg];
             return NO;
         }
-       
     }
     return YES;
 }
@@ -284,27 +281,6 @@
     }
     return _tableview;
 }
-
-//- (UITextView *)contentTextView {
-//    if (!_contentTextView) {
-//        NSString *less_msg = @"  请输入不少于10个字的描述";
-//        NSString *more_msg = @"  请输入不多于300个字的描述";
-//        _contentTextView = [[UITextView alloc] init];
-//       // _contentTextView.placeholder = less_msg;
-//        _contentTextView.delegate = self;
-//        [_contentTextView setBackgroundColor:AppColor(235, 235, 235)];
-//
-////        [_contentTextView.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
-////            if (x.length>300) {
-////                self->_contentTextView.text = [x substringToIndex:299];
-////                [PSTipsView showTips:more_msg];
-////            }
-////            self.countLab.text = [NSString stringWithFormat:@"%lu/300",self->_contentTextView.text.length];
-////        }];
-//    }
-//    return _contentTextView;
-//}
-
 - (UILabel *)countLab {
     if (!_countLab) {
         _countLab = [[UILabel alloc] init];
@@ -322,17 +298,4 @@
     }
     return _imageUrls;
 }
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

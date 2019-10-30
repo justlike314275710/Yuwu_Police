@@ -81,9 +81,10 @@
 #define URL_Police_updatePhone @"/api/author_police/updateAuthorPolicePhone"//更新手机号码
 #define URL_Police_updateArticle @"/api/article/findPolicePenName"//获取狱警信息
 //新增加意见反馈
-#define URL_feedbacks_add     @"/api/feedbacks/addOpinion"
 #define URL_feedbacks_page    @"/api/feedbacks/findPage"
 #define URL_feedbacks_detai   @"/api/feedbacks/detail"
+
+#define URL_feedbacks_add     @"/feedbacks"
 
 
 
@@ -213,7 +214,8 @@
 #define URL_Article_collectList @"/api/article/collectList"
 //查询最新文章数量
 #define URL_Article_NewArticleCount @"/api/article/getNewArticleCount"
-
+//举报文章
+#define URL_api_reportArticle     @"/api/article/reportArticle"
 //搜索文章
 #define URL_Article_searchList  @"/api/article/findPublishArticle"
 

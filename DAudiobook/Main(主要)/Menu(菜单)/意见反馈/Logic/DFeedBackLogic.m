@@ -47,33 +47,22 @@
 }
 
 - (void)sendFeedbackCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback {
-    switch (self.writefeedType) {
-        case PSWritefeedBack:
-        {
-            [self sendAppFeedbackCompleted:completedCallback failed:failedCallback];
-        }
-            break;
-        case PSPrisonfeedBack:
-        {
-            [self sendSuggestionCompleted:completedCallback failed:failedCallback];
-        }
-            break;
-            
-        default:
-            break;
-    }
+
+    [self sendAppFeedbackCompleted:completedCallback failed:failedCallback];
+
 }
 
 - (void)sendAppFeedbackCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback {
-    NSDictionary *params = @{
-                             @"policeId":help_userManager.lawUserInfo.policeId,
-                             @"type":self.type,
-                             @"content":self.content,
-                             @"imageUrls":self.imageUrls,
-                             };
-    NSString *url = NSStringFormat(@"%@%@",ServerUrl,URL_feedbacks_add);
+    NSString *platform = @"assistant.app";  //@"ASSISTANT";  //assistant
+    NSDictionary *params = @{@"clientKey":platform,
+                             @"problem":self.problem,
+                             @"detail":self.detail,
+                             @"attachments":self.attachments};
+    
+    NSString *url = NSStringFormat(@"%@%@",EmallHostUrl,URL_feedbacks_add);
     NSString*token=[NSString stringWithFormat:@"Bearer %@",help_userManager.oathInfo.access_token];
-    [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
+    [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
+    [PPNetworkHelper setResponseSerializer:PPResponseSerializerJSON];
     [PPNetworkHelper setValue:token forHTTPHeaderField:@"Authorization"];
     [PPNetworkHelper POST:url parameters:params success:^(id responseObject) {
         if (completedCallback) {
@@ -84,15 +73,6 @@
             failedCallback(error);
         }
     }];
-    
-}
-
-
-- (void)sendSuggestionCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback {
- 
-}
-- (void)sendFeedbackTypesCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback {
-
     
 }
 
