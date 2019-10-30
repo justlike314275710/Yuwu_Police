@@ -22,7 +22,7 @@
 }
 
 -(NSString *)allStorage {
-    return [NSString stringWithFormat:@"%.1fM",[self fileSizeWithIntergeWithM]+61.9];
+    return [NSString stringWithFormat:@"%.1fM",[self fileSizeWithIntergeWithM]+110.3];
 }
 
 -(NSString *)usedStorage {
