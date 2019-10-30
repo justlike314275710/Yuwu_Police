@@ -62,7 +62,7 @@
     hasUserLab.textAlignment = NSTextAlignmentCenter;
     hasUserLab.font = FontOfSize(10);
     hasUserLab.numberOfLines = 0;
-    NSString *userLabStr =  @"狱务通已用空间";
+    NSString *userLabStr =  @"狱警通已用空间";
     [hasUserLab setText:userLabStr];
     [bgView addSubview:hasUserLab];
     
@@ -88,7 +88,7 @@
     
     NSString*determine=@"确定";
     NSString*cancel=@"取消";
-    NSString *msg = @"清理狱务通缓存可能需要一点时间，清理过程请耐心等候";
+    NSString *msg = @"清理狱警通缓存可能需要一点时间，清理过程请耐心等候";
     
     [PSAlertView showWithTitle:nil message:msg messageAlignment:NSTextAlignmentCenter image:nil handler:^(PSAlertView *alertView, NSInteger buttonIndex) {
         if (buttonIndex == 1) {
@@ -146,7 +146,7 @@
 
 - (UIButton *)clearBtn {
     if (!_clearBtn) {
-        NSString *title = @"清理狱务通缓存";
+        NSString *title = @"清理狱警通缓存";
         _clearBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_clearBtn setTitle:title forState:UIControlStateNormal];
         [_clearBtn setBackgroundColor:UIColorFromRGB(38, 76, 144)];
