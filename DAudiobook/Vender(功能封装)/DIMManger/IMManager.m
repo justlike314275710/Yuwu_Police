@@ -15,6 +15,7 @@
 @interface IMManager()<NIMLoginManagerDelegate,NIMChatManagerDelegate,NIMSystemNotificationManagerDelegate,NIMNetCallManagerDelegate>
 //@interface IMManager()
 @property (nonatomic, strong) NIMSession *session;
+@property (nonatomic , assign) BOOL isOpen;
 @end
 
 @implementation IMManager
@@ -40,6 +41,7 @@ SINGLETON_FOR_CLASS(IMManager);
 
     [[NIMSDK sharedSDK] registerWithAppID:kIMAppKey
                                   cerName:kIMPushCerName];
+
 }
 
 #pragma mark ————— IM登录 —————
@@ -135,31 +137,63 @@ SINGLETON_FOR_CLASS(IMManager);
 
 }
 
+
+-(void)UserNotificationSettings{
+    if ([[UIDevice currentDevice].systemVersion floatValue]>=8.0f) {
+        UIUserNotificationSettings *setting = [[UIApplication sharedApplication] currentUserNotificationSettings];
+        if (UIUserNotificationTypeNone == setting.types) {
+            NSLog(@"推送关闭");
+            self.isOpen=NO;
+        }else{
+            NSLog(@"推送打开");
+            self.isOpen=YES;
+        }
+    }else{
+        UIRemoteNotificationType type = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
+        if(UIRemoteNotificationTypeNone == type){
+            NSLog(@"推送关闭");
+            self.isOpen=NO;
+        }else{
+            NSLog(@"推送打开");
+            self.isOpen=YES;
+        }
+    }
+}
+
 -(void)onReceiveCustomSystemNotification:(NIMCustomSystemNotification *)notification{
-      NSLog(@"***收到新消息***");
+        [self UserNotificationSettings];
+    [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationRedDotRefresh object:nil];
     NSData *jsonData = [notification.content dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary*dic=[NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
     NSInteger code = [dic[@"code"] integerValue];
     NSString *content = dic[@"msg"];
     NSString *channel = [NSString stringWithFormat:@"%@",dic[@"channel"]];
     if (channel&&[channel isEqualToString:@"1"]) return; //1为家属端推送
-    [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationRedDotRefresh object:nil];
+    
+
     //认证文章
     if (code==PSMessageArticleInteractive) {
-        EBBannerView *banner = [EBBannerView bannerWithBlock:^(EBBannerViewMaker *make) {
-            make.style = 11;
-            make.content = content;
-        }];
-        [banner show]; //NOTIFICATION_PRAISE_ADVICE
-        [ZQLocalNotification NotificationType:CountdownNotification Identifier:@"3" activityId:1900000 alertBody:content alertTitle:@"狱警通" alertString:@"确定" withTimeDay:0 hour:0 minute:0 second:1];
-        KPostNotification(KNotificationHomePageRefreshList, nil);
-        KPostNotification(KNotificationCollectArtickeRefreshList, nil);
-        KPostNotification(KNotificationRefreshMyArticle, nil);
-        //发布文章权限改变
-        NSString *isEnabled = [NSString stringWithFormat:@"%@",dic[@"isEnabled"]];
-        if (isEnabled&&isEnabled.length>0) {
-            KPostNotification(KNotificationArticleAuthor, nil);
+        
+        if (self.isOpen==YES) {
+            
+            EBBannerView *banner = [EBBannerView bannerWithBlock:^(EBBannerViewMaker *make) {
+                make.style = 11;
+                make.content = content;
+            }];
+            [banner show]; //NOTIFICATION_PRAISE_ADVICE
+            [ZQLocalNotification NotificationType:CountdownNotification Identifier:@"3" activityId:1900000 alertBody:content alertTitle:@"狱警通" alertString:@"确定" withTimeDay:0 hour:0 minute:0 second:1];
+            KPostNotification(KNotificationHomePageRefreshList, nil);
+            KPostNotification(KNotificationCollectArtickeRefreshList, nil);
+            KPostNotification(KNotificationRefreshMyArticle, nil);
+            //发布文章权限改变
+            NSString *isEnabled = [NSString stringWithFormat:@"%@",dic[@"isEnabled"]];
+            if (isEnabled&&isEnabled.length>0) {
+                KPostNotification(KNotificationArticleAuthor, nil);
+            }
+        } else {
+             NSLog(@"推送关闭");
         }
+       
     }
 }
 

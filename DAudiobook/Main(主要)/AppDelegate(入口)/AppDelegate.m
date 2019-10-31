@@ -193,11 +193,9 @@
 #pragma mark ————— EBBanner点击事件 —————
 -(void)EBBannerViewDidClickNotification{
     DMessageViewController *VC = [[DMessageViewController alloc] init];
-    
     DNavigationController *nav = [[DNavigationController alloc] initWithRootViewController:VC];
-    
     [self.window.rootViewController presentViewController:nav animated:YES completion:nil];
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationRedDotRefresh object:nil];
 }
 
 //

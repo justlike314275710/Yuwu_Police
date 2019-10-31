@@ -10,9 +10,9 @@
 
 @interface MessageLogic : HpBaseLogic
 @property (nonatomic, strong, readonly) NSArray *messages;
-@property (nonatomic, assign) NSInteger page;
-@property (nonatomic, assign) NSInteger pageSize;
-@property (nonatomic, assign) BOOL hasNextPage;
+//@property (nonatomic, assign) NSInteger page;
+//@property (nonatomic, assign) NSInteger pageSize;
+//@property (nonatomic, assign) BOOL hasNextPage;
 
 
 
