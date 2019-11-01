@@ -12,7 +12,6 @@
 #import "PSPublishArticleViewModel.h"
 #import "UIButton+BEEnLargeEdge.h"
 #import "HAccountViewModel.h"
-#import "KpengDianZanBtn.h"
 #import "PSReportArticleViewModel.h"
 #import "PSReportArticleViewController.h"
 
@@ -26,7 +25,7 @@
 @property(nonatomic,strong)UILabel *timeLab;
 @property(nonatomic,strong)UITextView *contentTextView;
 @property(nonatomic,strong)UIImageView *bottomView;
-@property(nonatomic,strong)KpengDianZanBtn *likeBtn; //点赞
+@property(nonatomic,strong)UIButton *likeBtn; //点赞
 @property(nonatomic,strong)UILabel *likeLab; //点赞
 @property(nonatomic,strong)UIButton *hotBtn; //热度
 @property(nonatomic,strong)UILabel *hotLab;  //热度
@@ -49,13 +48,18 @@
     self.view.backgroundColor=[UIColor whiteColor];
     [self addBackItem];
     [self setupDataIsLoading:YES];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupDataIsLoading:) name:KNotificationRefreshArticleDetail object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reportScuess) name:KNotificationRefreshArticleDetail object:nil];
     
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = YES;
+}
+#pragma mark ---------- noti
+-(void)reportScuess{
+    self.viewModel.detailModel.isreport = @"1";
+    [self refreshUI];
 }
 
 #pragma mark - PrivateMethods
@@ -199,8 +203,8 @@
     _timeLab.text =  self.viewModel.detailModel.publishAt;
     _contentTextView.text = self.viewModel.detailModel.content;
     _likeLab.text = [NSString stringWithFormat:@"%@赞",self.viewModel.detailModel.praiseNum];
-    self.viewModel.detailModel.clientNum = [NSString stringWithFormat:@"%d",[_viewModel.detailModel.clientNum intValue]+1];
-    _hotLab.text = [NSString stringWithFormat:@"%@热度",self.viewModel.detailModel.clientNum];
+    NSString *clientNumStr = [NSString stringWithFormat:@"%d",[_viewModel.detailModel.clientNum intValue]+1];
+    _hotLab.text = [NSString stringWithFormat:@"%@热度",clientNumStr];
     BOOL isHideBottom = YES;
     if ([self.viewModel.detailModel.status isEqualToString:@"publish"]) { //已发布待审核
         _topTipLab.text = @"平台正在审核中";
@@ -236,6 +240,8 @@
     } else {
         self.reportBtn.hidden = [_viewModel.detailModel.isreport isEqualToString:@"0"]?NO:YES;
     }
+    
+    
     [_headImageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"作者头像"] options:SDWebImageRefreshCached];
     
     if ([_viewModel.detailModel.iscollect isEqualToString:@"0"]) {
@@ -335,7 +341,8 @@
 - (void)backAction {
     PSArticleDDetailViewModel *viewModel =  (PSArticleDDetailViewModel *)self.viewModel;
     if (self.hotChangeBlock) {
-        self.hotChangeBlock(viewModel.detailModel.clientNum);
+        NSString *clientNumStr = [NSString stringWithFormat:@"%d",[viewModel.detailModel.clientNum integerValue]+1];
+        self.hotChangeBlock(clientNumStr);
     }
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -373,7 +380,8 @@
             [PSTipsView showTips:msg];
             NSInteger code = [data[@"code"] integerValue];
             if (code == 200){
-                [self setupDataIsLoading:NO];
+                _viewModel.detailModel.iscollect = @"1";
+                [self refreshUI];
                 //刷新收藏列表
                 KPostNotification(KNotificationCollectArtickeRefreshList, nil);
             }
@@ -390,7 +398,8 @@
             NSInteger code = [data[@"code"] integerValue];
             [PSTipsView showTips:msg];
             if (code == 200){
-                [self setupDataIsLoading:NO];
+                _viewModel.detailModel.iscollect = @"0";
+                [self refreshUI];
                 //刷新收藏列表
                 KPostNotification(KNotificationCollectArtickeRefreshList, nil);
             }
@@ -409,7 +418,9 @@
             NSInteger code = [data[@"code"] integerValue];
             [PSTipsView showTips:msg];
             if (code == 200){
-                [self setupDataIsLoading:NO];
+                viewModel.detailModel.ispraise = @"1";
+                viewModel.detailModel.praiseNum = [NSString stringWithFormat:@"%ld",[viewModel.detailModel.praiseNum integerValue]+1];
+                [self refreshUI];
                 //刷新列表
                 if (self.praiseBlock) self.praiseBlock(YES, viewModel.id, YES);
             }
@@ -427,7 +438,9 @@
             NSInteger code = [data[@"code"] integerValue];
             [PSTipsView showTips:msg];
             if (code == 200){
-                [self setupDataIsLoading:NO];
+                viewModel.detailModel.ispraise = @"0";
+                viewModel.detailModel.praiseNum = [NSString stringWithFormat:@"%ld",[viewModel.detailModel.praiseNum integerValue]-1];
+                [self refreshUI];
                 //刷新列表
                 if (self.praiseBlock) self.praiseBlock(NO, viewModel.id, YES);
             }
@@ -551,9 +564,9 @@
     }
     return _bottomView;
 }
-- (KpengDianZanBtn*)likeBtn {
+- (UIButton*)likeBtn {
     if (!_likeBtn) {
-        _likeBtn = [KpengDianZanBtn buttonWithType:UIButtonTypeCustom];
+        _likeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_likeBtn setImage:IMAGE_NAMED(@"未点赞") forState:UIControlStateNormal];
         [_likeBtn addTarget:self action:@selector(clickPraiseAction:) forControlEvents:UIControlEventTouchUpInside];
     }
