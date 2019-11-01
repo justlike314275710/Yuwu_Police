@@ -54,17 +54,18 @@
     [PPNetworkHelper GET:url parameters:param success:^(id responseObject) {
         NSString*code=[NSString stringWithFormat:@"%@",responseObject[@"code"]];
         if ([code isEqualToString:@"200"]) {
+            NSArray*messageArray=[DMessageModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"][@"logs"]];
             if (self.page == 1) {
                 self.logs = [NSMutableArray array];
             }
-            [self.logs addObjectsFromArray:[DMessageModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"][@"logs"]]];
-            if (self.logs.count == 0) {
+           
+            if (messageArray.count == 0) {
                 self.dataStatus = PSDataEmpty;
             }else{
                 self.dataStatus = PSDataNormal;
             }
-            self.hasNextPage = self.logs.count >= self.pageSize;
-            
+            self.hasNextPage = messageArray.count >= self.pageSize;
+             [self.logs addObjectsFromArray:messageArray];
         } else {
             if (self.page > 1) {
                 self.page --;

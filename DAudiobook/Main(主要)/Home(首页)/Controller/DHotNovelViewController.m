@@ -54,12 +54,7 @@
     self.tableview.ly_emptyView = [LYEmptyView emptyActionViewWithImage:ImageNamed(@"noData") titleStr:@"暂无数据" detailStr:nil btnTitleStr:@"" btnClickBlock:^{
         [self refreshData];
     }];
-    //刷新列表
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KNotificationHomePageRefreshList object:nil];
-    //刷新红点
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshRedDot) name:KNotificationRedDotRefresh object:nil];
-    //发文章权限
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupData) name:KNotificationArticleAuthor object:nil];
+
     //获取有几条新消息
     [[ZXCTimer shareInstance]addCycleTask:^{
         [self refreshNewCount];
@@ -94,6 +89,13 @@
       ];
 
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(coverWindowClick) name:@"statusBarTappedNotification" object:nil];
+    
+    //刷新列表
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KNotificationHomePageRefreshList object:nil];
+    //刷新红点
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshRedDot) name:KNotificationRedDotRefresh object:nil];
+    //发文章权限
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupData) name:KNotificationArticleAuthor object:nil];
    
 }
 

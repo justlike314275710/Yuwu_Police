@@ -202,16 +202,16 @@ static EBBannerWindow *sharedWindow;
     CGFloat height;
     switch (_maker.style) {
         case EBBannerViewStyleiOS9:
-            height = 70;
+            height = 120;
             break;
         case EBBannerViewStyleiOS10:
-            height = 90;
+            height = 120;
             break;
         case EBBannerViewStyleiOS11:
-            height = 90;
+            height = 120;
             break;
         default:
-            height = 70;
+            height = 120;
             break;
     }
     return height;
