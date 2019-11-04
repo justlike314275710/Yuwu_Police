@@ -9,6 +9,6 @@
 #import "HpBaseLogic.h"
 
 @interface DStorageLogic : HpBaseLogic
-@property(nonatomic,copy,readonly) NSString *allStorage;
+@property(nonatomic,copy) NSString *allStorage;
 @property(nonatomic,copy,readonly) NSString *usedStorage;
 @end

@@ -25,6 +25,7 @@
 #import "ZXCTimer.h"
 #import "UIViewController+Tool.h"
 #import "DAllControllersTool.h"
+
 @interface DHotNovelViewController()<UITableViewDelegate,UITableViewDataSource,SearchBarDisplayCenterDelegate,UITextFieldDelegate> {
 
     
@@ -95,7 +96,7 @@
     //刷新红点
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshRedDot) name:KNotificationRedDotRefresh object:nil];
     //发文章权限
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupData) name:KNotificationArticleAuthor object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupData:) name:KNotificationArticleAuthor object:nil];
     //隐藏红点
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideBadge) name:KNotificationRedDothide object:nil];
    
@@ -274,16 +275,28 @@
 }
 
 //获取发布文章权限
-- (void)setupData{
-    [self.logic authorArticleCompleted:^(id data) {
-        if (self.logic.author==YES) {
-            [self.publishBtn setImage:ImageNamed(@"发布") forState:UIControlStateNormal];
+- (void)setupData:(NSNotification*)noti{
+    
+    if (noti.object) {
+        NSString *isEnabled = noti.object;
+        if ([isEnabled isEqualToString:@"1"]) {
+            self.logic.author=YES;
+            [_publishBtn setBackgroundImage:IMAGE_NAMED(@"发布") forState:UIControlStateNormal];
         } else {
-            [self.publishBtn setImage:IMAGE_NAMED(@"不能发布") forState:UIControlStateNormal];
+            [_publishBtn setBackgroundImage:IMAGE_NAMED(@"不能发布") forState:UIControlStateNormal];
+            self.logic.author=NO;
         }
-    } failed:^(NSError *error) {
-        [_publishBtn setImage:IMAGE_NAMED(@"不能发布") forState:UIControlStateNormal];
-    }];
+    } else {
+        [self.logic authorArticleCompleted:^(id data) {
+            if (self.logic.author==YES) {
+                [self.publishBtn setBackgroundImage:ImageNamed(@"发布") forState:UIControlStateNormal];
+            } else {
+                [self.publishBtn setBackgroundImage:IMAGE_NAMED(@"不能发布") forState:UIControlStateNormal];
+            }
+        } failed:^(NSError *error) {
+            [_publishBtn setBackgroundImage:IMAGE_NAMED(@"不能发布") forState:UIControlStateNormal];
+        }];
+    }
 }
 
 #pragma - TouchEvent
@@ -381,9 +394,11 @@
 #pragma mark -Setting&&Getting
 - (UIButton *)publishBtn {
     if (!_publishBtn) {
+        CGFloat scale = KScreenWidth/320;
+        CGFloat width = scale*55;
         _publishBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _publishBtn.frame = CGRectMake(kScreenWidth-59,kScreenHeight-150,50,50);
-        [_publishBtn setImage:IMAGE_NAMED(@"发布") forState:UIControlStateNormal];
+        _publishBtn.frame = CGRectMake(KScreenWidth-(width+10),KScreenHeight-(100+width),width,width);
+        [_publishBtn setBackgroundImage:IMAGE_NAMED(@"发布") forState:UIControlStateNormal];
         [_publishBtn addTarget:self action:@selector(publishAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _publishBtn;

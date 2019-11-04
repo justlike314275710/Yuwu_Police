@@ -130,7 +130,8 @@
         make.height.with.mas_equalTo(14);
         make.top.mas_equalTo(30);
     }];
-    
+    _closeBtn.touchExtendInset =  UIEdgeInsetsMake(-20,-20,-20,-20);
+
     [self.view addSubview:self.scrollview];
     
     [self.scrollview mas_makeConstraints:^(MASConstraintMaker *make) {

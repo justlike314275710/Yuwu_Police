@@ -186,9 +186,6 @@
             [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
             picker.delegate = self;
             [[UIViewController jsd_getCurrentViewController] presentViewController:picker animated:YES completion:nil];
-          
-    
-
         }];
              
     }];

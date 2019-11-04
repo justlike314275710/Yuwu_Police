@@ -188,7 +188,7 @@ SINGLETON_FOR_CLASS(IMManager);
             //发布文章权限改变
             NSString *isEnabled = [NSString stringWithFormat:@"%@",dic[@"isEnabled"]];
             if (isEnabled&&isEnabled.length>0) {
-                KPostNotification(KNotificationArticleAuthor, nil);
+                KPostNotification(KNotificationArticleAuthor,isEnabled);
             }
         } else {
              NSLog(@"推送关闭");
