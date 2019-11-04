@@ -338,9 +338,9 @@
     return _hotIconImg;
 }
 
-- (KpengDianZanBtn *)likeBtn {
+- (UIButton *)likeBtn {
     if (!_likeBtn) {
-        _likeBtn = [KpengDianZanBtn new];
+        _likeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_likeBtn setImage:IMAGE_NAMED(@"未赞") forState:UIControlStateNormal];
         [_likeBtn addTarget:self action:@selector(praiseAction:) forControlEvents:UIControlEventTouchUpInside];
     }

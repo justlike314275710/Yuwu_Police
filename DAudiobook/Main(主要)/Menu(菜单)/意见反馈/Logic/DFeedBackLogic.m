@@ -53,12 +53,11 @@
 }
 
 - (void)sendAppFeedbackCompleted:(RequestDataCompleted)completedCallback failed:(RequestDataFailed)failedCallback {
-    NSString *platform = @"assistant.app";  //@"ASSISTANT";  //assistant
+    NSString *platform = @"jailer.app";  //@"ASSISTANT";  //jailer.app
     NSDictionary *params = @{@"clientKey":platform,
                              @"problem":self.problem,
                              @"detail":self.detail,
                              @"attachments":self.attachments};
-    
     NSString *url = NSStringFormat(@"%@%@",EmallHostUrl,URL_feedbacks_add);
     NSString*token=[NSString stringWithFormat:@"Bearer %@",help_userManager.oathInfo.access_token];
     [PPNetworkHelper setRequestSerializer:PPRequestSerializerJSON];
