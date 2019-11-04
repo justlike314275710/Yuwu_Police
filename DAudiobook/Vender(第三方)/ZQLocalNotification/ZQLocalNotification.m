@@ -183,6 +183,9 @@ static NSInteger const afterTime_zq = 5;
     }
 }
 
+
+
+
 +(void)cancleLocationIdentifier:(NSString *)identifier activityIds:(NSInteger)activityIds{
     
     if (MY_SYSTEMVERSION <10) {

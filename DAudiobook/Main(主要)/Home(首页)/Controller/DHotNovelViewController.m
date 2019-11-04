@@ -96,6 +96,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshRedDot) name:KNotificationRedDotRefresh object:nil];
     //发文章权限
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupData) name:KNotificationArticleAuthor object:nil];
+    //隐藏红点
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideBadge) name:KNotificationRedDothide object:nil];
    
 }
 
@@ -193,6 +195,11 @@
 - (void)rightBarItemPress{
     DMessageViewController*vc=[[DMessageViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
+    [self.navigationItem.rightBarButtonItem  pp_hiddenBadge];
+}
+
+
+-(void)hideBadge{
     [self.navigationItem.rightBarButtonItem  pp_hiddenBadge];
 }
 
