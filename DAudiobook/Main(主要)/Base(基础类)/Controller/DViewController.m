@@ -7,6 +7,7 @@
 //
 
 #import "DViewController.h"
+#import "AppDelegate.h"
 
 @interface DViewController ()<UIGestureRecognizerDelegate>
 
@@ -78,9 +79,73 @@
 -(void)rightItemClick{
     
 }
+/*
+- (void)showNetError:(NSError *)error {
+    
+    if ([error.userInfo[@"NSLocalizedDescription"] isEqualToString:@"Request failed: unauthorized (401)"]) {
+        [self showTokenError];
+    } else {
+        NSDictionary *body = [self errorData:error];
+        if (body) {
+            NSString*message=body[@"message"];
+            if (message) {
+                [PSTipsView showTips:message];
+            } else {
+                [self showNetErrorMsg];
+            }
+        } else {
+            [self showNetErrorMsg];
+        }
+    }
+}
 
+//服务器异常OR没有网络
+-(void)showNetErrorMsg{
+    AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    if (appdelegate.IS_NetWork == NO) {
+        NSString*InternetError=NSLocalizedString(@"InternetError", @"无法连接到服务器，请检查网络");
+        [PSTipsView showTips:InternetError];
+    } else {
+        NSString*NetError=NSLocalizedString(@"NetError", @"服务器异常");
+        [PSTipsView showTips:NetError];
+    }
+}
+//token过期
+-(void)showTokenError {
+    NSString*NetError=NSLocalizedString(@"Login status expired, please log in again", @"登录状态过期,请重新登录!");
+    NSString*determine=NSLocalizedString(@"determine", @"确定");
+    NSString*Tips=NSLocalizedString(@"Tips", @"提示");
+    XXAlertView*alert=[[XXAlertView alloc]initWithTitle:Tips message:NetError sureBtn:determine cancleBtn:nil];
+    alert.clickIndex = ^(NSInteger index) {
+        if (index==2) {
+            [[PSSessionManager sharedInstance] doLogout];
+        }
+    };
+    [alert show];
+}
 
+//服务器异常OR没有网络
+-(void)showNetErrorMsg{
+    AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    if (appdelegate.IS_NetWork == NO) {
+        NSString*InternetError=NSLocalizedString(@"InternetError", @"无法连接到服务器，请检查网络");
+        [PSTipsView showTips:InternetError];
+    } else {
+        NSString*NetError=NSLocalizedString(@"NetError", @"服务器异常");
+        [PSTipsView showTips:NetError];
+    }
+}
 
+-(NSDictionary*)errorData:(NSError*)error {
+    NSData *data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey];
+    if (data) {
+        id body = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        return body;
+    } else {
+        return nil;
+    }
+}
+ */
 
 - (NSMutableArray *)listArray {
     if (_listArray == nil) {

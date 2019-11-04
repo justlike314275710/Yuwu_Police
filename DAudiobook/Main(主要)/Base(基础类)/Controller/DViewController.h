@@ -39,7 +39,7 @@ typedef void(^UpdateTata)(DBaseModel * model,NSUInteger typeIndex);
 /**
  *  显示网络请求失败信息
  */
-- (void)showNetError:(NSError *)error;
+//- (void)showNetError:(NSError *)error;
 
 @end
 

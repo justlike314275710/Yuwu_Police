@@ -572,7 +572,6 @@
         _bottomView = [UIImageView new];
         _bottomView.image = ImageNamed(@"ArticleDetailBottomBG");
         _bottomView.userInteractionEnabled = YES;
-//        _bottomView.backgroundColor = [UIColor grayColor];
     }
     return _bottomView;
 }
@@ -602,7 +601,6 @@
     }
     return _hotBtn;
 }
-
 -(UILabel *)hotLab{
     if (!_hotLab) {
         _hotLab = [UILabel new];
@@ -644,7 +642,6 @@
     }
     return _endIconImageView;
 }
-
 -(UIButton *)reportBtn{
     if(_reportBtn==nil){
         _reportBtn = [[UIButton alloc] init];

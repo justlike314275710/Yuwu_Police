@@ -13,6 +13,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate,GDTSplashAdDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (assign, nonatomic) BOOL IS_NetWork;
 
 
 @end

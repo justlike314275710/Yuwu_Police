@@ -141,7 +141,7 @@
             [PSTipsView showTips:msg];
         }
     } failed:^(NSError *error) {
-        [self showNetError:error];
+//        [self showNetError:error];
     }];
 }
 #pragma mark ---------- UITableView Delegate &Datasource
