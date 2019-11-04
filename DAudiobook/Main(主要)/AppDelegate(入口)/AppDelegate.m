@@ -195,7 +195,7 @@
     DMessageViewController *VC = [[DMessageViewController alloc] init];
     DNavigationController *nav = [[DNavigationController alloc] initWithRootViewController:VC];
     [self.window.rootViewController presentViewController:nav animated:YES completion:nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationRedDotRefresh object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationRedDothide object:nil];
 }
 
 //
