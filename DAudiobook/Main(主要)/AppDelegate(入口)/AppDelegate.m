@@ -106,9 +106,7 @@
 }
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
     //注册成功后上传Token至服务器
-//    BmobInstallation  *currentIntallation = [BmobInstallation installation];
-//    [currentIntallation setDeviceTokenFromData:deviceToken];
-//    [currentIntallation saveInBackground];
+
     
 }
 //分享
