@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AppDelegate (other)
+
+- (void)registerAPNs;
 - (void)registerAPNS:(UIApplication *)application launchOptions:(NSDictionary *)launchOptions;
 
 @end
