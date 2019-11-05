@@ -11,6 +11,7 @@
 #import "MessageLogic.h"
 #import "DMessageModel.h"
 #import "NSString+Date.h"
+#import "UITableView+FDTemplateLayoutCell.h"
 @interface DMessageViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *messageTableView;
 @property (nonatomic , strong) MessageLogic *logic;
@@ -118,7 +119,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return [tableView fd_heightForCellWithIdentifier:@"PSMessageCell" cacheByIndexPath:indexPath configuration:^(id cell) {
+//    return [tableView fd_heightForCellWithIdentifier:@"DMessageTableViewCell" cacheByIndexPath:indexPath configuration:^(id cell) {
 //        [self configureCell:cell atIndexPath:indexPath];
 //    }];
     return 75;
