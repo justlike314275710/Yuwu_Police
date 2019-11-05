@@ -200,6 +200,13 @@
             }];
             [picker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
             picker.navigationBar.translucent = NO;
+            
+            picker.navigationBar.barTintColor = ImportantColor;
+            //设置右侧取消按钮的字体颜色
+            picker.navigationBar.tintColor = [UIColor whiteColor]; // 以富文本方式
+     
+            
+
             picker.delegate = self;
             [[UIViewController jsd_getCurrentViewController] presentViewController:picker animated:YES completion:nil];
         }];

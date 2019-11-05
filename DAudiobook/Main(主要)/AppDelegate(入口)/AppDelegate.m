@@ -21,6 +21,7 @@
 #import "DVersionManger.h"
 #import "DHotNovelViewController.h"
 #import "DMessageViewController.h"
+#import "AppDelegate+other.h"
 
 @interface AppDelegate ()
 @property (retain, nonatomic) GDTSplashAd  *splash;
@@ -38,13 +39,16 @@
     //第三方分享
     [self initializeShareSDK];
     //推送
-    [self initializePushSDK];
+//    [self initializePushSDK];
     //广点通
     [self initializeGdtSDK];
     //键盘
     [self registerThirdParty];
     //im初始化
     [[IMManager sharedIMManager]initIM];
+    
+    //注册apns
+    [self registerAPNS:application launchOptions:launchOptions];
     
     //网络监听
     [self monitorNetworkStatus];
@@ -109,7 +113,8 @@
 //    BmobInstallation  *currentIntallation = [BmobInstallation installation];
 //    [currentIntallation setDeviceTokenFromData:deviceToken];
 //    [currentIntallation saveInBackground];
-    
+//    <b01e5261 8d98b62b 816454a7 ebe7ac5a 9177b733 4df3a7ee 4b2d50f4 73112c36>
+    [[NIMSDK sharedSDK] updateApnsToken:deviceToken];
 }
 //分享
 -(void)initializeShareSDK{
@@ -124,7 +129,7 @@
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
         UIMutableUserNotificationCategory *categorys = [[UIMutableUserNotificationCategory alloc]init];
         //注意：此处的Bundle ID要与你申请证书时填写的一致。
-        categorys.identifier=@"com.kevindcw.DStarNews";
+        categorys.identifier=@"com.sinog2c.YuJingTong";
         UIUserNotificationSettings *userNotifiSetting = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound) categories:[NSSet setWithObjects:categorys,nil]];
         
         [[UIApplication sharedApplication] registerUserNotificationSettings:userNotifiSetting];

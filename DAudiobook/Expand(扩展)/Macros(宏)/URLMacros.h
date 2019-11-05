@@ -93,26 +93,21 @@
 //NSString *const URL_Test = @"api/recharge/price/list";
 #define URL_Test @"/api/cast/home/start"
 
-#pragma mark - ——————— 公共服务 ————————
+#pragma mark ——————————————————————— 公共服务 ————————————————————————
 //注册手机用户接口
 #define URL_post_mobileRegiste @"/users/of-mobile"
 //注册用户名用户接口
 #define URL_post_usernameRegiste @"/users/of-username"
 //获取验证码
 #define URL_get_verification_code @"/sms/verification-codes"
-
 //获取认证授权token // 刷新认证授权token
 #define URL_get_oauth_token @"/oauth/token"
-
 //校验短信验证码接口
 #define URL_post_sms_verification @"/sms/verification-codes/verification"
-
 //修改头像
 #define URL_upload_avatar @"/users/me/avatar"
-
 //修改昵称
 #define URL_modify_nickname @"/users/me"
-
 //修改手机号码
 #define URL_modify_PhoneNumber @"/users/me/phone-number"
 

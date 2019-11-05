@@ -134,9 +134,11 @@
         NSInteger code = [[data valueForKey:@"code"] integerValue];
         NSString *msg = [data valueForKey:@"msg"];
         if (code==200) {
-            PSReportScuessViewController *reportScuessVC = [[PSReportScuessViewController alloc] init];
-            PushVC(reportScuessVC);
-            KPostNotification(KNotificationRefreshArticleDetail, nil);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                PSReportScuessViewController *reportScuessVC = [[PSReportScuessViewController alloc] init];
+                PushVC(reportScuessVC);
+                KPostNotification(KNotificationRefreshArticleDetail, nil);
+            });
         } else {
             [PSTipsView showTips:msg];
         }
