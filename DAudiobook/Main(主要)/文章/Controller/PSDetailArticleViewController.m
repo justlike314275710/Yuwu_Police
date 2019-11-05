@@ -57,11 +57,9 @@
     self.tabBarController.tabBar.hidden = YES;
      [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(coverWindowClick) name:@"statusBarTappedNotification" object:nil];
 }
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 }
-
 - (void)coverWindowClick {
     [self.scrollview scrollToTop];
 }
@@ -80,24 +78,19 @@
         make.top.mas_equalTo(0);
         make.height.mas_equalTo(42);
     }];
-
     [self.view addSubview:self.scrollview];
     [self.scrollview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_topTipLab.mas_bottom);
         make.left.right.mas_equalTo(0);
         make.bottom.mas_equalTo(-90);
     }];
-    
-    
     [self.scrollview addSubview:self.titleLab];
     [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(20);
         make.left.mas_equalTo(25);
         make.right.mas_equalTo(-25);
         make.height.mas_equalTo(43);
-
     }];
-  
     //20+38+10+44+30
     [self.scrollview addSubview:self.headImageView];
     [self.headImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -153,7 +146,6 @@
         make.left.mas_equalTo(25);
     }];
     self.likeBtn.touchExtendInset = UIEdgeInsetsMake(-20, -20, -20, -20);
-    
     [self.bottomView addSubview:self.likeLab];
     [self.likeLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(self.bottomView.centerY).offset(10);
@@ -161,14 +153,12 @@
         make.width.mas_equalTo(35);
         make.left.mas_equalTo(_likeBtn.mas_right).offset(10);
     }];
-    
     [self.bottomView addSubview:self.hotBtn];
     [self.hotBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(self.bottomView.centerY).offset(10);
         make.height.width.mas_equalTo(20);
         make.centerX.mas_equalTo(_bottomView.mas_centerX).offset(-45);
     }];
-    
     [self.bottomView addSubview:self.hotLab];
     [self.hotLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(self.bottomView.centerY).offset(10);
@@ -176,7 +166,6 @@
         make.width.mas_equalTo(60);
         make.left.mas_equalTo(_hotBtn.mas_right).offset(10);
     }];
-    
     [self.bottomView addSubview:self.collectBtn];
     [self.collectBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(self.bottomView.centerY).offset(10);
@@ -185,7 +174,6 @@
     }];
     self.collectBtn.touchExtendInset = UIEdgeInsetsMake(-20, -20, -20, -20);
 
-    
     [self.bottomView addSubview:self.collectLab];
     [self.collectLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(self.bottomView.centerY).offset(10);
@@ -417,7 +405,6 @@
         [PSTipsView showTips:@"取消收藏失败"];
     }];
 }
-
 //点赞
 -(void)praiseAction{
     PSArticleDDetailViewModel *viewModel =  (PSArticleDDetailViewModel *)self.viewModel;

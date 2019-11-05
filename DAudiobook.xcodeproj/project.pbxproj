@@ -385,6 +385,7 @@
 		55B078CD233CD1D5009BDDBC /* PSCollectArticleListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078C8233CD1D5009BDDBC /* PSCollectArticleListModel.m */; };
 		55B078CE233CD1D5009BDDBC /* PSPublicArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078CA233CD1D5009BDDBC /* PSPublicArticleModel.m */; };
 		55B078D8233CD7A1009BDDBC /* PSArticleDDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B078D7233CD7A1009BDDBC /* PSArticleDDetailViewModel.m */; };
+		55B61DC5237123A300D04F5A /* AppDelegate+other.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B61DC4237123A300D04F5A /* AppDelegate+other.m */; };
 		55CC6553233B6C4500D4A581 /* SDTextLimitTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CC6552233B6C4500D4A581 /* SDTextLimitTool.m */; };
 		55CC6555233B6D5700D4A581 /* libRZRichTextView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CC6554233B6D5700D4A581 /* libRZRichTextView.a */; };
 		55CC6557233B6D7800D4A581 /* libTZImagePickerController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CC6556233B6D7800D4A581 /* libTZImagePickerController.a */; };
@@ -1538,6 +1539,8 @@
 		55B078CB233CD1D5009BDDBC /* PSArticleDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSArticleDetailModel.h; sourceTree = "<group>"; };
 		55B078D6233CD7A1009BDDBC /* PSArticleDDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSArticleDDetailViewModel.h; sourceTree = "<group>"; };
 		55B078D7233CD7A1009BDDBC /* PSArticleDDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSArticleDDetailViewModel.m; sourceTree = "<group>"; };
+		55B61DC3237123A300D04F5A /* AppDelegate+other.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+other.h"; sourceTree = "<group>"; };
+		55B61DC4237123A300D04F5A /* AppDelegate+other.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+other.m"; sourceTree = "<group>"; };
 		55CC6551233B6C4500D4A581 /* SDTextLimitTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTextLimitTool.h; sourceTree = "<group>"; };
 		55CC6552233B6C4500D4A581 /* SDTextLimitTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTextLimitTool.m; sourceTree = "<group>"; };
 		55CC6554233B6D5700D4A581 /* libRZRichTextView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRZRichTextView.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3415,6 +3418,8 @@
 				3C4A3A7C226858F800882244 /* AppDelegate+UI.m */,
 				3C4A3A1522681A0E00882244 /* AppDelegate.h */,
 				3C4A3A1622681A0E00882244 /* AppDelegate.m */,
+				55B61DC3237123A300D04F5A /* AppDelegate+other.h */,
+				55B61DC4237123A300D04F5A /* AppDelegate+other.m */,
 			);
 			path = "AppDelegate(入口)";
 			sourceTree = "<group>";
@@ -6315,7 +6320,7 @@
 								enabled = 1;
 							};
 							com.apple.Push = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -6800,6 +6805,7 @@
 				EA960B54232F2FE900D81A25 /* UIImageView+HighlightedWebCache.m in Sources */,
 				EAA3104723346990004DE08F /* UIImage+Crop.m in Sources */,
 				3C4A3A1922681A0E00882244 /* UILabel+Extension.m in Sources */,
+				55B61DC5237123A300D04F5A /* AppDelegate+other.m in Sources */,
 				3C8F3E3B226D9E70006CF059 /* DMenuModel.m in Sources */,
 				EA960AE7232F29FB00D81A25 /* NIMSessionFileTransContentView.m in Sources */,
 				3C4A3A3F22681A0F00882244 /* FMDatabaseQueue.m in Sources */,
@@ -7396,6 +7402,7 @@
 				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = NO;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = DAudiobook/DAudiobook.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 35NTC834XG;
@@ -7445,6 +7452,7 @@
 				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = NO;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = DAudiobook/DAudiobook.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 35NTC834XG;
