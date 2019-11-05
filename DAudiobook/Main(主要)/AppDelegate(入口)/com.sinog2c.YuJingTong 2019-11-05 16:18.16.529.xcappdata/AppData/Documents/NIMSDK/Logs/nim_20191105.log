@@ -1,0 +1,1542 @@
+[2019-11-05 15:46:52:986] file:NIMSDK.mm line: 75)<<<<SDK init begin
+[2019-11-05 15:46:52:986] file:NIMServerSetting.m line: 144)<<<<using default server setting
+[2019-11-05 15:46:52:987] file:NIMSDK.mm line: 83)<<<<SDK init end
+[2019-11-05 15:46:52:988] file:NIMLoginManager.mm line: 306)<<<<Call SDK API -[NIMLoginManager addDelegate:]
+[2019-11-05 15:46:52:990] file:NIMChatManagerWrapper.mm line: 264)<<<<Call SDK API -[NIMChatManagerWrapper addDelegate:]
+[2019-11-05 15:46:52:990] file:NIMSystemNotificationManagerWrapper.mm line: 137)<<<<Call SDK API -[NIMSystemNotificationManagerWrapper addDelegate:]
+[2019-11-05 15:46:52:991] file:NIMNetCallManagerWrapper.mm line: 843)<<<<Call SDK API -[NIMNetCallManagerWrapper addDelegate:]
+[2019-11-05 15:46:53:055] file:NIMSDK.mm line: 138)<<<<
+SDK started
+app key 87dae6933488de4bab789054a3a5c720
+local device id A0584656-E119-437C-BB34-B342BF88BAA4
+local session id 9bd42953-9633-4d46-a369-d63a80e6743c
+device description (肖君的 iPhone) (iPhone) (iOS) (12.1.4) idfv BD5A11BB-5C02-4C88-922D-D8776690FF94 client type 2
+server setting 
+{
+server setting:
+lbs : https://lbs.netease.im/lbs/conf.jsp
+link : link.netease.im:8080
+nos lbs : https://wannos.127.net/lbs
+https 1
+upload addr : https://nosup-hz1.127.net host : nosup-hz1.127.net
+download : {bucket}-nosdn.netease.im/{object}
+acc host nos.netease.com vs addr {bucket}-nosdn.netease.im/{object}
+nt : https://dr.netease.im/1.gif
+bd : https://dt.netease.im/api
+module 0081c4bb...6dd131bf version 0
+}
+
+sdk config 
+{
+sdk version 6.0.0
+internal version 57
+protocol version 1
+git version 8eeaee597
+dir (null)
+auto fetch attachment 1 chatroom 0
+file protection none 0
+onlinestate enabled 0
+sync unread count 1
+team notification unread 0
+log days 7
+ai thumb 0
+enable https [i,m] = [1,1]
+bk reconnect disabled 0
+team receipt 0
+}
+
+root sdk attributes {
+	NSFileOwnerAccountID = 501;
+	NSFileSystemFileNumber = 7199566;
+	NSFileExtensionHidden = 0;
+	NSFileSystemNumber = 16777218;
+	NSFileSize = 160;
+	NSFileGroupOwnerAccountID = 501;
+	NSFileOwnerAccountName = mobile;
+	NSFileCreationDate = 2019-11-05 07:46:52 +0000;
+	NSFilePosixPermissions = 493;
+	NSFileType = NSFileTypeDirectory;
+	NSFileGroupOwnerAccountName = mobile;
+	NSFileReferenceCount = 5;
+	NSFileModificationDate = 2019-11-05 07:46:52 +0000;
+}
+
+
+[2019-11-05 15:46:53:057] file:NIMDataTracker.m line: 251)<<<<ndtk refresh config
+[2019-11-05 15:46:53:251] file:NIMDataTracker.m line: 267)<<<<ndtk refresh config response 200
+[2019-11-05 15:46:53:281] file:NIMLoginManager.mm line: 306)<<<<Call SDK API -[NIMLoginManager addDelegate:]
+[2019-11-05 15:46:53:282] file:NIMChatManagerWrapper.mm line: 264)<<<<Call SDK API -[NIMChatManagerWrapper addDelegate:]
+[2019-11-05 15:46:53:282] file:NIMSystemNotificationManagerWrapper.mm line: 137)<<<<Call SDK API -[NIMSystemNotificationManagerWrapper addDelegate:]
+[2019-11-05 15:46:53:282] file:NIMNetCallManagerWrapper.mm line: 843)<<<<Call SDK API -[NIMNetCallManagerWrapper addDelegate:]
+[2019-11-05 15:46:53:286] file:NIMSDK.mm line: 138)<<<<
+SDK started
+app key 87dae6933488de4bab789054a3a5c720
+local device id A0584656-E119-437C-BB34-B342BF88BAA4
+local session id 9bd42953-9633-4d46-a369-d63a80e6743c
+device description (肖君的 iPhone) (iPhone) (iOS) (12.1.4) idfv BD5A11BB-5C02-4C88-922D-D8776690FF94 client type 2
+server setting 
+{
+server setting:
+lbs : https://lbs.netease.im/lbs/conf.jsp
+link : link.netease.im:8080
+nos lbs : https://wannos.127.net/lbs
+https 1
+upload addr : https://nosup-hz1.127.net host : nosup-hz1.127.net
+download : {bucket}-nosdn.netease.im/{object}
+acc host nos.netease.com vs addr {bucket}-nosdn.netease.im/{object}
+nt : https://dr.netease.im/1.gif
+bd : https://dt.netease.im/api
+module 0081c4bb...6dd131bf version 0
+}
+
+sdk config 
+{
+sdk version 6.0.0
+internal version 57
+protocol version 1
+git version 8eeaee597
+dir (null)
+auto fetch attachment 1 chatroom 0
+file protection none 0
+onlinestate enabled 0
+sync unread count 1
+team notification unread 0
+log days 7
+ai thumb 0
+enable https [i,m] = [1,1]
+bk reconnect disabled 0
+team receipt 0
+}
+
+root sdk attributes {
+	NSFileOwnerAccountID = 501;
+	NSFileSystemFileNumber = 7199566;
+	NSFileExtensionHidden = 0;
+	NSFileSystemNumber = 16777218;
+	NSFileSize = 160;
+	NSFileGroupOwnerAccountID = 501;
+	NSFileOwnerAccountName = mobile;
+	NSFileCreationDate = 2019-11-05 07:46:52 +0000;
+	NSFilePosixPermissions = 493;
+	NSFileType = NSFileTypeDirectory;
+	NSFileGroupOwnerAccountName = mobile;
+	NSFileReferenceCount = 5;
+	NSFileModificationDate = 2019-11-05 07:46:52 +0000;
+}
+
+
+[2019-11-05 15:46:53:287] file:NIMDataTracker.m line: 248)<<<<ndtk refresh config cancelled because of in progress
+[2019-11-05 15:46:53:585] file:NIMLbsManager.mm line: 88)<<<<query lbs for link lbs
+[2019-11-05 15:46:53:585] file:NIMLbsManager.mm line: 93)<<<<begin to query lbs link lbs
+[2019-11-05 15:46:53:585] file:core_manager.cpp line: 191)<<<<query core while queue is closing
+[2019-11-05 15:46:53:585] file:NIMCoreCenter.mm line: 110)<<<<uid is empty
+[2019-11-05 15:46:53:586] file:NIMLbsManager.mm line: 88)<<<<query lbs for nos lbs
+[2019-11-05 15:46:53:586] file:NIMLbsManager.mm line: 93)<<<<begin to query lbs nos lbs
+[2019-11-05 15:46:53:588] file:NIMLbsManager.mm line: 88)<<<<query lbs for link lbs
+[2019-11-05 15:46:53:588] file:NIMLbsManager.mm line: 88)<<<<query lbs for nos lbs
+[2019-11-05 15:46:53:964] file:NIMLbsManager.mm line: 115)<<<<query completed <NSHTTPURLResponse: 0x2827ed120> { URL: https://wannos.127.net/lbs?version=1.0 } { Status Code: 200, Headers {
+	Server = (
+	ngx_openresty/1.4.3.6,
+);
+	Content-Type = (
+	application/json,
+);
+	Access-Control-Allow-Origin = (
+	*,
+);
+	X-Nos-Request-Id = (
+	a69ac3600a7a000000005dc128ed0116,
+);
+	Date = (
+	Tue, 05 Nov 2019 07:46:53 GMT,
+);
+	Content-Length = (
+	93,
+);
+	Connection = (
+	keep-alive,
+);
+}
+ } error (null) for nos lbs
+[2019-11-05 15:46:53:964] file:NIMLbsManager.mm line: 335)<<<<{
+type :nos
+hosts: https://116.211.99.242 https://45.127.128.24 https://nosup-hz1.127.net 
+default host:https://nosup-hz1.127.net
+index: 0
+}
+[2019-11-05 15:46:53:981] file:NIMLbsManager.mm line: 115)<<<<query completed <NSHTTPURLResponse: 0x2827eb220> { URL: https://lbs.netease.im/lbs/conf.jsp?sv=57&pv=1&tp=2&k=87dae6933488de4bab789054a3a5c720 } { Status Code: 200, Headers {
+	Transfer-Encoding = (
+	Identity,
+);
+	Content-Type = (
+	text/html;charset=UTF-8,
+);
+	Connection = (
+	keep-alive,
+);
+	Server = (
+	nginx,
+);
+	Date = (
+	Tue, 05 Nov 2019 07:46:53 GMT,
+);
+	Content-Encoding = (
+	gzip,
+);
+	Vary = (
+	Accept-Encoding,
+);
+}
+ } error (null) for link lbs
+[2019-11-05 15:46:53:982] file:NIMLbsManager.mm line: 327)<<<<{
+type :link
+hosts: 106.2.126.81:8080 106.2.124.100:8080 59.111.28.216:8080 59.111.28.212:8080 59.111.166.181:9092 59.111.166.92:8080 59.111.164.246:8080 106.2.126.86:8080 106.2.124.23:8080 link.netease.im:8080 
+default host:link.netease.im:8080
+index: 0
+}
+[2019-11-05 15:46:54:995] file:NIMSDK.mm line: 177)<<<<Call SDK API -[NIMSDK updateApnsToken:]
+[2019-11-05 15:46:54:996] file:NIMSDK.mm line: 178)<<<<apns token <b01e5261 8d98b62b 816454a7 ebe7ac5a 9177b733 4df3a7ee 4b2d50f4 73112c36>
+[2019-11-05 15:46:54:996] file:core_manager.cpp line: 80)<<<<get service id 3 failed
+[2019-11-05 15:47:08:054] file:NIMLogCleaner.m line: 28)<<<<clean log cache begin max days 7
+[2019-11-05 15:47:08:055] file:NIMLogCleaner.m line: 71)<<<<clean log cache end 0 disk space released
+[2019-11-05 15:49:58:592] file:NIMLoginManager.mm line: 86)<<<<Call SDK API -[NIMLoginManager login:token:completion:]
+[2019-11-05 15:49:58:592] file:NIMLoginManager.mm line: 88)<<<<app raise login
+[2019-11-05 15:49:58:598] file:NIMLoginManager.mm line: 323)<<<<reset begin mode 1
+[2019-11-05 15:49:58:599] file:core_manager.cpp line: 62)<<<<close core begin
+[2019-11-05 15:49:58:599] file:core_manager.cpp line: 70)<<<<close core end
+[2019-11-05 15:49:58:599] file:core_manager.cpp line: 21)<<<<create core begin
+[2019-11-05 15:49:58:605] file:core_manager.cpp line: 117)<<<<update core closing state 0
+[2019-11-05 15:49:58:605] file:core_manager.cpp line: 43)<<<<create core end
+[2019-11-05 15:49:58:606] file:NIMCoreCenter.mm line: 96)<<<<yixin core start
+[2019-11-05 15:49:58:606] file:NIMLinkListener.mm line: 251)<<<<try to connect link ...
+[2019-11-05 15:49:58:606] file:NIMLinkListener.mm line: 290)<<<<begin to connect
+[2019-11-05 15:49:58:607] file:NIMLoginManager.mm line: 335)<<<<reset end mode 1
+[2019-11-05 15:49:58:607] file:auth_task.h line: 34)<<<<Login Step: GetLinkAddress OK, addr: 106.2.126.81, port: 8080
+[2019-11-05 15:49:58:608] file:auth_task.h line: 56)<<<<Begin to Connect Link Server 106.2.126.81 port 8080
+[2019-11-05 15:49:58:609] file:link_socket.cpp line: 89)<<<<Connect Host (App Link)
+[2019-11-05 15:49:58:609] file:link_socket.cpp line: 97)<<<<Wait For Closing Socket (App Link)
+[2019-11-05 15:49:58:609] file:link_socket.cpp line: 105)<<<<Socket Closed (App Link)
+[2019-11-05 15:49:58:612] file:link_socket.cpp line: 107)<<<<Socket Thread Closed (App Link)
+[2019-11-05 15:49:58:621] file:link_socket.cpp line: 115)<<<<Begin:Wait For Connect Task (App Link)
+[2019-11-05 15:49:58:621] file:link_socket.cpp line: 126)<<<<Enter Connect Task (App Link)
+[2019-11-05 15:49:58:621] file:nio_host.cpp line: 18)<<<<Get Address Info 106.2.126.81:8080 Begin
+[2019-11-05 15:49:58:623] file:nio_host.cpp line: 51)<<<<Ipv4 Context Address 106.2.126.81
+[2019-11-05 15:49:58:623] file:nio_host.cpp line: 56)<<<<Get Address Info 106.2.126.81:8080 Error 0
+[2019-11-05 15:49:58:624] file:link_socket.cpp line: 154)<<<<Call Connect Host 106.2.126.81 port 8080 code -1 (App Link)
+[2019-11-05 15:49:58:624] file:link_socket.cpp line: 155)<<<<Exit Connect Task (App Link)
+[2019-11-05 15:49:58:624] file:link_socket.cpp line: 119)<<<<End:Wait For Connect Task (App Link)
+[2019-11-05 15:49:58:628] file:NIMLinkListener.mm line: 127)<<<<get connection notification: {
+	NIMConnectStep = 0;
+	NIMRespCode = 200;
+}
+
+[2019-11-05 15:49:58:919] file:NIMLinkListener.mm line: 127)<<<<get connection notification: {
+	NIMConnectStep = 1;
+	NIMRespCode = 200;
+}
+
+[2019-11-05 15:49:58:922] file:NIMLoginHelper.mm line: 241)<<<<using im username 29cdae91fbc64318b608d2db598f0d4c
+[2019-11-05 15:49:58:922] file:NIMLoginHelper.mm line: 259)<<<<using im token
+[2019-11-05 15:49:58:922] file:NIMLoginOperation.m line: 36)<<<<get login mode manual forced mode 0
+[2019-11-05 15:49:58:922] file:NIMLoginHelper.mm line: 226)<<<<im tags 3,4,6,8,9,10,11,12,13,16,18,19,25,26,27,30,1000
+[2019-11-05 15:49:58:923] file:auth_service.cpp line: 132)<<<<set login app link timeout 30
+[2019-11-05 15:49:58:923] file:NIMLoginManager.mm line: 435)<<<<raise login task id 3 , via WIFI
+[2019-11-05 15:49:59:002] file:link_sender.h line: 39)<<<<Send Packet : SID 1 CID 1 SER 0
+[2019-11-05 15:49:59:046] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 1 CID 1 SER 0 RES 200
+[2019-11-05 15:49:59:046] file:core_task.h line: 83)<<<<Handle LinkFrame SID 1 CID 1 SER 0
+[2019-11-05 15:49:59:091] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 2 CID 2 SER 1 RES 200
+[2019-11-05 15:49:59:091] file:core_task.h line: 83)<<<<Handle LinkFrame SID 2 CID 2 SER 1
+[2019-11-05 15:49:59:093] file:document.cpp line: 441)<<<<load document begin
+[2019-11-05 15:49:59:095] file:auth_service.cpp line: 173)<<<<
+
+login success 29cdae91fbc64318b608d2db598f0d4c
+ip 113.246.184.70
+local device id A0584656-E119-437C-BB34-B342BF88BAA4
+remote device id 
+connect id 9a5a8aee-3fd1-4c3b-9a45-e6fbd9852ad9
+customTag is 
+
+[2019-11-05 15:49:59:096] file:NIMTaskEngine.mm line: 80)<<<<core queue sync task login_callback in main thread begin
+[2019-11-05 15:49:59:096] file:NIMTaskEngine.mm line: 83)<<<<execute sync task  login_callback begin
+[2019-11-05 15:49:59:096] file:NIMLoginManager.mm line: 451)<<<<receive login callback: operation uid 29cdae91fbc64318b608d2db598f0d4c app login mode manual forced mode 0 has handler 1 code 200
+[2019-11-05 15:49:59:096] file:NIMCoreCenter.mm line: 121)<<<<setup core by 29cdae91fbc64318b608d2db598f0d4c
+[2019-11-05 15:49:59:097] file:NIMCoreCenter.mm line: 287)<<<<add document watcher
+[2019-11-05 15:49:59:101] file:NIMNVSManager.mm line: 68)<<<<NVS version 1_46
+[2019-11-05 15:49:59:110] file:NIMLoginManager.mm line: 511)<<<<login ok
+[2019-11-05 15:49:59:110] file:NIMTaskEngine.mm line: 88)<<<<execute sync task login_callback end
+[2019-11-05 15:49:59:111] file:NIMTaskEngine.mm line: 107)<<<<core queue sync task login_callback in main thread end
+[2019-11-05 15:49:59:113] file:auth_service.cpp line: 204)<<<<begin to sync
+[2019-11-05 15:49:59:113] file:sync_service.cpp line: 161)<<<<begin to sync: 
+tag 1 value 0
+tag 2 value 1
+tag 3 value 0
+tag 4 value 0
+tag 6 value 1
+tag 7 value 0
+tag 9 value 0
+tag 11 value 0
+tag 13 value 0
+tag 14 value 0
+tag 16 value 0
+tag 17 value 0
+tag 18 value 0
+tag 19 value 0
+tag 20 value 0
+tag 21 value 0
+
+[2019-11-05 15:49:59:113] file:link_sender.h line: 39)<<<<Send Packet : SID 5 CID 1 SER 2
+[2019-11-05 15:49:59:114] file:core_task.h line: 88)<<<<Waitable LinkFrame SID 2 CID 2 SER 1 Handled
+[2019-11-05 15:49:59:146] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 3 CID 109 SER 2 RES 200
+[2019-11-05 15:49:59:146] file:core_task.h line: 83)<<<<Handle LinkFrame SID 3 CID 109 SER 2
+[2019-11-05 15:49:59:161] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 12 CID 5 SER 2 RES 200
+[2019-11-05 15:49:59:161] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 12 CID 6 SER 2 RES 200
+[2019-11-05 15:49:59:161] file:core_task.h line: 83)<<<<Handle LinkFrame SID 12 CID 5 SER 2
+[2019-11-05 15:49:59:161] file:core_task.h line: 83)<<<<Handle LinkFrame SID 12 CID 6 SER 2
+[2019-11-05 15:49:59:178] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 4 CID 6 SER 2 RES 200
+[2019-11-05 15:49:59:179] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 4 CID 15 SER 2 RES 200
+[2019-11-05 15:49:59:179] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 5 CID 1 SER 2 RES 200
+[2019-11-05 15:49:59:179] file:core_task.h line: 83)<<<<Handle LinkFrame SID 4 CID 6 SER 2
+[2019-11-05 15:49:59:181] file:NIMSystemNotificationReceiver.mm line: 114)<<<<fire custom notifications 5
+[2019-11-05 15:49:59:181] file:NIMTaskEngine.mm line: 80)<<<<core queue sync task custom_notifications in main thread begin
+[2019-11-05 15:49:59:181] file:NIMUserInfoManager.mm line: 71)<<<<should request info for userid admin
+[2019-11-05 15:49:59:181] file:NIMUserInfoManager.mm line: 87)<<<<request user ids (
+	admin,
+)
+[2019-11-05 15:49:59:182] file:NIMTaskEngine.mm line: 83)<<<<execute sync task  custom_notifications begin
+[2019-11-05 15:49:59:426] file:NIMTaskEngine.mm line: 88)<<<<execute sync task custom_notifications end
+[2019-11-05 15:49:59:428] file:NIMTaskEngine.mm line: 107)<<<<core queue sync task custom_notifications in main thread end
+[2019-11-05 15:49:59:428] file:link_sender.h line: 39)<<<<Send Packet : SID 4 CID 5 SER 3
+[2019-11-05 15:49:59:429] file:core_task.h line: 83)<<<<Handle LinkFrame SID 4 CID 15 SER 2
+[2019-11-05 15:49:59:429] file:core_task.h line: 83)<<<<Handle LinkFrame SID 5 CID 1 SER 2
+[2019-11-05 15:49:59:429] file:sync_service.cpp line: 88)<<<<sync completed 200
+[2019-11-05 15:49:59:429] file:document.cpp line: 151)<<<<save document begin
+[2019-11-05 15:49:59:433] file:document.cpp line: 189)<<<<save document size 1546
+[2019-11-05 15:49:59:450] file:document.cpp line: 199)<<<<save document end
+[2019-11-05 15:49:59:451] file:link_sender.h line: 39)<<<<Send Packet : SID 3 CID 7 SER 4
+[2019-11-05 15:49:59:544] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 3 CID 7 SER 4 RES 200
+[2019-11-05 15:49:59:578] file:core_task.h line: 83)<<<<Handle LinkFrame SID 3 CID 7 SER 4
+[2019-11-05 15:49:59:579] file:core_task.h line: 88)<<<<Waitable LinkFrame SID 3 CID 7 SER 4 Handled
+[2019-11-05 15:49:59:631] file:NIMUserInfoManager.mm line: 94)<<<<request user ids (
+	admin,
+) error (null)
+[2019-11-05 15:50:02:157] file:NIMNOSTokenManager.mm line: 555)<<<<--- refresh nos token : 0, scene : nim_msg
+[2019-11-05 15:50:02:158] file:NIMNOSTokenManager.mm line: 555)<<<<--- refresh nos token : 0, scene : nim_system
+[2019-11-05 15:50:02:158] file:NIMNOSTokenManager.mm line: 555)<<<<--- refresh nos token : 0, scene : nim_icon
+[2019-11-05 15:50:02:160] file:NIMAntispamManager.mm line: 77)<<<<local antispam file version 0
+[2019-11-05 15:50:02:160] file:NIMDataTracker.m line: 157)<<<<ndtk refresh data
+[2019-11-05 15:50:02:160] file:NIMDataTracker.m line: 213)<<<<ndtk refresh data empty
+[2019-11-05 15:50:02:195] file:link_sender.h line: 39)<<<<Send Packet : SID 6 CID 1 SER 5
+[2019-11-05 15:50:02:196] file:link_sender.h line: 39)<<<<Send Packet : SID 6 CID 1 SER 6
+[2019-11-05 15:50:02:196] file:link_sender.h line: 39)<<<<Send Packet : SID 6 CID 1 SER 7
+[2019-11-05 15:50:02:196] file:link_sender.h line: 39)<<<<Send Packet : SID 6 CID 17 SER 8
+[2019-11-05 15:50:02:256] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 6 CID 1 SER 5 RES 200
+[2019-11-05 15:50:02:258] file:core_task.h line: 83)<<<<Handle LinkFrame SID 6 CID 1 SER 5
+[2019-11-05 15:50:02:260] file:core_task.h line: 88)<<<<Waitable LinkFrame SID 6 CID 1 SER 5 Handled
+[2019-11-05 15:50:02:289] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 6 CID 17 SER 8 RES 403
+[2019-11-05 15:50:02:289] file:core_task.h line: 83)<<<<Handle LinkFrame SID 6 CID 17 SER 8
+[2019-11-05 15:50:02:289] file:NIMAntispamManager.mm line: 88)<<<<update antispam file version 0 , md5  , url 
+[2019-11-05 15:50:02:289] file:core_task.h line: 88)<<<<Waitable LinkFrame SID 6 CID 17 SER 8 Handled
+[2019-11-05 15:50:02:291] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 6 CID 1 SER 7 RES 200
+[2019-11-05 15:50:02:292] file:core_task.h line: 83)<<<<Handle LinkFrame SID 6 CID 1 SER 7
+[2019-11-05 15:50:02:293] file:core_task.h line: 88)<<<<Waitable LinkFrame SID 6 CID 1 SER 7 Handled
+[2019-11-05 15:50:02:313] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 6 CID 1 SER 6 RES 200
+[2019-11-05 15:50:02:313] file:core_task.h line: 83)<<<<Handle LinkFrame SID 6 CID 1 SER 6
+[2019-11-05 15:50:02:315] file:core_task.h line: 88)<<<<Waitable LinkFrame SID 6 CID 1 SER 6 Handled
+[2019-11-05 15:50:02:662] file:NIMDataTracker.m line: 157)<<<<ndtk refresh data
+[2019-11-05 15:50:02:662] file:NIMDataTracker.m line: 213)<<<<ndtk refresh data empty
+[2019-11-05 15:50:02:662] file:NIMDataTracker.m line: 248)<<<<ndtk refresh config cancelled because of in progress
+[2019-11-05 15:50:02:664] file:NIMStorageManager.m line: 60)<<<<init session db
+[2019-11-05 15:50:02:686] file:NIMStorageManager.m line: 73)<<<<init session db end
+[2019-11-05 15:50:02:689] file:link_sender.h line: 39)<<<<Send Packet : SID 3 CID 2 SER 9
+[2019-11-05 15:50:02:691] file:document.cpp line: 151)<<<<save document begin
+[2019-11-05 15:50:02:694] file:document.cpp line: 189)<<<<save document size 1736
+[2019-11-05 15:50:02:698] file:document.cpp line: 199)<<<<save document end
+[2019-11-05 15:50:02:698] file:NIMManager.mm line: 199)<<<<manager onEnterBackground begin
+[2019-11-05 15:50:02:698] file:NIMManager.mm line: 203)<<<<manager onEnterBackground end
+[2019-11-05 15:50:02:738] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 3 CID 2 SER 9 RES 200
+[2019-11-05 15:50:02:739] file:core_task.h line: 83)<<<<Handle LinkFrame SID 3 CID 2 SER 9
+[2019-11-05 15:50:31:776] file:NIMSDK.mm line: 75)<<<<SDK init begin
+[2019-11-05 15:50:31:777] file:NIMServerSetting.m line: 144)<<<<using default server setting
+[2019-11-05 15:50:31:777] file:NIMSDK.mm line: 83)<<<<SDK init end
+[2019-11-05 15:50:31:780] file:NIMLoginManager.mm line: 306)<<<<Call SDK API -[NIMLoginManager addDelegate:]
+[2019-11-05 15:50:31:781] file:NIMChatManagerWrapper.mm line: 264)<<<<Call SDK API -[NIMChatManagerWrapper addDelegate:]
+[2019-11-05 15:50:31:782] file:NIMSystemNotificationManagerWrapper.mm line: 137)<<<<Call SDK API -[NIMSystemNotificationManagerWrapper addDelegate:]
+[2019-11-05 15:50:31:784] file:NIMNetCallManagerWrapper.mm line: 843)<<<<Call SDK API -[NIMNetCallManagerWrapper addDelegate:]
+[2019-11-05 15:50:31:802] file:NIMSDK.mm line: 138)<<<<
+SDK started
+app key 87dae6933488de4bab789054a3a5c720
+local device id A0584656-E119-437C-BB34-B342BF88BAA4
+local session id 89fec905-5927-48bf-b657-11f802777331
+device description (肖君的 iPhone) (iPhone) (iOS) (12.1.4) idfv BD5A11BB-5C02-4C88-922D-D8776690FF94 client type 2
+server setting 
+{
+server setting:
+lbs : https://lbs.netease.im/lbs/conf.jsp
+link : link.netease.im:8080
+nos lbs : https://wannos.127.net/lbs
+https 1
+upload addr : https://nosup-hz1.127.net host : nosup-hz1.127.net
+download : {bucket}-nosdn.netease.im/{object}
+acc host nos.netease.com vs addr {bucket}-nosdn.netease.im/{object}
+nt : https://dr.netease.im/1.gif
+bd : https://dt.netease.im/api
+module 0081c4bb...6dd131bf version 0
+}
+
+sdk config 
+{
+sdk version 6.0.0
+internal version 57
+protocol version 1
+git version 8eeaee597
+dir (null)
+auto fetch attachment 1 chatroom 0
+file protection none 0
+onlinestate enabled 0
+sync unread count 1
+team notification unread 0
+log days 7
+ai thumb 0
+enable https [i,m] = [1,1]
+bk reconnect disabled 0
+team receipt 0
+}
+
+root sdk attributes {
+	NSFileOwnerAccountID = 501;
+	NSFileSystemFileNumber = 7199566;
+	NSFileExtensionHidden = 0;
+	NSFileSystemNumber = 16777218;
+	NSFileSize = 160;
+	NSFileGroupOwnerAccountID = 501;
+	NSFileOwnerAccountName = mobile;
+	NSFileCreationDate = 2019-11-05 07:46:52 +0000;
+	NSFilePosixPermissions = 493;
+	NSFileType = NSFileTypeDirectory;
+	NSFileGroupOwnerAccountName = mobile;
+	NSFileReferenceCount = 5;
+	NSFileModificationDate = 2019-11-05 07:46:52 +0000;
+}
+
+
+[2019-11-05 15:50:31:803] file:NIMLbsManager.mm line: 327)<<<<{
+type :link
+hosts: 106.2.126.81:8080 106.2.124.100:8080 59.111.28.216:8080 59.111.28.212:8080 59.111.166.181:9092 59.111.166.92:8080 59.111.164.246:8080 106.2.126.86:8080 106.2.124.23:8080 link.netease.im:8080 
+default host:link.netease.im:8080
+index: 0
+}
+[2019-11-05 15:50:31:805] file:NIMLbsManager.mm line: 335)<<<<{
+type :nos
+hosts: https://116.211.99.242 https://45.127.128.24 https://nosup-hz1.127.net 
+default host:https://nosup-hz1.127.net
+index: 0
+}
+[2019-11-05 15:50:31:809] file:NIMDataTracker.m line: 251)<<<<ndtk refresh config
+[2019-11-05 15:50:31:871] file:NIMLoginManager.mm line: 306)<<<<Call SDK API -[NIMLoginManager addDelegate:]
+[2019-11-05 15:50:31:871] file:NIMChatManagerWrapper.mm line: 264)<<<<Call SDK API -[NIMChatManagerWrapper addDelegate:]
+[2019-11-05 15:50:31:871] file:NIMSystemNotificationManagerWrapper.mm line: 137)<<<<Call SDK API -[NIMSystemNotificationManagerWrapper addDelegate:]
+[2019-11-05 15:50:31:871] file:NIMNetCallManagerWrapper.mm line: 843)<<<<Call SDK API -[NIMNetCallManagerWrapper addDelegate:]
+[2019-11-05 15:50:31:876] file:NIMSDK.mm line: 138)<<<<
+SDK started
+app key 87dae6933488de4bab789054a3a5c720
+local device id A0584656-E119-437C-BB34-B342BF88BAA4
+local session id 89fec905-5927-48bf-b657-11f802777331
+device description (肖君的 iPhone) (iPhone) (iOS) (12.1.4) idfv BD5A11BB-5C02-4C88-922D-D8776690FF94 client type 2
+server setting 
+{
+server setting:
+lbs : https://lbs.netease.im/lbs/conf.jsp
+link : link.netease.im:8080
+nos lbs : https://wannos.127.net/lbs
+https 1
+upload addr : https://nosup-hz1.127.net host : nosup-hz1.127.net
+download : {bucket}-nosdn.netease.im/{object}
+acc host nos.netease.com vs addr {bucket}-nosdn.netease.im/{object}
+nt : https://dr.netease.im/1.gif
+bd : https://dt.netease.im/api
+module 0081c4bb...6dd131bf version 0
+}
+
+sdk config 
+{
+sdk version 6.0.0
+internal version 57
+protocol version 1
+git version 8eeaee597
+dir (null)
+auto fetch attachment 1 chatroom 0
+file protection none 0
+onlinestate enabled 0
+sync unread count 1
+team notification unread 0
+log days 7
+ai thumb 0
+enable https [i,m] = [1,1]
+bk reconnect disabled 0
+team receipt 0
+}
+
+root sdk attributes {
+	NSFileOwnerAccountID = 501;
+	NSFileSystemFileNumber = 7199566;
+	NSFileExtensionHidden = 0;
+	NSFileSystemNumber = 16777218;
+	NSFileSize = 160;
+	NSFileGroupOwnerAccountID = 501;
+	NSFileOwnerAccountName = mobile;
+	NSFileCreationDate = 2019-11-05 07:46:52 +0000;
+	NSFilePosixPermissions = 493;
+	NSFileType = NSFileTypeDirectory;
+	NSFileGroupOwnerAccountName = mobile;
+	NSFileReferenceCount = 5;
+	NSFileModificationDate = 2019-11-05 07:46:52 +0000;
+}
+
+
+[2019-11-05 15:50:31:877] file:NIMDataTracker.m line: 251)<<<<ndtk refresh config
+[2019-11-05 15:50:32:148] file:NIMDataTracker.m line: 267)<<<<ndtk refresh config response 200
+[2019-11-05 15:50:32:264] file:NIMDataTracker.m line: 267)<<<<ndtk refresh config response 200
+[2019-11-05 15:50:34:998] file:NIMLbsManager.mm line: 88)<<<<query lbs for link lbs
+[2019-11-05 15:50:34:998] file:NIMLbsManager.mm line: 93)<<<<begin to query lbs link lbs
+[2019-11-05 15:50:34:999] file:core_manager.cpp line: 191)<<<<query core while queue is closing
+[2019-11-05 15:50:34:999] file:NIMCoreCenter.mm line: 110)<<<<uid is empty
+[2019-11-05 15:50:34:999] file:NIMLbsManager.mm line: 88)<<<<query lbs for nos lbs
+[2019-11-05 15:50:34:999] file:NIMLbsManager.mm line: 93)<<<<begin to query lbs nos lbs
+[2019-11-05 15:50:35:001] file:NIMLbsManager.mm line: 88)<<<<query lbs for link lbs
+[2019-11-05 15:50:35:001] file:NIMLbsManager.mm line: 88)<<<<query lbs for nos lbs
+[2019-11-05 15:50:35:119] file:NIMLoginManager.mm line: 86)<<<<Call SDK API -[NIMLoginManager login:token:completion:]
+[2019-11-05 15:50:35:119] file:NIMLoginManager.mm line: 88)<<<<app raise login
+[2019-11-05 15:50:35:119] file:NIMLoginManager.mm line: 323)<<<<reset begin mode 1
+[2019-11-05 15:50:35:119] file:core_manager.cpp line: 62)<<<<close core begin
+[2019-11-05 15:50:35:119] file:core_manager.cpp line: 70)<<<<close core end
+[2019-11-05 15:50:35:120] file:core_manager.cpp line: 21)<<<<create core begin
+[2019-11-05 15:50:35:128] file:core_manager.cpp line: 117)<<<<update core closing state 0
+[2019-11-05 15:50:35:128] file:core_manager.cpp line: 43)<<<<create core end
+[2019-11-05 15:50:35:129] file:NIMCoreCenter.mm line: 96)<<<<yixin core start
+[2019-11-05 15:50:35:129] file:NIMLinkListener.mm line: 251)<<<<try to connect link ...
+[2019-11-05 15:50:35:129] file:NIMLinkListener.mm line: 290)<<<<begin to connect
+[2019-11-05 15:50:35:129] file:NIMLoginManager.mm line: 335)<<<<reset end mode 1
+[2019-11-05 15:50:35:138] file:NIMLbsManager.mm line: 285)<<<<{
+type :link
+hosts: 106.2.126.81:8080 106.2.124.100:8080 59.111.28.216:8080 59.111.28.212:8080 59.111.166.181:9092 59.111.166.92:8080 59.111.164.246:8080 106.2.126.86:8080 106.2.124.23:8080 link.netease.im:8080 
+default host:link.netease.im:8080
+index: 0
+} out of range, query link lbs lbs in 5 seconds 0
+[2019-11-05 15:50:35:138] file:auth_task.h line: 34)<<<<Login Step: GetLinkAddress OK, addr: 106.2.126.81, port: 8080
+[2019-11-05 15:50:35:138] file:auth_task.h line: 56)<<<<Begin to Connect Link Server 106.2.126.81 port 8080
+[2019-11-05 15:50:35:143] file:link_socket.cpp line: 89)<<<<Connect Host (App Link)
+[2019-11-05 15:50:35:143] file:link_socket.cpp line: 97)<<<<Wait For Closing Socket (App Link)
+[2019-11-05 15:50:35:143] file:link_socket.cpp line: 105)<<<<Socket Closed (App Link)
+[2019-11-05 15:50:35:143] file:link_socket.cpp line: 107)<<<<Socket Thread Closed (App Link)
+[2019-11-05 15:50:35:146] file:link_socket.cpp line: 115)<<<<Begin:Wait For Connect Task (App Link)
+[2019-11-05 15:50:35:146] file:link_socket.cpp line: 126)<<<<Enter Connect Task (App Link)
+[2019-11-05 15:50:35:146] file:nio_host.cpp line: 18)<<<<Get Address Info 106.2.126.81:8080 Begin
+[2019-11-05 15:50:35:149] file:nio_host.cpp line: 51)<<<<Ipv4 Context Address 106.2.126.81
+[2019-11-05 15:50:35:150] file:nio_host.cpp line: 56)<<<<Get Address Info 106.2.126.81:8080 Error 0
+[2019-11-05 15:50:35:152] file:link_socket.cpp line: 154)<<<<Call Connect Host 106.2.126.81 port 8080 code -1 (App Link)
+[2019-11-05 15:50:35:152] file:link_socket.cpp line: 155)<<<<Exit Connect Task (App Link)
+[2019-11-05 15:50:35:154] file:link_socket.cpp line: 119)<<<<End:Wait For Connect Task (App Link)
+[2019-11-05 15:50:35:155] file:NIMLinkListener.mm line: 127)<<<<get connection notification: {
+	NIMConnectStep = 0;
+	NIMRespCode = 200;
+}
+
+[2019-11-05 15:54:05:095] file:NIMSDK.mm line: 75)<<<<SDK init begin
+[2019-11-05 15:54:05:096] file:NIMServerSetting.m line: 144)<<<<using default server setting
+[2019-11-05 15:54:05:096] file:NIMSDK.mm line: 83)<<<<SDK init end
+[2019-11-05 15:54:05:098] file:NIMLoginManager.mm line: 306)<<<<Call SDK API -[NIMLoginManager addDelegate:]
+[2019-11-05 15:54:05:099] file:NIMChatManagerWrapper.mm line: 264)<<<<Call SDK API -[NIMChatManagerWrapper addDelegate:]
+[2019-11-05 15:54:05:099] file:NIMSystemNotificationManagerWrapper.mm line: 137)<<<<Call SDK API -[NIMSystemNotificationManagerWrapper addDelegate:]
+[2019-11-05 15:54:05:101] file:NIMNetCallManagerWrapper.mm line: 843)<<<<Call SDK API -[NIMNetCallManagerWrapper addDelegate:]
+[2019-11-05 15:54:05:118] file:NIMSDK.mm line: 138)<<<<
+SDK started
+app key 87dae6933488de4bab789054a3a5c720
+local device id A0584656-E119-437C-BB34-B342BF88BAA4
+local session id 03690942-c4a7-4e1d-a9ed-1c4e96a3c88f
+device description (肖君的 iPhone) (iPhone) (iOS) (12.1.4) idfv BD5A11BB-5C02-4C88-922D-D8776690FF94 client type 2
+server setting 
+{
+server setting:
+lbs : https://lbs.netease.im/lbs/conf.jsp
+link : link.netease.im:8080
+nos lbs : https://wannos.127.net/lbs
+https 1
+upload addr : https://nosup-hz1.127.net host : nosup-hz1.127.net
+download : {bucket}-nosdn.netease.im/{object}
+acc host nos.netease.com vs addr {bucket}-nosdn.netease.im/{object}
+nt : https://dr.netease.im/1.gif
+bd : https://dt.netease.im/api
+module 0081c4bb...6dd131bf version 0
+}
+
+sdk config 
+{
+sdk version 6.0.0
+internal version 57
+protocol version 1
+git version 8eeaee597
+dir (null)
+auto fetch attachment 1 chatroom 0
+file protection none 0
+onlinestate enabled 0
+sync unread count 1
+team notification unread 0
+log days 7
+ai thumb 0
+enable https [i,m] = [1,1]
+bk reconnect disabled 0
+team receipt 0
+}
+
+root sdk attributes {
+	NSFileOwnerAccountID = 501;
+	NSFileSystemFileNumber = 7199566;
+	NSFileExtensionHidden = 0;
+	NSFileSystemNumber = 16777218;
+	NSFileSize = 160;
+	NSFileGroupOwnerAccountID = 501;
+	NSFileOwnerAccountName = mobile;
+	NSFileCreationDate = 2019-11-05 07:46:52 +0000;
+	NSFilePosixPermissions = 493;
+	NSFileType = NSFileTypeDirectory;
+	NSFileGroupOwnerAccountName = mobile;
+	NSFileReferenceCount = 5;
+	NSFileModificationDate = 2019-11-05 07:46:52 +0000;
+}
+
+
+[2019-11-05 15:54:05:120] file:NIMLbsManager.mm line: 327)<<<<{
+type :link
+hosts: 106.2.126.81:8080 106.2.124.100:8080 59.111.28.216:8080 59.111.28.212:8080 59.111.166.181:9092 59.111.166.92:8080 59.111.164.246:8080 106.2.126.86:8080 106.2.124.23:8080 link.netease.im:8080 
+default host:link.netease.im:8080
+index: 0
+}
+[2019-11-05 15:54:05:121] file:NIMLbsManager.mm line: 335)<<<<{
+type :nos
+hosts: https://116.211.99.242 https://45.127.128.24 https://nosup-hz1.127.net 
+default host:https://nosup-hz1.127.net
+index: 0
+}
+[2019-11-05 15:54:05:123] file:NIMDataTracker.m line: 251)<<<<ndtk refresh config
+[2019-11-05 15:54:05:154] file:NIMLoginManager.mm line: 306)<<<<Call SDK API -[NIMLoginManager addDelegate:]
+[2019-11-05 15:54:05:154] file:NIMChatManagerWrapper.mm line: 264)<<<<Call SDK API -[NIMChatManagerWrapper addDelegate:]
+[2019-11-05 15:54:05:154] file:NIMSystemNotificationManagerWrapper.mm line: 137)<<<<Call SDK API -[NIMSystemNotificationManagerWrapper addDelegate:]
+[2019-11-05 15:54:05:154] file:NIMNetCallManagerWrapper.mm line: 843)<<<<Call SDK API -[NIMNetCallManagerWrapper addDelegate:]
+[2019-11-05 15:54:05:158] file:NIMSDK.mm line: 138)<<<<
+SDK started
+app key 87dae6933488de4bab789054a3a5c720
+local device id A0584656-E119-437C-BB34-B342BF88BAA4
+local session id 03690942-c4a7-4e1d-a9ed-1c4e96a3c88f
+device description (肖君的 iPhone) (iPhone) (iOS) (12.1.4) idfv BD5A11BB-5C02-4C88-922D-D8776690FF94 client type 2
+server setting 
+{
+server setting:
+lbs : https://lbs.netease.im/lbs/conf.jsp
+link : link.netease.im:8080
+nos lbs : https://wannos.127.net/lbs
+https 1
+upload addr : https://nosup-hz1.127.net host : nosup-hz1.127.net
+download : {bucket}-nosdn.netease.im/{object}
+acc host nos.netease.com vs addr {bucket}-nosdn.netease.im/{object}
+nt : https://dr.netease.im/1.gif
+bd : https://dt.netease.im/api
+module 0081c4bb...6dd131bf version 0
+}
+
+sdk config 
+{
+sdk version 6.0.0
+internal version 57
+protocol version 1
+git version 8eeaee597
+dir (null)
+auto fetch attachment 1 chatroom 0
+file protection none 0
+onlinestate enabled 0
+sync unread count 1
+team notification unread 0
+log days 7
+ai thumb 0
+enable https [i,m] = [1,1]
+bk reconnect disabled 0
+team receipt 0
+}
+
+root sdk attributes {
+	NSFileOwnerAccountID = 501;
+	NSFileSystemFileNumber = 7199566;
+	NSFileExtensionHidden = 0;
+	NSFileSystemNumber = 16777218;
+	NSFileSize = 160;
+	NSFileGroupOwnerAccountID = 501;
+	NSFileOwnerAccountName = mobile;
+	NSFileCreationDate = 2019-11-05 07:46:52 +0000;
+	NSFilePosixPermissions = 493;
+	NSFileType = NSFileTypeDirectory;
+	NSFileGroupOwnerAccountName = mobile;
+	NSFileReferenceCount = 5;
+	NSFileModificationDate = 2019-11-05 07:46:52 +0000;
+}
+
+
+[2019-11-05 15:54:05:159] file:NIMDataTracker.m line: 251)<<<<ndtk refresh config
+[2019-11-05 15:54:05:388] file:NIMDataTracker.m line: 267)<<<<ndtk refresh config response 200
+[2019-11-05 15:54:05:504] file:NIMDataTracker.m line: 267)<<<<ndtk refresh config response 200
+[2019-11-05 15:54:08:666] file:NIMLbsManager.mm line: 88)<<<<query lbs for link lbs
+[2019-11-05 15:54:08:666] file:NIMLbsManager.mm line: 93)<<<<begin to query lbs link lbs
+[2019-11-05 15:54:08:667] file:core_manager.cpp line: 191)<<<<query core while queue is closing
+[2019-11-05 15:54:08:667] file:NIMCoreCenter.mm line: 110)<<<<uid is empty
+[2019-11-05 15:54:08:667] file:NIMLbsManager.mm line: 88)<<<<query lbs for nos lbs
+[2019-11-05 15:54:08:667] file:NIMLbsManager.mm line: 93)<<<<begin to query lbs nos lbs
+[2019-11-05 15:54:08:668] file:NIMLbsManager.mm line: 88)<<<<query lbs for link lbs
+[2019-11-05 15:54:08:668] file:NIMLbsManager.mm line: 88)<<<<query lbs for nos lbs
+[2019-11-05 16:05:09:396] file:NIMSDK.mm line: 75)<<<<SDK init begin
+[2019-11-05 16:05:09:397] file:NIMServerSetting.m line: 144)<<<<using default server setting
+[2019-11-05 16:05:09:398] file:NIMSDK.mm line: 83)<<<<SDK init end
+[2019-11-05 16:05:09:400] file:NIMLoginManager.mm line: 306)<<<<Call SDK API -[NIMLoginManager addDelegate:]
+[2019-11-05 16:05:09:401] file:NIMChatManagerWrapper.mm line: 264)<<<<Call SDK API -[NIMChatManagerWrapper addDelegate:]
+[2019-11-05 16:05:09:401] file:NIMSystemNotificationManagerWrapper.mm line: 137)<<<<Call SDK API -[NIMSystemNotificationManagerWrapper addDelegate:]
+[2019-11-05 16:05:09:403] file:NIMNetCallManagerWrapper.mm line: 843)<<<<Call SDK API -[NIMNetCallManagerWrapper addDelegate:]
+[2019-11-05 16:05:09:424] file:NIMSDK.mm line: 138)<<<<
+SDK started
+app key 87dae6933488de4bab789054a3a5c720
+local device id A0584656-E119-437C-BB34-B342BF88BAA4
+local session id 5367cb9f-eeb9-4985-8d5f-87abe15d5027
+device description (肖君的 iPhone) (iPhone) (iOS) (12.1.4) idfv BD5A11BB-5C02-4C88-922D-D8776690FF94 client type 2
+server setting 
+{
+server setting:
+lbs : https://lbs.netease.im/lbs/conf.jsp
+link : link.netease.im:8080
+nos lbs : https://wannos.127.net/lbs
+https 1
+upload addr : https://nosup-hz1.127.net host : nosup-hz1.127.net
+download : {bucket}-nosdn.netease.im/{object}
+acc host nos.netease.com vs addr {bucket}-nosdn.netease.im/{object}
+nt : https://dr.netease.im/1.gif
+bd : https://dt.netease.im/api
+module 0081c4bb...6dd131bf version 0
+}
+
+sdk config 
+{
+sdk version 6.0.0
+internal version 57
+protocol version 1
+git version 8eeaee597
+dir (null)
+auto fetch attachment 1 chatroom 0
+file protection none 0
+onlinestate enabled 0
+sync unread count 1
+team notification unread 0
+log days 7
+ai thumb 0
+enable https [i,m] = [1,1]
+bk reconnect disabled 0
+team receipt 0
+}
+
+root sdk attributes {
+	NSFileOwnerAccountID = 501;
+	NSFileSystemFileNumber = 7199566;
+	NSFileExtensionHidden = 0;
+	NSFileSystemNumber = 16777218;
+	NSFileSize = 160;
+	NSFileGroupOwnerAccountID = 501;
+	NSFileOwnerAccountName = mobile;
+	NSFileCreationDate = 2019-11-05 07:46:52 +0000;
+	NSFilePosixPermissions = 493;
+	NSFileType = NSFileTypeDirectory;
+	NSFileGroupOwnerAccountName = mobile;
+	NSFileReferenceCount = 5;
+	NSFileModificationDate = 2019-11-05 07:46:52 +0000;
+}
+
+
+[2019-11-05 16:05:09:426] file:NIMLbsManager.mm line: 327)<<<<{
+type :link
+hosts: 106.2.126.81:8080 106.2.124.100:8080 59.111.28.216:8080 59.111.28.212:8080 59.111.166.181:9092 59.111.166.92:8080 59.111.164.246:8080 106.2.126.86:8080 106.2.124.23:8080 link.netease.im:8080 
+default host:link.netease.im:8080
+index: 0
+}
+[2019-11-05 16:05:09:427] file:NIMLbsManager.mm line: 335)<<<<{
+type :nos
+hosts: https://116.211.99.242 https://45.127.128.24 https://nosup-hz1.127.net 
+default host:https://nosup-hz1.127.net
+index: 0
+}
+[2019-11-05 16:05:09:428] file:NIMDataTracker.m line: 251)<<<<ndtk refresh config
+[2019-11-05 16:05:09:461] file:NIMLoginManager.mm line: 306)<<<<Call SDK API -[NIMLoginManager addDelegate:]
+[2019-11-05 16:05:09:461] file:NIMChatManagerWrapper.mm line: 264)<<<<Call SDK API -[NIMChatManagerWrapper addDelegate:]
+[2019-11-05 16:05:09:461] file:NIMSystemNotificationManagerWrapper.mm line: 137)<<<<Call SDK API -[NIMSystemNotificationManagerWrapper addDelegate:]
+[2019-11-05 16:05:09:461] file:NIMNetCallManagerWrapper.mm line: 843)<<<<Call SDK API -[NIMNetCallManagerWrapper addDelegate:]
+[2019-11-05 16:05:09:466] file:NIMSDK.mm line: 138)<<<<
+SDK started
+app key 87dae6933488de4bab789054a3a5c720
+local device id A0584656-E119-437C-BB34-B342BF88BAA4
+local session id 5367cb9f-eeb9-4985-8d5f-87abe15d5027
+device description (肖君的 iPhone) (iPhone) (iOS) (12.1.4) idfv BD5A11BB-5C02-4C88-922D-D8776690FF94 client type 2
+server setting 
+{
+server setting:
+lbs : https://lbs.netease.im/lbs/conf.jsp
+link : link.netease.im:8080
+nos lbs : https://wannos.127.net/lbs
+https 1
+upload addr : https://nosup-hz1.127.net host : nosup-hz1.127.net
+download : {bucket}-nosdn.netease.im/{object}
+acc host nos.netease.com vs addr {bucket}-nosdn.netease.im/{object}
+nt : https://dr.netease.im/1.gif
+bd : https://dt.netease.im/api
+module 0081c4bb...6dd131bf version 0
+}
+
+sdk config 
+{
+sdk version 6.0.0
+internal version 57
+protocol version 1
+git version 8eeaee597
+dir (null)
+auto fetch attachment 1 chatroom 0
+file protection none 0
+onlinestate enabled 0
+sync unread count 1
+team notification unread 0
+log days 7
+ai thumb 0
+enable https [i,m] = [1,1]
+bk reconnect disabled 0
+team receipt 0
+}
+
+root sdk attributes {
+	NSFileOwnerAccountID = 501;
+	NSFileSystemFileNumber = 7199566;
+	NSFileExtensionHidden = 0;
+	NSFileSystemNumber = 16777218;
+	NSFileSize = 160;
+	NSFileGroupOwnerAccountID = 501;
+	NSFileOwnerAccountName = mobile;
+	NSFileCreationDate = 2019-11-05 07:46:52 +0000;
+	NSFilePosixPermissions = 493;
+	NSFileType = NSFileTypeDirectory;
+	NSFileGroupOwnerAccountName = mobile;
+	NSFileReferenceCount = 5;
+	NSFileModificationDate = 2019-11-05 07:46:52 +0000;
+}
+
+
+[2019-11-05 16:05:09:466] file:NIMDataTracker.m line: 251)<<<<ndtk refresh config
+[2019-11-05 16:05:09:728] file:NIMDataTracker.m line: 267)<<<<ndtk refresh config response 200
+[2019-11-05 16:05:09:872] file:NIMDataTracker.m line: 267)<<<<ndtk refresh config response 200
+[2019-11-05 16:05:12:861] file:NIMLbsManager.mm line: 88)<<<<query lbs for link lbs
+[2019-11-05 16:05:12:861] file:NIMLbsManager.mm line: 93)<<<<begin to query lbs link lbs
+[2019-11-05 16:05:12:862] file:core_manager.cpp line: 191)<<<<query core while queue is closing
+[2019-11-05 16:05:12:862] file:NIMCoreCenter.mm line: 110)<<<<uid is empty
+[2019-11-05 16:05:12:862] file:NIMLbsManager.mm line: 88)<<<<query lbs for nos lbs
+[2019-11-05 16:05:12:862] file:NIMLbsManager.mm line: 93)<<<<begin to query lbs nos lbs
+[2019-11-05 16:05:12:864] file:NIMLbsManager.mm line: 88)<<<<query lbs for link lbs
+[2019-11-05 16:05:12:864] file:NIMLbsManager.mm line: 88)<<<<query lbs for nos lbs
+[2019-11-05 16:09:27:912] file:NIMLoginManager.mm line: 86)<<<<Call SDK API -[NIMLoginManager login:token:completion:]
+[2019-11-05 16:09:27:912] file:NIMLoginManager.mm line: 88)<<<<app raise login
+[2019-11-05 16:09:27:914] file:NIMLoginManager.mm line: 323)<<<<reset begin mode 1
+[2019-11-05 16:09:27:914] file:core_manager.cpp line: 62)<<<<close core begin
+[2019-11-05 16:09:27:914] file:core_manager.cpp line: 70)<<<<close core end
+[2019-11-05 16:09:27:915] file:core_manager.cpp line: 21)<<<<create core begin
+[2019-11-05 16:09:27:916] file:NIMLogCleaner.m line: 28)<<<<clean log cache begin max days 7
+[2019-11-05 16:09:27:917] file:NIMLogCleaner.m line: 71)<<<<clean log cache end 0 disk space released
+[2019-11-05 16:09:27:925] file:core_manager.cpp line: 117)<<<<update core closing state 0
+[2019-11-05 16:09:27:925] file:core_manager.cpp line: 43)<<<<create core end
+[2019-11-05 16:09:27:926] file:NIMCoreCenter.mm line: 96)<<<<yixin core start
+[2019-11-05 16:09:27:926] file:NIMLinkListener.mm line: 251)<<<<try to connect link ...
+[2019-11-05 16:09:27:927] file:NIMLinkListener.mm line: 290)<<<<begin to connect
+[2019-11-05 16:09:27:928] file:NIMLoginManager.mm line: 335)<<<<reset end mode 1
+[2019-11-05 16:09:27:945] file:NIMLbsManager.mm line: 285)<<<<{
+type :link
+hosts: 106.2.126.81:8080 106.2.124.100:8080 59.111.28.216:8080 59.111.28.212:8080 59.111.166.181:9092 59.111.166.92:8080 59.111.164.246:8080 106.2.126.86:8080 106.2.124.23:8080 link.netease.im:8080 
+default host:link.netease.im:8080
+index: 0
+} out of range, query link lbs lbs in 5 seconds 0
+[2019-11-05 16:09:27:946] file:auth_task.h line: 34)<<<<Login Step: GetLinkAddress OK, addr: 106.2.126.81, port: 8080
+[2019-11-05 16:09:27:946] file:auth_task.h line: 56)<<<<Begin to Connect Link Server 106.2.126.81 port 8080
+[2019-11-05 16:09:27:957] file:link_socket.cpp line: 89)<<<<Connect Host (App Link)
+[2019-11-05 16:09:27:957] file:link_socket.cpp line: 97)<<<<Wait For Closing Socket (App Link)
+[2019-11-05 16:09:27:957] file:link_socket.cpp line: 105)<<<<Socket Closed (App Link)
+[2019-11-05 16:09:27:957] file:link_socket.cpp line: 107)<<<<Socket Thread Closed (App Link)
+[2019-11-05 16:09:27:977] file:link_socket.cpp line: 115)<<<<Begin:Wait For Connect Task (App Link)
+[2019-11-05 16:09:27:977] file:link_socket.cpp line: 126)<<<<Enter Connect Task (App Link)
+[2019-11-05 16:09:27:977] file:nio_host.cpp line: 18)<<<<Get Address Info 106.2.126.81:8080 Begin
+[2019-11-05 16:09:27:979] file:nio_host.cpp line: 51)<<<<Ipv4 Context Address 106.2.126.81
+[2019-11-05 16:09:27:979] file:nio_host.cpp line: 56)<<<<Get Address Info 106.2.126.81:8080 Error 0
+[2019-11-05 16:09:27:980] file:NIMLbsManager.mm line: 115)<<<<query completed (null) error Error Domain=NSURLErrorDomain Code=-1001 "请求超时。" UserInfo={NSUnderlyingError=0x281d4c030 {Error Domain=kCFErrorDomainCFNetwork Code=-1001 "(null)" UserInfo={_kCFStreamErrorCodeKey=-2102, _kCFStreamErrorDomainKey=4}}, NSErrorFailingURLStringKey=https://wannos.127.net/lbs?version=1.0, NSErrorFailingURLKey=https://wannos.127.net/lbs?version=1.0, _kCFStreamErrorDomainKey=4, _kCFStreamErrorCodeKey=-2102, NSLocalizedDescription=请求超时。} for nos lbs
+[2019-11-05 16:09:27:980] file:NIMLinkListener.mm line: 127)<<<<get connection notification: {
+	NIMConnectStep = 0;
+	NIMRespCode = 200;
+}
+
+[2019-11-05 16:09:27:981] file:link_socket.cpp line: 154)<<<<Call Connect Host 106.2.126.81 port 8080 code -1 (App Link)
+[2019-11-05 16:09:27:981] file:link_socket.cpp line: 155)<<<<Exit Connect Task (App Link)
+[2019-11-05 16:09:27:982] file:link_socket.cpp line: 119)<<<<End:Wait For Connect Task (App Link)
+[2019-11-05 16:09:27:988] file:NIMSDK.mm line: 177)<<<<Call SDK API -[NIMSDK updateApnsToken:]
+[2019-11-05 16:09:27:988] file:NIMSDK.mm line: 178)<<<<apns token <b01e5261 8d98b62b 816454a7 ebe7ac5a 9177b733 4df3a7ee 4b2d50f4 73112c36>
+[2019-11-05 16:09:27:989] file:core_manager.cpp line: 80)<<<<get service id 3 failed
+[2019-11-05 16:09:27:990] file:NIMLbsManager.mm line: 115)<<<<query completed (null) error Error Domain=NSURLErrorDomain Code=-1001 "请求超时。" UserInfo={NSUnderlyingError=0x281d4f5d0 {Error Domain=kCFErrorDomainCFNetwork Code=-1001 "(null)" UserInfo={_kCFStreamErrorCodeKey=-2102, _kCFStreamErrorDomainKey=4}}, NSErrorFailingURLStringKey=https://lbs.netease.im/lbs/conf.jsp?sv=57&pv=1&tp=2&k=87dae6933488de4bab789054a3a5c720, NSErrorFailingURLKey=https://lbs.netease.im/lbs/conf.jsp?sv=57&pv=1&tp=2&k=87dae6933488de4bab789054a3a5c720, _kCFStreamErrorDomainKey=4, _kCFStreamErrorCodeKey=-2102, NSLocalizedDescription=请求超时。} for link lbs
+[2019-11-05 16:09:28:151] file:NIMTracker.mm line: 113)<<<<nt query https://dr.netease.im/1.gif?appKey=87dae6933488de4bab789054a3a5c720&os=ios&uid=29cdae91fbc64318b608d2db598f0d4c&code=-1001&event=noslbs&ver=57&session=5367cb9f-eeb9-4985-8d5f-87abe15d5027 error (null) response <NSHTTPURLResponse: 0x2813b7060> { URL: https://dr.netease.im/1.gif?appKey=87dae6933488de4bab789054a3a5c720&os=ios&uid=29cdae91fbc64318b608d2db598f0d4c&code=-1001&event=noslbs&ver=57&session=5367cb9f-eeb9-4985-8d5f-87abe15d5027 } { Status Code: 200, Headers {
+	Server = (
+	nginx,
+);
+	Content-Type = (
+	image/gif,
+);
+	Pragma = (
+	no-cache,
+);
+	Last-Modified = (
+	Mon, 28 Sep 1970 06:00:00 GMT,
+);
+	Cache-Control = (
+	no-cache, max-age=0, must-revalidate,
+);
+	Access-Control-Allow-Origin = (
+	*,
+);
+	Date = (
+	Tue, 05 Nov 2019 08:09:28 GMT,
+);
+	Content-Length = (
+	43,
+);
+	Expires = (
+	Fri, 01 Jan 1980 00:00:00 GMT,
+);
+	Connection = (
+	keep-alive,
+);
+}
+ }
+[2019-11-05 16:09:28:253] file:NIMTracker.mm line: 113)<<<<nt query https://dr.netease.im/1.gif?appKey=87dae6933488de4bab789054a3a5c720&os=ios&uid=29cdae91fbc64318b608d2db598f0d4c&code=-1001&event=nimlbs&ver=57&session=5367cb9f-eeb9-4985-8d5f-87abe15d5027 error (null) response <NSHTTPURLResponse: 0x281349600> { URL: https://dr.netease.im/1.gif?appKey=87dae6933488de4bab789054a3a5c720&os=ios&uid=29cdae91fbc64318b608d2db598f0d4c&code=-1001&event=nimlbs&ver=57&session=5367cb9f-eeb9-4985-8d5f-87abe15d5027 } { Status Code: 200, Headers {
+	Server = (
+	nginx,
+);
+	Content-Type = (
+	image/gif,
+);
+	Pragma = (
+	no-cache,
+);
+	Last-Modified = (
+	Mon, 28 Sep 1970 06:00:00 GMT,
+);
+	Cache-Control = (
+	no-cache, max-age=0, must-revalidate,
+);
+	Access-Control-Allow-Origin = (
+	*,
+);
+	Date = (
+	Tue, 05 Nov 2019 08:09:28 GMT,
+);
+	Content-Length = (
+	43,
+);
+	Expires = (
+	Fri, 01 Jan 1980 00:00:00 GMT,
+);
+	Connection = (
+	keep-alive,
+);
+}
+ }
+[2019-11-05 16:09:28:297] file:NIMLinkListener.mm line: 127)<<<<get connection notification: {
+	NIMConnectStep = 1;
+	NIMRespCode = 200;
+}
+
+[2019-11-05 16:09:28:298] file:NIMLoginHelper.mm line: 241)<<<<using im username 29cdae91fbc64318b608d2db598f0d4c
+[2019-11-05 16:09:28:298] file:NIMLoginHelper.mm line: 259)<<<<using im token
+[2019-11-05 16:09:28:298] file:NIMLoginOperation.m line: 36)<<<<get login mode manual forced mode 0
+[2019-11-05 16:09:28:298] file:NIMLoginHelper.mm line: 226)<<<<im tags 3,4,6,8,9,10,11,12,13,16,18,19,25,26,27,30,1000
+[2019-11-05 16:09:28:299] file:NIMLoginManager.mm line: 435)<<<<raise login task id 3 , via WIFI
+[2019-11-05 16:09:28:299] file:auth_service.cpp line: 132)<<<<set login app link timeout 30
+[2019-11-05 16:09:28:354] file:link_sender.h line: 39)<<<<Send Packet : SID 1 CID 1 SER 0
+[2019-11-05 16:09:28:397] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 1 CID 1 SER 0 RES 200
+[2019-11-05 16:09:28:398] file:core_task.h line: 83)<<<<Handle LinkFrame SID 1 CID 1 SER 0
+[2019-11-05 16:09:28:445] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 2 CID 2 SER 1 RES 200
+[2019-11-05 16:09:28:445] file:core_task.h line: 83)<<<<Handle LinkFrame SID 2 CID 2 SER 1
+[2019-11-05 16:09:28:446] file:document.cpp line: 441)<<<<load document begin
+[2019-11-05 16:09:28:446] file:document.cpp line: 446)<<<<load document size 1736
+[2019-11-05 16:09:28:447] file:document.cpp line: 504)<<<<load document end
+[2019-11-05 16:09:28:449] file:auth_service.cpp line: 173)<<<<
+
+login success 29cdae91fbc64318b608d2db598f0d4c
+ip 113.246.184.70
+local device id A0584656-E119-437C-BB34-B342BF88BAA4
+remote device id A0584656-E119-437C-BB34-B342BF88BAA4
+connect id 822c24eb-f1b3-4894-8e28-65aa42aba374
+customTag is 
+
+[2019-11-05 16:09:28:449] file:NIMTaskEngine.mm line: 80)<<<<core queue sync task login_callback in main thread begin
+[2019-11-05 16:09:28:449] file:NIMTaskEngine.mm line: 83)<<<<execute sync task  login_callback begin
+[2019-11-05 16:09:28:449] file:NIMLoginManager.mm line: 451)<<<<receive login callback: operation uid 29cdae91fbc64318b608d2db598f0d4c app login mode manual forced mode 0 has handler 1 code 200
+[2019-11-05 16:09:28:449] file:NIMCoreCenter.mm line: 121)<<<<setup core by 29cdae91fbc64318b608d2db598f0d4c
+[2019-11-05 16:09:28:450] file:NIMCoreCenter.mm line: 287)<<<<add document watcher
+[2019-11-05 16:09:30:879] file:NIMNVSManager.mm line: 68)<<<<NVS version 1_46
+[2019-11-05 16:09:30:890] file:NIMLoginManager.mm line: 511)<<<<login ok
+[2019-11-05 16:09:33:202] file:NIMTaskEngine.mm line: 88)<<<<execute sync task login_callback end
+[2019-11-05 16:09:33:213] file:NIMTaskEngine.mm line: 107)<<<<core queue sync task login_callback in main thread end
+[2019-11-05 16:09:33:213] file:auth_service.cpp line: 204)<<<<begin to sync
+[2019-11-05 16:09:33:213] file:sync_service.cpp line: 161)<<<<begin to sync: 
+tag 1 value 1572940199138
+tag 2 value 1
+tag 3 value 0
+tag 4 value 0
+tag 6 value 1
+tag 7 value 1572940199158
+tag 9 value 0
+tag 11 value 1572940199139
+tag 13 value 1572940199140
+tag 14 value 0
+tag 16 value 0
+tag 17 value 0
+tag 18 value 0
+tag 19 value 0
+tag 20 value 0
+tag 21 value 0
+
+[2019-11-05 16:09:33:213] file:link_sender.h line: 39)<<<<Send Packet : SID 5 CID 1 SER 2
+[2019-11-05 16:09:33:214] file:core_task.h line: 88)<<<<Waitable LinkFrame SID 2 CID 2 SER 1 Handled
+[2019-11-05 16:09:33:275] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 4 CID 6 SER 2 RES 200
+[2019-11-05 16:09:33:280] file:core_task.h line: 83)<<<<Handle LinkFrame SID 4 CID 6 SER 2
+[2019-11-05 16:09:33:313] file:NIMSystemNotificationReceiver.mm line: 114)<<<<fire custom notifications 1
+[2019-11-05 16:09:33:313] file:NIMTaskEngine.mm line: 80)<<<<core queue sync task custom_notifications in main thread begin
+[2019-11-05 16:09:33:313] file:NIMTaskEngine.mm line: 83)<<<<execute sync task  custom_notifications begin
+[2019-11-05 16:09:33:341] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 4 CID 15 SER 2 RES 200
+[2019-11-05 16:09:33:347] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 5 CID 1 SER 2 RES 200
+[2019-11-05 16:09:33:514] file:NIMTaskEngine.mm line: 88)<<<<execute sync task custom_notifications end
+[2019-11-05 16:09:33:517] file:NIMTaskEngine.mm line: 107)<<<<core queue sync task custom_notifications in main thread end
+[2019-11-05 16:09:33:517] file:link_sender.h line: 39)<<<<Send Packet : SID 4 CID 5 SER 3
+[2019-11-05 16:09:33:518] file:core_task.h line: 83)<<<<Handle LinkFrame SID 4 CID 15 SER 2
+[2019-11-05 16:09:33:518] file:core_task.h line: 83)<<<<Handle LinkFrame SID 5 CID 1 SER 2
+[2019-11-05 16:09:33:518] file:sync_service.cpp line: 88)<<<<sync completed 200
+[2019-11-05 16:09:33:518] file:document.cpp line: 151)<<<<save document begin
+[2019-11-05 16:09:33:524] file:document.cpp line: 189)<<<<save document size 1736
+[2019-11-05 16:09:33:545] file:document.cpp line: 199)<<<<save document end
+[2019-11-05 16:09:34:194] file:NIMNOSTokenManager.mm line: 555)<<<<--- refresh nos token : 0, scene : nim_system
+[2019-11-05 16:09:34:194] file:NIMNOSTokenManager.mm line: 555)<<<<--- refresh nos token : 0, scene : nim_icon
+[2019-11-05 16:09:34:197] file:NIMDataTracker.m line: 157)<<<<ndtk refresh data
+[2019-11-05 16:09:34:197] file:NIMAntispamManager.mm line: 77)<<<<local antispam file version 0
+[2019-11-05 16:09:34:197] file:NIMDataTracker.m line: 213)<<<<ndtk refresh data empty
+[2019-11-05 16:09:34:198] file:link_sender.h line: 39)<<<<Send Packet : SID 6 CID 1 SER 4
+[2019-11-05 16:09:34:200] file:link_sender.h line: 39)<<<<Send Packet : SID 6 CID 1 SER 5
+[2019-11-05 16:09:34:201] file:link_sender.h line: 39)<<<<Send Packet : SID 6 CID 17 SER 6
+[2019-11-05 16:09:34:239] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 6 CID 1 SER 4 RES 200
+[2019-11-05 16:09:34:239] file:core_task.h line: 83)<<<<Handle LinkFrame SID 6 CID 1 SER 4
+[2019-11-05 16:09:34:243] file:core_task.h line: 88)<<<<Waitable LinkFrame SID 6 CID 1 SER 4 Handled
+[2019-11-05 16:09:34:262] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 6 CID 17 SER 6 RES 403
+[2019-11-05 16:09:34:262] file:core_task.h line: 83)<<<<Handle LinkFrame SID 6 CID 17 SER 6
+[2019-11-05 16:09:34:263] file:NIMAntispamManager.mm line: 88)<<<<update antispam file version 0 , md5  , url 
+[2019-11-05 16:09:34:265] file:core_task.h line: 88)<<<<Waitable LinkFrame SID 6 CID 17 SER 6 Handled
+[2019-11-05 16:09:34:266] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 6 CID 1 SER 5 RES 200
+[2019-11-05 16:09:34:267] file:core_task.h line: 83)<<<<Handle LinkFrame SID 6 CID 1 SER 5
+[2019-11-05 16:09:34:271] file:core_task.h line: 88)<<<<Waitable LinkFrame SID 6 CID 1 SER 5 Handled
+[2019-11-05 16:13:04:531] file:NIMSDK.mm line: 75)<<<<SDK init begin
+[2019-11-05 16:13:04:531] file:NIMServerSetting.m line: 144)<<<<using default server setting
+[2019-11-05 16:13:04:531] file:NIMSDK.mm line: 83)<<<<SDK init end
+[2019-11-05 16:13:04:532] file:NIMLoginManager.mm line: 306)<<<<Call SDK API -[NIMLoginManager addDelegate:]
+[2019-11-05 16:13:04:533] file:NIMChatManagerWrapper.mm line: 264)<<<<Call SDK API -[NIMChatManagerWrapper addDelegate:]
+[2019-11-05 16:13:04:533] file:NIMSystemNotificationManagerWrapper.mm line: 137)<<<<Call SDK API -[NIMSystemNotificationManagerWrapper addDelegate:]
+[2019-11-05 16:13:04:534] file:NIMNetCallManagerWrapper.mm line: 843)<<<<Call SDK API -[NIMNetCallManagerWrapper addDelegate:]
+[2019-11-05 16:13:04:556] file:NIMSDK.mm line: 138)<<<<
+SDK started
+app key 87dae6933488de4bab789054a3a5c720
+local device id A0584656-E119-437C-BB34-B342BF88BAA4
+local session id 0b0f1f27-47d7-4870-b28c-1e042a3cdb13
+device description (肖君的 iPhone) (iPhone) (iOS) (12.1.4) idfv BD5A11BB-5C02-4C88-922D-D8776690FF94 client type 2
+server setting 
+{
+server setting:
+lbs : https://lbs.netease.im/lbs/conf.jsp
+link : link.netease.im:8080
+nos lbs : https://wannos.127.net/lbs
+https 1
+upload addr : https://nosup-hz1.127.net host : nosup-hz1.127.net
+download : {bucket}-nosdn.netease.im/{object}
+acc host nos.netease.com vs addr {bucket}-nosdn.netease.im/{object}
+nt : https://dr.netease.im/1.gif
+bd : https://dt.netease.im/api
+module 0081c4bb...6dd131bf version 0
+}
+
+sdk config 
+{
+sdk version 6.0.0
+internal version 57
+protocol version 1
+git version 8eeaee597
+dir (null)
+auto fetch attachment 1 chatroom 0
+file protection none 0
+onlinestate enabled 0
+sync unread count 1
+team notification unread 0
+log days 7
+ai thumb 0
+enable https [i,m] = [1,1]
+bk reconnect disabled 0
+team receipt 0
+}
+
+root sdk attributes {
+	NSFileOwnerAccountID = 501;
+	NSFileSystemFileNumber = 7199566;
+	NSFileExtensionHidden = 0;
+	NSFileSystemNumber = 16777218;
+	NSFileSize = 160;
+	NSFileGroupOwnerAccountID = 501;
+	NSFileOwnerAccountName = mobile;
+	NSFileCreationDate = 2019-11-05 07:46:52 +0000;
+	NSFilePosixPermissions = 493;
+	NSFileType = NSFileTypeDirectory;
+	NSFileGroupOwnerAccountName = mobile;
+	NSFileReferenceCount = 5;
+	NSFileModificationDate = 2019-11-05 07:46:52 +0000;
+}
+
+
+[2019-11-05 16:13:04:558] file:NIMLbsManager.mm line: 327)<<<<{
+type :link
+hosts: 106.2.126.81:8080 106.2.124.100:8080 59.111.28.216:8080 59.111.28.212:8080 59.111.166.181:9092 59.111.166.92:8080 59.111.164.246:8080 106.2.126.86:8080 106.2.124.23:8080 link.netease.im:8080 
+default host:link.netease.im:8080
+index: 0
+}
+[2019-11-05 16:13:04:559] file:NIMLbsManager.mm line: 335)<<<<{
+type :nos
+hosts: https://116.211.99.242 https://45.127.128.24 https://nosup-hz1.127.net 
+default host:https://nosup-hz1.127.net
+index: 0
+}
+[2019-11-05 16:13:04:560] file:NIMDataTracker.m line: 251)<<<<ndtk refresh config
+[2019-11-05 16:13:04:655] file:NIMLoginManager.mm line: 306)<<<<Call SDK API -[NIMLoginManager addDelegate:]
+[2019-11-05 16:13:04:655] file:NIMChatManagerWrapper.mm line: 264)<<<<Call SDK API -[NIMChatManagerWrapper addDelegate:]
+[2019-11-05 16:13:04:655] file:NIMSystemNotificationManagerWrapper.mm line: 137)<<<<Call SDK API -[NIMSystemNotificationManagerWrapper addDelegate:]
+[2019-11-05 16:13:04:655] file:NIMNetCallManagerWrapper.mm line: 843)<<<<Call SDK API -[NIMNetCallManagerWrapper addDelegate:]
+[2019-11-05 16:13:04:659] file:NIMSDK.mm line: 138)<<<<
+SDK started
+app key 87dae6933488de4bab789054a3a5c720
+local device id A0584656-E119-437C-BB34-B342BF88BAA4
+local session id 0b0f1f27-47d7-4870-b28c-1e042a3cdb13
+device description (肖君的 iPhone) (iPhone) (iOS) (12.1.4) idfv BD5A11BB-5C02-4C88-922D-D8776690FF94 client type 2
+server setting 
+{
+server setting:
+lbs : https://lbs.netease.im/lbs/conf.jsp
+link : link.netease.im:8080
+nos lbs : https://wannos.127.net/lbs
+https 1
+upload addr : https://nosup-hz1.127.net host : nosup-hz1.127.net
+download : {bucket}-nosdn.netease.im/{object}
+acc host nos.netease.com vs addr {bucket}-nosdn.netease.im/{object}
+nt : https://dr.netease.im/1.gif
+bd : https://dt.netease.im/api
+module 0081c4bb...6dd131bf version 0
+}
+
+sdk config 
+{
+sdk version 6.0.0
+internal version 57
+protocol version 1
+git version 8eeaee597
+dir (null)
+auto fetch attachment 1 chatroom 0
+file protection none 0
+onlinestate enabled 0
+sync unread count 1
+team notification unread 0
+log days 7
+ai thumb 0
+enable https [i,m] = [1,1]
+bk reconnect disabled 0
+team receipt 0
+}
+
+root sdk attributes {
+	NSFileOwnerAccountID = 501;
+	NSFileSystemFileNumber = 7199566;
+	NSFileExtensionHidden = 0;
+	NSFileSystemNumber = 16777218;
+	NSFileSize = 160;
+	NSFileGroupOwnerAccountID = 501;
+	NSFileOwnerAccountName = mobile;
+	NSFileCreationDate = 2019-11-05 07:46:52 +0000;
+	NSFilePosixPermissions = 493;
+	NSFileType = NSFileTypeDirectory;
+	NSFileGroupOwnerAccountName = mobile;
+	NSFileReferenceCount = 5;
+	NSFileModificationDate = 2019-11-05 07:46:52 +0000;
+}
+
+
+[2019-11-05 16:13:04:660] file:NIMDataTracker.m line: 251)<<<<ndtk refresh config
+[2019-11-05 16:13:04:828] file:NIMDataTracker.m line: 267)<<<<ndtk refresh config response 200
+[2019-11-05 16:13:04:955] file:NIMDataTracker.m line: 267)<<<<ndtk refresh config response 200
+[2019-11-05 16:13:08:086] file:NIMLbsManager.mm line: 88)<<<<query lbs for link lbs
+[2019-11-05 16:13:08:086] file:NIMLbsManager.mm line: 93)<<<<begin to query lbs link lbs
+[2019-11-05 16:13:08:086] file:core_manager.cpp line: 191)<<<<query core while queue is closing
+[2019-11-05 16:13:08:086] file:NIMCoreCenter.mm line: 110)<<<<uid is empty
+[2019-11-05 16:13:08:087] file:NIMLbsManager.mm line: 88)<<<<query lbs for nos lbs
+[2019-11-05 16:13:08:087] file:NIMLbsManager.mm line: 93)<<<<begin to query lbs nos lbs
+[2019-11-05 16:13:08:088] file:NIMLbsManager.mm line: 88)<<<<query lbs for link lbs
+[2019-11-05 16:13:08:088] file:NIMLbsManager.mm line: 88)<<<<query lbs for nos lbs
+[2019-11-05 16:13:08:228] file:NIMLoginManager.mm line: 86)<<<<Call SDK API -[NIMLoginManager login:token:completion:]
+[2019-11-05 16:13:08:228] file:NIMLoginManager.mm line: 88)<<<<app raise login
+[2019-11-05 16:13:08:228] file:NIMLoginManager.mm line: 323)<<<<reset begin mode 1
+[2019-11-05 16:13:08:228] file:core_manager.cpp line: 62)<<<<close core begin
+[2019-11-05 16:13:08:228] file:core_manager.cpp line: 70)<<<<close core end
+[2019-11-05 16:13:08:228] file:core_manager.cpp line: 21)<<<<create core begin
+[2019-11-05 16:13:08:231] file:core_manager.cpp line: 117)<<<<update core closing state 0
+[2019-11-05 16:13:08:231] file:core_manager.cpp line: 43)<<<<create core end
+[2019-11-05 16:13:08:231] file:NIMCoreCenter.mm line: 96)<<<<yixin core start
+[2019-11-05 16:13:08:231] file:NIMLinkListener.mm line: 251)<<<<try to connect link ...
+[2019-11-05 16:13:08:231] file:NIMLinkListener.mm line: 290)<<<<begin to connect
+[2019-11-05 16:13:08:231] file:NIMLoginManager.mm line: 335)<<<<reset end mode 1
+[2019-11-05 16:13:08:237] file:NIMLbsManager.mm line: 285)<<<<{
+type :link
+hosts: 106.2.126.81:8080 106.2.124.100:8080 59.111.28.216:8080 59.111.28.212:8080 59.111.166.181:9092 59.111.166.92:8080 59.111.164.246:8080 106.2.126.86:8080 106.2.124.23:8080 link.netease.im:8080 
+default host:link.netease.im:8080
+index: 0
+} out of range, query link lbs lbs in 5 seconds 0
+[2019-11-05 16:13:08:237] file:auth_task.h line: 34)<<<<Login Step: GetLinkAddress OK, addr: 106.2.126.81, port: 8080
+[2019-11-05 16:13:08:237] file:auth_task.h line: 56)<<<<Begin to Connect Link Server 106.2.126.81 port 8080
+[2019-11-05 16:13:08:238] file:link_socket.cpp line: 89)<<<<Connect Host (App Link)
+[2019-11-05 16:13:08:238] file:link_socket.cpp line: 97)<<<<Wait For Closing Socket (App Link)
+[2019-11-05 16:13:08:238] file:link_socket.cpp line: 105)<<<<Socket Closed (App Link)
+[2019-11-05 16:13:08:238] file:link_socket.cpp line: 107)<<<<Socket Thread Closed (App Link)
+[2019-11-05 16:13:08:251] file:link_socket.cpp line: 115)<<<<Begin:Wait For Connect Task (App Link)
+[2019-11-05 16:13:08:252] file:link_socket.cpp line: 126)<<<<Enter Connect Task (App Link)
+[2019-11-05 16:13:08:253] file:nio_host.cpp line: 18)<<<<Get Address Info 106.2.126.81:8080 Begin
+[2019-11-05 16:13:08:255] file:nio_host.cpp line: 51)<<<<Ipv4 Context Address 106.2.126.81
+[2019-11-05 16:13:08:255] file:nio_host.cpp line: 56)<<<<Get Address Info 106.2.126.81:8080 Error 0
+[2019-11-05 16:13:08:256] file:link_socket.cpp line: 154)<<<<Call Connect Host 106.2.126.81 port 8080 code -1 (App Link)
+[2019-11-05 16:13:08:256] file:link_socket.cpp line: 155)<<<<Exit Connect Task (App Link)
+[2019-11-05 16:13:08:260] file:NIMLinkListener.mm line: 127)<<<<get connection notification: {
+	NIMConnectStep = 0;
+	NIMRespCode = 200;
+}
+
+[2019-11-05 16:13:08:265] file:link_socket.cpp line: 119)<<<<End:Wait For Connect Task (App Link)
+[2019-11-05 16:13:08:267] file:NIMSDK.mm line: 177)<<<<Call SDK API -[NIMSDK updateApnsToken:]
+[2019-11-05 16:13:08:267] file:NIMSDK.mm line: 178)<<<<apns token <b01e5261 8d98b62b 816454a7 ebe7ac5a 9177b733 4df3a7ee 4b2d50f4 73112c36>
+[2019-11-05 16:13:08:267] file:core_manager.cpp line: 80)<<<<get service id 3 failed
+[2019-11-05 16:13:08:578] file:NIMLinkListener.mm line: 127)<<<<get connection notification: {
+	NIMConnectStep = 1;
+	NIMRespCode = 200;
+}
+
+[2019-11-05 16:13:08:579] file:NIMLoginHelper.mm line: 241)<<<<using im username 29cdae91fbc64318b608d2db598f0d4c
+[2019-11-05 16:13:08:580] file:NIMLoginHelper.mm line: 259)<<<<using im token
+[2019-11-05 16:13:08:580] file:NIMLoginOperation.m line: 36)<<<<get login mode manual forced mode 0
+[2019-11-05 16:13:08:580] file:NIMLoginHelper.mm line: 226)<<<<im tags 3,4,6,8,9,10,11,12,13,16,18,19,25,26,27,30,1000
+[2019-11-05 16:13:08:580] file:auth_service.cpp line: 132)<<<<set login app link timeout 30
+[2019-11-05 16:13:08:580] file:NIMLoginManager.mm line: 435)<<<<raise login task id 3 , via WIFI
+[2019-11-05 16:13:08:582] file:link_sender.h line: 39)<<<<Send Packet : SID 1 CID 1 SER 0
+[2019-11-05 16:13:08:584] file:NIMLbsManager.mm line: 115)<<<<query completed <NSHTTPURLResponse: 0x281354940> { URL: https://wannos.127.net/lbs?version=1.0 } { Status Code: 200, Headers {
+	Server = (
+	ngx_openresty/1.4.3.6,
+);
+	Content-Type = (
+	application/json,
+);
+	Access-Control-Allow-Origin = (
+	*,
+);
+	X-Nos-Request-Id = (
+	bf76ba6c0a7a000000005dc12f140116,
+);
+	Date = (
+	Tue, 05 Nov 2019 08:13:08 GMT,
+);
+	Content-Length = (
+	93,
+);
+	Connection = (
+	keep-alive,
+);
+}
+ } error (null) for nos lbs
+[2019-11-05 16:13:08:585] file:NIMLbsManager.mm line: 335)<<<<{
+type :nos
+hosts: https://116.211.99.242 https://45.127.128.24 https://nosup-hz1.127.net 
+default host:https://nosup-hz1.127.net
+index: 0
+}
+[2019-11-05 16:13:08:618] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 1 CID 1 SER 0 RES 200
+[2019-11-05 16:13:08:619] file:core_task.h line: 83)<<<<Handle LinkFrame SID 1 CID 1 SER 0
+[2019-11-05 16:13:08:629] file:NIMLbsManager.mm line: 115)<<<<query completed <NSHTTPURLResponse: 0x281355a00> { URL: https://lbs.netease.im/lbs/conf.jsp?sv=57&pv=1&tp=2&k=87dae6933488de4bab789054a3a5c720 } { Status Code: 200, Headers {
+	Transfer-Encoding = (
+	Identity,
+);
+	Content-Type = (
+	text/html;charset=UTF-8,
+);
+	Connection = (
+	keep-alive,
+);
+	Server = (
+	nginx,
+);
+	Date = (
+	Tue, 05 Nov 2019 08:13:08 GMT,
+);
+	Content-Encoding = (
+	gzip,
+);
+	Vary = (
+	Accept-Encoding,
+);
+}
+ } error (null) for link lbs
+[2019-11-05 16:13:08:629] file:NIMLbsManager.mm line: 327)<<<<{
+type :link
+hosts: 59.111.166.92:8080 59.111.166.92:8080 106.2.124.100:8080 106.2.127.199:8080 59.111.29.116:8080 106.2.126.78:8080 59.111.31.190:8080 106.2.126.78:8080 106.2.126.81:8080 link.netease.im:8080 
+default host:link.netease.im:8080
+index: 0
+}
+[2019-11-05 16:13:08:657] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 2 CID 2 SER 1 RES 200
+[2019-11-05 16:13:08:661] file:core_task.h line: 83)<<<<Handle LinkFrame SID 2 CID 2 SER 1
+[2019-11-05 16:13:08:661] file:document.cpp line: 441)<<<<load document begin
+[2019-11-05 16:13:08:662] file:document.cpp line: 446)<<<<load document size 1736
+[2019-11-05 16:13:08:663] file:document.cpp line: 504)<<<<load document end
+[2019-11-05 16:13:08:663] file:auth_service.cpp line: 173)<<<<
+
+login success 29cdae91fbc64318b608d2db598f0d4c
+ip 113.246.184.70
+local device id A0584656-E119-437C-BB34-B342BF88BAA4
+remote device id A0584656-E119-437C-BB34-B342BF88BAA4
+connect id 5c6acacc-4290-432c-b218-a56cfa03ae91
+customTag is 
+
+[2019-11-05 16:13:08:663] file:NIMTaskEngine.mm line: 80)<<<<core queue sync task login_callback in main thread begin
+[2019-11-05 16:13:08:719] file:NIMTaskEngine.mm line: 83)<<<<execute sync task  login_callback begin
+[2019-11-05 16:13:08:719] file:NIMLoginManager.mm line: 451)<<<<receive login callback: operation uid 29cdae91fbc64318b608d2db598f0d4c app login mode manual forced mode 0 has handler 1 code 200
+[2019-11-05 16:13:08:719] file:NIMCoreCenter.mm line: 121)<<<<setup core by 29cdae91fbc64318b608d2db598f0d4c
+[2019-11-05 16:13:08:719] file:NIMCoreCenter.mm line: 287)<<<<add document watcher
+[2019-11-05 16:13:08:723] file:NIMNVSManager.mm line: 68)<<<<NVS version 1_46
+[2019-11-05 16:13:08:725] file:NIMLoginManager.mm line: 511)<<<<login ok
+[2019-11-05 16:13:08:725] file:NIMTaskEngine.mm line: 88)<<<<execute sync task login_callback end
+[2019-11-05 16:13:08:725] file:NIMTaskEngine.mm line: 107)<<<<core queue sync task login_callback in main thread end
+[2019-11-05 16:13:08:725] file:auth_service.cpp line: 204)<<<<begin to sync
+[2019-11-05 16:13:08:725] file:sync_service.cpp line: 161)<<<<begin to sync: 
+tag 1 value 1572940199138
+tag 2 value 1
+tag 3 value 0
+tag 4 value 0
+tag 6 value 1
+tag 7 value 1572941373267
+tag 9 value 0
+tag 11 value 1572940199139
+tag 13 value 1572940199140
+tag 14 value 0
+tag 16 value 0
+tag 17 value 0
+tag 18 value 0
+tag 19 value 0
+tag 20 value 0
+tag 21 value 0
+
+[2019-11-05 16:13:08:725] file:link_sender.h line: 39)<<<<Send Packet : SID 5 CID 1 SER 2
+[2019-11-05 16:13:08:725] file:core_task.h line: 88)<<<<Waitable LinkFrame SID 2 CID 2 SER 1 Handled
+[2019-11-05 16:13:08:795] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 4 CID 15 SER 2 RES 200
+[2019-11-05 16:13:08:796] file:core_task.h line: 83)<<<<Handle LinkFrame SID 4 CID 15 SER 2
+[2019-11-05 16:13:08:824] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 5 CID 1 SER 2 RES 200
+[2019-11-05 16:13:08:825] file:core_task.h line: 83)<<<<Handle LinkFrame SID 5 CID 1 SER 2
+[2019-11-05 16:13:08:825] file:sync_service.cpp line: 88)<<<<sync completed 200
+[2019-11-05 16:13:08:825] file:document.cpp line: 151)<<<<save document begin
+[2019-11-05 16:13:08:829] file:document.cpp line: 189)<<<<save document size 1736
+[2019-11-05 16:13:08:832] file:document.cpp line: 199)<<<<save document end
+[2019-11-05 16:13:11:777] file:NIMAntispamManager.mm line: 77)<<<<local antispam file version 0
+[2019-11-05 16:13:11:777] file:NIMDataTracker.m line: 157)<<<<ndtk refresh data
+[2019-11-05 16:13:11:777] file:NIMDataTracker.m line: 213)<<<<ndtk refresh data empty
+[2019-11-05 16:13:11:780] file:link_sender.h line: 39)<<<<Send Packet : SID 6 CID 17 SER 3
+[2019-11-05 16:13:11:811] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 6 CID 17 SER 3 RES 403
+[2019-11-05 16:13:11:812] file:core_task.h line: 83)<<<<Handle LinkFrame SID 6 CID 17 SER 3
+[2019-11-05 16:13:11:812] file:NIMAntispamManager.mm line: 88)<<<<update antispam file version 0 , md5  , url 
+[2019-11-05 16:13:11:812] file:core_task.h line: 88)<<<<Waitable LinkFrame SID 6 CID 17 SER 3 Handled
+[2019-11-05 16:13:19:656] file:NIMLogCleaner.m line: 28)<<<<clean log cache begin max days 7
+[2019-11-05 16:13:19:657] file:NIMLogCleaner.m line: 71)<<<<clean log cache end 0 disk space released
+[2019-11-05 16:13:41:817] file:link_socket.cpp line: 535)<<<<Socket Read Idle (App Link)
+[2019-11-05 16:13:41:817] file:link_sender.h line: 39)<<<<Send Packet : SID 1 CID 2 SER 0
+[2019-11-05 16:13:41:944] file:yixin_core_impl.cpp line: 635)<<<<Receive Packet : SID 1 CID 2 SER 0 RES 200
+[2019-11-05 16:13:41:945] file:core_task.h line: 83)<<<<Handle LinkFrame SID 1 CID 2 SER 0
+[2019-11-05 16:14:02:453] file:NIMSDK.mm line: 75)<<<<SDK init begin
+[2019-11-05 16:14:02:453] file:NIMServerSetting.m line: 144)<<<<using default server setting
+[2019-11-05 16:14:02:453] file:NIMSDK.mm line: 83)<<<<SDK init end
+[2019-11-05 16:14:02:456] file:NIMLoginManager.mm line: 306)<<<<Call SDK API -[NIMLoginManager addDelegate:]
+[2019-11-05 16:14:02:457] file:NIMChatManagerWrapper.mm line: 264)<<<<Call SDK API -[NIMChatManagerWrapper addDelegate:]
+[2019-11-05 16:14:02:457] file:NIMSystemNotificationManagerWrapper.mm line: 137)<<<<Call SDK API -[NIMSystemNotificationManagerWrapper addDelegate:]
+[2019-11-05 16:14:02:459] file:NIMNetCallManagerWrapper.mm line: 843)<<<<Call SDK API -[NIMNetCallManagerWrapper addDelegate:]
+[2019-11-05 16:14:02:478] file:NIMSDK.mm line: 138)<<<<
+SDK started
+app key 87dae6933488de4bab789054a3a5c720
+local device id A0584656-E119-437C-BB34-B342BF88BAA4
+local session id 88d899ab-1c1a-48e4-a0ec-fdf9ec2b9985
+device description (肖君的 iPhone) (iPhone) (iOS) (12.1.4) idfv BD5A11BB-5C02-4C88-922D-D8776690FF94 client type 2
+server setting 
+{
+server setting:
+lbs : https://lbs.netease.im/lbs/conf.jsp
+link : link.netease.im:8080
+nos lbs : https://wannos.127.net/lbs
+https 1
+upload addr : https://nosup-hz1.127.net host : nosup-hz1.127.net
+download : {bucket}-nosdn.netease.im/{object}
+acc host nos.netease.com vs addr {bucket}-nosdn.netease.im/{object}
+nt : https://dr.netease.im/1.gif
+bd : https://dt.netease.im/api
+module 0081c4bb...6dd131bf version 0
+}
+
+sdk config 
+{
+sdk version 6.0.0
+internal version 57
+protocol version 1
+git version 8eeaee597
+dir (null)
+auto fetch attachment 1 chatroom 0
+file protection none 0
+onlinestate enabled 0
+sync unread count 1
+team notification unread 0
+log days 7
+ai thumb 0
+enable https [i,m] = [1,1]
+bk reconnect disabled 0
+team receipt 0
+}
+
+root sdk attributes {
+	NSFileOwnerAccountID = 501;
+	NSFileSystemFileNumber = 7199566;
+	NSFileExtensionHidden = 0;
+	NSFileSystemNumber = 16777218;
+	NSFileSize = 160;
+	NSFileGroupOwnerAccountID = 501;
+	NSFileOwnerAccountName = mobile;
+	NSFileCreationDate = 2019-11-05 07:46:52 +0000;
+	NSFilePosixPermissions = 493;
+	NSFileType = NSFileTypeDirectory;
+	NSFileGroupOwnerAccountName = mobile;
+	NSFileReferenceCount = 5;
+	NSFileModificationDate = 2019-11-05 07:46:52 +0000;
+}
+
+
+[2019-11-05 16:14:02:481] file:NIMLbsManager.mm line: 327)<<<<{
+type :link
+hosts: 59.111.166.92:8080 59.111.166.92:8080 106.2.124.100:8080 106.2.127.199:8080 59.111.29.116:8080 106.2.126.78:8080 59.111.31.190:8080 106.2.126.78:8080 106.2.126.81:8080 link.netease.im:8080 
+default host:link.netease.im:8080
+index: 0
+}
+[2019-11-05 16:14:02:482] file:NIMLbsManager.mm line: 335)<<<<{
+type :nos
+hosts: https://116.211.99.242 https://45.127.128.24 https://nosup-hz1.127.net 
+default host:https://nosup-hz1.127.net
+index: 0
+}
+[2019-11-05 16:14:02:482] file:NIMDataTracker.m line: 251)<<<<ndtk refresh config
+[2019-11-05 16:14:02:584] file:NIMLoginManager.mm line: 306)<<<<Call SDK API -[NIMLoginManager addDelegate:]
+[2019-11-05 16:14:02:584] file:NIMChatManagerWrapper.mm line: 264)<<<<Call SDK API -[NIMChatManagerWrapper addDelegate:]
+[2019-11-05 16:14:02:584] file:NIMSystemNotificationManagerWrapper.mm line: 137)<<<<Call SDK API -[NIMSystemNotificationManagerWrapper addDelegate:]
+[2019-11-05 16:14:02:584] file:NIMNetCallManagerWrapper.mm line: 843)<<<<Call SDK API -[NIMNetCallManagerWrapper addDelegate:]
+[2019-11-05 16:14:02:589] file:NIMSDK.mm line: 138)<<<<
+SDK started
+app key 87dae6933488de4bab789054a3a5c720
+local device id A0584656-E119-437C-BB34-B342BF88BAA4
+local session id 88d899ab-1c1a-48e4-a0ec-fdf9ec2b9985
+device description (肖君的 iPhone) (iPhone) (iOS) (12.1.4) idfv BD5A11BB-5C02-4C88-922D-D8776690FF94 client type 2
+server setting 
+{
+server setting:
+lbs : https://lbs.netease.im/lbs/conf.jsp
+link : link.netease.im:8080
+nos lbs : https://wannos.127.net/lbs
+https 1
+upload addr : https://nosup-hz1.127.net host : nosup-hz1.127.net
+download : {bucket}-nosdn.netease.im/{object}
+acc host nos.netease.com vs addr {bucket}-nosdn.netease.im/{object}
+nt : https://dr.netease.im/1.gif
+bd : https://dt.netease.im/api
+module 0081c4bb...6dd131bf version 0
+}
+
+sdk config 
+{
+sdk version 6.0.0
+internal version 57
+protocol version 1
+git version 8eeaee597
+dir (null)
+auto fetch attachment 1 chatroom 0
+file protection none 0
+onlinestate enabled 0
+sync unread count 1
+team notification unread 0
+log days 7
+ai thumb 0
+enable https [i,m] = [1,1]
+bk reconnect disabled 0
+team receipt 0
+}
+
+root sdk attributes {
+	NSFileOwnerAccountID = 501;
+	NSFileSystemFileNumber = 7199566;
+	NSFileExtensionHidden = 0;
+	NSFileSystemNumber = 16777218;
+	NSFileSize = 160;
+	NSFileGroupOwnerAccountID = 501;
+	NSFileOwnerAccountName = mobile;
+	NSFileCreationDate = 2019-11-05 07:46:52 +0000;
+	NSFilePosixPermissions = 493;
+	NSFileType = NSFileTypeDirectory;
+	NSFileGroupOwnerAccountName = mobile;
+	NSFileReferenceCount = 5;
+	NSFileModificationDate = 2019-11-05 07:46:52 +0000;
+}
+
+
+[2019-11-05 16:14:02:589] file:NIMDataTracker.m line: 251)<<<<ndtk refresh config
+[2019-11-05 16:14:02:746] file:NIMDataTracker.m line: 267)<<<<ndtk refresh config response 200
+[2019-11-05 16:14:02:912] file:NIMDataTracker.m line: 267)<<<<ndtk refresh config response 200
+[2019-11-05 16:14:05:953] file:NIMLbsManager.mm line: 88)<<<<query lbs for link lbs
+[2019-11-05 16:14:05:953] file:NIMLbsManager.mm line: 93)<<<<begin to query lbs link lbs
+[2019-11-05 16:14:05:954] file:core_manager.cpp line: 191)<<<<query core while queue is closing
+[2019-11-05 16:14:05:954] file:NIMCoreCenter.mm line: 110)<<<<uid is empty
+[2019-11-05 16:14:05:954] file:NIMLbsManager.mm line: 88)<<<<query lbs for nos lbs
+[2019-11-05 16:14:05:954] file:NIMLbsManager.mm line: 93)<<<<begin to query lbs nos lbs
+[2019-11-05 16:14:05:955] file:NIMLbsManager.mm line: 88)<<<<query lbs for link lbs
+[2019-11-05 16:14:05:955] file:NIMLbsManager.mm line: 88)<<<<query lbs for nos lbs
+[2019-11-05 16:14:06:141] file:NIMLoginManager.mm line: 86)<<<<Call SDK API -[NIMLoginManager login:token:completion:]
+[2019-11-05 16:14:06:141] file:NIMLoginManager.mm line: 88)<<<<app raise login
+[2019-11-05 16:14:06:141] file:NIMLoginManager.mm line: 323)<<<<reset begin mode 1
+[2019-11-05 16:14:06:141] file:core_manager.cpp line: 62)<<<<close core begin
+[2019-11-05 16:14:06:141] file:core_manager.cpp line: 70)<<<<close core end
+[2019-11-05 16:14:06:141] file:core_manager.cpp line: 21)<<<<create core begin
+[2019-11-05 16:14:06:148] file:core_manager.cpp line: 117)<<<<update core closing state 0
+[2019-11-05 16:14:06:148] file:core_manager.cpp line: 43)<<<<create core end
+[2019-11-05 16:14:06:150] file:NIMCoreCenter.mm line: 96)<<<<yixin core start
+[2019-11-05 16:14:06:150] file:NIMLinkListener.mm line: 251)<<<<try to connect link ...
+[2019-11-05 16:14:06:150] file:NIMLinkListener.mm line: 290)<<<<begin to connect
+[2019-11-05 16:14:06:150] file:NIMLoginManager.mm line: 335)<<<<reset end mode 1
+[2019-11-05 16:14:06:151] file:NIMLbsManager.mm line: 285)<<<<{
+type :link
+hosts: 59.111.166.92:8080 59.111.166.92:8080 106.2.124.100:8080 106.2.127.199:8080 59.111.29.116:8080 106.2.126.78:8080 59.111.31.190:8080 106.2.126.78:8080 106.2.126.81:8080 link.netease.im:8080 
+default host:link.netease.im:8080
+index: 0
+} out of range, query link lbs lbs in 5 seconds 0
+[2019-11-05 16:14:06:151] file:auth_task.h line: 34)<<<<Login Step: GetLinkAddress OK, addr: 59.111.166.92, port: 8080
+[2019-11-05 16:14:06:151] file:auth_task.h line: 56)<<<<Begin to Connect Link Server 59.111.166.92 port 8080
+[2019-11-05 16:14:06:151] file:link_socket.cpp line: 89)<<<<Connect Host (App Link)
