@@ -410,6 +410,12 @@
 		55FE57222366DF87008056C9 /* PSArticleReportCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE57212366DF87008056C9 /* PSArticleReportCell.m */; };
 		55FE57252366DFA7008056C9 /* PSReportArticleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE57232366DFA7008056C9 /* PSReportArticleViewModel.m */; };
 		E473341141BF7F02638F5529 /* libPods-DAudiobook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A489DFF9190310E891E597 /* libPods-DAudiobook.a */; };
+		EA14E52023701FBF00721A57 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = EA14E51523701FBE00721A57 /* LICENSE */; };
+		EA14E52123701FBF00721A57 /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA14E51923701FBE00721A57 /* UITableView+FDTemplateLayoutCell.m */; };
+		EA14E52223701FBF00721A57 /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EA14E51B23701FBE00721A57 /* UITableView+FDKeyedHeightCache.m */; };
+		EA14E52323701FBF00721A57 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = EA14E51C23701FBE00721A57 /* UITableView+FDTemplateLayoutCellDebug.m */; };
+		EA14E52423701FBF00721A57 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EA14E51D23701FBE00721A57 /* UITableView+FDIndexPathHeightCache.m */; };
+		EA14E52523701FBF00721A57 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EA14E51F23701FBE00721A57 /* README.md */; };
 		EA448EA723667B59008AB0FB /* DStorageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA448EA623667B59008AB0FB /* DStorageViewController.m */; };
 		EA448EAD23667CE5008AB0FB /* DStorageLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = EA448EAC23667CE5008AB0FB /* DStorageLogic.m */; };
 		EA4D2C9E23506A7E001D376F /* UMSocialNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4D2C9D23506A7D001D376F /* UMSocialNetwork.framework */; };
@@ -1575,6 +1581,16 @@
 		55FE57242366DFA7008056C9 /* PSReportArticleViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSReportArticleViewModel.h; sourceTree = "<group>"; };
 		77A489DFF9190310E891E597 /* libPods-DAudiobook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DAudiobook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10A1B66EF6EE62C2CCE46C8 /* Pods-DAudiobook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DAudiobook.debug.xcconfig"; path = "Target Support Files/Pods-DAudiobook/Pods-DAudiobook.debug.xcconfig"; sourceTree = "<group>"; };
+		EA14E51523701FBE00721A57 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		EA14E51723701FBE00721A57 /* UITableView+FDKeyedHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDKeyedHeightCache.h"; sourceTree = "<group>"; };
+		EA14E51823701FBE00721A57 /* UITableView+FDTemplateLayoutCellDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCellDebug.h"; sourceTree = "<group>"; };
+		EA14E51923701FBE00721A57 /* UITableView+FDTemplateLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCell.m"; sourceTree = "<group>"; };
+		EA14E51A23701FBE00721A57 /* UITableView+FDIndexPathHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDIndexPathHeightCache.h"; sourceTree = "<group>"; };
+		EA14E51B23701FBE00721A57 /* UITableView+FDKeyedHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDKeyedHeightCache.m"; sourceTree = "<group>"; };
+		EA14E51C23701FBE00721A57 /* UITableView+FDTemplateLayoutCellDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCellDebug.m"; sourceTree = "<group>"; };
+		EA14E51D23701FBE00721A57 /* UITableView+FDIndexPathHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDIndexPathHeightCache.m"; sourceTree = "<group>"; };
+		EA14E51E23701FBE00721A57 /* UITableView+FDTemplateLayoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCell.h"; sourceTree = "<group>"; };
+		EA14E51F23701FBE00721A57 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EA448EA523667B59008AB0FB /* DStorageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DStorageViewController.h; sourceTree = "<group>"; };
 		EA448EA623667B59008AB0FB /* DStorageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DStorageViewController.m; sourceTree = "<group>"; };
 		EA448EAB23667CE5008AB0FB /* DStorageLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DStorageLogic.h; sourceTree = "<group>"; };
@@ -3112,6 +3128,7 @@
 		3C4A392D22681A0E00882244 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				EA14E51423701FBE00721A57 /* UITableView+FDTemplateLayoutCell */,
 				553D692F234F190600909A66 /* ZXCTimer */,
 				553D68FD234F109700909A66 /* MJCPromptsMessage */,
 				EABE0E60233E4EEA000B7345 /* PPBadgeView */,
@@ -4175,6 +4192,31 @@
 				05B736457BAB3F381552BD4D /* Pods-DAudiobook.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EA14E51423701FBE00721A57 /* UITableView+FDTemplateLayoutCell */ = {
+			isa = PBXGroup;
+			children = (
+				EA14E51523701FBE00721A57 /* LICENSE */,
+				EA14E51623701FBE00721A57 /* Classes */,
+				EA14E51F23701FBE00721A57 /* README.md */,
+			);
+			path = "UITableView+FDTemplateLayoutCell";
+			sourceTree = "<group>";
+		};
+		EA14E51623701FBE00721A57 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EA14E51723701FBE00721A57 /* UITableView+FDKeyedHeightCache.h */,
+				EA14E51823701FBE00721A57 /* UITableView+FDTemplateLayoutCellDebug.h */,
+				EA14E51923701FBE00721A57 /* UITableView+FDTemplateLayoutCell.m */,
+				EA14E51A23701FBE00721A57 /* UITableView+FDIndexPathHeightCache.h */,
+				EA14E51B23701FBE00721A57 /* UITableView+FDKeyedHeightCache.m */,
+				EA14E51C23701FBE00721A57 /* UITableView+FDTemplateLayoutCellDebug.m */,
+				EA14E51D23701FBE00721A57 /* UITableView+FDIndexPathHeightCache.m */,
+				EA14E51E23701FBE00721A57 /* UITableView+FDTemplateLayoutCell.h */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		EA448EA423667B22008AB0FB /* 存储空间 */ = {
@@ -6444,6 +6486,7 @@
 				3C4542D02275AB0600AE50B1 /* 323366.json in Resources */,
 				3C4542C72275AB0600AE50B1 /* 4412324.json in Resources */,
 				3C4542BC2275AB0600AE50B1 /* 11619979.json in Resources */,
+				EA14E52023701FBF00721A57 /* LICENSE in Resources */,
 				3C4542F72275AB0600AE50B1 /* 10886644.json in Resources */,
 				3C4542C32275AB0600AE50B1 /* 5088478.json in Resources */,
 				3C4543132275AB0600AE50B1 /* 12642314.json in Resources */,
@@ -6481,6 +6524,7 @@
 				3C4542FF2275AB0600AE50B1 /* 16043297.json in Resources */,
 				EAA21BE7233CB77900A06819 /* README.md in Resources */,
 				3C4543122275AB0600AE50B1 /* 15337303.json in Resources */,
+				EA14E52523701FBF00721A57 /* README.md in Resources */,
 				3C4542EC2275AB0600AE50B1 /* 11486281.json in Resources */,
 				3C4542F52275AB0600AE50B1 /* 6359968.json in Resources */,
 				3C4543102275AB0600AE50B1 /* 12296837.json in Resources */,
@@ -6728,6 +6772,7 @@
 				3CD2D83322998ECF00C700D7 /* DCustomPlaceHolderTextView.m in Sources */,
 				5542A7E6233B5A8D00E4B5D7 /* PSPublishScuessViewController.m in Sources */,
 				EA960B58232F2FE900D81A25 /* FLAnimatedImageView+WebCache.m in Sources */,
+				EA14E52123701FBF00721A57 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				55B078C5233CA2BB009BDDBC /* PSPlatformHeadView.m in Sources */,
 				EA960CAE232F3B1C00D81A25 /* UITableView+YYAdd.m in Sources */,
 				3CD2D82A2299822E00C700D7 /* DPostCell.m in Sources */,
@@ -6745,6 +6790,7 @@
 				EA9457F1233AF3B2003C1C97 /* DModiyNewPhoneViewController.m in Sources */,
 				EA960CCE232F3B1C00D81A25 /* YYGestureRecognizer.m in Sources */,
 				3C2531672297B3670049968C /* DVideoPlayer.m in Sources */,
+				EA14E52423701FBF00721A57 /* UITableView+FDIndexPathHeightCache.m in Sources */,
 				EAA3119C233472D8004DE08F /* NSInvocation+BlocksKit.m in Sources */,
 				5542A7B8233B151500E4B5D7 /* PSPlatformArticleCell.m in Sources */,
 				3C0DB64422D731ED0029730E /* MJProperty.m in Sources */,
@@ -6847,6 +6893,7 @@
 				EAA3119E233472D8004DE08F /* NSMutableOrderedSet+BlocksKit.m in Sources */,
 				EA960A88232F29FA00D81A25 /* NIMGroupedUsrInfo.m in Sources */,
 				EA960C9C232F3B1C00D81A25 /* YYTextSelectionView.m in Sources */,
+				EA14E52323701FBF00721A57 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				EA960AF2232F29FB00D81A25 /* UITableView+NIMScrollToBottom.m in Sources */,
 				EA960ABE232F29FB00D81A25 /* NIMTeamNotifyUpdateViewController.m in Sources */,
 				EA960D92232F5BA000D81A25 /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
@@ -6872,6 +6919,7 @@
 				554E92F0233A268A009D2429 /* DMessageViewController.m in Sources */,
 				3C8F3E28226B4F09006CF059 /* MMDrawerVisualState.m in Sources */,
 				3C8F3E37226B5324006CF059 /* DView.m in Sources */,
+				EA14E52223701FBF00721A57 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				55FE57222366DF87008056C9 /* PSArticleReportCell.m in Sources */,
 				EA960CB3232F3B1C00D81A25 /* UIGestureRecognizer+YYAdd.m in Sources */,
 				EA960AE4232F29FB00D81A25 /* NIMSessionNotificationContentView.m in Sources */,
@@ -7380,7 +7428,7 @@
 					"$(PROJECT_DIR)/DAudiobook/Vender(第三方)/UMSocial/SocialLibraries/QQ",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kevindcw.DStarNews;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinog2c.YuJingTong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -7429,7 +7477,7 @@
 					"$(PROJECT_DIR)/DAudiobook/Vender(第三方)/UMSocial/SocialLibraries/QQ",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kevindcw.DStarNews;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinog2c.YuJingTong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

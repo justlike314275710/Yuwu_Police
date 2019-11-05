@@ -141,7 +141,8 @@
                 self.menuHeadView.nameLable.text=@"";}
         }
         else{
-            [PSTipsView showTips:@"获取账号信息失败!"];
+           // [PSTipsView showTips:@"获取账号信息失败!"];
+            self.menuHeadView.nameLable.text=@"";
         }
     } failure:^(NSError *error) {
         [PSTipsView showTips:@"获取账号信息失败!"];
