@@ -30,7 +30,7 @@
         _allStorage = [NSString stringWithFormat:@"%ldB",(long)size];
     }else if (size < 1024 * 1024){// 小于1m
         CGFloat aFloat = size/1024;
-        _allStorage = [NSString stringWithFormat:@"%.0fK",aFloat];
+        _allStorage = [NSString stringWithFormat:@"%.0fKB",aFloat];
     }else if (size < 1024 * 1024 * 1024){// 小于1G
         CGFloat aFloat = size/(1024 * 1024);
         _allStorage = [NSString stringWithFormat:@"%.1fM",aFloat];
