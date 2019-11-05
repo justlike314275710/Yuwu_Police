@@ -40,7 +40,7 @@ SINGLETON_FOR_CLASS(IMManager);
    // [[NIMKit sharedKit] registerLayoutConfig:[NTESCellLayoutConfig new]];
 
     [[NIMSDK sharedSDK] registerWithAppID:kIMAppKey
-                                  cerName:@"com.sinog2c.YuJingTong"];
+                                  cerName:@"yjtDevelopment"];
 
 }
 

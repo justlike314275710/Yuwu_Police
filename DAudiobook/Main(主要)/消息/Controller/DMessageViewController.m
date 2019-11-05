@@ -11,7 +11,7 @@
 #import "MessageLogic.h"
 #import "DMessageModel.h"
 #import "NSString+Date.h"
-#import "UITableView+FDTemplateLayoutCell.h"
+
 @interface DMessageViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *messageTableView;
 @property (nonatomic , strong) MessageLogic *logic;
