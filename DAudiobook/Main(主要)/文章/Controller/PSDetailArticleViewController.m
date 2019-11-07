@@ -260,13 +260,9 @@
         [_likeLab setTextColor:UIColorFromRGB(237,63,92)];
     }
     
-    if ([_viewModel.detailModel.clientNum integerValue]>0) {
-        [_hotBtn setImage:IMAGE_NAMED(@"热度icon") forState:UIControlStateNormal];
-        [_hotLab setTextColor:UIColorFromRGB(255,134,0)];
-    } else {
-        [_hotBtn setImage:IMAGE_NAMED(@"热度") forState:UIControlStateNormal];
-        [_hotLab setTextColor:UIColorFromRGB(102,102,102)];
-    }
+    [_hotBtn setImage:IMAGE_NAMED(@"热度icon") forState:UIControlStateNormal];
+    [_hotLab setTextColor:UIColorFromRGB(255,134,0)];
+  
     CGFloat bottom = isHideBottom?0:-90;
     [self.scrollview mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_topTipLab.mas_bottom);

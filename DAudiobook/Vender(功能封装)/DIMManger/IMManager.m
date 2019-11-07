@@ -38,7 +38,6 @@ SINGLETON_FOR_CLASS(IMManager);
     
     //注入 NIMKit 布局管理器
    // [[NIMKit sharedKit] registerLayoutConfig:[NTESCellLayoutConfig new]];
-
     [[NIMSDK sharedSDK] registerWithAppID:kIMAppKey
                                   cerName:@"yjtDevelopment"];
 

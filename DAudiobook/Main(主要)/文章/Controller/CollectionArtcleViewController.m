@@ -221,8 +221,6 @@
         }
         KPostNotification(KNotificationHomePageRefreshList, nil);
 
-        
-        
     };
     //热度刷新
     DetailArticleVC.hotChangeBlock = ^(NSString *clientNum) {
