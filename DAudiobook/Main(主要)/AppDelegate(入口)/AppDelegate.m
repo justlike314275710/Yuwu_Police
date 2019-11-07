@@ -31,25 +31,12 @@
 @implementation AppDelegate
 //应用将要完成启动
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(nullable NSDictionary *)launchOptions{
- 
-    //云服务器SDK
-    [Bmob registerWithAppKey:BmobAppkey];
-    //腾讯bug收集
-    //[Bugly startWithAppId:BuglyAppID];
-    //第三方分享
-    [self initializeShareSDK];
-    //推送
-//    [self initializePushSDK];
-    //广点通
-    [self initializeGdtSDK];
     //键盘
     [self registerThirdParty];
     //im初始化
     [[IMManager sharedIMManager]initIM];
-    
     //注册apns
     [self registerAPNS:application launchOptions:launchOptions];
-    
     //网络监听
     [self monitorNetworkStatus];
     
@@ -65,6 +52,15 @@
     //初始化用户系统
     [self initUserManager];
     [self addCycleTime];
+    if (launchOptions) {
+        // 获取推送通知定义的userinfo
+        NSDictionary *userInfo = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
+        if (userInfo) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self userNotificationCenterApns:userInfo];
+            });
+        }
+    }
     
     return YES;
 }
@@ -72,48 +68,20 @@
     
     
 }
+
 //应用完成启动
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    /*
-     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-//    DMenuModel*menuModel=[DMenuModel new];
-//    menuModel.menuType=kHotNovelType;
-//    [DAllControllersTool createViewControllerWithIndex:menuModel];
-    
-    self.window.backgroundColor = [UIColor whiteColor];
-//    self.window.rootViewController = [DAllControllersTool shareOpenController].drawerController;
-    [self.window makeKeyAndVisible];
-    DNavigationController*navController=[[DNavigationController alloc]initWithRootViewController:[[DLoginViewController alloc]init]];
-    [navController setNavigationBarHidden:YES];
-    self.window.rootViewController=navController;
-    
 
-//    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
-//
-//
-//    BmobUser *bUser = [BmobUser currentUser];
-//    if (!bUser) {
-//        //对象为空时，可打开用户注册界面
-//         [DInterfaceUrl userPopupWindow];
-//
-//    }
-    */
     return YES;
 }
 // 当应用界面回到活跃Activate状态时
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-  
-    
     NSLog(@"%s", __func__);
 }
+
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
     //注册成功后上传Token至服务器
-//    BmobInstallation  *currentIntallation = [BmobInstallation installation];
-//    [currentIntallation setDeviceTokenFromData:deviceToken];
-//    [currentIntallation saveInBackground];
-//    <b01e5261 8d98b62b 816454a7 ebe7ac5a 9177b733 4df3a7ee 4b2d50f4 73112c36>
     [[NIMSDK sharedSDK] updateApnsToken:deviceToken];
 }
 //分享
@@ -122,49 +90,6 @@
 //    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:QQAppkey  appSecret:QQAppSecret redirectURL:@""];
 //    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:WBAppkey  appSecret:WBAppSecret redirectURL:@""];
 }
-//推送
--(void)initializePushSDK{
-    // Override point for customization after application launch.
-    //注册推送，iOS 8的推送机制与iOS 7有所不同，这里需要分别设置
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
-        UIMutableUserNotificationCategory *categorys = [[UIMutableUserNotificationCategory alloc]init];
-        //注意：此处的Bundle ID要与你申请证书时填写的一致。
-        categorys.identifier=@"com.sinog2c.YuJingTong";
-        UIUserNotificationSettings *userNotifiSetting = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound) categories:[NSSet setWithObjects:categorys,nil]];
-        
-        [[UIApplication sharedApplication] registerUserNotificationSettings:userNotifiSetting];
-        
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
-    }else {
-        //注册远程推送
-        UIRemoteNotificationType myTypes = UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeSound;
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:myTypes];
-    }
-    
-}
-
-//广点通广告
--(void)initializeGdtSDK{
-   //开屏广告初始化并展示代码
-//    GDTSplashAd *splash = [[GDTSplashAd alloc] initWithAppId:GDTAppkey placementId:GDTPlacementIdK];
-//    splash.delegate = self;
-//    UIImage *splashImage = [UIImage imageNamed:@"SplashNormal"];
-//    if (isIPhoneXSeries()) {
-//        splashImage = [UIImage imageNamed:@"SplashX"];
-//    } else if ([UIScreen mainScreen].bounds.size.height == 480) {
-//        splashImage = [UIImage imageNamed:@"SplashSmall"];
-//    }
-//    splash.backgroundImage = splashImage;
-//    splash.fetchDelay = 5;//设置开屏拉取时长限制，若超时则不再展示广告
-//    [splash loadAdAndShowInWindow:self.window];
-//    self.splash = splash;
-    
-    
-
-    
-    
-}
-
 
 #pragma mark ————— 注册第三方库 —————
 - (void)registerThirdParty {
@@ -351,75 +276,23 @@
     }
 }
 
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     if ([touches.anyObject locationInView:nil].y > 20) return;
     [[NSNotificationCenter defaultCenter]postNotificationName:@"statusBarTappedNotification" object:nil];
     
 }
 
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    [application setApplicationIconBadgeNumber:0]; //清除角标
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];//清除APP所
+}
 
-/**
- *  开屏广告成功展示
- */
--(void)splashAdSuccessPresentScreen:(GDTSplashAd *)splashAd
-{
-    NSLog(@"%s",__FUNCTION__);
-}
-/**
- *  开屏广告展示失败
- */
--(void)splashAdFailToPresent:(GDTSplashAd *)splashAd withError:(NSError *)error
-{
-   
-    
-    NSLog(@"%s%@",__FUNCTION__,error);
-}
-/**
- *  应用进入后台时回调
- *  详解: 当点击下载应用时会调用系统程序打开，应用切换到后台
- */
--(void)splashAdApplicationWillEnterBackground:(GDTSplashAd *)splashAd
-{
-   
-    NSLog(@"%s",__FUNCTION__);
-}
-/**
- *  开屏广告点击回调
- */
--(void)splashAdClicked:(GDTSplashAd *)splashAd
-{
-   
-    
-    NSLog(@"%s",__FUNCTION__);
-}
-/**
- *  开屏广告将要关闭回调
- */
-- (void)splashAdWillClosed:(GDTSplashAd *)splashAd
-{
-    NSLog(@"%s",__FUNCTION__);
-}
-/**
- *  开屏广告关闭回调
- */
--(void)splashAdClosed:(GDTSplashAd *)splashAd
-{
-    NSLog(@"%s",__FUNCTION__);
-    _splash = nil;
-}
-/**
- *  开屏广告点击以后即将弹出全屏广告页
- */
--(void)splashAdWillPresentFullScreenModal:(GDTSplashAd *)splashAd
-{
-    NSLog(@"%s",__FUNCTION__);
-}
-/**
- * 开屏广告剩余时间回调
- */
--(void)splashAdDidDismissFullScreenModal:(GDTSplashAd *)splashAd
-{
-    NSLog(@"%s",__FUNCTION__);
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    //在这个方法里输入如下清除方法
+    [application setApplicationIconBadgeNumber:0]; //清除角标
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];//清除APP所
 }
 
 @end

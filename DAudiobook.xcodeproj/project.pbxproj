@@ -206,7 +206,6 @@
 		3C4A3A6C22681A0F00882244 /* DTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4A39F322681A0E00882244 /* DTextView.m */; };
 		3C4A3A6D22681A0F00882244 /* DIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4A39F722681A0E00882244 /* DIndicatorView.m */; };
 		3C4A3A7A22681A0F00882244 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4A3A1622681A0E00882244 /* AppDelegate.m */; };
-		3C4A3A7D226858F800882244 /* AppDelegate+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4A3A7C226858F800882244 /* AppDelegate+UI.m */; };
 		3C79D843229B939A00A9D10E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C79D842229B939A00A9D10E /* libc++.tbd */; };
 		3C79D846229B95B400A9D10E /* DShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C79D845229B95B400A9D10E /* DShareView.m */; };
 		3C8953ED229BCB0C00CB70E1 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8953E7229BCB0C00CB70E1 /* MBProgressHUD.m */; };
@@ -1232,8 +1231,6 @@
 		3C4A3A1522681A0E00882244 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3C4A3A1622681A0E00882244 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3C4A3A1722681A0E00882244 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		3C4A3A7B226858F800882244 /* AppDelegate+UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+UI.h"; sourceTree = "<group>"; };
-		3C4A3A7C226858F800882244 /* AppDelegate+UI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+UI.m"; sourceTree = "<group>"; };
 		3C79D841229B913900A9D10E /* DAudiobook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DAudiobook.entitlements; sourceTree = "<group>"; };
 		3C79D842229B939A00A9D10E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		3C79D844229B95B400A9D10E /* DShareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DShareView.h; sourceTree = "<group>"; };
@@ -3397,8 +3394,6 @@
 		3C4A3A1422681A0E00882244 /* AppDelegate(入口) */ = {
 			isa = PBXGroup;
 			children = (
-				3C4A3A7B226858F800882244 /* AppDelegate+UI.h */,
-				3C4A3A7C226858F800882244 /* AppDelegate+UI.m */,
 				3C4A3A1522681A0E00882244 /* AppDelegate.h */,
 				3C4A3A1622681A0E00882244 /* AppDelegate.m */,
 				55B61DC3237123A300D04F5A /* AppDelegate+other.h */,
@@ -7049,7 +7044,6 @@
 				3CABB1D322746B3000F699C5 /* DAlbumHeadView.m in Sources */,
 				EA960DA8232F5BA000D81A25 /* DGActivityIndicatorFiveDotsAnimation.m in Sources */,
 				55ED63BF233E3452004A9C37 /* EBMuteDetector.m in Sources */,
-				3C4A3A7D226858F800882244 /* AppDelegate+UI.m in Sources */,
 				55FE571E2366DF78008056C9 /* PSReportArticleViewController.m in Sources */,
 				EA960A9C232F29FA00D81A25 /* NIMInputEmoticonTabView.m in Sources */,
 				EA960AEB232F29FB00D81A25 /* NIMSessionRobotContentView.m in Sources */,

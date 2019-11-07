@@ -11,6 +11,9 @@
 #import <Bugly/Bugly.h>
 #import <UserNotifications/UserNotifications.h>
 #import "UIViewController+Tool.h"
+#import "DNavigationController.h"
+#import "DMessageViewController.h"
+
 @interface AppDelegate()<UNUserNotificationCenterDelegate>
 
 @end
@@ -49,7 +52,10 @@
 }
 #pragma mark ---------- 远程APNS推送打开app(点击推送push)
 - (void)userNotificationCenterApns:(NSDictionary*)userInfo{
-  
+    DMessageViewController *VC = [[DMessageViewController alloc] init];
+    DNavigationController *nav = [[DNavigationController alloc] initWithRootViewController:VC];
+    [self.window.rootViewController presentViewController:nav animated:YES completion:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationRedDothide object:nil];
 }
 
 #pragma mark ---------- UNUserNotificationCenterDelegate
