@@ -45,12 +45,7 @@ SINGLETON_FOR_CLASS(IMManager);
 
 #pragma mark ————— IM登录 —————
 -(void)IMLogin:(NSString *)IMID IMPwd:(NSString *)IMPwd completion:(loginBlock)completion{
-    //29cdae91fbc64318b608d2db598f0d4c  //15647679903e4e07bd60a54061c9283a
-//    accid 29cdae91fbc64318b608d2db598f0d4c
-//    appkey 87dae6933488de4bab789054a3a5c720
-//    cerName com.sinog2c.YuJingTong
-//    deviceToken  b01e5261 8d98b62b 816454a7 ebe7ac5a 9177b733 4df3a7ee 4b2d50f4 73112c36
-    
+
     [[[NIMSDK sharedSDK] loginManager] login:IMID token:IMPwd completion:^(NSError * _Nullable error) {
         if (!error) {
             if (completion) {

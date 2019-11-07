@@ -110,7 +110,12 @@ SINGLETON_FOR_CLASS(UserManager);
                 NSLog(@"公共服务注册成功");
             }
             else if ([code isEqualToString:@"user.SmsVerificationCodeNotMatched"]){
-                [PSTipsView showTips:message];
+                if ([self.loginMode isEqualToString:@"account_password"]) {
+                    [PSTipsView showTips:@"请联系监狱管理人员进行身份认证登记"];
+                } else {
+                     [PSTipsView showTips:message];
+                }
+            
             }
             else {
                [PSTipsView showTips:@"服务器异常"];
