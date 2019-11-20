@@ -15,4 +15,5 @@
 @property (nonatomic , strong) NSString *type;
 @property (nonatomic , strong) NSString *content;
 @property (nonatomic , strong) NSString *applicationDate;
+@property (nonatomic , strong) NSString *isNoticed;
 @end

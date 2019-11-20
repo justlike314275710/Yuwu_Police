@@ -28,17 +28,19 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.viewModel = [PSMyTotalArtcleListViewModel new];
     [self setupUI];
+    
+   
+    
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(coverWindowClick) name:@"statusBarTappedNotification" object:nil];
     [self refreshData];
     [self addBackItem];
     self.tableView.ly_emptyView = [LYEmptyView emptyActionViewWithImage:ImageNamed(@"noData") titleStr:@"暂无数据" detailStr:nil btnTitleStr:@"" btnClickBlock:^{
         [self refreshData];
     }];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:KNotificationRefreshMyArticle object:nil];
-    
-}
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(coverWindowClick) name:@"statusBarTappedNotification" object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

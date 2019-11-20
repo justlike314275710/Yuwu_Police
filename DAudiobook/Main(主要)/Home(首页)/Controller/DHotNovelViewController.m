@@ -60,7 +60,9 @@
     [[ZXCTimer shareInstance]addCycleTask:^{
         [self refreshNewCount];
     } timeInterval:30];
-
+    
+    
+    
 }
 -(void)refreshNewCount{
     BOOL isCurrent = [UIViewController isCurrentViewControllerVisible:self];
@@ -82,6 +84,8 @@
   [self.navigationItem.rightBarButtonItem pp_addDotWithColor:[UIColor redColor]];
 }
 
+
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 //    [self setupData];
@@ -99,6 +103,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupData:) name:KNotificationArticleAuthor object:nil];
     //隐藏红点
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideBadge) name:KNotificationRedDothide object:nil];
+    //token刷新
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(refreshData)
+                                                 name:@"refresh_token"
+                                               object:nil];
    
 }
 
@@ -114,7 +123,7 @@
     [[DAllControllersTool shareOpenController].drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone];
     [[DAllControllersTool shareOpenController].drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeNone
      ];
-     [[NSNotificationCenter defaultCenter]removeObserver:self];
+    // [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 -(UIImage*)convertViewToImage:(UIView*)v{
@@ -151,8 +160,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableview.mj_header endRefreshing];
             [self.tableview reloadData];
-             [self reloadContents];
-            
+            [self reloadContents];
             if (isCurrent) [[PSLoadingView sharedInstance] dismiss];
             if (self.hasCount==YES) {
                 NSString *msg = [NSString stringWithFormat:@"为您更新了%ld篇内容",(long)self.logic.count];
@@ -162,18 +170,25 @@
             self.hasCount = NO;
         });
     } failed:^(NSError *error) {
+        NSString *errorInfo = error.userInfo[@"NSLocalizedDescription"];
+        if ([errorInfo isEqualToString:@"Request failed: unauthorized (401)"]) {
+            [help_userManager refreshOuathToken];
+        }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableview.mj_header endRefreshing];
             [self.tableview reloadData];
             [self reloadContents];
-            if (isCurrent) [[PSLoadingView sharedInstance] dismiss];
+            if (isCurrent) {
+                [[PSLoadingView sharedInstance] dismiss];
+            } else {
+                [[PSLoadingView sharedInstance] dismiss];
+            }
+            
         });
     }];
 }
 //上啦
 -(void)loadMore {
-   
-    
     [[PSLoadingView sharedInstance] show];
     [_logic loadMoreArticleListCompleted:^(id data) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -311,6 +326,7 @@
         } else {
             [PSTipsView showTips:@"暂无权限!"];
         }
+   
 }
 
 -(void)SearchBar{

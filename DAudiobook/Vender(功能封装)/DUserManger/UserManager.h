@@ -67,6 +67,8 @@ SINGLETON_FOR_HEADER(UserManager)
 #pragma mark - ——————— 登录相关 ————————
 
 -(void)JudgeIdentityCallback:(loginBlock)callback;
+#pragma mark - ——————— 刷新token ————————
+- (void)refreshOuathToken;
 /**
  三方登录
 

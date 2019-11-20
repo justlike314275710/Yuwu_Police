@@ -85,7 +85,7 @@ return shared##className; \
 #define kIMAppKey @"87dae6933488de4bab789054a3a5c720"
 #define kIMAppSecret @"c34bd403b29a"
 #define kIMPushCerName @""
-
+#define RefreshToken @"RefreshToken" //刷新token
 
 #pragma mark - ——————— 拼接字符串 ————————
 #define NSStringFormat(format,...) [NSString stringWithFormat:format,##__VA_ARGS__]

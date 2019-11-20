@@ -7,10 +7,8 @@
 //
 
 #import "UserManager.h"
-//#import <UMSocialCore/UMSocialCore.h>
 #import "AFNetworking.h"
-//#import "Mine_AuthLogic.h"
-//#import "lawyerInfo.h"
+#import "XXAlertView.h"
 #import "LawUserInfo.h"
 #import "YYCache.h"
 #import "PPNetworkHelper.h"
@@ -174,14 +172,12 @@ SINGLETON_FOR_CLASS(UserManager);
 
 
 #pragma mark ————— 手动登录到服务器 —————
-
 //获取公共服务token  //refresh 是否是刷新token
 static const NSString *uid =  @"prison.app";
 static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
 -(void)loginToServer:(NSDictionary *)params
              refresh:(BOOL)refresh
           completion:(loginBlock)completion {
-   
     NSDictionary *paames = [NSDictionary dictionary];
     if (!refresh) {
         NSString *username = [params valueForKey:@"name"];
@@ -232,7 +228,17 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
                     if (message) {
                          [PSTipsView showTips:message];
                     } else {
-                         [PSTipsView showTips:@"登录失败"];
+                         NSString *errorInfo = error.userInfo[@"NSLocalizedDescription"];
+                        if ([errorInfo isEqualToString:@"Request failed: unauthorized (401)"]) {
+                            XXAlertView*alert=[[XXAlertView alloc]initWithTitle:nil message:@"登录状态过期,请重新登录" sureBtn:@"确定" cancleBtn:nil];
+                            alert.clickIndex = ^(NSInteger index) {
+                                if (index==2) {
+                                   [self logout:nil];
+                                }
+                            };
+                            [alert show];
+                        }
+                        
                     }
                 });
             } else {
@@ -261,6 +267,7 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
                   
                     //预警端平台登录同步
                     [self police_Login:params];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"refresh_token" object:nil];
                  
                 }];
             }
@@ -299,13 +306,38 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
                 }
             }
         }
+        else if ([code isEqualToString:@"401"]){
+                XXAlertView*alert=[[XXAlertView alloc]initWithTitle:nil message:@"登录状态过期,请重新登录" sureBtn:@"确定" cancleBtn:nil];
+                alert.clickIndex = ^(NSInteger index) {
+                    if (index==2) {
+                        [self logout:nil];
+                    }
+                };
+                [alert show];
+        }
         else{
             KPostNotification(KNotificationLoginStateChange, @NO);
              [PSTipsView showTips:@"请联系监狱管理人员进行身份认证登记"];
         }
     } failure:^(NSError *error) {
-         [PSTipsView showTips:@"请联系监狱管理人员进行身份认证登记"];
-        KPostNotification(KNotificationLoginStateChange, @NO);
+       NSString *code = error.userInfo[@"code"];
+        if ([code isEqualToString:@"404"]) {
+            NSString *errorInfo = error.userInfo[@"NSLocalizedDescription"];
+            if ([errorInfo isEqualToString:@"Request failed: unauthorized (401)"]) {
+                XXAlertView*alert=[[XXAlertView alloc]initWithTitle:nil message:@"登录状态过期,请重新登录" sureBtn:@"确定" cancleBtn:nil];
+                alert.clickIndex = ^(NSInteger index) {
+                    if (index==2) {
+                        [self logout:nil];
+                    }
+                };
+                [alert show];
+                
+            }
+        } else {
+            [PSTipsView showTips:@"请联系监狱管理人员进行身份认证登记"];
+            KPostNotification(KNotificationLoginStateChange, @NO);
+        }
+       
     }];
  
 }

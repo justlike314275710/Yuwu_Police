@@ -16,7 +16,8 @@ typedef NS_ENUM(NSUInteger, DMenuBusinessType) {
     KPasswordType=3,
     KPhonenumberType=4,
     KStorageType=5,
-    KLogoutType=6,       
+    KLogoutType=6,
+    KVersionType=7, 
 };
 
 

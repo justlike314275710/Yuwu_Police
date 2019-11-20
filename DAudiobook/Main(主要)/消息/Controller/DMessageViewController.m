@@ -21,7 +21,13 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    //状态栏点击
      [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(coverWindowClick) name:@"statusBarTappedNotification" object:nil];
+    //token刷新
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(refreshData)
+                                                 name:@"refresh_token"
+                                               object:nil];
 }
 
 - (void)viewDidLoad {
@@ -50,16 +56,21 @@
 }
 
 
-
 - (void)refreshData {
-    
     [[PSLoadingView sharedInstance]show];
     [_logic refreshMessagesCompleted:^(id data) {
         [[PSLoadingView sharedInstance] dismiss];
         [self reloadContents];
     } failed:^(NSError *error) {
+        NSString *errorInfo = error.userInfo[@"NSLocalizedDescription"];
+        if ([errorInfo isEqualToString:@"Request failed: unauthorized (401)"]) {
+            [help_userManager refreshOuathToken];
+            [[PSLoadingView sharedInstance] dismiss];
+            [self reloadContents];
+        }else{
         [[PSLoadingView sharedInstance] dismiss];
         [self reloadContents];
+        }
     }];
 }
 
@@ -135,8 +146,18 @@
 - (void)configureCell:(DMessageTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     DMessageModel *message = _logic.messages[indexPath.row];
     cell.titleLable.text=[message.content substringWithRange:NSMakeRange(1, 4)];
-    cell.dataLable.text = [message.createdAt timestampTo_MMDDHHMM];
+    cell.dataLable.text = [message.createdAt timestampToDateDetailSecondString];
     cell.detailLable.text = [message.content substringFromIndex:6];
+    if ([message.isNoticed isEqualToString:@"1"]) {
+        cell.titleLable.textColor=AppColor(153, 153, 153);
+        cell.dataLable.textColor = AppColor(153, 153, 153);
+        cell.detailLable.textColor = AppColor(153, 153, 153);
+    } else {
+        cell.titleLable.textColor=AppColor(51, 51, 51);
+        cell.dataLable.textColor = AppColor(51, 51, 51);
+        cell.detailLable.textColor = AppColor(51, 51, 51);
+    }
+
 }
 
 /*

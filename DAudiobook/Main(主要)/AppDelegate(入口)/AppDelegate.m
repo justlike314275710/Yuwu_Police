@@ -39,7 +39,6 @@
     [self registerAPNS:application launchOptions:launchOptions];
     //网络监听
     [self monitorNetworkStatus];
-    
     //版本更新
     DVersionManger*versonManger=[DVersionManger new];
     [versonManger jundgeVersonUpdate];
@@ -47,15 +46,16 @@
     [self  initWindow];
     //初始化app服务
     [self  initService];
-    //初始化IM
-    [[IMManager sharedIMManager]initIM];
     //初始化用户系统
     [self initUserManager];
+   
     [self addCycleTime];
+    self.openByNotice=NO;
     if (launchOptions) {
         // 获取推送通知定义的userinfo
         NSDictionary *userInfo = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
         if (userInfo) {
+            self.openByNotice=YES;
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self userNotificationCenterApns:userInfo];
             });
@@ -70,14 +70,16 @@
 }
 
 //应用完成启动
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+    //初始化IM
+    [[IMManager sharedIMManager]initIM];
     return YES;
 }
 // 当应用界面回到活跃Activate状态时
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     NSLog(@"%s", __func__);
+    //[[NSNotificationCenter defaultCenter] postNotificationName:@"refresh_token" object:nil];
 }
 
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
@@ -235,6 +237,8 @@
     }
 
 }
+
+
 -(UIImage*)convertViewToImage:(UIView*)v{
     CGSize s = v.bounds.size;
     UIGraphicsBeginImageContextWithOptions(s, YES, [UIScreen mainScreen].scale);
@@ -294,5 +298,9 @@
     [application setApplicationIconBadgeNumber:0]; //清除角标
     [[UIApplication sharedApplication] cancelAllLocalNotifications];//清除APP所
 }
+
+
+
+
 
 @end

@@ -13,4 +13,5 @@
 @property (nonatomic, strong, readonly) UILabel *titleLable;
 @property (nonatomic, strong, readonly) UILabel *dataLable;
 @property (nonatomic, strong, readonly) UILabel *detailLable;
+@property (nonatomic , strong) NSString *isNoticed;
 @end

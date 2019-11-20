@@ -5,7 +5,7 @@
 //  Created by 徐阳 on 2017/6/5.
 //  Copyright © 2017年 徐阳. All rights reserved.
 //
-
+#import "AppDelegate.h"
 #import "IMManager.h"
 #import "EBBannerView.h"
 //#import "NTESCellLayoutConfig.h"
@@ -113,16 +113,6 @@ SINGLETON_FOR_CLASS(IMManager);
     NSString *reason = @"你的帐号被踢出下线，请注意帐号信息安全";
     NSString*determine=@"确定";
     NSString*Tips= @"提示";
-//    NSString*pushed_off_line=@"您的账号已在其他设备登陆,已被挤下线";
-//    XXAlertView*alert=[[XXAlertView alloc]initWithTitle:Tips message:pushed_off_line sureBtn:determine cancleBtn:nil];
-//    alert.clickIndex = ^(NSInteger index) {
-//        if (index==2) {
-//            KPostNotification(KNotificationOnKick, nil);
-//        }
-//    };
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        [alert show];
-//    });
    [ PSAlertView showWithTitle:Tips message:reason messageAlignment:NSTextAlignmentCenter image:nil handler:^(PSAlertView *alertView, NSInteger buttonIndex) {
        if (buttonIndex==0) {
             KPostNotification(KNotificationOnKick, nil);
@@ -169,32 +159,34 @@ SINGLETON_FOR_CLASS(IMManager);
     NSString *content = dic[@"msg"];
     NSString *channel = [NSString stringWithFormat:@"%@",dic[@"channel"]];
     if (channel&&[channel isEqualToString:@"1"]) return; //1为家属端推送
-    
-
     //认证文章
     if (code==PSMessageArticleInteractive) {
-        
-        if (self.isOpen==YES) {
-            
-            EBBannerView *banner = [EBBannerView bannerWithBlock:^(EBBannerViewMaker *make) {
-                make.style = 11;
-                make.content = content;
-            }];
-            [banner show]; //NOTIFICATION_PRAISE_ADVICE
-            [ZQLocalNotification NotificationType:CountdownNotification Identifier:@"3" activityId:1900000 alertBody:content alertTitle:@"狱警通" alertString:@"确定" withTimeDay:0 hour:0 minute:0 second:1];
-            KPostNotification(KNotificationHomePageRefreshList, nil);
-            KPostNotification(KNotificationCollectArtickeRefreshList, nil);
-            KPostNotification(KNotificationRefreshMyArticle, nil);
-            //发布文章权限改变
-            NSString *isEnabled = [NSString stringWithFormat:@"%@",dic[@"isEnabled"]];
-            if ([isEnabled isEqualToString:@"0"]||[isEnabled isEqualToString:@"1"]) {
-                KPostNotification(KNotificationArticleAuthor,isEnabled);
-            }
+         AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        if (appdelegate.openByNotice) {
+             appdelegate.openByNotice = NO; //不弹出前台通知
         } else {
-             NSLog(@"推送关闭");
+            if (self.isOpen==YES) {
+                EBBannerView *banner = [EBBannerView bannerWithBlock:^(EBBannerViewMaker *make) {
+                    make.style = 11;
+                    make.content = content;
+                }];
+                [banner show]; //NOTIFICATION_PRAISE_ADVICE
+                KPostNotification(KNotificationHomePageRefreshList, nil);
+                KPostNotification(KNotificationCollectArtickeRefreshList, nil);
+                KPostNotification(KNotificationRefreshMyArticle, nil);
+                //发布文章权限改变
+                NSString *isEnabled = [NSString stringWithFormat:@"%@",dic[@"isEnabled"]];
+                if ([isEnabled isEqualToString:@"0"]||[isEnabled isEqualToString:@"1"]) {
+                    KPostNotification(KNotificationArticleAuthor,isEnabled);
+                }
+            } else {
+                NSLog(@"推送关闭");
+            }
         }
-       
     }
 }
+
+
+
 
 @end

@@ -24,7 +24,9 @@
 - (void)renderContents {
     CGFloat sidePadding = 15;
     CGFloat verticalPadding = 10;
-   
+ 
+    
+    
 
     UIView *bgview = [[UIView alloc] init];
     [self addSubview:bgview];
@@ -45,7 +47,12 @@
     
     _titleLable=[UILabel new];
     _titleLable.text=@"文章审核";
-    _titleLable.textColor=AppColor(51, 51, 51);
+    if ([self.isNoticed isEqualToString:@"1"]) {
+         _titleLable.textColor=AppColor(153, 153, 153);
+    } else {
+         _titleLable.textColor=AppColor(51, 51, 51);
+    }
+  
     _titleLable.font=FontOfSize(14);
     [bgview addSubview:_titleLable];
     [_titleLable mas_makeConstraints:^(MASConstraintMaker *make) {

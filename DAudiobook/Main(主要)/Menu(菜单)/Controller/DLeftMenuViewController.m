@@ -141,7 +141,6 @@
                 self.menuHeadView.nameLable.text=@"";}
         }
         else{
-           // [PSTipsView showTips:@"获取账号信息失败!"];
             self.menuHeadView.nameLable.text=@"";
         }
     } failure:^(NSError *error) {
@@ -235,7 +234,6 @@
             break;
             
         case KArticleType:{
-           // navVC=self.crosstalkNavigationController;
             [self myAllArticle];
         }
             break;
@@ -259,26 +257,21 @@
             break;
             
         case KStorageType:{
-           // navVC=self.historyNavigationController;
              [self storageOutAction];
             
         }
             break;
             
         case KLogoutType:{
-            //navVC=self.martialNavigationController;
             [self loginOutAction];
             
         }
             break;
+            
         default:
             break;
     }
-    //切换根控制器
-//    [self.drawerController setCenterViewController:navVC];
-//    [UIApplication sharedApplication].keyWindow.rootViewController = self.drawerController;
-//    [[UIApplication sharedApplication].keyWindow makeKeyAndVisible];
-//    [self.drawerController closeDrawerAnimated:YES completion:nil];
+
 }
 
 #pragma mark -- 存储空间

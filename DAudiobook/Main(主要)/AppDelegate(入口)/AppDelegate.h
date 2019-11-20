@@ -14,7 +14,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (assign, nonatomic) BOOL IS_NetWork;
-
+@property (assign, nonatomic) BOOL openByNotice; //是否是通知栏启动的
 
 @end
 

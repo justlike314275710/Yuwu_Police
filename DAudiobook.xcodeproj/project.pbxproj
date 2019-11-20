@@ -410,6 +410,7 @@
 		55FE57222366DF87008056C9 /* PSArticleReportCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE57212366DF87008056C9 /* PSArticleReportCell.m */; };
 		55FE57252366DFA7008056C9 /* PSReportArticleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE57232366DFA7008056C9 /* PSReportArticleViewModel.m */; };
 		E473341141BF7F02638F5529 /* libPods-DAudiobook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A489DFF9190310E891E597 /* libPods-DAudiobook.a */; };
+		EA26E05723828E7100220F06 /* XXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA26E05623828E7100220F06 /* XXAlertView.m */; };
 		EA448EA723667B59008AB0FB /* DStorageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA448EA623667B59008AB0FB /* DStorageViewController.m */; };
 		EA448EAD23667CE5008AB0FB /* DStorageLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = EA448EAC23667CE5008AB0FB /* DStorageLogic.m */; };
 		EA4D2C9E23506A7E001D376F /* UMSocialNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4D2C9D23506A7D001D376F /* UMSocialNetwork.framework */; };
@@ -1575,6 +1576,8 @@
 		55FE57242366DFA7008056C9 /* PSReportArticleViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSReportArticleViewModel.h; sourceTree = "<group>"; };
 		77A489DFF9190310E891E597 /* libPods-DAudiobook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DAudiobook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10A1B66EF6EE62C2CCE46C8 /* Pods-DAudiobook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DAudiobook.debug.xcconfig"; path = "Target Support Files/Pods-DAudiobook/Pods-DAudiobook.debug.xcconfig"; sourceTree = "<group>"; };
+		EA26E05523828E6500220F06 /* XXAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XXAlertView.h; sourceTree = "<group>"; };
+		EA26E05623828E7100220F06 /* XXAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXAlertView.m; sourceTree = "<group>"; };
 		EA448EA523667B59008AB0FB /* DStorageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DStorageViewController.h; sourceTree = "<group>"; };
 		EA448EA623667B59008AB0FB /* DStorageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DStorageViewController.m; sourceTree = "<group>"; };
 		EA448EAB23667CE5008AB0FB /* DStorageLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DStorageLogic.h; sourceTree = "<group>"; };
@@ -3281,7 +3284,6 @@
 				5542A7D5233B37E500E4B5D7 /* 文章 */,
 				554E92FA233A29FC009D2429 /* 账号信息 */,
 				EA94570823389D45003C1C97 /* 消息 */,
-				EA960BB2232F36A100D81A25 /* Other */,
 				EA96093A232F1EBD00D81A25 /* Login(登录) */,
 				3C4A3A1422681A0E00882244 /* AppDelegate(入口) */,
 				3C37E96E228BEA200035E114 /* User(个人界面) */,
@@ -4458,7 +4460,6 @@
 			isa = PBXGroup;
 			children = (
 				EA960DCF232F78AA00D81A25 /* ViewModel */,
-				EA960DBF232F614B00D81A25 /* Model */,
 				EA960DBE232F614200D81A25 /* View */,
 				EA960DBD232F613100D81A25 /* Controller */,
 			);
@@ -5134,6 +5135,8 @@
 		EA960B9E232F32E300D81A25 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EA26E05623828E7100220F06 /* XXAlertView.m */,
+				EA26E05523828E6500220F06 /* XXAlertView.h */,
 				EA4D2CA723516CFA001D376F /* LLGifImageView */,
 				EA4D2CA523516C8A001D376F /* DSLoadingView.h */,
 				EA4D2CA423516C89001D376F /* DSLoadingView.m */,
@@ -5177,13 +5180,6 @@
 				EA960BA6232F32E400D81A25 /* UIView+Toast.m */,
 			);
 			path = Toast;
-			sourceTree = "<group>";
-		};
-		EA960BB2232F36A100D81A25 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Other;
 			sourceTree = "<group>";
 		};
 		EA960BB8232F37A300D81A25 /* FLAnimatedImage */ = {
@@ -5638,13 +5634,6 @@
 				EA960DC5232F616500D81A25 /* PSLoginTopView.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		EA960DBF232F614B00D81A25 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		EA960DCF232F78AA00D81A25 /* ViewModel */ = {
@@ -6889,6 +6878,7 @@
 				EA960CD1232F3B1C00D81A25 /* YYThreadSafeArray.m in Sources */,
 				EA960A89232F29FA00D81A25 /* NIMContactDataCell.m in Sources */,
 				EA960CC4232F3B1C00D81A25 /* NSObject+YYAddForKVO.m in Sources */,
+				EA26E05723828E7100220F06 /* XXAlertView.m in Sources */,
 				EA960ADE232F29FB00D81A25 /* NIMMessageCellFactory.m in Sources */,
 				EA960C83232F3B1B00D81A25 /* YYCache.m in Sources */,
 				EA960A86232F29FA00D81A25 /* NIMContactSelectViewController.m in Sources */,

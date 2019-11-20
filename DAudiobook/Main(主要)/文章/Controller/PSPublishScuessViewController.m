@@ -61,6 +61,8 @@
 }
 
 - (void)backAction{
+    [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationHomePageRefreshList object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationRefreshMyArticle object:nil];
     [self.navigationController.viewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj isKindOfClass:[DHotNovelViewController class]]||[obj isKindOfClass:[MineArticleViewController class]]) {
             [self.navigationController popToViewController:obj animated:YES];
