@@ -237,8 +237,6 @@
     } else {
         self.reportBtn.hidden = [_viewModel.detailModel.isreport isEqualToString:@"0"]?NO:YES;
     }
-    
-    
     [_headImageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"作者头像"] options:SDWebImageRefreshCached];
     
     if ([_viewModel.detailModel.iscollect isEqualToString:@"0"]) {
@@ -259,21 +257,15 @@
         [_likeBtn setImage:IMAGE_NAMED(@"已赞icon") forState:UIControlStateNormal];
         [_likeLab setTextColor:UIColorFromRGB(237,63,92)];
     }
-    
-    if ([_viewModel.detailModel.clientNum integerValue]>0) {
-        [_hotBtn setImage:IMAGE_NAMED(@"热度icon") forState:UIControlStateNormal];
-        [_hotLab setTextColor:UIColorFromRGB(255,134,0)];
-    } else {
-        [_hotBtn setImage:IMAGE_NAMED(@"热度") forState:UIControlStateNormal];
-        [_hotLab setTextColor:UIColorFromRGB(102,102,102)];
-    }
+    [_hotBtn setImage:IMAGE_NAMED(@"热度icon") forState:UIControlStateNormal];
+    [_hotLab setTextColor:UIColorFromRGB(255,134,0)];
+  
     CGFloat bottom = isHideBottom?0:-90;
     [self.scrollview mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_topTipLab.mas_bottom);
         make.left.right.mas_equalTo(0);
         make.bottom.mas_equalTo(bottom);
     }];
-    
     CGFloat height = [_viewModel heightForString:_contentTextView.text andWidth:kScreenWidth-48];
     [self.contentTextView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(142);
@@ -281,7 +273,6 @@
         make.width.mas_equalTo(kScreenWidth-48);
         make.height.mas_equalTo(height);
     }];
-    
     [self.scrollview addSubview:self.endIconImageView];
     [self.endIconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_contentTextView.mas_bottom).offset(10);
@@ -289,7 +280,6 @@
         make.height.mas_equalTo(10);
         make.width.mas_equalTo(57);
     }];
-
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.scrollview.contentSize = CGSizeMake(kScreenWidth-48,height+164+50);
     });

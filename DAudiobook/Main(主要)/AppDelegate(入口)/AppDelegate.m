@@ -248,7 +248,6 @@
     return image;
 }
 
-
 #pragma mark - 接收远程事件
 -(void)remoteControlReceivedWithEvent:(UIEvent *)event{
     if (event.type == UIEventTypeRemoteControl) {
