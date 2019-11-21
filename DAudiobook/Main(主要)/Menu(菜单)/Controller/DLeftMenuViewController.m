@@ -144,7 +144,7 @@
             self.menuHeadView.nameLable.text=@"";
         }
     } failure:^(NSError *error) {
-        [PSTipsView showTips:@"获取账号信息失败!"];
+        //[PSTipsView showTips:@"获取账号信息失败!"];
     }];
 }
 
@@ -274,6 +274,7 @@
 
 }
 
+
 #pragma mark -- 存储空间
 -(void)storageOutAction{
     DStorageViewController*storageVC=[[DStorageViewController alloc]init];
@@ -297,7 +298,6 @@
 }
 #pragma mark -- 注销登录
 -(void)loginOutAction{
-    
     [PSAlertView showWithTitle:nil message:@"确定要退出吗?" messageAlignment:NSTextAlignmentCenter image:nil handler:^(PSAlertView *alertView, NSInteger buttonIndex) {
         if (buttonIndex == 1) {
             [help_userManager logout:nil];

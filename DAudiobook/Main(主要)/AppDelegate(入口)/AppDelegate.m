@@ -22,13 +22,14 @@
 #import "DHotNovelViewController.h"
 #import "DMessageViewController.h"
 #import "AppDelegate+other.h"
-
+#import "HomePageLogic.h"
 @interface AppDelegate ()
 @property (retain, nonatomic) GDTSplashAd  *splash;
 @property (retain, nonatomic) UIView       *bottomView;
 @end
 
 @implementation AppDelegate
+/*
 //应用将要完成启动
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(nullable NSDictionary *)launchOptions{
     //键盘
@@ -64,6 +65,7 @@
     
     return YES;
 }
+*/
 -(void)addCycleTime{
     
     
@@ -71,15 +73,53 @@
 
 //应用完成启动
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-    //初始化IM
+    //键盘
+    [self registerThirdParty];
+    //im初始化
     [[IMManager sharedIMManager]initIM];
+    //注册apns
+    [self registerAPNS:application launchOptions:launchOptions];
+    //网络监听
+    [self monitorNetworkStatus];
+    //版本更新
+    DVersionManger*versonManger=[DVersionManger new];
+    [versonManger jundgeVersonUpdate];
+    //初始化window
+    [self  initWindow];
+    //初始化app服务
+    [self  initService];
+    //初始化用户系统
+    [self initUserManager];
+    
+    [self addCycleTime];
+    self.openByNotice=NO;
+    if (launchOptions) {
+        // 获取推送通知定义的userinfo
+        NSDictionary *userInfo = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
+        if (userInfo) {
+            self.openByNotice=YES;
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self userNotificationCenterApns:userInfo];
+            });
+        }
+    }
     return YES;
 }
+
+
 // 当应用界面回到活跃Activate状态时
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    NSLog(@"%s", __func__);
-    //[[NSNotificationCenter defaultCenter] postNotificationName:@"refresh_token" object:nil];
+//token刷新
+    HomePageLogic*logic=[[HomePageLogic alloc]init];
+    [logic getNewArticleCountCompleted:^(id data) {
+        
+    } failed:^(NSError *error) {
+        NSString *errorInfo = error.userInfo[@"NSLocalizedDescription"];
+        if ([errorInfo isEqualToString:@"Request failed: unauthorized (401)"]) {
+            [help_userManager refreshOuathToken];
+        }
+    }];
 }
 
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{

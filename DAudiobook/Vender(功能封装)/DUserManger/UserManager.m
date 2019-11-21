@@ -244,11 +244,10 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
             } else {
                 [PSTipsView showTips:@"登录失败"];
             }
-            
         }
         else {
             if (responseStatusCode == 200) { //
-                NSLog(@"公共服务登录成功");
+                NSLog(@"***公共服务登录成功***");
                 //保存最新的Ouath认证信息
                 //登录成功
                 OauthInfo *oauthInfo = [OauthInfo modelWithJSON:responseObject];
@@ -262,7 +261,6 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
                     //保存账号
                     [kUserDefaults setObject:[params valueForKey:@"name"] forKey:KUserName];
                     [kUserDefaults synchronize];
-                    
                     [self saveUserInfo];
                   
                     //预警端平台登录同步
@@ -349,7 +347,82 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
                              @"refresh_token":refresh_token,
                              @"grant_type":@"refresh_token"
                              };
-    [self loginToServer:parmeters refresh:YES  completion:nil];
+    NSString *part1 = [NSString stringWithFormat:@"%@:%@",uid,cipherText];
+    NSData   *data = [part1 dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *stringBase64 = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    NSString *authorization = [NSString stringWithFormat:@"Basic %@",stringBase64];
+    NSString*url=[NSString stringWithFormat:@"%@%@",EmallHostUrl,URL_get_oauth_token];
+    NSMutableURLRequest *formRequest = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"POST" URLString:url parameters:parmeters error:nil];
+    [formRequest setValue:@"application/x-www-form-urlencoded; charset=utf-8"forHTTPHeaderField:@"Content-Type"];
+    [formRequest setValue:authorization forHTTPHeaderField:@"Authorization"];
+    AFHTTPSessionManager*manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 10.f;
+    AFJSONResponseSerializer* responseSerializer = [AFJSONResponseSerializer serializer];
+    [responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:@"application/json",@"text/json",@"text/javascript",@"text/html",@"text/plain",nil]];
+    manager.responseSerializer= responseSerializer;
+    
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:formRequest uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        
+        NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+        NSInteger responseStatusCode = [httpResponse statusCode];
+        if (error) {
+            NSData *data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey];
+            if (data) {
+                id body = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+                NSString*message = body[@"message"];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if (message) {
+                        [PSTipsView showTips:message];
+                    } else {
+                        NSString *errorInfo = error.userInfo[@"NSLocalizedDescription"];
+                        if ([errorInfo isEqualToString:@"Request failed: unauthorized (401)"]) {
+                            XXAlertView*alert=[[XXAlertView alloc]initWithTitle:nil message:@"登录状态过期,请重新登录" sureBtn:@"确定" cancleBtn:nil];
+                            alert.clickIndex = ^(NSInteger index) {
+                                if (index==2) {
+                                    [self logout:nil];
+                                }
+                            };
+                            [alert show];
+                        }
+                        
+                    }
+                });
+            } else {
+                [PSTipsView showTips:@"登录失败"];
+            }
+            
+        }
+        else {
+            if (responseStatusCode == 200) { //
+                NSLog(@"***公共服务登录成功***");
+                //保存最新的Ouath认证信息
+                //登录成功
+                OauthInfo *oauthInfo = [OauthInfo modelWithJSON:responseObject];
+                self.oathInfo = oauthInfo;
+                [self removeUserOuathInfo:^{
+                    // @strongify(self)
+                    [self saveUserOuathInfo];
+                    self.curUserInfo = [[UserInfo alloc] init];
+                    self.curUserInfo.username = [parmeters valueForKey:@"name"];
+                    
+                    //保存账号
+                    [kUserDefaults setObject:[parmeters valueForKey:@"name"] forKey:KUserName];
+                    [kUserDefaults synchronize];
+                    [self saveUserInfo];
+                    
+                    //预警端平台登录同步
+//                    [self police_Login:parmeters];
+//                    [[NSNotificationCenter defaultCenter] postNotificationName:@"refresh_token" object:nil];
+                    
+                }];
+            }
+        }
+    }];
+    
+    [dataTask resume];
+    
+    
+   // [self loginToServer:parmeters refresh:YES  completion:nil];
 }
 
 #pragma mark ————— 判断是否是用户还是律师  —————
@@ -374,7 +447,6 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
                 userInfo.username = self.curUserInfo.username?self.curUserInfo.username:[kUserDefaults valueForKey:KUserName];
                self.curUserInfo = userInfo;
             }
-            NSLog(@"获取网易云信成功");
             //登录成功储存用户信息
             [self saveUserInfo];
             [self LoginSuccess:responseObject completion:^(BOOL success, NSString *des) {

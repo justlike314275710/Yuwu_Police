@@ -68,8 +68,11 @@
 //App处于后台（未杀死）点击本地推送或者远程推送时调用
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler __IOS_AVAILABLE(10.0) __WATCHOS_AVAILABLE(3.0) __TVOS_PROHIBITED{
     NSLog(@"%@",response.notification.request.content.userInfo);
-    NSDictionary *userInfo = response.notification.request.content.userInfo;
-
+    //NSDictionary *userInfo = response.notification.request.content.userInfo;
+    DMessageViewController *VC = [[DMessageViewController alloc] init];
+    DNavigationController *nav = [[DNavigationController alloc] initWithRootViewController:VC];
+    [self.window.rootViewController presentViewController:nav animated:YES completion:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationRedDothide object:nil];
 }
 
 - (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo {
@@ -78,6 +81,8 @@
         //app在前台
     }else{
         //app在后台点击远程推送
+        
+
     }
 }
 //App处于前台收到本地推送消息，或者后台（未杀死）点击本地推送消息时调用

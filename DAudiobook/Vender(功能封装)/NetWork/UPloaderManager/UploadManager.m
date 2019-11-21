@@ -9,6 +9,7 @@
 #import "UploadManager.h"
 #import "PSLoadingView.h"
 #import "UIImage+WLCompress.h"
+
 @implementation UploadManager
 
 + (UploadManager *)uploadManager{
@@ -47,7 +48,9 @@
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
         self.code=httpResponse.statusCode;
+        //NSLog(@"%ld",(long)self.code);
         id result = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+        NSLog(@"%@",result);
         if (data) {
             if (self.code==201) {
                 id result = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
@@ -58,7 +61,11 @@
                 if (isShowTip) {
                     [[PSLoadingView sharedInstance]dismiss];
                 }
-            } else {
+            }
+//            else if (self.code==401){
+//                [help_userManager refreshOuathToken];
+//            }
+            else {
                 if (isShowTip) {
                     [[PSLoadingView sharedInstance]dismiss];
                     [PSTipsView showTips:@"上传图片失败"];
@@ -70,6 +77,7 @@
                 [[PSLoadingView sharedInstance]dismiss];
                 [PSTipsView showTips:@"上传图片失败"];
             }
+            
         }
         
     }];

@@ -59,10 +59,10 @@
             [self intData];
         }
         else{
-            [PSTipsView showTips:@"获取账号信息失败!"];
+           // [PSTipsView showTips:@"获取账号信息失败!"];
         }
     } failure:^(NSError *error) {
-         [PSTipsView showTips:@"获取账号信息失败!"];
+        // [PSTipsView showTips:@"获取账号信息失败!"];
     }];
 }
 

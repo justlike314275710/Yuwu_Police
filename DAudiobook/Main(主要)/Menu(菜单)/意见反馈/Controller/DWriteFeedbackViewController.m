@@ -88,7 +88,12 @@
             [PSTipsView showTips:@"提交失败!"];
         }
     } failed:^(NSError *error) {
-        [PSTipsView showTips:@"服务器异常!"];
+        NSString *errorInfo = error.userInfo[@"NSLocalizedDescription"];
+        if ([errorInfo isEqualToString:@"Request failed: unauthorized (401)"]) {
+            [help_userManager refreshOuathToken];
+        }
+        else{[PSTipsView showTips:@"服务器异常!"];}
+        
     }];
     
 }
