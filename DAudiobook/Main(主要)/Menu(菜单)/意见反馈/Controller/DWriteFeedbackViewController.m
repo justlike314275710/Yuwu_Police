@@ -182,6 +182,7 @@
     [submitBtn setTitle:submit forState:UIControlStateNormal];
     submitBtn.backgroundColor =ImportantColor;
     [self.view addSubview:submitBtn];
+    submitBtn.qi_eventInterval=1.0f;
     [submitBtn addTarget:self action:@selector(submitContent) forControlEvents:UIControlEventTouchUpInside];
 
 }

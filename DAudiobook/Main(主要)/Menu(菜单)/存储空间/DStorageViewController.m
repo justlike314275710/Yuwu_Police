@@ -156,6 +156,7 @@
         _clearBtn.titleLabel.font = FontOfSize(12);
         _clearBtn.hidden = YES;
         _clearBtn.titleLabel.numberOfLines = 0;
+        _clearBtn.qi_eventInterval=1.0f;
         @weakify(self);
         [_clearBtn bk_whenTapped:^{
             @strongify(self);

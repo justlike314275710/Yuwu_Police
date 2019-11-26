@@ -41,6 +41,10 @@
 
 @implementation DHotNovelViewController
 #pragma mark - LifeCycle
+
+
+
+/*
 - (void)viewDidLoad {
     [super viewDidLoad];
    // [self GDTadvertising];
@@ -60,10 +64,27 @@
     [[ZXCTimer shareInstance]addCycleTask:^{
         [self refreshNewCount];
     } timeInterval:30];
-    
-    
-    
 }
+*/
+-(void)viewAppearAction{
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.logic = [HomePageLogic new];
+    self.hasCount = NO;
+    [self SearchBar];
+    [self setupUI];
+    //下啦刷新
+    [self refreshData];
+    
+    self.tableview.ly_emptyView = [LYEmptyView emptyActionViewWithImage:ImageNamed(@"noData") titleStr:@"暂无数据" detailStr:nil btnTitleStr:@"" btnClickBlock:^{
+        [self refreshData];
+    }];
+    
+    //获取有几条新消息
+    [[ZXCTimer shareInstance]addCycleTask:^{
+        [self refreshNewCount];
+    } timeInterval:30];
+}
+
 -(void)refreshNewCount{
     BOOL isCurrent = [UIViewController isCurrentViewControllerVisible:self];
     if (isCurrent) {
@@ -108,6 +129,7 @@
                                              selector:@selector(refreshData)
                                                  name:@"refresh_token"
                                                object:nil];
+    [self viewAppearAction];
    
 }
 

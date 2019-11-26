@@ -226,7 +226,10 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
                 NSString*message = body[@"message"];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if (message) {
-                         [PSTipsView showTips:message];
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                             [PSTipsView showTips:message];
+                        });
+                        
                     } else {
                          NSString *errorInfo = error.userInfo[@"NSLocalizedDescription"];
                         if ([errorInfo isEqualToString:@"Request failed: unauthorized (401)"]) {
@@ -242,7 +245,10 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
                     }
                 });
             } else {
-                [PSTipsView showTips:@"登录失败"];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [PSTipsView showTips:@"登录失败"];
+                });
+               
             }
         }
         else {
@@ -257,12 +263,10 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
                     [self saveUserOuathInfo];
                     self.curUserInfo = [[UserInfo alloc] init];
                     self.curUserInfo.username = [params valueForKey:@"name"];
-                    
                     //保存账号
                     [kUserDefaults setObject:[params valueForKey:@"name"] forKey:KUserName];
                     [kUserDefaults synchronize];
                     [self saveUserInfo];
-                  
                     //预警端平台登录同步
                     [self police_Login:params];
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"refresh_token" object:nil];
@@ -271,9 +275,7 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
             }
         }
     }];
-    
     [dataTask resume];
-    
 }
 
 #pragma mark ————— 狱警端登录同步—————
@@ -300,7 +302,10 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
                 }
                 else{
                      KPostNotification(KNotificationLoginStateChange, @NO);
-                     [PSTipsView showTips:@"您已被禁用,暂不能登录"];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                       [PSTipsView showTips:@"您已被禁用,暂不能登录"];
+                    });
+                    
                 }
             }
         }
@@ -315,7 +320,10 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
         }
         else{
             KPostNotification(KNotificationLoginStateChange, @NO);
-             [PSTipsView showTips:@"请联系监狱管理人员进行身份认证登记"];
+            dispatch_async(dispatch_get_main_queue(), ^{
+               [PSTipsView showTips:@"请联系监狱管理人员进行身份认证登记"];
+            });
+            
         }
     } failure:^(NSError *error) {
        NSString *code = error.userInfo[@"code"];
@@ -331,8 +339,19 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
                 [alert show];
                 
             }
-        } else {
-            [PSTipsView showTips:@"请联系监狱管理人员进行身份认证登记"];
+        }
+        else if ([code isEqualToString:@"500"]){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [PSTipsView showTips:@"服务器异常"];
+            });
+           
+        }
+        
+        else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [PSTipsView showTips:@"请联系监狱管理人员进行身份认证登记"];
+            });
+           
             KPostNotification(KNotificationLoginStateChange, @NO);
         }
        
@@ -372,7 +391,10 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
                 NSString*message = body[@"message"];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if (message) {
-                        [PSTipsView showTips:message];
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                             [PSTipsView showTips:message];
+                        });
+                      
                     } else {
                         NSString *errorInfo = error.userInfo[@"NSLocalizedDescription"];
                         if ([errorInfo isEqualToString:@"Request failed: unauthorized (401)"]) {
@@ -388,7 +410,7 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
                     }
                 });
             } else {
-                [PSTipsView showTips:@"登录失败"];
+               // [PSTipsView showTips:@"登录失败"];
             }
             
         }
@@ -412,7 +434,7 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
                     
                     //预警端平台登录同步
 //                    [self police_Login:parmeters];
-//                    [[NSNotificationCenter defaultCenter] postNotificationName:@"refresh_token" object:nil];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"refresh_token" object:nil];
                     
                 }];
             }
@@ -456,7 +478,7 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
             KPostNotification(KNotificationHomePageRefreshList, nil);
             KPostNotification(KNotificationArticleAuthor, nil);
         } else {
-            
+            [self refreshOuathToken];
         }
     } failure:^(NSError *error) {
         NSString *errorInfo = error.userInfo[@"NSLocalizedDescription"];
@@ -637,7 +659,6 @@ static const NSString *cipherText =  @"1688c4f69fc6404285aadbc996f5e429";
     self.curUserInfo = nil;
     self.oathInfo = nil;
     self.isLogined = NO;
-
 //    //移除缓存
     YYCache *cache = [[YYCache alloc]initWithName:KUserCacheName];
     [cache removeAllObjectsWithBlock:^{

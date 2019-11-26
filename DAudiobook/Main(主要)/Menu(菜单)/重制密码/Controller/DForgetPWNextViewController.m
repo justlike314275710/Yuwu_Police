@@ -94,6 +94,7 @@
     passwordButton.titleLabel.font=FontOfSize(14);
     [passwordButton setBackgroundImage:[UIImage imageNamed:@"提交按钮底框"] forState:UIControlStateNormal];
     [self.view addSubview:passwordButton];
+    passwordButton.qi_eventInterval=1.0f;
     [passwordButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.passwordTextfield.mas_bottom).offset(horizontalSpace);
         make.left.mas_equalTo(horizontalSpace);

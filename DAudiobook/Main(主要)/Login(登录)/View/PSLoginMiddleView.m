@@ -7,7 +7,6 @@
 //
 #define RELATIVE_WIDTH_VALUE(value) SCREEN_WIDTH * value / 375.0
 #import "PSLoginMiddleView.h"
-
 @interface PSLoginMiddleView ()
 
 @end
@@ -98,6 +97,7 @@
         self.codeLable.numberOfLines=0;
         
         _loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
+      
         _loginButton.titleLabel.font = AppBaseTextFont1;
         [_loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         NSString*login=@"登录";

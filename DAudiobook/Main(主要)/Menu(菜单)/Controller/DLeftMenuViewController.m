@@ -38,6 +38,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self reloadHeaderView];
+   
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,6 +49,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(reloadHeaderView)
                                                  name:KNotificationMineDataChange
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(getArticeData)
+                                                 name:@"applicationDidBecomeActive"
                                                object:nil];
     [self setTableViewBackcolorUI];
 }
@@ -142,9 +147,11 @@
         }
         else{
             self.menuHeadView.nameLable.text=@"";
+             [help_userManager refreshOuathToken];
         }
     } failure:^(NSError *error) {
         //[PSTipsView showTips:@"获取账号信息失败!"];
+        [help_userManager refreshOuathToken];
     }];
 }
 

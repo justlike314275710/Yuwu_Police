@@ -110,16 +110,9 @@
 // 当应用界面回到活跃Activate状态时
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-//token刷新
-    HomePageLogic*logic=[[HomePageLogic alloc]init];
-    [logic getNewArticleCountCompleted:^(id data) {
-        
-    } failed:^(NSError *error) {
-        NSString *errorInfo = error.userInfo[@"NSLocalizedDescription"];
-        if ([errorInfo isEqualToString:@"Request failed: unauthorized (401)"]) {
-            [help_userManager refreshOuathToken];
-        }
-    }];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"applicationDidBecomeActive" object:nil];
+    
+
 }
 
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{

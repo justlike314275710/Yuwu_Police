@@ -39,6 +39,9 @@
     [self refreshData];
     self.view.backgroundColor=AppColor(255, 255, 255);
     self.messageTableView.separatorStyle=UITableViewCellSeparatorStyleNone;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(refreshData)
+                                                 name:KNotificationMessageList object:nil];
     // Do any additional setup after loading the view.
 }
 

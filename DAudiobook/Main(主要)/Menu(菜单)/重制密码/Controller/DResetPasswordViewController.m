@@ -210,6 +210,7 @@
     [passwordButton setBackgroundImage:[UIImage imageNamed:@"提交按钮底框"] forState:UIControlStateNormal];
     //passwordButton.backgroundColor=ImportantColor;
     [self.view addSubview:passwordButton];
+    passwordButton.qi_eventInterval=1.0f;
     [passwordButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(forgetPasswordButton.mas_bottom)
         .offset(15);

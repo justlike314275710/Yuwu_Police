@@ -91,6 +91,7 @@
     [self.scrollview addSubview:line2];
     
     [self.scrollview addSubview:self.nextStep];
+    _nextStep.qi_eventInterval=1.0f;
     _nextStep.frame = CGRectMake(15,186,self.scrollview.width-30,KNormalBBtnHeight);
 //    [_nextStep addTapBlock:^(UIButton *btn) {
 //        [self_weak_ UserAccoutLogin];
