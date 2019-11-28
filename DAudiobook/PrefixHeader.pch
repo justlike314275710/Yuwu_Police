@@ -37,6 +37,7 @@
 #import "UIImage+Extension.h"
 #import "UIView+Additions.h"
 #import "UIViewController+Animation.h"
+#import "UIControl+QiEventInterval.h"
 
 /*------------------------------第三方------------------------------*/
 #import "Masonry.h"

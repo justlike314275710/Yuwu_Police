@@ -36,7 +36,9 @@ static const char *lineSpaceKey = "lineSpaceKey";
         [self willChangeValueForKey:@"lineSpace"]; // KVO
         objc_setAssociatedObject(self, &lineSpaceKey,
                                  lineSpace, OBJC_ASSOCIATION_ASSIGN);
-        
+    if (self.text.length==0) {
+        return;
+    }
         NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:self.text];
         [attributedString addAttribute:NSFontAttributeName value:self.font range:NSMakeRange(0,self.text.length)];
         

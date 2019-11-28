@@ -104,6 +104,7 @@
      [nextTipButton setBackgroundImage:[UIImage imageNamed:@"提交按钮底框"] forState:UIControlStateNormal];
     nextTipButton.titleLabel.font=FontOfSize(14);
     [self.view addSubview:nextTipButton];
+    nextTipButton.qi_eventInterval=1.0f;
     [nextTipButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(bgView.mas_bottom).offset(horizontalSpace);
         make.right.mas_equalTo(-horizontalSpace);

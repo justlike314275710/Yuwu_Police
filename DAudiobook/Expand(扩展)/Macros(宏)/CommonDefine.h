@@ -183,6 +183,9 @@ return shared##className; \
 //红点刷新
 #define KNotificationRedDotRefresh @"KNotificationRedDotRefresh"
 
+//消息刷新
+#define KNotificationMessageList @"KNotificationMessageList"
+
 //红点隐藏
 #define KNotificationRedDothide @"KNotificationRedDothide"
 //刷新文章详情通知

@@ -411,6 +411,8 @@
 		55FE57252366DFA7008056C9 /* PSReportArticleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FE57232366DFA7008056C9 /* PSReportArticleViewModel.m */; };
 		E473341141BF7F02638F5529 /* libPods-DAudiobook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A489DFF9190310E891E597 /* libPods-DAudiobook.a */; };
 		EA26E05723828E7100220F06 /* XXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA26E05623828E7100220F06 /* XXAlertView.m */; };
+		EA26E05F238BD31B00220F06 /* UIControl+QiEventInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = EA26E05E238BD31A00220F06 /* UIControl+QiEventInterval.m */; };
+		EA26E061238BD3FB00220F06 /* DLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA26E060238BD3FB00220F06 /* DLoginViewController.m */; };
 		EA448EA723667B59008AB0FB /* DStorageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA448EA623667B59008AB0FB /* DStorageViewController.m */; };
 		EA448EAD23667CE5008AB0FB /* DStorageLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = EA448EAC23667CE5008AB0FB /* DStorageLogic.m */; };
 		EA4D2C9E23506A7E001D376F /* UMSocialNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4D2C9D23506A7D001D376F /* UMSocialNetwork.framework */; };
@@ -747,7 +749,6 @@
 		EA960DB0232F5BA000D81A25 /* DGActivityIndicatorBallClipRotateAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EA960D87232F5B9F00D81A25 /* DGActivityIndicatorBallClipRotateAnimation.m */; };
 		EA960DB1232F5BA000D81A25 /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = EA960D88232F5B9F00D81A25 /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m */; };
 		EA960DB2232F5BA000D81A25 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EA960D8D232F5B9F00D81A25 /* README.md */; };
-		EA960DBC232F600B00D81A25 /* DLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA960DBB232F600B00D81A25 /* DLoginViewController.m */; };
 		EA960DC6232F616500D81A25 /* PSLoginBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA960DC1232F616400D81A25 /* PSLoginBackgroundView.m */; };
 		EA960DC7232F616600D81A25 /* PSLoginMiddleView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA960DC3232F616500D81A25 /* PSLoginMiddleView.m */; };
 		EA960DC8232F616600D81A25 /* PSLoginTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA960DC5232F616500D81A25 /* PSLoginTopView.m */; };
@@ -1575,6 +1576,9 @@
 		C10A1B66EF6EE62C2CCE46C8 /* Pods-DAudiobook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DAudiobook.debug.xcconfig"; path = "Target Support Files/Pods-DAudiobook/Pods-DAudiobook.debug.xcconfig"; sourceTree = "<group>"; };
 		EA26E05523828E6500220F06 /* XXAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XXAlertView.h; sourceTree = "<group>"; };
 		EA26E05623828E7100220F06 /* XXAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXAlertView.m; sourceTree = "<group>"; };
+		EA26E05D238BD31A00220F06 /* UIControl+QiEventInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+QiEventInterval.h"; sourceTree = "<group>"; };
+		EA26E05E238BD31A00220F06 /* UIControl+QiEventInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+QiEventInterval.m"; sourceTree = "<group>"; };
+		EA26E060238BD3FB00220F06 /* DLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLoginViewController.m; sourceTree = "<group>"; };
 		EA448EA523667B59008AB0FB /* DStorageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DStorageViewController.h; sourceTree = "<group>"; };
 		EA448EA623667B59008AB0FB /* DStorageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DStorageViewController.m; sourceTree = "<group>"; };
 		EA448EAB23667CE5008AB0FB /* DStorageLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DStorageLogic.h; sourceTree = "<group>"; };
@@ -2251,7 +2255,6 @@
 		EA960D8C232F5B9F00D81A25 /* DGActivityIndicatorThreeDotsAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGActivityIndicatorThreeDotsAnimation.h; sourceTree = "<group>"; };
 		EA960D8D232F5B9F00D81A25 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EA960DBA232F600B00D81A25 /* DLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLoginViewController.h; sourceTree = "<group>"; };
-		EA960DBB232F600B00D81A25 /* DLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLoginViewController.m; sourceTree = "<group>"; };
 		EA960DC0232F616400D81A25 /* PSLoginBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLoginBackgroundView.h; sourceTree = "<group>"; };
 		EA960DC1232F616400D81A25 /* PSLoginBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLoginBackgroundView.m; sourceTree = "<group>"; };
 		EA960DC2232F616400D81A25 /* PSLoginMiddleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLoginMiddleView.h; sourceTree = "<group>"; };
@@ -3047,6 +3050,7 @@
 		3C4A391A22681A0E00882244 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				EA26E058238BCF7300220F06 /* UIButton */,
 				5572355D23517AB40004488E /* KYLabl */,
 				55E29E56234C28000001470E /* XZExtension */,
 				EAA21B9D233CB3C900A06819 /* searchBar */,
@@ -4171,6 +4175,15 @@
 				05B736457BAB3F381552BD4D /* Pods-DAudiobook.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EA26E058238BCF7300220F06 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				EA26E05D238BD31A00220F06 /* UIControl+QiEventInterval.h */,
+				EA26E05E238BD31A00220F06 /* UIControl+QiEventInterval.m */,
+			);
+			path = UIButton;
 			sourceTree = "<group>";
 		};
 		EA448EA423667B22008AB0FB /* 存储空间 */ = {
@@ -5611,8 +5624,8 @@
 		EA960DBD232F613100D81A25 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EA26E060238BD3FB00220F06 /* DLoginViewController.m */,
 				EA960DBA232F600B00D81A25 /* DLoginViewController.h */,
-				EA960DBB232F600B00D81A25 /* DLoginViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -6549,7 +6562,6 @@
 				55ED63C2233E3452004A9C37 /* EBBannerViewController.m in Sources */,
 				55ED639B233DEA0A004A9C37 /* HAccountViewModel.m in Sources */,
 				3CACB10122928BBF0006AB3C /* LBPhotoBrowserManager.m in Sources */,
-				EA960DBC232F600B00D81A25 /* DLoginViewController.m in Sources */,
 				EA960B60232F2FE900D81A25 /* SDImageCache.m in Sources */,
 				EA960A91232F29FA00D81A25 /* NIMKitRobotTemplate.m in Sources */,
 				EA960DA4232F5BA000D81A25 /* DGActivityIndicatorRotatingSandglassAnimation.m in Sources */,
@@ -6826,6 +6838,7 @@
 				EA960D9D232F5BA000D81A25 /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
 				EA960BB1232F32E500D81A25 /* PSAlertView.m in Sources */,
 				EA960E16232F84F900D81A25 /* AFURLResponseSerialization.m in Sources */,
+				EA26E05F238BD31B00220F06 /* UIControl+QiEventInterval.m in Sources */,
 				EA960C8A232F3B1B00D81A25 /* YYImageCoder.m in Sources */,
 				3C0DB68C22D7320B0029730E /* MJRefreshGifHeader.m in Sources */,
 				EA960CAA232F3B1C00D81A25 /* UIBezierPath+YYAdd.m in Sources */,
@@ -7063,6 +7076,7 @@
 				EA960ACF232F29FB00D81A25 /* NIMUnsupportContentConfig.m in Sources */,
 				3C4A3A1B22681A0E00882244 /* UIColor+ColorHelper.m in Sources */,
 				5542A78C233B050900E4B5D7 /* NSObject+Tool.m in Sources */,
+				EA26E061238BD3FB00220F06 /* DLoginViewController.m in Sources */,
 				EA960D9B232F5BA000D81A25 /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,
 				EA960B66232F2FE900D81A25 /* SDImageCacheConfig.m in Sources */,
 				3CACB10222928BBF0006AB3C /* UIImage+LBDecoder.m in Sources */,

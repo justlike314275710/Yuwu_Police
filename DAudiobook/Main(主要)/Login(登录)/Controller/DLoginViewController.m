@@ -8,8 +8,8 @@
 //NSString * const AFNetworkingOperationFailingURLResponseDataErrorKey = @"com.alamofire.serialization.response.error.data";
 #define RELATIVE_HEIGHT_VALUE(value) SCREEN_HEIGHT * value / 667.0
 #import "DLoginViewController.h"
-#import "PSLoginMiddleView.h"
 #import "PSLoginBackgroundView.h"
+#import "PSLoginMiddleView.h"
 #import "PSLoginTopView.h"
 #import "LoginLogic.h"
 #import "RMTimer.h"
@@ -72,9 +72,10 @@ typedef NS_ENUM(NSInteger, PSLoginModeType) {
     self.loginMiddleView.phoneTextField.delegate=self;
     self.loginMiddleView.phoneTextField.text=[kUserDefaults objectForKey:@"D_phone"]?[kUserDefaults objectForKey:@"D_phone"]:@"";
 
- 
+
     [self.loginMiddleView.codeButton addTarget:self action:@selector(getCode) forControlEvents:UIControlEventTouchUpInside];
     
+    self.loginMiddleView.loginButton.qi_eventInterval=1.0f;
     [self.loginMiddleView.loginButton addTarget:self action:@selector(LoginAction) forControlEvents:UIControlEventTouchUpInside];
     self.protocolLabel = [YYLabel new];
     self.protocolLabel.textAlignment=NSTextAlignmentCenter;
