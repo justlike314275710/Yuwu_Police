@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -438,10 +438,7 @@
 		EA9457C6233A2D9B003C1C97 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9457B6233A2D9A003C1C97 /* TencentOpenAPI.framework */; };
 		EA9457C9233A2F21003C1C97 /* NIMSessionVideoContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9457C8233A2F21003C1C97 /* NIMSessionVideoContentView.m */; };
 		EA9457CF233A2F9C003C1C97 /* NMCVideoFilter.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EA9457CC233A2F9B003C1C97 /* NMCVideoFilter.bundle */; };
-		EA9457D0233A2F9C003C1C97 /* NMC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9457CD233A2F9B003C1C97 /* NMC.framework */; };
-		EA9457D1233A2F9C003C1C97 /* NIMAVChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9457CE233A2F9B003C1C97 /* NIMAVChat.framework */; };
 		EA9457D3233A307E003C1C97 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA9457D2233A307E003C1C97 /* Info.plist */; };
-		EA9457D4233A30F5003C1C97 /* NMC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9457CD233A2F9B003C1C97 /* NMC.framework */; };
 		EA9457D5233A30F5003C1C97 /* NMC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA9457CD233A2F9B003C1C97 /* NMC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EA9457D6233A30F5003C1C97 /* NIMAVChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9457CE233A2F9B003C1C97 /* NIMAVChat.framework */; };
 		EA9457D7233A30F5003C1C97 /* NIMAVChat.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA9457CE233A2F9B003C1C97 /* NIMAVChat.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -2550,8 +2547,6 @@
 				55278D58233C487800FBEE66 /* libReactiveObjC.a in Frameworks */,
 				55CC6557233B6D7800D4A581 /* libTZImagePickerController.a in Frameworks */,
 				55CC6555233B6D5700D4A581 /* libRZRichTextView.a in Frameworks */,
-				EA9457D0233A2F9C003C1C97 /* NMC.framework in Frameworks */,
-				EA9457D4233A30F5003C1C97 /* NMC.framework in Frameworks */,
 				EA9457BA233A2D9B003C1C97 /* UMSocialCore.framework in Frameworks */,
 				EA4D2C9E23506A7E001D376F /* UMSocialNetwork.framework in Frameworks */,
 				EA9457C6233A2D9B003C1C97 /* TencentOpenAPI.framework in Frameworks */,
@@ -2562,7 +2557,6 @@
 				3C336D72229E8A26009861F1 /* libGDTMobSDK.a in Frameworks */,
 				3CD2D8132299282C00C700D7 /* AudioToolbox.framework in Frameworks */,
 				3CD2D8112299281100C700D7 /* AddressBook.framework in Frameworks */,
-				EA9457D1233A2F9C003C1C97 /* NIMAVChat.framework in Frameworks */,
 				3CD2D80F2299280100C700D7 /* UserNotifications.framework in Frameworks */,
 				3CD2D80D229927DF00C700D7 /* CoreFoundation.framework in Frameworks */,
 				3CD2D80B2299275100C700D7 /* CoreAudio.framework in Frameworks */,
@@ -6500,7 +6494,13 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DAudiobook/Pods-DAudiobook-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
 			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DAudiobook/Pods-DAudiobook-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DAudiobook/Pods-DAudiobook-resources.sh\"\n";
